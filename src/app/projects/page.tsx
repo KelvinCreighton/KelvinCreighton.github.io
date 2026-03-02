@@ -1,8 +1,39 @@
+import Link from 'next/link';
+import Image from 'next/image';
+
 export default function Projects() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
-      <h1 className="text-4xl font-bold">Projects</h1>
-      <p className="mt-4">My past, current, and future projects will go here.</p>
+      <h1 className="text-4xl font-bold mb-12">Projects</h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
+        {/* Category 1: Auto Repair & Maintenance */}
+        <Link href="/projects/auto" className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <div className="mb-4 group-hover:scale-110 transition-transform">
+            <Image src="/icons/light/auto.svg" alt="Auto Repair" width={128} height={128} className="block dark:hidden" />
+            <Image src="/icons/dark/auto.svg" alt="Auto Repair" width={128} height={128} className="hidden dark:block" />
+          </div>
+          <h2 className="text-xl font-semibold text-center">Automotive Repair</h2>
+        </Link>
+
+        {/* Category 2: Cybersecurity */}
+        <Link href="/projects/cybersecurity" className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <div className="mb-4 group-hover:scale-110 transition-transform">
+            <Image src="/icons/light/cybersecurity.svg" alt="Cybersecurity" width={128} height={128} className="block dark:hidden" />
+            <Image src="/icons/dark/cybersecurity.svg" alt="Cybersecurity" width={128} height={128} className="hidden dark:block" />
+          </div>
+          <h2 className="text-xl font-semibold text-center">Cybersecurity</h2>
+        </Link>
+
+        {/* Category 3: Software Engineering */}
+        <Link href="/projects/software" className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <div className="mb-4 group-hover:scale-110 transition-transform">
+            <Image src="/icons/light/software.svg" alt="Software Engineering" width={128} height={128} className="block dark:hidden" />
+            <Image src="/icons/dark/software.svg" alt="Software Engineering" width={128} height={128} className="hidden dark:block" />
+          </div>
+          <h2 className="text-xl font-semibold text-center">Software Engineering</h2>
+        </Link>
+      </div>
     </main>
   );
 }
