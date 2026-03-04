@@ -19,9 +19,17 @@ export default function MusicProjects() {
       image: `/placeholder.png`,
       link: `/projects/music/beethoven-virus`
     },
-    ...Array.from({ length: 4 }).map((_, i) => ({
-      id: i + 3,
-      title: `Music Project ${i + 3}`,
+    {
+      id: 3,
+      title: `BL1ND JUST1C3 1NV3ST1G4T1ON`,
+      date: `March 2026`,
+      description: `Interactive sheet music transcription and playback.`,
+      image: `/placeholder.png`,
+      link: `/projects/music/blind-justice-investigation`
+    },
+    ...Array.from({ length: 3 }).map((_, i) => ({
+      id: i + 4,
+      title: `Music Project ${i + 4}`,
       date: `March 2026`,
       description: `A detailed description of the track, album, or performance goes here. Discussing the creative process, instruments used, and final production.`,
       image: `/placeholder.png`,
