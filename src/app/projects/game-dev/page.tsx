@@ -37,10 +37,19 @@ export default function GameDevProjects() {
         {projects.map((project) => (
           <Link href={project.link} key={project.id} className="group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300">
             <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
-              {/* Using a solid background as a fallback until actual PNGs are provided */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                [Image: {project.id}.png]
-              </div>
+              {project.image === '/placeholder.png' ? (
+                <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                  [Image: {project.id}.png]
+                </div>
+              ) : (
+                <Image 
+                  src={project.image} 
+                  alt={project.title} 
+                  fill 
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              )}
             </div>
             <div className="flex flex-col items-start p-6 flex-grow">
               <h2 className="text-xl font-bold mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
