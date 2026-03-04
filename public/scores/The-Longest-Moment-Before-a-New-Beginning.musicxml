@@ -75,7 +75,7 @@
     </credit>
   <credit page="1">
     <credit-type>composer</credit-type>
-    <credit-words default-x="1074.074046" default-y="1305.320786" justify="right" valign="bottom" font-size="12">Kelvin Creighton</credit-words>
+    <credit-words default-x="1074.074046" default-y="1305.320786" justify="right" valign="bottom" font-size="12">Composed By: Kelvin Creighton</credit-words>
     </credit>
   <part-list>
     <score-part id="P1">

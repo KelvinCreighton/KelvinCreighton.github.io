@@ -14,27 +14,19 @@ export default function MusicProjects() {
     {
       id: 2,
       title: `Beethoven Virus`,
-      date: `March 2026`,
-      description: `Interactive sheet music transcription and playback.`,
-      image: `/images/projects/Beethoven_Virus.png`,
+      date: `2018`,
+      description: `A challenging arrangement of the Beethoven Virus for piano.`,
+      image: `/images/projects/Beethoven_Virus_v2.png`,
       link: `/projects/music/beethoven-virus`
     },
     {
       id: 3,
-      title: `BL1ND JUST1C3 1NV3ST1G4T1ON`,
-      date: `March 2026`,
-      description: `Interactive sheet music transcription and playback.`,
-      image: `/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON.png`,
+      title: `BL1ND JUST1C3: 1NV3ST1G4T1ON`,
+      date: `2017`,
+      description: `A high energy multi-voice piece originally from Homestuck, arranged for piano.`,
+      image: `/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON_v2.png`,
       link: `/projects/music/blind-justice-investigation`
-    },
-    ...Array.from({ length: 3 }).map((_, i) => ({
-      id: i + 4,
-      title: `Music Project ${i + 4}`,
-      date: `March 2026`,
-      description: `A detailed description of the track, album, or performance goes here. Discussing the creative process, instruments used, and final production.`,
-      image: `/placeholder.png`,
-      link: `#`
-    }))
+    }
   ];
 
   return (
