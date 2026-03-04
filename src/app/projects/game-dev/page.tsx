@@ -6,9 +6,9 @@ export default function GameDevProjects() {
     {
       id: 1,
       title: `My First Game`,
-      date: `Early Days`,
+      date: `2016`,
       description: `The first JavaScript game I ever made. Playable directly in your browser.`,
-      image: `/placeholder.png`,
+      image: `/images/projects/my-first-game.png`,
       link: `/projects/game-dev/my-first-game`
     },
     ...Array.from({ length: 5 }).map((_, i) => ({
