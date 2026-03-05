@@ -469,9 +469,11 @@ export default function WriteupTemplate({ data }: WriteupTemplateProps) {
                 </div>
                 <div className="step-body">
                   {step.prose && (
-                    <p className="prose">{step.prose.split('\n\n').map((p, i) => (
-                      <div key={i}>{p}</div>
-                    ))}</p>
+                    <>
+                      {step.prose.split('\n\n').map((p, i) => (
+                        <p key={i} className="prose">{p}</p>
+                      ))}
+                    </>
                   )}
                   
                   {step.input && (
