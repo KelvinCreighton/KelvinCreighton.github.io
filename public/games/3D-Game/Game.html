@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Prevent the arrow keys and spacebar from scrolling the page */
+body {
+  overflow-y: auto; /* Allow the browser to decide when to show the scrollbar */
+}
+
+/* Force custom scrollbar styles for WebKit browsers (Chrome, Safari, Edge) to ensure visibility */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 6px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8a8a8;
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+/* Media query to adapt the scrollbar for dark mode */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar {
+    background-color: #2d3748; /* Matches Tailwind gray-800 */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #6b7280; /* Lighter gray thumb for dark mode */
+    border: 2px solid #2d3748;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af; /* Even lighter gray when hovered in dark mode */
+  }
+
+  /* Firefox dark mode scrollbar */
+  * {
+    scrollbar-color: #6b7280 #2d3748;
+  }
+}
+</style>
+</head>
+<body style="background-color: rgb(0, 0, 0);">
+
+<center>
+<br><br>
+<canvas id="Canvas" width="720" height="480" style="border:3px solid #ffffff;">
+</center>
+
+
+<br>
+<p style="color:#ffffff", id="pos"></p>
+<p style="color:#ffffff", id="vel"></p>
+<p style="color:#ffffff", id="acc"></p>
+<p style="color:#ffffff", id="angles"></p>
+<p style="color:#ffffff", id="grounded"></p>
+<p style="color:#ffffff", id="invertMouse"></p>
+
+<script>
+// Prevent default scrolling behavior for arrow keys and spacebar
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
+</script>
+
+<script src="files/lib/simple_code.js"></script>
+<script src="files/lib/canvas_lib.js"></script>
+
+<script src="files/vec3.js"></script>
+<script src="files/mat3.js"></script>
+<script src="files/3d_canvas.js"></script>
+
+<script src="files/levels.js"></script>
+
+<script src="files/main.js"></script>
+
+</body>
+</html>

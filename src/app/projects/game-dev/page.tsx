@@ -5,11 +5,11 @@ export default function GameDevProjects() {
   const projects = [
     {
       id: 0,
-      title: `Tank Game`,
-      date: `2018`,
-      description: `A top-down tank shooter game built with JavaScript and HTML5 Canvas.`,
-      image: `/images/projects/tank-game.png`,
-      link: `/projects/game-dev/tank-game`
+      title: `My First Game`,
+      date: `2017`,
+      description: `The first JavaScript game I ever made. It was a simple platformer where the player had to navigate through levels and avoid obstacles. This project was a great learning experience and sparked my passion for game development.`,
+      image: `/images/projects/my-first-game.png`,
+      link: `/projects/game-dev/my-first-game`
     },
     {
       id: 1,
@@ -21,11 +21,19 @@ export default function GameDevProjects() {
     },
     {
       id: 2,
-      title: `My First Game`,
-      date: `2017`,
-      description: `The first JavaScript game I ever made. It was a simple platformer where the player had to navigate through levels and avoid obstacles. This project was a great learning experience and sparked my passion for game development.`,
-      image: `/images/projects/my-first-game.png`,
-      link: `/projects/game-dev/my-first-game`
+      title: `Tank Game`,
+      date: `2018`,
+      description: `A top-down tank shooter inspired by the classic Tank Trouble game!`,
+      image: `/images/projects/tank-game.png`,
+      link: `/projects/game-dev/tank-game`
+    },
+    {
+      id: 3,
+      title: `3D Game`,
+      date: `2022`,
+      description: `My first 3D game engine project exploring concepts like projection and rotation using matrix math. This project was a major learning experience in linear algebra and game development, with all code and libraries written by me.`,
+      image: `/images/projects/3d-game.png`,
+      link: `/projects/game-dev/3d-game`
     }
   ];
 
@@ -42,7 +50,7 @@ export default function GameDevProjects() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
-        {projects.map((project) => (
+        {projects.sort((a, b) => b.id - a.id).map((project) => (
           <Link href={project.link} key={project.id} className="group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300">
             <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
               {project.image === '/placeholder.png' ? (

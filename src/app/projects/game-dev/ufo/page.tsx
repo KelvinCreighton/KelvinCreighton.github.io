@@ -9,7 +9,7 @@ export default function UFOGamePage() {
         </Link>
         <h1 className="text-4xl font-bold text-center">UFO</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
-          A fun UFO game project. Playable directly in your browser.
+          A fun UFO game project. Players control a UFO and navigate through various levels, avoiding enemies.
         </p>
       </div>
       

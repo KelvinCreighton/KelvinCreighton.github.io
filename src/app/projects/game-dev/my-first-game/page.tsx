@@ -9,7 +9,7 @@ export default function MyFirstGamePage() {
         </Link>
         <h1 className="text-4xl font-bold text-center">My First Game</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
-          The first JavaScript game I ever made. Playable directly in your browser!
+          The first JavaScript game I ever made. It was a simple platformer where the player had to navigate through levels and avoid obstacles. This project was a great learning experience and sparked my passion for game development.
         </p>
       </div>
       
