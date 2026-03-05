@@ -9,7 +9,7 @@ export default function CybersecurityProjects() {
       date: '2024',
       description: 'A write-up on exploiting a NoSQL injection vulnerability in a MongoDB-backed Express application to bypass authentication.',
       image: '/placeholder.png',
-      link: '/cybersecurity/nosql-injection/index.html'
+      link: '/projects/cybersecurity/nosql-injection'
     },
     {
       id: 'soap',
@@ -17,7 +17,7 @@ export default function CybersecurityProjects() {
       date: '2024',
       description: 'A write-up on exploiting an XML External Entity (XXE) vulnerability through a SOAP endpoint to perform Local File Inclusion.',
       image: '/placeholder.png',
-      link: '/cybersecurity/soap/index.html'
+      link: '/projects/cybersecurity/soap'
     },
     {
       id: 'ssti1',
@@ -25,7 +25,15 @@ export default function CybersecurityProjects() {
       date: '2024',
       description: 'A walkthrough of a Server-Side Template Injection in Jinja2, escaping the sandbox to achieve Remote Code Execution.',
       image: '/placeholder.png',
-      link: '/cybersecurity/ssti1/index.html'
+      link: '/projects/cybersecurity/ssti1'
+    },
+    {
+      id: 'eval',
+      title: 'PicoCTF: 3v@l',
+      date: '2024',
+      description: 'Exploiting a Python eval() vulnerability by bypassing regex blacklists to achieve Remote Code Execution.',
+      image: '/placeholder.png',
+      link: '/projects/cybersecurity/eval'
     }
   ];
 
