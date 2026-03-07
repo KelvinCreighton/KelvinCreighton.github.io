@@ -26,12 +26,13 @@ export default function EvalWriteup() {
       },
       {
         title: 'Information Gathering',
-        prose: "Taking a look at the HTML in the Inspector section in the Developer Tools we find this hint:\nTODO\n------------\nSecure python_flask eval execution by \n    1.blocking malcious keyword like os,eval,exec,bind,connect,python,socket,ls,cat,shell,bind\n    2.Implementing regex: r'0x[0-9A-Fa-f]+|\\\\u[0-9A-Fa-f]{4}|%[0-9A-Fa-f]{2}|\\.[A-Za-z0-9]{1,3}\\b|[\\\\\\/]|\\.\\.'\n\n",
+        prose: "Taking a look at the HTML in the Inspector section in the Developer Tools we find this hint:",
+        notice: "TODO\n------------\nSecure python_flask eval execution by \n    1.blocking malcious keyword like os,eval,exec,bind,connect,python,socket,ls,cat,shell,bind\n    2.Implementing regex: r'0x[0-9A-Fa-f]+|\\\\u[0-9A-Fa-f]{4}|%[0-9A-Fa-f]{2}|\\.[A-Za-z0-9]{1,3}\\b|[\\\\\\/]|\\.\\.'",
         steps: [
           {
             number: '01',
             label: 'Breaking Down the Regex',
-            prose: "If we break down the regex, which has many parts split by the | (or) operator, we can see what it will and will not match with:\n\n- `0x[0-9A-Fa-f]+`: One or more hexadecimal digits (0–9, A–F, a–f).\n- `\\\\u[0-9A-Fa-f]{4}`: Literally \\u (the regex has \\\\u so it matches one backslash + u). Exactly four hex digits.\n- `%[0-9A-Fa-f]{2}`: % literally. Exactly two hex digits.\n- `\\.[A-Za-z0-9]{1,3}\\b`: Literal dot. 1 to 3 alphanumeric characters. Word boundary.\n- `[\\\\\\/]`: Matches either a backslash \\ or a forward slash /.\n- `\\.\\.`: Matches .. (two dots).",
+            prose: "If we break down the regex, which has many parts split by the | (or) operator, we can see what it will and will not match with:\n\n- `0x[0-9A-Fa-f]+`: One or more hexadecimal digits (0–9, A–F, a–f).\n- `\\\\u[0-9A-Fa-f]{4}`: Literally \\u (the regex has \\\\u so it matches one backslash + u). Exactly four hex digits.\n- `%[0-9A-Fa-f]{2}`: Literally %. Exactly two hex digits.\n- `\\.[A-Za-z0-9]{1,3}\\b`: Literal dot. 1 to 3 alphanumeric characters. Word boundary.\n- `[\\\\\\/]`: Matches either a backslash \\ or a forward slash /.\n- `\\.\\.`: Matches .. (two dots).",
           },
           {
             number: '02',

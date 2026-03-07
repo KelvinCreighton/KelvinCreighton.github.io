@@ -7,6 +7,7 @@ interface Step {
   number: string;
   label: string;
   prose?: string;
+  notice?: string;
   input?: string;
   output?: string;
   reason?: string;
@@ -21,6 +22,7 @@ interface Section {
   title: string;
   cards?: Card[];
   prose?: string;
+  notice?: string;
   steps?: Step[];
 }
 
@@ -354,6 +356,18 @@ const styles = `
     white-space: pre-wrap;
   }
 
+  .notice-box {
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.2rem;
+    border-radius: 4px;
+    color: var(--text);
+    background: transparent;
+    font-size: 1.0rem;
+    white-space: pre-wrap;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
   .flag-box {
     background: var(--code-bg);
     border: 1px solid var(--accent3);
@@ -484,6 +498,7 @@ export default function WriteupTemplate({ data }: WriteupTemplateProps) {
             </div>
 
             {section.prose && <p className="prose">{section.prose}</p>}
+            {section.notice && <div className="notice-box">{section.notice}</div>}
 
             {section.cards?.map((card, cardIdx) => (
               <div key={cardIdx} className="card">
@@ -510,6 +525,7 @@ export default function WriteupTemplate({ data }: WriteupTemplateProps) {
                       ))}
                     </>
                   )}
+                  {step.notice && <div className="notice-box">{step.notice}</div>}
                   
                   {step.input && (
                     <div className="io-row">

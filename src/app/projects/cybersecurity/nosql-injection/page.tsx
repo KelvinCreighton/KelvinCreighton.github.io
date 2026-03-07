@@ -9,7 +9,7 @@ export default function NoSQLInjectionWriteup() {
     points: 'n/a',
     author: 'Kelvin Creighton',
     difficulty: 'medium' as const,
-    tags: ['nosqli', 'web', 'mongodb', 'base64'],
+    tags: ['curl', 'nosqli', 'web', 'mongodb', 'base64'],
     flag: 'picoCTF{...}',
     sections: [
       {

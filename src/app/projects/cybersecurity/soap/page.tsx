@@ -6,10 +6,10 @@ export default function SOAPWriteup() {
   const writeupData = {
     title: 'SOAP',
     category: 'Web Exploitation',
-    points: '[000]',
-    author: 'Kelvin',
+    points: 'n/a',
+    author: 'Kelvin Creighton',
     difficulty: 'medium' as const,
-    tags: ['web', 'xxe', 'soap'],
+    tags: ['burpsuite', 'web', 'xxe', 'soap'],
     flag: 'picoCTF{...}',
     sections: [
       {
@@ -36,7 +36,7 @@ export default function SOAPWriteup() {
       },
       {
         title: 'Information Gathering',
-        prose: 'The goal of the challenge is to read the `/etc/passwd` file, which points toward a Local File Inclusion (LFI) or XML External Entity (XXE) vulnerability on a Unix/Linux system.',
+        prose: 'The goal of the challenge, as described, is to read the `/etc/passwd` file. This points toward a Local File Inclusion (LFI) or XML External Entity (XXE) vulnerability on a Unix/Linux system.',
         steps: [
           {
             number: '01',
@@ -70,7 +70,7 @@ University in Kigali, Rwanda offereing MSECE, MSIT and MS EAI`,
             output: `root:x:0:0:root:/root:/bin/bash
 ...
 [Flag Content Displayed]`,
-            reason: '<strong>Reason:</strong> `<!DOCTYPE data [...]>` starts the Document Type Definition. `<!ENTITY xxe SYSTEM "file:///etc/passwd">` defines an external entity `xxe` that reads the local `/etc/passwd` file. When the parser expands the `&xxe;` entity inside the `ID` tags, it replaces it with the file contents, exposing the flag.',
+            reason: '<strong>Reason:</strong> `&lt;!DOCTYPE data [...]>` starts the Document Type Definition. `&lt;!ENTITY xxe SYSTEM "file:///etc/passwd">` defines an external entity `xxe` that reads the local `/etc/passwd` file. When the parser expands the `&xxe;` entity inside the `ID` tags, it replaces it with the file contents, exposing the flag.',
           },
         ],
       },
