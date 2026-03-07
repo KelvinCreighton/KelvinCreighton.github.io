@@ -69,9 +69,7 @@ const styles = `
     margin-left: 0 !important;
   }
   nav .ThemeToggle, nav button {
-    margin-left: auto;
-    position: relative;
-    right: 1rem;
+    display: none !important;
   }
   
   body {

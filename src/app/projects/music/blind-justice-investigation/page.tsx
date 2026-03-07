@@ -11,7 +11,7 @@ export default function BlindJusticeInvestigationPage() {
         <Link href="/projects/music" className="text-sm text-gray-500 hover:underline self-start mb-4">
           &larr; Back to Music Projects
         </Link>
-        <h1 className="text-4xl font-bold text-center">BL1ND JUST1C3 1NV3ST1G4T1ON</h1>
+        <h1 className="text-4xl font-bold text-center">BL1ND JUST1C3: 1NV3ST1G4T1ON</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
           Sheet music transcription and playback.
         </p>

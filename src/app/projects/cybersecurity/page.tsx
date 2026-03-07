@@ -9,7 +9,7 @@ export default function CybersecurityProjects() {
       title: 'PicoCTF: SSTI1',
       date: 'September 2025',
       description: 'A walkthrough of a Server-Side Template Injection in Jinja2, escaping the sandbox to achieve Remote Code Execution.',
-      image: '/placeholder.png',
+      image: '/images/projects/ssti1.png',
       link: '/projects/cybersecurity/ssti1'
     },
     {
@@ -18,7 +18,7 @@ export default function CybersecurityProjects() {
       title: 'PicoCTF: No Sql Injection',
       date: 'September 2025',
       description: 'A write-up on exploiting a NoSQL injection vulnerability in a MongoDB-backed Express application to bypass authentication.',
-      image: '/placeholder.png',
+      image: '/images/projects/no-sql-injection.png',
       link: '/projects/cybersecurity/nosql-injection'
     },
     {
@@ -27,7 +27,7 @@ export default function CybersecurityProjects() {
       title: 'PicoCTF: 3v@l',
       date: 'September 2025',
       description: 'Exploiting a Python eval() vulnerability by bypassing regex blacklists to achieve Remote Code Execution.',
-      image: '/placeholder.png',
+      image: '/images/projects/eval.png',
       link: '/projects/cybersecurity/eval'
     },
     {
@@ -36,8 +36,17 @@ export default function CybersecurityProjects() {
       title: 'PicoCTF: SOAP',
       date: 'October 2025',
       description: 'A write-up on exploiting an XML External Entity (XXE) vulnerability through a SOAP endpoint to perform Local File Inclusion.',
-      image: '/placeholder.png',
+      image: '/images/projects/soap.png',
       link: '/projects/cybersecurity/soap'
+    },
+    {
+      id: 4,
+      slug: 'cupid-portal',
+      title: 'HTCOTB2026 CTF: Cupid Mail Portal (IDOR)',
+      date: 'March 2024',
+      description: 'A custom Valentines + ILOVEYOU Virus themed CTF web exploitation challenge I developed for the University of Alberta\'s Cybersecurity Club, showcasing an Insecure Direct Object Reference (IDOR) vulnerability.',
+      image: '/placeholder.png',
+      link: '/projects/cybersecurity/cupid-portal'
     }
   ];
 
@@ -57,9 +66,12 @@ export default function CybersecurityProjects() {
         {projects.sort((a, b) => b.id - a.id).map((project) => (
           <Link href={project.link} key={project.slug} className="group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300">
             <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                [Image: {project.slug}.png]
-              </div>
+              <Image 
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="flex flex-col items-start p-6 flex-grow">
               <h2 className="text-xl font-bold mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
