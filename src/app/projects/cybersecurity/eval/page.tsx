@@ -6,9 +6,9 @@ export default function EvalWriteup() {
   const writeupData = {
     title: '3v@l',
     category: 'Web Exploitation',
-    points: '[000]',
-    author: 'Kelvin',
-    difficulty: 'hard' as const,
+    points: 'n/a',
+    author: 'Kelvin Creighton',
+    difficulty: 'medium' as const,
     tags: ['web', 'eval', 'python', 'flask', 'rce'],
     flag: 'picoCTF{...}',
     sections: [
@@ -26,7 +26,7 @@ export default function EvalWriteup() {
       },
       {
         title: 'Information Gathering',
-        prose: "Taking a look at the HTML in the Inspector section in the Developer Tools we find this hint:\n\nTODO\n------------\nSecure python_flask eval execution by \n    1.blocking malcious keyword like os,eval,exec,bind,connect,python,socket,ls,cat,shell,bind\n    2.Implementing regex: r'0x[0-9A-Fa-f]+|\\\\u[0-9A-Fa-f]{4}|%[0-9A-Fa-f]{2}|\\.[A-Za-z0-9]{1,3}\\b|[\\\\\\/]|\\.\\.'",
+        prose: "Taking a look at the HTML in the Inspector section in the Developer Tools we find this hint:\nTODO\n------------\nSecure python_flask eval execution by \n    1.blocking malcious keyword like os,eval,exec,bind,connect,python,socket,ls,cat,shell,bind\n    2.Implementing regex: r'0x[0-9A-Fa-f]+|\\\\u[0-9A-Fa-f]{4}|%[0-9A-Fa-f]{2}|\\.[A-Za-z0-9]{1,3}\\b|[\\\\\\/]|\\.\\.'\n\n",
         steps: [
           {
             number: '01',

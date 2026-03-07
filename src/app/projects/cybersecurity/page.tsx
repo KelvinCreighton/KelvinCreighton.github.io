@@ -15,7 +15,7 @@ export default function CybersecurityProjects() {
     {
       id: 1,
       slug: 'nosql-injection',
-      title: 'PicoCTF: No SQL Injection',
+      title: 'PicoCTF: No Sql Injection',
       date: 'September 2025',
       description: 'A write-up on exploiting a NoSQL injection vulnerability in a MongoDB-backed Express application to bypass authentication.',
       image: '/placeholder.png',

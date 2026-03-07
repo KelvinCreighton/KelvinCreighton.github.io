@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 interface Step {
   number: string;
@@ -47,13 +48,30 @@ const styles = `
     --accent2:   #ff6680;
     --accent3:   #70ff50;
     --text:      #e8f4fb;
-    --muted:     #8ab8cc;
+    --muted:     #e8f4fb;
     --code-bg:   #0a1822;
     --glow:      0 0 16px #40f0ff88;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  .page-wrap *, .page-wrap *::before, .page-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  /* Navbar override specifically for writeup pages to make it fit the theme */
+  nav {
+    background: var(--bg) !important;
+    border-color: var(--border) !important;
+  }
+  nav ul {
+    gap: 2.5rem !important; /* more separated */
+  }
+  nav ul li {
+    margin-left: 0 !important;
+  }
+  nav .ThemeToggle, nav button {
+    margin-left: auto;
+    position: relative;
+    right: 1rem;
+  }
+  
   body {
     background: var(--bg);
     color: var(--text);
@@ -80,8 +98,8 @@ const styles = `
     content: '';
     position: fixed; inset: 0;
     background-image:
-      linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(0,229,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.08) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
@@ -95,7 +113,20 @@ const styles = `
     padding: 3rem 1.5rem 6rem;
   }
 
-  header {
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .page-wrap header {
     border-bottom: 1px solid var(--border);
     padding-bottom: 2rem;
     margin-bottom: 3rem;
@@ -111,7 +142,7 @@ const styles = `
     margin-bottom: 0.5rem;
   }
 
-  header h1 {
+  .page-wrap header h1 {
     font-family: 'Orbitron', monospace;
     font-size: clamp(2rem, 5vw, 3.4rem);
     font-weight: 900;
@@ -320,6 +351,7 @@ const styles = `
     color: var(--text);
     line-height: 1.9;
     margin-bottom: 1rem;
+    white-space: pre-wrap;
   }
 
   .flag-box {
@@ -406,6 +438,9 @@ export default function WriteupTemplate({ data }: WriteupTemplateProps) {
         rel="stylesheet"
       />
       <div className="page-wrap">
+        <Link href="/projects/cybersecurity" className="back-link">
+          &larr; Back to Cybersecurity Projects
+        </Link>
         <header>
           <div className="ctf-label">PicoCTF &mdash; Write-Up</div>
           <h1>{data.title}</h1>
@@ -506,14 +541,14 @@ export default function WriteupTemplate({ data }: WriteupTemplateProps) {
             </div>
             <div className="flag-box">
               <div className="flag-label">Captured Flag</div>
-              <div className="flag-value">{data.flag}</div>
+              <div className="flag-value">[REDACTED]</div>
             </div>
           </section>
         )}
 
         <footer>
           <span>{data.author} &mdash; PicoCTF Write-Up</span>
-          <span>2024 &mdash; All steps performed in a legal CTF environment.</span>
+          <span>All steps performed in a legal CTF environment.</span>
         </footer>
       </div>
     </>

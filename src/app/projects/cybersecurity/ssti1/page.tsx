@@ -6,9 +6,9 @@ export default function SSTI1Writeup() {
   const writeupData = {
     title: 'Server-Side Template Injection (SSTI1)',
     category: 'Web Exploitation',
-    points: '[000]',
-    author: 'Kelvin',
-    difficulty: 'hard' as const,
+    points: 'n/a',
+    author: 'Kelvin Creighton',
+    difficulty: 'easy' as const,
     tags: ['web', 'ssti1', 'python', 'jinja'],
     flag: 'picoCTF{...}',
     sections: [
@@ -50,7 +50,7 @@ export default function SSTI1Writeup() {
             label: 'Fingerprinting the Engine',
             input: "{{7*'7'}}",
             output: '7777777',
-            reason: '<strong>Reason:</strong> If it were Twig, it would output 49. The output `7777777` confirms Python is evaluating the expression, meaning the engine is Jinja. Running `{{self.__class__}}` verifies this by outputting `<class \'jinja2.runtime.TemplateReference\'>` .',
+            reason: '<strong>Reason:</strong> If it were Twig, it would output 49. The output `7777777` confirms Python is evaluating the expression, meaning the engine is Jinja. Running `{{self.__class__}}` verifies this by outputting<br> `&lt;class \'jinja2.runtime.TemplateReference\'&gt;` .',
           },
         ],
       },

