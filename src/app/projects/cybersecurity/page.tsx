@@ -42,11 +42,20 @@ export default function CybersecurityProjects() {
     {
       id: 4,
       slug: 'cupid-portal',
-      title: 'HTCOTB2026 CTF: Cupid Mail Portal (IDOR)',
-      date: 'March 2024',
+      title: 'HTCOTB2026 CTF: Cupid\'s Secret Message',
+      date: 'February 2026',
       description: 'A custom Valentines + ILOVEYOU Virus themed CTF web exploitation challenge I developed for the University of Alberta\'s Cybersecurity Club, showcasing an Insecure Direct Object Reference (IDOR) vulnerability.',
-      image: '/placeholder.png',
+      image: '/images/projects/cupid.png',
       link: '/projects/cybersecurity/cupid-portal'
+    },
+    {
+      id: 5,
+      slug: 'heartmail',
+      title: 'HTCOTB2026 CTF: HeartMail 1.0',
+      date: 'February 2026',
+      description: 'A custom web CTF challenge featuring basic SQL Injection to uncover hidden emails and an SSH server login to retrieve the final flag.',
+      image: '/images/projects/heartmail.png',
+      link: '/projects/cybersecurity/heartmail'
     }
   ];
 

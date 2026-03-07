@@ -7,7 +7,7 @@ export default function ThreeDGamePage() {
         <Link href="/projects/game-dev" className="text-sm text-gray-500 hover:underline self-start mb-4">
           &larr; Back to Game Dev Projects
         </Link>
-        <h1 className="text-4xl font-bold text-center">3D Game</h1>
+        <h1 className="text-4xl font-bold text-center">3D Game Engine</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
           My first 3D game engine project exploring concepts like projection and rotation using matrix math. This project was a major learning experience in linear algebra and game development, with all code and libraries written by me.
         </p>

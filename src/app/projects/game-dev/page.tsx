@@ -29,7 +29,7 @@ export default function GameDevProjects() {
     },
     {
       id: 3,
-      title: `3D Game`,
+      title: `3D Game Engine`,
       date: `2022`,
       description: `My first 3D game engine project exploring concepts like projection and rotation using matrix math. This project was a major learning experience in linear algebra and game development, with all code and libraries written by me.`,
       image: `/images/projects/3d-game.png`,

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function CupidPortalProjectPage() {
+export default function HeartMailProjectPage() {
   const [showSolution, setShowSolution] = useState(false);
 
   return (
@@ -12,20 +12,20 @@ export default function CupidPortalProjectPage() {
         <Link href="/projects/cybersecurity" className="text-sm text-gray-500 hover:underline self-start mb-4">
           &larr; Back to Cybersecurity Projects
         </Link>
-        <h1 className="text-4xl font-bold text-center">HTCOTB2026 CTF: Cupid's Secret Message</h1>
+        <h1 className="text-4xl font-bold text-center">HTCOTB2026 CTF: HeartMail 1.0</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
-          Hack The Computer Open The Box - Valentines + ILOVEYOU Virus Themed Web CTF Challenge 💘
+          Hack The Computer Open The Box - Basic SQL with ssh server login 💘
         </p>
       </div>
 
       <div className="w-full max-w-4xl bg-gray-50 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">Description</h2>
         <p className="text-gray-700 dark:text-gray-300 mb-4">
-          Cupid's old message portal is floating around online, quietly delivering Valentine notes from years past.
+          It’s the early days of the internet with screeching dialup tones and simple webmail interfaces that feel new and fragile. You’ve been working late, preparing something that will spread further than anyone expects…
           <br/><br/>
-          …but it feels unlikely Cupid built this perfectly.
+          Inside this old mail client are conversations, attachments, and careless exchanges between people who assumed no one else was watching. Somewhere in the noise lies what you need before everything goes live.
           <br/><br/>
-          Take a look around and see what other messages might be hiding nearby. One of them definitely wasn't meant for you.
+          Find it.
         </p>
 
         <div className="flex gap-4 mb-8">
@@ -54,9 +54,9 @@ export default function CupidPortalProjectPage() {
         <h2 className="text-2xl font-bold mb-4">Challenge Details</h2>
         <div className="space-y-4 text-gray-700 dark:text-gray-300 mb-8">
           <p>
-            <strong>Topic:</strong> Insecure Direct Object Reference (IDOR)<br/>
-            <strong>Difficulty:</strong> Easy<br/>
-            <strong>Points:</strong> 300<br/>
+            <strong>Topic:</strong> Basic SQL Injection & SSH Login<br/>
+            <strong>Difficulty:</strong> Medium<br/>
+            <strong>Points:</strong> 500<br/>
             <strong>Flag Format:</strong> <code>HTCOTB&#123;...&#125;</code>
           </p>
         </div>
@@ -75,22 +75,31 @@ export default function CupidPortalProjectPage() {
           ) : (
             <div className="space-y-4 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-950 p-6 rounded-lg animate-in fade-in duration-300">
               <p>
-                1. Navigate to the application and click the "Open Message" button.
+                1. Navigate to the webmail application and locate the search bar.
               </p>
               <p>
-                2. Observe the URL in your browser's address bar. It will look something like this: <code>/message?id=14</code>
+                2. Input a basic SQL injection payload to bypass the query filter and reveal hidden emails. Type: <code>' OR 1=1 --</code>
               </p>
               <p>
-                3. The application uses the <code>id</code> parameter to fetch messages from its backend. Because there is no authorization check ensuring you are only allowed to read the randomly generated ID, this creates an Insecure Direct Object Reference (IDOR) vulnerability.
+                3. Look through the newly revealed emails. You should find a message containing an SSH private key.
               </p>
               <p>
-                4. Modify the URL parameter to other numbers. For instance, change it to <code>/message?id=1</code>, <code>/message?id=2</code>, etc. You can manually fuzz this or use a tool like Burp Suite Intruder (more advanced).
+                4. Copy the entire SSH private key into a new file on your machine, named <code>heartmailserver_key</code>.
               </p>
               <p>
-                5. Eventually, by testing common edge-case numbers or simply iterating downward, test <code>/message?id=0</code>.
+                5. Set the appropriate permissions for the key file to ensure it's secure enough for the SSH client to use: <br/>
+                <code>chmod 600 heartmailserver_key</code>
               </p>
               <p>
-                6. The server will return the hidden message containing the flag: <code>HTCOTB&#123;cupid_shared_the_wrong_message&#125;</code>
+                6. Connect to the server using the key: <br/>
+                <code>ssh -i heartmailserver_key heartmailserver@[server2ip]</code>
+              </p>
+              <p>
+                7. Once inside the server, retrieve the flag by running: <br/>
+                <code>cat special/flag.txt</code>
+              </p>
+              <p>
+                8. The server will output the flag: <code>HTCOTB&#123;Lovely_PrivateKey_4Me&#125;</code>
               </p>
               
               <button 
