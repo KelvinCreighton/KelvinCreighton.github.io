@@ -8,7 +8,7 @@ export default function MusicProjects() {
       title: `BL1ND JUST1C3: 1NV3ST1G4T1ON`,
       date: `2017`,
       description: `A high energy multi-voice piece originally from Homestuck, arranged for piano.`,
-      image: `/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON_v2.png`,
+      image: `/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON.png`,
       link: `/projects/music/blind-justice-investigation`
     },
     {
@@ -16,7 +16,7 @@ export default function MusicProjects() {
       title: `Beethoven Virus`,
       date: `2018`,
       description: `A challenging arrangement of the Beethoven Virus for piano.`,
-      image: `/images/projects/Beethoven_Virus_v2.png`,
+      image: `/images/projects/Beethoven_Virus.png`,
       link: `/projects/music/beethoven-virus`
     },
     {
@@ -40,7 +40,7 @@ export default function MusicProjects() {
           Showcasing compositions, recordings, and audio engineering projects.
         </p>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
         {projects.sort((a, b) => b.id - a.id).map((project) => (
           <Link href={project.link} key={project.id} className="group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300">
@@ -50,10 +50,10 @@ export default function MusicProjects() {
                   [Image: {project.id}.png]
                 </div>
               ) : (
-                <Image 
-                  src={project.image} 
-                  alt={project.title} 
-                  fill 
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
