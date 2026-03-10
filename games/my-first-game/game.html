@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Prevent the arrow keys and spacebar from scrolling the page */
+body {
+  overflow-y: auto; /* Allow the browser to decide when to show the scrollbar */
+}
+
+/* Force custom scrollbar styles for WebKit browsers (Chrome, Safari, Edge) to ensure visibility */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 6px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8a8a8;
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+/* Media query to adapt the scrollbar for dark mode */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar {
+    background-color: #2d3748; /* Matches Tailwind gray-800 */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #6b7280; /* Lighter gray thumb for dark mode */
+    border: 2px solid #2d3748;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af; /* Even lighter gray when hovered in dark mode */
+  }
+
+  /* Firefox dark mode scrollbar */
+  * {
+    scrollbar-color: #6b7280 #2d3748;
+  }
+}
+</style>
+</head>
+<body>
+
+<p id="timer">&nbsp;</p>
+
+<center>
+<br><br>
+<canvas id="myCanvas" width="512" height="256" style="border:3px solid #d3d3d3;">
+</center>
+
+<br>
+<p id="info"></p>
+<p id="level"></p><p id="checkpoint">&nbsp;</p>
+<p id="gFlip"></p>
+<p id="gravity"></p>
+<p id="size"></p>
+
+<br>
+<p id="help"></p>
+<p id="hPress"></p>
+<p id="tPress"></p>
+<p id="pPress"></p>
+<p id="leftPress"></p>
+<p id="rightPress"></p>
+<p id="upPress"></p>
+<p id="downPress"></p>
+<p id="spacePress"></p>
+<p id="rPress"></p>
+<p id="aPress"></p>
+<p id="dPress"></p>
+<p id="wPress"></p>
+<p id="mPress"></p>
+
+<script>
+// Prevent default scrolling behavior for arrow keys and spacebar
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
+</script>
+
+<script src="files/setup.js"></script>
+<script src="files/levels/level0.js"></script>
+<script src="files/levels/level1.js"></script>
+<script src="files/levels/level2.js"></script>
+<script src="files/levels/level3.js"></script>
+<script src="files/levels/level4.js"></script>
+<script src="files/levels/level5.js"></script>
+<script src="files/levels/level6.js"></script>
+<script src="files/levels/level7.js"></script>
+
+<script src="files/mechanics.js"></script>
+<script src="files/timer.js"></script>
+<script src="files/help.js"></script>
+<script src="files/extra.js"></script>
+
+</body>
+</html>
