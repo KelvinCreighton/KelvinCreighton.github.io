@@ -12,11 +12,8 @@ export default function BlindJusticeInvestigationPage() {
           &larr; Back to Music Projects
         </Link>
         <h1 className="text-4xl font-bold text-center">BL1ND JUST1C3: 1NV3ST1G4T1ON</h1>
-        <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
-          Sheet music transcription and playback.
-        </p>
       </div>
-      
+
       <div className="w-full max-w-6xl">
         <SheetMusicViewer file="/scores/BL1ND_JUST1C3_1NV3ST1G4T1ON.musicxml" />
       </div>

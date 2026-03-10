@@ -24,13 +24,24 @@ export default function AutomotiveProjectTemplate() {
             Manual Transmission Rebuild
           </h1>
           <p className="text-xl italic mb-6">1989 Honda Accord LX</p>
+
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+            <Image
+              src="/images/projects/transmission-title.jpg"
+              alt="Manual Transmission Rebuild"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
           <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
             Up until this point, this car has been fantastic to work on. It has
             had many problems, but were all generally fixable. However, it
             baffles me that so many car manufacturers refuse to make alternator
             replacements as simple a task as they are. Even so, I am grateful
-            that it led to this project, which has been on my car repair bucket
-            list for a while now.
+            that it led to this project, which has been on my bucket list for a
+            while now.
           </p>
         </header>
 
@@ -746,24 +757,24 @@ export default function AutomotiveProjectTemplate() {
           </h2>
           <p>
             Rebuilding the transmission was a LOT harder than tearing it down.
-            Multiple times I put the synchros in the wrong orientation or messed
-            up the linkages. By the end of it I had dismantled and reassembled
-            the transmission 3 times, testing the shifting by hand to make sure
-            everything worked properly. I wont show the images here, it just
-            looks the same as dissassembly but in reverse but with gallons of
-            brake cleaner.
+            On multiple occasions I had put the synchros in the wrong
+            orientation or messed up the fragile linkages. By the end of it I
+            had dismantled and reassembled the transmission 3 times, testing the
+            shifting by hand to make sure everything worked properly. I wont
+            show the images here, it just looks the same as dissassembly in
+            reverse, but with gallons of brake cleaner.
           </p>
           <p>
             I replaced as much as I could but some of the bearings were really
             trapped in there and since they were still in great condition I
-            opted to leave them alone.
+            opted to leave them alone and avoid damaging the aluminum case.
           </p>
           <br />
           <p>
             The last thing to do was clean the mating surface between the main
-            case and bell housing with soft sandpaper to remove old excess
-            gasket (this was done during disassembling). Then install the new
-            gasket with a thin layer of Black RTV to ensure a good seal.
+            case and bell housing with soft sandpaper to remove the old crusty
+            gasket pieces (this was done during disassembling). Then install the
+            new gasket with a thin layer of Black RTV to ensure a good seal.
           </p>
 
           <div className="flex flex-col gap-6 my-10">
@@ -792,6 +803,10 @@ export default function AutomotiveProjectTemplate() {
               </figure>
             </div>
           </div>
+
+          <h2 className="mb-4 text-xl font-bold">
+            Step 11: To be continued...
+          </h2>
 
           <hr className="my-12 border-gray-200 dark:border-gray-800" />
         </div>

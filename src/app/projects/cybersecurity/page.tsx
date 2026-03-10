@@ -67,15 +67,15 @@ export default function CybersecurityProjects() {
         </Link>
         <h1 className="text-4xl font-bold">Cybersecurity</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
-          Showcasing vulnerability assessments, penetration testing, and security hardening.
+          Showcasing web exploitation writeups and challenges I personally created.
         </p>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
         {projects.sort((a, b) => b.id - a.id).map((project) => (
           <Link href={project.link} key={project.slug} className="group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300">
             <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
-              <Image 
+              <Image
                 src={project.image}
                 alt={project.title}
                 fill

@@ -12,11 +12,8 @@ export default function TheLongestMomentPage() {
           &larr; Back to Music Projects
         </Link>
         <h1 className="text-4xl font-bold text-center">The Longest Moment Before a New Beginning</h1>
-        <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
-          Original piano composition.
-        </p>
       </div>
-      
+
       <div className="w-full max-w-6xl">
         <SheetMusicViewer file="/scores/The-Longest-Moment-Before-a-New-Beginning.musicxml" />
       </div>

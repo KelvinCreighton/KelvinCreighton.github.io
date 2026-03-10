@@ -12,11 +12,8 @@ export default function BeethovenVirusPage() {
           &larr; Back to Music Projects
         </Link>
         <h1 className="text-4xl font-bold text-center">Beethoven Virus</h1>
-        <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
-          Sheet music transcription and playback.
-        </p>
       </div>
-      
+
       <div className="w-full max-w-6xl">
         <SheetMusicViewer file="/scores/Beethoven_Virus.musicxml" />
       </div>
