@@ -1,4 +1,4 @@
-# Kelvin's Personal Website
+# Kelvin Creighton - Personal Website
 
 Welcome to my personal portfolio and blog repository. This website serves as a central hub to showcase my past, current, and future projects across various disciplines including software development, cybersecurity, automotive repair, and music production.
 
