@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "gh-pages -d out"
+    "deploy": "GIT_SSH_COMMAND=\"ssh -i ~/.ssh/kelvincreighton-github -o IdentitiesOnly=yes\" gh-pages -d out --nojekyll"
   },
   "dependencies": {
     "lucide-react": "^0.575.0",
@@ -26,6 +26,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

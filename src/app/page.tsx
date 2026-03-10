@@ -45,12 +45,7 @@ export default function Home() {
           <Link href="/projects/cybersecurity" className="group block h-full">
             <div className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
               <div className="relative h-48 w-full bg-gray-200 dark:bg-gray-800">
-                <Image
-                  src="/images/projects/cyber-highlights.png"
-                  alt="Cybersecurity CTFs"
-                  fill
-                  className="object-cover"
-                />
+                <img src="/images/projects/cyber-highlights.png" alt="Cybersecurity CTFs" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
@@ -72,12 +67,7 @@ export default function Home() {
           >
             <div className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
               <div className="relative h-48 w-full bg-gray-200 dark:bg-gray-800">
-                <Image
-                  src="/images/projects/transmission-title.jpg"
-                  alt="Transmission Rebuild"
-                  fill
-                  className="object-cover"
-                />
+                <img src="/images/projects/transmission-title.jpg" alt="Transmission Rebuild" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
