@@ -1,14 +1,20 @@
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
+import Link from "next/link";
+import dynamic from "next/dynamic";
 
 // Dynamically import the viewer with SSR disabled because OSMD relies on the window object
-const SheetMusicViewer = dynamic(() => import('@/components/SheetMusicViewer'), { ssr: true });
+const SheetMusicViewer = dynamic(
+  () => import("@/components/SheetMusicViewer"),
+  { ssr: true },
+);
 
 export default function BeethovenVirusPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
+    <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
       <div className="w-full max-w-5xl mb-12 flex flex-col items-center">
-        <Link href="/projects/music" className="text-sm text-gray-500 hover:underline self-start mb-4">
+        <Link
+          href="/projects/music"
+          className="text-sm text-gray-500 hover:underline self-start mb-4"
+        >
           &larr; Back to Music Projects
         </Link>
         <h1 className="text-4xl font-bold text-center">Beethoven Virus</h1>

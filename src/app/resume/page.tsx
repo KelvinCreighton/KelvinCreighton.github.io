@@ -1,6 +1,6 @@
 export default function ResumePage() {
   return (
-    <main className="max-w-4xl mx-auto p-8">
+    <main className="max-w-4xl mx-auto px-4 md:px-0 p-4 md:p-8">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Resume</h1>
         <div className="flex gap-4">
@@ -28,7 +28,7 @@ export default function ResumePage() {
           type="application/pdf"
           className="w-full h-full"
         >
-          <div className="flex flex-col items-center justify-center h-full p-8 bg-gray-50 dark:bg-gray-900 text-center">
+          <div className="flex flex-col items-center justify-center h-full p-4 md:p-8 bg-gray-50 dark:bg-gray-900 text-center">
             <p className="mb-4">
               It looks like your browser doesn&apos;t support built-in PDFs.
             </p>

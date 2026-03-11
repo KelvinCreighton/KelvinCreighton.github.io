@@ -1,22 +1,26 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 export default function AutoProjects() {
   const projects = [
     {
       id: 1,
-      title: 'Manual Transmission Rebuild (1989 Honda Accord)',
-      date: 'August 2025',
-      description: 'What started as a simple alternator replacement turned into a full manual transmission rebuild. This project documents the process and the challenges that came with it.',
-      image: '/images/projects/transmission-title.jpg',
-      link: '/projects/auto/transmission-rebuild'
-    }
+      title: "Manual Transmission Rebuild (1989 Honda Accord)",
+      date: "August 2025",
+      description:
+        "What started as a simple alternator replacement turned into a full manual transmission rebuild. This project documents the process and the challenges that came with it.",
+      image: "/images/projects/transmission-title.jpg",
+      link: "/projects/auto/transmission-rebuild",
+    },
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
+    <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
       <div className="w-full max-w-5xl mb-12 flex flex-col items-center">
-        <Link href="/projects" className="text-sm text-gray-500 hover:underline self-start mb-4">
+        <Link
+          href="/projects"
+          className="text-sm text-gray-500 hover:underline self-start mb-4"
+        >
           &larr; Back to Categories
         </Link>
         <h1 className="text-4xl font-bold">Automotive Repair & Maintenance</h1>
@@ -24,12 +28,16 @@ export default function AutoProjects() {
           Showcasing auto repair, maintenance, and modification projects.
         </p>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
         {projects.map((project) => (
-          <Link href={project.link} key={project.id} className="group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300">
+          <Link
+            href={project.link}
+            key={project.id}
+            className="group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300"
+          >
             <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
-              <Image 
+              <Image
                 src={project.image}
                 alt={project.title}
                 fill
