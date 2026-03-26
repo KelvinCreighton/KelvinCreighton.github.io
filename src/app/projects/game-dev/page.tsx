@@ -35,6 +35,14 @@ export default function GameDevProjects() {
       image: `/images/projects/3d-game.png`,
       link: `/projects/game-dev/3d-game`,
     },
+    {
+      id: 4,
+      title: `Blackhole Simulator`,
+      date: `2022`,
+      description: `A physics-based orbital mechanics simulator featuring various "satellites" like bananas, pizza, and spaghetti.`,
+      image: `/images/projects/Blackhole_Simulator-image.png`,
+      link: `/projects/game-dev/blackhole-simulator`,
+    },
   ];
 
   return (
