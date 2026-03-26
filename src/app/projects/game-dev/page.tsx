@@ -46,7 +46,7 @@ export default function GameDevProjects() {
   ];
 
   return (
-    <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
+    <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
       <div className="w-full max-w-5xl mb-12 flex flex-col items-center">
         <Link
           href="/projects"
@@ -63,11 +63,12 @@ export default function GameDevProjects() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
         {projects
           .sort((a, b) => b.id - a.id)
-          .map((project) => (
+          .map((project, i) => (
             <Link
               href={project.link}
               key={project.id}
-              className="group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300"
+              className="animate-stagger-enter group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300"
+              style={{ animationDelay: `${i * 0.08}s` }}
             >
               <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
                 {project.image === "/placeholder.png" ? (

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Projects() {
   return (
-    <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
+    <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
       <h1 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12">Projects</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 w-full max-w-6xl px-2 md:px-0">

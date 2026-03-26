@@ -9,7 +9,7 @@ const SheetMusicViewer = dynamic(
 
 export default function TheLongestMomentPage() {
   return (
-    <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
+    <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
       <div className="w-full max-w-5xl mb-12 flex flex-col items-center">
         <Link
           href="/projects/music"

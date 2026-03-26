@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { NavBar } from "@/components/NavBar";
+import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -67,7 +68,9 @@ export default function RootLayout({
                 <ThemeToggle />
               </div>
             </nav>
-            <main className="flex-grow overflow-y-auto">{children}</main>
+            <main className="flex-grow overflow-y-auto">
+              <PageTransition className="min-h-full">{children}</PageTransition>
+            </main>
             <footer className="w-full border-t border-gray-200 dark:border-gray-800 py-2 shrink-0 bg-white dark:bg-black z-50">
               <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-4">
                 <div className="flex items-center gap-6">

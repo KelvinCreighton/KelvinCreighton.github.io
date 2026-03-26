@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center p-4 md:p-8 lg:p-24 max-w-5xl mx-auto w-full">
+    <main className="animate-page-enter flex flex-col items-center p-4 md:p-8 lg:p-24 max-w-5xl mx-auto w-full">
       {/* Intro Section */}
       <section className="w-full mb-12 md:mb-20 text-center md:text-left flex flex-col md:flex-row items-center gap-6 md:gap-10">
         <div className="flex-1">

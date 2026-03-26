@@ -15,7 +15,7 @@ export default function AutoProjects() {
   ];
 
   return (
-    <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
+    <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
       <div className="w-full max-w-5xl mb-12 flex flex-col items-center">
         <Link
           href="/projects"
@@ -23,18 +23,19 @@ export default function AutoProjects() {
         >
           &larr; Back to Categories
         </Link>
-        <h1 className="text-4xl font-bold">Automotive Repair & Maintenance</h1>
+        <h1 className="text-4xl font-bold">Automotive Repair &amp; Maintenance</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
           Showcasing auto repair, maintenance, and modification projects.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
-        {projects.map((project) => (
+        {projects.map((project, i) => (
           <Link
             href={project.link}
             key={project.id}
-            className="group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300"
+            className="animate-stagger-enter group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300"
+            style={{ animationDelay: `${i * 0.08}s` }}
           >
             <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
               <Image

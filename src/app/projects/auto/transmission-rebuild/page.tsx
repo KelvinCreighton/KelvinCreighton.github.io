@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function AutomotiveProjectTemplate() {
   return (
-    <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 bg-white dark:bg-black w-full">
+    <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 bg-white dark:bg-black w-full">
       <article className="w-full max-w-4xl flex flex-col items-start px-2 md:px-0">
         {/* Navigation */}
         <Link

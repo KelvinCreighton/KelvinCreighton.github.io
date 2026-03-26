@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function BlackholeSimulatorPage() {
   return (
-    <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
+    <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
       <div className="w-full max-w-5xl mb-12 flex flex-col items-center">
         <Link
           href="/projects/game-dev"
@@ -14,6 +14,10 @@ export default function BlackholeSimulatorPage() {
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
           A physics-based orbital mechanics simulator featuring various
           &quot;satellites&quot; like bananas, pizza, and spaghetti.
+        </p>
+        <p className="text-gray-600 dark:text-gray-400 text-center">
+          This project was created to explore the physics of black holes as a
+          fun creative group assignment for a University Class.
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 export default function ResumePage() {
   return (
-    <main className="max-w-4xl mx-auto px-4 md:px-0 p-4 md:p-8">
+    <main className="animate-page-enter max-w-4xl mx-auto px-4 md:px-0 p-4 md:p-8">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Resume</h1>
         <div className="flex gap-4">
