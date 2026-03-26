@@ -51,7 +51,7 @@ export default function MusicProjects() {
             <Link
               href={project.link}
               key={project.id}
-              className="animate-stagger-enter group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:shadow-lg transition-all duration-300"
+              className="animate-stagger-enter group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
               style={{ animationDelay: `${i * 0.08}s` }}
             >
               <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
