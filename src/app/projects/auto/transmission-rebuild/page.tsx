@@ -165,8 +165,8 @@ export default function AutomotiveProjectTemplate() {
             car. The alternator is held in place by the belt pulley, a mounting
             (pivot) bolt, a tensioner bolt, the primary electrical output
             connection and a smaller ground connection. I started by removing
-            the belt pulley, then the tensioner bolt, then the mounting bolt,
-            and finally the electrical connections.
+            electrical connections, the belt pulley, the tensioner bolt, then
+            finally the mounting bolt.
           </p>
           <br />
           <p>
@@ -224,7 +224,7 @@ export default function AutomotiveProjectTemplate() {
           </p>
 
           <figure className="my-10 flex flex-col items-center">
-            <div className="relative w-1/3 max-w-xs rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+            <div className="relative w-5/12 max-w-sm rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
               <Image
                 src="/images/projects/transmission-step-3.jpeg"
                 alt="Passenger Side CV Axle Removal"
@@ -247,7 +247,7 @@ export default function AutomotiveProjectTemplate() {
           </p>
 
           <figure className="my-10 flex flex-col items-center">
-            <div className="relative w-1/3 max-w-xs rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+            <div className="relative w-5/12 max-w-sm rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
               <Image
                 src="/images/projects/transmission-step-4.jpeg"
                 alt="Driver Side CV Axle Removal"
@@ -265,21 +265,14 @@ export default function AutomotiveProjectTemplate() {
             At this point, the transmission was half way from being ready to be
             removed. Both axles were out and all the fluid was on the driveway.
             I was having issues shifting easily between gears, so I decided this
-            would be the best opprotunity to take the transmission out and
-            rebuild it.
+            would be the best opportunity to take the transmission out and
+            <strong> rebuild it</strong>.
           </p>
           <br />
           <p>
-            <strong>Problem:</strong> The transmission was extremely heavy and I
-            didn't have a transmission jack. I ended up having to use a floor
-            jack with a piece of wood on top to support the transmission. It was
-            a sketchy process, but I managed to get it out without dropping it.
-          </p>
-          <br />
-          <p>
-            However, the day my bud came to help with this process it rained,
-            because of course it did. I didn't have access to the garage at the
-            time, so we had to improvise on the driveway.
+            <strong>Problem:</strong> The day my bud came to help with this
+            process it rained. Why not. I didn't have access to the garage at
+            the time, so we had to improvise on the driveway.
           </p>
 
           <figure className="my-10 flex flex-col items-center">
@@ -299,18 +292,20 @@ export default function AutomotiveProjectTemplate() {
           </h2>
           <p>
             Trying to remove the transmission in the rain was a complete
-            disaster and didn't really go anywhere. Don't do this.
+            disaster and didn't really go anywhere. <strong>Don't do this.</strong>
           </p>
           <br />
           <p>
-            To remove the transmission, I had to also remove the starter so
+            To remove the transmission, I had to also remove the starter, so
             although I dont have the photos for that, I decided to replace it
             too.
           </p>
           <br />
           <p>
-            After a lot of struggle and many missed connections we finally got
-            it free.
+            The transmission was extremely heavy and I
+            didn't have a transmission jack. I ended up having to use a floor
+            jack with a piece of wood on top to support the transmission. It was
+            a sketchy process, but I managed to get it out without dropping it.
           </p>
 
           <figure className="my-10 flex flex-col items-center">
@@ -443,7 +438,7 @@ export default function AutomotiveProjectTemplate() {
             transmission case. Because of this, anyone with this transmission
             should be aware that any minor transmission leaks can become a very
             serious problem and will likely starve 5th gear of oil. However in
-            the case of repairing, this is very convenient, so it was a simple
+            the case of repairing this is very convenient, so it was a simple
             matter of removing a few bolts and sliding the gear out.
           </p>
           <br />
@@ -564,7 +559,7 @@ export default function AutomotiveProjectTemplate() {
             pry it out. I tried for days with varying methods but was
             unsuccessful and eventually opted to take it to a shop. However, no
             shops around would even take it in and I was forced to take it to a
-            powertrain shop who usually doesn't work with transmissions in
+            powertrain shop who wouldn't normally work with transmissions in
             general. They are truly my heros and had it cracked in half an hour.
           </p>
 
@@ -758,12 +753,13 @@ export default function AutomotiveProjectTemplate() {
           <p>
             Rebuilding the transmission was a LOT harder than tearing it down.
             On multiple occasions I had put the synchros in the wrong
-            orientation or messed up the fragile linkages. By the end of it I
+            orientation or messed up the fragile linkages. By the end of it, I
             had dismantled and reassembled the transmission 3 times, testing the
             shifting by hand to make sure everything worked properly. I wont
             show the images here, it just looks the same as dissassembly in
             reverse, but with gallons of brake cleaner.
           </p>
+          <br />
           <p>
             I replaced as much as I could but some of the bearings were really
             trapped in there and since they were still in great condition I
@@ -805,8 +801,182 @@ export default function AutomotiveProjectTemplate() {
           </div>
 
           <h2 className="mb-4 text-xl font-bold">
-            Step 11: To be continued...
+            Step 11: 5th Gear Bearing Issues
           </h2>
+          <p>
+            When reassembling the 5th gear I noticed that one of the brearings had completely broken apart. This was very unfortunate since this specific pin bearing was not included in the rebuild kit. I found a replacement online but the shipping time exceeded the time I had to get the car ready to move apartments. I hadn't noticed this when taking it apart because I had taken it out as one whole piece and didn't inspect it closely.
+          </p>
+          <br />
+          <p>
+            I considered towing the car to the new apartment, but I wasn't about to trust a tow truck driver with a car that was in pieces. Especially when the engine wasn't mounted by transmission. I thought of chaining or holding the engine up somehow and have it towed carefully. This option was not appealing to me, so instead, I decided to continue with the rebuild and just leave the car without a 5th gear for now. I realized that since the 5th gear has its own special casing above the main case, I could essentially repair the 5th gear bearing without needing to even remove the transmission from the car again in the future.
+          </p>
+
+          <div className="flex flex-col gap-6 my-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <figure className="m-0">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/transmission-step-11-1.jpg"
+                    alt="Step 11-1"
+                    width={4032}
+                    height={3024}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  5th Gear and Pin Bearing
+                </figcaption>
+              </figure>
+              <figure className="m-0">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/transmission-step-11-2.jpg"
+                    alt="Step 11-2"
+                    width={4032}
+                    height={3024}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  Broken Pin Bearing
+                </figcaption>
+              </figure>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <figure className="m-0">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/transmission-step-11-3.jpg"
+                    alt="Step 11-3"
+                    width={4032}
+                    height={3024}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  Bearing Spacer Required for Reassembly
+                </figcaption>
+              </figure>
+              <figure className="m-0">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/transmission-step-11-4.jpg"
+                    alt="Step 11-4"
+                    width={4032}
+                    height={3024}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  5th Gear Section Minimal Reassembly
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">
+            Step 12: Clutch Replacement
+          </h2>
+          <p>
+            I had purchased a new performance upgrade clutch kit for the car, and since I had the transmission out, it was the perfect time to replace the clutch. I removed the old clutch and then installed the new one, torquing the bolts to the correct specification.
+          </p>
+          <br />
+          <p>
+            This was the moment I realized that clutch replacements are one of the easier jobs to do. The tricky part is first removing the transmission to access the clutch.
+          </p>
+
+          <div className="flex flex-col gap-6 my-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              <figure className="m-0">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/transmission-step-12-1.jpg"
+                    alt="Step 12-1"
+                    width={4032}
+                    height={3024}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  Strange Bolt Type
+                </figcaption>
+              </figure>
+              <figure className="m-0">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/transmission-step-12-2.jpg"
+                    alt="Step 12-2"
+                    width={4032}
+                    height={3024}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  Old Clutch Out
+                </figcaption>
+              </figure>
+              <figure className="m-0">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/transmission-step-12-3.jpg"
+                    alt="Step 12-3"
+                    width={4032}
+                    height={3024}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  New Clutch In
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">
+            Step 13: Final Steps
+          </h2>
+          <p>
+            I don't have any pictures of the final steps of the rebuild. At this point I was really tired and just wanted to get the car back together. I reinstalled the transmission, connected all the linkages, and filled the transmission with fluid. I then reinstalled the driveshaft, axles, and wheels.
+          </p>
+          <br />
+          <p>
+            I started it up and attempted to take it for a test drive. It started up with a bit of effor but finally was running. Unfortunetly, for whatever reason, the car stalled even before putting it into gear, and from that point, wouldn't start again. I was very distraught but realized it may have just been flooded. So I let it sit for a while and tried again. Sure enough it started right up with no issues and I took it for a test drive.
+          </p>
+          <br />
+          <p>
+            The clutch was a bit tighter, which was to be expected because it was new and I also gave it the performance upgrade. The car shifted smoothly through all the gears (except 5th), and I was very happy with the results.
+          </p>
+
+          <div className="flex flex-col items-center my-10">
+            <div className="relative max-w-2xl w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800 shadow-lg">
+              <video
+                src="/images/projects/transmission-step-13.mp4"
+                controls
+                className="w-full h-auto"
+                poster="/images/projects/transmission-title.jpg"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">Closing Thoughts</h2>
+          <p>
+            Rebuilding a transmission is without a doubt one of the most
+            challenging DIY projects I've ever tackled. It was a test of patience,
+            endurance, and precision with many worrying moments of not having the
+            capabilities to complete the task. Between the literal rain on my driveway
+            and the many unfortunate surprises, there were plenty of moments
+            where it felt like the car wouldn't be fixed in time.
+          </p>
+          <br />
+          <p>
+            However, after an exhilarating test drive, I knew it was all worth it.
+            You really can't beat the feeling of driving a car knowing you are the
+            one who brought it back to life.
+          </p>
+
+          <br /><br />
 
           <hr className="my-12 border-gray-200 dark:border-gray-800" />
         </div>
