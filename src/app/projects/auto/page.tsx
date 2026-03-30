@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,8 +14,16 @@ export default function AutoProjects() {
         "What started as a simple alternator replacement turned into a full manual transmission rebuild. This project documents the process and the challenges that came with it.",
       image: "/images/projects/transmission-title.jpg",
       link: "/projects/auto/transmission-rebuild",
+      category: "Drivetrain Repair",
     },
   ];
+  const categories = ["All", "Drivetrain Repair"];
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredProjects = projects.filter(
+    (project) =>
+      selectedCategory === "All" || project.category === selectedCategory,
+  );
 
   return (
     <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
@@ -27,10 +38,34 @@ export default function AutoProjects() {
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
           Showcasing auto repair, maintenance, and modification projects.
         </p>
+        <div className="mt-8 flex w-full flex-col items-start gap-3">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+            Category
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {categories.map((category) => {
+              const isActive = selectedCategory === category;
+
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`rounded-full border px-4 py-2 text-sm transition-colors ${isActive
+                      ? "border-blue-600 bg-blue-600 text-white dark:border-blue-500 dark:bg-blue-500"
+                      : "border-gray-300 bg-white text-gray-700 hover:border-blue-400 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:text-blue-400"
+                    }`}
+                >
+                  {category}
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
-        {projects.map((project, i) => (
+        {filteredProjects.map((project, i) => (
           <Link
             href={project.link}
             key={project.id}

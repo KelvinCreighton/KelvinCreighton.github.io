@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,6 +13,7 @@ export default function GameDevProjects() {
       description: `The first JavaScript game I ever made. It was a simple platformer where the player had to navigate through levels and avoid obstacles. This project was a great learning experience and sparked my passion for game development.`,
       image: `/images/projects/my-first-game.png`,
       link: `/projects/game-dev/my-first-game`,
+      category: "2D Games",
     },
     {
       id: 1,
@@ -18,6 +22,7 @@ export default function GameDevProjects() {
       description: `A fun UFO game project. Players control a UFO and navigate through various levels, avoiding enemies. `,
       image: `/images/projects/ufo.png`,
       link: `/projects/game-dev/ufo`,
+      category: "2D Games",
     },
     {
       id: 2,
@@ -26,6 +31,7 @@ export default function GameDevProjects() {
       description: `A topdown tank shooter inspired by the classic Tank Trouble game!`,
       image: `/images/projects/tank-game.png`,
       link: `/projects/game-dev/tank-game`,
+      category: "2D Games",
     },
     {
       id: 3,
@@ -34,6 +40,7 @@ export default function GameDevProjects() {
       description: `My first 3D game engine project exploring concepts like projection and rotation using matrix math. This project was a major learning experience in linear algebra and game development, with all code and libraries written by me.`,
       image: `/images/projects/3d-game.png`,
       link: `/projects/game-dev/3d-game`,
+      category: "Engines & Simulation",
     },
     {
       id: 4,
@@ -42,8 +49,18 @@ export default function GameDevProjects() {
       description: `A physics-based orbital mechanics simulator featuring various "satellites" like bananas, pizza, and spaghetti.`,
       image: `/images/projects/Blackhole_Simulator-image.png`,
       link: `/projects/game-dev/blackhole-simulator`,
+      category: "Engines & Simulation",
     },
   ];
+  const categories = ["All", "2D Games", "Engines & Simulation"];
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredProjects = [...projects]
+    .sort((a, b) => b.id - a.id)
+    .filter(
+      (project) =>
+        selectedCategory === "All" || project.category === selectedCategory,
+    );
 
   return (
     <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
@@ -58,12 +75,35 @@ export default function GameDevProjects() {
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
           Showcasing interactive experiences, mechanics, and games.
         </p>
+        <div className="mt-8 flex w-full flex-col items-start gap-3">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+            Category
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {categories.map((category) => {
+              const isActive = selectedCategory === category;
+
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`rounded-full border px-4 py-2 text-sm transition-colors ${
+                    isActive
+                      ? "border-blue-600 bg-blue-600 text-white dark:border-blue-500 dark:bg-blue-500"
+                      : "border-gray-300 bg-white text-gray-700 hover:border-blue-400 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:text-blue-400"
+                  }`}
+                >
+                  {category}
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
-        {projects
-          .sort((a, b) => b.id - a.id)
-          .map((project, i) => (
+        {filteredProjects.map((project, i) => (
             <Link
               href={project.link}
               key={project.id}

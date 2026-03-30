@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,8 +13,9 @@ export default function CybersecurityProjects() {
       date: "September 2025",
       description:
         "A walkthrough of a Server-Side Template Injection in Jinja2, escaping the sandbox to achieve Remote Code Execution.",
-      image: "/images/projects/ssti1.png",
+      image: "/images/projects/picoCTF_logo.png",
       link: "/projects/cybersecurity/ssti1",
+      category: "PicoCTF Writeups",
     },
     {
       id: 1,
@@ -20,8 +24,9 @@ export default function CybersecurityProjects() {
       date: "September 2025",
       description:
         "A write-up on exploiting a NoSQL injection vulnerability in a MongoDB-backed Express application to bypass authentication.",
-      image: "/images/projects/no-sql-injection.png",
+      image: "/images/projects/picoCTF_logo.png",
       link: "/projects/cybersecurity/nosql-injection",
+      category: "PicoCTF Writeups",
     },
     {
       id: 2,
@@ -30,8 +35,9 @@ export default function CybersecurityProjects() {
       date: "September 2025",
       description:
         "Exploiting a Python eval() vulnerability by bypassing regex blacklists to achieve Remote Code Execution.",
-      image: "/images/projects/eval.png",
+      image: "/images/projects/picoCTF_logo.png",
       link: "/projects/cybersecurity/eval",
+      category: "PicoCTF Writeups",
     },
     {
       id: 3,
@@ -40,8 +46,9 @@ export default function CybersecurityProjects() {
       date: "October 2025",
       description:
         "A write-up on exploiting an XML External Entity (XXE) vulnerability through a SOAP endpoint to perform Local File Inclusion.",
-      image: "/images/projects/soap.png",
+      image: "/images/projects/picoCTF_logo.png",
       link: "/projects/cybersecurity/soap",
+      category: "PicoCTF Writeups",
     },
     {
       id: 4,
@@ -50,8 +57,9 @@ export default function CybersecurityProjects() {
       date: "February 2026",
       description:
         "A custom Valentines + ILOVEYOU Virus themed CTF web exploitation challenge I developed for the University of Alberta's Cybersecurity Club, showcasing an Insecure Direct Object Reference (IDOR) vulnerability.",
-      image: "/images/projects/cupid.png",
+      image: "/images/projects/CHADS_logo.png",
       link: "/projects/cybersecurity/cupid-portal",
+      category: "HTCOTB CTF",
     },
     {
       id: 5,
@@ -60,10 +68,20 @@ export default function CybersecurityProjects() {
       date: "February 2026",
       description:
         "A custom web CTF challenge featuring basic SQL Injection to uncover hidden emails and an SSH server login to retrieve the final flag.",
-      image: "/images/projects/heartmail.png",
+      image: "/images/projects/CHADS_logo.png",
       link: "/projects/cybersecurity/heartmail",
+      category: "HTCOTB CTF",
     },
   ];
+  const categories = ["All", "PicoCTF Writeups", "HTCOTB CTF"];
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredProjects = [...projects]
+    .sort((a, b) => b.id - a.id)
+    .filter(
+      (project) =>
+        selectedCategory === "All" || project.category === selectedCategory,
+    );
 
   return (
     <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
@@ -79,39 +97,61 @@ export default function CybersecurityProjects() {
           Showcasing web exploitation writeups and challenges I personally
           created.
         </p>
+        <div className="mt-8 flex w-full flex-col items-start gap-3">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+            Category
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {categories.map((category) => {
+              const isActive = selectedCategory === category;
+
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`rounded-full border px-4 py-2 text-sm transition-colors ${isActive
+                    ? "border-blue-600 bg-blue-600 text-white dark:border-blue-500 dark:bg-blue-500"
+                    : "border-gray-300 bg-white text-gray-700 hover:border-blue-400 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:text-blue-400"
+                    }`}
+                >
+                  {category}
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
-        {projects
-          .sort((a, b) => b.id - a.id)
-          .map((project, i) => (
-            <Link
-              href={project.link}
-              key={project.slug}
-              className="animate-stagger-enter group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-              style={{ animationDelay: `${i * 0.08}s` }}
-            >
-              <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex flex-col items-start p-6 flex-grow">
-                <h2 className="text-xl font-bold mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {project.title}
-                </h2>
-                <p className="text-sm italic text-gray-500 dark:text-gray-400 mb-3">
-                  {project.date}
-                </p>
-                <p className="text-base text-gray-700 dark:text-gray-300">
-                  {project.description}
-                </p>
-              </div>
-            </Link>
-          ))}
+        {filteredProjects.map((project, i) => (
+          <Link
+            href={project.link}
+            key={project.slug}
+            className="animate-stagger-enter group flex flex-col rounded-xl bg-gray-50 dark:bg-gray-900 overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+            style={{ animationDelay: `${i * 0.08}s` }}
+          >
+            <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col items-start p-6 flex-grow">
+              <h2 className="text-xl font-bold mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                {project.title}
+              </h2>
+              <p className="text-sm italic text-gray-500 dark:text-gray-400 mb-3">
+                {project.date}
+              </p>
+              <p className="text-base text-gray-700 dark:text-gray-300">
+                {project.description}
+              </p>
+            </div>
+          </Link>
+        ))}
       </div>
     </main>
   );
