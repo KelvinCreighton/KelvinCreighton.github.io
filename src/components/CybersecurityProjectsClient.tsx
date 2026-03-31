@@ -302,14 +302,14 @@ export default function CybersecurityProjectsClient({
                 className="object-cover"
               />
             </div>
-            <div className="flex flex-col items-start p-6 flex-grow">
+            <div className="flex flex-col items-start p-6 flex-grow w-full">
               <h2 className="text-xl font-bold mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {project.title}
               </h2>
               <p className="text-sm italic text-gray-500 dark:text-gray-400 mb-3">
                 {project.date}
               </p>
-              <p className="text-base text-gray-700 dark:text-gray-300">
+              <p className="text-base text-gray-700 dark:text-gray-300 flex-grow">
                 {project.description}
               </p>
               <div className="mt-4 flex flex-wrap gap-2">

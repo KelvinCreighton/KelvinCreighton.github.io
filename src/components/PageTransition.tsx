@@ -12,7 +12,7 @@ export function PageTransition({ children, className = "" }: PageTransitionProps
   const pathname = usePathname();
 
   return (
-    <div key={pathname} className={className}>
+    <div key={pathname} className={`animate-page-enter ${className}`}>
       {children}
     </div>
   );
