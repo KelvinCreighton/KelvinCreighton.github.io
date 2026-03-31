@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import CtfFlagSubmission from "@/components/CtfFlagSubmission";
+import InProgressNotice from "@/components/InProgressNotice";
 import ProjectPager from "@/components/ProjectPager";
 
 export default function HeartMailProjectPage() {
@@ -94,6 +95,10 @@ export default function HeartMailProjectPage() {
             <strong>Flag Format:</strong> <code>HTCOTB&#123;...&#125;</code>
           </p>
         </div>
+
+        {isComingSoon && (
+          <InProgressNotice message="This HTCOTB challenge is still being finalized, so the full playable release is not available yet." />
+        )}
 
         <CtfFlagSubmission
           expectedFlag={expectedFlag}

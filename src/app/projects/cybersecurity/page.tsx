@@ -1,14 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   defaultProjectTagClassName,
   projectTagClassNames,
 } from "@/components/projectTagStyles";
 
 export default function CybersecurityProjects() {
+  const searchParams = useSearchParams();
   const projects = [
     {
       id: 0,
@@ -63,6 +65,7 @@ export default function CybersecurityProjects() {
       slug: "cupid-portal",
       title: "HTCOTB2026 CTF: Cupid's Secret Message",
       date: "February 2026",
+      isInProgress: true,
       tags: ["web", "idor", "routing", "messages"],
       description:
         "A custom Valentines + ILOVEYOU Virus themed CTF web exploitation challenge I developed for the University of Alberta's Cybersecurity Club, showcasing an Insecure Direct Object Reference (IDOR) vulnerability.",
@@ -75,6 +78,7 @@ export default function CybersecurityProjects() {
       slug: "heartmail",
       title: "HTCOTB2026 CTF: HeartMail 1.0",
       date: "February 2026",
+      isInProgress: true,
       tags: ["web", "sqli", "ssh", "mail"],
       description:
         "A custom web CTF challenge featuring basic SQL Injection to uncover hidden emails and an SSH server login to retrieve the final flag.",
@@ -123,6 +127,7 @@ export default function CybersecurityProjects() {
       slug: "wicys-ctf-04",
       title: "WICYS CTF: Bunny Overflow 🐇",
       date: "March 2026",
+      isInProgress: true,
       tags: ["pwn", "buffer-overflow", "ret2win", "binary"],
       description:
         "A classic binary exploitation challenge centered on a vulnerable authorization flow inside the Bunny Network gateway.",
@@ -135,6 +140,7 @@ export default function CybersecurityProjects() {
       slug: "wicys-ctf-05",
       title: "WICYS CTF: Rainbow Vault Overflow 🌈🔒",
       date: "March 2026",
+      isInProgress: true,
       tags: ["pwn", "heap", "overflow", "function-pointer"],
       description:
         "A heap-focused exploitation challenge hidden behind the deceptively simple Rainbow Vault access portal.",
@@ -147,6 +153,7 @@ export default function CybersecurityProjects() {
       slug: "wicys-ctf-06",
       title: "WICYS CTF: ROP Around the Rainbow 🌈🐇",
       date: "March 2026",
+      isInProgress: true,
       tags: ["pwn", "rop", "libc", "shell"],
       description:
         "An advanced control-flow hijacking challenge where small internal fragments must be chained into a full exploit.",
@@ -159,6 +166,7 @@ export default function CybersecurityProjects() {
       slug: "wicys-ctf-07",
       title: "WICYS CTF: Scavenger Hunt 🔎🥚",
       date: "March 2026",
+      isInProgress: true,
       tags: ["web", "source", "html", "client-side"],
       description:
         "A web challenge that rewards careful inspection of the client-side application and MacCipher's hidden notes.",
@@ -171,6 +179,7 @@ export default function CybersecurityProjects() {
       slug: "wicys-ctf-08",
       title: "WICYS CTF: Bunny Network API Override 🐇🌐",
       date: "March 2026",
+      isInProgress: true,
       tags: ["web", "api", "headers", "curl"],
       description:
         "A web challenge involving a hijacked API, a hidden override path, and a response that says more than the page shows.",
@@ -183,6 +192,7 @@ export default function CybersecurityProjects() {
       slug: "wicys-ctf-09",
       title: "WICYS CTF: Leprechauns Vault 🍀🔒",
       date: "March 2026",
+      isInProgress: true,
       tags: ["web", "auth-bypass", "headers", "login"],
       description:
         "A web challenge centered on a secret vault login, a known employee email, and a developer backdoor left behind in the app.",
@@ -196,7 +206,16 @@ export default function CybersecurityProjects() {
     "Oldest",
     ...new Set([...projects].sort((a, b) => b.id - a.id).map((project) => project.category)),
   ];
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const requestedCategory = searchParams.get("category");
+  const initialCategory =
+    requestedCategory && categories.includes(requestedCategory)
+      ? requestedCategory
+      : "All";
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+
+  useEffect(() => {
+    setSelectedCategory(initialCategory);
+  }, [initialCategory]);
 
   const filteredProjects = [...projects]
     .sort((a, b) =>
@@ -258,6 +277,11 @@ export default function CybersecurityProjects() {
             style={{ animationDelay: `${i * 0.08}s` }}
           >
             <div className="w-full aspect-video relative bg-gray-200 dark:bg-gray-800">
+              {project.isInProgress && (
+                <div className="absolute left-3 top-3 z-10 rounded-full border border-red-900 bg-red-800/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white shadow-sm dark:border-red-500/40 dark:bg-red-900/90 dark:text-red-100">
+                  In Progress
+                </div>
+              )}
               <Image
                 src={project.image}
                 alt={project.title}

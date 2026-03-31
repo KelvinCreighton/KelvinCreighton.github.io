@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { wicysChallenges } from "@/app/projects/cybersecurity/wicys-ctf-data";
 import CtfFlagSubmission from "@/components/CtfFlagSubmission";
+import InProgressNotice from "@/components/InProgressNotice";
 import ProjectPager from "@/components/ProjectPager";
 
 type WicysCtfPageProps = {
@@ -138,6 +139,10 @@ export default function WicysCtfPage({ challengeId }: WicysCtfPageProps) {
             </code>
           </p>
         </div>
+
+        {isComingSoon && (
+          <InProgressNotice message="This challenge page is live, but the full downloadable material and release flow are still being finished." />
+        )}
 
         <CtfFlagSubmission
           expectedFlag={challenge.expectedFlag}

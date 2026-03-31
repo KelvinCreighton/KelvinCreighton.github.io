@@ -151,24 +151,26 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Highlight 1 */}
           <Link
-            href="/projects/cybersecurity"
+            href="/projects/cybersecurity?category=WICYS%20CTF"
             className="group block h-full mx-2 md:mx-0"
           >
             <div className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
               <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-200 dark:bg-gray-800">
-                <img
-                  src="/images/projects/cyber-highlights.png"
-                  alt="Cybersecurity CTFs"
-                  className="w-full h-full object-cover"
+                <Image
+                  src="/images/projects/WICYS_logo.png"
+                  alt="WICYS CTF Challenges"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
               <div className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  Cybersecurity CTFs
+                  WICYS CTF Challenges
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  A collection of writeups and solutions for various Capture The
-                  Flag challenges, demonstrating web exploitation techniques.
+                  Jump straight into the WICYS challenge set, from Bunny
+                  Tracker Glitch through the later web and binary challenges.
                 </p>
               </div>
             </div>
@@ -181,10 +183,12 @@ export default function Home() {
           >
             <div className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
               <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-200 dark:bg-gray-800">
-                <img
+                <Image
                   src="/images/projects/transmission-title.jpg"
                   alt="Transmission Rebuild"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
               <div className="p-4 md:p-6">

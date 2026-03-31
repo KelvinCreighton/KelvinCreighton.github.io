@@ -107,8 +107,13 @@ export const projectTagClassNames: Record<string, string> = {
     "border-orange-200 bg-orange-100 text-orange-800 dark:border-orange-900 dark:bg-orange-950/70 dark:text-orange-300",
   transmission:
     "border-red-200 bg-red-100 text-red-800 dark:border-red-900 dark:bg-red-950/70 dark:text-red-300",
-  honda:
-    "border-slate-200 bg-slate-100 text-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300",
+  alternator:
+    "border-yellow-200 bg-yellow-100 text-yellow-800 dark:border-yellow-900 dark:bg-yellow-950/70 dark:text-yellow-300",
+  starter:
+    "border-cyan-200 bg-cyan-100 text-cyan-800 dark:border-cyan-900 dark:bg-cyan-950/70 dark:text-cyan-300",
+  axle: "border-emerald-200 bg-emerald-100 text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/70 dark:text-emerald-300",
+  clutch:
+    "border-pink-200 bg-pink-100 text-pink-800 dark:border-pink-900 dark:bg-pink-950/70 dark:text-pink-300",
   drivetrain:
     "border-stone-200 bg-stone-100 text-stone-800 dark:border-stone-700 dark:bg-stone-800 dark:text-stone-300",
 };
