@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "deploy": "GIT_SSH_COMMAND=\"ssh -i ~/.ssh/kelvincreighton-github -o IdentitiesOnly=yes\" gh-pages -d out --nojekyll --cname kelvincreighton.ca"
