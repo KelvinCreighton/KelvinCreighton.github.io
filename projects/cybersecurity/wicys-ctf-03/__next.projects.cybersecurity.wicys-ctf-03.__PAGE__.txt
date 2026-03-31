@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[7035,["/_next/static/chunks/5df80fb567206f25.js","/_next/static/chunks/c267cbd26a5ce295.js"],"default"]
-3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+2:I[5530,["8500","static/chunks/8500-41fa79ac743d83f1.js","4478","static/chunks/4478-39639896ae360d4d.js","1117","static/chunks/app/projects/cybersecurity/wicys-ctf-03/page-b994ba0e0827d362.js"],"default"]
+3:I[484,[],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"CIUKF1isaOiFYkZJrygPy","rsc":["$","$1","c",{"children":[["$","$L2",null,{"challengeId":"03"}],[["$","script","script-0",{"src":"/_next/static/chunks/c267cbd26a5ce295.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"MnBqsrLpvtSdX8V14hMwK","rsc":["$","$1","c",{"children":[["$","$L2",null,{"challengeId":"03"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
