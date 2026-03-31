@@ -1,5 +1,6 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import ProjectPager from "@/components/ProjectPager";
 
 // Dynamically import the viewer with SSR disabled because OSMD relies on the window object
 const SheetMusicViewer = dynamic(
@@ -25,6 +26,11 @@ export default function TheLongestMomentPage() {
       <div className="w-full max-w-6xl">
         <SheetMusicViewer file="/scores/The-Longest-Moment-Before-a-New-Beginning.musicxml" />
       </div>
+
+      <ProjectPager
+        category="music"
+        currentPath="/projects/music/the-longest-moment"
+      />
     </main>
   );
 }

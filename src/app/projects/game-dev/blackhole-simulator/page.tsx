@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProjectPager from "@/components/ProjectPager";
 
 export default function BlackholeSimulatorPage() {
   return (
@@ -42,6 +43,11 @@ export default function BlackholeSimulatorPage() {
           </p>
         </div>
       </div>
+
+      <ProjectPager
+        category="game-dev"
+        currentPath="/projects/game-dev/blackhole-simulator"
+      />
     </main>
   );
 }

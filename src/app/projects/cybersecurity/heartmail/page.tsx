@@ -3,8 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 
+import CtfFlagSubmission from "@/components/CtfFlagSubmission";
+import ProjectPager from "@/components/ProjectPager";
+
 export default function HeartMailProjectPage() {
   const [showSolution, setShowSolution] = useState(false);
+  const expectedFlag = "HTCOTB{Lovely_PrivateKey_4Me}";
+  const isComingSoon = true;
 
   return (
     <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
@@ -26,7 +31,7 @@ export default function HeartMailProjectPage() {
       <div className="w-full max-w-4xl bg-gray-50 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">Description</h2>
         <p className="text-gray-700 dark:text-gray-300 mb-4">
-          It’s the early days of the internet with screeching dialup tones and
+          It&apos;s the early days of the internet with screeching dialup tones and
           simple webmail interfaces that feel new and fragile. You’ve been
           working late, preparing something that will spread further than anyone
           expects…
@@ -90,6 +95,11 @@ export default function HeartMailProjectPage() {
           </p>
         </div>
 
+        <CtfFlagSubmission
+          expectedFlag={expectedFlag}
+          isComingSoon={isComingSoon}
+        />
+
         <div className="border-t border-gray-200 dark:border-gray-800 pt-8 mt-8">
           <h2 className="text-2xl font-bold mb-4">Solution</h2>
 
@@ -122,7 +132,7 @@ export default function HeartMailProjectPage() {
               </p>
               <p>
                 2. Input a basic SQL injection payload to bypass the query
-                filter and reveal hidden emails. Type: <code>' OR 1=1 --</code>
+                filter and reveal hidden emails. Type: <code>&apos; OR 1=1 --</code>
               </p>
               <p>
                 3. Look through the newly revealed emails. You should find a
@@ -134,7 +144,7 @@ export default function HeartMailProjectPage() {
               </p>
               <p>
                 5. Set the appropriate permissions for the key file to ensure
-                it's secure enough for the SSH client to use: <br />
+                it&apos;s secure enough for the SSH client to use: <br />
                 <code>chmod 600 heartmailserver_key</code>
               </p>
               <p>
@@ -162,6 +172,11 @@ export default function HeartMailProjectPage() {
           )}
         </div>
       </div>
+
+      <ProjectPager
+        category="cybersecurity"
+        currentPath="/projects/cybersecurity/heartmail"
+      />
     </main>
   );
 }

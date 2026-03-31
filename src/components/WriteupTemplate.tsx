@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import ProjectPager from "@/components/ProjectPager";
 
 interface Step {
   number: string;
@@ -39,6 +40,7 @@ interface WriteupData {
 
 interface WriteupTemplateProps {
   data: WriteupData;
+  currentPath: string;
 }
 
 const styles = `
@@ -439,7 +441,7 @@ const styles = `
   }
 `;
 
-export default function WriteupTemplate({ data }: WriteupTemplateProps) {
+export default function WriteupTemplate({ data, currentPath }: WriteupTemplateProps) {
   const difficultyClass = `diff-${data.difficulty}`;
 
   return (
@@ -564,6 +566,8 @@ export default function WriteupTemplate({ data }: WriteupTemplateProps) {
           <span>{data.author} &mdash; PicoCTF Write-Up</span>
           <span>All steps performed in a legal CTF environment.</span>
         </footer>
+
+        <ProjectPager category="cybersecurity" currentPath={currentPath} />
       </div>
     </>
   );

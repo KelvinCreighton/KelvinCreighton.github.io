@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProjectPager from "@/components/ProjectPager";
 
 export default function TankGamePage() {
   return (
@@ -84,6 +85,11 @@ export default function TankGamePage() {
           </section>
         </div>
       </div>
+
+      <ProjectPager
+        category="game-dev"
+        currentPath="/projects/game-dev/tank-game"
+      />
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProjectPager from "@/components/ProjectPager";
 
 export default function ThreeDGamePage() {
   return (
@@ -44,6 +45,11 @@ export default function ThreeDGamePage() {
           </p>
         </div>
       </div>
+
+      <ProjectPager
+        category="game-dev"
+        currentPath="/projects/game-dev/3d-game"
+      />
     </main>
   );
 }

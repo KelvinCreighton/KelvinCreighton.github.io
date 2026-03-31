@@ -1,5 +1,6 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import ProjectPager from "@/components/ProjectPager";
 
 // Dynamically import the viewer with SSR disabled because OSMD relies on the window object
 const SheetMusicViewer = dynamic(
@@ -23,6 +24,11 @@ export default function BeethovenVirusPage() {
       <div className="w-full max-w-6xl">
         <SheetMusicViewer file="/scores/Beethoven_Virus.musicxml" />
       </div>
+
+      <ProjectPager
+        category="music"
+        currentPath="/projects/music/beethoven-virus"
+      />
     </main>
   );
 }

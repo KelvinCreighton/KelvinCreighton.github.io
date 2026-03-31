@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProjectPager from "@/components/ProjectPager";
 
 export default function MyFirstGamePage() {
   return (
@@ -272,7 +273,7 @@ export default function MyFirstGamePage() {
                 </div>
                 <div>
                   <strong>Checkpoints:</strong> Touching these will save your
-                  progress so you don't have to restart the whole level if you
+                  progress so you don&apos;t have to restart the whole level if you
                   hit a spike.
                 </div>
               </li>
@@ -330,6 +331,11 @@ export default function MyFirstGamePage() {
           </section>
         </div>
       </div>
+
+      <ProjectPager
+        category="game-dev"
+        currentPath="/projects/game-dev/my-first-game"
+      />
     </main>
   );
 }

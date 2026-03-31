@@ -114,5 +114,10 @@ export default function SSTI1Writeup() {
     ],
   };
 
-  return <WriteupTemplate data={writeupData} />;
+  return (
+    <WriteupTemplate
+      data={writeupData}
+      currentPath="/projects/cybersecurity/ssti1"
+    />
+  );
 }

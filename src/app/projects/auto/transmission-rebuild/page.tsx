@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProjectPager from "@/components/ProjectPager";
 
 export default function AutomotiveProjectTemplate() {
   return (
@@ -55,7 +56,7 @@ export default function AutomotiveProjectTemplate() {
             ever encountered, the alternator was pooched (an official
             diagnosis). Seeing the battery light come on in the dashboard and
             smelling the strong odor of burning wiring, I knew this repair
-            couldn't be procrastinated.
+            couldn&apos;t be procrastinated.
           </p>
 
           {/* Project Overview Component */}
@@ -115,7 +116,7 @@ export default function AutomotiveProjectTemplate() {
           {/* Process Steps */}
           <h2 className="mb-4 text-xl font-bold">Step 1: Verify the problem</h2>
           <p>
-            Before diving into a repair it's always a good idea to verify the
+            Before diving into a repair it&apos;s always a good idea to verify the
             diagnosis. I used a multimeter to check the voltage at the battery
             terminals with the engine off. No problems here, the battery was
             holding a steady 12.05V. But when I started the engine, the voltage
@@ -216,7 +217,7 @@ export default function AutomotiveProjectTemplate() {
             Step 3: Passenger Side CV Axle Removal
           </h2>
           <p>
-            Since it's an older car I decided I might as well replace both CV
+            Since it&apos;s an older car I decided I might as well replace both CV
             axles entirely. This was a really smart move because the passenger
             side axle fell apart with almost no effort. The bearings were free
             and grease was everywhere. Partly my fault for not being careful
@@ -271,7 +272,7 @@ export default function AutomotiveProjectTemplate() {
           <br />
           <p>
             <strong>Problem:</strong> The day my bud came to help with this
-            process it rained. Why not. I didn't have access to the garage at
+            process it rained. Why not. I didn&apos;t have access to the garage at
             the time, so we had to improvise on the driveway.
           </p>
 
@@ -292,7 +293,7 @@ export default function AutomotiveProjectTemplate() {
           </h2>
           <p>
             Trying to remove the transmission in the rain was a complete
-            disaster and didn't really go anywhere. <strong>Don't do this.</strong>
+            disaster and didn&apos;t really go anywhere. <strong>Don&apos;t do this.</strong>
           </p>
           <br />
           <p>
@@ -303,7 +304,7 @@ export default function AutomotiveProjectTemplate() {
           <br />
           <p>
             The transmission was extremely heavy and I
-            didn't have a transmission jack. I ended up having to use a floor
+            didn&apos;t have a transmission jack. I ended up having to use a floor
             jack with a piece of wood on top to support the transmission. It was
             a sketchy process, but I managed to get it out without dropping it.
           </p>
@@ -559,7 +560,7 @@ export default function AutomotiveProjectTemplate() {
             pry it out. I tried for days with varying methods but was
             unsuccessful and eventually opted to take it to a shop. However, no
             shops around would even take it in and I was forced to take it to a
-            powertrain shop who wouldn't normally work with transmissions in
+            powertrain shop who wouldn&apos;t normally work with transmissions in
             general. They are truly my heros and had it cracked in half an hour.
           </p>
 
@@ -804,11 +805,11 @@ export default function AutomotiveProjectTemplate() {
             Step 11: 5th Gear Bearing Issues
           </h2>
           <p>
-            When reassembling the 5th gear I noticed that one of the brearings had completely broken apart. This was very unfortunate since this specific pin bearing was not included in the rebuild kit. I found a replacement online but the shipping time exceeded the time I had to get the car ready to move apartments. I hadn't noticed this when taking it apart because I had taken it out as one whole piece and didn't inspect it closely.
+            When reassembling the 5th gear I noticed that one of the brearings had completely broken apart. This was very unfortunate since this specific pin bearing was not included in the rebuild kit. I found a replacement online but the shipping time exceeded the time I had to get the car ready to move apartments. I hadn&apos;t noticed this when taking it apart because I had taken it out as one whole piece and didn&apos;t inspect it closely.
           </p>
           <br />
           <p>
-            I considered towing the car to the new apartment, but I wasn't about to trust a tow truck driver with a car that was in pieces. Especially when the engine wasn't mounted by transmission. I thought of chaining or holding the engine up somehow and have it towed carefully. This option was not appealing to me, so instead, I decided to continue with the rebuild and just leave the car without a 5th gear for now. I realized that since the 5th gear has its own special casing above the main case, I could essentially repair the 5th gear bearing without needing to even remove the transmission from the car again in the future.
+            I considered towing the car to the new apartment, but I wasn&apos;t about to trust a tow truck driver with a car that was in pieces. Especially when the engine wasn&apos;t mounted by transmission. I thought of chaining or holding the engine up somehow and have it towed carefully. This option was not appealing to me, so instead, I decided to continue with the rebuild and just leave the car without a 5th gear for now. I realized that since the 5th gear has its own special casing above the main case, I could essentially repair the 5th gear bearing without needing to even remove the transmission from the car again in the future.
           </p>
 
           <div className="flex flex-col gap-6 my-10">
@@ -936,11 +937,11 @@ export default function AutomotiveProjectTemplate() {
             Step 13: Final Steps
           </h2>
           <p>
-            I don't have any pictures of the final steps of the rebuild. At this point I was really tired and just wanted to get the car back together. I reinstalled the transmission, connected all the linkages, and filled the transmission with fluid. I then reinstalled the driveshaft, axles, and wheels.
+            I don&apos;t have any pictures of the final steps of the rebuild. At this point I was really tired and just wanted to get the car back together. I reinstalled the transmission, connected all the linkages, and filled the transmission with fluid. I then reinstalled the driveshaft, axles, and wheels.
           </p>
           <br />
           <p>
-            I started it up and attempted to take it for a test drive. It started up with a bit of effor but finally was running. Unfortunetly, for whatever reason, the car stalled even before putting it into gear, and from that point, wouldn't start again. I was very distraught but realized it may have just been flooded. So I let it sit for a while and tried again. Sure enough it started right up with no issues and I took it for a test drive.
+            I started it up and attempted to take it for a test drive. It started up with a bit of effor but finally was running. Unfortunetly, for whatever reason, the car stalled even before putting it into gear, and from that point, wouldn&apos;t start again. I was very distraught but realized it may have just been flooded. So I let it sit for a while and tried again. Sure enough it started right up with no issues and I took it for a test drive.
           </p>
           <br />
           <p>
@@ -963,16 +964,16 @@ export default function AutomotiveProjectTemplate() {
           <h2 className="mb-4 text-xl font-bold">Closing Thoughts</h2>
           <p>
             Rebuilding a transmission is without a doubt one of the most
-            challenging DIY projects I've ever tackled. It was a test of patience,
+            challenging DIY projects I&apos;ve ever tackled. It was a test of patience,
             endurance, and precision with many worrying moments of not having the
             capabilities to complete the task. Between the literal rain on my driveway
             and the many unfortunate surprises, there were plenty of moments
-            where it felt like the car wouldn't be fixed in time.
+            where it felt like the car wouldn&apos;t be fixed in time.
           </p>
           <br />
           <p>
             However, after an exhilarating test drive, I knew it was all worth it.
-            You really can't beat the feeling of driving a car knowing you are the
+            You really can&apos;t beat the feeling of driving a car knowing you are the
             one who brought it back to life.
           </p>
 
@@ -980,6 +981,10 @@ export default function AutomotiveProjectTemplate() {
 
           <hr className="my-12 border-gray-200 dark:border-gray-800" />
         </div>
+        <ProjectPager
+          category="auto"
+          currentPath="/projects/auto/transmission-rebuild"
+        />
       </article>
     </main>
   );

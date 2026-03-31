@@ -94,5 +94,10 @@ University in Kigali, Rwanda offereing MSECE, MSIT and MS EAI`,
     ],
   };
 
-  return <WriteupTemplate data={writeupData} />;
+  return (
+    <WriteupTemplate
+      data={writeupData}
+      currentPath="/projects/cybersecurity/soap"
+    />
+  );
 }

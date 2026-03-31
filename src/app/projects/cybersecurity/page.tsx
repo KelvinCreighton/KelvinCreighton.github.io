@@ -3,6 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  defaultProjectTagClassName,
+  projectTagClassNames,
+} from "@/components/projectTagStyles";
 
 export default function CybersecurityProjects() {
   const projects = [
@@ -11,6 +15,7 @@ export default function CybersecurityProjects() {
       slug: "ssti1",
       title: "PicoCTF: SSTI1",
       date: "September 2025",
+      tags: ["web", "ssti", "jinja2", "rce"],
       description:
         "A walkthrough of a Server-Side Template Injection in Jinja2, escaping the sandbox to achieve Remote Code Execution.",
       image: "/images/projects/picoCTF_logo.png",
@@ -22,6 +27,7 @@ export default function CybersecurityProjects() {
       slug: "nosql-injection",
       title: "PicoCTF: No Sql Injection",
       date: "September 2025",
+      tags: ["web", "nosql", "mongodb", "auth-bypass"],
       description:
         "A write-up on exploiting a NoSQL injection vulnerability in a MongoDB-backed Express application to bypass authentication.",
       image: "/images/projects/picoCTF_logo.png",
@@ -33,6 +39,7 @@ export default function CybersecurityProjects() {
       slug: "eval",
       title: "PicoCTF: 3v@l",
       date: "September 2025",
+      tags: ["web", "eval", "python", "rce"],
       description:
         "Exploiting a Python eval() vulnerability by bypassing regex blacklists to achieve Remote Code Execution.",
       image: "/images/projects/picoCTF_logo.png",
@@ -44,6 +51,7 @@ export default function CybersecurityProjects() {
       slug: "soap",
       title: "PicoCTF: SOAP",
       date: "October 2025",
+      tags: ["web", "xxe", "soap", "lfi"],
       description:
         "A write-up on exploiting an XML External Entity (XXE) vulnerability through a SOAP endpoint to perform Local File Inclusion.",
       image: "/images/projects/picoCTF_logo.png",
@@ -55,6 +63,7 @@ export default function CybersecurityProjects() {
       slug: "cupid-portal",
       title: "HTCOTB2026 CTF: Cupid's Secret Message",
       date: "February 2026",
+      tags: ["web", "idor", "routing", "messages"],
       description:
         "A custom Valentines + ILOVEYOU Virus themed CTF web exploitation challenge I developed for the University of Alberta's Cybersecurity Club, showcasing an Insecure Direct Object Reference (IDOR) vulnerability.",
       image: "/images/projects/CHADS_logo.png",
@@ -66,21 +75,138 @@ export default function CybersecurityProjects() {
       slug: "heartmail",
       title: "HTCOTB2026 CTF: HeartMail 1.0",
       date: "February 2026",
+      tags: ["web", "sqli", "ssh", "mail"],
       description:
         "A custom web CTF challenge featuring basic SQL Injection to uncover hidden emails and an SSH server login to retrieve the final flag.",
       image: "/images/projects/CHADS_logo.png",
       link: "/projects/cybersecurity/heartmail",
       category: "HTCOTB CTF",
     },
+    {
+      id: 6,
+      slug: "wicys-ctf-01",
+      title: "WICYS CTF: Bunny Tracker Glitch 🟩",
+      date: "March 2026",
+      tags: ["forensics", "png", "binwalk", "steg"],
+      description:
+        "A forensic challenge involving a suspicious 1x1 PNG that clearly contains more than it first appears to.",
+      image: "/images/projects/WICYS_logo.png",
+      link: "/projects/cybersecurity/wicys-ctf-01",
+      category: "WICYS CTF",
+    },
+    {
+      id: 7,
+      slug: "wicys-ctf-02",
+      title: "WICYS CTF: Luck Checker 🍀",
+      date: "March 2026",
+      tags: ["rev", "binary", "strings", "easy"],
+      description:
+        "A beginner reversing challenge built around a suspicious binary that guards Heap MacCipher's so-called luck engine.",
+      image: "/images/projects/WICYS_logo.png",
+      link: "/projects/cybersecurity/wicys-ctf-02",
+      category: "WICYS CTF",
+    },
+    {
+      id: 8,
+      slug: "wicys-ctf-03",
+      title: "WICYS CTF: Bunny Network - Portal Override 🐇🌐",
+      date: "March 2026",
+      tags: ["rev", "binary", "gdb", "objdump"],
+      description:
+        "A reversing challenge in which an emergency portal binary must be understood before the Bunny Network can be restored.",
+      image: "/images/projects/WICYS_logo.png",
+      link: "/projects/cybersecurity/wicys-ctf-03",
+      category: "WICYS CTF",
+    },
+    {
+      id: 9,
+      slug: "wicys-ctf-04",
+      title: "WICYS CTF: Bunny Overflow 🐇",
+      date: "March 2026",
+      tags: ["pwn", "buffer-overflow", "ret2win", "binary"],
+      description:
+        "A classic binary exploitation challenge centered on a vulnerable authorization flow inside the Bunny Network gateway.",
+      image: "/images/projects/WICYS_logo.png",
+      link: "/projects/cybersecurity/wicys-ctf-04",
+      category: "WICYS CTF",
+    },
+    {
+      id: 10,
+      slug: "wicys-ctf-05",
+      title: "WICYS CTF: Rainbow Vault Overflow 🌈🔒",
+      date: "March 2026",
+      tags: ["pwn", "heap", "overflow", "function-pointer"],
+      description:
+        "A heap-focused exploitation challenge hidden behind the deceptively simple Rainbow Vault access portal.",
+      image: "/images/projects/WICYS_logo.png",
+      link: "/projects/cybersecurity/wicys-ctf-05",
+      category: "WICYS CTF",
+    },
+    {
+      id: 11,
+      slug: "wicys-ctf-06",
+      title: "WICYS CTF: ROP Around the Rainbow 🌈🐇",
+      date: "March 2026",
+      tags: ["pwn", "rop", "libc", "shell"],
+      description:
+        "An advanced control-flow hijacking challenge where small internal fragments must be chained into a full exploit.",
+      image: "/images/projects/WICYS_logo.png",
+      link: "/projects/cybersecurity/wicys-ctf-06",
+      category: "WICYS CTF",
+    },
+    {
+      id: 12,
+      slug: "wicys-ctf-07",
+      title: "WICYS CTF: Scavenger Hunt 🔎🥚",
+      date: "March 2026",
+      tags: ["web", "source", "html", "client-side"],
+      description:
+        "A web challenge that rewards careful inspection of the client-side application and MacCipher's hidden notes.",
+      image: "/images/projects/WICYS_logo.png",
+      link: "/projects/cybersecurity/wicys-ctf-07",
+      category: "WICYS CTF",
+    },
+    {
+      id: 13,
+      slug: "wicys-ctf-08",
+      title: "WICYS CTF: Bunny Network API Override 🐇🌐",
+      date: "March 2026",
+      tags: ["web", "api", "headers", "curl"],
+      description:
+        "A web challenge involving a hijacked API, a hidden override path, and a response that says more than the page shows.",
+      image: "/images/projects/WICYS_logo.png",
+      link: "/projects/cybersecurity/wicys-ctf-08",
+      category: "WICYS CTF",
+    },
+    {
+      id: 14,
+      slug: "wicys-ctf-09",
+      title: "WICYS CTF: Leprechauns Vault 🍀🔒",
+      date: "March 2026",
+      tags: ["web", "auth-bypass", "headers", "login"],
+      description:
+        "A web challenge centered on a secret vault login, a known employee email, and a developer backdoor left behind in the app.",
+      image: "/images/projects/WICYS_logo.png",
+      link: "/projects/cybersecurity/wicys-ctf-09",
+      category: "WICYS CTF",
+    },
   ];
-  const categories = ["All", "PicoCTF Writeups", "HTCOTB CTF"];
+  const categories = [
+    "All",
+    "Oldest",
+    ...new Set([...projects].sort((a, b) => b.id - a.id).map((project) => project.category)),
+  ];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProjects = [...projects]
-    .sort((a, b) => b.id - a.id)
+    .sort((a, b) =>
+      selectedCategory === "Oldest" ? a.id - b.id : b.id - a.id,
+    )
     .filter(
       (project) =>
-        selectedCategory === "All" || project.category === selectedCategory,
+        selectedCategory === "All" ||
+        selectedCategory === "Oldest" ||
+        project.category === selectedCategory,
     );
 
   return (
@@ -149,6 +275,16 @@ export default function CybersecurityProjects() {
               <p className="text-base text-gray-700 dark:text-gray-300">
                 {project.description}
               </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={`${project.slug}-${tag}`}
+                    className={`rounded-full border px-2.5 py-1 text-xs font-medium ${projectTagClassNames[tag] ?? defaultProjectTagClassName}`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </Link>
         ))}

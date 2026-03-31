@@ -92,5 +92,10 @@ export default function NoSQLInjectionWriteup() {
     ],
   };
 
-  return <WriteupTemplate data={writeupData} />;
+  return (
+    <WriteupTemplate
+      data={writeupData}
+      currentPath="/projects/cybersecurity/nosql-injection"
+    />
+  );
 }

@@ -3,6 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  defaultProjectTagClassName,
+  projectTagClassNames,
+} from "@/components/projectTagStyles";
 
 export default function AutoProjects() {
   const projects = [
@@ -10,6 +14,7 @@ export default function AutoProjects() {
       id: 1,
       title: "Manual Transmission Rebuild (1989 Honda Accord)",
       date: "August 2025",
+      tags: ["rebuild", "transmission", "honda", "drivetrain"],
       description:
         "What started as a simple alternator replacement turned into a full manual transmission rebuild. This project documents the process and the challenges that came with it.",
       image: "/images/projects/transmission-title.jpg",
@@ -17,13 +22,23 @@ export default function AutoProjects() {
       category: "Drivetrain Repair",
     },
   ];
-  const categories = ["All", "Drivetrain Repair"];
+  const categories = [
+    "All",
+    "Oldest",
+    ...new Set([...projects].sort((a, b) => b.id - a.id).map((project) => project.category)),
+  ];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredProjects = projects.filter(
-    (project) =>
-      selectedCategory === "All" || project.category === selectedCategory,
-  );
+  const filteredProjects = [...projects]
+    .sort((a, b) =>
+      selectedCategory === "Oldest" ? a.id - b.id : b.id - a.id,
+    )
+    .filter(
+      (project) =>
+        selectedCategory === "All" ||
+        selectedCategory === "Oldest" ||
+        project.category === selectedCategory,
+    );
 
   return (
     <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
@@ -90,6 +105,16 @@ export default function AutoProjects() {
               <p className="text-base text-gray-700 dark:text-gray-300">
                 {project.description}
               </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={`${project.title}-${tag}`}
+                    className={`rounded-full border px-2.5 py-1 text-xs font-medium ${projectTagClassNames[tag] ?? defaultProjectTagClassName}`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </Link>
         ))}

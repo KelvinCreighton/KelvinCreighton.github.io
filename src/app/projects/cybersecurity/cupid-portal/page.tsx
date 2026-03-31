@@ -3,8 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 
+import CtfFlagSubmission from "@/components/CtfFlagSubmission";
+import ProjectPager from "@/components/ProjectPager";
+
 export default function CupidPortalProjectPage() {
   const [showSolution, setShowSolution] = useState(false);
+  const expectedFlag = "HTCOTB{cupid_shared_the_wrong_message}";
+  const isComingSoon = true;
 
   return (
     <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
@@ -16,7 +21,7 @@ export default function CupidPortalProjectPage() {
           &larr; Back to Cybersecurity Projects
         </Link>
         <h1 className="text-4xl font-bold text-center">
-          HTCOTB2026 CTF: Cupid's Secret Message
+          HTCOTB2026 CTF: Cupid&apos;s Secret Message
         </h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
           Hack The Computer Open The Box - Valentines + ILOVEYOU Virus Themed
@@ -27,7 +32,7 @@ export default function CupidPortalProjectPage() {
       <div className="w-full max-w-4xl bg-gray-50 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">Description</h2>
         <p className="text-gray-700 dark:text-gray-300 mb-4">
-          Cupid's old message portal is floating around online, quietly
+          Cupid&apos;s old message portal is floating around online, quietly
           delivering Valentine notes from years past.
           <br />
           <br />
@@ -35,7 +40,7 @@ export default function CupidPortalProjectPage() {
           <br />
           <br />
           Take a look around and see what other messages might be hiding nearby.
-          One of them definitely wasn't meant for you.
+          One of them definitely wasn&apos;t meant for you.
         </p>
 
         <div className="flex gap-4 mb-8">
@@ -87,6 +92,11 @@ export default function CupidPortalProjectPage() {
           </p>
         </div>
 
+        <CtfFlagSubmission
+          expectedFlag={expectedFlag}
+          isComingSoon={isComingSoon}
+        />
+
         <div className="border-t border-gray-200 dark:border-gray-800 pt-8 mt-8">
           <h2 className="text-2xl font-bold mb-4">Solution</h2>
 
@@ -114,11 +124,11 @@ export default function CupidPortalProjectPage() {
           ) : (
             <div className="space-y-4 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-950 p-6 rounded-lg animate-in fade-in duration-300">
               <p>
-                1. Navigate to the application and click the "Open Message"
+                1. Navigate to the application and click the &quot;Open Message&quot;
                 button.
               </p>
               <p>
-                2. Observe the URL in your browser's address bar. It will look
+                2. Observe the URL in your browser&apos;s address bar. It will look
                 something like this: <code>/message?id=14</code>
               </p>
               <p>
@@ -154,6 +164,11 @@ export default function CupidPortalProjectPage() {
           )}
         </div>
       </div>
+
+      <ProjectPager
+        category="cybersecurity"
+        currentPath="/projects/cybersecurity/cupid-portal"
+      />
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProjectPager from "@/components/ProjectPager";
 
 export default function UFOGamePage() {
   return (
@@ -28,6 +29,8 @@ export default function UFOGamePage() {
           title="UFO Game"
         />
       </div>
+
+      <ProjectPager category="game-dev" currentPath="/projects/game-dev/ufo" />
     </main>
   );
 }

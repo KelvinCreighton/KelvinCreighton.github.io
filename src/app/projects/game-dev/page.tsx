@@ -3,6 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  defaultProjectTagClassName,
+  projectTagClassNames,
+} from "@/components/projectTagStyles";
 
 export default function GameDevProjects() {
   const projects = [
@@ -10,6 +14,7 @@ export default function GameDevProjects() {
       id: 0,
       title: `My First Game`,
       date: `2017`,
+      tags: ["platformer", "javascript", "levels", "2d"],
       description: `The first JavaScript game I ever made. It was a simple platformer where the player had to navigate through levels and avoid obstacles. This project was a great learning experience and sparked my passion for game development.`,
       image: `/images/projects/my-first-game.png`,
       link: `/projects/game-dev/my-first-game`,
@@ -19,6 +24,7 @@ export default function GameDevProjects() {
       id: 1,
       title: `UFO`,
       date: `2017`,
+      tags: ["arcade", "2d", "javascript", "levels"],
       description: `A fun UFO game project. Players control a UFO and navigate through various levels, avoiding enemies. `,
       image: `/images/projects/ufo.png`,
       link: `/projects/game-dev/ufo`,
@@ -28,6 +34,7 @@ export default function GameDevProjects() {
       id: 2,
       title: `Tank Game`,
       date: `2018`,
+      tags: ["shooter", "tanks", "2d", "javascript"],
       description: `A topdown tank shooter inspired by the classic Tank Trouble game!`,
       image: `/images/projects/tank-game.png`,
       link: `/projects/game-dev/tank-game`,
@@ -37,6 +44,7 @@ export default function GameDevProjects() {
       id: 3,
       title: `3D Game Engine`,
       date: `2022`,
+      tags: ["engine", "3d", "matrices", "javascript"],
       description: `My first 3D game engine project exploring concepts like projection and rotation using matrix math. This project was a major learning experience in linear algebra and game development, with all code and libraries written by me.`,
       image: `/images/projects/3d-game.png`,
       link: `/projects/game-dev/3d-game`,
@@ -46,20 +54,29 @@ export default function GameDevProjects() {
       id: 4,
       title: `Blackhole Simulator`,
       date: `2022`,
+      tags: ["simulation", "physics", "orbit", "javascript"],
       description: `A physics-based orbital mechanics simulator featuring various "satellites" like bananas, pizza, and spaghetti.`,
       image: `/images/projects/Blackhole_Simulator-image.png`,
       link: `/projects/game-dev/blackhole-simulator`,
       category: "Engines & Simulation",
     },
   ];
-  const categories = ["All", "2D Games", "Engines & Simulation"];
+  const categories = [
+    "All",
+    "Oldest",
+    ...new Set([...projects].sort((a, b) => b.id - a.id).map((project) => project.category)),
+  ];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProjects = [...projects]
-    .sort((a, b) => b.id - a.id)
+    .sort((a, b) =>
+      selectedCategory === "Oldest" ? a.id - b.id : b.id - a.id,
+    )
     .filter(
       (project) =>
-        selectedCategory === "All" || project.category === selectedCategory,
+        selectedCategory === "All" ||
+        selectedCategory === "Oldest" ||
+        project.category === selectedCategory,
     );
 
   return (
@@ -135,6 +152,16 @@ export default function GameDevProjects() {
                 <p className="text-base text-gray-700 dark:text-gray-300">
                   {project.description}
                 </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={`${project.title}-${tag}`}
+                      className={`rounded-full border px-2.5 py-1 text-xs font-medium ${projectTagClassNames[tag] ?? defaultProjectTagClassName}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Link>
           ))}

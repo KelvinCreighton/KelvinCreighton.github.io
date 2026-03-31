@@ -3,6 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  defaultProjectTagClassName,
+  projectTagClassNames,
+} from "@/components/projectTagStyles";
 
 export default function MusicProjects() {
   const projects = [
@@ -10,6 +14,7 @@ export default function MusicProjects() {
       id: 0,
       title: `BL1ND JUST1C3: 1NV3ST1G4T1ON`,
       date: `2017`,
+      tags: ["arrangement", "piano", "homestuck"],
       description: `A high energy multi-voice piece originally from Homestuck, arranged for piano.`,
       image: `/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON.png`,
       link: `/projects/music/blind-justice-investigation`,
@@ -19,6 +24,7 @@ export default function MusicProjects() {
       id: 1,
       title: `Beethoven Virus`,
       date: `2018`,
+      tags: ["arrangement", "piano", "virtuosic"],
       description: `A challenging arrangement of the Beethoven Virus for piano.`,
       image: `/images/projects/Beethoven_Virus.png`,
       link: `/projects/music/beethoven-virus`,
@@ -28,20 +34,29 @@ export default function MusicProjects() {
       id: 2,
       title: `The Longest Moment Before a New Beginning`,
       date: `October 2019`,
+      tags: ["original", "composition", "piano"],
       description: `An original piano composition I wrote in highschool.`,
       image: `/images/projects/The-Longest-Moment-Before-a-New-Beginning.png`,
       link: `/projects/music/the-longest-moment`,
       category: "Original Compositions",
     },
   ];
-  const categories = ["All", "Arrangements", "Original Compositions"];
+  const categories = [
+    "All",
+    "Oldest",
+    ...new Set([...projects].sort((a, b) => b.id - a.id).map((project) => project.category)),
+  ];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProjects = [...projects]
-    .sort((a, b) => b.id - a.id)
+    .sort((a, b) =>
+      selectedCategory === "Oldest" ? a.id - b.id : b.id - a.id,
+    )
     .filter(
       (project) =>
-        selectedCategory === "All" || project.category === selectedCategory,
+        selectedCategory === "All" ||
+        selectedCategory === "Oldest" ||
+        project.category === selectedCategory,
     );
 
   return (
@@ -117,6 +132,16 @@ export default function MusicProjects() {
                 <p className="text-base text-gray-700 dark:text-gray-300">
                   {project.description}
                 </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={`${project.title}-${tag}`}
+                      className={`rounded-full border px-2.5 py-1 text-xs font-medium ${projectTagClassNames[tag] ?? defaultProjectTagClassName}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Link>
           ))}

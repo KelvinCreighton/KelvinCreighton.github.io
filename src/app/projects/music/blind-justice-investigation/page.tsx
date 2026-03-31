@@ -1,5 +1,6 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import ProjectPager from "@/components/ProjectPager";
 
 // Dynamically import the viewer with SSR disabled because OSMD relies on the window object
 const SheetMusicViewer = dynamic(
@@ -25,6 +26,11 @@ export default function BlindJusticeInvestigationPage() {
       <div className="w-full max-w-6xl">
         <SheetMusicViewer file="/scores/BL1ND_JUST1C3_1NV3ST1G4T1ON.musicxml" />
       </div>
+
+      <ProjectPager
+        category="music"
+        currentPath="/projects/music/blind-justice-investigation"
+      />
     </main>
   );
 }

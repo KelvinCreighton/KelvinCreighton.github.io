@@ -99,5 +99,10 @@ export default function EvalWriteup() {
     ],
   };
 
-  return <WriteupTemplate data={writeupData} />;
+  return (
+    <WriteupTemplate
+      data={writeupData}
+      currentPath="/projects/cybersecurity/eval"
+    />
+  );
 }
