@@ -14,15 +14,7 @@ export default function AutoProjects() {
       id: 1,
       title: "Manual Transmission Rebuild (1989 Honda Accord)",
       date: "August 2025",
-      tags: [
-        "rebuild",
-        "transmission",
-        "alternator",
-        "starter",
-        "axle",
-        "clutch",
-        "drivetrain",
-      ],
+      tags: [],
       description:
         "What started as a simple alternator replacement turned into a full manual transmission rebuild. This project documents the process and the challenges that came with it.",
       image: "/images/projects/transmission-title.jpg",

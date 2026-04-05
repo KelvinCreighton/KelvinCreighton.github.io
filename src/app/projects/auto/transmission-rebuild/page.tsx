@@ -459,7 +459,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-1.jpg"
-                    alt="Step 7-1"
+                    alt="Inspecting 5th gear during manual transmission rebuild"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -470,7 +470,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-2.jpg"
-                    alt="Step 7-2"
+                    alt="Close-up of 5th gear and synchro assembly"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -485,7 +485,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-3.jpg"
-                    alt="Step 7-3"
+                    alt="Removing the 5th gear from the transmission housing"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -496,7 +496,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-4.jpg"
-                    alt="Step 7-4"
+                    alt="1989 Honda Accord 5th gear components disassembled"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -511,7 +511,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-5.jpg"
-                    alt="Step 7-5"
+                    alt="Inspecting damage on the 5th gear teeth"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -522,7 +522,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-6.jpg"
-                    alt="Step 7-6"
+                    alt="Showing the gear wear on the 5th gear assembly"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -536,7 +536,7 @@ export default function AutomotiveProjectTemplate() {
               <div className="relative max-w-2xl w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                 <Image
                   src="/images/projects/transmission-step-7-7.jpg"
-                  alt="Step 7-7"
+                  alt="Chipped 5th gear of the Honda Accord transmission"
                   width={4032}
                   height={3024}
                   className="w-full h-auto object-contain"
@@ -571,7 +571,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-8-1.jpg"
-                    alt="Step 8-1"
+                    alt="Separating the bell housing from the main case of the transmission"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -582,7 +582,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-8-2.jpg"
-                    alt="Step 8-2"
+                    alt="Struggling to pry open the aluminum transmission case"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -593,7 +593,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-8-3.jpg"
-                    alt="Step 8-3"
+                    alt="Successfully split transmission case showing internal gears"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -617,7 +617,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-1.jpg"
-                    alt="Step 9-1"
+                    alt="4th gear bearing removed from the main shaft"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -631,7 +631,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-2.jpg"
-                    alt="Step 9-2"
+                    alt="4th gear component of the manual transmission"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -645,7 +645,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-3.jpg"
-                    alt="Step 9-3"
+                    alt="4th gear synchros and locking rings"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -661,7 +661,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-4.png"
-                    alt="Step 9-4"
+                    alt="Transmission gear cluster with shift linkages attached"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -675,7 +675,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-5.png"
-                    alt="Step 9-5"
+                    alt="Transmission gear cluster after removing shift linkages"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -691,7 +691,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-6.jpg"
-                    alt="Step 9-6"
+                    alt="Shift linkages removed from the transmission assembly"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -705,7 +705,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-7.png"
-                    alt="Step 9-7"
+                    alt="Removed 4th and 3rd gear shifting mechanisms and synchros"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -721,7 +721,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-8.png"
-                    alt="Step 9-8"
+                    alt="Removed 3rd gear from the transmission shaft"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -735,7 +735,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-9.png"
-                    alt="Step 9-9"
+                    alt="Removed transaxle, 2nd gear, and 1st gear assemblies"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -780,7 +780,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-10-1.png"
-                    alt="Step 10-1"
+                    alt="Reassembling the main case of the 1989 Honda Accord manual transmission"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -791,7 +791,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-10-2.png"
-                    alt="Step 10-2"
+                    alt="Applying black RTV sealant to the transmission bell housing mating surface"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -818,7 +818,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-11-1.jpg"
-                    alt="Step 11-1"
+                    alt="5th gear and pin bearing before reassembly"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -832,7 +832,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-11-2.jpg"
-                    alt="Step 11-2"
+                    alt="Broken pin bearing found during transmission reassembly"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -848,7 +848,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-11-3.jpg"
-                    alt="Step 11-3"
+                    alt="Bearing spacer required for 5th gear reassembly"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -862,7 +862,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-11-4.jpg"
-                    alt="Step 11-4"
+                    alt="5th gear section with minimal reassembly without the broken bearing"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -892,7 +892,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-12-1.jpg"
-                    alt="Step 12-1"
+                    alt="Strange bolt type encountered during clutch removal"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -906,7 +906,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-12-2.jpg"
-                    alt="Step 12-2"
+                    alt="Old worn-out clutch removed from the Honda Accord"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -920,7 +920,7 @@ export default function AutomotiveProjectTemplate() {
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-12-3.jpg"
-                    alt="Step 12-3"
+                    alt="New performance upgrade clutch installed on the flywheel"
                     width={4032}
                     height={3024}
                     className="w-full h-auto object-contain"
@@ -966,9 +966,9 @@ export default function AutomotiveProjectTemplate() {
             Rebuilding a transmission is without a doubt one of the most
             challenging DIY projects I&apos;ve ever tackled. It was a test of patience,
             endurance, and precision with many worrying moments of not having the
-            capabilities to complete the task. Between the literal rain on my driveway
-            and the many unfortunate surprises, there were plenty of moments
-            where it felt like the car wouldn&apos;t be fixed in time.
+            capabilities to complete the task. Between the literal rain and the many
+            unfortunate surprises, there were plenty of moments where it felt like
+            the car wouldn&apos;t be fixed in time.
           </p>
           <br />
           <p>

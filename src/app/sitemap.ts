@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { projectNavigationData } from '@/components/projectNavigationData'
 
 export const dynamic = 'force-static'
 
@@ -6,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Replace with your actual deployed domain
   const baseUrl = 'https://kelvincreighton.ca'
 
-  return [
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
       lastModified: new Date(),
@@ -32,4 +33,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
   ]
+
+  const projectRoutes: MetadataRoute.Sitemap = Object.values(projectNavigationData)
+    .flat()
+    .map((project) => ({
+      url: `${baseUrl}${project.href}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }))
+
+  return [...staticRoutes, ...projectRoutes]
 }

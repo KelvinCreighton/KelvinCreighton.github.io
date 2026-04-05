@@ -169,8 +169,8 @@ export default function Home() {
                   WICYS CTF Challenges
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Jump straight into the WICYS challenge set from the Cross Chapter CTF of March 2026.
-                  Challenges categories include: Web Exploitation, Binary Exploitation, Reverse Engineering, and Forensics.
+                  Try out the WICYS challenges I designed for the Cross Chapter CTF of March 2026.
+                  Challenge categories include: Web Exploitation, Binary Exploitation, Reverse Engineering, and Forensics.
                 </p>
               </div>
             </div>
