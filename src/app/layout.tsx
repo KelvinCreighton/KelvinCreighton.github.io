@@ -6,20 +6,41 @@ import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kelvincreighton.ca'),
   title: {
-    default: "Kelvin's Personal Website",
-    template: "%s | Kelvin's Portfolio",
+    default: "Kelvin Creighton | Cybersecurity & Software Engineering Portfolio",
+    template: "%s | Kelvin Creighton",
   },
   description:
-    "Portfolio and blog showcasing past, current, and future projects.",
+    "Personal portfolio and blog of Kelvin Creighton, a Computer Science student at the University of Alberta focusing on Cybersecurity, Networking, Game Development, and Automotive Repair.",
+  keywords: [
+    "Kelvin Creighton",
+    "Cybersecurity",
+    "Software Engineering",
+    "Computer Science",
+    "University of Alberta",
+    "Portfolio",
+    "CTF",
+    "Web Security",
+    "Game Development",
+    "Automotive Repair"
+  ],
+  authors: [{ name: "Kelvin Creighton", url: "https://kelvincreighton.ca" }],
+  creator: "Kelvin Creighton",
+  publisher: "Kelvin Creighton",
   openGraph: {
-    title: "Kelvin's Personal Website",
+    title: "Kelvin Creighton | Portfolio",
     description:
-      "Portfolio and blog showcasing past, current, and future projects.",
+      "Personal portfolio and blog of Kelvin Creighton, focusing on Cybersecurity, Software Engineering, and Game Development.",
     url: "https://kelvincreighton.ca",
-    siteName: "Kelvin's Portfolio",
+    siteName: "Kelvin Creighton's Portfolio",
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kelvin Creighton | Portfolio",
+    description: "Cybersecurity & Software Engineering Portfolio of Kelvin Creighton.",
   },
   robots: {
     index: true,
