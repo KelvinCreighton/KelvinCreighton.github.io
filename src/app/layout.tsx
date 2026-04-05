@@ -60,9 +60,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Kelvin Creighton",
+    url: "https://kelvincreighton.ca",
+    sameAs: [
+      "https://github.com/KelvinCreighton",
+      "https://www.linkedin.com/in/kelvin-creighton-250806263"
+    ],
+    jobTitle: "Computer Science Student",
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "University of Alberta"
+    }
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
