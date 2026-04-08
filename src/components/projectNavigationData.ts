@@ -22,6 +22,10 @@ export const projectNavigationData: Record<
     { href: "/projects/cybersecurity/eval", title: "PicoCTF: 3v@l" },
     { href: "/projects/cybersecurity/soap", title: "PicoCTF: SOAP" },
     {
+      href: "/projects/cybersecurity/macsync-stealer",
+      title: "MacSync Stealer",
+    },
+    {
       href: "/projects/cybersecurity/cupid-portal",
       title: "HTCOTB2026 CTF: Cupid's Secret Message",
     },

@@ -69,6 +69,18 @@ export default function CybersecurityProjectsClient({
     },
     {
       id: 4,
+      slug: "macsync-stealer",
+      title: "MacSync Stealer",
+      date: "December 2025",
+      tags: ["malware", "static-analysis", "macos", "zsh"],
+      description:
+        "A detailed static analysis of the MacSync Stealer malware, uncovering its multi-stage execution flow and C2 communication methods.",
+      image: "/images/projects/cyber-highlights.png",
+      link: "/projects/cybersecurity/macsync-stealer",
+      category: "Malware Analysis",
+    },
+    {
+      id: 5,
       slug: "cupid-portal",
       title: "HTCOTB2026 CTF: Cupid's Secret Message",
       date: "February 2026",
@@ -81,7 +93,7 @@ export default function CybersecurityProjectsClient({
       category: "HTCOTB CTF",
     },
     {
-      id: 5,
+      id: 6,
       slug: "heartmail",
       title: "HTCOTB2026 CTF: HeartMail 1.0",
       date: "February 2026",
@@ -94,7 +106,7 @@ export default function CybersecurityProjectsClient({
       category: "HTCOTB CTF",
     },
     {
-      id: 6,
+      id: 7,
       slug: "wicys-ctf-01",
       title: "WICYS CTF: Bunny Tracker Glitch 🟩",
       date: "March 2026",
@@ -106,7 +118,7 @@ export default function CybersecurityProjectsClient({
       category: "WICYS CTF",
     },
     {
-      id: 7,
+      id: 8,
       slug: "wicys-ctf-02",
       title: "WICYS CTF: Luck Checker 🍀",
       date: "March 2026",
@@ -118,7 +130,7 @@ export default function CybersecurityProjectsClient({
       category: "WICYS CTF",
     },
     {
-      id: 8,
+      id: 9,
       slug: "wicys-ctf-03",
       title: "WICYS CTF: Bunny Network - Portal Override 🐇🌐",
       date: "March 2026",
@@ -130,7 +142,7 @@ export default function CybersecurityProjectsClient({
       category: "WICYS CTF",
     },
     {
-      id: 9,
+      id: 10,
       slug: "wicys-ctf-04",
       title: "WICYS CTF: Bunny Overflow 🐇",
       date: "March 2026",
@@ -143,7 +155,7 @@ export default function CybersecurityProjectsClient({
       category: "WICYS CTF",
     },
     {
-      id: 10,
+      id: 11,
       slug: "wicys-ctf-05",
       title: "WICYS CTF: Rainbow Vault Overflow 🌈🔒",
       date: "March 2026",
@@ -156,7 +168,7 @@ export default function CybersecurityProjectsClient({
       category: "WICYS CTF",
     },
     {
-      id: 11,
+      id: 12,
       slug: "wicys-ctf-06",
       title: "WICYS CTF: ROP Around the Rainbow 🌈🐇",
       date: "March 2026",
@@ -169,7 +181,7 @@ export default function CybersecurityProjectsClient({
       category: "WICYS CTF",
     },
     {
-      id: 12,
+      id: 13,
       slug: "wicys-ctf-07",
       title: "WICYS CTF: Scavenger Hunt 🔎🥚",
       date: "March 2026",
@@ -182,7 +194,7 @@ export default function CybersecurityProjectsClient({
       category: "WICYS CTF",
     },
     {
-      id: 13,
+      id: 14,
       slug: "wicys-ctf-08",
       title: "WICYS CTF: Bunny Network API Override 🐇🌐",
       date: "March 2026",
@@ -195,7 +207,7 @@ export default function CybersecurityProjectsClient({
       category: "WICYS CTF",
     },
     {
-      id: 14,
+      id: 15,
       slug: "wicys-ctf-09",
       title: "WICYS CTF: Leprechauns Vault 🍀🔒",
       date: "March 2026",

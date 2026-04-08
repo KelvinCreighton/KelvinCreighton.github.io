@@ -29,13 +29,14 @@ interface Section {
 
 interface WriteupData {
   title: string;
-  category: string;
-  points: string;
+  category?: string;
+  points?: string;
   author: string;
-  difficulty: 'easy' | 'medium' | 'hard';
+  difficulty?: 'easy' | 'medium' | 'hard';
   tags: string[];
   flag: string;
   sections: Section[];
+  customLabel?: string;
 }
 
 interface WriteupTemplateProps {
@@ -335,6 +336,16 @@ const styles = `
     color: var(--accent3);
   }
 
+  code.inline-code {
+    display: inline;
+    padding: 0.2rem 0.4rem;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--accent);
+    font-size: 0.85em;
+  }
+
   .reason {
     font-size: 1.05rem;
     color: var(--muted);
@@ -425,6 +436,10 @@ const styles = `
     gap: 0.5rem;
   }
 
+  .pager-wrapper {
+    margin-top: 2rem;
+  }
+
   @keyframes fadeDown {
     from { opacity: 0; transform: translateY(-16px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -442,7 +457,16 @@ const styles = `
 `;
 
 export default function WriteupTemplate({ data, currentPath }: WriteupTemplateProps) {
-  const difficultyClass = `diff-${data.difficulty}`;
+  const renderContent = (content: string) => {
+    // Basic regex to replace `code` with <code>code</code>
+    const parts = content.split(/(`[^`]+`)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('`') && part.endsWith('`')) {
+        return <code key={index} className="inline-code">{part.slice(1, -1)}</code>;
+      }
+      return <span key={index} dangerouslySetInnerHTML={{ __html: part }} />;
+    });
+  };
 
   return (
     <>
@@ -456,28 +480,34 @@ export default function WriteupTemplate({ data, currentPath }: WriteupTemplatePr
           &larr; Back to Cybersecurity Projects
         </Link>
         <header>
-          <div className="ctf-label">PicoCTF &mdash; Write-Up</div>
+          <div className="ctf-label">{data.customLabel || "PicoCTF — Write-Up"}</div>
           <h1>{data.title}</h1>
 
           <div className="meta-grid">
-            <div className="meta-item">
-              <span>Category:</span>
-              <span className="val">{data.category}</span>
-            </div>
-            <div className="meta-item">
-              <span>Points:</span>
-              <span className="val">{data.points}</span>
-            </div>
+            {data.category && (
+              <div className="meta-item">
+                <span>Category:</span>
+                <span className="val">{data.category}</span>
+              </div>
+            )}
+            {data.points && (
+              <div className="meta-item">
+                <span>Points:</span>
+                <span className="val">{data.points}</span>
+              </div>
+            )}
             <div className="meta-item">
               <span>Author:</span>
               <span className="val">{data.author}</span>
             </div>
-            <div className="meta-item">
-              <span>Difficulty:</span>
-              <span className={`badge ${difficultyClass}`}>
-                {data.difficulty.charAt(0).toUpperCase() + data.difficulty.slice(1)}
-              </span>
-            </div>
+            {data.difficulty && (
+              <div className="meta-item">
+                <span>Difficulty:</span>
+                <span className={`badge diff-${data.difficulty}`}>
+                  {data.difficulty.charAt(0).toUpperCase() + data.difficulty.slice(1)}
+                </span>
+              </div>
+            )}
           </div>
 
           <div className="tags">
@@ -497,15 +527,15 @@ export default function WriteupTemplate({ data, currentPath }: WriteupTemplatePr
               <div className="section-line"></div>
             </div>
 
-            {section.prose && <p className="prose">{section.prose}</p>}
-            {section.notice && <div className="notice-box">{section.notice}</div>}
+            {section.prose && <p className="prose">{renderContent(section.prose)}</p>}
+            {section.notice && <div className="notice-box">{renderContent(section.notice)}</div>}
 
             {section.cards?.map((card, cardIdx) => (
               <div key={cardIdx} className="card">
                 <h3>{card.title}</h3>
                 <ul>
                   {card.items.map((item, itemIdx) => (
-                    <li key={itemIdx} dangerouslySetInnerHTML={{ __html: item }} />
+                    <li key={itemIdx}>{renderContent(item)}</li>
                   ))}
                 </ul>
               </div>
@@ -521,12 +551,12 @@ export default function WriteupTemplate({ data, currentPath }: WriteupTemplatePr
                   {step.prose && (
                     <>
                       {step.prose.split('\n\n').map((p, i) => (
-                        <p key={i} className="prose">{p}</p>
+                        <p key={i} className="prose">{renderContent(p)}</p>
                       ))}
                     </>
                   )}
-                  {step.notice && <div className="notice-box">{step.notice}</div>}
-                  
+                  {step.notice && <div className="notice-box">{renderContent(step.notice)}</div>}
+
                   {step.input && (
                     <div className="io-row">
                       <span className="io-label in">INPUT</span>
@@ -541,7 +571,7 @@ export default function WriteupTemplate({ data, currentPath }: WriteupTemplatePr
                     </div>
                   )}
 
-                  {step.reason && <p className="reason" dangerouslySetInnerHTML={{ __html: step.reason }} />}
+                  {step.reason && <p className="reason">{renderContent(step.reason)}</p>}
                 </div>
               </div>
             ))}
@@ -563,11 +593,13 @@ export default function WriteupTemplate({ data, currentPath }: WriteupTemplatePr
         )}
 
         <footer>
-          <span>{data.author} &mdash; PicoCTF Write-Up</span>
-          <span>All steps performed in a legal CTF environment.</span>
+          <span>{data.author} &mdash; {data.customLabel || "PicoCTF Write-Up"}</span>
+          <span>All steps performed in a legal environment.</span>
         </footer>
 
-        <ProjectPager category="cybersecurity" currentPath={currentPath} />
+        <div className="pager-wrapper">
+          <ProjectPager category="cybersecurity" currentPath={currentPath} />
+        </div>
       </div>
     </>
   );
