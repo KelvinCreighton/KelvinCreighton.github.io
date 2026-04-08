@@ -64,15 +64,43 @@ const styles = `
   nav {
     background: var(--bg) !important;
     border-color: var(--border) !important;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 1rem !important;
   }
-  nav ul {
-    gap: 2.5rem !important; /* more separated */
-  }
-  nav ul li {
-    margin-left: 0 !important;
-  }
+  
   nav .ThemeToggle, nav button {
-    display: none !important;
+    visibility: hidden !important;
+  }
+
+  footer {
+    background: var(--bg) !important;
+    border-color: var(--border) !important;
+    padding: 0.75rem 0 !important;
+  }
+
+  footer a {
+    display: inline-flex !important;
+    color: var(--muted) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  footer a[aria-label="GitHub"]:hover {
+    color: #fff !important;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
+  }
+
+  footer a[aria-label="LinkedIn"]:hover {
+    color: #0077b5 !important;
+    filter: drop-shadow(0 0 8px rgba(0,119,181,0.5));
+  }
+
+  footer a[aria-label="Email"]:hover {
+    color: #ea4335 !important;
+    filter: drop-shadow(0 0 8px rgba(234,67,53,0.5));
+  }
+
+  footer a:hover {
+    transform: translateY(-4px);
   }
   
   body {
@@ -437,7 +465,18 @@ const styles = `
   }
 
   .pager-wrapper {
-    margin-top: 2rem;
+    margin-top: 4rem;
+  }
+
+  .cyber-pager-item {
+    padding: 1rem 1.25rem !important;
+    width: 100% !important;
+  }
+
+  @media (max-width: 768px) {
+    .cyber-pager-item {
+      padding: 1rem 1.25rem !important;
+    }
   }
 
   @keyframes fadeDown {
@@ -598,7 +637,7 @@ export default function WriteupTemplate({ data, currentPath }: WriteupTemplatePr
         </footer>
 
         <div className="pager-wrapper">
-          <ProjectPager category="cybersecurity" currentPath={currentPath} />
+          <ProjectPager category="cybersecurity" currentPath={currentPath} variant="cyber" />
         </div>
       </div>
     </>

@@ -51,6 +51,31 @@ body {
   opacity: 0;
 }
 
+/* ── Global Footer Icon Effects ── */
+footer a {
+  display: inline-flex;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+footer a:hover {
+  transform: translateY(-4px);
+}
+
+footer a[aria-label="GitHub"]:hover {
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
+}
+.dark footer a[aria-label="GitHub"]:hover {
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+}
+
+footer a[aria-label="LinkedIn"]:hover {
+  filter: drop-shadow(0 0 8px rgba(37,99,235,0.4));
+}
+
+footer a[aria-label="Email"]:hover {
+  filter: drop-shadow(0 0 8px rgba(220,38,38,0.4));
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-page-enter,
   .animate-stagger-enter {
