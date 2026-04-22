@@ -141,7 +141,7 @@ export default function WicysCtfPage({ challengeId }: WicysCtfPageProps) {
         </div>
 
         {isComingSoon && (
-          <InProgressNotice message="This WICYS challenge is still being finalized, so the full playable release is not available yet." />
+          <InProgressNotice message="This WiCyS challenge is still being finalized, so the full playable release is not available yet." />
         )}
 
         <CtfFlagSubmission

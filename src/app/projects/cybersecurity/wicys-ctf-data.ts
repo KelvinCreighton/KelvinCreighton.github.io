@@ -28,7 +28,7 @@ function getWicysChallengeDownloadPath(
 export const wicysChallenges: Record<string, WicysChallenge> = {
   "01": {
     slug: "wicys-ctf-01",
-    title: "WICYS CTF: Bunny Tracker Glitch 🟩",
+    title: "WiCyS CTF: Bunny Tracker Glitch 🟩",
     subtitle: "A forensic challenge centered on a suspicious image artifact.",
     description: [
       "The Easter Bunny's tracker sent a single green pixel, but the file clearly has more going on than a normal 1x1 image should.",
@@ -56,7 +56,7 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   },
   "02": {
     slug: "wicys-ctf-02",
-    title: "WICYS CTF: Luck Checker 🍀",
+    title: "WiCyS CTF: Luck Checker 🍀",
     subtitle: "A beginner-friendly reversing challenge focused on a suspicious validator binary.",
     description: [
       "Heap MacCipher claims the luck engine validation code is impossible to guess, but the validator feels far less mysterious than he wants it to appear.",
@@ -82,7 +82,7 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   },
   "03": {
     slug: "wicys-ctf-03",
-    title: "WICYS CTF: Bunny Network - Portal Override 🐇🌐",
+    title: "WiCyS CTF: Bunny Network - Portal Override 🐇🌐",
     subtitle: "A reversing challenge built around an emergency portal override binary.",
     description: [
       "The Bunny Network's routing portal has been locked down, and the emergency override binary named portal is the last path back in.",
@@ -111,7 +111,7 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   },
   "04": {
     slug: "wicys-ctf-04",
-    title: "WICYS CTF: Bunny Overflow 🐇",
+    title: "WiCyS CTF: Bunny Overflow 🐇",
     subtitle: "A classic binary exploitation challenge with a vulnerable authorization path.",
     description: [
       "Heap MacCipher removed the bounds checking on the Bunny Network Security Gateway and left the authorization path dangerously exposed.",
@@ -133,7 +133,7 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   },
   "05": {
     slug: "wicys-ctf-05",
-    title: "WICYS CTF: Rainbow Vault Overflow 🌈🔒",
+    title: "WiCyS CTF: Rainbow Vault Overflow 🌈🔒",
     subtitle: "A heap-focused exploitation challenge hidden inside the Rainbow Vault portal.",
     description: [
       "The Rainbow Vault portal looks simple on the surface, but its internal memory layout tells a different story.",
@@ -155,7 +155,7 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   },
   "06": {
     slug: "wicys-ctf-06",
-    title: "WICYS CTF: ROP Around the Rainbow 🌈🐇",
+    title: "WiCyS CTF: ROP Around the Rainbow 🌈🐇",
     subtitle: "An advanced binary exploitation challenge built around precise control-flow hijacking.",
     description: [
       "A vulnerable return path in the Rainbow Bridge control system allows execution to be steered in small, deliberate steps.",
@@ -178,7 +178,7 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   },
   "07": {
     slug: "wicys-ctf-07",
-    title: "WICYS CTF: Scavenger Hunt 🔎🥚",
+    title: "WiCyS CTF: Scavenger Hunt 🔎🥚",
     subtitle: "A web challenge that rewards careful inspection of the client-side application.",
     description: [
       "The Spring Incident Response Team recovered Heap MacCipher's control console, but the front-end itself is where the real clues were left behind.",
@@ -199,7 +199,7 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   },
   "08": {
     slug: "wicys-ctf-08",
-    title: "WICYS CTF: Bunny Network API Override 🐇🌐",
+    title: "WiCyS CTF: Bunny Network API Override 🐇🌐",
     subtitle: "A web challenge involving a hidden override path in the Bunny Network API.",
     description: [
       "The Bunny Network API has been hijacked, and the rendered page only shows part of what the service is actually sending back to clients.",
@@ -219,7 +219,7 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   },
   "09": {
     slug: "wicys-ctf-09",
-    title: "WICYS CTF: Leprechauns Vault 🍀🔒",
+    title: "WiCyS CTF: Leprechauns Vault 🍀🔒",
     subtitle: "A web challenge centered on a suspicious login flow and a careless hidden backdoor.",
     description: [
       "A secret portal at the end of the rainbow exposes a login form and a known employee email, but brute force is not the intended path.",

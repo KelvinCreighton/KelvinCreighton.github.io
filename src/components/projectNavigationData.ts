@@ -35,39 +35,39 @@ export const projectNavigationData: Record<
     },
     {
       href: "/projects/cybersecurity/wicys-ctf-01",
-      title: "WICYS CTF: Bunny Tracker Glitch",
+      title: "WiCyS CTF: Bunny Tracker Glitch",
     },
     {
       href: "/projects/cybersecurity/wicys-ctf-02",
-      title: "WICYS CTF: Luck Checker",
+      title: "WiCyS CTF: Luck Checker",
     },
     {
       href: "/projects/cybersecurity/wicys-ctf-03",
-      title: "WICYS CTF: Bunny Network - Portal Override",
+      title: "WiCyS CTF: Bunny Network - Portal Override",
     },
     {
       href: "/projects/cybersecurity/wicys-ctf-04",
-      title: "WICYS CTF: Bunny Overflow",
+      title: "WiCyS CTF: Bunny Overflow",
     },
     {
       href: "/projects/cybersecurity/wicys-ctf-05",
-      title: "WICYS CTF: Rainbow Vault Overflow",
+      title: "WiCyS CTF: Rainbow Vault Overflow",
     },
     {
       href: "/projects/cybersecurity/wicys-ctf-06",
-      title: "WICYS CTF: ROP Around the Rainbow",
+      title: "WiCyS CTF: ROP Around the Rainbow",
     },
     {
       href: "/projects/cybersecurity/wicys-ctf-07",
-      title: "WICYS CTF: Scavenger Hunt",
+      title: "WiCyS CTF: Scavenger Hunt",
     },
     {
       href: "/projects/cybersecurity/wicys-ctf-08",
-      title: "WICYS CTF: Bunny Network API Override",
+      title: "WiCyS CTF: Bunny Network API Override",
     },
     {
       href: "/projects/cybersecurity/wicys-ctf-09",
-      title: "WICYS CTF: Leprechauns Vault",
+      title: "WiCyS CTF: Leprechauns Vault",
     },
   ],
   "game-dev": [

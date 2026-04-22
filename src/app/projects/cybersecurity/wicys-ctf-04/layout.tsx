@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "WICYS CTF: Bunny Overflow",
-  description: "Detailed writeup and documentation for the WICYS CTF: Bunny Overflow project.",
+  title: "WiCyS CTF: Bunny Overflow",
+  description: "Detailed writeup and documentation for the WiCyS CTF: Bunny Overflow project.",
 };
 
 export default function Layout({

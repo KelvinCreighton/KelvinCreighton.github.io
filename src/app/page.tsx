@@ -151,14 +151,14 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Highlight 1 */}
           <Link
-            href="/projects/cybersecurity?category=WICYS%20CTF"
+            href="/projects/cybersecurity?category=WiCyS%20CTF"
             className="group block h-full mx-2 md:mx-0"
           >
             <div className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
               <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-200 dark:bg-gray-800">
                 <Image
                   src="/images/projects/WICYS_logo.png"
-                  alt="WICYS CTF Challenges"
+                  alt="WiCyS CTF Challenges"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
@@ -166,11 +166,10 @@ export default function Home() {
               </div>
               <div className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  WICYS CTF Challenges
+                  WiCyS CTF Challenges
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Try out the WICYS challenges I designed for the Cross Chapter CTF of March 2026.
-                  Challenge categories include: Web Exploitation, Binary Exploitation, Reverse Engineering, and Forensics.
+                  Try out the challenges I designed for the WiCyS Cross Chapter CTF of March 2026. Challenge categories include: Web Exploitation, Binary Exploitation, Reverse Engineering, and Forensics.
                 </p>
               </div>
             </div>
