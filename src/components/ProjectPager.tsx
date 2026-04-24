@@ -10,13 +10,11 @@ import {
 type ProjectPagerProps = {
   category: ProjectNavigationCategory;
   currentPath: string;
-  variant?: "normal" | "cyber";
 };
 
 export default function ProjectPager({
   category,
   currentPath,
-  variant = "normal",
 }: ProjectPagerProps) {
   const projects = projectNavigationData[category];
   const currentIndex = projects.findIndex(
@@ -30,27 +28,15 @@ export default function ProjectPager({
   const previousProject = projects[currentIndex - 1];
   const nextProject = projects[currentIndex + 1];
 
-  const isCyber = variant === "cyber";
+  const containerClasses = "group rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4 transition-colors hover:border-blue-400 hover:bg-blue-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-blue-500 dark:hover:bg-blue-950/30";
 
-  const containerClasses = isCyber
-    ? "cyber-pager-item group flex flex-col justify-center rounded-2xl border border-[#2a6080] bg-[#162838] transition-all hover:bg-[#1e344a] hover:border-[#40f0ff] w-full"
-    : "group rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4 transition-colors hover:border-blue-400 hover:bg-blue-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-blue-500 dark:hover:bg-blue-950/30";
+  const disabledClasses = "rounded-2xl border border-dashed border-gray-200 bg-gray-50/70 px-5 py-4 opacity-60 dark:border-gray-800 dark:bg-gray-900/70";
 
-  const disabledClasses = isCyber
-    ? "cyber-pager-item flex flex-col justify-center rounded-2xl border border-dashed border-[#2a6080]/50 bg-[#162838]/50 opacity-60 w-full"
-    : "rounded-2xl border border-dashed border-gray-200 bg-gray-50/70 px-5 py-4 opacity-60 dark:border-gray-800 dark:bg-gray-900/70";
+  const labelClasses = "text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400";
 
-  const labelClasses = isCyber
-    ? "text-[11px] font-bold uppercase tracking-[0.25em] text-[#40f0ff]"
-    : "text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400";
+  const titleClasses = "mt-2 text-base font-semibold text-gray-900 transition-colors group-hover:text-blue-700 dark:text-gray-100 dark:group-hover:text-blue-300";
 
-  const titleClasses = isCyber
-    ? "mt-2 text-lg font-black text-white leading-tight transition-colors group-hover:text-[#40f0ff]"
-    : "mt-2 text-base font-semibold text-gray-900 transition-colors group-hover:text-blue-700 dark:text-gray-100 dark:group-hover:text-blue-300";
-
-  const disabledTitleClasses = isCyber
-    ? "mt-2 text-lg font-black text-[#2a6080] leading-tight"
-    : "mt-2 text-base font-semibold text-gray-500 dark:text-gray-400";
+  const disabledTitleClasses = "mt-2 text-base font-semibold text-gray-500 dark:text-gray-400";
 
   return (
     <nav

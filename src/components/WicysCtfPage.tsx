@@ -192,10 +192,7 @@ export default function WicysCtfPage({ challengeId }: WicysCtfPageProps) {
         </div>
       </div>
 
-      <ProjectPager
-        category="cybersecurity"
-        currentPath={`/projects/cybersecurity/${challenge.slug}`}
-      />
+      <ProjectPager category="cybersecurity" currentPath={`/projects/cybersecurity/${challenge.slug}`} />
     </main>
   );
 }
