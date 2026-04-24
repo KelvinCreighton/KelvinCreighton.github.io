@@ -235,7 +235,7 @@ export default function AutomotiveProjectTemplate() {
               />
             </div>
             <figcaption className="text-sm text-gray-500 mt-2 text-center">
-              New Axle on the Left | Old Axle on the right
+              New Axle on the Left | Old Axle on the Right
             </figcaption>
           </figure>
 
