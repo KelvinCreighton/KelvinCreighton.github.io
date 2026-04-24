@@ -11,8 +11,21 @@ import {
 export default function AutoProjects() {
   const projects = [
     {
+      id: 0,
+      title: "Valve Cover Replacement & Modification",
+      vehicle: "2002 Toyota Tacoma",
+      date: "May 2022",
+      tags: [],
+      description:
+        "When a cracked valve cover led to an oil leak, a custom modification was required to make a donor part from a different year fit properly.",
+      image: "/images/projects/tacoma-vc-title.jpg",
+      link: "/projects/auto/tacoma-valve-cover",
+      category: "Engine Repair",
+    },
+    {
       id: 1,
-      title: "Manual Transmission Rebuild (1989 Honda Accord)",
+      title: "Manual Transmission Rebuild",
+      vehicle: "1989 Honda Accord",
       date: "August 2025",
       tags: [],
       description:
@@ -22,22 +35,24 @@ export default function AutoProjects() {
       category: "Drivetrain Repair",
     },
   ];
-  const categories = [
+
+  // We now categorize by vehicle instead of task
+  const vehicles = [
     "All",
     "Oldest",
-    ...new Set([...projects].sort((a, b) => b.id - a.id).map((project) => project.category)),
+    ...new Set([...projects].sort((a, b) => b.id - a.id).map((project) => project.vehicle)),
   ];
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedVehicle, setSelectedVehicle] = useState("All");
 
   const filteredProjects = [...projects]
     .sort((a, b) =>
-      selectedCategory === "Oldest" ? a.id - b.id : b.id - a.id,
+      selectedVehicle === "Oldest" ? a.id - b.id : b.id - a.id,
     )
     .filter(
       (project) =>
-        selectedCategory === "All" ||
-        selectedCategory === "Oldest" ||
-        project.category === selectedCategory,
+        selectedVehicle === "All" ||
+        selectedVehicle === "Oldest" ||
+        project.vehicle === selectedVehicle,
     );
 
   return (
@@ -55,23 +70,23 @@ export default function AutoProjects() {
         </p>
         <div className="mt-8 flex w-full flex-col items-start gap-3">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
-            Category
+            Filter by Vehicle
           </p>
           <div className="flex flex-wrap gap-3">
-            {categories.map((category) => {
-              const isActive = selectedCategory === category;
+            {vehicles.map((vehicle) => {
+              const isActive = selectedVehicle === vehicle;
 
               return (
                 <button
-                  key={category}
+                  key={vehicle}
                   type="button"
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => setSelectedVehicle(vehicle)}
                   className={`rounded-full border px-4 py-2 text-sm transition-colors ${isActive
                       ? "border-blue-600 bg-blue-600 text-white dark:border-blue-500 dark:bg-blue-500"
                       : "border-gray-300 bg-white text-gray-700 hover:border-blue-400 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:text-blue-400"
                     }`}
                 >
-                  {category}
+                  {vehicle}
                 </button>
               );
             })}
@@ -99,9 +114,14 @@ export default function AutoProjects() {
               <h2 className="text-xl font-bold mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {project.title}
               </h2>
-              <p className="text-sm italic text-gray-500 dark:text-gray-400 mb-3">
-                {project.date}
-              </p>
+              <div className="flex w-full justify-between items-center mb-3">
+                <p className="text-sm italic text-gray-500 dark:text-gray-400">
+                  {project.date}
+                </p>
+                <p className="text-sm italic text-gray-500 dark:text-gray-400">
+                  {project.vehicle}
+                </p>
+              </div>
               <p className="text-base text-gray-700 dark:text-gray-300 flex-grow">
                 {project.description}
               </p>

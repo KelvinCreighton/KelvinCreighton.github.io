@@ -93,6 +93,10 @@ export const projectNavigationData: Record<
   ],
   auto: [
     {
+      href: "/projects/auto/tacoma-valve-cover",
+      title: "Valve Cover Replacement & Modification (2002 Toyota Tacoma)",
+    },
+    {
       href: "/projects/auto/transmission-rebuild",
       title: "Manual Transmission Rebuild (1989 Honda Accord)",
     },
