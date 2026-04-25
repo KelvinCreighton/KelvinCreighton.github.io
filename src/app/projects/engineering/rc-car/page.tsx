@@ -70,24 +70,25 @@ export default function RcCarProject() {
 { number: 4, isHalfWidth: true, text: "Take it off the skewer and press the circles together so it forms a coil. This will be the antenna for the controller.", image: "/images/projects/rc-car-pdf/img-p34-7.jpg", orientation: "vertical" },
 { number: 5, text: "Find the large ANT hole (antenna connection hole) and locate the smaller hole beside it (also an antenna connection hole)", image: "/images/projects/rc-car-pdf/img-p34-8.jpg", orientation: "vertical" },
 { number: 6, text: "Have an instructor solder the antenna wire in this hole. This should be the only soldering you will need to do. \nIf you do not solder this it is likely not going to work. \n(Yes I tried attaching it to the resistor) \nIf a camper really knows how to solder without issue maybe let them do it. I’ll leave this up to the senior instructor's judgment call.", image: "/images/projects/rc-car-pdf/img-p35-7.jpg", orientation: "vertical" },
-{ number: 7, text: "Hot glue the base of the Red and Black wires. This will help them stay attached better.", image: "/images/projects/rc-car-pdf/img-p35-9.jpg", orientation: "vertical" },
-{ number: 8, customCrop: "aspect-square", text: "Strip the ends of the wires to a decent length.", image: "/images/projects/rc-car-pdf/img-p36-7.jpg", orientation: "vertical" },
+{ number: 7, text: "Hot glue the base of the Red and Black wires. This will help them stay attached better.", image: "/images/projects/rc-car-pdf/img-p33-9.jpg", orientation: "vertical" },
+{ number: 8, text: "Strip the ends of the wires to a decent length.", image: "/images/projects/rc-car-pdf/img-p36-7.jpg", orientation: "vertical" },
 { number: 9, customCrop: "aspect-[3/2]", text: "Slide the Red and Black wires through the hole in the center.", image: "/images/projects/rc-car-pdf/img-p36-8.jpg", orientation: "horizontal" },
 { number: 10, text: "Take the jumbo popsicle stick and snap it in half", image: "/images/projects/rc-car-pdf/img-p36-9.jpg", orientation: "horizontal" },
 { number: 11, text: "Trim the ends with some scissors", image: "/images/projects/rc-car-pdf/img-p36-10.jpg", orientation: "horizontal" },
 { number: 12, text: "Lay them side by side and hot glue the sides and the middle. \nLeave some space between these dots", image: "/images/projects/rc-car-pdf/img-p37-7.jpg", orientation: "horizontal" },
 { number: 13, customCrop: "aspect-video", text: "Cut a regular popsicle stick the the size of the width of the two jumbo popsicle sticks", image: "/images/projects/rc-car-pdf/img-p37-8.jpg", orientation: "horizontal" },
 { number: 14, customCrop: "aspect-[4/3]", text: "Lay the transmitter circuit down for reference. Then hot glue the regular popsicle sticks on the sides.", image: "/images/projects/rc-car-pdf/img-p38-8.jpg", orientation: "horizontal" },
-{ number: 15, text: "Take the transmitter circuit out and flip over the box. \nPut two ¾’’ brass fasteners through the two jumbo popsicle sticks (between the hot glue dots)", image: "/images/projects/rc-car-pdf/img-p38-9.jpg", orientation: "horizontal" },
-{ number: 16, text: "Twist the left brass fastener 90 degrees", image: "/images/projects/rc-car-pdf/img-p39-7.jpg", orientation: "horizontal" },
-{ number: 17, text: "Move the brass fasteners around so that they can fit through the two holes of the transmitter board", image: "/images/projects/rc-car-pdf/img-p39-8.jpg", orientation: "horizontal" },
-{ number: 18, text: "Take the rest of the popsicle sticks left and snap off two small parts", image: "/images/projects/rc-car-pdf/img-p39-9.jpg", orientation: "horizontal" },
-{ number: 19, text: "Stack them with hot glue", image: "/images/projects/rc-car-pdf/img-p40-7.jpg", orientation: "horizontal" },
-{ number: 20, text: "Then hot glue stack to the left of the box.", image: "/images/projects/rc-car-pdf/img-p40-8.jpg", orientation: "horizontal" },
-{ number: 21, text: "Use some electrical tape to attach the red wire to the positive + side of the battery.", image: "/images/projects/rc-car-pdf/img-p40-9.jpg", orientation: "horizontal" },
-{ number: 22, text: "Do the same with the black wire to the other side of the battery", image: "/images/projects/rc-car-pdf/img-p41-7.jpg", orientation: "horizontal" },
-{ number: 23, text: "Place the battery on the right side of the box.", image: "/images/projects/rc-car-pdf/img-p41-8.jpg", orientation: "horizontal" },
-{ number: 24, text: "Place in the transmitter circuit. Open the brass fasteners to hold the circuit in place.", image: "/images/projects/rc-car-pdf/img-p41-9.jpg", orientation: "horizontal" }
+{ number: 15, text: "Do the same with the other sides", image: "/images/projects/rc-car-pdf/img-p38-9.jpg", orientation: "horizontal" },
+{ number: 16, text: "Take the transmitter circuit out and flip over the box. \nPut two ¾’’ brass fasteners through the two jumbo popsicle sticks (between the hot glue dots)", image: "/images/projects/rc-car-pdf/img-p39-7.jpg", orientation: "horizontal" },
+{ number: 17, text: "Twist the left brass fastener 90 degrees", image: "/images/projects/rc-car-pdf/img-p39-8.jpg", orientation: "horizontal" },
+{ number: 18, text: "Move the brass fasteners around so that they can fit through the two holes of the transmitter board", image: "/images/projects/rc-car-pdf/img-p39-9.jpg", orientation: "horizontal" },
+{ number: 19, text: "Take the rest of the popsicle sticks left and snap off two small parts and tack them with hot glue", image: "/images/projects/rc-car-pdf/img-p40-7.jpg", orientation: "horizontal" },
+{ number: 20, text: "Stack them with hot glue", image: "/images/projects/rc-car-pdf/img-p40-8.jpg", orientation: "horizontal" },
+{ number: 21, text: "Then hot glue stack to the left of the box.", image: "/images/projects/rc-car-pdf/img-p40-9.jpg", orientation: "horizontal" },
+{ number: 22, text: "Use some electrical tape to attach the red wire to the positive + side of the battery.", image: "/images/projects/rc-car-pdf/img-p41-7.jpg", orientation: "horizontal" },
+{ number: 23, text: "Do the same with the black wire to the other side of the battery", image: "/images/projects/rc-car-pdf/img-p41-8.jpg", orientation: "horizontal" },
+{ number: 24, text: "Place the battery on the right side of the box.", image: "/images/projects/rc-car-pdf/img-p41-9.jpg", orientation: "horizontal" },
+{ number: 25, text: "Place in the transmitter circuit. Open the brass fasteners to hold the circuit in place.", image: "/images/projects/rc-car-pdf/img-p41-10.jpg", orientation: "horizontal" }
   ];
 
   const renderStep = (step: Step, badgeColor: string) => {
@@ -106,7 +107,6 @@ export default function RcCarProject() {
               alt={`Step ${step.number}`}
               className={`block w-full ${step.customCrop ? "h-full object-cover" : "h-auto object-contain"}`}
               style={{
-                height: step.customCrop ? "100%" : "auto",
                 ...(step.rotate ? { transform: `rotate(${step.rotate}deg)` } : {}),
                 ...(step.objectPosition ? { objectPosition: step.objectPosition } : {})
               }}
