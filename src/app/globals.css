@@ -3,6 +3,7 @@
 
 @theme {
   --font-sans: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-gray-85: #f0f1f4;
   --font-mono: "SFMono-Regular", "Consolas", "Liberation Mono", Menlo, monospace;
 }
 

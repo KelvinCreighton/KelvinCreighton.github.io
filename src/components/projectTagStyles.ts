@@ -1,5 +1,5 @@
 export const defaultProjectTagClassName =
-  "border-gray-300 bg-gray-100 text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300";
+  "border-gray-300 bg-gray-85 text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300";
 
 export const projectTagClassNames: Record<string, string> = {
   web: "border-sky-200 bg-sky-100 text-sky-800 dark:border-sky-900 dark:bg-sky-950/70 dark:text-sky-300",
@@ -35,7 +35,7 @@ export const projectTagClassNames: Record<string, string> = {
   steg: "border-lime-200 bg-lime-100 text-lime-800 dark:border-lime-900 dark:bg-lime-950/70 dark:text-lime-300",
   rev: "border-violet-200 bg-violet-100 text-violet-800 dark:border-violet-900 dark:bg-violet-950/70 dark:text-violet-300",
   binary:
-    "border-gray-300 bg-gray-100 text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300",
+    "border-gray-300 bg-gray-85 text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300",
   strings:
     "border-indigo-200 bg-indigo-100 text-indigo-800 dark:border-indigo-900 dark:bg-indigo-950/70 dark:text-indigo-300",
   easy: "border-zinc-200 bg-zinc-100 text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300",

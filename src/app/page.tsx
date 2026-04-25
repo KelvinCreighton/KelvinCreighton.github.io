@@ -23,7 +23,7 @@ export default function Home() {
       <section className="w-full mb-12 md:mb-20 flex justify-center">
         <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 text-center md:text-left">
           <div className="flex flex-col items-center w-full md:w-auto max-w-sm">
-            <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full border border-gray-200 bg-gray-200 shadow-sm sm:h-[280px] sm:w-[280px] lg:h-[300px] lg:w-[300px] dark:border-gray-800 dark:bg-gray-900">
+            <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full border border-gray-200 bg-gray-85 shadow-sm sm:h-[280px] sm:w-[280px] lg:h-[300px] lg:w-[300px] dark:border-gray-800 dark:bg-gray-900">
               <Image
                 src="/images/Head-Shot.jpg"
                 alt="Kelvin Creighton headshot"
@@ -34,7 +34,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="mt-5 w-full rounded-2xl border border-gray-200 bg-gray-200 p-4 text-left dark:border-gray-800 dark:bg-gray-900/80">
+            <div className="mt-5 w-full rounded-2xl border border-gray-200 bg-gray-85 p-4 text-left dark:border-gray-800 dark:bg-gray-900/80">
               <div className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
                 <a
                   href="mailto:kcreight@ualberta.ca"
@@ -133,7 +133,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/resume"
-                className="bg-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                className="bg-gray-85 hover:bg-gray-85 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium py-3 px-6 rounded-lg transition-colors"
               >
                 My Resume
               </Link>
@@ -154,8 +154,8 @@ export default function Home() {
             href="/projects/cybersecurity?category=WiCyS%20CTF"
             className="group block h-full mx-2 md:mx-0"
           >
-            <div className="bg-gray-200 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
-              <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-200 dark:bg-gray-800">
+            <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
                 <Image
                   src="/images/projects/WICYS_logo.png"
                   alt="WiCyS CTF Challenges"
@@ -180,8 +180,8 @@ export default function Home() {
             href="/projects/auto/transmission-rebuild"
             className="group block h-full mx-2 md:mx-0"
           >
-            <div className="bg-gray-200 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
-              <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-200 dark:bg-gray-800">
+            <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
                 <Image
                   src="/images/projects/transmission-title.jpg"
                   alt="Transmission Rebuild"

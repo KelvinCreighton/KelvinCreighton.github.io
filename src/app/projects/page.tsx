@@ -10,7 +10,7 @@ export default function Projects() {
         {/* Category 1: Cybersecurity */}
         <Link
           href="/projects/cybersecurity"
-          className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm"
+          className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-85 dark:hover:bg-gray-800 transition-colors w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm"
         >
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image
@@ -26,7 +26,7 @@ export default function Projects() {
         {/* Category 2: Auto Repair & Maintenance */}
         <Link
           href="/projects/auto"
-          className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm"
+          className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-85 dark:hover:bg-gray-800 transition-colors w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm"
         >
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image
@@ -42,7 +42,7 @@ export default function Projects() {
         {/* Category 3: Game Development */}
         <Link
           href="/projects/game-dev"
-          className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm"
+          className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-85 dark:hover:bg-gray-800 transition-colors w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm"
         >
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image
@@ -58,7 +58,7 @@ export default function Projects() {
         {/* Category 4: Music Production */}
         <Link
           href="/projects/music"
-          className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm"
+          className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-85 dark:hover:bg-gray-800 transition-colors w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm"
         >
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image
@@ -74,7 +74,7 @@ export default function Projects() {
         {/* Category 5: Engineering */}
         <Link
           href="/projects/engineering"
-          className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm"
+          className="group flex flex-col items-center justify-center p-8 border rounded-xl hover:bg-gray-85 dark:hover:bg-gray-800 transition-colors w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm"
         >
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image

@@ -26,7 +26,7 @@ export default function AutomotiveProjectTemplate() {
           </h1>
           <p className="text-xl italic mb-6">1989 Honda Accord LX</p>
 
-          <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
             <Image
               src="/images/projects/transmission-title.jpg"
               alt="Manual Transmission Rebuild"
@@ -60,7 +60,7 @@ export default function AutomotiveProjectTemplate() {
           </p>
 
           {/* Project Overview Component */}
-          <div className="bg-gray-200 dark:bg-gray-900 rounded-xl p-6 my-8 border border-gray-200 dark:border-gray-800">
+          <div className="bg-gray-85 dark:bg-gray-900 rounded-xl p-6 my-8 border border-gray-200 dark:border-gray-800">
             <h3 className="text-xl font-bold mt-0 mb-4 flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@ export default function AutomotiveProjectTemplate() {
           {/* Step 1 Images - Side by side */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
             <figure className="m-0">
-              <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+              <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
                   src="/images/projects/transmission-step-1-1.png"
                   alt="Battery voltage with engine off"
@@ -142,7 +142,7 @@ export default function AutomotiveProjectTemplate() {
               </figcaption>
             </figure>
             <figure className="m-0">
-              <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+              <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
                   src="/images/projects/transmission-step-1-2.png"
                   alt="Battery voltage with engine running"
@@ -184,7 +184,7 @@ export default function AutomotiveProjectTemplate() {
           {/* Side by side images */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
             <figure className="m-0">
-              <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+              <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
                   src="/images/projects/transmission-step-2-1.png"
                   alt="Removal process"
@@ -198,7 +198,7 @@ export default function AutomotiveProjectTemplate() {
               </figcaption>
             </figure>
             <figure className="m-0">
-              <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+              <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
                   src="/images/projects/transmission-step-2-2.png"
                   alt="Seized bolts challenge"
@@ -225,7 +225,7 @@ export default function AutomotiveProjectTemplate() {
           </p>
 
           <figure className="my-10 flex flex-col items-center">
-            <div className="relative w-5/12 max-w-sm rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+            <div className="relative w-5/12 max-w-sm rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
               <Image
                 src="/images/projects/transmission-step-3.jpeg"
                 alt="Passenger Side CV Axle Removal"
@@ -248,7 +248,7 @@ export default function AutomotiveProjectTemplate() {
           </p>
 
           <figure className="my-10 flex flex-col items-center">
-            <div className="relative w-5/12 max-w-sm rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+            <div className="relative w-5/12 max-w-sm rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
               <Image
                 src="/images/projects/transmission-step-4.jpeg"
                 alt="Driver Side CV Axle Removal"
@@ -277,7 +277,7 @@ export default function AutomotiveProjectTemplate() {
           </p>
 
           <figure className="my-10 flex flex-col items-center">
-            <div className="relative max-w-2xl rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+            <div className="relative max-w-2xl rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
               <Image
                 src="/images/projects/transmission-step-5-1.jpeg"
                 alt="Transmission Removal Improvised on Driveway"
@@ -310,7 +310,7 @@ export default function AutomotiveProjectTemplate() {
           </p>
 
           <figure className="my-10 flex flex-col items-center">
-            <div className="relative max-w-2xl rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+            <div className="relative max-w-2xl rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
               <Image
                 src="/images/projects/transmission-step-5-2.jpg"
                 alt="Transmission Finally Removed"
@@ -336,7 +336,7 @@ export default function AutomotiveProjectTemplate() {
             {/* Top row: 2 images side-by-side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-6-1.jpg"
                     alt="Transmission"
@@ -350,7 +350,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-6-2.jpg"
                     alt="Speedometer Gear Housing Teardown"
@@ -368,7 +368,7 @@ export default function AutomotiveProjectTemplate() {
             {/* Middle row: 2 images side-by-side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-6-3.jpg"
                     alt="Transmission Half Degreased"
@@ -382,7 +382,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-6-4.jpg"
                     alt="Shifter Lever and Throwout Bearing"
@@ -400,7 +400,7 @@ export default function AutomotiveProjectTemplate() {
             {/* Bottom row: 2 images side-by-side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-6-5.jpg"
                     alt="Disassembled Parts"
@@ -414,7 +414,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-6-6.jpg"
                     alt="Shfit Detent Balls"
@@ -456,7 +456,7 @@ export default function AutomotiveProjectTemplate() {
             {/* Top row: 2 images side-by-side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-1.jpg"
                     alt="Inspecting 5th gear during manual transmission rebuild"
@@ -467,7 +467,7 @@ export default function AutomotiveProjectTemplate() {
                 </div>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-2.jpg"
                     alt="Close-up of 5th gear and synchro assembly"
@@ -482,7 +482,7 @@ export default function AutomotiveProjectTemplate() {
             {/* Middle row: 2 images side-by-side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-3.jpg"
                     alt="Removing the 5th gear from the transmission housing"
@@ -493,7 +493,7 @@ export default function AutomotiveProjectTemplate() {
                 </div>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-4.jpg"
                     alt="1989 Honda Accord 5th gear components disassembled"
@@ -508,7 +508,7 @@ export default function AutomotiveProjectTemplate() {
             {/* Bottom row: 2 images side-by-side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-5.jpg"
                     alt="Inspecting damage on the 5th gear teeth"
@@ -519,7 +519,7 @@ export default function AutomotiveProjectTemplate() {
                 </div>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-7-6.jpg"
                     alt="Showing the gear wear on the 5th gear assembly"
@@ -533,7 +533,7 @@ export default function AutomotiveProjectTemplate() {
 
             {/* Centered final row */}
             <figure className="my-10 flex flex-col items-center">
-              <div className="relative max-w-2xl w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+              <div className="relative max-w-2xl w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
                   src="/images/projects/transmission-step-7-7.jpg"
                   alt="Chipped 5th gear of the Honda Accord transmission"
@@ -568,7 +568,7 @@ export default function AutomotiveProjectTemplate() {
             {/* Top row: 2 images side-by-side */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-8-1.jpg"
                     alt="Separating the bell housing from the main case of the transmission"
@@ -579,7 +579,7 @@ export default function AutomotiveProjectTemplate() {
                 </div>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-8-2.jpg"
                     alt="Struggling to pry open the aluminum transmission case"
@@ -590,7 +590,7 @@ export default function AutomotiveProjectTemplate() {
                 </div>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-8-3.jpg"
                     alt="Successfully split transmission case showing internal gears"
@@ -614,7 +614,7 @@ export default function AutomotiveProjectTemplate() {
           <div className="flex flex-col gap-6 my-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-1.jpg"
                     alt="4th gear bearing removed from the main shaft"
@@ -628,7 +628,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-2.jpg"
                     alt="4th gear component of the manual transmission"
@@ -642,7 +642,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-3.jpg"
                     alt="4th gear synchros and locking rings"
@@ -658,7 +658,7 @@ export default function AutomotiveProjectTemplate() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-4.png"
                     alt="Transmission gear cluster with shift linkages attached"
@@ -672,7 +672,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-5.png"
                     alt="Transmission gear cluster after removing shift linkages"
@@ -688,7 +688,7 @@ export default function AutomotiveProjectTemplate() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-6.jpg"
                     alt="Shift linkages removed from the transmission assembly"
@@ -702,7 +702,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-7.png"
                     alt="Removed 4th and 3rd gear shifting mechanisms and synchros"
@@ -718,7 +718,7 @@ export default function AutomotiveProjectTemplate() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-8.png"
                     alt="Removed 3rd gear from the transmission shaft"
@@ -732,7 +732,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-9-9.png"
                     alt="Removed transaxle, 2nd gear, and 1st gear assemblies"
@@ -777,7 +777,7 @@ export default function AutomotiveProjectTemplate() {
           <div className="flex flex-col gap-6 my-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-10-1.png"
                     alt="Reassembling the main case of the 1989 Honda Accord manual transmission"
@@ -788,7 +788,7 @@ export default function AutomotiveProjectTemplate() {
                 </div>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-10-2.png"
                     alt="Applying black RTV sealant to the transmission bell housing mating surface"
@@ -815,7 +815,7 @@ export default function AutomotiveProjectTemplate() {
           <div className="flex flex-col gap-6 my-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-11-1.jpg"
                     alt="5th gear and pin bearing before reassembly"
@@ -829,7 +829,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-11-2.jpg"
                     alt="Broken pin bearing found during transmission reassembly"
@@ -845,7 +845,7 @@ export default function AutomotiveProjectTemplate() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-11-3.jpg"
                     alt="Bearing spacer required for 5th gear reassembly"
@@ -859,7 +859,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-11-4.jpg"
                     alt="5th gear section with minimal reassembly without the broken bearing"
@@ -889,7 +889,7 @@ export default function AutomotiveProjectTemplate() {
           <div className="flex flex-col gap-6 my-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-12-1.jpg"
                     alt="Strange bolt type encountered during clutch removal"
@@ -903,7 +903,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-12-2.jpg"
                     alt="Old worn-out clutch removed from the Honda Accord"
@@ -917,7 +917,7 @@ export default function AutomotiveProjectTemplate() {
                 </figcaption>
               </figure>
               <figure className="m-0">
-                <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
                     src="/images/projects/transmission-step-12-3.jpg"
                     alt="New performance upgrade clutch installed on the flywheel"
@@ -949,7 +949,7 @@ export default function AutomotiveProjectTemplate() {
           </p>
 
           <div className="flex flex-col items-center my-10">
-            <div className="relative max-w-2xl w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-lg">
+            <div className="relative max-w-2xl w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-lg">
               <video
                 src="/images/projects/transmission-step-13.mp4"
                 controls

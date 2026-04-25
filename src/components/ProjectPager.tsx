@@ -28,7 +28,7 @@ export default function ProjectPager({
   const previousProject = projects[currentIndex - 1];
   const nextProject = projects[currentIndex + 1];
 
-  const containerClasses = "group rounded-2xl border border-gray-200 bg-gray-200 px-5 py-4 transition-colors hover:border-blue-400 hover:bg-blue-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-blue-500 dark:hover:bg-blue-950/30";
+  const containerClasses = "group rounded-2xl border border-gray-200 bg-gray-85 px-5 py-4 transition-colors hover:border-blue-400 hover:bg-blue-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-blue-500 dark:hover:bg-blue-950/30";
 
   const disabledClasses = "rounded-2xl border border-dashed border-gray-200 bg-gray-50/70 px-5 py-4 opacity-60 dark:border-gray-800 dark:bg-gray-900/70";
 

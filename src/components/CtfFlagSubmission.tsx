@@ -70,7 +70,7 @@ export default function CtfFlagSubmission({
                 : submissionState === "incorrect"
                   ? "border-red-500 dark:border-red-400"
                   : "border-gray-300 focus:border-blue-500 dark:border-gray-700"
-            } disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-200 disabled:text-gray-400 dark:disabled:border-gray-800 dark:disabled:bg-gray-950 dark:disabled:text-gray-600`}
+            } disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-85 disabled:text-gray-400 dark:disabled:border-gray-800 dark:disabled:bg-gray-950 dark:disabled:text-gray-600`}
           />
         </label>
         <div className="flex flex-wrap items-center gap-4">
