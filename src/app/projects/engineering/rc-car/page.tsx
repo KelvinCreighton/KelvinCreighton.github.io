@@ -11,7 +11,9 @@ type Step = {
   image?: string;
   orientation: "horizontal" | "vertical";
   isHalfWidth?: boolean;
+  isFullWidth?: boolean;
   rotate?: number;
+  customWidth?: string;
 };
 
 export default function RcCarProject() {
@@ -24,11 +26,11 @@ export default function RcCarProject() {
     { number: 5, isHalfWidth: true, text: "Flip the base of hot glued popsicle sticks over. \nplace the large 3d printed wheel down along with the dc motor similar to how it was in the last step. \nhot glue the last half large popsicle stick down around 5 cm from the bottom of the structure. (it should be just above the 3d printed wheel and exactly on the dc motor)", image: "/images/projects/rc-car-pdf/img-p13-7.jpg", orientation: "vertical" },
     { number: 6, isHalfWidth: true, text: "Cut/snap the thin skewers at around 12 cm . if you wish for longer then that means the wheels will be “out” more. (do not cut shorter) \nDO NOT HOT GLUE THESE", image: "/images/projects/rc-car-pdf/img-p13-8.jpg", orientation: "horizontal" },
     { number: 7, isHalfWidth: true, text: "Cut the straw into 2 pieces each with the shorter length of the large popsicle stick. \nDO NOT HOT GLUE THESE YET", image: "/images/projects/rc-car-pdf/img-p14-7.jpg", orientation: "horizontal" },
-    { number: 8, text: "Take 2 wheels, 1 thin skewer and the rest of the straw", image: "/images/projects/rc-car-pdf/img-p14-8.jpg", orientation: "vertical" },
-    { number: 9, text: "Attach the wheels to the skewer", image: "/images/projects/rc-car-pdf/img-p14-9.jpg", orientation: "horizontal" },
-    { number: 10, text: "Measure and cut the straw to the length of the skewer with the wheels attacked. Around 11.5cm", image: "/images/projects/rc-car-pdf/img-p15-7.jpg", orientation: "horizontal" },
-    { number: 11, text: "Cut a tiny bit more off so that it is not exactly the same length but half a cm or so shorter", image: "/images/projects/rc-car-pdf/img-p15-8.jpg", orientation: "horizontal" },
-    { number: 12, text: "Take one of the wheels off and slide the straw on then reattach the wheel. \nIf you notice that the straw is still touching the wheels on both sides then cut it a little bit shorter. it should be close but should have enough space on either side to not touch any wheel", image: "/images/projects/rc-car-pdf/img-p15-9.jpg", orientation: "horizontal" },
+    { number: 8, isHalfWidth: true, text: "Take 2 wheels, 1 thin skewer and the rest of the straw", image: "/images/projects/rc-car-pdf/img-p14-8.jpg", orientation: "horizontal" },
+    { number: 9, isHalfWidth: true, text: "Attach the wheels to the skewer", image: "/images/projects/rc-car-pdf/img-p14-9.jpg", orientation: "horizontal" },
+    { number: 10, isHalfWidth: true, text: "Measure and cut the straw to the length of the skewer with the wheels attacked. Around 11.5cm", image: "/images/projects/rc-car-pdf/img-p15-7.jpg", orientation: "vertical" },
+    { number: 11, isHalfWidth: true, text: "Cut a tiny bit more off so that it is not exactly the same length but half a cm or so shorter", image: "/images/projects/rc-car-pdf/img-p15-8.jpg", orientation: "vertical" },
+    { number: 12, text: "Take one of the wheels off and slide the straw on then reattach the wheel. \nIf you notice that the straw is still touching the wheels on both sides then cut it a little bit shorter. it should be close but should have enough space on either side to not touch any wheel", image: "/images/projects/rc-car-pdf/img-p15-9.jpg", orientation: "vertical" },
     { number: 13, text: "Now for the front wheel assembly \nTake the 3d printed wheel, the remaining two wheels, the small cut pieces of straw, the remaining thin skewer and an elastic", image: "/images/projects/rc-car-pdf/img-p16-7.jpg", orientation: "vertical" },
     { number: 14, text: "Attach the elastic to the 3d printed wheel", image: "/images/projects/rc-car-pdf/img-p16-8.jpg", orientation: "vertical" },
     { number: 15, text: "Attach the skewer to one of the wheels", image: "/images/projects/rc-car-pdf/img-p17-7.jpg", orientation: "vertical" },
@@ -206,13 +208,13 @@ export default function RcCarProject() {
 
           <div className="flex flex-wrap gap-8 mb-16">
             {carSteps.map((step) => (
-              <div key={`car-step-${step.number}`} className={`flex flex-col bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 w-full md:w-[calc(50%-1rem)] ${step.isHalfWidth ? "lg:w-[calc(50%-1rem)]" : "lg:w-[calc(33.33%-1.34rem)]"}`} style={{ flexGrow: 1 }}>
+              <div key={`car-step-${step.number}`} className={`flex flex-col bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 w-full ${step.customWidth ? step.customWidth : step.isFullWidth ? "lg:w-full" : step.isHalfWidth || step.orientation === "horizontal" ? "md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)]" : "md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)]"}`} style={{ flexGrow: 1 }}>
                 <div className="relative bg-gray-100 dark:bg-gray-800/50 flex items-center justify-center overflow-hidden">
                   {step.image && (
                     <img
                       src={step.image}
                       alt={`Step ${step.number}`}
-                      className="w-full h-auto object-contain block" style={step.rotate ? { transform: `rotate(${step.rotate}deg)` } : {}}
+                      className={`w-full h-auto object-contain block ${step.rotate ? "scale-[1.4]" : ""}`} style={step.rotate ? { transform: `rotate(${step.rotate}deg)` } : {}} style={step.rotate ? { transform: `rotate(${step.rotate}deg)` } : {}}
                     />
                   )}
                   <div className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded shadow-sm">
@@ -231,13 +233,13 @@ export default function RcCarProject() {
           <h2 className="text-3xl font-bold mb-8">Part 2: The Controller (Step-by-Step)</h2>
           <div className="flex flex-wrap gap-8 mb-16">
             {controllerSteps.map((step) => (
-              <div key={`con-step-${step.number}`} className={`flex flex-col bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 w-full md:w-[calc(50%-1rem)] ${step.isHalfWidth ? "lg:w-[calc(50%-1rem)]" : "lg:w-[calc(33.33%-1.34rem)]"}`} style={{ flexGrow: 1 }}>
+              <div key={`con-step-${step.number}`} className={`flex flex-col bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 w-full ${step.customWidth ? step.customWidth : step.isFullWidth ? "lg:w-full" : step.isHalfWidth || step.orientation === "horizontal" ? "md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)]" : "md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)]"}`} style={{ flexGrow: 1 }}>
                 <div className="relative bg-gray-100 dark:bg-gray-800/50 flex items-center justify-center overflow-hidden">
                   {step.image && (
                     <img
                       src={step.image}
                       alt={`Controller Step ${step.number}`}
-                      className="w-full h-auto object-contain block" style={step.rotate ? { transform: `rotate(${step.rotate}deg)` } : {}}
+                      className={`w-full h-auto object-contain block ${step.rotate ? "scale-[1.4]" : ""}`} style={step.rotate ? { transform: `rotate(${step.rotate}deg)` } : {}} style={step.rotate ? { transform: `rotate(${step.rotate}deg)` } : {}}
                     />
                   )}
                   <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded shadow-sm">
