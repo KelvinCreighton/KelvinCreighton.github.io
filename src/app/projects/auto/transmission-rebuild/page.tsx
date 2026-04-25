@@ -953,6 +953,7 @@ export default function AutomotiveProjectTemplate() {
               <video
                 src="/images/projects/transmission-step-13.mp4"
                 controls
+                playsInline
                 className="w-full h-auto"
                 poster="/images/projects/transmission-title.jpg"
               >

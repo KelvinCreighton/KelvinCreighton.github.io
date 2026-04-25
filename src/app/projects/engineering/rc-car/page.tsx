@@ -196,6 +196,7 @@ export default function RcCarProject() {
           <div className="w-full md:w-1/4 mx-auto rounded-xl overflow-hidden mb-12 bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-800 shadow-sm">
             <video 
               controls 
+              playsInline
               className="w-full h-auto block"
               poster="/images/projects/rc-car-title.jpg"
             >
