@@ -29,7 +29,7 @@ export default function HeartMailProjectPage() {
         </p>
       </div>
 
-      <div className="w-full max-w-4xl bg-gray-50 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
+      <div className="w-full max-w-4xl bg-gray-200 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">Description</h2>
         <p className="text-gray-700 dark:text-gray-300 mb-4">
           It&apos;s the early days of the internet with screeching dialup tones and
@@ -75,7 +75,7 @@ export default function HeartMailProjectPage() {
           </div>
           <a
             href="https://github.com/KelvinCreighton/HTCOTB-CTF-2026"
-            className="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors font-medium"
+            className="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors font-medium"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -111,7 +111,7 @@ export default function HeartMailProjectPage() {
           {!showSolution ? (
             <button
               onClick={() => setShowSolution(true)}
-              className="px-4 py-2 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors font-medium flex items-center gap-2"
+              className="px-4 py-2 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors font-medium flex items-center gap-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +130,7 @@ export default function HeartMailProjectPage() {
               Show Solution Spoiler
             </button>
           ) : (
-            <div className="space-y-4 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-950 p-6 rounded-lg animate-in fade-in duration-300">
+            <div className="space-y-4 text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-950 p-6 rounded-lg animate-in fade-in duration-300">
               <p>
                 1. Navigate to the webmail application and locate the search
                 bar.

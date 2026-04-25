@@ -206,7 +206,7 @@ export default function SheetMusicViewer({ file }: SheetMusicViewerProps) {
 
   return (
     <div className="w-full flex flex-col gap-4">
-      <div className="flex justify-center gap-4 bg-gray-100 dark:bg-gray-800 p-4 rounded-xl shadow-sm">
+      <div className="flex justify-center gap-4 bg-gray-200 dark:bg-gray-800 p-4 rounded-xl shadow-sm">
         <button
           onClick={togglePlay}
           disabled={!audioReady || loading}

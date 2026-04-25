@@ -8,7 +8,7 @@ export default function ResumePage() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 font-medium py-2 px-4 rounded transition-colors"
+            className="bg-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 font-medium py-2 px-4 rounded transition-colors"
           >
             View Fullscreen
           </a>
@@ -28,7 +28,7 @@ export default function ResumePage() {
           type="application/pdf"
           className="w-full h-full"
         >
-          <div className="flex flex-col items-center justify-center h-full p-4 md:p-8 bg-gray-50 dark:bg-gray-900 text-center">
+          <div className="flex flex-col items-center justify-center h-full p-4 md:p-8 bg-gray-200 dark:bg-gray-900 text-center">
             <p className="mb-4">
               It looks like your browser doesn&apos;t support built-in PDFs.
             </p>

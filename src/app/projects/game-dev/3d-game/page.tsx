@@ -32,7 +32,7 @@ export default function ThreeDGamePage() {
         />
       </div>
 
-      <div className="w-full max-w-4xl bg-gray-50 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
+      <div className="w-full max-w-4xl bg-gray-200 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">Controls</h2>
         <div className="space-y-4 text-gray-700 dark:text-gray-300">
           <p>

@@ -29,7 +29,7 @@ export default function TankGamePage() {
         />
       </div>
 
-      <div className="w-full max-w-4xl bg-gray-50 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
+      <div className="w-full max-w-4xl bg-gray-200 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">How to Play</h2>
 
         <div className="space-y-6">

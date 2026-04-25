@@ -95,10 +95,10 @@ export default function RcCarProject() {
     const widthClass = step.customWidth ? step.customWidth : step.isFullWidth ? "lg:w-full" : (step.isHalfWidth || step.orientation === "horizontal") ? "md:w-[calc(50%-1rem)] lg:w-[calc(50%-1rem)]" : "md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.34rem)]";
 
     return (
-      <div key={`step-${step.number}`} className={`flex flex-col bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 w-full ${widthClass}`} style={{ flexGrow: 1 }}>
+      <div key={`step-${step.number}`} className={`flex flex-col bg-gray-200 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 w-full ${widthClass}`} style={{ flexGrow: 1 }}>
         <div className="flex flex-col">
           {(Array.isArray(step.image) ? step.image : [step.image]).map((imgSrc, idx) => (
-            <div key={`${step.number}-img-${idx}`} className={`relative bg-gray-100 dark:bg-gray-800/50 flex items-center justify-center overflow-hidden ${step.customCrop ? step.customCrop : step.isFullWidth ? "h-auto" : (step.number === 8 || step.number === 9 || step.orientation === "horizontal") ? "aspect-video" : "min-h-[300px]"}`}>
+            <div key={`${step.number}-img-${idx}`} className={`relative bg-gray-200 dark:bg-gray-800/50 flex items-center justify-center overflow-hidden ${step.customCrop ? step.customCrop : step.isFullWidth ? "h-auto" : (step.number === 8 || step.number === 9 || step.orientation === "horizontal") ? "aspect-video" : "min-h-[300px]"}`}>
               {imgSrc && (
                 <img
                   src={imgSrc}
@@ -144,7 +144,7 @@ export default function RcCarProject() {
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">Remote Control Car</h1>
           <p className="text-xl italic mb-6">Robotics, Electrical, and Mechanical Engineering for Students Grades 8/9</p>
-          <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-200 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
             <Image src="/images/projects/rc-car-title.jpg" alt="Remote Control Car Final Build" fill className="object-cover" priority />
           </div>
           <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-4xl">
@@ -157,7 +157,7 @@ export default function RcCarProject() {
         </header>
 
         <div className="w-full prose prose-lg dark:prose-invert max-w-none">
-          <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 my-8 border border-gray-100 dark:border-gray-800">
+          <div className="bg-gray-200 dark:bg-gray-900 rounded-xl p-6 my-8 border border-gray-200 dark:border-gray-800">
             <h3 className="text-xl font-bold mt-0 mb-4 flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
               Project Overview
@@ -185,17 +185,17 @@ export default function RcCarProject() {
                   <li><span className="font-semibold">Target Cost:</span> ~$9.36</li>
                   <li><span className="font-semibold">Build Time:</span> ~3.5 Hours</li>
                   <li><span className="font-semibold">Complexity:</span> Level 1 (Beginner)</li>
-                  <li><span className="font-semibold">Requires:</span> 3D Printer</li>
-                  <li><span className="font-semibold">Requires:</span> Soldering Iron (Semi-Optional)</li>
+                  <li><span className="font-semibold">Required:</span> 3D Printer</li>
+                  <li><span className="font-semibold">Required:</span> Soldering Iron (Semi-Optional)</li>
                 </ul>
               </div>
             </div>
           </div>
 
-                    <h2 className="text-2xl font-bold mb-4">Demo Video</h2>
-          <div className="w-full md:w-1/4 mx-auto rounded-xl overflow-hidden mb-12 bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-800 shadow-sm">
-            <video 
-              controls 
+          <h2 className="text-2xl font-bold mb-4">Demo Video</h2>
+          <div className="w-full md:w-1/4 mx-auto rounded-xl overflow-hidden mb-12 bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-sm">
+            <video
+              controls
               playsInline
               className="w-full h-auto block"
               poster="/images/projects/rc-car-title.jpg"
@@ -209,15 +209,15 @@ export default function RcCarProject() {
           <p>The final design was the result of 6 major iterations, refining chassis stability and axle friction to ensure a reliable build that could be completed by students within the camp timeframe.</p>
           <div className="flex justify-center my-8">
             <figure className="max-w-2xl w-full">
-              <Image src="/images/projects/rc-car-prototypes-01.jpg" alt="Prototype Iterations" width={4032} height={3024} className="rounded-xl border border-gray-100 dark:border-gray-800" />
+              <Image src="/images/projects/rc-car-prototypes-01.jpg" alt="Prototype Iterations" width={4032} height={3024} className="rounded-xl border border-gray-200 dark:border-gray-800" />
               <figcaption className="text-sm text-gray-500 mt-2 text-center">Evolution from early popsicle stick experiments to the final standardized design.</figcaption>
             </figure>
           </div>
 
           <h2 className="text-3xl font-bold mb-8">Part 1: The Car</h2>
-          <div className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 mb-12">
+          <div className="bg-gray-200 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 mb-12">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="relative aspect-square bg-gray-100 dark:bg-gray-800/50">
+              <div className="relative aspect-square bg-gray-200 dark:bg-gray-800/50">
                 <Image src="/images/projects/rc-car-pdf/img-p10-7.jpg" alt="Car Materials" fill className="object-cover" style={{ objectPosition: "15% center" }} />
               </div>
               <div className="p-8 flex flex-col justify-center">
@@ -249,9 +249,9 @@ export default function RcCarProject() {
           </div>
 
           <h2 className="text-3xl font-bold mb-8">Part 2: The Controller</h2>
-          <div className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 mb-12">
+          <div className="bg-gray-200 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 mb-12">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="relative aspect-square bg-gray-100 dark:bg-gray-800/50">
+              <div className="relative aspect-square bg-gray-200 dark:bg-gray-800/50">
                 <Image
                   src="/images/projects/rc-car-pdf/img-p32-8.jpg"
                   alt="Controller Materials"
@@ -280,7 +280,7 @@ export default function RcCarProject() {
             {controllerSteps.map((step) => renderStep(step, "bg-green-600"))}
           </div>
 
-          <div className="my-16 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-8 md:p-12 shadow-sm">
+          <div className="my-16 bg-gray-200 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 md:p-12 shadow-sm">
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="bg-blue-600 dark:bg-blue-500 rounded-2xl p-4 text-white shadow-lg shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>

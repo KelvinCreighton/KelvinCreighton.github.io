@@ -52,7 +52,7 @@ export default function WicysCtfPage({ challengeId }: WicysCtfPageProps) {
         </p>
       </div>
 
-      <div className="w-full max-w-4xl bg-gray-50 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
+      <div className="w-full max-w-4xl bg-gray-200 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">Description</h2>
         <div className="mb-8 space-y-4 text-gray-700 dark:text-gray-300">
           {challenge.description.map((paragraph) => (
@@ -116,7 +116,7 @@ export default function WicysCtfPage({ challengeId }: WicysCtfPageProps) {
           )}
           <a
             href={githubUrl}
-            className="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors font-medium"
+            className="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors font-medium"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -155,7 +155,7 @@ export default function WicysCtfPage({ challengeId }: WicysCtfPageProps) {
           {!showSolution ? (
             <button
               onClick={() => setShowSolution(true)}
-              className="px-4 py-2 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors font-medium flex items-center gap-2"
+              className="px-4 py-2 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors font-medium flex items-center gap-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +174,7 @@ export default function WicysCtfPage({ challengeId }: WicysCtfPageProps) {
               Show Solution Spoiler
             </button>
           ) : (
-            <div className="space-y-4 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-950 p-6 rounded-lg animate-in fade-in duration-300">
+            <div className="space-y-4 text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-950 p-6 rounded-lg animate-in fade-in duration-300">
               {challenge.solutionSteps.map((step, index) => (
                 <p key={step}>
                   {index + 1}. {renderInlineCode(step)}
