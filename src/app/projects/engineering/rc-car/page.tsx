@@ -8,7 +8,7 @@ import ProjectPager from "@/components/ProjectPager";
 type Step = {
   number: number;
   text: string;
-  image?: string;
+  image?: string | string[];
   orientation: "horizontal" | "vertical";
   isHalfWidth?: boolean;
   isFullWidth?: boolean;
@@ -21,46 +21,46 @@ type Step = {
 
 export default function RcCarProject() {
   const carSteps: Step[] = [
-{ number: 1, customCrop: "aspect-[3/4]", text: "Take one of the large popsicle sticks and snap it in half. \ntry and be as precise as possible (with every step)", image: "/images/projects/rc-car-pdf/img-p11-7.jpg", orientation: "vertical" },
-{ number: 2, customCrop: "aspect-[3/4]", text: "Take 2 more full large popsicle sticks and hot glue the halves parallel, making a box 1 by 1/2 popsicle sticks. \nMake sure both halves are hot glued on top.", image: "/images/projects/rc-car-pdf/img-p11-8.jpg", orientation: "vertical" },
-{ number: 3, customCrop: "aspect-[3/4]", text: "Take the last large popsicle stick and snap it in half too.", image: "/images/projects/rc-car-pdf/img-p12-7.jpg", orientation: "vertical" },
-{ number: 4, isHalfWidth: true, customCrop: "aspect-[3/4]", text: "Lay the large 3d printed wheel and motor from the bottom of the box. Lastly lay and hot glue the half popsicle stick across. \nOr use a ruler and measure around 8cm to 9cm where it should lay. \nMAKE SURE: the 3rd half that is glued in the center is also on top of the longer pieces. All the halves should be level with each other.", image: "/images/projects/rc-car-pdf/img-p12-8.jpg", orientation: "horizontal" },
-{ number: 5, isHalfWidth: true, customCrop: "aspect-[3/4]", text: "Flip the base of hot glued popsicle sticks over. \nPlace the large 3d printed wheel down along with the dc motor similar to how it was in the last step. \nHot glue the last half large popsicle stick down around 5 cm from the bottom of the structure. (it should be just above the 3d printed wheel and exactly on the dc motor)", image: "/images/projects/rc-car-pdf/img-p13-7.jpg", orientation: "horizontal" },
-{ number: 6, isHalfWidth: true, text: "Cut/snap the thin skewers at around 12 cm . if you wish for longer then that means the wheels will be “out” more. (do not cut shorter) \nDO NOT HOT GLUE THESE!", image: "/images/projects/rc-car-pdf/img-p13-8.jpg", orientation: "horizontal" },
-{ number: 7, isHalfWidth: true, text: "Cut the straw into 2 pieces each with the shorter length of the large popsicle stick. \nDO NOT HOT GLUE THESE YET!", image: "/images/projects/rc-car-pdf/img-p14-7.jpg", orientation: "horizontal" },
-{ number: 8, isHalfWidth: true, text: "Take 2 wheels, 1 thin skewer and the rest of the straw.", image: "/images/projects/rc-car-pdf/img-p14-8.jpg", orientation: "horizontal" },
-{ number: 9, isHalfWidth: true, text: "Attach the wheels to the skewer.", image: "/images/projects/rc-car-pdf/img-p14-9.jpg", orientation: "horizontal" },
-{ number: 10, isHalfWidth: true, text: "Measure and cut the straw to the length of the skewer with the wheels attached. Around 11.5cm.", image: "/images/projects/rc-car-pdf/img-p15-7.jpg", orientation: "vertical" },
-{ number: 11, isHalfWidth: true, text: "Cut a tiny bit more off so that it is not exactly the same length but half a cm or so shorter.", image: "/images/projects/rc-car-pdf/img-p15-8.jpg", orientation: "vertical" },
-{ number: 12, text: "Take one of the wheels off and slide the straw on then reattach the wheel. \nIf you notice that the straw is still touching the wheels on both sides then cut it a little bit shorter. It should be close but should have enough space on either side to not touch any wheel.", image: "/images/projects/rc-car-pdf/img-p15-9.jpg", orientation: "vertical" },
-{ number: 13, customCrop: "aspect-[5/4]", text: "Now for the front wheel assembly \nTake the 3d printed wheel, the remaining two wheels, the small cut pieces of straw, the remaining thin skewer and an elastic.", image: "/images/projects/rc-car-pdf/img-p16-7.jpg", orientation: "vertical" },
-{ number: 14, customCrop: "aspect-[5/4]", text: "Attach the elastic to the 3d printed wheel.", image: "/images/projects/rc-car-pdf/img-p16-8.jpg", orientation: "vertical" },
-{ number: 15, isHalfWidth: true, customCrop: "aspect-[4/3]", objectPosition: "center 60%", text: "Attach the skewer to one of the wheels.", image: "/images/projects/rc-car-pdf/img-p17-7.jpg", orientation: "vertical" },
-{ number: 16, isHalfWidth: true, customCrop: "aspect-[4/3]", text: "Slide one of the straw pieces on it. It should be loose and can move around.", image: "/images/projects/rc-car-pdf/img-p17-8.jpg", orientation: "vertical" },
-{ number: 17, customCrop: "aspect-video", text: "Slide the 3d printed wheel on.", image: "/images/projects/rc-car-pdf/img-p17-9.jpg", orientation: "vertical" },
-{ number: 18, customCrop: "aspect-video", text: "Slide the last straw piece and then attach the last wheel.", image: "/images/projects/rc-car-pdf/img-p18-7.jpg", orientation: "vertical" },
-{ number: 19, customCrop: "aspect-video", text: "Now you should have 2 sets of wheels ready for assembly.", image: "/images/projects/rc-car-pdf/img-p18-9.jpg", orientation: "vertical" },
-{ number: 20, text: "Hot glue the dc motor across the popsicle sticks leaving the spinning shaft out in the open air. \nMAKE SURE the copper connections are facing up!", image: "/images/projects/rc-car-pdf/img-p19-7.jpg", orientation: "vertical" },
-{ number: 21, text: "Place the small 3d printed wheel on the end of the shaft of the dc motor. \nHot glue the end if it seems like it keeps falling off.", image: "/images/projects/rc-car-pdf/img-p19-8.jpg", orientation: "vertical" },
-{ number: 22, text: "Hot glue the battery holder to the car structure filling the gap on the left. \nMake sure the wires facing out from the car and do not interfere with the motor.", image: "/images/projects/rc-car-pdf/img-p20-7.jpg", orientation: "vertical" },
-{ number: 23, isHalfWidth: true, text: "Take the RF receiver board and hot glue the base of the wires to make them more secure. \nThese wires are flimsy and tend to break so hot gluing them will help keep them in place better", image: "/images/projects/rc-car-pdf/img-p21-7.jpg", orientation: "horizontal" },
-{ number: 24, isHalfWidth: true, text: "Wire strip the red, black, SHORT white and green wires of the RF receiver circuit board \nDO NOT TOUCH THE LONG WHITE CORD YET \nThese wires are labelled: \nV+ red \nV- black \nB green \nF white \non the circuit board \nBE VERY CAREFUL to NOT accidentally cut the wires when doing this. They are short and will make it harder to connect them later. If they are cut to short, solder or attach a longer wire onto it as replacement.", image: "/images/projects/rc-car-pdf/img-p21-8.jpg", orientation: "horizontal" },
-{ number: 25, text: "Hot glue the board to the car structure. Make it so that the SHORT White and Green wires are closer to the dc motor. \nThis will make it easier to connect them to it later.", image: "/images/projects/rc-car-pdf/img-p22-7.jpg", orientation: "vertical" },
-{ number: 26, text: "Twist the red and black wires together from the battery hub and the RF receiver circuit.", image: "/images/projects/rc-car-pdf/img-p23-7.jpg", orientation: "vertical" },
-{ number: 27, text: "Add electrical tape to the ends so they cannot touch and short circuit.", image: "/images/projects/rc-car-pdf/img-p23-8.jpg", orientation: "vertical" },
-{ number: 28, text: "Thread the wires through the holes of the motor and twist them so they stay as best as they can \nMAKE SURE YOU PUT THE WIRES IN THIS ORDER. If you don’t then the controls will be inverted (forward is backward and backward is forward) which is not a huge problem but if it can be avoided then great.", image: "/images/projects/rc-car-pdf/img-p24-7.jpg", orientation: "vertical" },
-{ number: 29, text: "Carefully hot glue them so they stay attached better. \nIf this is not done right then this can be a failure point of the project. As a last resort just solder them.", image: "/images/projects/rc-car-pdf/img-p24-8.jpg", orientation: "vertical" },
-{ number: 30, text: "Now we are going to check that everything was connected properly before continuing with the rest of the car. \nPut in the batteries and flip the red switch on the circuit board. The red leds should light up meaning it has power.", image: "/images/projects/rc-car-pdf/img-p25-7.jpg", orientation: "vertical" },
-{ number: 31, text: "Next take the 3v coin battery and the RF Transmitter circuit board and hold the negative and positive wires to the battery \nRed wire goes to the side of the battery with the “+” sign and Black wire goes to the other side of the battery. \nWhen pressing the button labelled F or B you should see the red light up on the Transmitter circuit board.", image: "/images/projects/rc-car-pdf/img-p25-9.jpg", orientation: "vertical" },
-{ number: 32, text: "Hold each part close together and you should see the motor spin when pressing F or B. \nIF IT DOESN’T WORK: \n- Try pressing it a few times and move the transmitter board around, there may be something blocking the wireless connection or there may be some external interference \n- Have each kid try one at a time, the boards are likely the same frequency so they may interfere with each other \n- Try reattaching the wires connected to the motor. since the red leds are on then the board has power it is just not connecting to the motor. \n- Try with a different motor, different receiver board, or different transmitter board", image: "/images/projects/rc-car-pdf/img-p26-7.jpg", orientation: "vertical" },
-{ number: 33, text: "Use electrical tape to hold the longer white wire allowing it to face upward to the sky. \nThis wire is the antenna and having it face UP will help the wireless connection", image: "/images/projects/rc-car-pdf/img-p26-8.jpg", orientation: "vertical" },
-{ number: 34, isHalfWidth: true, text: "Flip the car over gently and hot glue the back wheels across the back half popsicle stick. \nONLY HOT GLUE THE STRAW NEVER THE SKEWER OR WHEELS \n\nDo the same with the front wheels. \nAGAIN ONLY HOT GLUE THE STRAW PARTS. \nMake sure no hot glue touches anything else this is very important to the movement of the wheels \nAdditionally make sure the 3d printed wheel does not touch anything even when it wiggles a little. Anything touching it will give it friction and could make it not more properly. \nKeep it as straight as possible", image: "/images/projects/rc-car-pdf/img-p27-7.jpg", orientation: "vertical" },
-{ number: 35, isHalfWidth: true, text: "(Optional) Add tape after hot glueing the straws down to reinforce them.", image: "/images/projects/rc-car-pdf/img-p27-8.jpg", orientation: "vertical" },
-{ number: 36, isHalfWidth: true, customCrop: "aspect-[3/4]", text: "Flip the car back over. \nUse the elastic tool to grab the elastic out of the 3d printed wheel. And attach it to the motor", image: "/images/projects/rc-car-pdf/img-p28-7.jpg", orientation: "vertical" },
-{ number: 37, isHalfWidth: true, customCrop: "aspect-[4/3]", text: "Once everything is in place and positioned evenly / centered. add a bit of hot glue to the 3d printed wheel and the skewer to attach them properly. \nOnly add a little bit in case you end up needing to take this part off to replace the elastic in the future.. \n\nTHE CAR IS DONE!!!!! \nFeel free to test it with the RF Transmitter circuit board like was done to test the connections earlier in the step-by-step. \n\nNOW on to part 2: the controller", image: "/images/projects/rc-car-pdf/img-p28-8.jpg", orientation: "vertical" },
-{ number: 38, text: "OPTIONAL: \nAdditionally feel free to add a bumper to the front of the car so it has support when it crashes into a wall. \nFirst cut the straw in half. Another camper will use the other half", image: "/images/projects/rc-car-pdf/img-p29-7.jpg", orientation: "vertical" },
-{ number: 39, text: "Then cut the straw open, as straight as possible", image: "/images/projects/rc-car-pdf/img-p29-8.jpg", orientation: "vertical" },
-{ number: 40, text: "Attach it to the front of the car and hot glue it down", image: "/images/projects/rc-car-pdf/img-p30-7.jpg", orientation: "vertical" }
+    { number: 1, customCrop: "aspect-[3/4]", text: "Take one of the large popsicle sticks and snap it in half. \ntry and be as precise as possible (with every step)", image: "/images/projects/rc-car-pdf/img-p11-7.jpg", orientation: "vertical" },
+    { number: 2, customCrop: "aspect-[3/4]", text: "Take 2 more full large popsicle sticks and hot glue the halves parallele making a box 1 by ½ popsicle sticks. \nMake sure both halves are hot glued on top .", image: "/images/projects/rc-car-pdf/img-p11-8.jpg", orientation: "vertical" },
+    { number: 3, customCrop: "aspect-[3/4]", text: "Take the last large popsicle stick and snap it in half too", image: "/images/projects/rc-car-pdf/img-p12-7.jpg", orientation: "vertical" },
+    { number: 4, isHalfWidth: true, customCrop: "aspect-[3/4]", text: "Lay the large 3d printed wheel and motor from the bottom of the box. Lastly lay and hot glue the half popsicle stick across. \nOr use a ruler and measure around 8cm to 9cm where it should lay. \nMAKE SURE: the 3rd half that is glued in the center is also on top of the longer pieces. all the halves should be level with each other.", image: "/images/projects/rc-car-pdf/img-p12-8.jpg", orientation: "horizontal" },
+    { number: 5, isHalfWidth: true, customCrop: "aspect-[3/4]", text: "Flip the base of hot glued popsicle sticks over. \nplace the large 3d printed wheel down along with the dc motor similar to how it was in the last step. \nhot glue the last half large popsicle stick down around 5 cm from the bottom of the structure. (it should be just above the 3d printed wheel and exactly on the dc motor)", image: "/images/projects/rc-car-pdf/img-p13-7.jpg", orientation: "horizontal" },
+    { number: 6, isHalfWidth: true, text: "Cut/snap the thin skewers at around 12 cm . if you wish for longer then that means the wheels will be “out” more. (do not cut shorter) \nDO NOT HOT GLUE THESE", image: "/images/projects/rc-car-pdf/img-p13-8.jpg", orientation: "horizontal" },
+    { number: 7, isHalfWidth: true, text: "Cut the straw into 2 pieces each with the shorter length of the large popsicle stick. \nDO NOT HOT GLUE THESE YET", image: "/images/projects/rc-car-pdf/img-p14-7.jpg", orientation: "horizontal" },
+    { number: 8, isHalfWidth: true, text: "Take 2 wheels, 1 thin skewer and the rest of the straw", image: "/images/projects/rc-car-pdf/img-p14-8.jpg", orientation: "horizontal" },
+    { number: 9, isHalfWidth: true, text: "Attach the wheels to the skewer", image: "/images/projects/rc-car-pdf/img-p14-9.jpg", orientation: "horizontal" },
+    { number: 10, isHalfWidth: true, text: "Measure and cut the straw to the length of the skewer with the wheels attacked. Around 11.5cm", image: "/images/projects/rc-car-pdf/img-p15-7.jpg", orientation: "vertical" },
+    { number: 11, isHalfWidth: true, text: "Cut a tiny bit more off so that it is not exactly the same length but half a cm or so shorter", image: "/images/projects/rc-car-pdf/img-p15-8.jpg", orientation: "vertical" },
+    { number: 12, text: "Take one of the wheels off and slide the straw on then reattach the wheel. \nIf you notice that the straw is still touching the wheels on both sides then cut it a little bit shorter. it should be close but should have enough space on either side to not touch any wheel", image: "/images/projects/rc-car-pdf/img-p15-9.jpg", orientation: "vertical" },
+    { number: 13, customCrop: "aspect-[5/4]", text: "Now for the front wheel assembly \nTake the 3d printed wheel, the remaining two wheels, the small cut pieces of straw, the remaining thin skewer and an elastic", image: "/images/projects/rc-car-pdf/img-p16-7.jpg", orientation: "vertical" },
+    { number: 14, customCrop: "aspect-[5/4]", text: "Attach the elastic to the 3d printed wheel", image: "/images/projects/rc-car-pdf/img-p16-8.jpg", orientation: "vertical" },
+    { number: 15, isHalfWidth: true, customCrop: "aspect-[4/3]", objectPosition: "center 60%", text: "Attach the skewer to one of the wheels", image: "/images/projects/rc-car-pdf/img-p17-7.jpg", orientation: "vertical" },
+    { number: 16, isHalfWidth: true, customCrop: "aspect-[4/3]", text: "Slide one of the straw pieces on it \nit should be loose and can move around", image: "/images/projects/rc-car-pdf/img-p17-8.jpg", orientation: "vertical" },
+    { number: 17, customCrop: "aspect-video", text: "Slide the 3d printed wheel on", image: "/images/projects/rc-car-pdf/img-p17-9.jpg", orientation: "vertical" },
+    { number: 18, customCrop: "aspect-video", text: "Slide the last straw piece and then attach the last wheel", image: "/images/projects/rc-car-pdf/img-p18-7.jpg", orientation: "vertical" },
+    { number: 19, customCrop: "aspect-video", text: "Now you should have 2 sets of wheels ready for assembly.", image: "/images/projects/rc-car-pdf/img-p18-9.jpg", orientation: "vertical" },
+    { number: 20, text: "Hot glue the dc motor across the popsicle sticks leaving the spinning shaft out in the open air. \nMAKE SURE the copper connections are facing up!", image: "/images/projects/rc-car-pdf/img-p19-7.jpg", orientation: "vertical" },
+    { number: 21, text: "Place the small 3d printed wheel on the end of the shaft of the dc motor. \nHot glue the end if it seems like it keeps falling off.", image: "/images/projects/rc-car-pdf/img-p19-8.jpg", orientation: "vertical" },
+    { number: 22, text: "Hot glue the battery holder to the car structure filling the gap on the left. \nmake sure the wires facing out from the car and do not interfere with the motor", image: "/images/projects/rc-car-pdf/img-p20-7.jpg", orientation: "vertical" },
+    { number: 23, isHalfWidth: true, text: "Take the RF receiver board and hot glue the base of the wires to make them more secure. \nThese wires are flimsy and tend to break so hot gluing them will help keep them in place better", image: "/images/projects/rc-car-pdf/img-p21-7.jpg", orientation: "horizontal" },
+    { number: 24, isHalfWidth: true, text: "Wire strip the red, black, SHORT white and green wires of the RF receiver circuit board \nDO NOT TOUCH THE LONG WHITE CORD YET \nThese wires are labelled: \nV+ red \nV- black \nB green \nF white \non the circuit board \nBE VERY CAREFUL to NOT accidentally cut the wires when doing this. They are short and will make it harder to connect them later. If they are cut to short have and instructor solder or attach a longer wire onto it as replacement (everything can be fixed when it really comes to it so don’t worry)", image: "/images/projects/rc-car-pdf/img-p21-8.jpg", orientation: "horizontal" },
+    { number: 25, text: "Hot glue the board to the car structure. Make it so that the SHORT White and Green wires are closer to the dc motor. \nthis will make it easier to connect them to it later", image: "/images/projects/rc-car-pdf/img-p22-7.jpg", orientation: "vertical" },
+    { number: 26, text: "Twist the red and black wires together from the battery hub and the RF receiver circuit.", image: "/images/projects/rc-car-pdf/img-p23-7.jpg", orientation: "vertical" },
+    { number: 27, text: "Add electrical tape to the ends so they cannot touch and short circuit", image: "/images/projects/rc-car-pdf/img-p23-8.jpg", orientation: "vertical" },
+    { number: 28, text: "Thread the wires through the holes of the motor and twist them so they stay as best as they can \nMAKE SURE YOU PUT THE WIRES IN THIS ORDER. If you don’t then the controls will be inverted (forward is backward and backward is forward) which is not a huge problem but if it can be avoided then great.", image: "/images/projects/rc-car-pdf/img-p24-7.jpg", orientation: "vertical" },
+    { number: 29, text: "Carefully hot glue them so they stay attached better. \nIf some campers are comfortable with soldering then they can do that (especially if the connections are having issues) \nIf this is not done right then this can be a failure point of the project. As a last resort just solder them.", image: "/images/projects/rc-car-pdf/img-p25-8.jpg", orientation: "vertical" },
+    { number: 30, text: "Now we are going to check that everything was connected properly before continuing with the rest of the car. \nPut in the batteries and flip the red switch on the circuit board. The red leds should light up meaning it has power.", image: "/images/projects/rc-car-pdf/img-p25-9.jpg", orientation: "vertical" },
+    { number: 31, text: "Next take the 3v coin battery and the RF Transmitter circuit board and hold the negative and positive wires to the battery \nRed wire goes to the side of the battery with the “+” sign and Black wire goes to the other side of the battery. \nWhen pressing the button labelled F or B you should see the red light up on the Transmitter circuit board.", image: "/images/projects/rc-car-pdf/img-p26-7.jpg", orientation: "vertical" },
+    { number: 32, text: "Hold each part close together and you should see the motor spin when pressing F or B. \nIF IT DOESN’T WORK: \n- Try pressing it a few times and move the transmitter board around, there may be something blocking the wireless connection or there may be some external interference \n- Try reattaching the wires connected to the motor. If the red leds are on then the board has power it is just not connecting to the motor. \n- Try with a different motor, different receiver board, or different transmitter board", image: "/images/projects/rc-car-pdf/img-p26-8.jpg", orientation: "vertical" },
+    { number: 33, text: "Use electrical tape to hold the longer white wire allowing it to face upward to the sky. \nThis wire is the antenna and having it face UP will help the wireless connection", image: ["/images/projects/rc-car-pdf/img-p27-7.jpg", "/images/projects/rc-car-pdf/img-p28-8.jpg"], orientation: "vertical" },
+    { number: 34, isHalfWidth: true, text: "Flip the car over gently and hot glue the back wheels across the back half popsicle stick. \nONLY HOT GLUE THE STRAW NEVER THE SKEWER OR WHEELS.", image: "/images/projects/rc-car-pdf/img-p27-8.jpg", orientation: "vertical" },
+    { number: 35, isHalfWidth: true, text: "Do the same with the front wheels. \nAGAIN ONLY HOT GLUE THE STRAW PARTS. \nMake sure no hot glue touches anything else this is very important to the movement of the wheels \nAdditionally make sure the 3d printed wheel does not touch anything even when it wiggles a little. Anything touching it will give it friction and could make it not more properly. \nKeep it as straight as possible \n\n(Optional) Add tape after hot glueing the straws down to reinforce them.", image: ["/images/projects/rc-car-pdf/img-p28-7.jpg", "/images/projects/rc-car-pdf/img-p28-8.jpg"], orientation: "vertical" },
+    { number: 36, isHalfWidth: true, customCrop: "aspect-[3/4]", text: "Flip the car back over. \nUse the elastic tool to grab the elastic out of the 3d printed wheel. And attach it to the motor", image: "/images/projects/rc-car-pdf/img-p28-8.jpg", orientation: "vertical" },
+    { number: 37, isHalfWidth: true, customCrop: "aspect-[4/3]", text: "Once everything is in place and positioned evenly / centered. add a bit of hot glue to the 3d printed wheel and the skewer to attach them properly. \nOnly add a little bit in case you end up needing to take this part off to replace the elastic in the future.. \n\nTHE CAR IS DONE!!!!! \nFeel free to test it with the RF Transmitter circuit board like was done to test the connections earlier in the step-by-step. \n\nNOW on to part 2: the controller", image: "/images/projects/rc-car-pdf/img-p29-7.jpg", orientation: "vertical" },
+    { number: 38, text: "OPTIONAL: \nAdditionally feel free to add a bumper to the front of the car so it has support when it crashes into a wall. \nFirst cut the straw in half. Another camper will use the other half", image: "/images/projects/rc-car-pdf/img-p29-8.jpg", orientation: "vertical" },
+    { number: 39, text: "Then cut the straw open, as straight as possible", image: "/images/projects/rc-car-pdf/img-p30-7.jpg", orientation: "vertical" },
+    { number: 40, text: "Attach it to the front of the car and hot glue it down", image: "/images/projects/rc-car-pdf/img-p30-8.jpg", orientation: "vertical" },
   ];
 
   const controllerSteps: Step[] = [
@@ -98,21 +98,28 @@ export default function RcCarProject() {
 
     return (
       <div key={`step-${step.number}`} className={`flex flex-col bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 w-full ${widthClass}`} style={{ flexGrow: 1 }}>
-        <div className={`relative bg-gray-100 dark:bg-gray-800/50 flex items-center justify-center overflow-hidden ${step.customCrop ? step.customCrop : step.isFullWidth ? "h-auto" : (step.number === 8 || step.number === 9 || step.orientation === "horizontal") ? "aspect-video" : "min-h-[300px]"}`}>
-          {step.image && (
-            <img
-              src={step.image}
-              alt={`Step ${step.number}`}
-              className={`block w-full ${step.customCrop ? "h-full object-cover" : "h-auto object-contain"}`}
-              style={{
-                ...(step.rotate ? { transform: `rotate(${step.rotate}deg)` } : {}),
-                ...(step.objectPosition ? { objectPosition: step.objectPosition } : {})
-              }}
-            />
-          )}
-          <div className={`absolute top-2 left-2 ${badgeColor} text-white text-xs font-bold px-2 py-1 rounded shadow-md`}>
-            Step {step.number}
-          </div>
+        <div className="flex flex-col">
+          {(Array.isArray(step.image) ? step.image : [step.image]).map((imgSrc, idx) => (
+            <div key={`${step.number}-img-${idx}`} className={`relative bg-gray-100 dark:bg-gray-800/50 flex items-center justify-center overflow-hidden ${step.customCrop ? step.customCrop : step.isFullWidth ? "h-auto" : (step.number === 8 || step.number === 9 || step.orientation === "horizontal") ? "aspect-video" : "min-h-[300px]"}`}>
+              {imgSrc && (
+                <img
+                  src={imgSrc}
+                  alt={`Step ${step.number} image ${idx + 1}`}
+                  className={`block w-full ${step.customCrop ? "h-full object-cover" : "h-auto object-contain"}`}
+                  style={{
+                    height: step.customCrop ? "100%" : "auto",
+                    ...(step.rotate ? { transform: `rotate(${step.rotate}deg)` } : {}),
+                    ...(step.objectPosition ? { objectPosition: step.objectPosition } : {})
+                  }}
+                />
+              )}
+              {idx === 0 && (
+                <div className={`absolute top-2 left-2 ${badgeColor} text-white text-xs font-bold px-2 py-1 rounded shadow-md`}>
+                  Step {step.number}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
         <div className="p-4">
           <p className="text-sm text-gray-700 dark:text-gray-300 leading-snug whitespace-pre-wrap">
