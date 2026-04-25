@@ -2,7 +2,8 @@ export type ProjectNavigationCategory =
   | "cybersecurity"
   | "game-dev"
   | "music"
-  | "auto";
+  | "auto"
+  | "engineering";
 
 type ProjectNavigationItem = {
   href: string;
@@ -99,6 +100,12 @@ export const projectNavigationData: Record<
     {
       href: "/projects/auto/transmission-rebuild",
       title: "Manual Transmission Rebuild (1989 Honda Accord)",
+    },
+  ],
+  engineering: [
+    {
+      href: "/projects/engineering/rc-car",
+      title: "Remote Control Car",
     },
   ],
 };
