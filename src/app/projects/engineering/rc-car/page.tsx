@@ -192,6 +192,18 @@ export default function RcCarProject() {
             </div>
           </div>
 
+                    <h2 className="text-2xl font-bold mb-4">Demo Video</h2>
+          <div className="w-full md:w-1/4 mx-auto rounded-xl overflow-hidden mb-12 bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-800 shadow-sm">
+            <video 
+              controls 
+              className="w-full h-auto block"
+              poster="/images/projects/rc-car-title.jpg"
+            >
+              <source src="/images/projects/rc-car-demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
           <h2 className="text-2xl font-bold mb-4">Prototypes</h2>
           <p>The final design was the result of 6 major iterations, refining chassis stability and axle friction to ensure a reliable build that could be completed by students within the camp timeframe.</p>
           <div className="flex justify-center my-8">
