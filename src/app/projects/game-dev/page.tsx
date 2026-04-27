@@ -46,7 +46,7 @@ export default function GameDevProjects() {
       date: `2020`,
       tags: ["platformer", "physics", "processing"],
       description: `A mind-bending physics platformer where your movement is governed by dynamic power vectors. Ported from my original Processing project to p5.js.`,
-      image: "/placeholder.png",
+      image: "/images/projects/plastic-mind-title.png",
       link: `/projects/game-dev/plastic-mind`,
       category: "2D Games",
     },

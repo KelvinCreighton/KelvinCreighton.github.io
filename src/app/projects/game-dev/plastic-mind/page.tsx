@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ProjectPager from "@/components/ProjectPager";
 
@@ -12,7 +13,6 @@ export default function PlasticMindPage() {
           &larr; Back to Game Dev Projects
         </Link>
         <h1 className="text-4xl font-bold text-center">Plastic Mind</h1>
-        <p className="mt-2 text-sm italic text-gray-500">2020</p>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center max-w-2xl">
           A mind-bending physics platformer where your movement is governed by dynamic power vectors. Navigate through obstacles, manage your momentum, and adapt to shifting controls.
         </p>
@@ -35,11 +35,10 @@ export default function PlasticMindPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <section>
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 9l4 4 5-8h7"/><path d="M20 18v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-16"/></svg>
               Core Mechanics
             </h3>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Unlike traditional platformers, you place "Powers" at your cursor to change your velocity. 
+              Unlike traditional platformers, you place "Powers" at your cursor to change your velocity.
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
               <li><strong>Mouse</strong> - Position your power placement</li>
@@ -52,7 +51,6 @@ export default function PlasticMindPage() {
 
           <section>
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
               Level Hazards
             </h3>
             <div className="space-y-4">
