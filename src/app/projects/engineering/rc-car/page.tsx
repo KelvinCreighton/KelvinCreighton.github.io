@@ -69,7 +69,7 @@ export default function RcCarProject() {
           </div>
 
           <h2 className="text-2xl font-bold mb-4">Demo Video</h2>
-          <div className="w-1/3 mx-auto rounded-xl overflow-hidden mb-12 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="w-full md:w-1/3 mx-auto rounded-xl overflow-hidden mb-12 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-sm">
             <video
               controls
               playsInline
@@ -94,19 +94,19 @@ export default function RcCarProject() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-4">
                 <div className="bg-blue-600 dark:bg-blue-500 rounded-lg p-3 text-white shadow-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" /></svg>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold">3D Print Files</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Download the STL files for the custom drive gears.</p>
                 </div>
               </div>
-              <a 
-                href="/images/projects/rc-car-drive-gears.stl" 
+              <a
+                href="/images/projects/rc-car-drive-gears.stl"
                 download="RC_Car_Drive_Gears.stl"
                 className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors shadow-sm"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
                 Download Drive Gears (.STL)
               </a>
             </div>
@@ -144,7 +144,7 @@ export default function RcCarProject() {
           </div>
 
           <h3 className="text-2xl font-bold mb-8">Building the Chassis & Axles</h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
@@ -236,7 +236,7 @@ export default function RcCarProject() {
           </div >
 
           <h3 className="text-2xl font-bold mt-16 mb-8">Front Wheel Assembly</h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[5/4] bg-gray-85 dark:bg-gray-800/50">
@@ -289,7 +289,7 @@ export default function RcCarProject() {
           </div >
 
           <h3 className="text-2xl font-bold mt-16 mb-8">Mounting Components</h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
@@ -336,7 +336,7 @@ export default function RcCarProject() {
           </div >
 
           <h3 className="text-2xl font-bold mt-16 mb-8">Wiring & Electrical</h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
@@ -383,7 +383,7 @@ export default function RcCarProject() {
           </div >
 
           <h3 className="text-2xl font-bold mt-16 mb-8">Final Car Assembly</h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
@@ -457,7 +457,7 @@ export default function RcCarProject() {
           </div>
 
           <h3 className="text-2xl font-bold mt-16 mb-8">Antenna & Body Construction</h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
@@ -557,7 +557,7 @@ export default function RcCarProject() {
                 <h2 className="text-3xl font-extrabold mb-4 tracking-tight">Your Mission</h2>
                 <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                   <p>
-                    You\u0027ve built a functional, AA battery powered vehicle that can zip forward and backward. But a truly great engineer never stops at just "functional." Currently, this car is limited to a single axis of motion.
+                    You&apos;ve built a functional, AA battery powered vehicle that can zip forward and backward. But a truly great engineer never stops at just &quot;functional.&quot; Currently, this car is limited to a single axis of motion.
                   </p>
                   <p className="font-bold text-gray-900 dark:text-white">
                     The Challenge: Design and implement a steering system.
@@ -568,7 +568,7 @@ export default function RcCarProject() {
                     <li>How would you modify the RF controller to handle left and right commands?</li>
                   </ul>
                   <p className="italic pt-2">
-                    Take the foundation you\u0027ve built here and make it steerable. The best designs often come from the simplest materials!
+                    Take the foundation you&apos;ve built here and make it steerable. The best designs often come from the simplest materials!
                   </p>
                 </div>
               </div>
@@ -577,7 +577,7 @@ export default function RcCarProject() {
 
           <hr className="my-12 border-gray-200 dark:border-gray-800" />
         </div >
-    <ProjectPager category="engineering" currentPath="/projects/engineering/rc-car" />
+        <ProjectPager category="engineering" currentPath="/projects/engineering/rc-car" />
       </article >
     </main >
   );
