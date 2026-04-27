@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
 2:"$Sreact.suspense"
-3:I[5064,["8500","static/chunks/8500-41fa79ac743d83f1.js","8437","static/chunks/8437-e2dde708cf40e303.js","4837","static/chunks/app/projects/cybersecurity/page-46112127d9be0878.js"],"default"]
+3:I[5064,["8500","static/chunks/8500-41fa79ac743d83f1.js","8437","static/chunks/8437-e2dde708cf40e303.js","4837","static/chunks/app/projects/cybersecurity/page-7297b362969f52ed.js"],"default"]
 4:I[484,[],"OutletBoundary"]
-0:{"buildId":"ndc8APm-cpK8HQazA32La","rsc":["$","$1","c",{"children":[["$","$2",null,{"fallback":null,"children":["$","$L3",null,{"initialCategory":"All"}]}],null,["$","$L4",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"sJLfd-NIhxZr8vLFXjc58","rsc":["$","$1","c",{"children":[["$","$2",null,{"fallback":null,"children":["$","$L3",null,{"initialCategory":"All"}]}],null,["$","$L4",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null

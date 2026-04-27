@@ -1,0 +1,39 @@
+data is seperated by :
+
+0: Player:
+x, y, size, speed, gravity, gravity direction
+
+
+1: Goal:
+x, y, size
+
+
+2: Powers:
+size, total displayable on screen
+{\n seperation}
+numbers seperated by , to indicate which powers are avaliable for the level
+
+power types:
+0 = up-left
+1 = up
+2 = up-right
+3 = right
+4 = down-right
+5 = down
+6 = down-left
+7 = left
+8 = clear (no collision required)
+
+
+4: Blocks:
+x, y, width, height, type
+{each block seperated by \n}
+
+block types:
+0 = regular (green with basic collision)
+1 = kill (red with kill collision)
+2 = camera stops following player x
+3 = camera stops following player y
+4 = switch block
+
+
