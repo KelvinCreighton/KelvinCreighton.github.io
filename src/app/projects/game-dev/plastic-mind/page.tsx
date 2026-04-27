@@ -33,27 +33,42 @@ export default function PlasticMindPage() {
         <h2 className="text-2xl font-bold mb-6">How to Play</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <section>
-            <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-              Core Mechanics
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Unlike traditional platformers, you place "Powers" at your cursor to change your velocity.
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-              <li><strong>Mouse</strong> - Position your power placement</li>
-              <li><strong>Keys Q, W, E, D, C, X, Z, A</strong> - Place directional powers</li>
-              <li><strong>S Key</strong> - Placement clear power</li>
-              <li><strong>Spacebar</strong> - Randomly swap two control mappings</li>
-              <li><strong>Goal</strong> - Reach the yellow circle to progress</li>
-            </ul>
-          </section>
+          <div className="space-y-12">
+            <section>
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                Core Mechanics
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Unlike traditional platformers, you place "Powers" at your cursor to change your velocity.
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li><strong>Mouse</strong> - Position your power placement</li>
+                <li><strong>Keys Q, W, E, D, C, X, Z, A</strong> - Place directional powers</li>
+                <li><strong>S Key</strong> - Placement clear power</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                Other Controls
+              </h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li><strong>Spacebar</strong> - Instantly trigger a control swap (Primarily for testing)</li>
+              </ul>
+            </section>
+          </div>
 
           <section>
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-              Level Hazards
+              Objects & Hazards
             </h3>
             <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-4 h-4 rounded-full bg-yellow-400 border border-yellow-600 flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
+                </div>
+                <span className="text-sm text-gray-600 dark:text-gray-400">Goal</span>
+              </div>
               <div className="flex items-center gap-3">
                 <div className="w-4 h-4 bg-green-500/20 border border-green-500 rounded"></div>
                 <span className="text-sm text-gray-600 dark:text-gray-400">Safe Terrain</span>
