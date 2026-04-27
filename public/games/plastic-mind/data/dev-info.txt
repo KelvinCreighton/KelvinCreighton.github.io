@@ -1,0 +1,31 @@
+Press ` to toggle dev mode
+
+In dev mode:
+	Press r to restart level (I might change this to allow players to use the restart as well)
+	
+	Press the arrow keys to move the camera
+
+	Press w, s, a, d to move the player
+
+	Press c for *2 speed, x for *4 speed, and z for 1/2 speed (for player and camera controls)
+
+	Press b to toggle build mode
+
+
+	PS most of the controls are jank because I was too lazy to make a good dev mode
+
+	
+
+	In the console:
+		x = player x
+		y = player y
+		CamX = camera x
+		CamY = camera y
+		MX = mouse x
+		MY = mouse y
+
+
+In build mode:
+	Player movement keys and camera movement keys are the same as in dev mode
+
+

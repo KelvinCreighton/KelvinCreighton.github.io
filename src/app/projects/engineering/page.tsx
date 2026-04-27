@@ -13,7 +13,7 @@ export default function EngineeringProjects() {
     {
       id: 0,
       title: "Remote Control Car",
-      date: "Ongoing",
+      date: "November 2024 - January 2025",
       tags: [],
       description:
         "Developing a low-cost, high-performance RC car using custom engineering solutions and additive manufacturing.",
@@ -68,8 +68,8 @@ export default function EngineeringProjects() {
                   type="button"
                   onClick={() => setSelectedCategory(category)}
                   className={`rounded-full border px-4 py-2 text-sm transition-colors ${isActive
-                      ? "border-blue-600 bg-blue-600 text-white dark:border-blue-500 dark:bg-blue-500"
-                      : "border-gray-300 bg-white text-gray-700 hover:border-blue-400 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:text-blue-400"
+                    ? "border-blue-600 bg-blue-600 text-white dark:border-blue-500 dark:bg-blue-500"
+                    : "border-gray-300 bg-white text-gray-700 hover:border-blue-400 hover:text-blue-600 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:text-blue-400"
                     }`}
                 >
                   {category}

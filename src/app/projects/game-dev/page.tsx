@@ -42,6 +42,16 @@ export default function GameDevProjects() {
     },
     {
       id: 3,
+      title: `Plastic Mind`,
+      date: `2020`,
+      tags: ["platformer", "physics", "processing"],
+      description: `A mind-bending physics platformer where your movement is governed by dynamic power vectors. Ported from my original Processing project to p5.js.`,
+      image: "/placeholder.png",
+      link: `/projects/game-dev/plastic-mind`,
+      category: "2D Games",
+    },
+    {
+      id: 4,
       title: `3D Game Engine`,
       date: `2022`,
       tags: ["engine", "3d", "matrices", "javascript"],
@@ -51,7 +61,7 @@ export default function GameDevProjects() {
       category: "Engines & Simulation",
     },
     {
-      id: 4,
+      id: 5,
       title: `Blackhole Simulator`,
       date: `2022`,
       tags: ["simulation", "physics", "orbit", "javascript"],

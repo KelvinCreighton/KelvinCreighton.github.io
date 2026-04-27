@@ -2,6 +2,8 @@ export const defaultProjectTagClassName =
   "border-gray-300 bg-gray-85 text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300";
 
 export const projectTagClassNames: Record<string, string> = {
+  processing:
+    "border-blue-300 bg-blue-50 text-blue-800 dark:border-blue-700 dark:bg-blue-900/50 dark:text-blue-200",
   web: "border-sky-200 bg-sky-100 text-sky-800 dark:border-sky-900 dark:bg-sky-950/70 dark:text-sky-300",
   ssti: "border-violet-200 bg-violet-100 text-violet-800 dark:border-violet-900 dark:bg-violet-950/70 dark:text-violet-300",
   jinja2:
