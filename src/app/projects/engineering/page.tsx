@@ -11,12 +11,23 @@ import {
 export default function EngineeringProjects() {
   const projects = [
     {
+      id: 1,
+      title: "Dremel DigiLab  3D45",
+      date: "May 2026",
+      tags: [],
+      description:
+        "Documentation of the teardown, diagnosis, and repair of a Dremel DigiLab 3D45 printer.",
+      image: "/images/projects/dremel-3d45-title.jpg",
+      link: "/projects/engineering/dremel-3d45",
+      category: "3D Printers",
+    },
+    {
       id: 0,
       title: "Remote Control Car",
       date: "November 2024 - January 2025",
       tags: [],
       description:
-        "Developing a low-cost, high-performance RC car using custom engineering solutions and additive manufacturing.",
+        "Designing an accessible, sub-$10 educational RC car curriculum for engineering camps, focusing on robotics through low-cost mechanical and electrical prototyping.",
       image: "/images/projects/rc-car-title.jpg",
       link: "/projects/engineering/rc-car",
       category: "Robotics",

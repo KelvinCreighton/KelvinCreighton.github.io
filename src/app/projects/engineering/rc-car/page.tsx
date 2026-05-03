@@ -16,7 +16,7 @@ export default function RcCarProject() {
 
         <header className="w-full border-b border-gray-200 dark:border-gray-800 pb-8 mb-12">
           <div className="flex items-center gap-4 mb-4">
-            <time className="text-sm italic text-gray-500 dark:text-gray-400">February 2025</time>
+            <time className="text-sm italic text-gray-500 dark:text-gray-400">November 2024 - January 2025</time>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">Remote Control Car</h1>
           <p className="text-xl italic mb-6">Robotics, Electrical, and Mechanical Engineering for Students Grades 8/9</p>
