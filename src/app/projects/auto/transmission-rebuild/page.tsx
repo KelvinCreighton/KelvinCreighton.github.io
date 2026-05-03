@@ -101,8 +101,7 @@ export default function AutomotiveProjectTemplate() {
                     <span className="font-semibold">Total Cost:</span> $851.57
                   </li>
                   <li>
-                    <span className="font-semibold">Hours Spent:</span> Many
-                    many DAYS
+                    <span className="font-semibold">Time Spent:</span> 2 Months
                   </li>
                   <li>
                     <span className="font-semibold">Difficulty:</span> 5/5

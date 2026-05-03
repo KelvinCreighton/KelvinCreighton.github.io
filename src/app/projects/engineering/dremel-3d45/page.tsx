@@ -180,9 +180,9 @@ export default function Dremel3D45Project() {
             </figure>
           </div>
 
-          <h2 className="mb-4 text-xl font-bold">Step 3.1: Testing the Thermocouple</h2>
+          <h2 className="mb-4 text-xl font-bold">Step 3.1: Testing the Thermocouple (Part 1)</h2>
           <p>
-            Originally I had assumed that the Dremel 3D45 used a thermistor for temperature sensing. Setting my multimeter to resistor mode and gently using a soldering iron to warm it up, I was getting very odd readings. My initial thought was that the thermistor was broken or that my multimeter was low on battery (possible since I haven't changed it in years).
+            Originally I had assumed that the Dremel 3D45 used a thermistor for temperature sensing. Setting my multimeter to resistor mode, I was getting very odd low resistance readings. My initial thought was that the thermistor was broken or that my multimeter was low on battery (possible since I haven't changed it in years). Before buying a new thermistor, I decided to replace the battery of the multimeter, just in case.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
@@ -215,70 +215,145 @@ export default function Dremel3D45Project() {
             While replacing the battery in my multimeter, I accidentally tore the positive lead wire. These wires looked extremely fragile I was surprised it was even working in the first place. I ended up soldering it back on and using hot glue to keep it from tearing again.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
-            <figure className="m-0">
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
-                Image Placeholder
+          <div className="flex flex-col gap-6 my-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <figure className="m-0">
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/dremel-3d45-step-3-2-1.jpg"
+                    alt="Broken multimeter wire"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  Broken multimeter wire discovered during battery replacement
+                </figcaption>
+              </figure>
+              <figure className="m-0">
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/dremel-3d45-step-3-2-2.jpg"
+                    alt="Solder and hot glue wire repair"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  Solder and hot glue reinforcement to prevent future tearing
+                </figcaption>
+              </figure>
+            </div>
+            <figure className="m-0 flex flex-col items-center">
+              <div className="relative max-w-2xl w-full aspect-video rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-3-2-3.jpg"
+                  alt="Workstation overview midway through repair"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <figcaption className="text-sm text-gray-500 mt-2 text-center">
-                [Caption]
-              </figcaption>
-            </figure>
-            <figure className="m-0">
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
-                Image Placeholder
-              </div>
-              <figcaption className="text-sm text-gray-500 mt-2 text-center">
-                [Caption]
+                Mid-restoration workstation: tools, parts, and technical chaos
               </figcaption>
             </figure>
           </div>
 
-          <h2 className="mb-4 text-xl font-bold">Step 3.3: [Title]</h2>
+          <h2 className="mb-4 text-xl font-bold">Step 3.3: Testing the Thermocouple (Part 2)</h2>
           <p>
-            [Description of Step 3.3 work]
+            After replacing the batteries of the multimeter, andd testing the thermistor again, I was getting very odd readings. However the readings were inconsistent with a broken thermistor. Specifically I noticed that it seemed to flip polarity from positive resistance to negative resistance just on its own. I did some research online and found that this was actually because it was a thermocouple, not a thermistor. So setting the multimeter to measure low voltage DC, and gently using a soldering iron on low temp, I was able to get the readings of a working thermocouple. Meaning I would not be replacing this part.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0">
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
-                Image Placeholder
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-3-3-1.jpg"
+                  alt="Thermocouple at room temperature"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <figcaption className="text-sm text-gray-500 mt-2 text-center">
-                [Caption]
+                Baseline: 0.0mV at room temperature (200m setting)
               </figcaption>
             </figure>
             <figure className="m-0">
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
-                Image Placeholder
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-3-3-2.jpg"
+                  alt="Soldering iron heating thermocouple"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <figcaption className="text-sm text-gray-500 mt-2 text-center">
-                [Caption]
+                Initial Heat: 0.5mV
+              </figcaption>
+            </figure>
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-3-3-3.jpg"
+                  alt="Thermocouple peak heat reading"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                Peak Heat: 0.7mV (for this test)
+              </figcaption>
+            </figure>
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-3-3-4.jpg"
+                  alt="Thermocouple cooling down"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                Cooling: 0.4mV after removing heat source
               </figcaption>
             </figure>
           </div>
 
-          <h2 className="mb-4 text-xl font-bold">Step 4: [Title]</h2>
+          <h2 className="mb-4 text-xl font-bold">Step 4: Reparing Damaged Wires</h2>
           <p>
-            [Description of Step 4 work]
+            Many of the wires from the hotend assembly were broken off. So I soldered them back on and reinforced them with high temp jb weld. The components themselves are still removable if I ever need to replace them, but the wires of the components are NEVER coming off again.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 my-8 md:my-10">
             <figure className="m-0">
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
-                Image Placeholder
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-4-1.jpg"
+                  alt="Dremel 3D45 Repair Step 4.1"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <figcaption className="text-sm text-gray-500 mt-2 text-center">
-                [Caption]
-              </figcaption>
             </figure>
             <figure className="m-0">
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
-                Image Placeholder
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-4-2.jpg"
+                  alt="Dremel 3D45 Repair Step 4.2"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <figcaption className="text-sm text-gray-500 mt-2 text-center">
-                [Caption]
-              </figcaption>
+            </figure>
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-4-3.jpg"
+                  alt="Dremel 3D45 Repair Step 4.3"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </figure>
           </div>
 
