@@ -136,6 +136,199 @@ export default function Dremel3D45Project() {
           <p>
             Dismantalling the hotend from the second printer, I attempted to use it to replace the broken one on the Dremel 3D45. However, I quickly realized that the two printers were not compatible with each other. The hotend was too tall to fit in the Dremel's print head assembly, and the threading of the individual components was completely different. My plan was then to add some sort of "sleeve" for the nozzle of the second printer to fit in the hot end of the Dremel printer since it was much smaller and the threading wouldn't match. Because of the precise tolerances of 3D printers, this was not a realistic option and I ended up just ordering a 3rd party replacement nozzle online.
           </p>
+          <div className="flex flex-col gap-6 my-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <figure className="m-0">
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/dremel-3d45-step-2-1.jpg"
+                    alt="Removing hotend from second printer"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  Removing the hotend from the salvage printer
+                </figcaption>
+              </figure>
+              <figure className="m-0">
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                  <Image
+                    src="/images/projects/dremel-3d45-step-2-2.jpg"
+                    alt="Fully dismantled salvage hotend"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                  Dismantling the salvage hotend components
+                </figcaption>
+              </figure>
+            </div>
+            <figure className="m-0 flex flex-col items-center">
+              <div className="relative max-w-2xl w-full aspect-video rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-2-3.jpg"
+                  alt="Hotend comparison and incompatibility"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                Comparing the proprietary Dremel hotend with the salvage parts
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">Step 3.1: Testing the Thermocouple</h2>
+          <p>
+            Originally I had assumed that the Dremel 3D45 used a thermistor for temperature sensing. Setting my multimeter to resistor mode and gently using a soldering iron to warm it up, I was getting very odd readings. My initial thought was that the thermistor was broken or that my multimeter was low on battery (possible since I haven't changed it in years).
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-3-1.jpg"
+                  alt="Dremel 3D45 Repair Step 3.1"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </figure>
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-step-3-2.jpg"
+                  alt="Dremel 3D45 Repair Step 3.2"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                Unusually low resistance reading
+              </figcaption>
+            </figure>
+          </div>
+          <h2 className="mb-4 text-xl font-bold">Step 3.2: Reparing the Multimeter</h2>
+          <p>
+            While replacing the battery in my multimeter, I accidentally tore the positive lead wire. These wires looked extremely fragile I was surprised it was even working in the first place. I ended up soldering it back on and using hot glue to keep it from tearing again.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
+                Image Placeholder
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                [Caption]
+              </figcaption>
+            </figure>
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
+                Image Placeholder
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                [Caption]
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">Step 3.3: [Title]</h2>
+          <p>
+            [Description of Step 3.3 work]
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
+                Image Placeholder
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                [Caption]
+              </figcaption>
+            </figure>
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
+                Image Placeholder
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                [Caption]
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">Step 4: [Title]</h2>
+          <p>
+            [Description of Step 4 work]
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
+                Image Placeholder
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                [Caption]
+              </figcaption>
+            </figure>
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
+                Image Placeholder
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                [Caption]
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">Step 5: [Title]</h2>
+          <p>
+            [Description of Step 5 work]
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
+                Image Placeholder
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                [Caption]
+              </figcaption>
+            </figure>
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
+                Image Placeholder
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                [Caption]
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">Step 6: [Title]</h2>
+          <p>
+            [Description of Step 6 work]
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8 md:my-10">
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
+                Image Placeholder
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                [Caption]
+              </figcaption>
+            </figure>
+            <figure className="m-0">
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-400">
+                Image Placeholder
+              </div>
+              <figcaption className="text-sm text-gray-500 mt-2 text-center">
+                [Caption]
+              </figcaption>
+            </figure>
+          </div>
 
           <h2 className="mb-4 text-xl font-bold">Closing Thoughts</h2>
           <p>
