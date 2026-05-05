@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image from "@/components/BlurImage";
 import Link from "next/link";
 import {
   defaultProjectTagClassName,
@@ -16,8 +16,8 @@ export default function EngineeringProjects() {
       date: "May 2026",
       tags: [],
       description:
-        "Documentation of the teardown, diagnosis, and repair of a Dremel DigiLab 3D45 printer.",
-      image: "/images/projects/dremel-3d45-title.jpg",
+        "Documentation of the teardown, diagnosis, and repair of a Dremel DigiLab 3D45 - Restoration printer.",
+      image: "/images/projects/dremel-3d45-title.webp",
       link: "/projects/engineering/dremel-3d45",
       category: "3D Printers",
     },
@@ -28,7 +28,7 @@ export default function EngineeringProjects() {
       tags: [],
       description:
         "Designing an accessible, sub-$10 educational RC car curriculum for engineering camps, focusing on robotics through low-cost mechanical and electrical prototyping.",
-      image: "/images/projects/rc-car-title.jpg",
+      image: "/images/projects/rc-car-title.webp",
       link: "/projects/engineering/rc-car",
       category: "Robotics",
     },
@@ -100,7 +100,7 @@ export default function EngineeringProjects() {
             style={{ animationDelay: `${i * 0.08}s` }}
           >
             <div className="w-full aspect-video relative bg-gray-85 dark:bg-gray-800">
-              {project.image === "/images/projects/engineering-placeholder.jpg" ? (
+              {project.image === "/images/projects/engineering-placeholder.webp" ? (
                 <div className="absolute inset-0 flex items-center justify-center text-gray-400">
                   No Image Available
                 </div>

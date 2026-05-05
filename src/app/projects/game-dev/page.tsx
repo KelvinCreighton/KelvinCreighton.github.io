@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image from "@/components/BlurImage";
 import Link from "next/link";
 import {
   defaultProjectTagClassName,
@@ -16,7 +16,7 @@ export default function GameDevProjects() {
       date: `2017`,
       tags: ["platformer", "javascript", "levels", "2d"],
       description: `The first JavaScript game I ever made. It was a simple platformer where the player had to navigate through levels and avoid obstacles. This project was a great learning experience and sparked my passion for game development.`,
-      image: `/images/projects/my-first-game.png`,
+      image: `/images/projects/my-first-game.webp`,
       link: `/projects/game-dev/my-first-game`,
       category: "2D Games",
     },
@@ -26,7 +26,7 @@ export default function GameDevProjects() {
       date: `2017`,
       tags: ["arcade", "2d", "javascript", "levels"],
       description: `A fun UFO game project. Players control a UFO and navigate through various levels, avoiding enemies. `,
-      image: `/images/projects/ufo.png`,
+      image: `/images/projects/ufo.webp`,
       link: `/projects/game-dev/ufo`,
       category: "2D Games",
     },
@@ -36,7 +36,7 @@ export default function GameDevProjects() {
       date: `2018`,
       tags: ["shooter", "tanks", "2d", "javascript"],
       description: `A topdown tank shooter inspired by the classic Tank Trouble game!`,
-      image: `/images/projects/tank-game.png`,
+      image: `/images/projects/tank-game.webp`,
       link: `/projects/game-dev/tank-game`,
       category: "2D Games",
     },
@@ -46,7 +46,7 @@ export default function GameDevProjects() {
       date: `2019`,
       tags: ["platformer", "physics", "processing"],
       description: `A mind-bending physics platformer where your movement is governed by dynamic power vectors. Ported from my original Processing project to p5.js.`,
-      image: "/images/projects/plastic-mind-title.png",
+      image: "/images/projects/plastic-mind-title.webp",
       link: `/projects/game-dev/plastic-mind`,
       category: "2D Games",
     },
@@ -56,7 +56,7 @@ export default function GameDevProjects() {
       date: `2022`,
       tags: ["engine", "3d", "matrices", "javascript"],
       description: `My first 3D game engine project exploring concepts like projection and rotation using matrix math. This project was a major learning experience in linear algebra and game development, with all code and libraries written by me.`,
-      image: `/images/projects/3d-game.png`,
+      image: `/images/projects/3d-game.webp`,
       link: `/projects/game-dev/3d-game`,
       category: "Engines & Simulation",
     },
@@ -66,7 +66,7 @@ export default function GameDevProjects() {
       date: `2022`,
       tags: ["simulation", "physics", "orbit", "javascript"],
       description: `A physics-based orbital mechanics simulator featuring various "satellites" like bananas, pizza, and spaghetti.`,
-      image: `/images/projects/Blackhole_Simulator-image.png`,
+      image: `/images/projects/Blackhole_Simulator-image.webp`,
       link: `/projects/game-dev/blackhole-simulator`,
       category: "Engines & Simulation",
     },
@@ -137,9 +137,9 @@ export default function GameDevProjects() {
             style={{ animationDelay: `${i * 0.08}s` }}
           >
             <div className="w-full aspect-video relative bg-gray-85 dark:bg-gray-800">
-              {project.image === "/placeholder.png" ? (
+              {project.image === "/placeholder.webp" ? (
                 <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                  [Image: {project.id}.png]
+                  [Image: {project.id}.webp]
                 </div>
               ) : (
                 <Image

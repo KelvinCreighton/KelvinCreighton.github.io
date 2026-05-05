@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/BlurImage";
 import Link from "next/link";
 import ProjectPager from "@/components/ProjectPager";
 
@@ -28,7 +28,7 @@ export default function TacomaValveCoverProject() {
 
           <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
             <Image
-              src="/images/projects/tacoma-vc-title.jpg"
+              src="/images/projects/tacoma-vc-title.webp"
               alt="Toyota Tacoma Valve Cover Project"
               fill
               className="object-cover"
@@ -119,7 +119,7 @@ export default function TacomaValveCoverProject() {
             <figure className="m-0 w-full md:w-1/3">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/tacoma-vc-1-1.jpg"
+                  src="/images/projects/tacoma-vc-1-1.webp"
                   alt="Analyzing the broken valve cover - Part 1"
                   width={4032}
                   height={3024}
@@ -130,7 +130,7 @@ export default function TacomaValveCoverProject() {
             <figure className="m-0 w-full md:w-1/3">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/tacoma-vc-1-2.jpg"
+                  src="/images/projects/tacoma-vc-1-2.webp"
                   alt="Analyzing the broken valve cover - Part 2"
                   width={4032}
                   height={3024}
@@ -149,7 +149,7 @@ export default function TacomaValveCoverProject() {
             <figure className="m-0">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/tacoma-vc-2-1.jpg"
+                  src="/images/projects/tacoma-vc-2-1.webp"
                   alt="Measuring and initial cutting - Step 2.1"
                   width={4032}
                   height={3024}
@@ -163,7 +163,7 @@ export default function TacomaValveCoverProject() {
             <figure className="m-0">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/tacoma-vc-2-2.jpg"
+                  src="/images/projects/tacoma-vc-2-2.webp"
                   alt="Measuring and initial cutting - Step 2.2"
                   width={4032}
                   height={3024}
@@ -177,7 +177,7 @@ export default function TacomaValveCoverProject() {
             <figure className="m-0">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/tacoma-vc-2-3.jpg"
+                  src="/images/projects/tacoma-vc-2-3.webp"
                   alt="Measuring and initial cutting - Step 2.3"
                   width={4032}
                   height={3024}
@@ -203,7 +203,7 @@ export default function TacomaValveCoverProject() {
             <figure className="m-0 w-full md:w-1/3">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/tacoma-vc-3-1.jpg"
+                  src="/images/projects/tacoma-vc-3-1.webp"
                   alt="JB Welding Custom Cut Steel Caps - Step 3.1"
                   width={4032}
                   height={3024}
@@ -217,7 +217,7 @@ export default function TacomaValveCoverProject() {
             <figure className="m-0 w-full md:w-1/3">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/tacoma-vc-3-2.jpg"
+                  src="/images/projects/tacoma-vc-3-2.webp"
                   alt="JB Welding Custom Cut Steel Caps - Step 3.2"
                   width={4032}
                   height={3024}
@@ -239,7 +239,7 @@ export default function TacomaValveCoverProject() {
             <figure className="m-0">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/tacoma-vc-4-3.jpg"
+                  src="/images/projects/tacoma-vc-4-3.webp"
                   alt="Creating Custom Studs for Spark Plug Boots - Step 4.3"
                   width={4032}
                   height={3024}
@@ -250,7 +250,7 @@ export default function TacomaValveCoverProject() {
             <figure className="m-0">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/tacoma-vc-4-2.jpg"
+                  src="/images/projects/tacoma-vc-4-2.webp"
                   alt="Creating Custom Studs for Spark Plug Boots - Step 4.2"
                   width={4032}
                   height={3024}
@@ -261,7 +261,7 @@ export default function TacomaValveCoverProject() {
             <figure className="m-0">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/tacoma-vc-4-1.jpg"
+                  src="/images/projects/tacoma-vc-4-1.webp"
                   alt="Creating Custom Studs for Spark Plug Boots - Step 4.1"
                   width={4032}
                   height={3024}

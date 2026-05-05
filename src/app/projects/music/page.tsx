@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image from "@/components/BlurImage";
 import Link from "next/link";
 
 export default function MusicProjects() {
@@ -11,7 +11,7 @@ export default function MusicProjects() {
       title: `BL1ND JUST1C3: 1NV3ST1G4T1ON`,
       date: `2017`,
       description: `A high energy multi-voice piece originally from Homestuck, arranged for piano.`,
-      image: `/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON.png`,
+      image: `/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON.webp`,
       link: `/projects/music/blind-justice-investigation`,
       category: "Arrangements",
     },
@@ -20,7 +20,7 @@ export default function MusicProjects() {
       title: `Beethoven Virus`,
       date: `2018`,
       description: `A challenging arrangement of the Beethoven Virus for piano.`,
-      image: `/images/projects/Beethoven_Virus.png`,
+      image: `/images/projects/Beethoven_Virus.webp`,
       link: `/projects/music/beethoven-virus`,
       category: "Arrangements",
     },
@@ -29,7 +29,7 @@ export default function MusicProjects() {
       title: `The Longest Moment Before a New Beginning`,
       date: `October 2019`,
       description: `An original piano composition I wrote in highschool.`,
-      image: `/images/projects/The-Longest-Moment-Before-a-New-Beginning.png`,
+      image: `/images/projects/The-Longest-Moment-Before-a-New-Beginning.webp`,
       link: `/projects/music/the-longest-moment`,
       category: "Original Compositions",
     },
@@ -101,9 +101,9 @@ export default function MusicProjects() {
               style={{ animationDelay: `${i * 0.08}s` }}
             >
               <div className="w-full aspect-video relative bg-gray-85 dark:bg-gray-800">
-                {project.image === "/placeholder.png" ? (
+                {project.image === "/placeholder.webp" ? (
                   <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                    [Image: {project.id}.png]
+                    [Image: {project.id}.webp]
                   </div>
                 ) : (
                   <Image

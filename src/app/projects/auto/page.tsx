@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image from "@/components/BlurImage";
 import Link from "next/link";
 import {
   defaultProjectTagClassName,
@@ -18,7 +18,7 @@ export default function AutoProjects() {
       tags: [],
       description:
         "When a cracked valve cover led to an oil leak, a custom modification was required to make a donor part from a different year fit properly.",
-      image: "/images/projects/tacoma-vc-title.jpg",
+      image: "/images/projects/tacoma-vc-title.webp",
       link: "/projects/auto/tacoma-valve-cover",
       category: "Engine Repair",
     },
@@ -30,7 +30,7 @@ export default function AutoProjects() {
       tags: [],
       description:
         "What started as a simple alternator replacement turned into a full manual transmission rebuild. This project documents the process and the challenges that came with it.",
-      image: "/images/projects/transmission-title.jpg",
+      image: "/images/projects/transmission-title.webp",
       link: "/projects/auto/transmission-rebuild",
       category: "Drivetrain Repair",
     },

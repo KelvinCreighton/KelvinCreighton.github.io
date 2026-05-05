@@ -41,7 +41,7 @@ export default function EvalWriteup() {
             number: "02",
             label: "Analyzing Matches vs Non-Matches",
             prose:
-              "Examples of what Matches and Doesn't Match:\n\n- Hex literal: Matches `0xFF`, Doesn't Match `0x`\n- Unicode escape: Matches `\\u0041`, Doesn't Match `\\u123`\n- Percent encoding: Matches `%20`, Doesn't Match `%2`\n- File extension: Matches `.js`, Doesn't Match `.jpeg`\n- Double dot: Matches `..`, Doesn't Match `...`\n\nNotice that underscores are also not blacklisted. This will come in handy later...",
+              "Examples of what Matches and Doesn't Match:\n\n- Hex literal: Matches `0xFF`, Doesn't Match `0x`\n- Unicode escape: Matches `\\u0041`, Doesn't Match `\\u123`\n- Percent encoding: Matches `%20`, Doesn't Match `%2`\n- File extension: Matches `.js`, Doesn't Match `.webp`\n- Double dot: Matches `..`, Doesn't Match `...`\n\nNotice that underscores are also not blacklisted. This will come in handy later...",
           },
         ],
       },

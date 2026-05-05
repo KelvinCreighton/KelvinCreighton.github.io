@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image from "@/components/BlurImage";
 import Link from "next/link";
 import ProjectPager from "@/components/ProjectPager";
 
@@ -21,7 +21,7 @@ export default function RcCarProject() {
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">Remote Control Car</h1>
           <p className="text-xl italic mb-6">Robotics, Electrical, and Mechanical Engineering for Students Grades 8/9</p>
           <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
-            <Image src="/images/projects/rc-car-title.jpg" alt="Remote Control Car Final Build" fill className="object-cover" priority />
+            <Image src="/images/projects/rc-car-title.webp" alt="Remote Control Car Final Build" fill className="object-cover" priority />
           </div>
           <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
             While working at DiscoverE engineering camp at the University of Alberta I was tasked with creating the curriculum for a remote control car project. The challenge was to create a car that could be built in a single day by students grades 8 and 9 with minimal tools and materials.
@@ -74,7 +74,7 @@ export default function RcCarProject() {
               controls
               playsInline
               className="w-full h-auto block"
-              poster="/images/projects/rc-car-title.jpg"
+              poster="/images/projects/rc-car-title.webp"
             >
               <source src="/images/projects/rc-car-demo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -85,7 +85,7 @@ export default function RcCarProject() {
           <p>The final design was the result of 6 major iterations, refining chassis stability and axle friction to ensure a reliable build that could be completed by students within the camp timeframe.</p>
           <div className="flex justify-center my-8">
             <figure className="max-w-2xl w-full">
-              <Image src="/images/projects/rc-car-prototypes-01.jpg" alt="Prototype Iterations" width={4032} height={3024} className="rounded-xl border border-gray-200 dark:border-gray-800" />
+              <Image src="/images/projects/rc-car-prototypes-01.webp" alt="Prototype Iterations" width={4032} height={3024} className="rounded-xl border border-gray-200 dark:border-gray-800" />
               <figcaption className="text-sm text-gray-500 mt-2 text-center">Evolution from early popsicle stick experiments to the final standardized design.</figcaption>
             </figure>
           </div>
@@ -118,7 +118,7 @@ export default function RcCarProject() {
           <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 mb-12">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="relative aspect-square bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p10-7.jpg" alt="Car Materials" fill className="object-cover" style={{ objectPosition: "15% center" }} />
+                <Image src="/images/projects/rc-car-pdf/img-p10-7.webp" alt="Car Materials" fill className="object-cover" style={{ objectPosition: "15% center" }} />
               </div>
               <div className="p-8 flex flex-col justify-center">
                 <h3 className="text-2xl font-bold mb-4">Materials Overview</h3>
@@ -148,13 +148,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p11-7.jpg" alt="Step 1" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p11-7.webp" alt="Step 1" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 1:</strong> Take one of the large popsicle sticks and snap it in half. Try and be as precise as possible.</figcaption>
             </figure>
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p11-8.jpg" alt="Step 2" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p11-8.webp" alt="Step 2" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 2:</strong> Take 2 more full sticks and hot glue the halves parallel, making a box 1 by 1/2 sticks.</figcaption>
             </figure>
@@ -163,13 +163,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p12-7.jpg" alt="Step 3" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p12-7.webp" alt="Step 3" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 3:</strong> Take the last large popsicle stick and snap it in half too.</figcaption>
             </figure>
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p12-8.jpg" alt="Step 4" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p12-8.webp" alt="Step 4" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 4:</strong> Hot glue the half stick across at 8-9cm. Ensure the pieces are level.</figcaption>
             </figure >
@@ -178,13 +178,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p13-7.jpg" alt="Step 5" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p13-7.webp" alt="Step 5" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 5:</strong> Flip the base over. Hot glue the last half stick 5cm from the bottom.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p13-8.jpg" alt="Step 6" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p13-8.webp" alt="Step 6" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 6:</strong> Cut thin skewers at 12cm. Do not hot glue these!</figcaption>
             </figure >
@@ -193,13 +193,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p14-7.jpg" alt="Step 7" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p14-7.webp" alt="Step 7" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 7:</strong> Cut straw into 2 pieces matching the shorter stick length.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p14-8.jpg" alt="Step 8" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p14-8.webp" alt="Step 8" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 8:</strong> Take 2 wheels, 1 skewer and the straw.</figcaption>
             </figure >
@@ -208,13 +208,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p14-9.jpg" alt="Step 9" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p14-9.webp" alt="Step 9" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 9:</strong> Attach wheels to the skewer.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p15-7.jpg" alt="Step 10" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p15-7.webp" alt="Step 10" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 10:</strong> Cut the straw to ~11.5cm (the length of the axle assembly).</figcaption>
             </figure >
@@ -223,13 +223,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p15-8.jpg" alt="Step 11" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p15-8.webp" alt="Step 11" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 11:</strong> Trim another 0.5cm so the straw doesn\u0027t touch the wheels.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p15-9.jpg" alt="Step 12" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p15-9.webp" alt="Step 12" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 12:</strong> Slide the straw on. Ensure it doesn\u0027t create friction against the wheels.</figcaption>
             </figure >
@@ -240,13 +240,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[5/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p16-7.jpg" alt="Step 13" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p16-7.webp" alt="Step 13" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 13:</strong> Gather the 3D printed wheel, remaining wheels, straw pieces, and elastic.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[5/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p16-8.jpg" alt="Step 14" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p16-8.webp" alt="Step 14" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 14:</strong> Attach the elastic to the 3D printed wheel.</figcaption>
             </figure >
@@ -255,13 +255,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[4/3] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p17-7.jpg" alt="Step 15" fill className="object-cover" style={{ objectPosition: "center 60%" }} />
+                <Image src="/images/projects/rc-car-pdf/img-p17-7.webp" alt="Step 15" fill className="object-cover" style={{ objectPosition: "center 60%" }} />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 15:</strong> Attach the skewer to one of the wheels.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[4/3] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p17-8.jpg" alt="Step 16" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p17-8.webp" alt="Step 16" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 16:</strong> Slide a straw piece on. It should be loose and free-moving.</figcaption>
             </figure >
@@ -270,19 +270,19 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p17-9.jpg" alt="Step 17" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p17-9.webp" alt="Step 17" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>17:</strong> Slide on the 3D wheel.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p18-7.jpg" alt="Step 18" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p18-7.webp" alt="Step 18" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>18:</strong> Add the last straw and wheel.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p18-9.jpg" alt="Step 19" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p18-9.webp" alt="Step 19" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>19:</strong> Wheels are ready.</figcaption>
             </figure >
@@ -293,13 +293,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p19-7.jpg" alt="Step 20" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p19-7.webp" alt="Step 20" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 20:</strong> Glue the DC motor across the sticks. Keep copper connections facing up.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p19-8.jpg" alt="Step 21" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p19-8.webp" alt="Step 21" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 21:</strong> Place the small 3D wheel on the motor shaft. Glue the tip if loose.</figcaption>
             </figure >
@@ -308,13 +308,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p20-7.jpg" alt="Step 22" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p20-7.webp" alt="Step 22" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 22:</strong> Glue the battery holder to the gap on the left. Watch the wiring.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p21-7.jpg" alt="Step 23" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p21-7.webp" alt="Step 23" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 23:</strong> Secure RF board wire bases with hot glue to prevent breakage.</figcaption>
             </figure >
@@ -323,13 +323,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p21-8.jpg" alt="Step 24" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p21-8.webp" alt="Step 24" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 24:</strong> Strip red, black, short white, and green wires. Be extremely careful.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p22-7.jpg" alt="Step 25" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p22-7.webp" alt="Step 25" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 25:</strong> Glue the board so motor wires are positioned for easy connection.</figcaption>
             </figure >
@@ -340,13 +340,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p23-7.jpg" alt="Step 26" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p23-7.webp" alt="Step 26" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 26:</strong> Twist power wires together from battery and circuit.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p23-8.jpg" alt="Step 27" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p23-8.webp" alt="Step 27" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 27:</strong> Use electrical tape to insulate the power connections.</figcaption>
             </figure >
@@ -355,13 +355,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p24-7.jpg" alt="Step 28" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p24-7.webp" alt="Step 28" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 28:</strong> Thread and twist wires through the motor terminals.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p25-8.jpg" alt="Step 29" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p25-8.webp" alt="Step 29" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 29:</strong> Secure motor connections with hot glue or solder for reliability.</figcaption>
             </figure >
@@ -370,13 +370,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p25-9.jpg" alt="Step 30" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p25-9.webp" alt="Step 30" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 30:</strong> Test power. Red LEDs should light up when the switch is flipped.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p26-7.jpg" alt="Step 31" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p26-7.webp" alt="Step 31" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 31:</strong> Power the transmitter with the 3V coin battery to test F/B controls.</figcaption>
             </figure >
@@ -387,13 +387,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p26-8.jpg" alt="Step 32" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p26-8.webp" alt="Step 32" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 32:</strong> Verify motor spin. Troubleshoot connections if it doesn\u0027t activate.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p27-7.jpg" alt="Step 33" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p27-7.webp" alt="Step 33" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 33:</strong> Position the long white antenna wire facing upward.</figcaption>
             </figure >
@@ -402,13 +402,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p27-8.jpg" alt="Step 34" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p27-8.webp" alt="Step 34" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 34:</strong> Glue back wheels. ONLY glue the straw, never the skewer or wheels.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p28-7.jpg" alt="Step 35" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p28-7.webp" alt="Step 35" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 35:</strong> Mount front wheels. Ensure no glue touches moving parts.</figcaption>
             </figure >
@@ -417,13 +417,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p29-7.jpg" alt="Step 36" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p29-7.webp" alt="Step 36" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 36:</strong> Hook the elastic from the 3D wheel onto the motor shaft.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[4/3] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p29-9.jpg" alt="Step 37" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p29-9.webp" alt="Step 37" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 37:</strong> Center everything and add a small drop of glue to lock the 3D wheel to the axle.</figcaption>
             </figure >
@@ -434,7 +434,7 @@ export default function RcCarProject() {
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="relative aspect-square bg-gray-85 dark:bg-gray-800/50">
                 <Image
-                  src="/images/projects/rc-car-pdf/img-p32-8.jpg"
+                  src="/images/projects/rc-car-pdf/img-p32-8.webp"
                   alt="Controller Materials"
                   fill
                   className="object-cover" style={{ objectPosition: "40% center" }}
@@ -461,13 +461,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p33-7.jpg" alt="Step 1" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p33-7.webp" alt="Step 1" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 1:</strong> Strip the ends of the stiff copper wire.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p33-8.jpg" alt="Step 2" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p33-8.webp" alt="Step 2" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 2:</strong> Use a ~4mm diameter skewer as a coil template.</figcaption>
             </figure >
@@ -476,13 +476,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p33-10.jpg" alt="Step 3" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p33-10.webp" alt="Step 3" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 3:</strong> Wrap the stripped wire tightly around the skewer.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p34-7.jpg" alt="Step 4" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p34-7.webp" alt="Step 4" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 4:</strong> Remove and compress the coil to form the antenna.</figcaption>
             </figure >
@@ -491,13 +491,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p34-8.jpg" alt="Step 5" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p34-8.webp" alt="Step 5" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 5:</strong> Locate the ANT connection holes on the transmitter board.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[3/4] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p35-7.jpg" alt="Step 6" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p35-7.webp" alt="Step 6" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 6:</strong> Solder the antenna to the designated hole for best results.</figcaption>
             </figure >
@@ -506,13 +506,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p36-8.jpg" alt="Step 9" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p36-8.webp" alt="Step 9" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 9:</strong> Feed power wires through the chassis center hole.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p37-8.jpg" alt="Step 13" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p37-8.webp" alt="Step 13" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 13:</strong> Cut sticks to match the chassis width.</figcaption>
             </figure >
@@ -521,13 +521,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-[4/3] bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p38-8.jpg" alt="Step 14" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p38-8.webp" alt="Step 14" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 14:</strong> Glue support sticks around the transmitter circuit.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p38-9.jpg" alt="Step 15" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p38-9.webp" alt="Step 15" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 15:</strong> Install brass fasteners through the base to hold the board.</figcaption>
             </figure >
@@ -536,13 +536,13 @@ export default function RcCarProject() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p41-7.jpg" alt="Step 19" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p41-7.webp" alt="Step 19" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 19:</strong> Tape power wires to the coin battery terminals.</figcaption>
             </figure >
             <figure className="m-0 bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 flex flex-col">
               <div className="relative w-full aspect-video bg-gray-85 dark:bg-gray-800/50">
-                <Image src="/images/projects/rc-car-pdf/img-p41-9.jpg" alt="Step 21" fill className="object-cover" />
+                <Image src="/images/projects/rc-car-pdf/img-p41-9.webp" alt="Step 21" fill className="object-cover" />
               </div>
               <figcaption className="p-8 flex flex-col justify-center text-gray-700 dark:text-gray-300 leading-relaxed text-sm"><strong>Step 21:</strong> Secure the board with brass fasteners. Project Complete!</figcaption>
             </figure >

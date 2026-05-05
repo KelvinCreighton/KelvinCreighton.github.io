@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image from "@/components/BlurImage";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
@@ -27,7 +27,7 @@ export default function CybersecurityProjectsClient({
       tags: ["web", "ssti", "jinja2", "rce"],
       description:
         "A walkthrough of a Server-Side Template Injection in Jinja2, escaping the sandbox to achieve Remote Code Execution.",
-      image: "/images/projects/picoCTF_logo.png",
+      image: "/images/projects/picoCTF_logo.webp",
       link: "/projects/cybersecurity/ssti1",
       category: "PicoCTF Writeups",
     },
@@ -39,7 +39,7 @@ export default function CybersecurityProjectsClient({
       tags: ["web", "nosql", "mongodb", "auth-bypass"],
       description:
         "A write-up on exploiting a NoSQL injection vulnerability in a MongoDB-backed Express application to bypass authentication.",
-      image: "/images/projects/picoCTF_logo.png",
+      image: "/images/projects/picoCTF_logo.webp",
       link: "/projects/cybersecurity/nosql-injection",
       category: "PicoCTF Writeups",
     },
@@ -51,7 +51,7 @@ export default function CybersecurityProjectsClient({
       tags: ["web", "eval", "python", "rce"],
       description:
         "Exploiting a Python eval() vulnerability by bypassing regex blacklists to achieve Remote Code Execution.",
-      image: "/images/projects/picoCTF_logo.png",
+      image: "/images/projects/picoCTF_logo.webp",
       link: "/projects/cybersecurity/eval",
       category: "PicoCTF Writeups",
     },
@@ -63,7 +63,7 @@ export default function CybersecurityProjectsClient({
       tags: ["web", "xxe", "soap", "lfi"],
       description:
         "A write-up on exploiting an XML External Entity (XXE) vulnerability through a SOAP endpoint to perform Local File Inclusion.",
-      image: "/images/projects/picoCTF_logo.png",
+      image: "/images/projects/picoCTF_logo.webp",
       link: "/projects/cybersecurity/soap",
       category: "PicoCTF Writeups",
     },
@@ -75,7 +75,7 @@ export default function CybersecurityProjectsClient({
       tags: ["malware", "static-analysis", "macos", "zsh"],
       description:
         "A detailed static analysis of the MacSync Stealer malware, uncovering its multi-stage execution flow and C2 communication methods.",
-      image: "/images/projects/cyber-highlights.png",
+      image: "/images/projects/cyber-highlights.webp",
       link: "/projects/cybersecurity/macsync-stealer",
       category: "Malware Analysis",
     },
@@ -88,7 +88,7 @@ export default function CybersecurityProjectsClient({
       tags: ["web", "idor", "routing", "messages"],
       description:
         "A custom Valentines + ILOVEYOU Virus themed CTF web exploitation challenge I developed for the University of Alberta's Cybersecurity Club, showcasing an Insecure Direct Object Reference (IDOR) vulnerability.",
-      image: "/images/projects/CHADS_logo.png",
+      image: "/images/projects/CHADS_logo.webp",
       link: "/projects/cybersecurity/cupid-portal",
       category: "HTCOTB CTF",
     },
@@ -101,7 +101,7 @@ export default function CybersecurityProjectsClient({
       tags: ["web", "sqli", "ssh", "mail"],
       description:
         "A custom web CTF challenge featuring basic SQL Injection to uncover hidden emails and an SSH server login to retrieve the final flag.",
-      image: "/images/projects/CHADS_logo.png",
+      image: "/images/projects/CHADS_logo.webp",
       link: "/projects/cybersecurity/heartmail",
       category: "HTCOTB CTF",
     },
@@ -113,7 +113,7 @@ export default function CybersecurityProjectsClient({
       tags: ["forensics", "png", "binwalk", "steg"],
       description:
         "A forensic challenge involving a suspicious 1x1 PNG that clearly contains more than it first appears to.",
-      image: "/images/projects/WICYS_logo.png",
+      image: "/images/projects/WICYS_logo.webp",
       link: "/projects/cybersecurity/wicys-ctf-01",
       category: "WiCyS CTF",
     },
@@ -125,7 +125,7 @@ export default function CybersecurityProjectsClient({
       tags: ["rev", "binary", "strings", "easy"],
       description:
         "A beginner reversing challenge built around a suspicious binary that guards Heap MacCipher's so-called luck engine.",
-      image: "/images/projects/WICYS_logo.png",
+      image: "/images/projects/WICYS_logo.webp",
       link: "/projects/cybersecurity/wicys-ctf-02",
       category: "WiCyS CTF",
     },
@@ -137,7 +137,7 @@ export default function CybersecurityProjectsClient({
       tags: ["rev", "binary", "gdb", "objdump"],
       description:
         "A reversing challenge in which an emergency portal binary must be understood before the Bunny Network can be restored.",
-      image: "/images/projects/WICYS_logo.png",
+      image: "/images/projects/WICYS_logo.webp",
       link: "/projects/cybersecurity/wicys-ctf-03",
       category: "WiCyS CTF",
     },
@@ -150,7 +150,7 @@ export default function CybersecurityProjectsClient({
       tags: ["pwn", "buffer-overflow", "ret2win", "binary"],
       description:
         "A classic binary exploitation challenge centered on a vulnerable authorization flow inside the Bunny Network gateway.",
-      image: "/images/projects/WICYS_logo.png",
+      image: "/images/projects/WICYS_logo.webp",
       link: "/projects/cybersecurity/wicys-ctf-04",
       category: "WiCyS CTF",
     },
@@ -163,7 +163,7 @@ export default function CybersecurityProjectsClient({
       tags: ["pwn", "heap", "overflow", "function-pointer"],
       description:
         "A heap-focused exploitation challenge hidden behind the deceptively simple Rainbow Vault access portal.",
-      image: "/images/projects/WICYS_logo.png",
+      image: "/images/projects/WICYS_logo.webp",
       link: "/projects/cybersecurity/wicys-ctf-05",
       category: "WiCyS CTF",
     },
@@ -176,7 +176,7 @@ export default function CybersecurityProjectsClient({
       tags: ["pwn", "rop", "libc", "shell"],
       description:
         "An advanced control-flow hijacking challenge where small internal fragments must be chained into a full exploit.",
-      image: "/images/projects/WICYS_logo.png",
+      image: "/images/projects/WICYS_logo.webp",
       link: "/projects/cybersecurity/wicys-ctf-06",
       category: "WiCyS CTF",
     },
@@ -189,7 +189,7 @@ export default function CybersecurityProjectsClient({
       tags: ["web", "source", "html", "client-side"],
       description:
         "A web challenge that rewards careful inspection of the client-side application and MacCipher's hidden notes.",
-      image: "/images/projects/WICYS_logo.png",
+      image: "/images/projects/WICYS_logo.webp",
       link: "/projects/cybersecurity/wicys-ctf-07",
       category: "WiCyS CTF",
     },
@@ -202,7 +202,7 @@ export default function CybersecurityProjectsClient({
       tags: ["web", "api", "headers", "curl"],
       description:
         "A web challenge involving a hijacked API, a hidden override path, and a response that says more than the page shows.",
-      image: "/images/projects/WICYS_logo.png",
+      image: "/images/projects/WICYS_logo.webp",
       link: "/projects/cybersecurity/wicys-ctf-08",
       category: "WiCyS CTF",
     },
@@ -215,7 +215,7 @@ export default function CybersecurityProjectsClient({
       tags: ["web", "auth-bypass", "headers", "login"],
       description:
         "A web challenge centered on a secret vault login, a known employee email, and a developer backdoor left behind in the app.",
-      image: "/images/projects/WICYS_logo.png",
+      image: "/images/projects/WICYS_logo.webp",
       link: "/projects/cybersecurity/wicys-ctf-09",
       category: "WiCyS CTF",
     },

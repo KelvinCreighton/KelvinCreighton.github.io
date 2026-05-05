@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/BlurImage";
 import Link from "next/link";
 import ProjectPager from "@/components/ProjectPager";
 
@@ -28,7 +28,7 @@ export default function AutomotiveProjectTemplate() {
 
           <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
             <Image
-              src="/images/projects/transmission-title.jpg"
+              src="/images/projects/transmission-title.webp"
               alt="Manual Transmission Rebuild"
               fill
               className="object-cover"
@@ -129,7 +129,7 @@ export default function AutomotiveProjectTemplate() {
             <figure className="m-0">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/transmission-step-1-1.png"
+                  src="/images/projects/transmission-step-1-1.webp"
                   alt="Battery voltage with engine off"
                   width={1438}
                   height={774}
@@ -143,7 +143,7 @@ export default function AutomotiveProjectTemplate() {
             <figure className="m-0">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/transmission-step-1-2.png"
+                  src="/images/projects/transmission-step-1-2.webp"
                   alt="Battery voltage with engine running"
                   width={1438}
                   height={774}
@@ -185,7 +185,7 @@ export default function AutomotiveProjectTemplate() {
             <figure className="m-0">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/transmission-step-2-1.png"
+                  src="/images/projects/transmission-step-2-1.webp"
                   alt="Removal process"
                   width={860}
                   height={1080}
@@ -199,7 +199,7 @@ export default function AutomotiveProjectTemplate() {
             <figure className="m-0">
               <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/transmission-step-2-2.png"
+                  src="/images/projects/transmission-step-2-2.webp"
                   alt="Seized bolts challenge"
                   width={860}
                   height={1080}
@@ -226,7 +226,7 @@ export default function AutomotiveProjectTemplate() {
           <figure className="my-10 flex flex-col items-center">
             <div className="relative w-5/12 max-w-sm rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
               <Image
-                src="/images/projects/transmission-step-3.jpeg"
+                src="/images/projects/transmission-step-3.webp"
                 alt="Passenger Side CV Axle Removal"
                 width={1022}
                 height={1920}
@@ -249,7 +249,7 @@ export default function AutomotiveProjectTemplate() {
           <figure className="my-10 flex flex-col items-center">
             <div className="relative w-5/12 max-w-sm rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
               <Image
-                src="/images/projects/transmission-step-4.jpeg"
+                src="/images/projects/transmission-step-4.webp"
                 alt="Driver Side CV Axle Removal"
                 width={1022}
                 height={1920}
@@ -278,7 +278,7 @@ export default function AutomotiveProjectTemplate() {
           <figure className="my-10 flex flex-col items-center">
             <div className="relative max-w-2xl rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
               <Image
-                src="/images/projects/transmission-step-5-1.jpeg"
+                src="/images/projects/transmission-step-5-1.webp"
                 alt="Transmission Removal Improvised on Driveway"
                 width={2048}
                 height={1152}
@@ -311,7 +311,7 @@ export default function AutomotiveProjectTemplate() {
           <figure className="my-10 flex flex-col items-center">
             <div className="relative max-w-2xl rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
               <Image
-                src="/images/projects/transmission-step-5-2.jpg"
+                src="/images/projects/transmission-step-5-2.webp"
                 alt="Transmission Finally Removed"
                 width={4032}
                 height={3024}
@@ -337,7 +337,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-6-1.jpg"
+                    src="/images/projects/transmission-step-6-1.webp"
                     alt="Transmission"
                     width={4032}
                     height={3024}
@@ -351,7 +351,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-6-2.jpg"
+                    src="/images/projects/transmission-step-6-2.webp"
                     alt="Speedometer Gear Housing Teardown"
                     width={4032}
                     height={3024}
@@ -369,7 +369,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-6-3.jpg"
+                    src="/images/projects/transmission-step-6-3.webp"
                     alt="Transmission Half Degreased"
                     width={4032}
                     height={3024}
@@ -383,7 +383,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-6-4.jpg"
+                    src="/images/projects/transmission-step-6-4.webp"
                     alt="Shifter Lever and Throwout Bearing"
                     width={4032}
                     height={3024}
@@ -401,7 +401,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-6-5.jpg"
+                    src="/images/projects/transmission-step-6-5.webp"
                     alt="Disassembled Parts"
                     width={4032}
                     height={3024}
@@ -415,7 +415,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-6-6.jpg"
+                    src="/images/projects/transmission-step-6-6.webp"
                     alt="Shfit Detent Balls"
                     width={4032}
                     height={3024}
@@ -457,7 +457,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-7-1.jpg"
+                    src="/images/projects/transmission-step-7-1.webp"
                     alt="Inspecting 5th gear during manual transmission rebuild"
                     width={4032}
                     height={3024}
@@ -468,7 +468,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-7-2.jpg"
+                    src="/images/projects/transmission-step-7-2.webp"
                     alt="Close-up of 5th gear and synchro assembly"
                     width={4032}
                     height={3024}
@@ -483,7 +483,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-7-3.jpg"
+                    src="/images/projects/transmission-step-7-3.webp"
                     alt="Removing the 5th gear from the transmission housing"
                     width={4032}
                     height={3024}
@@ -494,7 +494,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-7-4.jpg"
+                    src="/images/projects/transmission-step-7-4.webp"
                     alt="1989 Honda Accord 5th gear components disassembled"
                     width={4032}
                     height={3024}
@@ -509,7 +509,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-7-5.jpg"
+                    src="/images/projects/transmission-step-7-5.webp"
                     alt="Inspecting damage on the 5th gear teeth"
                     width={4032}
                     height={3024}
@@ -520,7 +520,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-7-6.jpg"
+                    src="/images/projects/transmission-step-7-6.webp"
                     alt="Showing the gear wear on the 5th gear assembly"
                     width={4032}
                     height={3024}
@@ -534,7 +534,7 @@ export default function AutomotiveProjectTemplate() {
             <figure className="my-10 flex flex-col items-center">
               <div className="relative max-w-2xl w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                 <Image
-                  src="/images/projects/transmission-step-7-7.jpg"
+                  src="/images/projects/transmission-step-7-7.webp"
                   alt="Chipped 5th gear of the Honda Accord transmission"
                   width={4032}
                   height={3024}
@@ -569,7 +569,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-8-1.jpg"
+                    src="/images/projects/transmission-step-8-1.webp"
                     alt="Separating the bell housing from the main case of the transmission"
                     width={4032}
                     height={3024}
@@ -580,7 +580,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-8-2.jpg"
+                    src="/images/projects/transmission-step-8-2.webp"
                     alt="Struggling to pry open the aluminum transmission case"
                     width={4032}
                     height={3024}
@@ -591,7 +591,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-8-3.jpg"
+                    src="/images/projects/transmission-step-8-3.webp"
                     alt="Successfully split transmission case showing internal gears"
                     width={4032}
                     height={3024}
@@ -615,7 +615,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-9-1.jpg"
+                    src="/images/projects/transmission-step-9-1.webp"
                     alt="4th gear bearing removed from the main shaft"
                     width={4032}
                     height={3024}
@@ -629,7 +629,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-9-2.jpg"
+                    src="/images/projects/transmission-step-9-2.webp"
                     alt="4th gear component of the manual transmission"
                     width={4032}
                     height={3024}
@@ -643,7 +643,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-9-3.jpg"
+                    src="/images/projects/transmission-step-9-3.webp"
                     alt="4th gear synchros and locking rings"
                     width={4032}
                     height={3024}
@@ -659,7 +659,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-9-4.png"
+                    src="/images/projects/transmission-step-9-4.webp"
                     alt="Transmission gear cluster with shift linkages attached"
                     width={4032}
                     height={3024}
@@ -673,7 +673,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-9-5.png"
+                    src="/images/projects/transmission-step-9-5.webp"
                     alt="Transmission gear cluster after removing shift linkages"
                     width={4032}
                     height={3024}
@@ -689,7 +689,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-9-6.jpg"
+                    src="/images/projects/transmission-step-9-6.webp"
                     alt="Shift linkages removed from the transmission assembly"
                     width={4032}
                     height={3024}
@@ -703,7 +703,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-9-7.png"
+                    src="/images/projects/transmission-step-9-7.webp"
                     alt="Removed 4th and 3rd gear shifting mechanisms and synchros"
                     width={4032}
                     height={3024}
@@ -719,7 +719,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-9-8.png"
+                    src="/images/projects/transmission-step-9-8.webp"
                     alt="Removed 3rd gear from the transmission shaft"
                     width={4032}
                     height={3024}
@@ -733,7 +733,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-9-9.png"
+                    src="/images/projects/transmission-step-9-9.webp"
                     alt="Removed transaxle, 2nd gear, and 1st gear assemblies"
                     width={4032}
                     height={3024}
@@ -778,7 +778,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-10-1.png"
+                    src="/images/projects/transmission-step-10-1.webp"
                     alt="Reassembling the main case of the 1989 Honda Accord manual transmission"
                     width={4032}
                     height={3024}
@@ -789,7 +789,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-10-2.png"
+                    src="/images/projects/transmission-step-10-2.webp"
                     alt="Applying black RTV sealant to the transmission bell housing mating surface"
                     width={4032}
                     height={3024}
@@ -816,7 +816,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-11-1.jpg"
+                    src="/images/projects/transmission-step-11-1.webp"
                     alt="5th gear and pin bearing before reassembly"
                     width={4032}
                     height={3024}
@@ -830,7 +830,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-11-2.jpg"
+                    src="/images/projects/transmission-step-11-2.webp"
                     alt="Broken pin bearing found during transmission reassembly"
                     width={4032}
                     height={3024}
@@ -846,7 +846,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-11-3.jpg"
+                    src="/images/projects/transmission-step-11-3.webp"
                     alt="Bearing spacer required for 5th gear reassembly"
                     width={4032}
                     height={3024}
@@ -860,7 +860,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-11-4.jpg"
+                    src="/images/projects/transmission-step-11-4.webp"
                     alt="5th gear section with minimal reassembly without the broken bearing"
                     width={4032}
                     height={3024}
@@ -890,7 +890,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-12-1.jpg"
+                    src="/images/projects/transmission-step-12-1.webp"
                     alt="Strange bolt type encountered during clutch removal"
                     width={4032}
                     height={3024}
@@ -904,7 +904,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-12-2.jpg"
+                    src="/images/projects/transmission-step-12-2.webp"
                     alt="Old worn-out clutch removed from the Honda Accord"
                     width={4032}
                     height={3024}
@@ -918,7 +918,7 @@ export default function AutomotiveProjectTemplate() {
               <figure className="m-0">
                 <div className="relative w-full rounded-xl overflow-hidden bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
                   <Image
-                    src="/images/projects/transmission-step-12-3.jpg"
+                    src="/images/projects/transmission-step-12-3.webp"
                     alt="New performance upgrade clutch installed on the flywheel"
                     width={4032}
                     height={3024}
@@ -954,7 +954,7 @@ export default function AutomotiveProjectTemplate() {
                 controls
                 playsInline
                 className="w-full h-auto"
-                poster="/images/projects/transmission-title.jpg"
+                poster="/images/projects/transmission-title.webp"
               >
                 Your browser does not support the video tag.
               </video>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/components/BlurImage";
 import type { ReactNode } from "react";
 
 function ContactIcon({
@@ -25,7 +25,7 @@ export default function Home() {
           <div className="flex flex-col items-center w-full md:w-auto max-w-sm">
             <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full border border-gray-200 bg-gray-85 shadow-sm sm:h-[280px] sm:w-[280px] lg:h-[300px] lg:w-[300px] dark:border-gray-800 dark:bg-gray-900">
               <Image
-                src="/images/Head-Shot.jpg"
+                src="/images/Head-Shot.webp"
                 alt="Kelvin Creighton headshot"
                 fill
                 sizes="(min-width: 1024px) 300px, (min-width: 640px) 280px, 250px"
@@ -157,7 +157,7 @@ export default function Home() {
             <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
               <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
                 <Image
-                  src="/images/projects/WICYS_logo.png"
+                  src="/images/projects/WICYS_logo.webp"
                   alt="WiCyS CTF Challenges"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -183,7 +183,7 @@ export default function Home() {
             <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
               <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
                 <Image
-                  src="/images/projects/transmission-title.jpg"
+                  src="/images/projects/transmission-title.webp"
                   alt="Transmission Rebuild"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

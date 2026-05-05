@@ -41,16 +41,16 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
     expectedFlag: "WICYS{byt3s_b3hind_th3_bunnies}",
     downloadFiles: [
       {
-        href: getWicysChallengeDownloadPath("01", "glitch.png"),
-        filename: "glitch.png",
+        href: getWicysChallengeDownloadPath("01", "glitch.webp"),
+        filename: "glitch.webp",
         label: "Download Challenge File",
       },
     ],
     solutionSteps: [
-      "Inspect the file with `file glitch.png`, `ls -lh glitch.png`, and `hexdump -C glitch.png` to confirm it is more than a normal tiny PNG.",
-      "Run `binwalk glitch.png` to detect embedded data appended to the image.",
-      "Extract the embedded content with `binwalk -e glitch.png`.",
-      "Change into the extracted directory with `cd _glitch.png.extracted/` and read `distress_signal.txt`.",
+      "Inspect the file with `file glitch.webp`, `ls -lh glitch.webp`, and `hexdump -C glitch.webp` to confirm it is more than a normal tiny PNG.",
+      "Run `binwalk glitch.webp` to detect embedded data appended to the image.",
+      "Extract the embedded content with `binwalk -e glitch.webp`.",
+      "Change into the extracted directory with `cd _glitch.webp.extracted/` and read `distress_signal.txt`.",
       "The recovered flag is `WICYS{byt3s_b3hind_th3_bunnies}`.",
     ],
   },
