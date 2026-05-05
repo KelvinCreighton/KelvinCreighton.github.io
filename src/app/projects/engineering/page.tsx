@@ -12,11 +12,11 @@ export default function EngineeringProjects() {
   const projects = [
     {
       id: 1,
-      title: "Dremel DigiLab  3D45",
+      title: "Dremel DigiLab 3D45 - Restoration",
       date: "May 2026",
       tags: [],
       description:
-        "Documentation of the teardown, diagnosis, and repair of a Dremel DigiLab 3D45 - Restoration printer.",
+        "Documentation of the teardown, diagnosis, and repair of a Dremel DigiLab 3D45 printer.",
       image: "/images/projects/dremel-3d45-title.webp",
       link: "/projects/engineering/dremel-3d45",
       category: "3D Printers",

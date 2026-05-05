@@ -148,8 +148,33 @@ export default function Home() {
           Project Highlights
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Highlight 1 */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Highlight 1: Dremel 3D45 Restoration */}
+          <Link
+            href="/projects/engineering/dremel-3d45"
+            className="group block h-full mx-2 md:mx-0"
+          >
+            <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-title.webp"
+                  alt="Dremel DigiLab 3D45 - Restoration"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  Dremel DigiLab 3D45 - Restoration
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  Detailed documentation of the teardown, diagnosis, and complete restoration of a Dremel DigiLab 3D45 printer.
+                </p>
+              </div>
+            </div>
+          </Link>
+
           <Link
             href="/projects/cybersecurity?category=WiCyS%20CTF"
             className="group block h-full mx-2 md:mx-0"
@@ -160,7 +185,7 @@ export default function Home() {
                   src="/images/projects/WICYS_logo.webp"
                   alt="WiCyS CTF Challenges"
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -174,8 +199,6 @@ export default function Home() {
               </div>
             </div>
           </Link>
-
-          {/* Highlight 2 */}
           <Link
             href="/projects/auto/transmission-rebuild"
             className="group block h-full mx-2 md:mx-0"
@@ -186,7 +209,7 @@ export default function Home() {
                   src="/images/projects/transmission-title.webp"
                   alt="Transmission Rebuild"
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -202,8 +225,6 @@ export default function Home() {
               </div>
             </div>
           </Link>
-
-          {/* Add more highlights as needed */}
         </div>
 
         <div className="mt-10 text-center">
