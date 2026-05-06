@@ -169,7 +169,7 @@ export default function Home() {
                   Dremel DigiLab 3D45 - Restoration
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Detailed documentation of the teardown, diagnosis, and complete restoration of a Dremel DigiLab 3D45 printer.
+                  Documentation of the teardown, diagnosis, and repair of a Dremel DigiLab 3D45 printer.
                 </p>
               </div>
             </div>
