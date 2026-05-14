@@ -18,7 +18,7 @@ function ContactIcon({
 
 export default function Home() {
   return (
-    <main className="animate-page-enter flex flex-col items-center p-4 md:p-8 lg:p-24 max-w-5xl mx-auto w-full">
+    <main className="animate-page-enter flex flex-col items-center max-w-5xl mx-auto w-full">
       {/* Intro Section */}
       <section className="w-full mb-12 md:mb-20 flex justify-center">
         <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 text-center md:text-left">
@@ -144,7 +144,7 @@ export default function Home() {
 
       {/* Project Highlights Section */}
       <section className="w-full">
-        <h2 className="text-3xl font-bold mb-8 border-b border-gray-200 dark:border-gray-800 pb-4">
+        <h2 className="text-3xl font-bold mb-8 pb-4">
           Project Highlights
         </h2>
 

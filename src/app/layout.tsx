@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { NavBar } from "@/components/NavBar";
+import { Background } from "@/components/Background";
 import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
 
@@ -89,19 +91,25 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col h-[100dvh] overflow-hidden">
-            <nav className="p-3 md:p-3 border-b border-gray-200 dark:border-gray-800 shrink-0 bg-white dark:bg-black z-50">
-              <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-                <NavBar />
-                <ThemeToggle />
-              </div>
-            </nav>
-            <main className="flex-grow overflow-y-auto">
-              <PageTransition className="min-h-full">{children}</PageTransition>
-            </main>
-            <footer className="w-full border-t border-gray-200 dark:border-gray-800 py-3 shrink-0 bg-white dark:bg-black z-50">
-              <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-4">
-                <div className="flex items-center gap-6">
+          <div className="relative min-h-[100dvh] w-full transition-colors duration-500">
+            <Background />
+            <div className="flex flex-col min-h-[100dvh]">
+              <nav className="sticky top-0 p-3 md:p-3 shrink-0 z-50 transition-all duration-500 bg-gradient-to-t from-transparent to-white dark:to-black">
+                <div className="max-w-5xl mx-auto flex items-center justify-between gap-4 relative z-10">
+                  <Link href="/" className="text-sm md:text-base font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                    Kelvin Creighton
+                  </Link>
+                  <div className="flex items-center gap-4 md:gap-6">
+                    <NavBar />
+                    <ThemeToggle />
+                  </div>
+                </div>
+              </nav>
+              <main className="flex-grow relative">
+                <PageTransition className="min-h-full p-4 md:p-8 lg:p-12">{children}</PageTransition>
+              </main>
+              <footer className="w-full py-3 shrink-0 z-50 transition-all duration-500 bg-gradient-to-b from-transparent to-white dark:to-black">
+                <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 relative z-10">                <div className="flex items-center gap-6">
                   <a
                     href="https://github.com/KelvinCreighton/"
                     target="_blank"
@@ -170,7 +178,8 @@ export default function RootLayout({
               </div>
             </footer>
           </div>
-        </ThemeProvider>
+        </div>
+      </ThemeProvider>
       </body>
     </html>
   );
