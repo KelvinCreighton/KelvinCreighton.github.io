@@ -93,8 +93,8 @@ export default function RootLayout({
           <div className="relative min-h-[100dvh] w-full transition-colors duration-500">
             <Background />
             <div className="flex flex-col min-h-[100dvh]">
-              <nav className="sticky top-0 p-3 md:p-3 shrink-0 z-50 transition-all duration-500 bg-gradient-to-t from-transparent to-white dark:to-black">
-                <div className="max-w-5xl mx-auto flex items-center justify-between gap-4 relative z-10">
+              <nav className="fixed top-0 left-0 w-full p-3 md:p-3 shrink-0 z-50 bg-[#8b5cf6]/10 dark:bg-[#4c1d95]/15 backdrop-blur-md border-b border-[#8b5cf6]/20 dark:border-[#4c1d95]/30">
+                <div className="max-w-5xl mx-auto flex items-center justify-between gap-4 relative z-10 px-4 md:px-8">
                   <Link href="/" className="text-sm md:text-base font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
                     Kelvin Creighton
                   </Link>
@@ -104,10 +104,10 @@ export default function RootLayout({
                   </div>
                 </div>
               </nav>
-              <main className="flex-grow relative p-4 md:p-8 lg:p-12">
+              <main className="flex-grow relative p-4 md:p-8 lg:p-12 pt-20 md:pt-24 lg:pt-28">
                 {children}
               </main>
-              <footer className="w-full py-3 shrink-0 z-50 transition-all duration-500 bg-gradient-to-b from-transparent to-white dark:to-black">
+              <footer className="w-full py-6 shrink-0 z-50 transition-all duration-500 bg-[#8b5cf6]/10 dark:bg-[#4c1d95]/15 backdrop-blur-md border-t border-[#8b5cf6]/20 dark:border-[#4c1d95]/30">
                 <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 relative z-10">                <div className="flex items-center gap-6">
                   <a
                     href="https://github.com/KelvinCreighton/"
