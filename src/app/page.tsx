@@ -18,7 +18,7 @@ function ContactIcon({
 
 export default function Home() {
   return (
-    <main className="animate-page-enter flex flex-col items-center max-w-5xl mx-auto w-full">
+    <main className="flex flex-col items-center max-w-5xl mx-auto w-full">
       {/* Intro Section */}
       <section className="w-full mb-12 md:mb-20 flex justify-center">
         <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 text-center md:text-left">

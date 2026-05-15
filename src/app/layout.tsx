@@ -4,7 +4,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { NavBar } from "@/components/NavBar";
 import { Background } from "@/components/Background";
-import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -105,8 +104,8 @@ export default function RootLayout({
                   </div>
                 </div>
               </nav>
-              <main className="flex-grow relative">
-                <PageTransition className="min-h-full p-4 md:p-8 lg:p-12">{children}</PageTransition>
+              <main className="flex-grow relative p-4 md:p-8 lg:p-12">
+                {children}
               </main>
               <footer className="w-full py-3 shrink-0 z-50 transition-all duration-500 bg-gradient-to-b from-transparent to-white dark:to-black">
                 <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 relative z-10">                <div className="flex items-center gap-6">

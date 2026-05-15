@@ -5,7 +5,7 @@ import ProjectPager from "@/components/ProjectPager";
 
 export default function RcCarProject() {
   return (
-    <main className="animate-page-enter flex flex-col items-center p-4 md:p-8 lg:p-24 bg-white dark:bg-black w-full">
+    <main className="animate-page-enter flex flex-col items-center p-4 md:p-8 lg:p-24 w-full">
       <article className="w-full max-w-4xl flex flex-col items-start px-2 md:px-0">
         <Link
           href="/projects/engineering"

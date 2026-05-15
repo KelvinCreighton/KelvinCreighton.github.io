@@ -4,7 +4,7 @@ import ProjectPager from "@/components/ProjectPager";
 
 export default function TacomaValveCoverProject() {
   return (
-    <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 bg-white dark:bg-black w-full">
+    <main className="animate-page-enter flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
       <article className="w-full max-w-4xl flex flex-col items-start px-2 md:px-0">
         {/* Navigation */}
         <Link
