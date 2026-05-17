@@ -52,20 +52,45 @@ export function Background() {
       config.blobs.forEach((blob) => {
         const x = parseDim(blob.left, width, false);
         const y = parseDim(blob.top, height, true);
-        const r = parseDim(blob.size, width, false) * spreadScale;
-
-        const gradient = ctx.createRadialGradient(x, y, 0, x, y, r);
         
-        const edgeStart = Math.min(0.99, (density * 0.5) / 100);
-        const edgeEnd = Math.min(1.0, edgeStart + (1 / (sharpness || 1)));
+        // Match generator logic: 
+        // 1. Viscosity (blur) effectively increases the visible size
+        // 2. We use the 4-stop gradient from the generator
+        const baseRadius = parseDim(blob.size, width, false);
+        const blurRadius = viscosity; 
+        const totalRadius = baseRadius + (blurRadius * 2);
 
+        const gradient = ctx.createRadialGradient(x, y, 0, x, y, totalRadius);
+        
+        // Helper to convert hex to RGBA with alpha
+        const hexToRgba = (hex: string, alpha: number) => {
+          const r = parseInt(hex.slice(1, 3), 16);
+          const g = parseInt(hex.slice(3, 5), 16);
+          const b = parseInt(hex.slice(5, 7), 16);
+          return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        };
+
+        // Generator's 4-stop gradient logic:
+        // stop 0: color
+        // stop density: color
+        // stop intermediate: color (0.4 alpha)
+        // stop 100: transparent
+        // We adjust these slightly to simulate the 'sharpness' effect without the matrix filter
+        
+        const d = density / 100;
+        const s = Math.max(0.01, sharpness / 50); // Normalized sharpness
+        
+        // As sharpness increases, we compress the transition stops towards the density point
+        const stop2 = Math.min(0.99, d + (1 - d) * (1 - s) * 0.5);
+        
         gradient.addColorStop(0, blob.color);
-        gradient.addColorStop(edgeStart, blob.color);
-        gradient.addColorStop(edgeEnd, "transparent");
+        gradient.addColorStop(d, blob.color);
+        gradient.addColorStop(stop2, hexToRgba(blob.color, 0.4));
+        gradient.addColorStop(1, hexToRgba(blob.color, 0));
 
         ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.arc(x, y, totalRadius, 0, Math.PI * 2);
         ctx.fill();
       });
     };
