@@ -1,45 +1,80 @@
 "use client";
 
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useRef, useEffect, useState, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { getBackgroundConfig } from "@/data/backgrounds";
 
 export function Background() {
   const pathname = usePathname();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [mounted, setMounted] = useState(false);
+  const config = useMemo(() => getBackgroundConfig(pathname), [pathname]);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const backgroundStyle = useMemo(() => {
-    const config = getBackgroundConfig(pathname);
-    const viscosity = config.viscosity || 40;
-    const sharpness = config.sharpness || 14;
-    const density = config.density || 60;
+  useEffect(() => {
+    if (!mounted || !canvasRef.current) return;
 
-    // Convert the 100 blobs into a radial-gradient stack
-    const gradients = config.blobs.map((blob) => {
-      // 1. Viscosity scales the effective size of the blob spread
-      // 2. Sharpness controls the falloff between the solid core and transparency
-      // 3. Density controls the solid core size
+    const canvas = canvasRef.current;
+    const render = () => {
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      // Set internal resolution to match viewport
+      const width = window.innerWidth;
+      const height = window.innerHeight;
       
+      // We can use a slightly lower resolution and scale up for a free "softening" effect
+      // and better performance on high-DPI screens.
+      const dpr = window.devicePixelRatio || 1;
+      const scale = 0.5; // Render at 50% resolution
+      canvas.width = width * scale * dpr;
+      canvas.height = height * scale * dpr;
+      ctx.scale(scale * dpr, scale * dpr);
+
+      ctx.clearRect(0, 0, width, height);
+
+      const viscosity = config.viscosity || 40;
+      const sharpness = config.sharpness || 14;
+      const density = config.density || 60;
       const spreadScale = 1 + (viscosity / 100);
-      const edgeStart = density * 0.5; // Base density
-      
-      // High sharpness (e.g. 20) makes the edgeEnd very close to edgeStart (hard edge)
-      // Low sharpness (e.g. 2) makes the edgeEnd far from edgeStart (soft edge)
-      const edgeEnd = Math.min(100, edgeStart + (100 / (sharpness || 1)));
 
-      return `radial-gradient(circle calc(${blob.size} * ${spreadScale}) at ${blob.left} ${blob.top}, ${blob.color} 0%, ${blob.color} ${edgeStart}%, transparent ${edgeEnd}%)`;
-    });
+      // Helper to parse dimensions like "5%", "20vw", etc.
+      const parseDim = (dim: string, total: number, isV: boolean) => {
+        if (dim.endsWith("%")) return (parseFloat(dim) / 100) * total;
+        if (dim.endsWith("vw")) return (parseFloat(dim) / 100) * width;
+        if (dim.endsWith("vh")) return (parseFloat(dim) / 100) * height;
+        return parseFloat(dim);
+      };
 
-    return {
-      backgroundImage: gradients.join(", "),
-      opacity: config.masterOpacity,
-      backgroundSize: "100% 100%",
+      config.blobs.forEach((blob) => {
+        const x = parseDim(blob.left, width, false);
+        const y = parseDim(blob.top, height, true);
+        const r = parseDim(blob.size, width, false) * spreadScale;
+
+        const gradient = ctx.createRadialGradient(x, y, 0, x, y, r);
+        
+        const edgeStart = Math.min(0.99, (density * 0.5) / 100);
+        const edgeEnd = Math.min(1.0, edgeStart + (1 / (sharpness || 1)));
+
+        gradient.addColorStop(0, blob.color);
+        gradient.addColorStop(edgeStart, blob.color);
+        gradient.addColorStop(edgeEnd, "transparent");
+
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      });
     };
-  }, [pathname]);
+
+    render();
+
+    window.addEventListener("resize", render);
+    return () => window.removeEventListener("resize", render);
+  }, [mounted, config]);
 
   if (!mounted) {
     return <div className="fixed inset-0 -z-50 bg-white dark:bg-black" />;
@@ -48,16 +83,20 @@ export function Background() {
   return (
     <div className="fixed inset-0 -z-50 bg-white dark:bg-black transition-colors duration-1000">
       {/* 
-          High-performance CSS Mesh Gradient 
-          Consolidates 100 blobs into a single background-image property.
-          This removes 100 DOM nodes and the expensive SVG filter overhead.
+          Ultimate Performance: HTML5 Canvas 
+          Draws 100 blobs once to a single bitmap buffer.
+          The browser only has to paint a flat image instead of calculating gradients.
       */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={backgroundStyle}
+      <canvas 
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        style={{ 
+          opacity: config.masterOpacity,
+          imageRendering: "auto"
+        }}
       />
       
-      {/* Grain/Noise Overlay - Kept for texture and to mask gradient banding */}
+      {/* Grain/Noise Overlay - Masking any canvas scaling artifacts */}
       <div 
         className="absolute inset-0 opacity-[0.02] pointer-events-none mix-blend-overlay"
         style={{
