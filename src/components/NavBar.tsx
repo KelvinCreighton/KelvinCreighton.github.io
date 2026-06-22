@@ -24,8 +24,8 @@ export function NavBar() {
               href={link.href}
               className={`transition-all duration-300 ${
                 isActive
-                  ? "text-blue-600 dark:text-blue-400 [text-shadow:0_0_12px_rgba(37,99,235,0.6)] dark:[text-shadow:0_0_12px_rgba(96,165,250,0.8)]"
-                  : "hover:text-blue-500 dark:hover:text-blue-300 hover:[text-shadow:0_0_10px_rgba(59,130,246,0.5)] dark:hover:[text-shadow:0_0_10px_rgba(147,197,253,0.6)]"
+                  ? "text-blue-600 dark:text-blue-400 [text-shadow:0_0_12px_rgba(59,130,246,0.5)] dark:[text-shadow:0_0_12px_rgba(56,189,248,0.7)]"
+                  : "hover:text-blue-500 dark:hover:text-blue-300 hover:[text-shadow:0_0_10px_rgba(59,130,246,0.4)] dark:hover:[text-shadow:0_0_10px_rgba(56,189,248,0.5)]"
               }`}
             >
               {link.name}
