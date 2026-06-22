@@ -84,3 +84,28 @@ footer a[aria-label="Email"]:hover {
     filter: none;
   }
 }
+
+/* ── Hydration-Safe Background Gradients ── */
+.site-bg-gradient {
+  background: linear-gradient(to bottom, #f5f3ff 0%, #eef2ff 60%, #e0f2fe 100%);
+}
+
+.dark .site-bg-gradient {
+  background: linear-gradient(to bottom, #080413 0%, #0c0a28 60%, #05142e 100%);
+}
+
+.site-horizon-glow {
+  background: radial-gradient(ellipse 70% 30% at 50% 50%, rgba(14, 165, 233, 0.06) 0%, rgba(168, 85, 247, 0.03) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+.dark .site-horizon-glow {
+  background: radial-gradient(ellipse 70% 30% at 50% 50%, rgba(56, 189, 248, 0.08) 0%, rgba(139, 92, 246, 0.04) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.footer-extend-shadow {
+  box-shadow: 0 120vh 0 120vh #f3effe;
+}
+
+.dark .footer-extend-shadow {
+  box-shadow: 0 120vh 0 120vh #140d1f;
+}
