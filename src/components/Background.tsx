@@ -48,8 +48,8 @@ export function Background() {
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.008,
-          vy: (Math.random() - 0.5) * 0.008,
+          vx: (Math.random() - 0.5) * 0.08,
+          vy: (Math.random() - 0.5) * 0.08,
           radius,
           baseOpacity,
           opacityPhase: Math.random() * Math.PI * 2,
