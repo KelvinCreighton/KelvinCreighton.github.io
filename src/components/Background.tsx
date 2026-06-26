@@ -68,29 +68,68 @@ export function Background() {
     window.addEventListener("resize", resize);
     createStars();
 
-    const draw = () => {
+    let lastTime = 0;
+    const fpsInterval = 1000 / 30; // Throttle to 30 FPS
+
+    let isWindowFocused = true;
+    const handleFocus = () => { isWindowFocused = true; };
+    const handleBlur = () => { isWindowFocused = false; };
+    window.addEventListener("focus", handleFocus);
+    window.addEventListener("blur", handleBlur);
+
+    const draw = (timestamp?: number) => {
+      animationFrameId = requestAnimationFrame(draw);
+
+      if (!isWindowFocused) return;
+
+      const currentTime = timestamp || performance.now();
+      const elapsed = currentTime - lastTime;
+      if (elapsed < fpsInterval) return;
+
+      lastTime = currentTime - (elapsed % fpsInterval);
+
       ctx.clearRect(0, 0, width, height);
+
+      // Group lines by alpha force to batch draw calls
+      const buckets: { x1: number; y1: number; x2: number; y2: number }[][] = [[], [], [], []];
 
       // Draw constellation connecting lines with enhanced visibility
       for (let i = 0; i < particles.length; i++) {
+        const pi = particles[i];
         for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const pj = particles[j];
+          const dx = pi.x - pj.x;
+          const dy = pi.y - pj.y;
+          const distSq = dx * dx + dy * dy;
 
-          if (dist < 110) {
+          // 110^2 is 12100. Check square distance first to skip Math.sqrt for 95%+ of particles
+          if (distSq < 12100) {
+            const dist = Math.sqrt(distSq);
             const force = (110 - dist) / 110;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            // Draw clean, visible purple/violet constellation lines
-            ctx.strokeStyle = isDark
-              ? `rgba(168, 85, 247, ${force * 0.35})` // Purple-500
-              : `rgba(139, 92, 246, ${force * 0.2})`; // Violet-500
-            ctx.lineWidth = 0.85;
-            ctx.stroke();
+            const bucketIdx = Math.min(3, Math.floor(force * 4));
+            buckets[bucketIdx].push({ x1: pi.x, y1: pi.y, x2: pj.x, y2: pj.y });
           }
         }
+      }
+
+      // Draw connections in batches to reduce draw calls from hundreds to max 4
+      ctx.lineWidth = 0.85;
+      for (let b = 0; b < 4; b++) {
+        const bucket = buckets[b];
+        if (bucket.length === 0) continue;
+
+        const alpha = (b + 1) * 0.25;
+        ctx.strokeStyle = isDark
+          ? `rgba(168, 85, 247, ${alpha * 0.35})` // Purple-500
+          : `rgba(139, 92, 246, ${alpha * 0.2})`;  // Violet-500
+
+        ctx.beginPath();
+        for (let k = 0; k < bucket.length; k++) {
+          const line = bucket[k];
+          ctx.moveTo(line.x1, line.y1);
+          ctx.lineTo(line.x2, line.y2);
+        }
+        ctx.stroke();
       }
 
       // Draw stars
@@ -112,14 +151,14 @@ export function Background() {
         ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
         ctx.fill();
       });
-
-      animationFrameId = requestAnimationFrame(draw);
     };
 
     draw();
 
     return () => {
       window.removeEventListener("resize", resize);
+      window.removeEventListener("focus", handleFocus);
+      window.removeEventListener("blur", handleBlur);
       cancelAnimationFrame(animationFrameId);
     };
   }, [mounted, resolvedTheme]);
