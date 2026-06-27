@@ -40,6 +40,7 @@ type Nebula = {
 
 type Scene = {
   stars: Point[];
+  fillerStars: Point[];
   markers: Marker[];
   links: Array<[number, number]>;
   nebulae: Nebula[];
@@ -63,6 +64,7 @@ const VOID_THEME: Palette = {
 
 const SETTINGS = {
   ambientCount: 240,
+  fillerCount: 140,
   minSize: 0.2,
   maxSize: 2.0,
   markerCount: 30,
@@ -135,6 +137,20 @@ function createScene(width: number, height: number, seed: number): Scene {
     });
   }
 
+  const fillerStars: Point[] = [];
+  for (let i = 0; i < SETTINGS.fillerCount; i++) {
+    fillerStars.push({
+      x: rand() * width,
+      y: rand() * height,
+      tint: Math.floor(rand() * VOID_THEME.starTint.length),
+      pulse: rand() * Math.PI * 2,
+      speed: 0.004 + rand() * 0.008,
+      size: 0.25 + rand() * 0.55,
+      driftX: (rand() - 0.5) * 0.01,
+      driftY: (rand() - 0.5) * 0.01,
+    });
+  }
+
   const markers: Marker[] = [];
   for (let i = 0; i < SETTINGS.markerCount; i++) {
     markers.push({
@@ -193,7 +209,7 @@ function createScene(width: number, height: number, seed: number): Scene {
     });
   }
 
-  return { stars, markers, links, nebulae };
+  return { stars, fillerStars, markers, links, nebulae };
 }
 
 function drawNebula(
@@ -248,6 +264,21 @@ function paintScene(ctx: CanvasRenderingContext2D, width: number, height: number
 
   scene.nebulae.forEach((nebula) => drawNebula(ctx, nebula, SETTINGS.blurPx, SETTINGS.nebulaOpacity));
 
+  scene.fillerStars.forEach((star) => {
+    const glow = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.size * 5);
+    glow.addColorStop(0, hexToRgba(VOID_THEME.starTint[star.tint], 0.35));
+    glow.addColorStop(1, hexToRgba(VOID_THEME.starTint[star.tint], 0));
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.size * 4, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = hexToRgba(VOID_THEME.starTint[star.tint], 0.72);
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
   ctx.lineWidth = 1;
   ctx.strokeStyle = VOID_THEME.lineColor;
   scene.links.forEach(([aIndex, bIndex]) => {
@@ -278,7 +309,6 @@ function paintScene(ctx: CanvasRenderingContext2D, width: number, height: number
 
 export function Background() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const baseCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const sceneRef = useRef<Scene | null>(null);
   const seedRef = useRef(createSeed());
   const sizeRef = useRef({ width: 0, height: 0 });
@@ -290,7 +320,7 @@ export function Background() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
     const resize = () => {
       const width = window.innerWidth;
@@ -301,6 +331,7 @@ export function Background() {
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.imageSmoothingEnabled = true;
       sceneRef.current = createScene(width, height, seedRef.current);
       const base = document.createElement("canvas");
       base.width = canvas.width;
@@ -308,8 +339,8 @@ export function Background() {
       const baseCtx = base.getContext("2d");
       if (baseCtx) {
         baseCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        baseCtx.imageSmoothingEnabled = true;
         paintScene(baseCtx, width, height, sceneRef.current);
-        baseCanvasRef.current = base;
       }
       ctx.clearRect(0, 0, width, height);
       ctx.drawImage(base, 0, 0, width, height);
