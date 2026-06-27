@@ -2,5 +2,5 @@
 2:I[5530,["8500","static/chunks/8500-41fa79ac743d83f1.js","5669","static/chunks/5669-73ea03f2a7a71638.js","9204","static/chunks/app/projects/cybersecurity/wicys-ctf-04/page-e621fe9939cc09b5.js"],"default"]
 3:I[484,[],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"T5GrytAZZ3KCRwwmONYw7","rsc":["$","$1","c",{"children":[["$","$L2",null,{"challengeId":"04"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"5dSBZRtw3taoXrrquSew5","rsc":["$","$1","c",{"children":[["$","$L2",null,{"challengeId":"04"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
