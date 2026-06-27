@@ -1,176 +1,324 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useTheme } from "next-themes";
+import { useEffect, useRef } from "react";
+
+type Point = {
+  x: number;
+  y: number;
+  tint: number;
+  pulse: number;
+  speed: number;
+  size: number;
+  driftX: number;
+  driftY: number;
+};
+
+type Marker = {
+  x: number;
+  y: number;
+  tint: number;
+};
+
+type NebulaPuff = {
+  dx: number;
+  dy: number;
+  radius: number;
+  alpha: number;
+  mix: number;
+};
+
+type Nebula = {
+  x: number;
+  y: number;
+  rx: number;
+  ry: number;
+  angle: number;
+  tintA: number;
+  tintB: number;
+  puffs: NebulaPuff[];
+};
+
+type Scene = {
+  stars: Point[];
+  markers: Marker[];
+  links: Array<[number, number]>;
+  nebulae: Nebula[];
+};
+
+const VOID_THEME = {
+  top: "#05060f",
+  bottom: "#0d1024",
+  starTint: ["#ffffff", "#cfe0ff", "#ffe9c8"],
+  nebula: ["#6b3fa0", "#2f5c8f", "#9c3f6e"],
+};
+
+const SETTINGS = {
+  ambientCount: 240,
+  minSize: 0.2,
+  maxSize: 2.0,
+  markerCount: 30,
+  linkDistance: 0.25,
+  lineOpacity: 0.2,
+  nebulaCount: 3,
+  nebulaOpacity: 0.5,
+  puffCount: 150,
+  blurPx: 15,
+};
+
+function mulberry32(seed: number) {
+  let a = seed | 0;
+  return () => {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function hexToRgba(hex: string, alpha: number) {
+  const value = hex.slice(1);
+  const r = Number.parseInt(value.slice(0, 2), 16);
+  const g = Number.parseInt(value.slice(2, 4), 16);
+  const b = Number.parseInt(value.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function mixColor(a: string, b: string, t: number) {
+  const ah = Number.parseInt(a.slice(1), 16);
+  const bh = Number.parseInt(b.slice(1), 16);
+  const ar = (ah >> 16) & 255;
+  const ag = (ah >> 8) & 255;
+  const ab = ah & 255;
+  const br = (bh >> 16) & 255;
+  const bg = (bh >> 8) & 255;
+  const bb = bh & 255;
+  return [
+    Math.round(ar + (br - ar) * t),
+    Math.round(ag + (bg - ag) * t),
+    Math.round(ab + (bb - ab) * t),
+  ];
+}
+
+function createSeed() {
+  if (typeof crypto !== "undefined" && "getRandomValues" in crypto) {
+    const seed = new Uint32Array(1);
+    crypto.getRandomValues(seed);
+    return seed[0] || 17;
+  }
+  return Math.floor(Math.random() * 0xffffffff) || 17;
+}
+
+function createScene(width: number, height: number, seed: number): Scene {
+  const rand = mulberry32(seed);
+
+  const stars: Point[] = [];
+  for (let i = 0; i < SETTINGS.ambientCount; i++) {
+    stars.push({
+      x: rand() * width,
+      y: rand() * height,
+      tint: Math.floor(rand() * VOID_THEME.starTint.length),
+      pulse: rand() * Math.PI * 2,
+      speed: 0.006 + rand() * 0.014,
+      size: SETTINGS.minSize + rand() * (SETTINGS.maxSize - SETTINGS.minSize),
+      driftX: (rand() - 0.5) * 0.02,
+      driftY: (rand() - 0.5) * 0.02,
+    });
+  }
+
+  const markers: Marker[] = [];
+  for (let i = 0; i < SETTINGS.markerCount; i++) {
+    markers.push({
+      x: rand() * width,
+      y: rand() * height,
+      tint: Math.floor(rand() * VOID_THEME.starTint.length),
+    });
+  }
+
+  const links: Array<[number, number]> = [];
+  const seen = new Set<string>();
+  const maxDistance = Math.min(width, height) * SETTINGS.linkDistance;
+  markers.forEach((marker, index) => {
+    const neighbours = markers
+      .map((other, otherIndex) =>
+        otherIndex === index ? null : { otherIndex, distance: Math.hypot(marker.x - other.x, marker.y - other.y) }
+      )
+      .filter((entry): entry is { otherIndex: number; distance: number } => Boolean(entry))
+      .filter((entry) => entry.distance <= maxDistance)
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, 2);
+
+    neighbours.forEach(({ otherIndex }) => {
+      const key = index < otherIndex ? `${index}-${otherIndex}` : `${otherIndex}-${index}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      links.push([index, otherIndex]);
+    });
+  });
+
+  const nebulae: Nebula[] = [];
+  for (let i = 0; i < SETTINGS.nebulaCount; i++) {
+    const radius = Math.min(width, height) * (0.22 + rand() * 0.16);
+    const puffs: NebulaPuff[] = [];
+    for (let p = 0; p < SETTINGS.puffCount; p++) {
+      const falloff = Math.pow(rand(), 0.6);
+      const angle = rand() * Math.PI * 2;
+      puffs.push({
+        dx: Math.cos(angle) * falloff,
+        dy: Math.sin(angle) * falloff,
+        radius: 0.12 + rand() * 0.46,
+        alpha: 0.04 + rand() * 0.18,
+        mix: rand(),
+      });
+    }
+
+    nebulae.push({
+      x: rand() * (width + 100),
+      y: rand() * (height + 100),
+      rx: radius * (0.9 + rand() * 0.45),
+      ry: radius * (0.58 + rand() * 0.36),
+      angle: rand() * Math.PI,
+      tintA: i % VOID_THEME.nebula.length,
+      tintB: (i + 1) % VOID_THEME.nebula.length,
+      puffs,
+    });
+  }
+
+  return { stars, markers, links, nebulae };
+}
+
+function drawNebula(
+  ctx: CanvasRenderingContext2D,
+  nebula: Nebula,
+  blurPx: number,
+  opacity: number
+) {
+  const colorA = VOID_THEME.nebula[nebula.tintA];
+  const colorB = VOID_THEME.nebula[nebula.tintB];
+  const pad = Math.max(nebula.rx, nebula.ry) * 0.65;
+  const offWidth = Math.max(2, Math.ceil((nebula.rx + pad) * 2));
+  const offHeight = Math.max(2, Math.ceil((nebula.ry + pad) * 2));
+  const offscreen = document.createElement("canvas");
+  offscreen.width = offWidth;
+  offscreen.height = offHeight;
+  const offCtx = offscreen.getContext("2d");
+  if (!offCtx) return;
+
+  offCtx.globalCompositeOperation = "lighter";
+  nebula.puffs.forEach((puff) => {
+    const x = offWidth / 2 + puff.dx * nebula.rx;
+    const y = offHeight / 2 + puff.dy * nebula.ry;
+    const radius = puff.radius * Math.max(nebula.rx, nebula.ry) * 0.55;
+    const [r, g, b] = mixColor(colorA, colorB, puff.mix);
+    const gradient = offCtx.createRadialGradient(x, y, 0, x, y, radius);
+    gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${puff.alpha})`);
+    gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
+    offCtx.fillStyle = gradient;
+    offCtx.beginPath();
+    offCtx.arc(x, y, radius, 0, Math.PI * 2);
+    offCtx.fill();
+  });
+
+  ctx.save();
+  ctx.translate(nebula.x, nebula.y);
+  ctx.rotate(nebula.angle);
+  ctx.globalAlpha = opacity;
+  ctx.globalCompositeOperation = "lighter";
+  ctx.filter = `blur(${blurPx}px)`;
+  ctx.drawImage(offscreen, -offWidth / 2, -offHeight / 2);
+  ctx.filter = "none";
+  ctx.restore();
+}
+
+function paintScene(ctx: CanvasRenderingContext2D, width: number, height: number, scene: Scene) {
+  const background = ctx.createLinearGradient(0, 0, 0, height);
+  background.addColorStop(0, VOID_THEME.top);
+  background.addColorStop(1, VOID_THEME.bottom);
+  ctx.fillStyle = background;
+  ctx.fillRect(0, 0, width, height);
+
+  scene.nebulae.forEach((nebula) => drawNebula(ctx, nebula, SETTINGS.blurPx, SETTINGS.nebulaOpacity));
+
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = `rgba(255, 255, 255, ${SETTINGS.lineOpacity})`;
+  scene.links.forEach(([aIndex, bIndex]) => {
+    const a = scene.markers[aIndex];
+    const b = scene.markers[bIndex];
+    ctx.beginPath();
+    ctx.moveTo(a.x, a.y);
+    ctx.lineTo(b.x, b.y);
+    ctx.stroke();
+  });
+
+  scene.markers.forEach((marker) => {
+    const core = 0.9;
+    const glow = ctx.createRadialGradient(marker.x, marker.y, 0, marker.x, marker.y, 8);
+    glow.addColorStop(0, hexToRgba(VOID_THEME.starTint[marker.tint], 0.35));
+    glow.addColorStop(1, hexToRgba(VOID_THEME.starTint[marker.tint], 0));
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(marker.x, marker.y, 8, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = hexToRgba(VOID_THEME.starTint[marker.tint], 0.95);
+    ctx.beginPath();
+    ctx.arc(marker.x, marker.y, core, 0, Math.PI * 2);
+    ctx.fill();
+  });
+}
 
 export function Background() {
-  const { resolvedTheme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [mounted, setMounted] = useState(false);
+  const baseCanvasRef = useRef<HTMLCanvasElement | null>(null);
+  const sceneRef = useRef<Scene | null>(null);
+  const seedRef = useRef(createSeed());
+  const sizeRef = useRef({ width: 0, height: 0 });
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let animationFrameId: number;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-
-    const particles: Star[] = [];
-    const starCount = Math.min(130, Math.floor((width * height) / 12000));
-
-    interface Star {
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      radius: number;
-      baseOpacity: number;
-      opacityPhase: number;
-      twinkleSpeed: number;
-    }
-
-    const isDark = resolvedTheme === "dark";
-
-    const createStars = () => {
-      particles.length = 0;
-      for (let i = 0; i < starCount; i++) {
-        const radius = Math.random() * 2.5 + 0.35;
-        // Make stars slightly brighter in both modes since they are pure white
-        const baseOpacity = Math.random() * 0.45 + (isDark ? 0.4 : 0.5);
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.08,
-          vy: (Math.random() - 0.5) * 0.08,
-          radius,
-          baseOpacity,
-          opacityPhase: Math.random() * Math.PI * 2,
-          twinkleSpeed: Math.random() * 0.008 + 0.004,
-        });
-      }
-    };
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     const resize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-      createStars();
-    };
-
-    window.addEventListener("resize", resize);
-    createStars();
-
-    let lastTime = 0;
-    const fpsInterval = 1000 / 30; // Throttle to 30 FPS
-
-    let isWindowFocused = true;
-    const handleFocus = () => { isWindowFocused = true; };
-    const handleBlur = () => { isWindowFocused = false; };
-    window.addEventListener("focus", handleFocus);
-    window.addEventListener("blur", handleBlur);
-
-    const draw = (timestamp?: number) => {
-      animationFrameId = requestAnimationFrame(draw);
-
-      if (!isWindowFocused) return;
-
-      const currentTime = timestamp || performance.now();
-      const elapsed = currentTime - lastTime;
-      if (elapsed < fpsInterval) return;
-
-      lastTime = currentTime - (elapsed % fpsInterval);
-
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      sizeRef.current = { width, height };
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      sceneRef.current = createScene(width, height, seedRef.current);
+      const base = document.createElement("canvas");
+      base.width = canvas.width;
+      base.height = canvas.height;
+      const baseCtx = base.getContext("2d");
+      if (baseCtx) {
+        baseCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        paintScene(baseCtx, width, height, sceneRef.current);
+        baseCanvasRef.current = base;
+      }
       ctx.clearRect(0, 0, width, height);
-
-      // Group lines by alpha force to batch draw calls
-      const buckets: { x1: number; y1: number; x2: number; y2: number }[][] = [[], [], [], []];
-
-      // Draw constellation connecting lines with enhanced visibility
-      for (let i = 0; i < particles.length; i++) {
-        const pi = particles[i];
-        for (let j = i + 1; j < particles.length; j++) {
-          const pj = particles[j];
-          const dx = pi.x - pj.x;
-          const dy = pi.y - pj.y;
-          const distSq = dx * dx + dy * dy;
-
-          // 110^2 is 12100. Check square distance first to skip Math.sqrt for 95%+ of particles
-          if (distSq < 12100) {
-            const dist = Math.sqrt(distSq);
-            const force = (110 - dist) / 110;
-            const bucketIdx = Math.min(3, Math.floor(force * 4));
-            buckets[bucketIdx].push({ x1: pi.x, y1: pi.y, x2: pj.x, y2: pj.y });
-          }
-        }
-      }
-
-      // Draw connections in batches to reduce draw calls from hundreds to max 4
-      ctx.lineWidth = 0.85;
-      for (let b = 0; b < 4; b++) {
-        const bucket = buckets[b];
-        if (bucket.length === 0) continue;
-
-        const alpha = (b + 1) * 0.25;
-        ctx.strokeStyle = isDark
-          ? `rgba(168, 85, 247, ${alpha * 0.35})` // Purple-500
-          : `rgba(139, 92, 246, ${alpha * 0.2})`;  // Violet-500
-
-        ctx.beginPath();
-        for (let k = 0; k < bucket.length; k++) {
-          const line = bucket[k];
-          ctx.moveTo(line.x1, line.y1);
-          ctx.lineTo(line.x2, line.y2);
-        }
-        ctx.stroke();
-      }
-
-      // Draw stars
-      particles.forEach((star) => {
-        star.x += star.vx;
-        star.y += star.vy;
-
-        if (star.x < 0) star.x = width;
-        else if (star.x > width) star.x = 0;
-        if (star.y < 0) star.y = height;
-        else if (star.y > height) star.y = 0;
-
-        star.opacityPhase += star.twinkleSpeed;
-        const currentOpacity = star.baseOpacity + Math.sin(star.opacityPhase) * 0.15;
-        const opacity = Math.max(0.1, Math.min(1, currentOpacity));
-
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
-        ctx.fill();
-      });
+      ctx.drawImage(base, 0, 0, width, height);
     };
 
-    draw();
+    resize();
+    window.addEventListener("resize", resize);
 
     return () => {
       window.removeEventListener("resize", resize);
-      window.removeEventListener("focus", handleFocus);
-      window.removeEventListener("blur", handleBlur);
-      cancelAnimationFrame(animationFrameId);
     };
-  }, [mounted, resolvedTheme]);
+  }, []);
 
   return (
-    <div className="fixed inset-0 -z-50 w-full h-full overflow-hidden select-none pointer-events-none">
-      <div className="absolute inset-0 transition-all duration-700 ease-in-out site-bg-gradient" />
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none opacity-90" />
-      <div className="site-background-noise absolute inset-0 opacity-[0.015] dark:opacity-[0.025] pointer-events-none" />
-      
-      {/* Foggy horizon light merging blue and purple */}
-      <div className="absolute bottom-[-35vh] left-[-20vw] right-[-20vw] h-[65vh] rounded-full pointer-events-none filter blur-[80px] site-horizon-glow" />
+    <div className="fixed inset-0 -z-50 overflow-hidden select-none pointer-events-none">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(107,63,160,0.16),rgba(5,6,15,0)_55%),linear-gradient(to_bottom,#05060f_0%,#0d1024_100%)]" />
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full opacity-95" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.12)_72%,rgba(0,0,0,0.42)_100%)]" />
     </div>
   );
 }
