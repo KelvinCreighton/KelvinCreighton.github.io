@@ -38,7 +38,7 @@ export default function WicysCtfPage({ challengeId }: WicysCtfPageProps) {
   const isComingSoon = challengeDownloads.length === 0;
 
   return (
-    <main className="flex flex-col items-center p-6 md:p-12 lg:p-24 w-full">
+    <main className="flex flex-col items-center px-6 pb-6 pt-0 md:px-12 md:pb-12 md:pt-0 lg:px-24 lg:pb-16 lg:pt-0 w-full">
       <div className="w-full max-w-5xl mb-12 flex flex-col items-center">
         <Link
           href="/projects/cybersecurity"

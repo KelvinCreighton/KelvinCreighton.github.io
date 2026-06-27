@@ -103,7 +103,7 @@ export default function RootLayout({
                   </div>
                 </div>
               </nav>
-              <main className="flex-grow relative p-4 md:p-8 lg:p-12 pt-20 md:pt-24 lg:pt-28">
+              <main className="flex-grow relative p-4 md:p-8 lg:p-12 pt-16 md:pt-20 lg:pt-24">
                 {children}
               </main>
               <footer className="w-full py-6 shrink-0 z-50 bg-transparent">
