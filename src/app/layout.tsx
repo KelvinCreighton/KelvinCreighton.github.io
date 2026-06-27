@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { NavBar } from "@/components/NavBar";
 import { Background } from "@/components/Background";
 import "./globals.css";
@@ -86,8 +85,9 @@ export default function RootLayout({
         />
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <div className="relative min-h-[100dvh] w-full transition-colors duration-500">
@@ -100,7 +100,6 @@ export default function RootLayout({
                   </Link>
                   <div className="flex items-center gap-4 md:gap-6">
                     <NavBar />
-                    <ThemeToggle />
                   </div>
                 </div>
               </nav>

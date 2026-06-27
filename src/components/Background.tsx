@@ -45,11 +45,20 @@ type Scene = {
   nebulae: Nebula[];
 };
 
-const VOID_THEME = {
+type Palette = {
+  top: string;
+  bottom: string;
+  starTint: string[];
+  nebula: string[];
+  lineColor: string;
+};
+
+const VOID_THEME: Palette = {
   top: "#05060f",
   bottom: "#0d1024",
   starTint: ["#ffffff", "#cfe0ff", "#ffe9c8"],
   nebula: ["#6b3fa0", "#2f5c8f", "#9c3f6e"],
+  lineColor: "rgba(255, 255, 255, 0.2)",
 };
 
 const SETTINGS = {
@@ -240,7 +249,7 @@ function paintScene(ctx: CanvasRenderingContext2D, width: number, height: number
   scene.nebulae.forEach((nebula) => drawNebula(ctx, nebula, SETTINGS.blurPx, SETTINGS.nebulaOpacity));
 
   ctx.lineWidth = 1;
-  ctx.strokeStyle = `rgba(255, 255, 255, ${SETTINGS.lineOpacity})`;
+  ctx.strokeStyle = VOID_THEME.lineColor;
   scene.links.forEach(([aIndex, bIndex]) => {
     const a = scene.markers[aIndex];
     const b = scene.markers[bIndex];
