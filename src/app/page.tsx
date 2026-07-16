@@ -121,8 +121,7 @@ export default function Home() {
               Events for the University of Alberta&apos;s Cybersecurity Club
               (CHADS),
               and a 4th year Computer Science student at the University of
-              Alberta with a strong interest in cybersecurity, particularly web
-              exploitation and network security.
+              Alberta with a strong interest in Cybersecurity and Software Engineering.
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
               <Link
