@@ -42,15 +42,17 @@ body {
 
 .site-bg-gradient {
   background:
-    radial-gradient(circle at 18% 18%, rgba(168, 85, 247, 0.16) 0%, rgba(168, 85, 247, 0) 28%),
-    radial-gradient(circle at 82% 14%, rgba(124, 58, 237, 0.12) 0%, rgba(124, 58, 237, 0) 24%),
-    linear-gradient(180deg, #070914 0%, #0a1020 44%, #10162b 100%);
+    radial-gradient(circle at 24% 22%, rgba(168, 85, 247, 0.24) 0%, rgba(168, 85, 247, 0.14) 14%, rgba(168, 85, 247, 0.02) 32%, rgba(168, 85, 247, 0) 48%),
+    radial-gradient(circle at 76% 18%, rgba(59, 130, 246, 0.22) 0%, rgba(59, 130, 246, 0.12) 14%, rgba(59, 130, 246, 0.02) 31%, rgba(59, 130, 246, 0) 48%),
+    radial-gradient(circle at 52% 56%, rgba(139, 92, 246, 0.12) 0%, rgba(59, 130, 246, 0.09) 22%, rgba(20, 184, 166, 0.03) 36%, rgba(0, 0, 0, 0) 66%),
+    linear-gradient(180deg, #070914 0%, #0a1020 42%, #10162b 100%);
 }
 
 .dark .site-bg-gradient {
   background:
-    radial-gradient(circle at 18% 18%, rgba(168, 85, 247, 0.22) 0%, rgba(168, 85, 247, 0) 28%),
-    radial-gradient(circle at 82% 14%, rgba(124, 58, 237, 0.16) 0%, rgba(124, 58, 237, 0) 24%),
+    radial-gradient(circle at 24% 22%, rgba(168, 85, 247, 0.30) 0%, rgba(168, 85, 247, 0.18) 14%, rgba(168, 85, 247, 0.03) 32%, rgba(168, 85, 247, 0) 48%),
+    radial-gradient(circle at 76% 18%, rgba(59, 130, 246, 0.28) 0%, rgba(59, 130, 246, 0.16) 14%, rgba(59, 130, 246, 0.03) 31%, rgba(59, 130, 246, 0) 48%),
+    radial-gradient(circle at 52% 56%, rgba(139, 92, 246, 0.16) 0%, rgba(59, 130, 246, 0.12) 22%, rgba(20, 184, 166, 0.04) 36%, rgba(0, 0, 0, 0) 66%),
     linear-gradient(180deg, #040611 0%, #07111f 44%, #071225 100%);
 }
 
