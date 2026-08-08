@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NavBar } from "@/components/NavBar";
-import { Background } from "@/components/Background";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -91,7 +90,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative min-h-[100dvh] w-full transition-colors duration-500">
-            <Background />
             <div className="flex flex-col min-h-[100dvh]">
               <nav className="fixed top-0 left-0 w-full p-3 md:p-3 shrink-0 z-50 bg-[#f5f3ff]/80 dark:bg-[#080413]/80 backdrop-blur-md border-b border-[#8b5cf6]/10 dark:border-[#4c1d95]/20">
                 <div className="max-w-5xl mx-auto flex items-center justify-between gap-4 relative z-10 px-4 md:px-8">
