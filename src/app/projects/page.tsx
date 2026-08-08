@@ -10,9 +10,8 @@ export default function Projects() {
         {/* Category 1: Cybersecurity */}
         <Link
           href="/projects/cybersecurity"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-all duration-300 hover:opacity-100 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm before:absolute before:inset-0 before:bg-white/0 dark:before:bg-white/0 before:transition-colors before:duration-300 hover:before:bg-white/8 dark:hover:before:bg-white/5"
+          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
         >
-          <span className="absolute inset-0 bg-white/0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image
               src="/icons/cybersecurity.svg"
@@ -27,9 +26,8 @@ export default function Projects() {
         {/* Category 2: Auto Repair & Maintenance */}
         <Link
           href="/projects/auto"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-all duration-300 hover:opacity-100 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm before:absolute before:inset-0 before:bg-white/0 dark:before:bg-white/0 before:transition-colors before:duration-300 hover:before:bg-white/8 dark:hover:before:bg-white/5"
+          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
         >
-          <span className="absolute inset-0 bg-white/0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image
               src="/icons/auto.svg"
@@ -44,9 +42,8 @@ export default function Projects() {
         {/* Category 3: Game Development */}
         <Link
           href="/projects/game-dev"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-all duration-300 hover:opacity-100 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm before:absolute before:inset-0 before:bg-white/0 dark:before:bg-white/0 before:transition-colors before:duration-300 hover:before:bg-white/8 dark:hover:before:bg-white/5"
+          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
         >
-          <span className="absolute inset-0 bg-white/0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image
               src="/icons/game-dev.svg"
@@ -61,9 +58,8 @@ export default function Projects() {
         {/* Category 4: Music Production */}
         <Link
           href="/projects/music"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-all duration-300 hover:opacity-100 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm before:absolute before:inset-0 before:bg-white/0 dark:before:bg-white/0 before:transition-colors before:duration-300 hover:before:bg-white/8 dark:hover:before:bg-white/5"
+          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
         >
-          <span className="absolute inset-0 bg-white/0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image
               src="/icons/music.svg"
@@ -78,9 +74,8 @@ export default function Projects() {
         {/* Category 5: Engineering */}
         <Link
           href="/projects/engineering"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-all duration-300 hover:opacity-100 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm before:absolute before:inset-0 before:bg-white/0 dark:before:bg-white/0 before:transition-colors before:duration-300 hover:before:bg-white/8 dark:hover:before:bg-white/5"
+          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
         >
-          <span className="absolute inset-0 bg-white/0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image
               src="/icons/engineering.svg"
