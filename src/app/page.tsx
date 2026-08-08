@@ -199,14 +199,14 @@ export default function Home() {
             </div>
           </Link>
           <Link
-            href="/projects/auto/transmission-rebuild"
+            href="/projects/cybersecurity/macsync-stealer"
             className="group block h-full mx-2 md:mx-0"
           >
             <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
               <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
                 <Image
-                  src="/images/projects/transmission-title.webp"
-                  alt="Transmission Rebuild"
+                  src="/images/projects/cyber-highlights.webp"
+                  alt="MacSync Stealer static malware analysis"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
@@ -214,12 +214,12 @@ export default function Home() {
               </div>
               <div className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  Manual Transmission Rebuild
+                  MacSync Stealer: Static Malware Analysis
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  A complete teardown and rebuild of a 1989 Honda Accord LX
-                  manual transmission. Detailed documentation of the process
-                  from removal to reassembly.
+                  A detailed static analysis of the MacSync Stealer malware,
+                  uncovering its multi-stage execution flow and C2
+                  communication methods.
                 </p>
               </div>
             </div>
