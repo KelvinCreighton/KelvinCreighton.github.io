@@ -70,7 +70,7 @@ export default function CybersecurityProjectsClient({
     {
       id: 4,
       slug: "macsync-stealer",
-      title: "MacSync Stealer",
+      title: "MacSync Stealer: Static Malware Analysis",
       date: "December 2025",
       tags: ["malware", "static-analysis", "macos", "zsh"],
       description:
