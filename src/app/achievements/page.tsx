@@ -122,13 +122,15 @@ export default function AchievementsPage() {
           title="Certificates"
           description="Security certifications, vendor credentials, and training completions."
         >
-          <div className="grid grid-cols-1 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
             <AchievementCard
               title="Cisco Rapid Incident Response V7"
               subtitle="Certificate code: 9998169300KC"
               meta="Certificate"
               status="Active"
               description="Cisco incident response certification currently listed as your only certificate."
+              image="/images/projects/cyber-highlights.webp"
+              imageAlt="Cisco certificate image placeholder"
               bullets={[
                 "Certificate code: 9998169300KC",
                 "Use this card later to add issue date, verification link, and any related coursework or exam details.",
@@ -141,7 +143,7 @@ export default function AchievementsPage() {
           title="CTF Accomplishments"
           description="Placement records, competition participation, and notable challenge-solving outcomes."
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
             <AchievementCard
               title="National Cybersecurity Consortium (NCC) CTF"
               subtitle="Web Exploitation, LLM Prompt Injection"
