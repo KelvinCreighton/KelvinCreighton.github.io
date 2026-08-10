@@ -28,7 +28,7 @@ function AchievementCard({
   imageAlt,
 }: AchievementCardProps) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-xl bg-gray-85 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <article className="group flex self-start flex-col overflow-hidden rounded-xl bg-gray-85 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       {image ? (
         <div className="relative aspect-video w-full bg-gray-85 dark:bg-gray-800">
           <img
@@ -38,7 +38,7 @@ function AchievementCard({
           />
         </div>
       ) : null}
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-col p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-sm italic text-gray-500 dark:text-gray-400">
@@ -57,7 +57,7 @@ function AchievementCard({
             </span>
           ) : null}
         </div>
-        <p className="mt-4 text-base text-gray-700 dark:text-gray-300 flex-grow">
+        <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
           {description}
         </p>
         {bullets ? (
@@ -122,7 +122,7 @@ export default function AchievementsPage() {
           title="Certificates"
           description="Security certifications, vendor credentials, and training completions."
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
             <AchievementCard
               title="Cisco Rapid Incident Response V7"
               subtitle="Certificate code: 9998169300KC"
@@ -143,7 +143,7 @@ export default function AchievementsPage() {
           title="CTF Accomplishments"
           description="Placement records, competition participation, and notable challenge-solving outcomes."
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
             <AchievementCard
               title="National Cybersecurity Consortium (NCC) CTF"
               subtitle="Web Exploitation, LLM Prompt Injection"
