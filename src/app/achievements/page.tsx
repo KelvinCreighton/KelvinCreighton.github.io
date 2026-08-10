@@ -7,12 +7,13 @@ type AchievementCardProps = {
   status?: string;
   description: string;
   bullets?: string[];
+  image?: string;
+  imageAlt?: string;
 };
 
 type AchievementSectionProps = {
   title: string;
   description: string;
-  badge?: string;
   children: ReactNode;
 };
 
@@ -23,19 +24,30 @@ function AchievementCard({
   status,
   description,
   bullets,
+  image,
+  imageAlt,
 }: AchievementCardProps) {
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-xl bg-gray-85 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div className="border-b border-gray-200/80 bg-white/40 px-5 py-4 dark:border-gray-800 dark:bg-gray-800/40">
+      {image ? (
+        <div className="relative aspect-video w-full bg-gray-85 dark:bg-gray-800">
+          <img
+            src={image}
+            alt={imageAlt ?? title}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
+      ) : null}
+      <div className="flex flex-1 flex-col p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+            <p className="text-sm italic text-gray-500 dark:text-gray-400">
               {meta}
             </p>
-            <h2 className="mt-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
+            <h2 className="mt-1 text-xl font-bold text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
               {title}
             </h2>
-            <p className="mt-1 text-sm font-medium text-blue-700 dark:text-blue-300">
+            <p className="mt-1 text-sm text-blue-700 dark:text-blue-300">
               {subtitle}
             </p>
           </div>
@@ -45,9 +57,7 @@ function AchievementCard({
             </span>
           ) : null}
         </div>
-      </div>
-      <div className="flex flex-1 flex-col p-5">
-        <p className="text-sm leading-6 text-gray-600 dark:text-gray-300">
+        <p className="mt-4 text-base text-gray-700 dark:text-gray-300 flex-grow">
           {description}
         </p>
         {bullets ? (
@@ -68,25 +78,19 @@ function AchievementCard({
 function AchievementSection({
   title,
   description,
-  badge,
   children,
 }: AchievementSectionProps) {
   return (
     <section className="w-full">
-      <div className="mb-6 flex items-end justify-between gap-4 border-b border-gray-200 pb-4 dark:border-gray-800">
+      <div className="mb-8 flex flex-col gap-3 border-b border-gray-200 pb-4 dark:border-gray-800 md:flex-row md:items-end md:justify-between">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
             {title}
           </h2>
-          <p className="mt-2 max-w-3xl text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-2 max-w-3xl text-sm text-gray-600 dark:text-gray-400 md:text-base">
             {description}
           </p>
         </div>
-        {badge ? (
-          <span className="shrink-0 rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-medium text-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400">
-            {badge}
-          </span>
-        ) : null}
       </div>
       {children}
     </section>
@@ -103,19 +107,20 @@ export default function AchievementsPage() {
         >
           &larr; Back to Projects
         </a>
-        <h1 className="text-4xl font-bold">Achievements</h1>
-        <p className="mt-4 text-gray-600 dark:text-gray-400 text-center max-w-3xl">
+        <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">
+          Achievements
+        </h1>
+        <p className="text-gray-600 dark:text-gray-400 text-center max-w-3xl">
           Certifications, competition results, and other accomplishments in one
           place. Use this page as a portfolio-ready record of credentials and
           CTF placements.
         </p>
       </div>
 
-      <div className="flex flex-col gap-12 w-full max-w-5xl">
+      <div className="flex flex-col gap-14 w-full max-w-5xl">
         <AchievementSection
           title="Certificates"
           description="Security certifications, vendor credentials, and training completions."
-          badge="1 entry"
         >
           <div className="grid grid-cols-1 gap-8 w-full">
             <AchievementCard
@@ -135,7 +140,6 @@ export default function AchievementsPage() {
         <AchievementSection
           title="CTF Accomplishments"
           description="Placement records, competition participation, and notable challenge-solving outcomes."
-          badge="Competition history"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             <AchievementCard
@@ -144,6 +148,8 @@ export default function AchievementsPage() {
               meta="CTF"
               status="2nd Place"
               description="National final CTF with CHADS representing the University of Alberta."
+              image="/images/projects/cyber-highlights.webp"
+              imageAlt="Cybersecurity project highlight image"
               bullets={[
                 "Placed 2nd nationally among university teams from across Canada in NCC’s Capture the Flag competition.",
                 "Exploited a leaking API endpoint to extract password hashes, then cracked them to escalate access and retrieve the flag.",
@@ -156,6 +162,8 @@ export default function AchievementsPage() {
               meta="CTF"
               status="5th Place"
               description="Regional competition with a strong finishing performance against top teams from across the region."
+              image="/images/projects/WICYS_logo.webp"
+              imageAlt="CyberSci regional event image"
               bullets={[
                 "Placed 5th with CHADS B-Team in CyberSci Regionals 2025.",
                 "Finished narrowly behind 4th and 3rd place, with the team pushing until the final minute.",
@@ -168,6 +176,8 @@ export default function AchievementsPage() {
               meta="CTF"
               status="4th Place"
               description="In-person CTF with a strong overall showing and several solved challenges."
+              image="/images/projects/3d-game.webp"
+              imageAlt="SAIT CTF event image placeholder"
               bullets={[
                 "Placed 4th at SAIT’s Alice in PWNderland CTF.",
                 "Solved challenges across physical security, network forensics, IoT security, and logic puzzles.",
@@ -180,6 +190,8 @@ export default function AchievementsPage() {
               meta="CTF"
               status="3rd Place"
               description="Online national competition with the CHADS team from the University of Alberta."
+              image="/images/projects/picoCTF_logo.webp"
+              imageAlt="IlluminatiCTF event image placeholder"
               bullets={[
                 "Placed 3rd nationally and 6th overall.",
                 "Participated in a mix of easy, intermediate, and hard challenges.",
@@ -192,6 +204,8 @@ export default function AchievementsPage() {
               meta="CTF"
               status="Participation"
               description="A major team competition where the CHADS team represented the University of Alberta."
+              image="/images/projects/WICYS_logo.webp"
+              imageAlt="WiCyS CTF image"
               bullets={[
                 "Shared participation in the WiCyS Cross Chapter CTF with a broad challenge set.",
                 "Add the exact placement, date, and team name here when you want to turn this into a full record.",
@@ -204,6 +218,8 @@ export default function AchievementsPage() {
               meta="CTF"
               status="Participation"
               description="A custom CTF event where you contributed as both competitor and challenge creator."
+              image="/images/projects/CHADS_logo.webp"
+              imageAlt="HTCOTB CTF image placeholder"
               bullets={[
                 "Add the exact placement or team result here if you want to log it as a formal achievement.",
                 "Useful for highlighting challenge development, participation, and team contribution.",
