@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useEffect, useState, type ReactNode } from "react";
 
 type AchievementCardProps = {
   title: string;
@@ -10,6 +12,7 @@ type AchievementCardProps = {
   bullets?: string[];
   image?: string;
   imageAlt?: string;
+  onImageClick?: (image: string, alt: string) => void;
 };
 
 type AchievementSectionProps = {
@@ -28,17 +31,27 @@ function AchievementCard({
   bullets,
   image,
   imageAlt,
+  onImageClick,
 }: AchievementCardProps) {
+  const altText = imageAlt ?? title;
   return (
     <article className="group flex self-start flex-col overflow-hidden rounded-xl bg-gray-85 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       {image ? (
-        <div className="relative aspect-video w-full bg-gray-85 p-3 dark:bg-gray-800">
+        <button
+          type="button"
+          onClick={() => onImageClick?.(image, altText)}
+          className="relative aspect-video w-full bg-gray-85 p-3 text-left dark:bg-gray-800"
+          aria-label={`Open larger view of ${altText}`}
+        >
           <img
             src={image}
-            alt={imageAlt ?? title}
-            className="absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] object-contain"
+            alt={altText}
+            className="absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] object-contain transition-transform duration-300 group-hover:scale-[1.01]"
           />
-        </div>
+          <span className="absolute bottom-4 right-4 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            Click to enlarge
+          </span>
+        </button>
       ) : null}
       <div className="flex flex-col p-6">
         <div className="flex items-start justify-between gap-4">
@@ -103,6 +116,26 @@ function AchievementSection({
 }
 
 export default function AchievementsPage() {
+  const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    if (!modalImage) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setModalImage(null);
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [modalImage]);
+
   return (
     <main className="animate-page-enter flex flex-col items-center px-6 pb-6 pt-0 md:px-12 md:pb-12 md:pt-0 lg:px-24 lg:pb-16 lg:pt-0 w-full">
       <div className="w-full max-w-5xl mb-12 flex flex-col items-center">
@@ -130,7 +163,7 @@ export default function AchievementsPage() {
             <AchievementCard
               title="Cisco Rapid Incident Response V7"
               subtitle="Incident response workshop and lab"
-              date="2026"
+              date="July 2026"
               meta="Certificate"
               status="Active"
               description="Hands-on Cisco XDR incident response workshop focused on investigation, containment, and eradication workflows."
@@ -141,6 +174,7 @@ export default function AchievementsPage() {
                 "One-day session with lecture and lab work centered on XDR investigation, threat hunting, root-cause analysis, and attack-chain tracing.",
                 "Used Cisco security tooling to correlate endpoint and email threat data, prioritize incidents by risk, and practice response workflows in a hands-on lab.",
               ]}
+              onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
           </div>
         </AchievementSection>
@@ -150,6 +184,23 @@ export default function AchievementsPage() {
           description="Placement records, competition participation, and notable challenge-solving outcomes."
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
+            <AchievementCard
+              title="SAIT: Alice in PWNderland"
+              subtitle="Team CHADS"
+              date="July 2026"
+              meta="CTF"
+              status="4th Place"
+              description="In-person CTF at SAIT with a strong overall showing and several solved challenges."
+              image="/images/achievements/Alice.jpg"
+              imageAlt="Alice in PWNderland CTF"
+              bullets={[
+                "SAIT School for Advanced Digital Technology CTF event.",
+                "Placed 4th at SAIT’s Alice in PWNderland CTF.",
+                "Solved challenges across physical security, network forensics, IoT security, and logic puzzles.",
+                "The team made a sunrise trip to Calgary and back, making the placement a memorable one.",
+              ]}
+              onImageClick={(src, alt) => setModalImage({ src, alt })}
+            />
             <AchievementCard
               title="National Cybersecurity Consortium (NCC) CTF"
               subtitle="Web Exploitation, LLM Prompt Injection"
@@ -165,11 +216,12 @@ export default function AchievementsPage() {
                 "Exploited a leaking API endpoint to extract password hashes, then cracked them to escalate access and retrieve the flag.",
                 "Bypassed LLM-based identity verification by crafting a prompt injection that convinced the model to accept a fabricated user ID, escalating to unauthorized higher-privilege access.",
               ]}
+              onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
             <AchievementCard
               title="CyberSci Regionals 2025"
               subtitle="Team CHADS B-Team"
-              date="2025"
+              date="November 2025"
               meta="CTF"
               status="5th Place"
               description="Regional competition held in Calgary with a strong team finish against top teams from across the region."
@@ -181,27 +233,12 @@ export default function AchievementsPage() {
                 "Finished narrowly behind 4th and 3rd place, with the team pushing until the final minute.",
                 "First CyberSci competition experience and a major step forward in cybersecurity depth and confidence.",
               ]}
-            />
-            <AchievementCard
-              title="SAIT: Alice in PWNderland"
-              subtitle="Team CHADS"
-              date="July 26, 2026"
-              meta="CTF"
-              status="4th Place"
-              description="In-person CTF at SAIT with a strong overall showing and several solved challenges."
-              image="/images/achievements/Alice.jpg"
-              imageAlt="Alice in PWNderland CTF"
-              bullets={[
-                "SAIT School for Advanced Digital Technology CTF event.",
-                "Placed 4th at SAIT’s Alice in PWNderland CTF.",
-                "Solved challenges across physical security, network forensics, IoT security, and logic puzzles.",
-                "The team made a sunrise trip to Calgary and back, making the placement a memorable one.",
-              ]}
+              onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
             <AchievementCard
               title="IlluminatiCTF"
               subtitle="National bracket"
-              date="2025"
+              date="May 2025"
               meta="CTF"
               status="3rd Place"
               description="Online national competition with the CHADS team from the University of Alberta."
@@ -213,10 +250,38 @@ export default function AchievementsPage() {
                 "Participated in a mix of easy, intermediate, and hard challenges.",
                 "A strong team event that reinforced long-term interest in cybersecurity competition.",
               ]}
+              onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
           </div>
         </AchievementSection>
       </div>
+      {modalImage ? (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 px-4 py-6"
+          role="dialog"
+          aria-modal="true"
+          aria-label={modalImage.alt}
+          onClick={() => setModalImage(null)}
+        >
+          <button
+            type="button"
+            className="absolute right-4 top-4 rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+            onClick={() => setModalImage(null)}
+          >
+            Close
+          </button>
+          <div
+            className="max-h-[90vh] max-w-[95vw] overflow-auto rounded-2xl bg-gray-950 p-3 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <img
+              src={modalImage.src}
+              alt={modalImage.alt}
+              className="block max-h-[86vh] max-w-[92vw] object-contain"
+            />
+          </div>
+        </div>
+      ) : null}
     </main>
   );
 }
