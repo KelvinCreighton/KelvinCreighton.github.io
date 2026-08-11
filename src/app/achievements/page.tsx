@@ -111,9 +111,8 @@ export default function AchievementsPage() {
           Achievements
         </h1>
         <p className="text-gray-600 dark:text-gray-400 text-center max-w-3xl">
-          Certifications, competition results, and other accomplishments in one
-          place. Use this page as a portfolio-ready record of credentials and
-          CTF placements.
+          Certifications, competition results, and competition history, all in
+          one place.
         </p>
       </div>
 
@@ -128,13 +127,13 @@ export default function AchievementsPage() {
               subtitle="Incident response workshop and lab"
               meta="Certificate"
               status="Active"
-              description="Hands-on Cisco XDR incident response workshop focused on investigation, containment, and eradication workflows in a correlated security environment."
+              description="Hands-on Cisco XDR incident response workshop focused on investigation, containment, and eradication workflows."
               image="/images/cisco-rapid-incident-response-v7.png"
               imageAlt="Cisco Rapid Incident Response V7 certificate"
               bullets={[
                 "Certificate code: 9998169300KC",
                 "One-day session with lecture and lab work centered on XDR investigation, threat hunting, root-cause analysis, and attack-chain tracing.",
-                "Explored correlated incidents using Cisco security tooling, including endpoint and email threat data, with a focus on speed and response efficiency.",
+                "Used Cisco security tooling to correlate endpoint and email threat data, prioritize incidents by risk, and practice response workflows in a hands-on lab.",
               ]}
             />
           </div>
@@ -150,7 +149,7 @@ export default function AchievementsPage() {
               subtitle="Web Exploitation, LLM Prompt Injection"
               meta="CTF"
               status="2nd Place"
-              description="National final CTF with CHADS representing the University of Alberta."
+              description="National final CTF where CHADS represented the University of Alberta."
               image="/images/achievements/NCC.jpg"
               imageAlt="National Cybersecurity Consortium CTF"
               bullets={[
@@ -165,7 +164,7 @@ export default function AchievementsPage() {
               subtitle="Team CHADS B-Team"
               meta="CTF"
               status="5th Place"
-              description="Regional competition with a strong finishing performance against top teams from across the region."
+              description="Regional competition held in Calgary with a strong team finish against top teams from across the region."
               image="/images/achievements/CyberSci.jpg"
               imageAlt="CyberSci Regionals 2025"
               bullets={[
@@ -180,7 +179,7 @@ export default function AchievementsPage() {
               subtitle="Team CHADS"
               meta="CTF"
               status="4th Place"
-              description="In-person CTF with a strong overall showing and several solved challenges."
+              description="In-person CTF at SAIT with a strong overall showing and several solved challenges."
               image="/images/achievements/Alice.jpg"
               imageAlt="Alice in PWNderland CTF"
               bullets={[
@@ -199,7 +198,7 @@ export default function AchievementsPage() {
               image="/images/achievements/illuminatictf.png"
               imageAlt="IlluminatiCTF"
               bullets={[
-                "Online national bracket with the University of Saskatchewan hosting team.",
+                "National bracket hosted by the University of Saskatchewan.",
                 "Placed 3rd nationally and 6th overall.",
                 "Participated in a mix of easy, intermediate, and hard challenges.",
                 "A strong team event that reinforced long-term interest in cybersecurity competition.",
