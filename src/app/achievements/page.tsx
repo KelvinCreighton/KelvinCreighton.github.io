@@ -185,22 +185,6 @@ export default function AchievementsPage() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
             <AchievementCard
-              title="SAIT: Alice in PWNderland"
-              subtitle="Team CHADS"
-              date="July 2026"
-              meta="CTF"
-              status="4th Place"
-              description="Competed at SAIT and helped the team secure several solves across a mix of challenge types."
-              image="/images/achievements/Alice.jpg"
-              imageAlt="Alice in PWNderland CTF"
-              bullets={[
-                "Competed in SAIT School for Advanced Digital Technology’s CTF event.",
-                "We placed 4th at SAIT’s Alice in PWNderland CTF.",
-                "Solved challenges across physical security, network forensics, IoT security, and logic puzzles.",
-              ]}
-              onImageClick={(src, alt) => setModalImage({ src, alt })}
-            />
-            <AchievementCard
               title="National Cybersecurity Consortium (NCC) CTF"
               subtitle="Web Exploitation, LLM Prompt Injection"
               date="June 2026"
@@ -231,6 +215,22 @@ export default function AchievementsPage() {
                 "We placed 5th with CHADS B-Team in CyberSci Regionals 2025.",
                 "We finished narrowly behind 4th and 3rd place, pushing until the final minute.",
                 "First CyberSci competition and a major step forward in cybersecurity depth and confidence.",
+              ]}
+              onImageClick={(src, alt) => setModalImage({ src, alt })}
+            />
+            <AchievementCard
+              title="SAIT: Alice in PWNderland"
+              subtitle="Team CHADS"
+              date="July 2025"
+              meta="CTF"
+              status="4th Place"
+              description="Competed at SAIT and helped the team secure several solves across a mix of challenge types."
+              image="/images/achievements/Alice.jpg"
+              imageAlt="Alice in PWNderland CTF"
+              bullets={[
+                "Competed in SAIT School for Advanced Digital Technology’s CTF event.",
+                "We placed 4th at SAIT’s Alice in PWNderland CTF.",
+                "Solved challenges across physical security, network forensics, IoT security, and logic puzzles.",
               ]}
               onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
