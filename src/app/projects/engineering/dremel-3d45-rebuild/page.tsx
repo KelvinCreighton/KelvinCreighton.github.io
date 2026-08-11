@@ -29,8 +29,11 @@ export default function Dremel3D45RebuildProject() {
           </p>
 
           <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+            <div className="absolute left-3 top-3 z-10 rounded-full border border-red-900 bg-red-800/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white shadow-sm dark:border-red-500/40 dark:bg-red-900/90 dark:text-red-100">
+              In Progress
+            </div>
             <Image
-              src="/images/projects/engineering-placeholder.webp"
+              src="/images/projects/dremel-3d45-rebuild-title.jpg"
               alt="Dremel DigiLab 3D45 controller rebuild"
               fill
               className="object-cover"
@@ -113,9 +116,41 @@ export default function Dremel3D45RebuildProject() {
 
           <h2 className="mb-4 text-xl font-bold">Initial Failure</h2>
           <p>
-            The original motherboard failed after I tested a fan output voltage
-            that I thought was not working. That mistake killed the board and
-            the drivers with it, which stopped the printer entirely.
+            After the first rebuild, the printer was actually printing parts
+            again. But once I let it run for a while, I started running into
+            heat creep. My first thought was that the turbo fan might not be
+            getting the right voltage. Since the printer is proprietary, it
+            never really tells you what the fan is supposed to run at, so I
+            grabbed a multimeter and checked the connector myself. While I was
+            probing the fan lines, I accidentally touched the red positive lead
+            to the yellow tachometer signal line. Right after that, the
+            printer started acting dead on the higher-voltage side. The motors
+            stopped, and the heating element was only getting about 5 volts,
+            which was nowhere near enough to heat the block. The screen and
+            lights still worked, so I knew the 5V side was fine, but
+            everything else had clearly been knocked out. That was what pushed
+            me to test the motherboard and PSU, hoping I only tripped a fuse.
+          </p>
+
+          <div className="grid grid-cols-1 gap-4 md:gap-6 my-8 md:my-10">
+            <figure className="m-0">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-video">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild-initial-failure.png"
+                  alt="Initial failure testing on the Dremel DigiLab 3D45"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-sm text-gray-500">
+                Turbo fan voltage testing
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">Step 1: Diagnosing the Problem</h2>
+          <p>
+            [Add the diagnostic details, images, and notes for the first step here.]
           </p>
 
           <h2 className="mb-4 text-xl font-bold">Rebuild Approach</h2>
