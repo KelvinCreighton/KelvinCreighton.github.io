@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Leadership",
+  title: "Dremel DigiLab 3D45 - Controller Rebuild",
   description:
-    "Leadership and event organization work for Kelvin Creighton, including OWASP Edmonton and CHADS.",
+    "Ongoing rebuild of a Dremel DigiLab 3D45 printer using an Arduino Mega 2560 and RAMPS 1.4 after motherboard failure.",
 };
 
 export default function Layout({

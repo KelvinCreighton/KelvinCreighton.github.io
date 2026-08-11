@@ -83,7 +83,7 @@ export default function EventsPage() {
           &larr; Back to Home
         </Link>
         <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">
-          Events
+          Leadership
         </h1>
         <p className="text-gray-600 dark:text-gray-400 text-center max-w-3xl">
           Leadership, planning, and event execution through OWASP Edmonton and

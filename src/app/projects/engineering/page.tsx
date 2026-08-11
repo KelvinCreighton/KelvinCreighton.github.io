@@ -11,6 +11,17 @@ import {
 export default function EngineeringProjects() {
   const projects = [
     {
+      id: 2,
+      title: "Dremel DigiLab 3D45 - Controller Rebuild",
+      date: "May 2026 - July 2026",
+      tags: [],
+      description:
+        "Rebuilding a Dremel DigiLab 3D45 after a fried motherboard using an Arduino Mega 2560, RAMPS 1.4, and salvage parts from another printer.",
+      image: "/images/projects/engineering-placeholder.webp",
+      link: "/projects/engineering/dremel-3d45-rebuild",
+      category: "3D Printers",
+    },
+    {
       id: 1,
       title: "Dremel DigiLab 3D45 - Restoration",
       date: "May 2026",

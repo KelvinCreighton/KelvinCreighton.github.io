@@ -10,7 +10,7 @@ export function NavBar() {
     { name: "Home", href: "/" },
     { name: "Projects", href: "/projects" },
     { name: "Achievements", href: "/achievements" },
-    { name: "Events", href: "/events" },
+    { name: "Leadership", href: "/events" },
     { name: "Resume", href: "/resume" },
   ];
 
