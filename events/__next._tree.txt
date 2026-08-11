@@ -1,0 +1,7 @@
+:HL["/_next/static/css/78f9a2e8b0a94ff5.css","style"]
+:HL["/images/events/Accurate-Networks.jpg","image"]
+:HL["/images/events/HTCOTB2026.jpg","image"]
+:HL["/images/events/Cybersec-Awareness-Month.jpg","image"]
+:HL["/images/events/Secure-Coding-Tournament.jpg","image"]
+:HL["/images/events/HTCOTB2025.jpg","image"]
+0:{"buildId":"2IEj7Bs2ggz1P79FgYjf6","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"events","paramType":null,"paramKey":"events","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
