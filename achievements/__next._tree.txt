@@ -1,0 +1,7 @@
+:HL["/_next/static/css/43c92330f532cb5e.css","style"]
+:HL["/images/cisco-rapid-incident-response-v7.png","image"]
+:HL["/images/achievements/NCC.jpg","image"]
+:HL["/images/achievements/CyberSci.jpg","image"]
+:HL["/images/achievements/Alice.jpg","image"]
+:HL["/images/achievements/illuminatictf.png","image"]
+0:{"buildId":"obCggcmJ3DnbCht-J6pmP","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"achievements","paramType":null,"paramKey":"achievements","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
