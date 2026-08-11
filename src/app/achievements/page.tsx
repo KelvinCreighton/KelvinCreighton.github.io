@@ -151,9 +151,10 @@ export default function AchievementsPage() {
               meta="CTF"
               status="2nd Place"
               description="National final CTF with CHADS representing the University of Alberta."
-              image="/images/projects/cyber-highlights.webp"
-              imageAlt="Cybersecurity project highlight image"
+              image="/images/achievements/NCC.jpg"
+              imageAlt="National Cybersecurity Consortium CTF"
               bullets={[
+                "Web exploitation and LLM prompt injection focus.",
                 "Placed 2nd nationally among university teams from across Canada in NCC’s Capture the Flag competition.",
                 "Exploited a leaking API endpoint to extract password hashes, then cracked them to escalate access and retrieve the flag.",
                 "Bypassed LLM-based identity verification by crafting a prompt injection that convinced the model to accept a fabricated user ID, escalating to unauthorized higher-privilege access.",
@@ -165,9 +166,10 @@ export default function AchievementsPage() {
               meta="CTF"
               status="5th Place"
               description="Regional competition with a strong finishing performance against top teams from across the region."
-              image="/images/projects/WICYS_logo.webp"
-              imageAlt="CyberSci regional event image"
+              image="/images/achievements/CyberSci.jpg"
+              imageAlt="CyberSci Regionals 2025"
               bullets={[
+                "CyberSci Regionals 2025, held in Calgary.",
                 "Placed 5th with CHADS B-Team in CyberSci Regionals 2025.",
                 "Finished narrowly behind 4th and 3rd place, with the team pushing until the final minute.",
                 "First CyberSci competition experience and a major step forward in cybersecurity depth and confidence.",
@@ -179,9 +181,10 @@ export default function AchievementsPage() {
               meta="CTF"
               status="4th Place"
               description="In-person CTF with a strong overall showing and several solved challenges."
-              image="/images/projects/3d-game.webp"
-              imageAlt="SAIT CTF event image placeholder"
+              image="/images/achievements/Alice.jpg"
+              imageAlt="Alice in PWNderland CTF"
               bullets={[
+                "SAIT School for Advanced Digital Technology CTF event.",
                 "Placed 4th at SAIT’s Alice in PWNderland CTF.",
                 "Solved challenges across physical security, network forensics, IoT security, and logic puzzles.",
                 "The team made a sunrise trip to Calgary and back, making the placement a memorable one.",
@@ -193,9 +196,10 @@ export default function AchievementsPage() {
               meta="CTF"
               status="3rd Place"
               description="Online national competition with the CHADS team from the University of Alberta."
-              image="/images/projects/picoCTF_logo.webp"
-              imageAlt="IlluminatiCTF event image placeholder"
+              image="/images/achievements/illuminatictf.png"
+              imageAlt="IlluminatiCTF"
               bullets={[
+                "Online national bracket with the University of Saskatchewan hosting team.",
                 "Placed 3rd nationally and 6th overall.",
                 "Participated in a mix of easy, intermediate, and hard challenges.",
                 "A strong team event that reinforced long-term interest in cybersecurity competition.",
