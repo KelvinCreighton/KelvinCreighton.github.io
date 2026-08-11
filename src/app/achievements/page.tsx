@@ -205,33 +205,6 @@ export default function AchievementsPage() {
                 "A strong team event that reinforced long-term interest in cybersecurity competition.",
               ]}
             />
-            <AchievementCard
-              title="WiCyS CTF 2026"
-              subtitle="University of Alberta / Team CHADS"
-              meta="CTF"
-              status="Participation"
-              description="A major team competition where the CHADS team represented the University of Alberta."
-              image="/images/projects/WICYS_logo.webp"
-              imageAlt="WiCyS CTF image"
-              bullets={[
-                "Shared participation in the WiCyS Cross Chapter CTF with a broad challenge set.",
-                "Add the exact placement, date, and team name here when you want to turn this into a full record.",
-                "Good placeholder spot for additional podium finishes or team summaries.",
-              ]}
-            />
-            <AchievementCard
-              title="HTCOTB 2026"
-              subtitle="Challenge creator / competitor"
-              meta="CTF"
-              status="Participation"
-              description="A custom CTF event where you contributed as both competitor and challenge creator."
-              image="/images/projects/CHADS_logo.webp"
-              imageAlt="HTCOTB CTF image placeholder"
-              bullets={[
-                "Add the exact placement or team result here if you want to log it as a formal achievement.",
-                "Useful for highlighting challenge development, participation, and team contribution.",
-              ]}
-            />
           </div>
         </AchievementSection>
       </div>
