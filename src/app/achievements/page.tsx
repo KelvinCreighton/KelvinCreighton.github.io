@@ -30,11 +30,11 @@ function AchievementCard({
   return (
     <article className="group flex self-start flex-col overflow-hidden rounded-xl bg-gray-85 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       {image ? (
-        <div className="relative aspect-video w-full bg-gray-85 dark:bg-gray-800">
+        <div className="relative aspect-video w-full bg-gray-85 p-3 dark:bg-gray-800">
           <img
             src={image}
             alt={imageAlt ?? title}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] object-contain"
           />
         </div>
       ) : null}
@@ -125,15 +125,16 @@ export default function AchievementsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
             <AchievementCard
               title="Cisco Rapid Incident Response V7"
-              subtitle="Certificate code: 9998169300KC"
+              subtitle="Incident response workshop and lab"
               meta="Certificate"
               status="Active"
-              description="Cisco incident response certification currently listed as your only certificate."
-              image="/images/projects/cyber-highlights.webp"
-              imageAlt="Cisco certificate image placeholder"
+              description="Hands-on Cisco XDR incident response workshop focused on investigation, containment, and eradication workflows in a correlated security environment."
+              image="/images/cisco-rapid-incident-response-v7.png"
+              imageAlt="Cisco Rapid Incident Response V7 certificate"
               bullets={[
                 "Certificate code: 9998169300KC",
-                "Use this card later to add issue date, verification link, and any related coursework or exam details.",
+                "One-day session with lecture and lab work centered on XDR investigation, threat hunting, root-cause analysis, and attack-chain tracing.",
+                "Explored correlated incidents using Cisco security tooling, including endpoint and email threat data, with a focus on speed and response efficiency.",
               ]}
             />
           </div>
