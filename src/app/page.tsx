@@ -144,20 +144,20 @@ export default function Home() {
       {/* Project Highlights Section */}
       <section className="w-full">
         <h2 className="text-3xl font-bold mb-8 pb-4">
-          Project Highlights
+          Highlights
         </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Highlight 1: Dremel 3D45 Restoration */}
+          {/* Highlight 1: Cisco Rapid Incident Response V7 */}
           <Link
-            href="/projects/engineering/dremel-3d45"
+            href="/achievements"
             className="group block h-full mx-2 md:mx-0"
           >
             <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
               <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
                 <Image
-                  src="/images/projects/dremel-3d45-title.webp"
-                  alt="Dremel DigiLab 3D45 - Restoration"
+                  src="/images/cisco-rapid-incident-response-v7.png"
+                  alt="Cisco Rapid Incident Response V7 certificate"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
@@ -165,10 +165,10 @@ export default function Home() {
               </div>
               <div className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  Dremel DigiLab 3D45 - Restoration
+                  Cisco Rapid Incident Response V7
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Documentation of the teardown, diagnosis, and repair of a Dremel DigiLab 3D45 printer.
+                  Hands-on XDR incident response workshop with investigation, containment, and threat-hunting lab work.
                 </p>
               </div>
             </div>

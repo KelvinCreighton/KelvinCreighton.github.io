@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 type AchievementCardProps = {
   title: string;
   subtitle: string;
+  date: string;
   meta: string;
   status?: string;
   description: string;
@@ -20,6 +21,7 @@ type AchievementSectionProps = {
 function AchievementCard({
   title,
   subtitle,
+  date,
   meta,
   status,
   description,
@@ -49,6 +51,9 @@ function AchievementCard({
             </h2>
             <p className="mt-1 text-sm text-blue-700 dark:text-blue-300">
               {subtitle}
+            </p>
+            <p className="mt-2 text-sm italic text-gray-500 dark:text-gray-400">
+              {date}
             </p>
           </div>
           {status ? (
@@ -125,6 +130,7 @@ export default function AchievementsPage() {
             <AchievementCard
               title="Cisco Rapid Incident Response V7"
               subtitle="Incident response workshop and lab"
+              date="2026"
               meta="Certificate"
               status="Active"
               description="Hands-on Cisco XDR incident response workshop focused on investigation, containment, and eradication workflows."
@@ -147,6 +153,7 @@ export default function AchievementsPage() {
             <AchievementCard
               title="National Cybersecurity Consortium (NCC) CTF"
               subtitle="Web Exploitation, LLM Prompt Injection"
+              date="June 2026"
               meta="CTF"
               status="2nd Place"
               description="National final CTF where CHADS represented the University of Alberta."
@@ -162,6 +169,7 @@ export default function AchievementsPage() {
             <AchievementCard
               title="CyberSci Regionals 2025"
               subtitle="Team CHADS B-Team"
+              date="2025"
               meta="CTF"
               status="5th Place"
               description="Regional competition held in Calgary with a strong team finish against top teams from across the region."
@@ -177,6 +185,7 @@ export default function AchievementsPage() {
             <AchievementCard
               title="SAIT: Alice in PWNderland"
               subtitle="Team CHADS"
+              date="July 26, 2026"
               meta="CTF"
               status="4th Place"
               description="In-person CTF at SAIT with a strong overall showing and several solved challenges."
@@ -192,6 +201,7 @@ export default function AchievementsPage() {
             <AchievementCard
               title="IlluminatiCTF"
               subtitle="National bracket"
+              date="2025"
               meta="CTF"
               status="3rd Place"
               description="Online national competition with the CHADS team from the University of Alberta."
