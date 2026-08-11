@@ -149,15 +149,15 @@ export default function AchievementsPage() {
           Achievements
         </h1>
         <p className="text-gray-600 dark:text-gray-400 text-center max-w-3xl">
-          I use this page to track the certifications I have completed and the
-          CTF competitions I have competed in or placed in.
+          Certifications completed and CTF results earned through competition
+          and hands-on security work.
         </p>
       </div>
 
       <div className="flex flex-col gap-14 w-full max-w-5xl">
         <AchievementSection
           title="Certificates"
-          description="Security certifications, vendor credentials, and training I have completed."
+          description="Security certifications, vendor credentials, and training completed."
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
             <AchievementCard
@@ -166,13 +166,13 @@ export default function AchievementsPage() {
               date="July 2026"
               meta="Certificate"
               status="Active"
-              description="I completed a hands-on Cisco XDR incident response workshop focused on investigation, containment, and eradication workflows."
+              description="Cisco XDR incident response workshop focused on investigation, containment, and eradication workflows."
               image="/images/cisco-rapid-incident-response-v7.png"
               imageAlt="Cisco Rapid Incident Response V7 certificate"
               bullets={[
                 "Certificate code: 9998169300KC",
-                "The session combined lecture and lab work centered on XDR investigation, threat hunting, root-cause analysis, and attack-chain tracing.",
-                "I used Cisco security tooling to correlate endpoint and email threat data, prioritize incidents by risk, and practice response workflows in a hands-on lab.",
+                "The session combined lecture and lab work centered on XDR investigation, threat hunting, analysis of the attack chain, and tracing how incidents developed.",
+                "Used Cisco security tooling to correlate endpoint and email threat data, prioritize incidents by risk, and practice response workflows in a lab.",
               ]}
               onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
@@ -181,7 +181,7 @@ export default function AchievementsPage() {
 
         <AchievementSection
           title="CTF Accomplishments"
-          description="Placement records, competition participation, and challenge-solving outcomes from events I have competed in."
+          description="Placement records, competition participation, and challenge solving from events competed in."
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
             <AchievementCard
@@ -190,13 +190,13 @@ export default function AchievementsPage() {
               date="July 2026"
               meta="CTF"
               status="4th Place"
-              description="I competed in an in-person CTF at SAIT and helped the team secure several solves across a mix of challenge types."
+              description="Competed at SAIT and helped the team secure several solves across a mix of challenge types."
               image="/images/achievements/Alice.jpg"
               imageAlt="Alice in PWNderland CTF"
               bullets={[
-                "I competed in SAIT School for Advanced Digital Technology’s CTF event.",
+                "Competed in SAIT School for Advanced Digital Technology’s CTF event.",
                 "We placed 4th at SAIT’s Alice in PWNderland CTF.",
-                "I solved challenges across physical security, network forensics, IoT security, and logic puzzles.",
+                "Solved challenges across physical security, network forensics, IoT security, and logic puzzles.",
               ]}
               onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
@@ -206,14 +206,14 @@ export default function AchievementsPage() {
               date="June 2026"
               meta="CTF"
               status="2nd Place"
-              description="I competed in the NCC national final CTF as part of CHADS representing the University of Alberta."
+              description="Competed in the NCC national final CTF as part of CHADS representing the University of Alberta."
               image="/images/achievements/NCC.jpg"
               imageAlt="National Cybersecurity Consortium CTF"
               bullets={[
-                "I focused on web exploitation and LLM prompt injection challenges.",
+                "Focused on web exploitation and LLM prompt injection challenges.",
                 "Our team placed 2nd nationally among university teams from across Canada in NCC’s Capture the Flag competition.",
-                "I exploited a leaking API endpoint to extract password hashes, then cracked them to escalate access and retrieve the flag.",
-                "I bypassed LLM-based identity verification by crafting a prompt injection that convinced the model to accept a fabricated user ID, escalating to unauthorized higher-privilege access.",
+                "Exploited a leaking API endpoint to extract password hashes, then cracked them to escalate access and retrieve the flag.",
+                "Bypassed LLM-based identity verification by crafting a prompt injection that convinced the model to accept a fabricated user ID, escalating to unauthorized higher-privilege access.",
               ]}
               onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
@@ -223,14 +223,14 @@ export default function AchievementsPage() {
               date="November 2025"
               meta="CTF"
               status="5th Place"
-              description="I competed in CyberSci Regionals in Calgary with CHADS B-Team and we finished strongly against top teams from across the region."
+              description="Competed in CyberSci Regionals in Calgary with CHADS B-Team and finished strongly against top teams from across the region."
               image="/images/achievements/CyberSci.jpg"
               imageAlt="CyberSci Regionals 2025"
               bullets={[
                 "CyberSci Regionals 2025 was held in Calgary.",
                 "We placed 5th with CHADS B-Team in CyberSci Regionals 2025.",
                 "We finished narrowly behind 4th and 3rd place, pushing until the final minute.",
-                "It was my first CyberSci competition and a major step forward in cybersecurity depth and confidence.",
+                "First CyberSci competition and a major step forward in cybersecurity depth and confidence.",
               ]}
               onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
@@ -240,14 +240,14 @@ export default function AchievementsPage() {
               date="May 2025"
               meta="CTF"
               status="3rd Place"
-              description="I competed online with CHADS in the national bracket from the University of Alberta."
+              description="Competed online with CHADS in the national bracket from the University of Alberta."
               image="/images/achievements/illuminatictf.png"
               imageAlt="IlluminatiCTF"
               bullets={[
                 "The national bracket was hosted by the University of Saskatchewan.",
                 "We placed 3rd nationally and 6th overall.",
-                "I worked through a mix of easy, intermediate, and hard challenges.",
-                "It was a strong team event that reinforced my long-term interest in cybersecurity competition.",
+                "Worked through a mix of easy, intermediate, and hard challenges.",
+                "Strong team event that reinforced my interest in cybersecurity competition.",
               ]}
               onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
