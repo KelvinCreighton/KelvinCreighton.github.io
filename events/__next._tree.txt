@@ -4,4 +4,4 @@
 :HL["/images/events/Cybersec-Awareness-Month.jpg","image"]
 :HL["/images/events/Secure-Coding-Tournament.jpg","image"]
 :HL["/images/events/HTCOTB2025.jpg","image"]
-0:{"buildId":"2IEj7Bs2ggz1P79FgYjf6","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"events","paramType":null,"paramKey":"events","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"YmC3_dHBFbLvqCIzVzY1e","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"events","paramType":null,"paramKey":"events","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
