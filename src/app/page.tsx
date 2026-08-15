@@ -156,7 +156,7 @@ export default function Home() {
             <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
               <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
                 <Image
-                  src="/images/cisco-rapid-incident-response-v7.png"
+                  src="/images/cisco-rapid-incident-response-v7.webp"
                   alt="Cisco Rapid Incident Response V7 certificate"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"

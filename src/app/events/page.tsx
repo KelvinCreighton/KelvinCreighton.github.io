@@ -5,7 +5,7 @@ const events = [
     title: "OWASP Edmonton & Accurate Networks",
     subtitle: "Event operations and A/V support",
     date: "February 2026",
-    image: "/images/events/Accurate-Networks.jpg",
+    image: "/images/events/Accurate-Networks.webp",
     imageAlt: "OWASP Edmonton and Accurate Networks event",
     description:
       "Managed logistics and A/V support for a community security event with OWASP Edmonton and Accurate Networks.",
@@ -18,7 +18,7 @@ const events = [
     title: "CHADS Hack the Computer, Open the Box",
     subtitle: "Co-organizer, University of Alberta Cybersecurity, Hacking, And Digital Security club",
     date: "February 2026",
-    image: "/images/events/HTCOTB2026.jpg",
+    image: "/images/events/HTCOTB2026.webp",
     imageAlt: "CHADS Hack the Computer, Open the Box 2026",
     description:
       "Helped organize CHADS' annual beginner-friendly CTF and shared ownership of the event delivery.",
@@ -32,7 +32,7 @@ const events = [
     title: "CHADS Cybersecurity Awareness Month",
     subtitle: "Booth and outreach",
     date: "October 2025",
-    image: "/images/events/Cybersec-Awareness-Month.jpg",
+    image: "/images/events/Cybersec-Awareness-Month.webp",
     imageAlt: "CHADS Cybersecurity Awareness Month booth",
     description:
       "Supported the University of Alberta Cybersecurity Awareness Month tradeshow and represented CHADS at the booth in University Commons.",
@@ -46,7 +46,7 @@ const events = [
     title: "CHADS Secure Coding Tournament",
     subtitle: "Co-host, University of Alberta Cybersecurity, Hacking, And Digital Security club",
     date: "October 2025",
-    image: "/images/events/Secure-Coding-Tournament.jpg",
+    image: "/images/events/Secure-Coding-Tournament.webp",
     imageAlt: "CHADS Secure Coding Tournament",
     description:
       "Co-organized the Secure Coding Tournament with CHADS, OWASP Edmonton, and Security Journey.",
@@ -60,7 +60,7 @@ const events = [
     title: "CHADS Hack the Computer, Open the Box",
     subtitle: "Co-host, University of Alberta Cybersecurity, Hacking, And Digital Security club",
     date: "February 2025",
-    image: "/images/events/HTCOTB2025.jpg",
+    image: "/images/events/HTCOTB2025.webp",
     imageAlt: "CHADS Hack the Computer, Open the Box 2025",
     description:
       "Co-hosted CHADS' annual beginner-friendly CTF and helped keep the event running smoothly during the day.",

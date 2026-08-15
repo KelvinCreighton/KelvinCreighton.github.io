@@ -33,7 +33,7 @@ export default function Dremel3D45RebuildProject() {
               In Progress
             </div>
             <Image
-              src="/images/projects/dremel-3d45-rebuild-title.jpg"
+              src="/images/projects/dremel-3d45-rebuild-title.webp"
               alt="Dremel DigiLab 3D45 controller rebuild"
               fill
               className="object-cover"
@@ -136,7 +136,7 @@ export default function Dremel3D45RebuildProject() {
             <figure className="m-0">
               <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-video">
                 <Image
-                  src="/images/projects/dremel-3d45-rebuild-initial-failure.png"
+                  src="/images/projects/dremel-3d45-rebuild-initial-failure.webp"
                   alt="Initial failure testing on the Dremel DigiLab 3D45"
                   fill
                   className="object-contain"

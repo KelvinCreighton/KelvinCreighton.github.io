@@ -17,7 +17,7 @@ export default function EngineeringProjects() {
       tags: [],
       description:
         "Rebuilding a Dremel DigiLab 3D45 after a fried motherboard using an Arduino Mega 2560, RAMPS 1.4, and salvage parts from another printer.",
-      image: "/images/projects/dremel-3d45-rebuild-title.jpg",
+      image: "/images/projects/dremel-3d45-rebuild-title.webp",
       link: "/projects/engineering/dremel-3d45-rebuild",
       category: "3D Printers",
       isInProgress: true,

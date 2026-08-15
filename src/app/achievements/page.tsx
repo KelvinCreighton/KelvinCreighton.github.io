@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import BlurImage from "@/components/BlurImage";
 
 type AchievementCardProps = {
   title: string;
@@ -43,11 +44,11 @@ function AchievementCard({
           className="relative aspect-video w-full bg-gray-85 p-3 text-left dark:bg-gray-800"
           aria-label={`Open larger view of ${altText}`}
         >
-          <img
-            src={image}
-            alt={altText}
-            className="absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] object-contain transition-transform duration-300 group-hover:scale-[1.01]"
-          />
+            <BlurImage
+              src={image}
+              alt={altText}
+              className="absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] object-contain transition-transform duration-300 group-hover:scale-[1.01]"
+            />
           <span className="absolute bottom-4 right-4 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
             Click to enlarge
           </span>
@@ -167,7 +168,7 @@ export default function AchievementsPage() {
               meta="Certificate"
               status="Active"
               description="Cisco XDR incident response workshop focused on investigation, containment, and eradication workflows."
-              image="/images/cisco-rapid-incident-response-v7.png"
+              image="/images/cisco-rapid-incident-response-v7.webp"
               imageAlt="Cisco Rapid Incident Response V7 certificate"
               bullets={[
                 "Certificate code: 9998169300KC",
@@ -191,7 +192,7 @@ export default function AchievementsPage() {
               meta="CTF"
               status="2nd Place"
               description="Competed in the NCC national final CTF as part of CHADS representing the University of Alberta."
-              image="/images/achievements/NCC.jpg"
+              image="/images/achievements/NCC.webp"
               imageAlt="National Cybersecurity Consortium CTF"
               bullets={[
                 "Focused on web exploitation and LLM prompt injection challenges.",
@@ -208,7 +209,7 @@ export default function AchievementsPage() {
               meta="CTF"
               status="5th Place"
               description="Competed in CyberSci Regionals in Calgary with CHADS B-Team and finished strongly against top teams from across the region."
-              image="/images/achievements/CyberSci.jpg"
+              image="/images/achievements/CyberSci.webp"
               imageAlt="CyberSci Regionals 2025"
               bullets={[
                 "CyberSci Regionals 2025 was held in Calgary.",
@@ -225,7 +226,7 @@ export default function AchievementsPage() {
               meta="CTF"
               status="4th Place"
               description="Competed at SAIT and helped the team secure several solves across a mix of challenge types."
-              image="/images/achievements/Alice.jpg"
+              image="/images/achievements/Alice.webp"
               imageAlt="Alice in PWNderland CTF"
               bullets={[
                 "Competed in SAIT School for Advanced Digital Technology’s CTF event.",
@@ -241,7 +242,7 @@ export default function AchievementsPage() {
               meta="CTF"
               status="3rd Place"
               description="Competed online with CHADS in the national bracket from the University of Alberta."
-              image="/images/achievements/illuminatictf.png"
+              image="/images/achievements/illuminatictf.webp"
               imageAlt="IlluminatiCTF"
               bullets={[
                 "The national bracket was hosted by the University of Saskatchewan.",

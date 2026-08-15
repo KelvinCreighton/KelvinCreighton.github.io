@@ -1,13 +1,17 @@
 import type { NextConfig } from "next";
 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: true,
+});
+
 const nextConfig: NextConfig = {
   output: "export",
   basePath: "",
   trailingSlash: true,
   images: {
-    unoptimized: true
-  }
+    unoptimized: true,
+  },
 };
 
-export default nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);
 
