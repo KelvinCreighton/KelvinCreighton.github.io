@@ -93,9 +93,9 @@ export default function RootLayout({
           <div className="relative min-h-[100dvh] w-full transition-colors duration-500">
             <Background />
             <div className="flex flex-col min-h-[100dvh]">
-              <nav className="fixed top-0 left-0 w-full p-3 md:p-3 shrink-0 z-50 bg-[#f5f3ff]/60 dark:bg-[#080413]/48 backdrop-blur-sm border-b border-[#8b5cf6]/12 dark:border-[#4c1d95]/20">
+              <nav className="fixed top-0 left-0 w-full p-[13.8px] md:p-[13.8px] shrink-0 z-50 bg-[#f5f3ff]/60 dark:bg-[#080413]/48 backdrop-blur-sm border-b border-[#8b5cf6]/12 dark:border-[#4c1d95]/20">
                 <div className="max-w-5xl mx-auto flex items-center justify-between gap-4 relative z-10 px-4 md:px-8">
-                  <Link href="/" className="text-sm md:text-base font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+                  <Link href="/" className="text-[16.1px] md:text-[18.4px] font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
                     Kelvin Creighton
                   </Link>
                   <div className="flex items-center gap-4 md:gap-6">
