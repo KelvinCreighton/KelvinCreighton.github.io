@@ -1,7 +1,7 @@
-:HL["/_next/static/css/fb55e12c25caecde.css","style"]
-:HL["/images/events/Accurate-Networks.jpg","image"]
-:HL["/images/events/HTCOTB2026.jpg","image"]
-:HL["/images/events/Cybersec-Awareness-Month.jpg","image"]
-:HL["/images/events/Secure-Coding-Tournament.jpg","image"]
-:HL["/images/events/HTCOTB2025.jpg","image"]
-0:{"buildId":"HhtoALD3ApfYciEOpZmpq","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"events","paramType":null,"paramKey":"events","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/_next/static/chunks/a8a2d334c89ecf9b.css","style"]
+:HL["/images/events/Accurate-Networks.webp","image"]
+:HL["/images/events/HTCOTB2026.webp","image"]
+:HL["/images/events/Cybersec-Awareness-Month.webp","image"]
+:HL["/images/events/Secure-Coding-Tournament.webp","image"]
+:HL["/images/events/HTCOTB2025.webp","image"]
+0:{"buildId":"qFymCgwOSrxP2odWOAjqj","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"events","paramType":null,"paramKey":"events","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
