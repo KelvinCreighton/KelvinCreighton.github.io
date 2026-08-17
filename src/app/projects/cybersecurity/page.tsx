@@ -1,10 +1,5 @@
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
-
-const CybersecurityProjectsClient = dynamic(
-  () => import("@/components/CybersecurityProjectsClient"),
-  { ssr: false }
-);
+import CybersecurityProjectsClient from "@/components/CybersecurityProjectsClient";
 
 export default function CybersecurityProjectsPage() {
   return (
