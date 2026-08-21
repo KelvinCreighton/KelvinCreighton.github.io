@@ -150,8 +150,54 @@ export default function Dremel3D45RebuildProject() {
 
           <h2 className="mb-4 text-xl font-bold">Step 1: Diagnosing the Problem</h2>
           <p>
-            [Add the diagnostic details, images, and notes for the first step here.]
+            The first stage of the rebuild was diagnosis. I started by
+            isolating the power system and checking the printer&apos;s incoming
+            power path before moving any deeper into the electronics.
           </p>
+
+          <h3 className="mb-4 mt-8 text-lg font-bold">Step 1.1: PSU Inspection and Output Testing</h3>
+          <p>
+            I removed the PSU and opened it up to inspect it for any obvious
+            shorting, damage, or burnt components, but I did not push much
+            further at that point because I knew enough to respect the risks of
+            working inside a power supply without more experience. After
+            putting it back in and confirming it powered up normally, I moved
+            on to testing the output wiring. The goal there was to verify the
+            voltage coming off the PSU leads while the wiring was still
+            connected to the motherboard, so I could compare the supply output
+            against what was actually reaching the board and look for any
+            discrepancies in the path.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+            <figure className="m-0">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild/step-1-1-1.jpg"
+                  alt="PSU opened for inspection during diagnosis"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-sm text-gray-500">
+                Step 1.1.1: PSU removed and opened for inspection
+              </figcaption>
+            </figure>
+
+            <figure className="m-0">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild/step-1-1-2.png"
+                  alt="PSU output wiring tested while still connected to the motherboard"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-sm text-gray-500">
+                Step 1.1.2: Output wiring checked while still connected to the motherboard
+              </figcaption>
+            </figure>
+          </div>
 
           <h2 className="mb-4 text-xl font-bold">Rebuild Approach</h2>
           <p>
