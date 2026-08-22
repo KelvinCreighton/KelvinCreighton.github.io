@@ -346,6 +346,58 @@ export default function Dremel3D45RebuildProject() {
             </video>
           </div>
 
+          <h2 className="mb-4 text-xl font-bold">Step 3: Setting the Driver Current and Wiring the Motors</h2>
+          <p>
+            With the firmware and basic motion test working, I moved on to
+            matching the driver current to the motors the Dremel actually
+            uses. I looked up the motor specifications, used that information
+            to calculate an approximate VREF target for the A4988 drivers, and
+            then adjusted the trimpots until the drivers were set close to the
+            current the printer needed. That step matters because the drivers
+            need enough current to move the motors reliably, but not so much
+            that they run hot or stress the hardware unnecessarily.
+          </p>
+          <p>
+            After that, I wired the X, Y, and Z motors to the correct RAMPS
+            output pins. The point of the wiring was to make sure each axis was
+            assigned to the driver channel that Marlin expected, so the motors
+            would respond to the proper movement commands instead of being
+            mixed up or reversed. Once that was in place, the replacement
+            control system was no longer just powered on and tested in pieces.
+            It was starting to behave like the actual motion controller for the
+            rebuilt printer.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+            <figure className="m-0">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild/step-3-1.webp"
+                  alt="Adjusting the A4988 driver VREF"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-sm text-gray-500">
+                Adjusting the A4988 driver VREF
+              </figcaption>
+            </figure>
+
+            <figure className="m-0">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild/step-3-2.webp"
+                  alt="X, Y, and Z motors attached to the RAMPS board"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-sm text-gray-500">
+                Wiring the X, Y, and Z motors to the correct RAMPS outputs
+              </figcaption>
+            </figure>
+          </div>
+
           <h2 className="mb-4 text-xl font-bold">Rebuild Approach</h2>
           <p>
             I treated the donor printer as a parts source and rebuilt the
