@@ -173,28 +173,165 @@ export default function Dremel3D45RebuildProject() {
             <figure className="m-0">
               <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
                 <Image
-                  src="/images/projects/dremel-3d45-rebuild/step-1-1-1.jpg"
+                  src="/images/projects/dremel-3d45-rebuild/step-1-1-1.webp"
                   alt="PSU opened for inspection during diagnosis"
                   fill
                   className="object-cover"
                 />
               </div>
               <figcaption className="mt-2 text-center text-sm text-gray-500">
-                Step 1.1.1: PSU removed and opened for inspection
+                PSU removed and opened for inspection
               </figcaption>
             </figure>
 
             <figure className="m-0">
               <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
                 <Image
-                  src="/images/projects/dremel-3d45-rebuild/step-1-1-2.png"
+                  src="/images/projects/dremel-3d45-rebuild/step-1-1-2.webp"
                   alt="PSU output wiring tested while still connected to the motherboard"
                   fill
                   className="object-cover"
                 />
               </div>
               <figcaption className="mt-2 text-center text-sm text-gray-500">
-                Step 1.1.2: Output wiring checked while still connected to the motherboard
+                Output wiring checked while still connected to the motherboard
+              </figcaption>
+            </figure>
+          </div>
+
+          <h3 className="mb-4 mt-8 text-lg font-bold">Step 1.2: Motherboard Driver Testing</h3>
+          <p>
+            From there I moved deeper into the control board itself. The first
+            photo shows the motherboard still installed in the printer, with
+            the printer propped on its side so the bottom-mounted board is
+            facing forward. I circled the four controller or IC units that I
+            identified as the printer&apos;s embedded drivers, including the
+            head axis as well as the motion axes.
+          </p>
+          <p>
+            In the second photo, the motherboard is removed and the output pins
+            for the X, Y, and Z stepper motors are circled. I only tested the
+            axis stepper outputs here, and they stayed at a consistent 12V
+            regardless of what I commanded the printer to do through job mode.
+            I also noticed that the pins were sitting at 12V even when they
+            were idle, which is not normal and made it look like the outputs
+            were probably shorted or otherwise damaged.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+            <figure className="m-0">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild/step-1-2-1.webp"
+                  alt="Motherboard still installed in the printer with controller ICs circled"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-sm text-gray-500">
+                Motherboard still installed in the printer
+              </figcaption>
+            </figure>
+
+            <figure className="m-0">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild/step-1-2-2.webp"
+                  alt="Motherboard removed with X, Y, and Z stepper output pins circled"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-sm text-gray-500">
+                Motor output pins checked after removing the motherboard
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">Step 2: Building the Replacement Control System</h2>
+          <p>
+            Once I had narrowed the failure down to the Dremel&apos;s control
+            electronics, the next step was to replace the damaged motherboard
+            with the Arduino Mega 2560 and RAMPS 1.4 setup I had salvaged from
+            the donor hobby printer. Before I trusted that hardware inside the
+            Dremel, I first treated it like its own repair project and verified
+            that the donor printer&apos;s board, power, and motors were actually
+            healthy enough to reuse.
+          </p>
+
+          <h3 className="mb-4 mt-8 text-lg font-bold">Step 2.1: Donor Board and Motor Verification</h3>
+          <p>
+            The first photo shows the Arduino Mega and RAMPS board connected to
+            the PSU from the donor printer rather than the Dremel&apos;s own
+            supply. That let me confirm the replacement electronics could power
+            up normally before I moved them into the rebuild. Since the donor
+            machine had come out of an electronics bin with disconnected wires
+            and no guarantee of working condition, I wanted to prove that the
+            board, PSU, and basic motion hardware were all serviceable before
+            I based the rest of the rebuild on them.
+          </p>
+          <p>
+            The second photo shows one of the donor stepper motors. The third
+            image is the continuity check I used to identify which of the four
+            motor wires belonged to each coil pair. That part matters because a
+            stepper motor only behaves correctly when the paired windings are
+            connected to the proper driver outputs. By tracing the two matching
+            pairs first, I could wire the motor to RAMPS in a way that would let
+            the driver energize the coils in the correct sequence instead of
+            guessing and risking a reversed or non-functional connection.
+          </p>
+          <p>
+            While testing the donor board, I also checked the motor output pins
+            directly. They stayed at a steady 12V even when I changed the
+            printer&apos;s job mode commands and asked the motors to move. More
+            importantly, that same 12V reading was present even when the axis
+            outputs were idle, which is not what I would expect from a healthy
+            driver stage. That behavior strongly suggested the outputs were
+            shorted or otherwise damaged, which reinforced the decision to stop
+            relying on the original motherboard and move fully to the
+            replacement electronics.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+            <figure className="m-0">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild/step-2-1-1.webp"
+                  alt="Arduino Mega and RAMPS board powered by the donor printer PSU"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-sm text-gray-500">
+                Donor Arduino Mega and RAMPS board powered by the donor PSU
+              </figcaption>
+            </figure>
+
+            <figure className="m-0">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild/step-2-1-2.webp"
+                  alt="Stepper motor from the donor printer"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-sm text-gray-500">
+                Donor printer stepper motor
+              </figcaption>
+            </figure>
+
+            <figure className="m-0">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-800 aspect-[4/5]">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild/step-2-1-3.webp"
+                  alt="Continuity test used to identify the stepper motor coil pairs"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-sm text-gray-500">
+                Tracing the coil pairs on the stepper motor connector
               </figcaption>
             </figure>
           </div>

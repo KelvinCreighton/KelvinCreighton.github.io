@@ -25,6 +25,7 @@ async function processFile(filePath) {
     // Resize if larger than MAX_WIDTH
     const width = metadata.width > MAX_WIDTH ? MAX_WIDTH : undefined;
     await img
+      .rotate()
       .resize({ width })
       .webp({ quality: QUALITY })
       .toFile(webpPath);
