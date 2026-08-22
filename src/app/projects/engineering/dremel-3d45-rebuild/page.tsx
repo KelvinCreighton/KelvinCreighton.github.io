@@ -329,10 +329,11 @@ export default function Dremel3D45RebuildProject() {
 
           <h3 className="mb-4 mt-8 text-lg font-bold">Step 2.2: Flashing Marlin and Testing Motion</h3>
           <p>
-            Once the donor board and motor wiring checked out, I flashed Marlin
-            to the Arduino Mega and used a few simple G-code verify all the
-            systems would work before moving to rebuilding the Dremel printer
-            with the donor electronics.
+            Once the donor board and motor wiring checked out, I flashed the Marlin
+            firmware to the Arduino Mega and wrote a simple python script to connect my
+            left and right arrow keys to a few simple G-code commands to verify
+            all the systems would work before moving to rebuilding the Dremel
+            printer with the donor electronics.
           </p>
 
           <div className="w-full rounded-xl overflow-hidden mb-10 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-sm">
@@ -376,6 +377,7 @@ export default function Dremel3D45RebuildProject() {
                   alt="Adjusting the A4988 driver VREF"
                   fill
                   className="object-cover"
+                  style={{ objectPosition: "70% center" }}
                 />
               </div>
               <figcaption className="mt-2 text-center text-sm text-gray-500">
