@@ -212,7 +212,7 @@ export default function Dremel3D45RebuildProject() {
           <p>
             Once I understood the board layout, I moved on to output testing. I
             checked the stepper motor outputs one axis at a time and compared
-            the readings against what the printer was being told to do in job
+            the readings against what the printer was being told to do in jog
             mode. The goal was to see whether the board was actually changing
             state when the motors were commanded to move, or whether the
             output stage was stuck in a bad state. The readings stayed at
@@ -398,6 +398,33 @@ export default function Dremel3D45RebuildProject() {
                 Wiring the X, Y, and Z motors to the correct RAMPS outputs
               </figcaption>
             </figure>
+          </div>
+
+          <h2 className="mb-4 text-xl font-bold">Step 4: Writing Jog Mode Control</h2>
+          <p>
+            Once the motion system was stable, I wrote a Python script to make
+            jog mode easier to use during testing. The goal was to control the
+            X, Y, and Z axes directly from the keyboard so I could move the
+            printer in small, deliberate increments without constantly typing
+            manual commands.
+          </p>
+          <p>
+            I mapped the arrow keys to X and Y movement and used Page Up and
+            Page Down for Z movement. That gave me a simple control layer for
+            the printer while I was checking alignment, verifying motion
+            response, and making sure the rebuilt electronics behaved the way
+            they should under manual control.
+          </p>
+
+          <div className="w-full rounded-xl overflow-hidden mb-10 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-sm">
+            <video
+              controls
+              playsInline
+              className="w-full h-auto block"
+            >
+              <source src="/images/projects/dremel-3d45-rebuild/step-4-1-1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           <h2 className="mb-4 text-xl font-bold">Rebuild Approach</h2>
