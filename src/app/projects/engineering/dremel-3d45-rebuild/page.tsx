@@ -252,7 +252,7 @@ export default function Dremel3D45RebuildProject() {
             </figure>
           </div>
 
-          <h2 className="mb-4 text-xl font-bold">Step 2: Building the Replacement Control System</h2>
+          <h2 className="mb-4 text-xl font-bold">Step 2: Verifying the Donor Hardware</h2>
           <p>
             Once I had narrowed the failure down to the Dremel&apos;s control
             electronics, the next step was to replace the damaged motherboard
