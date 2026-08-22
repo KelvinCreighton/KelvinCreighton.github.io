@@ -327,6 +327,25 @@ export default function Dremel3D45RebuildProject() {
             </figure>
           </div>
 
+          <h3 className="mb-4 mt-8 text-lg font-bold">Step 2.2: Flashing Marlin and Testing Motion</h3>
+          <p>
+            Once the donor board and motor wiring checked out, I flashed Marlin
+            to the Arduino Mega and used a few simple G-code verify all the
+            systems would work before moving to rebuilding the Dremel printer
+            with the donor electronics.
+          </p>
+
+          <div className="w-full rounded-xl overflow-hidden mb-10 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-sm">
+            <video
+              controls
+              playsInline
+              className="w-full h-auto block"
+            >
+              <source src="/images/projects/dremel-3d45-rebuild/step-2-2-1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
           <h2 className="mb-4 text-xl font-bold">Rebuild Approach</h2>
           <p>
             I treated the donor printer as a parts source and rebuilt the
