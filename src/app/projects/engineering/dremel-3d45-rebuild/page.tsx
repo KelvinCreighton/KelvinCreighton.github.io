@@ -201,21 +201,25 @@ export default function Dremel3D45RebuildProject() {
 
           <h3 className="mb-4 mt-8 text-lg font-bold">Step 1.2: Motherboard Driver Testing</h3>
           <p>
-            From there I moved deeper into the control board itself. The first
-            photo shows the motherboard still installed in the printer, with
-            the printer propped on its side so the bottom-mounted board is
-            facing forward. I circled the four controller or IC units that I
-            identified as the printer&apos;s embedded drivers, including the
-            head axis as well as the motion axes.
+            From there I moved deeper into the control board itself. I started
+            by tracing the major driver stages on the motherboard and
+            identifying which controller chips were responsible for the
+            printer&apos;s motion and toolhead functions. At this point I was not
+            trying to repair the board yet. I was trying to understand how the
+            board was laid out so I could decide which sections were worth
+            testing and which signals I needed to measure next.
           </p>
           <p>
-            In the second photo, the motherboard is removed and the output pins
-            for the X, Y, and Z stepper motors are circled. I only tested the
-            axis stepper outputs here, and they stayed at a consistent 12V
-            regardless of what I commanded the printer to do through job mode.
-            I also noticed that the pins were sitting at 12V even when they
-            were idle, which is not normal and made it look like the outputs
-            were probably shorted or otherwise damaged.
+            Once I understood the board layout, I moved on to output testing. I
+            checked the stepper motor outputs one axis at a time and compared
+            the readings against what the printer was being told to do in job
+            mode. The goal was to see whether the board was actually changing
+            state when the motors were commanded to move, or whether the
+            output stage was stuck in a bad state. The readings stayed at
+            roughly 12V across the outputs no matter what command I sent, and
+            they also sat at 12V while idle. That was a strong sign that the
+            driver stage was not behaving normally and was likely shorted or
+            otherwise damaged.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
@@ -261,35 +265,22 @@ export default function Dremel3D45RebuildProject() {
 
           <h3 className="mb-4 mt-8 text-lg font-bold">Step 2.1: Donor Board and Motor Verification</h3>
           <p>
-            The first photo shows the Arduino Mega and RAMPS board connected to
-            the PSU from the donor printer rather than the Dremel&apos;s own
-            supply. That let me confirm the replacement electronics could power
-            up normally before I moved them into the rebuild. Since the donor
-            machine had come out of an electronics bin with disconnected wires
-            and no guarantee of working condition, I wanted to prove that the
-            board, PSU, and basic motion hardware were all serviceable before
-            I based the rest of the rebuild on them.
+            Before I committed the donor hardware to the Dremel rebuild, I
+            verified it as a separate system. I powered the Arduino Mega and
+            RAMPS board with the donor printer&apos;s PSU first so I could make
+            sure the replacement electronics would come up cleanly on their own.
+            That was important because the donor printer came from an
+            electronics bin and had already been partially disassembled, so I
+            could not assume any of its wiring, power delivery, or motion
+            hardware was still reliable.
           </p>
           <p>
-            The second photo shows one of the donor stepper motors. The third
-            image is the continuity check I used to identify which of the four
-            motor wires belonged to each coil pair. That part matters because a
-            stepper motor only behaves correctly when the paired windings are
-            connected to the proper driver outputs. By tracing the two matching
-            pairs first, I could wire the motor to RAMPS in a way that would let
-            the driver energize the coils in the correct sequence instead of
-            guessing and risking a reversed or non-functional connection.
-          </p>
-          <p>
-            While testing the donor board, I also checked the motor output pins
-            directly. They stayed at a steady 12V even when I changed the
-            printer&apos;s job mode commands and asked the motors to move. More
-            importantly, that same 12V reading was present even when the axis
-            outputs were idle, which is not what I would expect from a healthy
-            driver stage. That behavior strongly suggested the outputs were
-            shorted or otherwise damaged, which reinforced the decision to stop
-            relying on the original motherboard and move fully to the
-            replacement electronics.
+            I then tested a stepper motor directly so I could map its four
+            wires into the two coil pairs the driver needs. That step matters
+            because a stepper motor is not wired like a normal DC motor. It
+            depends on the controller energizing the correct coils in the
+            correct order, so I had to identify the paired wires before I
+            could safely connect it to RAMPS.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
