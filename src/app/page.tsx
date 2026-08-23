@@ -496,6 +496,21 @@ const timelineRailItems: TimelineItem[] = [
   },
 ];
 
+const timelineStartYear = 2017;
+const timelineEndYear = 2026;
+const timelineMinYearGap = 120;
+const timelineDensityBoost = 40;
+
+function getTimelinePercent(dateKey: string) {
+  const date = new Date(dateKey);
+  const year = date.getUTCFullYear();
+  const yearStart = new Date(`${year}-01-01T00:00:00Z`);
+  const yearEnd = new Date(`${year + 1}-01-01T00:00:00Z`);
+  const yearSpan = Math.max(1, yearEnd.getTime() - yearStart.getTime());
+  const withinYear = (date.getTime() - yearStart.getTime()) / yearSpan;
+  return { year, withinYear: Math.min(1, Math.max(0, withinYear)) };
+}
+
 function ContactIcon({
   children,
   className = "",
@@ -512,13 +527,15 @@ function ContactIcon({
 
 function TimelineCard({
   item,
+  position = "top",
 }: {
   item: TimelineItem;
+  position?: "top" | "bottom";
 }) {
   return (
     <Link
       href={item.href}
-      className="group block w-full rounded-2xl border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
+      className={`group block w-full rounded-2xl border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900 ${position === "top" ? "-translate-y-1" : "translate-y-1"}`}
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
         <Image
@@ -529,17 +546,46 @@ function TimelineCard({
           className="object-cover"
         />
       </div>
-      <h3 className="mt-3 text-sm font-semibold leading-snug text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-300">
-        {item.title}
-      </h3>
+          <h3 className="mt-3 text-sm font-semibold leading-snug text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-300">
+            {item.title}
+          </h3>
     </Link>
   );
+}
+
+function buildTimelineYearPositions() {
+  const counts = new Map<number, number>();
+
+  for (const item of timelineRailItems) {
+    const year = new Date(item.dateKey).getUTCFullYear();
+    counts.set(year, (counts.get(year) ?? 0) + 1);
+  }
+
+  const years = Array.from(
+    { length: timelineEndYear - timelineStartYear + 1 },
+    (_, index) => timelineEndYear - index,
+  );
+
+  const widths = years.map((year) => timelineMinYearGap + (counts.get(year) ?? 0) * timelineDensityBoost);
+  const totalWidth = widths.reduce((sum, width) => sum + width, 0);
+
+  let cursor = 0;
+  const positions = new Map<number, number>();
+
+  for (let index = 0; index < years.length; index += 1) {
+    const year = years[index];
+    positions.set(year, cursor);
+    cursor += widths[index];
+  }
+
+  return { years, widths, positions, totalWidth };
 }
 
 export default function Home() {
   const timelineRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const timelineYearLayout = buildTimelineYearPositions();
 
   const scrollTimeline = (direction: "left" | "right") => {
     const node = timelineRef.current;
@@ -809,28 +855,51 @@ export default function Home() {
           <div className="pointer-events-none absolute left-12 right-12 top-1/2 hidden h-2 -translate-y-1/2 rounded-full bg-gray-300 dark:bg-gray-700 md:block" />
           <div
             ref={timelineRef}
-            className="relative flex gap-6 overflow-x-auto scroll-smooth px-12 pb-10 pt-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="relative overflow-x-auto scroll-smooth px-12 pb-12 pt-14 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            {timelineRailItems.map((item, index) => {
-              const isAbove = index % 2 === 0;
-              const year = new Date(item.dateKey).getFullYear();
-              return (
-                <div
-                  key={`${item.title}-${item.dateKey}`}
-                  className="relative flex h-[30rem] w-[15rem] flex-none items-center justify-center"
-                >
-                  <div className="absolute left-1/2 top-1/2 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950 md:block" />
-                  <div className={`absolute left-0 right-0 flex justify-center md:block ${isAbove ? "top-0" : "bottom-0"}`}>
-                    <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:bg-gray-950 dark:text-gray-400">
+            <div className="relative mx-auto h-[34rem]" style={{ minWidth: `${timelineYearLayout.totalWidth}px` }}>
+              {timelineYearLayout.years.map((year) => {
+                const left = timelineYearLayout.positions.get(year) ?? 0;
+                const isEdgeYear = year === timelineStartYear || year === timelineEndYear;
+                const yearCount = timelineRailItems.filter((item) => new Date(item.dateKey).getUTCFullYear() === year).length;
+                return (
+                  <div
+                    key={year}
+                    className="pointer-events-none absolute top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block"
+                    style={{ left }}
+                  >
+                    <div className={`mb-4 text-center font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400 ${isEdgeYear ? "text-sm" : "text-xs"}`}>
                       {year}
-                    </span>
+                      {yearCount > 1 ? null : null}
+                    </div>
+                    <div className="mx-auto h-5 w-px bg-gray-400/80 dark:bg-gray-500/80" />
                   </div>
-                  <div className={`absolute left-1/2 w-full -translate-x-1/2 ${isAbove ? "top-0 -translate-y-4" : "bottom-0 translate-y-4"}`}>
-                    <TimelineCard item={item} />
+                );
+              })}
+
+              {timelineRailItems.map((item, index) => {
+                const above = index % 2 === 0;
+                const { year, withinYear } = getTimelinePercent(item.dateKey);
+                const yearLeft = timelineYearLayout.positions.get(year) ?? 0;
+                const nextYearWidth = timelineYearLayout.positions.get(year - 1) ?? yearLeft;
+                const segmentWidth = Math.max(timelineMinYearGap, nextYearWidth - yearLeft);
+                const left = yearLeft + (segmentWidth * withinYear);
+                return (
+                  <div
+                    key={`${item.title}-${item.dateKey}`}
+                    className="absolute top-1/2"
+                    style={{ left: `${left}px` }}
+                  >
+                    <div className="absolute left-1/2 top-0 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950 md:block" />
+                    <div
+                      className={`absolute left-1/2 w-[12rem] -translate-x-1/2 ${above ? "bottom-[3rem]" : "top-[3rem]"}`}
+                    >
+                      <TimelineCard item={item} position={above ? "top" : "bottom"} />
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
