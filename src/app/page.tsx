@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "@/components/BlurImage";
 import type { ReactNode } from "react";
@@ -538,6 +538,8 @@ function TimelineCard({
 
 export default function Home() {
   const timelineRef = useRef<HTMLDivElement | null>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   const scrollTimeline = (direction: "left" | "right") => {
     const node = timelineRef.current;
@@ -545,6 +547,26 @@ export default function Home() {
     const delta = Math.round(node.clientWidth * 0.8);
     node.scrollBy({ left: direction === "left" ? -delta : delta, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const node = timelineRef.current;
+    if (!node) return;
+
+    const updateScrollState = () => {
+      const epsilon = 2;
+      setCanScrollLeft(node.scrollLeft > epsilon);
+      setCanScrollRight(node.scrollLeft + node.clientWidth < node.scrollWidth - epsilon);
+    };
+
+    updateScrollState();
+    node.addEventListener("scroll", updateScrollState, { passive: true });
+    window.addEventListener("resize", updateScrollState);
+
+    return () => {
+      node.removeEventListener("scroll", updateScrollState);
+      window.removeEventListener("resize", updateScrollState);
+    };
+  }, []);
 
   return (
     <main className="flex flex-col items-center max-w-5xl mx-auto w-full">
@@ -768,7 +790,8 @@ export default function Home() {
           <button
             type="button"
             onClick={() => scrollTimeline("left")}
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-gray-200 bg-white/95 p-3 text-gray-700 shadow-sm transition hover:border-blue-300 hover:text-blue-600 dark:border-gray-800 dark:bg-gray-900/95 dark:text-gray-300"
+            disabled={!canScrollLeft}
+            className={`absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border bg-white/95 p-3 shadow-sm transition dark:bg-gray-900/95 ${canScrollLeft ? "border-gray-200 text-gray-700 hover:border-blue-300 hover:text-blue-600 dark:border-gray-800 dark:text-gray-300" : "cursor-not-allowed border-gray-200 text-gray-300 opacity-35 dark:border-gray-800 dark:text-gray-600"}`}
             aria-label="Scroll timeline left"
           >
             <span className="text-xl leading-none">←</span>
@@ -776,17 +799,18 @@ export default function Home() {
           <button
             type="button"
             onClick={() => scrollTimeline("right")}
-            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-gray-200 bg-white/95 p-3 text-gray-700 shadow-sm transition hover:border-blue-300 hover:text-blue-600 dark:border-gray-800 dark:bg-gray-900/95 dark:text-gray-300"
+            disabled={!canScrollRight}
+            className={`absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border bg-white/95 p-3 shadow-sm transition dark:bg-gray-900/95 ${canScrollRight ? "border-gray-200 text-gray-700 hover:border-blue-300 hover:text-blue-600 dark:border-gray-800 dark:text-gray-300" : "cursor-not-allowed border-gray-200 text-gray-300 opacity-35 dark:border-gray-800 dark:text-gray-600"}`}
             aria-label="Scroll timeline right"
           >
             <span className="text-xl leading-none">→</span>
           </button>
 
+          <div className="pointer-events-none absolute left-12 right-12 top-1/2 hidden h-2 -translate-y-1/2 rounded-full bg-gray-300 dark:bg-gray-700 md:block" />
           <div
             ref={timelineRef}
             className="relative flex gap-6 overflow-x-auto scroll-smooth px-12 pb-10 pt-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            <div className="pointer-events-none absolute left-12 right-12 top-1/2 hidden h-2 -translate-y-1/2 rounded-full bg-gray-300 dark:bg-gray-700 md:block" />
             {timelineRailItems.map((item, index) => {
               const isAbove = index % 2 === 0;
               const year = new Date(item.dateKey).getFullYear();
