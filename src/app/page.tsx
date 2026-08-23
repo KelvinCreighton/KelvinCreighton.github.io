@@ -784,24 +784,24 @@ export default function Home() {
 
           <div
             ref={timelineRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth px-12 pb-6 pt-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="relative flex gap-6 overflow-x-auto scroll-smooth px-12 pb-10 pt-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
+            <div className="pointer-events-none absolute left-12 right-12 top-1/2 hidden h-2 -translate-y-1/2 rounded-full bg-gray-300 dark:bg-gray-700 md:block" />
             {timelineRailItems.map((item, index) => {
               const isAbove = index % 2 === 0;
               const year = new Date(item.dateKey).getFullYear();
               return (
                 <div
                   key={`${item.title}-${item.dateKey}`}
-                  className="relative flex h-[22rem] w-[15rem] flex-none items-center justify-center"
+                  className="relative flex h-[30rem] w-[15rem] flex-none items-center justify-center"
                 >
-                  <div className="absolute left-0 right-0 top-1/2 hidden h-2 -translate-y-1/2 rounded-full bg-gray-300 dark:bg-gray-700 md:block" />
                   <div className="absolute left-1/2 top-1/2 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950 md:block" />
                   <div className={`absolute left-0 right-0 flex justify-center md:block ${isAbove ? "top-0" : "bottom-0"}`}>
                     <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:bg-gray-950 dark:text-gray-400">
                       {year}
                     </span>
                   </div>
-                  <div className={`absolute left-1/2 w-full -translate-x-1/2 ${isAbove ? "top-0" : "bottom-0"}`}>
+                  <div className={`absolute left-1/2 w-full -translate-x-1/2 ${isAbove ? "top-0 -translate-y-4" : "bottom-0 translate-y-4"}`}>
                     <TimelineCard item={item} />
                   </div>
                 </div>
