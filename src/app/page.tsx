@@ -588,10 +588,10 @@ const timelineRailItems: TimelineItem[] = [
 
 const timelineStartYear = 2017;
 const timelineEndYear = 2026;
-const timelineMinYearGap = 160;
-const timelineDensityBoost = 96;
 const timelineCardMinGap = 152;
-const timelineMonthGap = 72;
+const timelineMonthSections = 12;
+const timelineMonthGapMin = 44;
+const timelineCardWidthEstimate = 144;
 
 function getTimelinePercent(dateKey: string) {
   const date = new Date(dateKey);
@@ -655,11 +655,17 @@ function buildTimelineYearPositions() {
     (_, index) => timelineEndYear - index,
   );
 
+  const baseMonthWidth = timelineMonthGapMin;
+  const monthSpanWidth = timelineMonthSections * baseMonthWidth;
+
   const widths = years.map((year) => {
     const yearCardCount = counts.get(year) ?? 0;
-    const denseWidth = Math.max(timelineMinYearGap, yearCardCount * timelineCardMinGap);
-    return Math.max(timelineMonthGap * 12, denseWidth);
+    const cardsWithinYear = Math.max(1, yearCardCount);
+    const sameLaneCards = Math.ceil(cardsWithinYear / 2);
+    const laneSpan = sameLaneCards * (timelineCardWidthEstimate + timelineCardMinGap);
+    return Math.max(monthSpanWidth, laneSpan);
   });
+
   const totalWidth = widths.reduce((sum, width) => sum + width, 0);
 
   let cursor = 0;
@@ -690,34 +696,51 @@ function buildTimelineCardLayout(
 
   const positions = new Map<string, number>();
   const yearPositions = new Map<number, number>();
-  let previousTopRight = 0;
-  let previousBottomRight = 0;
+  const yearItems = new Map<number, TimelineItem[]>();
+  for (const item of ordered) {
+    const year = new Date(item.dateKey).getUTCFullYear();
+    const existing = yearItems.get(year) ?? [];
+    existing.push(item);
+    yearItems.set(year, existing);
+  }
 
-  ordered.forEach((item, index) => {
-    const above = index % 2 === 0;
-    const { year, month } = getTimelinePercent(item.dateKey);
-    const yearLeft = yearLayout.positions.get(year) ?? 0;
-    const ideal = yearLeft + (month * timelineMonthGap);
-    const laneRight = above ? previousTopRight : previousBottomRight;
-    const x = index === 0 ? ideal : Math.max(ideal, laneRight + timelineCardMinGap);
-    positions.set(item.dateKey, x);
-    if (above) {
-      previousTopRight = x;
-    } else {
-      previousBottomRight = x;
-    }
+  const densestYear = yearLayout.years.reduce((bestYear, year) => {
+    const bestCount = yearItems.get(bestYear)?.length ?? 0;
+    const yearCount = yearItems.get(year)?.length ?? 0;
+    if (yearCount > bestCount) return year;
+    return bestYear;
+  }, yearLayout.years[0]);
 
-    if (!yearPositions.has(year)) {
-      yearPositions.set(year, x);
-    }
-  });
+  const densestIndex = yearLayout.years.indexOf(densestYear);
+  const yearWidth = yearLayout.widths[densestIndex] ?? timelineMonthSections * timelineMonthGapMin;
+  const slotWidth = yearWidth / timelineMonthSections;
+  const cardWidth = timelineCardWidthEstimate;
+  const yearGap = yearWidth;
 
-  const totalWidth = Math.max(
-    yearLayout.totalWidth,
-    Math.max(previousTopRight, previousBottomRight) + timelineCardMinGap,
-  );
+  for (let yearIndex = 0; yearIndex < yearLayout.years.length; yearIndex += 1) {
+    const year = yearLayout.years[yearIndex];
+    const yearLeft = yearIndex * yearGap;
+    yearPositions.set(year, yearLeft);
 
-  return { positions, yearPositions, totalWidth };
+    const itemsForYear = yearItems.get(year) ?? [];
+    const laneState = {
+      top: yearLeft,
+      bottom: yearLeft,
+    };
+
+    itemsForYear.forEach((item, index) => {
+      const lane = index % 2 === 0 ? "top" : "bottom";
+      const { month } = getTimelinePercent(item.dateKey);
+      const monthIndex = 11 - month;
+      const ideal = yearLeft + monthIndex * slotWidth;
+      const priorRight = laneState[lane];
+      const x = Math.max(ideal, priorRight);
+      positions.set(item.dateKey, x);
+      laneState[lane] = x + cardWidth + timelineCardMinGap;
+    });
+  }
+
+  return { positions, yearPositions, totalWidth: yearWidth * yearLayout.years.length };
 }
 
 export default function Home() {
