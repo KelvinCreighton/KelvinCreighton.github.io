@@ -14,6 +14,7 @@ type TimelineItem = {
   image: string;
   imageAlt: string;
   position: "top" | "bottom";
+  xOffsetPx: number;
 };
 
 const timelineRailItems: TimelineItem[] = [
@@ -26,6 +27,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/my-first-game.webp",
     imageAlt: "My First Game project",
     position: "top",
+    xOffsetPx: 0,
   },
   {
     title: "UFO",
@@ -36,6 +38,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/ufo.webp",
     imageAlt: "UFO game project",
     position: "bottom",
+    xOffsetPx: 0,
   },
   {
     title: "BL1ND JUST1C3: 1NV3ST1G4T1ON",
@@ -46,6 +49,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON.webp",
     imageAlt: "BL1ND JUST1C3: 1NV3ST1G4T1ON",
     position: "top",
+    xOffsetPx: 0,
   },
   {
     title: "Beethoven Virus",
@@ -56,6 +60,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/Beethoven_Virus.webp",
     imageAlt: "Beethoven Virus arrangement",
     position: "bottom",
+    xOffsetPx: 0,
   },
   {
     title: "Tank Game",
@@ -66,6 +71,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/tank-game.webp",
     imageAlt: "Tank Game project",
     position: "top",
+    xOffsetPx: 0,
   },
   {
     title: "The Longest Moment Before a New Beginning",
@@ -76,6 +82,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/The-Longest-Moment-Before-a-New-Beginning.webp",
     imageAlt: "The Longest Moment Before a New Beginning",
     position: "bottom",
+    xOffsetPx: 0,
   },
   {
     title: "Plastic Mind",
@@ -86,6 +93,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/plastic-mind-title.webp",
     imageAlt: "Plastic Mind project",
     position: "top",
+    xOffsetPx: 0,
   },
   {
     title: "3D Game Engine",
@@ -96,6 +104,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/3d-game.webp",
     imageAlt: "3D Game Engine project",
     position: "bottom",
+    xOffsetPx: 0,
   },
   {
     title: "Blackhole Simulator",
@@ -106,6 +115,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/Blackhole_Simulator-image.webp",
     imageAlt: "Blackhole Simulator project",
     position: "top",
+    xOffsetPx: 0,
   },
   {
     title: "Remote Control Car",
@@ -116,6 +126,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/rc-car-title.webp",
     imageAlt: "Remote control car project",
     position: "bottom",
+    xOffsetPx: 0,
   },
   {
     title: "IlluminatiCTF",
@@ -126,6 +137,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/achievements/illuminatictf.webp",
     imageAlt: "IlluminatiCTF achievement",
     position: "top",
+    xOffsetPx: 0,
   },
   {
     title: "Manual Transmission Rebuild",
@@ -136,6 +148,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/transmission-title.webp",
     imageAlt: "Manual transmission rebuild project",
     position: "bottom",
+    xOffsetPx: 0,
   },
   {
     title: "PicoCTF Writeups",
@@ -146,6 +159,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/picoCTF_logo.webp",
     imageAlt: "PicoCTF writeups",
     position: "top",
+    xOffsetPx: 0,
   },
   {
     title: "CyberSci Regionals 2025",
@@ -156,6 +170,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/achievements/CyberSci.webp",
     imageAlt: "CyberSci Regionals 2025",
     position: "bottom",
+    xOffsetPx: 0,
   },
   {
     title: "MacSync Stealer: Static Malware Analysis",
@@ -166,6 +181,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/cyber-highlights.webp",
     imageAlt: "MacSync Stealer static malware analysis",
     position: "top",
+    xOffsetPx: 0,
   },
   {
     title: "HTCOTB2026 CTF Challenges",
@@ -176,6 +192,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/CHADS_logo.webp",
     imageAlt: "HTCOTB2026 CTF challenges",
     position: "bottom",
+    xOffsetPx: 0,
   },
   {
     title: "WiCyS CTF Challenges",
@@ -186,6 +203,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/WICYS_logo.webp",
     imageAlt: "WiCyS CTF Challenges",
     position: "top",
+    xOffsetPx: 0,
   },
   {
     title: "National Cybersecurity Consortium (NCC) CTF",
@@ -196,6 +214,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/achievements/NCC.webp",
     imageAlt: "National Cybersecurity Consortium CTF",
     position: "bottom",
+    xOffsetPx: 0,
   },
   {
     title: "Dremel 3D45: Modification & Optimization",
@@ -206,6 +225,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/dremel-3d45-rebuild-title.webp",
     imageAlt: "Dremel 3D45 modification and optimization",
     position: "bottom",
+    xOffsetPx: 10,
   },
   {
     title: "Cisco Rapid Incident Response V7",
@@ -216,6 +236,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/cisco-rapid-incident-response-v7.webp",
     imageAlt: "Cisco Rapid Incident Response V7 certificate",
     position: "top",
+    xOffsetPx: 0,
   },
 ];
 
@@ -731,6 +752,7 @@ export default function Home() {
                     <div className="absolute left-1/2 top-0 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950 md:block" />
                     <div
                       className={`absolute left-1/2 w-[9rem] -translate-x-1/2 ${item.position === "top" ? "bottom-[5rem]" : "top-[5rem]"}`}
+                      style={{ left: `calc(50% + ${item.xOffsetPx}px)` }}
                     >
                       <div
                         className={`absolute left-1/2 hidden w-px -translate-x-1/2 bg-gray-300 dark:bg-gray-700 md:block ${
