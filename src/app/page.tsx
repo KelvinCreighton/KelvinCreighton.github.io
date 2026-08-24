@@ -591,15 +591,13 @@ const timelineEndYear = 2026;
 const timelineMinYearGap = 160;
 const timelineDensityBoost = 96;
 const timelineCardMinGap = 152;
+const timelineMonthGap = 72;
 
 function getTimelinePercent(dateKey: string) {
   const date = new Date(dateKey);
   const year = date.getUTCFullYear();
-  const yearStart = new Date(`${year}-01-01T00:00:00Z`);
-  const yearEnd = new Date(`${year + 1}-01-01T00:00:00Z`);
-  const yearSpan = Math.max(1, yearEnd.getTime() - yearStart.getTime());
-  const withinYear = (date.getTime() - yearStart.getTime()) / yearSpan;
-  return { year, withinYear: Math.min(1, Math.max(0, withinYear)) };
+  const month = date.getUTCMonth();
+  return { year, month };
 }
 
 function ContactIcon({
@@ -657,7 +655,11 @@ function buildTimelineYearPositions() {
     (_, index) => timelineEndYear - index,
   );
 
-  const widths = years.map((year) => timelineMinYearGap + (counts.get(year) ?? 0) * timelineDensityBoost);
+  const widths = years.map((year) => {
+    const yearCardCount = counts.get(year) ?? 0;
+    const denseWidth = Math.max(timelineMinYearGap, yearCardCount * timelineCardMinGap);
+    return Math.max(timelineMonthGap * 12, denseWidth);
+  });
   const totalWidth = widths.reduce((sum, width) => sum + width, 0);
 
   let cursor = 0;
@@ -677,7 +679,13 @@ function buildTimelineCardLayout(
   yearLayout: ReturnType<typeof buildTimelineYearPositions>,
 ) {
   const ordered = [...items].sort(
-    (a, b) => new Date(b.dateKey).getTime() - new Date(a.dateKey).getTime(),
+    (a, b) => {
+      const aDate = new Date(a.dateKey).getTime();
+      const bDate = new Date(b.dateKey).getTime();
+      if (aDate !== bDate) return bDate - aDate;
+      if (a.category !== b.category) return a.category.localeCompare(b.category);
+      return a.title.localeCompare(b.title);
+    },
   );
 
   const positions = new Map<string, number>();
@@ -687,11 +695,9 @@ function buildTimelineCardLayout(
 
   ordered.forEach((item, index) => {
     const above = index % 2 === 0;
-    const { year, withinYear } = getTimelinePercent(item.dateKey);
+    const { year, month } = getTimelinePercent(item.dateKey);
     const yearLeft = yearLayout.positions.get(year) ?? 0;
-    const nextYearLeft = yearLayout.positions.get(year - 1) ?? yearLeft + timelineMinYearGap;
-    const baseWidth = Math.max(timelineMinYearGap, nextYearLeft - yearLeft);
-    const ideal = yearLeft + (baseWidth * withinYear);
+    const ideal = yearLeft + (month * timelineMonthGap);
     const laneRight = above ? previousTopRight : previousBottomRight;
     const x = index === 0 ? ideal : Math.max(ideal, laneRight + timelineCardMinGap);
     positions.set(item.dateKey, x);
