@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "@/components/BlurImage";
 import type { ReactNode } from "react";
@@ -225,7 +225,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/dremel-3d45-rebuild-title.webp",
     imageAlt: "Dremel 3D45 modification and optimization",
     position: "bottom",
-    xOffsetPx: 50,
+    xOffsetPx: 100,
   },
   {
     title: "Cisco Rapid Incident Response V7",
@@ -425,8 +425,12 @@ function buildTimelineCardLayout(
 
 export default function Home() {
   const timelineRef = useRef<HTMLDivElement | null>(null);
+  const timelineCanvasRef = useRef<HTMLDivElement | null>(null);
+  const circleRefs = useRef(new Map<string, HTMLDivElement | null>());
+  const cardRefs = useRef(new Map<string, HTMLDivElement | null>());
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [connectorLines, setConnectorLines] = useState<Array<{ key: string; x1: number; y1: number; x2: number; y2: number }>>([]);
   const visibleTimelineRailItems = getVisibleTimelineItems();
   const timelineYearLayout = buildTimelineYearPositions();
   const timelineCardLayout = buildTimelineCardLayout(visibleTimelineRailItems, timelineYearLayout);
@@ -459,6 +463,46 @@ export default function Home() {
       window.removeEventListener("resize", updateScrollState);
     };
   }, []);
+
+  useLayoutEffect(() => {
+    const timelineNode = timelineRef.current;
+    const canvasNode = timelineCanvasRef.current;
+    if (!timelineNode || !canvasNode) return;
+
+    const updateConnectors = () => {
+      const timelineRect = timelineNode.getBoundingClientRect();
+      const canvasRect = canvasNode.getBoundingClientRect();
+      const nextLines: Array<{ key: string; x1: number; y1: number; x2: number; y2: number }> = [];
+
+      for (const item of visibleTimelineRailItems) {
+        const circleNode = circleRefs.current.get(item.dateKey);
+        const cardNode = cardRefs.current.get(item.dateKey);
+        if (!circleNode || !cardNode) continue;
+
+        const circleRect = circleNode.getBoundingClientRect();
+        const cardRect = cardNode.getBoundingClientRect();
+        nextLines.push({
+          key: item.dateKey,
+          x1: circleRect.left + circleRect.width / 2 - canvasRect.left,
+          y1: circleRect.top + circleRect.height / 2 - canvasRect.top,
+          x2: cardRect.left + cardRect.width / 2 - canvasRect.left,
+          y2: cardRect.top + cardRect.height / 2 - canvasRect.top,
+        });
+      }
+
+      setConnectorLines(nextLines);
+    };
+
+    updateConnectors();
+    window.addEventListener("resize", updateConnectors);
+    const ro = new ResizeObserver(updateConnectors);
+    ro.observe(timelineNode);
+
+    return () => {
+      window.removeEventListener("resize", updateConnectors);
+      ro.disconnect();
+    };
+  }, [visibleTimelineRailItems.length]);
 
   return (
     <main className="flex flex-col items-center max-w-5xl mx-auto w-full">
@@ -703,7 +747,21 @@ export default function Home() {
             ref={timelineRef}
             className="relative overflow-x-auto scroll-smooth px-12 pb-12 pt-14 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            <div className="relative mx-auto h-[36rem]" style={{ minWidth: `${timelineCardLayout.totalWidth}px` }}>
+            <div ref={timelineCanvasRef} className="relative mx-auto h-[36rem]" style={{ minWidth: `${timelineCardLayout.totalWidth}px` }}>
+              <svg aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 hidden md:block" width="100%" height="100%">
+                {connectorLines.map((line) => (
+                  <line
+                    key={line.key}
+                    x1={line.x1}
+                    y1={line.y1}
+                    x2={line.x2}
+                    y2={line.y2}
+                    stroke="rgb(209, 213, 219)"
+                    strokeWidth="1.5"
+                    className="dark:stroke-gray-700"
+                  />
+                ))}
+              </svg>
               {timelineYearLayout.years.map((year) => {
                 const left = timelineCardLayout.yearPositions.get(year) ?? timelineYearLayout.positions.get(year) ?? 0;
                 const visibleMonthCount = getVisibleMonthCount(year);
@@ -746,33 +804,23 @@ export default function Home() {
                 return (
                   <div
                     key={`${item.title}-${item.dateKey}`}
-                    className="absolute top-1/2"
+                    className="absolute top-1/2 z-10"
                     style={{ left: `${left}px` }}
                   >
-                    <div className="absolute left-1/2 top-0 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950 md:block" />
+                    <div
+                      ref={(node) => {
+                        circleRefs.current.set(item.dateKey, node);
+                      }}
+                      className="absolute left-1/2 top-0 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950 md:block"
+                    />
                     <div
                       className={`absolute left-1/2 w-[9rem] -translate-x-1/2 ${item.position === "top" ? "bottom-[5rem]" : "top-[5rem]"}`}
                       style={{ left: `calc(50% + ${item.xOffsetPx}px)` }}
                     >
-                      {(() => {
-                        const connectorRise = 80;
-                        const connectorLength = Math.hypot(item.xOffsetPx, connectorRise);
-                        const connectorAngle = Math.atan2(-item.xOffsetPx, connectorRise) * (180 / Math.PI);
-                        return (
-                          <div
-                            aria-hidden="true"
-                            className={`pointer-events-none absolute left-1/2 hidden w-px -translate-x-1/2 bg-gray-300 dark:bg-gray-700 md:block ${
-                              item.position === "top" ? "top-full" : "bottom-full"
-                            }`}
-                            style={{
-                              height: `${connectorLength}px`,
-                              transform: `translateX(calc(-50% + ${item.xOffsetPx}px)) rotate(${connectorAngle}deg)`,
-                              transformOrigin: item.position === "top" ? "top center" : "bottom center",
-                            }}
-                          />
-                        );
-                      })()}
                       <div
+                        ref={(node) => {
+                          cardRefs.current.set(item.dateKey, node);
+                        }}
                         style={{ transform: `translateX(${item.xOffsetPx}px)` }}
                       >
                         <TimelineCard item={item} position={item.position} />
