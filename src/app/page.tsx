@@ -788,7 +788,7 @@ export default function Home() {
             <span className="text-xl leading-none">→</span>
           </button>
 
-          <div className="pointer-events-none absolute left-12 right-12 top-1/2 hidden h-2 -translate-y-1/2 rounded-full bg-gray-300 dark:bg-gray-700 md:block" />
+          <div className="pointer-events-none absolute left-12 right-12 top-1/2 h-2 -translate-y-1/2 rounded-full bg-gray-300 dark:bg-gray-700" />
           <div
             ref={timelineRef}
             className="relative overflow-x-auto scroll-smooth px-12 pb-12 pt-14 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -805,7 +805,7 @@ export default function Home() {
                 return (
                   <div
                     key={year}
-                    className="pointer-events-none absolute top-1/2 hidden -translate-y-1/2 md:block"
+                    className="pointer-events-none absolute top-1/2 -translate-y-1/2"
                     style={{ left, width: `${yearWidth}px` }}
                   >
                     <div className="absolute left-0 top-1/2 h-0 w-full -translate-y-1/2">
@@ -853,7 +853,7 @@ export default function Home() {
                   >
                     <svg
                       aria-hidden="true"
-                      className="pointer-events-none absolute hidden md:block"
+                      className="pointer-events-none absolute"
                       style={{
                         left: `calc(50% + ${minX}px)`,
                         top: `${minY}px`,
@@ -873,7 +873,7 @@ export default function Home() {
                         className="dark:stroke-gray-700"
                       />
                     </svg>
-                    <div className="absolute left-1/2 top-0 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950 md:block" />
+                    <div className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950" />
                     <div
                       className={`absolute left-1/2 w-[9rem] -translate-x-1/2 ${item.position === "top" ? "bottom-[5rem]" : "top-[5rem]"}`}
                       style={{ left: `calc(50% + ${item.xOffsetPx}px)` }}
