@@ -15,6 +15,7 @@ type AchievementCardProps = {
   imageAlt?: string;
   onImageClick?: (image: string, alt: string) => void;
   id?: string;
+  style?: React.CSSProperties;
 };
 
 type AchievementSectionProps = {
@@ -35,10 +36,11 @@ function AchievementCard({
   imageAlt,
   onImageClick,
   id,
+  style,
 }: AchievementCardProps) {
   const altText = imageAlt ?? title;
   return (
-    <article id={id} className="group flex self-start flex-col overflow-hidden rounded-xl bg-gray-85 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <article id={id} style={style} className="group flex self-start flex-col overflow-hidden rounded-xl bg-gray-85 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       {image ? (
         <button
           type="button"
@@ -166,6 +168,7 @@ export default function AchievementsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
             <AchievementCard
               id="cisco-rapid-incident-response-v7"
+              style={{ scrollMarginTop: "8rem" }}
               title="Cisco Rapid Incident Response V7"
               subtitle="Incident response workshop and lab"
               date="July 2026"
