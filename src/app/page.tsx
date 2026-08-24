@@ -652,7 +652,7 @@ function buildTimelineYearPositions() {
 
   const years = Array.from(
     { length: timelineEndYear - timelineStartYear + 1 },
-    (_, index) => timelineEndYear - index,
+    (_, index) => timelineStartYear + index,
   );
 
   const baseMonthWidth = timelineMonthGapMin;
@@ -688,7 +688,7 @@ function buildTimelineCardLayout(
     (a, b) => {
       const aDate = new Date(a.dateKey).getTime();
       const bDate = new Date(b.dateKey).getTime();
-      if (aDate !== bDate) return bDate - aDate;
+      if (aDate !== bDate) return aDate - bDate;
       if (a.category !== b.category) return a.category.localeCompare(b.category);
       return a.title.localeCompare(b.title);
     },
@@ -731,7 +731,7 @@ function buildTimelineCardLayout(
     itemsForYear.forEach((item, index) => {
       const lane = index % 2 === 0 ? "top" : "bottom";
       const { month } = getTimelinePercent(item.dateKey);
-      const monthIndex = 11 - month;
+      const monthIndex = month;
       const ideal = yearLeft + monthIndex * slotWidth;
       const priorRight = laneState[lane];
       const x = Math.max(ideal, priorRight);
@@ -760,6 +760,8 @@ export default function Home() {
   useEffect(() => {
     const node = timelineRef.current;
     if (!node) return;
+
+    node.scrollLeft = node.scrollWidth;
 
     const updateScrollState = () => {
       const epsilon = 2;
@@ -1024,7 +1026,7 @@ export default function Home() {
               {timelineYearLayout.years.map((year) => {
                 const left = timelineCardLayout.yearPositions.get(year) ?? timelineYearLayout.positions.get(year) ?? 0;
                 const yearWidth = timelineYearLayout.widths[timelineYearLayout.years.indexOf(year)] ?? timelineMonthSections * timelineMonthGapMin;
-                const monthLabels = ["D", "N", "O", "S", "A", "J", "J", "M", "A", "M", "F", "J"];
+                const monthLabels = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
                 const monthSlotWidth = yearWidth / timelineMonthSections;
                 return (
                   <div
