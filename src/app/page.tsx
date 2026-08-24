@@ -755,11 +755,14 @@ export default function Home() {
                       style={{ left: `calc(50% + ${item.xOffsetPx}px)` }}
                     >
                       <div
-                        className={`absolute left-1/2 hidden w-px -translate-x-1/2 bg-gray-300 dark:bg-gray-700 md:block ${
-                          item.position === "top"
-                            ? "bottom-[-5rem] h-[5rem]"
-                            : "top-[-5rem] h-[5rem]"
+                        aria-hidden="true"
+                        className={`pointer-events-none absolute left-1/2 hidden h-[5rem] w-px -translate-x-1/2 bg-gray-300 dark:bg-gray-700 md:block ${
+                          item.position === "top" ? "top-full" : "bottom-full"
                         }`}
+                        style={{
+                          transform: `translateX(calc(-50% + ${item.xOffsetPx}px)) rotate(${Math.atan2(item.xOffsetPx, 80) * (180 / Math.PI)}deg)`,
+                          transformOrigin: item.position === "top" ? "top center" : "bottom center",
+                        }}
                       />
                       <TimelineCard item={item} position={item.position} />
                     </div>
