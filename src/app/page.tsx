@@ -1026,7 +1026,7 @@ export default function Home() {
               {timelineYearLayout.years.map((year) => {
                 const left = timelineCardLayout.yearPositions.get(year) ?? timelineYearLayout.positions.get(year) ?? 0;
                 const yearWidth = timelineYearLayout.widths[timelineYearLayout.years.indexOf(year)] ?? timelineMonthSections * timelineMonthGapMin;
-                const monthLabels = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
+                const monthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
                 const monthSlotWidth = yearWidth / timelineMonthSections;
                 return (
                   <div
@@ -1034,11 +1034,11 @@ export default function Home() {
                     className="pointer-events-none absolute top-1/2 hidden -translate-y-1/2 md:block"
                     style={{ left }}
                   >
-                    <div className="absolute -top-12 left-0 h-0 w-full">
+                    <div className="absolute left-0 top-1/2 h-0 w-full -translate-y-1/2">
                       {monthLabels.map((month, monthIndex) => (
                         <span
                           key={`${year}-${month}-${monthIndex}`}
-                          className="absolute -translate-x-1/2 text-[0.75rem] font-medium uppercase leading-none text-gray-400 dark:text-gray-500"
+                          className={`absolute -translate-x-1/2 text-[0.75rem] font-medium uppercase leading-none text-gray-400 dark:text-gray-500 ${monthIndex % 2 === 0 ? "top-3" : "-top-5"}`}
                           style={{ left: `${(monthIndex + 0.5) * monthSlotWidth}px` }}
                         >
                           {month}
