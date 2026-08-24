@@ -749,7 +749,7 @@ function buildTimelineCardLayout(
     }
   }
 
-  return { positions, yearPositions, totalWidth: yearWidth * yearLayout.years.length };
+  return { positions, yearPositions, totalWidth: yearWidth * yearLayout.years.length, yearWidth, slotWidth };
 }
 
 export default function Home() {
@@ -1034,14 +1034,12 @@ export default function Home() {
             <div className="relative mx-auto h-[36rem]" style={{ minWidth: `${timelineCardLayout.totalWidth}px` }}>
               {timelineYearLayout.years.map((year) => {
                 const left = timelineCardLayout.yearPositions.get(year) ?? timelineYearLayout.positions.get(year) ?? 0;
-                const yearWidth = timelineYearLayout.widths[timelineYearLayout.years.indexOf(year)] ?? timelineMonthSections * timelineMonthGapMin;
                 const monthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                const monthSlotWidth = yearWidth / timelineMonthSections;
                 return (
                   <div
                     key={year}
                     className="pointer-events-none absolute top-1/2 hidden -translate-y-1/2 md:block"
-                    style={{ left, width: `${yearWidth}px` }}
+                    style={{ left, width: `${timelineCardLayout.yearWidth}px` }}
                   >
                     <div className="absolute left-0 top-1/2 h-0 w-full -translate-y-1/2">
                       {monthLabels.map((month, monthIndex) => (
@@ -1049,7 +1047,7 @@ export default function Home() {
                           key={`${year}-${month}-${monthIndex}`}
                           className={`absolute inline-flex w-12 items-center justify-center text-center text-[0.75rem] font-medium uppercase leading-none text-gray-400 dark:text-gray-500 ${monthIndex % 2 === 0 ? "top-3" : "-top-5"}`}
                           style={{
-                            left: `${monthIndex * monthSlotWidth}px`,
+                            left: `${monthIndex * timelineCardLayout.slotWidth}px`,
                             transform: "translateX(-50%)",
                           }}
                         >
