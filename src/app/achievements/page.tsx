@@ -212,6 +212,8 @@ export default function AchievementsPage() {
               onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
             <AchievementCard
+              id="cybersci-regionals-2025"
+              style={{ scrollMarginTop: "8rem" }}
               title="CyberSci Regionals 2025"
               subtitle="Team CHADS B-Team"
               date="November 2025"
@@ -229,6 +231,8 @@ export default function AchievementsPage() {
               onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
             <AchievementCard
+              id="sait-alice-in-pwndderland"
+              style={{ scrollMarginTop: "8rem" }}
               title="SAIT: Alice in PWNderland"
               subtitle="Team CHADS"
               date="July 2025"
@@ -245,6 +249,8 @@ export default function AchievementsPage() {
               onImageClick={(src, alt) => setModalImage({ src, alt })}
             />
             <AchievementCard
+              id="illuminatictf"
+              style={{ scrollMarginTop: "8rem" }}
               title="IlluminatiCTF"
               subtitle="National bracket"
               date="May 2025"
