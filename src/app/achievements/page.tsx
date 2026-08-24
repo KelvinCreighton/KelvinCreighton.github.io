@@ -165,6 +165,7 @@ export default function AchievementsPage() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
             <AchievementCard
+              id="cisco-rapid-incident-response-v7"
               title="Cisco Rapid Incident Response V7"
               subtitle="Incident response workshop and lab"
               date="July 2026"

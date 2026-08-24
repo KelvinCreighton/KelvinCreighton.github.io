@@ -320,7 +320,7 @@ const timelineRailItems: TimelineItem[] = [
     dateKey: "2026-07-01",
     category: "Achievement",
     description: "Completed the Cisco XDR incident response workshop and lab.",
-    href: "/achievements",
+    href: "/achievements#cisco-rapid-incident-response-v7",
     image: "/images/cisco-rapid-incident-response-v7.webp",
     imageAlt: "Cisco Rapid Incident Response V7 certificate",
     position: "top",
