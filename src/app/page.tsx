@@ -1038,17 +1038,16 @@ export default function Home() {
                       {monthLabels.map((month, monthIndex) => (
                         <span
                           key={`${year}-${month}-${monthIndex}`}
-                          className={`absolute -translate-x-1/2 text-[0.75rem] font-medium uppercase leading-none text-gray-400 dark:text-gray-500 ${monthIndex % 2 === 0 ? "top-3" : "-top-5"}`}
+                          className={`absolute inline-flex w-10 -translate-x-1/2 items-center justify-center text-[0.75rem] font-medium uppercase leading-none text-center text-gray-400 dark:text-gray-500 ${monthIndex % 2 === 0 ? "top-3" : "-top-5"}`}
                           style={{ left: `${(monthIndex + 0.5) * monthSlotWidth}px` }}
                         >
                           {month}
                         </span>
                       ))}
                     </div>
-                    <div className="mb-4 text-center font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400" style={{ fontSize: "1.25rem" }}>
+                    <div className="mb-10 text-center font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400" style={{ fontSize: "1.25rem" }}>
                       {year}
                     </div>
-                    <div className="mx-auto h-5 w-px bg-gray-400/80 dark:bg-gray-500/80" />
                   </div>
                 );
               })}
