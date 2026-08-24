@@ -47,6 +47,7 @@ function AchievementCard({
             <BlurImage
               src={image}
               alt={altText}
+              fill
               className="absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] object-contain transition-transform duration-300 group-hover:scale-[1.01]"
             />
           <span className="absolute bottom-4 right-4 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
