@@ -158,7 +158,7 @@ const timelineRailItems: TimelineItem[] = [
     href: "/projects/cybersecurity",
     image: "/images/projects/picoCTF_logo.webp",
     imageAlt: "PicoCTF writeups",
-    position: "top",
+    position: "bottom",
     xOffsetPx: 0,
   },
   {
@@ -169,7 +169,7 @@ const timelineRailItems: TimelineItem[] = [
     href: "/achievements",
     image: "/images/achievements/CyberSci.webp",
     imageAlt: "CyberSci Regionals 2025",
-    position: "bottom",
+    position: "top",
     xOffsetPx: 0,
   },
   {
@@ -180,7 +180,7 @@ const timelineRailItems: TimelineItem[] = [
     href: "/projects/cybersecurity/macsync-stealer",
     image: "/images/projects/cyber-highlights.webp",
     imageAlt: "MacSync Stealer static malware analysis",
-    position: "top",
+    position: "bottom",
     xOffsetPx: 0,
   },
   {
@@ -191,7 +191,7 @@ const timelineRailItems: TimelineItem[] = [
     href: "/projects/cybersecurity?category=HTCOTB%20CTF",
     image: "/images/projects/CHADS_logo.webp",
     imageAlt: "HTCOTB2026 CTF challenges",
-    position: "bottom",
+    position: "top",
     xOffsetPx: 0,
   },
   {
@@ -202,7 +202,7 @@ const timelineRailItems: TimelineItem[] = [
     href: "/projects/cybersecurity?category=WiCyS%20CTF",
     image: "/images/projects/WICYS_logo.webp",
     imageAlt: "WiCyS CTF Challenges",
-    position: "top",
+    position: "bottom",
     xOffsetPx: 0,
   },
   {
@@ -213,8 +213,8 @@ const timelineRailItems: TimelineItem[] = [
     href: "/achievements",
     image: "/images/achievements/NCC.webp",
     imageAlt: "National Cybersecurity Consortium CTF",
-    position: "bottom",
-    xOffsetPx: 0,
+    position: "top",
+    xOffsetPx: -50,
   },
   {
     title: "Dremel 3D45: Modification & Optimization",
@@ -225,7 +225,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/dremel-3d45-rebuild-title.webp",
     imageAlt: "Dremel 3D45 modification and optimization",
     position: "bottom",
-    xOffsetPx: 100,
+    xOffsetPx: 0,
   },
   {
     title: "Cisco Rapid Incident Response V7",
@@ -236,7 +236,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/cisco-rapid-incident-response-v7.webp",
     imageAlt: "Cisco Rapid Incident Response V7 certificate",
     position: "top",
-    xOffsetPx: 0,
+    xOffsetPx: 50,
   },
 ];
 
