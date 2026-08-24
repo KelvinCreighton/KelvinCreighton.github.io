@@ -716,6 +716,7 @@ function buildTimelineCardLayout(
   const slotWidth = yearWidth / timelineMonthSections;
   const cardWidth = timelineCardWidthEstimate;
   const yearGap = yearWidth;
+  const sameMonthOffset = 18;
 
   for (let yearIndex = 0; yearIndex < yearLayout.years.length; yearIndex += 1) {
     const year = yearLayout.years[yearIndex];
@@ -723,21 +724,29 @@ function buildTimelineCardLayout(
     yearPositions.set(year, yearLeft);
 
     const itemsForYear = yearItems.get(year) ?? [];
-    const laneState = {
-      top: yearLeft,
-      bottom: yearLeft,
-    };
+    const monthBuckets = new Map<number, TimelineItem[]>();
 
-    itemsForYear.forEach((item, index) => {
-      const lane = index % 2 === 0 ? "top" : "bottom";
+    for (const item of itemsForYear) {
       const { month } = getTimelinePercent(item.dateKey);
-      const monthIndex = month;
-      const ideal = yearLeft + monthIndex * slotWidth;
-      const priorRight = laneState[lane];
-      const x = Math.max(ideal, priorRight);
-      positions.set(item.dateKey, x);
-      laneState[lane] = x + cardWidth + timelineCardMinGap;
-    });
+      const bucket = monthBuckets.get(month) ?? [];
+      bucket.push(item);
+      monthBuckets.set(month, bucket);
+    }
+
+    for (const [month, bucket] of monthBuckets.entries()) {
+      bucket.sort((a, b) => {
+        const aDate = new Date(a.dateKey).getTime();
+        const bDate = new Date(b.dateKey).getTime();
+        if (aDate !== bDate) return aDate - bDate;
+        if (a.category !== b.category) return a.category.localeCompare(b.category);
+        return a.title.localeCompare(b.title);
+      });
+
+      const monthCut = yearLeft + month * slotWidth;
+      bucket.forEach((item, index) => {
+        positions.set(item.dateKey, monthCut + index * sameMonthOffset - cardWidth / 2);
+      });
+    }
   }
 
   return { positions, yearPositions, totalWidth: yearWidth * yearLayout.years.length };
@@ -1059,7 +1068,7 @@ export default function Home() {
               })}
 
             {[...timelineRailItems]
-              .sort((a, b) => new Date(b.dateKey).getTime() - new Date(a.dateKey).getTime())
+              .sort((a, b) => new Date(a.dateKey).getTime() - new Date(b.dateKey).getTime())
               .map((item, index) => {
                 const above = index % 2 === 0;
                 const left = timelineCardLayout.positions.get(item.dateKey) ?? 0;
