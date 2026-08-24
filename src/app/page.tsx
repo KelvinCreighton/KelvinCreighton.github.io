@@ -20,13 +20,13 @@ type TimelineItem = {
 const timelineRailItems: TimelineItem[] = [
   {
     title: "My First Game",
-    dateKey: "2017-01-01",
+    dateKey: "2017-03-01",
     category: "Game Dev",
     description: "The first JavaScript game I ever made, which started my interest in interactive development.",
     href: "/projects/game-dev/my-first-game",
     image: "/images/projects/my-first-game.webp",
     imageAlt: "My First Game project",
-    position: "top",
+    position: "bottom",
     xOffsetPx: 0,
   },
   {
@@ -37,7 +37,7 @@ const timelineRailItems: TimelineItem[] = [
     href: "/projects/game-dev/ufo",
     image: "/images/projects/ufo.webp",
     imageAlt: "UFO game project",
-    position: "bottom",
+    position: "top",
     xOffsetPx: 0,
   },
   {
@@ -48,7 +48,7 @@ const timelineRailItems: TimelineItem[] = [
     href: "/projects/music/blind-justice-investigation",
     image: "/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON.webp",
     imageAlt: "BL1ND JUST1C3: 1NV3ST1G4T1ON",
-    position: "top",
+    position: "bottom",
     xOffsetPx: 0,
   },
   {
@@ -59,7 +59,7 @@ const timelineRailItems: TimelineItem[] = [
     href: "/projects/music/beethoven-virus",
     image: "/images/projects/Beethoven_Virus.webp",
     imageAlt: "Beethoven Virus arrangement",
-    position: "bottom",
+    position: "top",
     xOffsetPx: 0,
   },
   {
@@ -70,62 +70,62 @@ const timelineRailItems: TimelineItem[] = [
     href: "/projects/game-dev/tank-game",
     image: "/images/projects/tank-game.webp",
     imageAlt: "Tank Game project",
-    position: "top",
+    position: "bottom",
     xOffsetPx: 0,
   },
   {
     title: "The Longest Moment Before a New Beginning",
-    dateKey: "2019-10-01",
+    dateKey: "2019-01-01",
     category: "Music",
     description: "An original piano composition written in high school.",
     href: "/projects/music/the-longest-moment",
     image: "/images/projects/The-Longest-Moment-Before-a-New-Beginning.webp",
     imageAlt: "The Longest Moment Before a New Beginning",
-    position: "bottom",
+    position: "top",
     xOffsetPx: 0,
   },
   {
     title: "Plastic Mind",
-    dateKey: "2019-11-01",
+    dateKey: "2019-09-01",
     category: "Game Dev",
     description: "A physics platformer ported from Processing to p5.js.",
     href: "/projects/game-dev/plastic-mind",
     image: "/images/projects/plastic-mind-title.webp",
     imageAlt: "Plastic Mind project",
-    position: "top",
+    position: "bottom",
     xOffsetPx: 0,
   },
   {
     title: "3D Game Engine",
-    dateKey: "2022-06-01",
+    dateKey: "2022-02-01",
     category: "Game Dev",
     description: "A first 3D engine project exploring projection, rotation, and matrix math.",
     href: "/projects/game-dev/3d-game",
     image: "/images/projects/3d-game.webp",
     imageAlt: "3D Game Engine project",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "Blackhole Simulator",
-    dateKey: "2022-08-01",
-    category: "Game Dev",
-    description: "A physics-based orbital mechanics simulator with playful satellites.",
-    href: "/projects/game-dev/blackhole-simulator",
-    image: "/images/projects/Blackhole_Simulator-image.webp",
-    imageAlt: "Blackhole Simulator project",
     position: "top",
     xOffsetPx: 0,
   },
   {
     title: "Valve Cover Replacement & Modification",
-    dateKey: "2022-05-01",
+    dateKey: "2022-08-01",
     category: "Automotive",
     description: "When a cracked valve cover led to an oil leak, a custom modification was required to make a donor part from a different year fit properly.",
     href: "/projects/auto/tacoma-valve-cover",
     image: "/images/projects/tacoma-vc-title.webp",
     imageAlt: "Valve cover replacement and modification project",
     position: "bottom",
+    xOffsetPx: 0,
+  },
+  {
+    title: "Blackhole Simulator",
+    dateKey: "2022-11-01",
+    category: "Game Dev",
+    description: "A physics-based orbital mechanics simulator with playful satellites.",
+    href: "/projects/game-dev/blackhole-simulator",
+    image: "/images/projects/Blackhole_Simulator-image.webp",
+    imageAlt: "Blackhole Simulator project",
+    position: "top",
     xOffsetPx: 0,
   },
   {
@@ -225,7 +225,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/achievements/CyberSci.webp",
     imageAlt: "CyberSci Regionals 2025",
     position: "bottom",
-    xOffsetPx: 35,
+    xOffsetPx: 25,
   },
   {
     title: "MacSync Stealer: Static Malware Analysis",
@@ -258,7 +258,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/events/HTCOTB2026.webp",
     imageAlt: "CHADS Hack the Computer, Open the Box 2026",
     position: "top",
-    xOffsetPx: -25,
+    xOffsetPx: -15,
   },
   {
     title: "HTCOTB2026 CTF Challenges",
@@ -280,7 +280,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/WICYS_logo.webp",
     imageAlt: "WiCyS CTF Challenges",
     position: "top",
-    xOffsetPx: 35,
+    xOffsetPx: 15,
   },
   {
     title: "Dremel DigiLab 3D45 - Restoration",
@@ -302,7 +302,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/achievements/NCC.webp",
     imageAlt: "National Cybersecurity Consortium CTF",
     position: "top",
-    xOffsetPx: -35,
+    xOffsetPx: -15,
   },
   {
     title: "Dremel DigiLab 3D45 - Controller Rebuild",
@@ -324,7 +324,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/cisco-rapid-incident-response-v7.webp",
     imageAlt: "Cisco Rapid Incident Response V7 certificate",
     position: "top",
-    xOffsetPx: 35,
+    xOffsetPx: 15,
   },
 ];
 
@@ -799,7 +799,9 @@ export default function Home() {
                 const visibleMonthCount = getVisibleMonthCount(year);
                 const yearWidth = timelineCardLayout.yearWidths.get(year) ?? 0;
                 const slotWidth = timelineCardLayout.yearSlotWidths.get(year) ?? 0;
-                const monthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].slice(0, visibleMonthCount);
+                const monthLabels = year < 2025
+                  ? []
+                  : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].slice(0, visibleMonthCount);
                 return (
                   <div
                     key={year}
