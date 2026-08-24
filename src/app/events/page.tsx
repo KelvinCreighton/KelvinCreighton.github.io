@@ -43,11 +43,11 @@ const events = [
     ],
   },
   {
-    title: "CHADS Secure Coding Tournament",
+    title: "CHADS+OWASP Secure Coding Tournament",
     subtitle: "Co-host, University of Alberta Cybersecurity, Hacking, And Digital Security club",
     date: "October 2025",
     image: "/images/events/Secure-Coding-Tournament.webp",
-    imageAlt: "CHADS Secure Coding Tournament",
+    imageAlt: "CHADS+OWASP Secure Coding Tournament",
     description:
       "Co-organized the Secure Coding Tournament with CHADS, OWASP Edmonton, and Security Journey.",
     bullets: [
