@@ -753,7 +753,7 @@ function buildTimelineCardLayout(
 
       const monthCut = yearLeft + month * slotWidth;
       bucket.forEach((item, index) => {
-        const left = monthCut + index * sameMonthOffset - cardWidth / 2;
+        const left = monthCut + index * sameMonthOffset;
         positions.set(item.dateKey, left);
         yearRight = Math.max(yearRight, left + cardWidth);
         maxCardRight = Math.max(maxCardRight, left + cardWidth);
