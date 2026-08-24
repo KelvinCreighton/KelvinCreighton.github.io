@@ -118,6 +118,17 @@ const timelineRailItems: TimelineItem[] = [
     xOffsetPx: 0,
   },
   {
+    title: "Valve Cover Replacement & Modification",
+    dateKey: "2022-05-01",
+    category: "Automotive",
+    description: "When a cracked valve cover led to an oil leak, a custom modification was required to make a donor part from a different year fit properly.",
+    href: "/projects/auto/tacoma-valve-cover",
+    image: "/images/projects/tacoma-vc-title.webp",
+    imageAlt: "Valve cover replacement and modification project",
+    position: "bottom",
+    xOffsetPx: 0,
+  },
+  {
     title: "CHADS Hack the Computer, Open the Box",
     dateKey: "2025-02-01",
     category: "Leadership",
