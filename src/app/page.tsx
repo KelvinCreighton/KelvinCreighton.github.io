@@ -732,6 +732,13 @@ export default function Home() {
                     <div
                       className={`absolute left-1/2 w-[9rem] -translate-x-1/2 ${item.position === "top" ? "bottom-[5rem]" : "top-[5rem]"}`}
                     >
+                      <div
+                        className={`absolute left-1/2 hidden w-px -translate-x-1/2 bg-gray-300 dark:bg-gray-700 md:block ${
+                          item.position === "top"
+                            ? "bottom-[-5rem] h-[5rem]"
+                            : "top-[-5rem] h-[5rem]"
+                        }`}
+                      />
                       <TimelineCard item={item} position={item.position} />
                     </div>
                   </div>
