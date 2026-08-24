@@ -1023,14 +1023,27 @@ export default function Home() {
             <div className="relative mx-auto h-[36rem]" style={{ minWidth: `${timelineCardLayout.totalWidth}px` }}>
               {timelineYearLayout.years.map((year) => {
                 const left = timelineCardLayout.yearPositions.get(year) ?? timelineYearLayout.positions.get(year) ?? 0;
-                const isEdgeYear = year === timelineStartYear || year === timelineEndYear;
+                const yearWidth = timelineYearLayout.widths[timelineYearLayout.years.indexOf(year)] ?? timelineMonthSections * timelineMonthGapMin;
+                const monthLabels = ["D", "N", "O", "S", "A", "J", "J", "M", "A", "M", "F", "J"];
+                const monthSlotWidth = yearWidth / timelineMonthSections;
                 return (
                   <div
                     key={year}
-                    className="pointer-events-none absolute top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block"
+                    className="pointer-events-none absolute top-1/2 hidden -translate-y-1/2 md:block"
                     style={{ left }}
                   >
-                    <div className={`mb-4 text-center font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400 ${isEdgeYear ? "text-sm" : "text-xs"}`}>
+                    <div className="absolute -top-12 left-0 h-0 w-full">
+                      {monthLabels.map((month, monthIndex) => (
+                        <span
+                          key={`${year}-${month}-${monthIndex}`}
+                          className="absolute -translate-x-1/2 text-[0.75rem] font-medium uppercase leading-none text-gray-400 dark:text-gray-500"
+                          style={{ left: `${(monthIndex + 0.5) * monthSlotWidth}px` }}
+                        >
+                          {month}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="mb-4 text-center font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400" style={{ fontSize: "1.25rem" }}>
                       {year}
                     </div>
                     <div className="mx-auto h-5 w-px bg-gray-400/80 dark:bg-gray-500/80" />
