@@ -588,8 +588,9 @@ const timelineRailItems: TimelineItem[] = [
 
 const timelineStartYear = 2017;
 const timelineEndYear = 2026;
-const timelineMinYearGap = 120;
-const timelineDensityBoost = 40;
+const timelineMinYearGap = 160;
+const timelineDensityBoost = 96;
+const timelineCardMinGap = 248;
 
 function getTimelinePercent(dateKey: string) {
   const date = new Date(dateKey);
@@ -625,20 +626,20 @@ function TimelineCard({
   return (
     <Link
       href={item.href}
-      className={`group block w-full rounded-2xl border border-gray-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900 ${position === "top" ? "-translate-y-1" : "translate-y-1"}`}
+      className={`group block w-full rounded-2xl border border-gray-200 bg-white p-2.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900 ${position === "top" ? "-translate-y-1" : "translate-y-1"}`}
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
         <Image
           src={item.image}
           alt={item.imageAlt}
           fill
-          sizes="(max-width: 640px) 100vw, 220px"
+          sizes="(max-width: 640px) 100vw, 180px"
           className="object-cover"
         />
       </div>
-          <h3 className="mt-3 text-sm font-semibold leading-snug text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-300">
-            {item.title}
-          </h3>
+      <h3 className="mt-2.5 text-sm font-semibold leading-snug text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-300">
+        {item.title}
+      </h3>
     </Link>
   );
 }
@@ -671,11 +672,47 @@ function buildTimelineYearPositions() {
   return { years, widths, positions, totalWidth };
 }
 
+function buildTimelineCardLayout(
+  items: TimelineItem[],
+  yearLayout: ReturnType<typeof buildTimelineYearPositions>,
+) {
+  const ordered = [...items].sort(
+    (a, b) => new Date(b.dateKey).getTime() - new Date(a.dateKey).getTime(),
+  );
+
+  const positions = new Map<string, number>();
+  const yearPositions = new Map<number, number>();
+  let previousRight = 0;
+
+  ordered.forEach((item, index) => {
+    const { year, withinYear } = getTimelinePercent(item.dateKey);
+    const yearLeft = yearLayout.positions.get(year) ?? 0;
+    const nextYearLeft = yearLayout.positions.get(year - 1) ?? yearLeft + timelineMinYearGap;
+    const baseWidth = Math.max(timelineMinYearGap, nextYearLeft - yearLeft);
+    const ideal = yearLeft + (baseWidth * withinYear);
+    const x = index === 0 ? ideal : Math.max(ideal, previousRight + timelineCardMinGap);
+    positions.set(item.dateKey, x);
+    previousRight = x;
+
+    if (!yearPositions.has(year)) {
+      yearPositions.set(year, x);
+    }
+  });
+
+  const totalWidth = Math.max(
+    yearLayout.totalWidth,
+    previousRight + timelineCardMinGap,
+  );
+
+  return { positions, yearPositions, totalWidth };
+}
+
 export default function Home() {
   const timelineRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const timelineYearLayout = buildTimelineYearPositions();
+  const timelineCardLayout = buildTimelineCardLayout(timelineRailItems, timelineYearLayout);
 
   const scrollTimeline = (direction: "left" | "right") => {
     const node = timelineRef.current;
@@ -947,11 +984,10 @@ export default function Home() {
             ref={timelineRef}
             className="relative overflow-x-auto scroll-smooth px-12 pb-12 pt-14 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            <div className="relative mx-auto h-[34rem]" style={{ minWidth: `${timelineYearLayout.totalWidth}px` }}>
+            <div className="relative mx-auto h-[36rem]" style={{ minWidth: `${timelineCardLayout.totalWidth}px` }}>
               {timelineYearLayout.years.map((year) => {
-                const left = timelineYearLayout.positions.get(year) ?? 0;
+                const left = timelineCardLayout.yearPositions.get(year) ?? timelineYearLayout.positions.get(year) ?? 0;
                 const isEdgeYear = year === timelineStartYear || year === timelineEndYear;
-                const yearCount = timelineRailItems.filter((item) => new Date(item.dateKey).getUTCFullYear() === year).length;
                 return (
                   <div
                     key={year}
@@ -960,20 +996,17 @@ export default function Home() {
                   >
                     <div className={`mb-4 text-center font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400 ${isEdgeYear ? "text-sm" : "text-xs"}`}>
                       {year}
-                      {yearCount > 1 ? null : null}
                     </div>
                     <div className="mx-auto h-5 w-px bg-gray-400/80 dark:bg-gray-500/80" />
                   </div>
                 );
               })}
 
-              {timelineRailItems.map((item, index) => {
+            {[...timelineRailItems]
+              .sort((a, b) => new Date(b.dateKey).getTime() - new Date(a.dateKey).getTime())
+              .map((item, index) => {
                 const above = index % 2 === 0;
-                const { year, withinYear } = getTimelinePercent(item.dateKey);
-                const yearLeft = timelineYearLayout.positions.get(year) ?? 0;
-                const nextYearWidth = timelineYearLayout.positions.get(year - 1) ?? yearLeft;
-                const segmentWidth = Math.max(timelineMinYearGap, nextYearWidth - yearLeft);
-                const left = yearLeft + (segmentWidth * withinYear);
+                const left = timelineCardLayout.positions.get(item.dateKey) ?? 0;
                 return (
                   <div
                     key={`${item.title}-${item.dateKey}`}
@@ -982,7 +1015,7 @@ export default function Home() {
                   >
                     <div className="absolute left-1/2 top-0 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950 md:block" />
                     <div
-                      className={`absolute left-1/2 w-[12rem] -translate-x-1/2 ${above ? "bottom-[3rem]" : "top-[3rem]"}`}
+                      className={`absolute left-1/2 w-[9rem] -translate-x-1/2 ${above ? "bottom-[5rem]" : "top-[5rem]"}`}
                     >
                       <TimelineCard item={item} position={above ? "top" : "bottom"} />
                     </div>
