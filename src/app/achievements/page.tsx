@@ -14,6 +14,7 @@ type AchievementCardProps = {
   image?: string;
   imageAlt?: string;
   onImageClick?: (image: string, alt: string) => void;
+  id?: string;
 };
 
 type AchievementSectionProps = {
@@ -33,10 +34,11 @@ function AchievementCard({
   image,
   imageAlt,
   onImageClick,
+  id,
 }: AchievementCardProps) {
   const altText = imageAlt ?? title;
   return (
-    <article className="group flex self-start flex-col overflow-hidden rounded-xl bg-gray-85 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <article id={id} className="group flex self-start flex-col overflow-hidden rounded-xl bg-gray-85 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       {image ? (
         <button
           type="button"
@@ -187,6 +189,7 @@ export default function AchievementsPage() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
             <AchievementCard
+              id="ncc-ctf"
               title="National Cybersecurity Consortium (NCC) CTF"
               subtitle="Web Exploitation, LLM Prompt Injection"
               date="June 2026"
