@@ -592,12 +592,24 @@ const timelineCardMinGap = 152;
 const timelineMonthSections = 12;
 const timelineMonthGapMin = 44;
 const timelineCardWidthEstimate = 144;
+const currentTimelineDate = new Date("2026-08-24T00:00:00.000Z");
 
 function getTimelinePercent(dateKey: string) {
   const date = new Date(dateKey);
   const year = date.getUTCFullYear();
   const month = date.getUTCMonth();
   return { year, month };
+}
+
+function getVisibleTimelineItems(now = new Date()) {
+  return timelineRailItems.filter((item) => new Date(item.dateKey).getTime() <= now.getTime());
+}
+
+function getVisibleMonthCount(year: number, now = currentTimelineDate) {
+  const currentYear = now.getUTCFullYear();
+  if (year < currentYear) return timelineMonthSections;
+  if (year > currentYear) return 0;
+  return now.getUTCMonth() + 1;
 }
 
 function ContactIcon({
@@ -644,8 +656,9 @@ function TimelineCard({
 
 function buildTimelineYearPositions() {
   const counts = new Map<number, number>();
+  const visibleItems = getVisibleTimelineItems();
 
-  for (const item of timelineRailItems) {
+  for (const item of visibleItems) {
     const year = new Date(item.dateKey).getUTCFullYear();
     counts.set(year, (counts.get(year) ?? 0) + 1);
   }
@@ -656,13 +669,15 @@ function buildTimelineYearPositions() {
   );
 
   const baseMonthWidth = timelineMonthGapMin;
-  const monthSpanWidth = timelineMonthSections * baseMonthWidth;
 
   const widths = years.map((year) => {
+    const visibleMonthCount = getVisibleMonthCount(year);
+    if (visibleMonthCount === 0) return 0;
     const yearCardCount = counts.get(year) ?? 0;
     const cardsWithinYear = Math.max(1, yearCardCount);
     const sameLaneCards = Math.ceil(cardsWithinYear / 2);
     const laneSpan = sameLaneCards * (timelineCardWidthEstimate + timelineCardMinGap);
+    const monthSpanWidth = visibleMonthCount * baseMonthWidth;
     return Math.max(monthSpanWidth, laneSpan);
   });
 
@@ -734,6 +749,7 @@ function buildTimelineCardLayout(
     }
 
     for (const [month, bucket] of monthBuckets.entries()) {
+      if (month >= getVisibleMonthCount(year)) continue;
       bucket.sort((a, b) => {
         const aDate = new Date(a.dateKey).getTime();
         const bDate = new Date(b.dateKey).getTime();
@@ -756,8 +772,9 @@ export default function Home() {
   const timelineRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const visibleTimelineRailItems = getVisibleTimelineItems();
   const timelineYearLayout = buildTimelineYearPositions();
-  const timelineCardLayout = buildTimelineCardLayout(timelineRailItems, timelineYearLayout);
+  const timelineCardLayout = buildTimelineCardLayout(visibleTimelineRailItems, timelineYearLayout);
 
   const scrollTimeline = (direction: "left" | "right") => {
     const node = timelineRef.current;
@@ -1034,7 +1051,7 @@ export default function Home() {
             <div className="relative mx-auto h-[36rem]" style={{ minWidth: `${timelineCardLayout.totalWidth}px` }}>
               {timelineYearLayout.years.map((year) => {
                 const left = timelineCardLayout.yearPositions.get(year) ?? timelineYearLayout.positions.get(year) ?? 0;
-                const monthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                const monthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].slice(0, getVisibleMonthCount(year));
                 return (
                   <div
                     key={year}
@@ -1065,7 +1082,7 @@ export default function Home() {
                 );
               })}
 
-            {[...timelineRailItems]
+            {[...visibleTimelineRailItems]
               .sort((a, b) => new Date(a.dateKey).getTime() - new Date(b.dateKey).getTime())
               .map((item, index) => {
                 const above = index % 2 === 0;
