@@ -1032,20 +1032,26 @@ export default function Home() {
                   <div
                     key={year}
                     className="pointer-events-none absolute top-1/2 hidden -translate-y-1/2 md:block"
-                    style={{ left }}
+                    style={{ left, width: `${yearWidth}px` }}
                   >
                     <div className="absolute left-0 top-1/2 h-0 w-full -translate-y-1/2">
                       {monthLabels.map((month, monthIndex) => (
                         <span
                           key={`${year}-${month}-${monthIndex}`}
-                          className={`absolute inline-flex w-10 -translate-x-1/2 items-center justify-center text-[0.75rem] font-medium uppercase leading-none text-center text-gray-400 dark:text-gray-500 ${monthIndex % 2 === 0 ? "top-3" : "-top-5"}`}
-                          style={{ left: `${(monthIndex + 0.5) * monthSlotWidth}px` }}
+                          className={`absolute inline-flex w-12 items-center justify-center text-center text-[0.75rem] font-medium uppercase leading-none text-gray-400 dark:text-gray-500 ${monthIndex % 2 === 0 ? "top-3" : "-top-5"}`}
+                          style={{
+                            left: `${monthIndex * monthSlotWidth}px`,
+                            transform: "translateX(-50%)",
+                          }}
                         >
                           {month}
                         </span>
                       ))}
                     </div>
-                    <div className="mb-10 text-center font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400" style={{ fontSize: "1.25rem" }}>
+                    <div
+                      className="absolute -top-10 left-0 w-12 -translate-x-1/2 text-center font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400"
+                      style={{ fontSize: "1.25rem" }}
+                    >
                       {year}
                     </div>
                   </div>
