@@ -188,26 +188,6 @@ const timelineRailItems: TimelineItem[] = [
     position: "top",
   },
   {
-    title: "Cisco Rapid Incident Response V7",
-    dateKey: "2026-07-01",
-    category: "Achievement",
-    description: "Completed the Cisco XDR incident response workshop and lab.",
-    href: "/achievements",
-    image: "/images/cisco-rapid-incident-response-v7.webp",
-    imageAlt: "Cisco Rapid Incident Response V7 certificate",
-    position: "bottom",
-  },
-  {
-    title: "Dremel 3D45: Modification & Optimization",
-    dateKey: "2026-05-20",
-    category: "Engineering",
-    description: "A follow-up calibration and optimization stage for the restored Dremel 3D45.",
-    href: "/projects/engineering/dremel-3d45-mod",
-    image: "/images/projects/dremel-3d45-rebuild-title.webp",
-    imageAlt: "Dremel 3D45 modification and optimization",
-    position: "top",
-  },
-  {
     title: "National Cybersecurity Consortium (NCC) CTF",
     dateKey: "2026-06-01",
     category: "Achievement",
@@ -216,6 +196,26 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/achievements/NCC.webp",
     imageAlt: "National Cybersecurity Consortium CTF",
     position: "bottom",
+  },
+  {
+    title: "Dremel 3D45: Modification & Optimization",
+    dateKey: "2026-07-20",
+    category: "Engineering",
+    description: "A follow-up calibration and optimization stage for the restored Dremel 3D45.",
+    href: "/projects/engineering/dremel-3d45-mod",
+    image: "/images/projects/dremel-3d45-rebuild-title.webp",
+    imageAlt: "Dremel 3D45 modification and optimization",
+    position: "bottom",
+  },
+  {
+    title: "Cisco Rapid Incident Response V7",
+    dateKey: "2026-07-01",
+    category: "Achievement",
+    description: "Completed the Cisco XDR incident response workshop and lab.",
+    href: "/achievements",
+    image: "/images/cisco-rapid-incident-response-v7.webp",
+    imageAlt: "Cisco Rapid Incident Response V7 certificate",
+    position: "top",
   },
 ];
 
@@ -355,7 +355,6 @@ function buildTimelineCardLayout(
   );
   const yearGap = sharedYearWidth;
   const slotWidth = sharedYearWidth / timelineMonthSections;
-  const sameMonthOffset = 18;
 
   for (let yearIndex = 0; yearIndex < yearLayout.years.length; yearIndex += 1) {
     const year = yearLayout.years[yearIndex];
@@ -385,8 +384,8 @@ function buildTimelineCardLayout(
       });
 
       const monthCut = yearLeft + month * slotWidth;
-      bucket.forEach((item, index) => {
-        const left = monthCut + index * sameMonthOffset;
+      bucket.forEach((item) => {
+        const left = monthCut;
         positions.set(item.dateKey, left);
         yearRight = Math.max(yearRight, left + cardWidth);
         maxCardRight = Math.max(maxCardRight, left + cardWidth);
