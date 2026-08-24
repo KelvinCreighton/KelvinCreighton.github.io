@@ -225,7 +225,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/dremel-3d45-rebuild-title.webp",
     imageAlt: "Dremel 3D45 modification and optimization",
     position: "bottom",
-    xOffsetPx: 10,
+    xOffsetPx: 50,
   },
   {
     title: "Cisco Rapid Incident Response V7",
@@ -754,17 +754,29 @@ export default function Home() {
                       className={`absolute left-1/2 w-[9rem] -translate-x-1/2 ${item.position === "top" ? "bottom-[5rem]" : "top-[5rem]"}`}
                       style={{ left: `calc(50% + ${item.xOffsetPx}px)` }}
                     >
+                      {(() => {
+                        const connectorRise = 80;
+                        const connectorLength = Math.hypot(item.xOffsetPx, connectorRise);
+                        const connectorAngle = Math.atan2(-item.xOffsetPx, connectorRise) * (180 / Math.PI);
+                        return (
+                          <div
+                            aria-hidden="true"
+                            className={`pointer-events-none absolute left-1/2 hidden w-px -translate-x-1/2 bg-gray-300 dark:bg-gray-700 md:block ${
+                              item.position === "top" ? "top-full" : "bottom-full"
+                            }`}
+                            style={{
+                              height: `${connectorLength}px`,
+                              transform: `translateX(calc(-50% + ${item.xOffsetPx}px)) rotate(${connectorAngle}deg)`,
+                              transformOrigin: item.position === "top" ? "top center" : "bottom center",
+                            }}
+                          />
+                        );
+                      })()}
                       <div
-                        aria-hidden="true"
-                        className={`pointer-events-none absolute left-1/2 hidden h-[5rem] w-px -translate-x-1/2 bg-gray-300 dark:bg-gray-700 md:block ${
-                          item.position === "top" ? "top-full" : "bottom-full"
-                        }`}
-                        style={{
-                          transform: `translateX(calc(-50% + ${item.xOffsetPx}px)) rotate(${Math.atan2(item.xOffsetPx, 80) * (180 / Math.PI)}deg)`,
-                          transformOrigin: item.position === "top" ? "top center" : "bottom center",
-                        }}
-                      />
-                      <TimelineCard item={item} position={item.position} />
+                        style={{ transform: `translateX(${item.xOffsetPx}px)` }}
+                      >
+                        <TimelineCard item={item} position={item.position} />
+                      </div>
                     </div>
                   </div>
                 );
