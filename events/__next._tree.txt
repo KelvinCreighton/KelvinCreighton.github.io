@@ -1,7 +1,7 @@
-:HL["/_next/static/chunks/0dc07fa27364b648.css","style"]
+:HL["/_next/static/chunks/1adacfbf714d66f5.css","style"]
 :HL["/images/events/Accurate-Networks.webp","image"]
 :HL["/images/events/HTCOTB2026.webp","image"]
 :HL["/images/events/Cybersec-Awareness-Month.webp","image"]
 :HL["/images/events/Secure-Coding-Tournament.webp","image"]
 :HL["/images/events/HTCOTB2025.webp","image"]
-0:{"buildId":"MrKze0ID1PywXKmPkg6oB","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"events","paramType":null,"paramKey":"events","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"mP-0qtPMYemKn2u8pTsAz","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"events","paramType":null,"paramKey":"events","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
