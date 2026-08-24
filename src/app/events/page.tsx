@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 const events = [
   {
@@ -97,6 +98,7 @@ export default function EventsPage() {
           {events.map((event) => (
             <article
               key={`${event.title}-${event.date}`}
+              style={{ scrollMarginTop: "8rem" } as CSSProperties}
               className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-gray-85 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
             >
               <div className="relative aspect-[16/9] w-full bg-gray-100 dark:bg-gray-800">

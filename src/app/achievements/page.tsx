@@ -194,6 +194,7 @@ export default function AchievementsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-start">
             <AchievementCard
               id="ncc-ctf"
+              style={{ scrollMarginTop: "8rem" }}
               title="National Cybersecurity Consortium (NCC) CTF"
               subtitle="Web Exploitation, LLM Prompt Injection"
               date="June 2026"
