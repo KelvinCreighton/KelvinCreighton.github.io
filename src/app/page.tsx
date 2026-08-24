@@ -210,7 +210,7 @@ const timelineRailItems: TimelineItem[] = [
     dateKey: "2025-10-15",
     category: "Cybersecurity",
     description: "A grouped set of PicoCTF writeups covering SSTI, NoSQL injection, eval() exploitation, and SOAP/XXE.",
-    href: "/projects/cybersecurity",
+    href: "/projects/cybersecurity?category=PicoCTF%20Writeups",
     image: "/images/projects/picoCTF_logo.webp",
     imageAlt: "PicoCTF writeups",
     position: "top",
