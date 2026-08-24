@@ -28,7 +28,7 @@ export default function Dremel3D45ModProject() {
 
           <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
             <Image
-              src="/images/projects/dremel-3d45-mod-title.webp"
+              src="/images/projects/dremel-3d45-rebuild-title.webp"
               alt="Dremel DigiLab 3D45 Modification"
               fill
               className="object-cover"

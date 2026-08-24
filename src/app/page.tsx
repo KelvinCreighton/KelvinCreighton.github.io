@@ -344,7 +344,7 @@ const timelineItems: TimelineItem[] = [
     category: "Engineering",
     description: "A follow-up calibration and optimization stage for the restored Dremel 3D45.",
     href: "/projects/engineering/dremel-3d45-mod",
-    image: "/images/projects/dremel-3d45-mod-title.webp",
+    image: "/images/projects/dremel-3d45-rebuild-title.webp",
     imageAlt: "Dremel 3D45 modification and optimization",
   },
   {
@@ -571,7 +571,7 @@ const timelineRailItems: TimelineItem[] = [
     category: "Engineering",
     description: "A follow-up calibration and optimization stage for the restored Dremel 3D45.",
     href: "/projects/engineering/dremel-3d45-mod",
-    image: "/images/projects/dremel-3d45-mod-title.webp",
+    image: "/images/projects/dremel-3d45-rebuild-title.webp",
     imageAlt: "Dremel 3D45 modification and optimization",
   },
   {
