@@ -655,30 +655,17 @@ function TimelineCard({
 }
 
 function buildTimelineYearPositions() {
-  const counts = new Map<number, number>();
   const visibleItems = getVisibleTimelineItems();
-
-  for (const item of visibleItems) {
-    const year = new Date(item.dateKey).getUTCFullYear();
-    counts.set(year, (counts.get(year) ?? 0) + 1);
-  }
 
   const years = Array.from(
     { length: timelineEndYear - timelineStartYear + 1 },
     (_, index) => timelineStartYear + index,
   );
 
-  const baseMonthWidth = timelineMonthGapMin;
-
   const widths = years.map((year) => {
     const visibleMonthCount = getVisibleMonthCount(year);
     if (visibleMonthCount === 0) return 0;
-    const yearCardCount = counts.get(year) ?? 0;
-    const cardsWithinYear = Math.max(1, yearCardCount);
-    const sameLaneCards = Math.ceil(cardsWithinYear / 2);
-    const laneSpan = sameLaneCards * (timelineCardWidthEstimate + timelineCardMinGap);
-    const monthSpanWidth = visibleMonthCount * baseMonthWidth;
-    return Math.max(monthSpanWidth, laneSpan);
+    return visibleMonthCount * timelineMonthGapMin;
   });
 
   const totalWidth = widths.reduce((sum, width) => sum + width, 0);
@@ -712,25 +699,29 @@ function buildTimelineCardLayout(
   const positions = new Map<string, number>();
   const yearPositions = new Map<number, number>();
   const yearItems = new Map<number, TimelineItem[]>();
+  let maxCardRight = 0;
+  const countsByYear = new Map<number, number>();
   for (const item of ordered) {
     const year = new Date(item.dateKey).getUTCFullYear();
     const existing = yearItems.get(year) ?? [];
     existing.push(item);
     yearItems.set(year, existing);
+    countsByYear.set(year, (countsByYear.get(year) ?? 0) + 1);
   }
-
-  const densestYear = yearLayout.years.reduce((bestYear, year) => {
-    const bestCount = yearItems.get(bestYear)?.length ?? 0;
-    const yearCount = yearItems.get(year)?.length ?? 0;
-    if (yearCount > bestCount) return year;
-    return bestYear;
-  }, yearLayout.years[0]);
-
-  const densestIndex = yearLayout.years.indexOf(densestYear);
-  const yearWidth = yearLayout.widths[densestIndex] ?? timelineMonthSections * timelineMonthGapMin;
-  const slotWidth = yearWidth / timelineMonthSections;
   const cardWidth = timelineCardWidthEstimate;
-  const yearGap = yearWidth;
+  const sharedYearWidth = Math.max(
+    timelineMonthGapMin * timelineMonthSections,
+    ...yearLayout.years.map((year) => {
+      const visibleMonthCount = getVisibleMonthCount(year);
+      if (visibleMonthCount === 0) return 0;
+      const yearCardCount = countsByYear.get(year) ?? 0;
+      const sameLaneCards = Math.ceil(Math.max(1, yearCardCount) / 2);
+      const laneSpan = sameLaneCards * (timelineCardWidthEstimate + timelineCardMinGap);
+      return Math.max(visibleMonthCount * timelineMonthGapMin, laneSpan);
+    }),
+  );
+  const yearGap = sharedYearWidth;
+  const slotWidth = sharedYearWidth / timelineMonthSections;
   const sameMonthOffset = 18;
 
   for (let yearIndex = 0; yearIndex < yearLayout.years.length; yearIndex += 1) {
@@ -740,6 +731,8 @@ function buildTimelineCardLayout(
 
     const itemsForYear = yearItems.get(year) ?? [];
     const monthBuckets = new Map<number, TimelineItem[]>();
+    const visibleMonthCount = getVisibleMonthCount(year);
+    let yearRight = yearLeft;
 
     for (const item of itemsForYear) {
       const { month } = getTimelinePercent(item.dateKey);
@@ -749,7 +742,7 @@ function buildTimelineCardLayout(
     }
 
     for (const [month, bucket] of monthBuckets.entries()) {
-      if (month >= getVisibleMonthCount(year)) continue;
+      if (month >= visibleMonthCount) continue;
       bucket.sort((a, b) => {
         const aDate = new Date(a.dateKey).getTime();
         const bDate = new Date(b.dateKey).getTime();
@@ -760,12 +753,21 @@ function buildTimelineCardLayout(
 
       const monthCut = yearLeft + month * slotWidth;
       bucket.forEach((item, index) => {
-        positions.set(item.dateKey, monthCut + index * sameMonthOffset - cardWidth / 2);
+        const left = monthCut + index * sameMonthOffset - cardWidth / 2;
+        positions.set(item.dateKey, left);
+        yearRight = Math.max(yearRight, left + cardWidth);
+        maxCardRight = Math.max(maxCardRight, left + cardWidth);
       });
     }
   }
 
-  return { positions, yearPositions, totalWidth: yearWidth * yearLayout.years.length, yearWidth, slotWidth };
+  return {
+    positions,
+    yearPositions,
+    totalWidth: maxCardRight + timelineCardWidthEstimate,
+    yearWidth: sharedYearWidth,
+    slotWidth,
+  };
 }
 
 export default function Home() {
@@ -1051,12 +1053,14 @@ export default function Home() {
             <div className="relative mx-auto h-[36rem]" style={{ minWidth: `${timelineCardLayout.totalWidth}px` }}>
               {timelineYearLayout.years.map((year) => {
                 const left = timelineCardLayout.yearPositions.get(year) ?? timelineYearLayout.positions.get(year) ?? 0;
-                const monthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].slice(0, getVisibleMonthCount(year));
+                const visibleMonthCount = getVisibleMonthCount(year);
+                const yearWidth = timelineCardLayout.yearWidth;
+                const monthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].slice(0, visibleMonthCount);
                 return (
                   <div
                     key={year}
                     className="pointer-events-none absolute top-1/2 hidden -translate-y-1/2 md:block"
-                    style={{ left, width: `${timelineCardLayout.yearWidth}px` }}
+                    style={{ left, width: `${yearWidth}px` }}
                   >
                     <div className="absolute left-0 top-1/2 h-0 w-full -translate-y-1/2">
                       {monthLabels.map((month, monthIndex) => (
