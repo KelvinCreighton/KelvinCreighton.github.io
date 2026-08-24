@@ -98,6 +98,19 @@ export default function EventsPage() {
           {events.map((event) => (
             <article
               key={`${event.title}-${event.date}`}
+              id={
+                event.title === "OWASP Edmonton & Accurate Networks"
+                  ? "owasp-edmonton-accurate-networks"
+                  : event.title === "CHADS Hack the Computer, Open the Box" && event.date === "February 2026"
+                    ? "chads-hack-the-computer-open-the-box-2026"
+                    : event.title === "CHADS Cybersecurity Awareness Month"
+                      ? "chads-cybersecurity-awareness-month"
+                      : event.title === "CHADS+OWASP Secure Coding Tournament"
+                        ? "chads-owasp-secure-coding-tournament"
+                        : event.title === "CHADS Hack the Computer, Open the Box"
+                          ? "chads-hack-the-computer-open-the-box-2025"
+                          : undefined
+              }
               style={{ scrollMarginTop: "8rem" } as CSSProperties}
               className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-gray-85 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
             >
