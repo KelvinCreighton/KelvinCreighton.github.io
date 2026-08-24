@@ -402,7 +402,7 @@ function buildTimelineYearPositions() {
   const years = Array.from(
     { length: timelineEndYear - timelineStartYear + 1 },
     (_, index) => timelineStartYear + index,
-  );
+  ).filter((year) => year !== 2020 && year !== 2021 && year !== 2023 && year !== 2024);
 
   const widths = years.map((year) => {
     const visibleMonthCount = getVisibleMonthCount(year);
