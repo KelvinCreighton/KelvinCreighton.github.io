@@ -7,215 +7,215 @@ import type { ReactNode } from "react";
 
 type TimelineItem = {
   title: string;
-  dateLabel: string;
   dateKey: string;
   category: string;
   description: string;
   href: string;
   image: string;
   imageAlt: string;
+  position: "top" | "bottom";
 };
 
 const timelineRailItems: TimelineItem[] = [
   {
     title: "My First Game",
-    dateLabel: "2017",
     dateKey: "2017-01-01",
     category: "Game Dev",
     description: "The first JavaScript game I ever made, which started my interest in interactive development.",
     href: "/projects/game-dev/my-first-game",
     image: "/images/projects/my-first-game.webp",
     imageAlt: "My First Game project",
+    position: "top",
   },
   {
     title: "UFO",
-    dateLabel: "2017",
     dateKey: "2017-06-01",
     category: "Game Dev",
     description: "A simple arcade-style game built around movement, enemies, and levels.",
     href: "/projects/game-dev/ufo",
     image: "/images/projects/ufo.webp",
     imageAlt: "UFO game project",
+    position: "bottom",
   },
   {
     title: "BL1ND JUST1C3: 1NV3ST1G4T1ON",
-    dateLabel: "2017",
     dateKey: "2017-09-01",
     category: "Music",
     description: "A piano arrangement of a high-energy Homestuck theme.",
     href: "/projects/music/blind-justice-investigation",
     image: "/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON.webp",
     imageAlt: "BL1ND JUST1C3: 1NV3ST1G4T1ON",
+    position: "top",
   },
   {
     title: "Beethoven Virus",
-    dateLabel: "2018",
     dateKey: "2018-01-01",
     category: "Music",
     description: "A piano arrangement that pushed my arrangement and performance skills further.",
     href: "/projects/music/beethoven-virus",
     image: "/images/projects/Beethoven_Virus.webp",
     imageAlt: "Beethoven Virus arrangement",
+    position: "bottom",
   },
   {
     title: "Tank Game",
-    dateLabel: "2018",
     dateKey: "2018-05-01",
     category: "Game Dev",
     description: "A top-down tank shooter focused on movement, aiming, and game logic.",
     href: "/projects/game-dev/tank-game",
     image: "/images/projects/tank-game.webp",
     imageAlt: "Tank Game project",
+    position: "top",
   },
   {
     title: "The Longest Moment Before a New Beginning",
-    dateLabel: "2019",
     dateKey: "2019-10-01",
     category: "Music",
     description: "An original piano composition written in high school.",
     href: "/projects/music/the-longest-moment",
     image: "/images/projects/The-Longest-Moment-Before-a-New-Beginning.webp",
     imageAlt: "The Longest Moment Before a New Beginning",
+    position: "bottom",
   },
   {
     title: "Plastic Mind",
-    dateLabel: "2019",
     dateKey: "2019-11-01",
     category: "Game Dev",
     description: "A physics platformer ported from Processing to p5.js.",
     href: "/projects/game-dev/plastic-mind",
     image: "/images/projects/plastic-mind-title.webp",
     imageAlt: "Plastic Mind project",
+    position: "top",
   },
   {
     title: "3D Game Engine",
-    dateLabel: "2022",
     dateKey: "2022-06-01",
     category: "Game Dev",
     description: "A first 3D engine project exploring projection, rotation, and matrix math.",
     href: "/projects/game-dev/3d-game",
     image: "/images/projects/3d-game.webp",
     imageAlt: "3D Game Engine project",
+    position: "bottom",
   },
   {
     title: "Blackhole Simulator",
-    dateLabel: "2022",
     dateKey: "2022-08-01",
     category: "Game Dev",
     description: "A physics-based orbital mechanics simulator with playful satellites.",
     href: "/projects/game-dev/blackhole-simulator",
     image: "/images/projects/Blackhole_Simulator-image.webp",
     imageAlt: "Blackhole Simulator project",
+    position: "top",
   },
   {
     title: "Remote Control Car",
-    dateLabel: "November 2024 - January 2025",
     dateKey: "2024-11-01",
     category: "Engineering",
     description: "An educational RC car curriculum built around low-cost robotics and prototyping.",
     href: "/projects/engineering/rc-car",
     image: "/images/projects/rc-car-title.webp",
     imageAlt: "Remote control car project",
+    position: "bottom",
   },
   {
     title: "IlluminatiCTF",
-    dateLabel: "May 2025",
     dateKey: "2025-05-01",
     category: "Achievement",
     description: "Placed 3rd nationally and 6th overall in the national bracket.",
     href: "/achievements",
     image: "/images/achievements/illuminatictf.webp",
     imageAlt: "IlluminatiCTF achievement",
+    position: "top",
   },
   {
     title: "Manual Transmission Rebuild",
-    dateLabel: "August 2025",
     dateKey: "2025-08-01",
     category: "Automotive",
     description: "A transmission rebuild that grew from a straightforward repair into a full drivetrain project.",
     href: "/projects/auto/transmission-rebuild",
     image: "/images/projects/transmission-title.webp",
     imageAlt: "Manual transmission rebuild project",
+    position: "bottom",
   },
   {
     title: "PicoCTF Writeups",
-    dateLabel: "September - October 2025",
     dateKey: "2025-10-15",
     category: "Cybersecurity",
     description: "A grouped set of PicoCTF writeups covering SSTI, NoSQL injection, eval() exploitation, and SOAP/XXE.",
     href: "/projects/cybersecurity",
     image: "/images/projects/picoCTF_logo.webp",
     imageAlt: "PicoCTF writeups",
+    position: "top",
   },
   {
     title: "CyberSci Regionals 2025",
-    dateLabel: "November 2025",
     dateKey: "2025-11-01",
     category: "Achievement",
     description: "Placed 5th with CHADS B-Team in Calgary.",
     href: "/achievements",
     image: "/images/achievements/CyberSci.webp",
     imageAlt: "CyberSci Regionals 2025",
+    position: "bottom",
   },
   {
     title: "MacSync Stealer: Static Malware Analysis",
-    dateLabel: "December 2025",
     dateKey: "2025-12-01",
     category: "Cybersecurity",
     description: "A static malware analysis of MacSync Stealer and its execution flow.",
     href: "/projects/cybersecurity/macsync-stealer",
     image: "/images/projects/cyber-highlights.webp",
     imageAlt: "MacSync Stealer static malware analysis",
+    position: "top",
   },
   {
     title: "HTCOTB2026 CTF Challenges",
-    dateLabel: "February 2026",
     dateKey: "2026-02-01",
     category: "Cybersecurity",
     description: "A grouped set of HTCOTB challenge writeups and custom challenges built for the University of Alberta Cybersecurity Club.",
     href: "/projects/cybersecurity?category=HTCOTB%20CTF",
     image: "/images/projects/CHADS_logo.webp",
     imageAlt: "HTCOTB2026 CTF challenges",
+    position: "bottom",
   },
   {
     title: "WiCyS CTF Challenges",
-    dateLabel: "March 2026",
     dateKey: "2026-03-01",
     category: "Cybersecurity",
     description: "A grouped set of WiCyS CTF challenges spanning forensics, reversing, pwn, and web exploitation.",
     href: "/projects/cybersecurity?category=WiCyS%20CTF",
     image: "/images/projects/WICYS_logo.webp",
     imageAlt: "WiCyS CTF Challenges",
+    position: "top",
   },
   {
     title: "Cisco Rapid Incident Response V7",
-    dateLabel: "July 2026",
     dateKey: "2026-07-01",
     category: "Achievement",
     description: "Completed the Cisco XDR incident response workshop and lab.",
     href: "/achievements",
     image: "/images/cisco-rapid-incident-response-v7.webp",
     imageAlt: "Cisco Rapid Incident Response V7 certificate",
+    position: "bottom",
   },
   {
     title: "Dremel 3D45: Modification & Optimization",
-    dateLabel: "May 2026",
     dateKey: "2026-05-20",
     category: "Engineering",
     description: "A follow-up calibration and optimization stage for the restored Dremel 3D45.",
     href: "/projects/engineering/dremel-3d45-mod",
     image: "/images/projects/dremel-3d45-rebuild-title.webp",
     imageAlt: "Dremel 3D45 modification and optimization",
+    position: "top",
   },
   {
     title: "National Cybersecurity Consortium (NCC) CTF",
-    dateLabel: "June 2026",
     dateKey: "2026-06-01",
     category: "Achievement",
     description: "Placed 2nd nationally with CHADS in the NCC final CTF.",
     href: "/achievements",
     image: "/images/achievements/NCC.webp",
     imageAlt: "National Cybersecurity Consortium CTF",
+    position: "bottom",
   },
 ];
 
@@ -721,8 +721,7 @@ export default function Home() {
 
             {[...visibleTimelineRailItems]
               .sort((a, b) => new Date(a.dateKey).getTime() - new Date(b.dateKey).getTime())
-              .map((item, index) => {
-                const above = index % 2 === 0;
+              .map((item) => {
                 const left = timelineCardLayout.positions.get(item.dateKey) ?? 0;
                 return (
                   <div
@@ -732,9 +731,9 @@ export default function Home() {
                   >
                     <div className="absolute left-1/2 top-0 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950 md:block" />
                     <div
-                      className={`absolute left-1/2 w-[9rem] -translate-x-1/2 ${above ? "bottom-[5rem]" : "top-[5rem]"}`}
+                      className={`absolute left-1/2 w-[9rem] -translate-x-1/2 ${item.position === "top" ? "bottom-[5rem]" : "top-[5rem]"}`}
                     >
-                      <TimelineCard item={item} position={above ? "top" : "bottom"} />
+                      <TimelineCard item={item} position={item.position} />
                     </div>
                   </div>
                 );
