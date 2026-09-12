@@ -681,7 +681,33 @@ export default function Home() {
         </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Highlight 1: Cisco Rapid Incident Response V7 */}
+          {/* Highlight 1: 3D Printer Controller Rebuild */}
+          <Link
+            href="/projects/engineering/dremel-3d45-rebuild"
+            className="group block h-full mx-2 md:mx-0"
+          >
+            <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
+                <Image
+                  src="/images/projects/dremel-3d45-rebuild-title.webp"
+                  alt="Dremel DigiLab 3D45 controller rebuild"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  Dremel DigiLab 3D45 - Controller Rebuild
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  Rebuilding a Dremel DigiLab 3D45 after the original motherboard failed and the controller had to be replaced.
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          {/* Highlight 2: Cisco Rapid Incident Response V7 */}
           <Link
             href="/achievements"
             className="group block h-full mx-2 md:mx-0"
@@ -702,31 +728,6 @@ export default function Home() {
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
                   Hands-on XDR incident response workshop with investigation, containment, and threat-hunting lab work.
-                </p>
-              </div>
-            </div>
-          </Link>
-
-          <Link
-            href="/projects/cybersecurity?category=WiCyS%20CTF"
-            className="group block h-full mx-2 md:mx-0"
-          >
-            <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
-              <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
-                <Image
-                  src="/images/projects/WICYS_logo.webp"
-                  alt="WiCyS CTF Challenges"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  WiCyS CTF Challenges
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Try out the challenges I designed for the WiCyS Cross Chapter CTF of March 2026. Challenge categories include: Web Exploitation, Binary Exploitation, Reverse Engineering, and Forensics.
                 </p>
               </div>
             </div>
