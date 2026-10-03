@@ -650,11 +650,7 @@ export default function Home() {
               Hi, I&apos;m Kelvin
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-              I am a Chapter Leader for OWASP Edmonton, the Vice President of
-              Events for the University of Alberta&apos;s Cybersecurity Club
-              (CHADS),
-              and a 4th year Computer Science student at the University of
-              Alberta with a strong interest in Cybersecurity and Software Engineering.
+             I am a Chapter Leader with OWASP Edmonton (Open Worldwide Application Security Project) and a Computer Science graduate from the University of Alberta. My interests lie at the intersection of cybersecurity and embedded systems, with a focus on building secure and reliable software and hardware. 
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
               <Link
