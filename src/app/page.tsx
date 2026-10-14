@@ -136,7 +136,7 @@ const timelineRailItems: TimelineItem[] = [
     href: "/projects/engineering/robotic-arm-simulation",
     image: "/images/projects/robotic-arm-simulation-title.webp",
     imageAlt: "Robotic Arm Simulation project",
-    position: "bottom",
+    position: "top",
     xOffsetPx: 0,
   },
   {
