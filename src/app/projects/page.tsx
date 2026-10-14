@@ -23,7 +23,23 @@ export default function Projects() {
           <h2 className="text-xl font-semibold text-center">Cybersecurity</h2>
         </Link>
 
-        {/* Category 2: Auto Repair & Maintenance */}
+        {/* Category 2: Engineering */}
+        <Link
+          href="/projects/engineering"
+          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
+        >
+          <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
+            <Image
+              src="/icons/engineering.svg"
+              alt="Engineering"
+              width={128}
+              height={128}
+            />
+          </div>
+          <h2 className="text-xl font-semibold text-center">Engineering</h2>
+        </Link>
+
+        {/* Category 3: Auto Repair & Maintenance */}
         <Link
           href="/projects/auto"
           className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
@@ -39,7 +55,7 @@ export default function Projects() {
           <h2 className="text-xl font-semibold text-center">Automotive</h2>
         </Link>
 
-        {/* Category 3: Game Development */}
+        {/* Category 4: Game Development */}
         <Link
           href="/projects/game-dev"
           className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
@@ -55,7 +71,7 @@ export default function Projects() {
           <h2 className="text-xl font-semibold text-center">Game Dev</h2>
         </Link>
 
-        {/* Category 4: Music Production */}
+        {/* Category 5: Music Production */}
         <Link
           href="/projects/music"
           className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
@@ -69,22 +85,6 @@ export default function Projects() {
             />
           </div>
           <h2 className="text-xl font-semibold text-center">Music</h2>
-        </Link>
-
-        {/* Category 5: Engineering */}
-        <Link
-          href="/projects/engineering"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
-        >
-          <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
-            <Image
-              src="/icons/engineering.svg"
-              alt="Engineering"
-              width={128}
-              height={128}
-            />
-          </div>
-          <h2 className="text-xl font-semibold text-center">Engineering</h2>
         </Link>
       </div>
     </main>
