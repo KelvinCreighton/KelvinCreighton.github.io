@@ -11,6 +11,17 @@ import {
 export default function EngineeringProjects() {
   const projects = [
     {
+      id: 3,
+      title: "Robotic Arm Simulation",
+      date: "September 2024 - December 2024",
+      tags: ["simulation", "robotics", "optimization", "matlab"],
+      description:
+        "Interactive 2D robotic arm simulation demonstrating inverse kinematics, analytical and finite-difference Jacobians, Newton's method, and Broyden's quasi-Newton optimization.",
+      image: "/images/projects/robotic-arm-simulation-title.webp",
+      link: "/projects/engineering/robotic-arm-simulation",
+      category: "Robotics",
+    },
+    {
       id: 2,
       title: "Dremel DigiLab 3D45 - Controller Rebuild",
       date: "May 2026 - July 2026",

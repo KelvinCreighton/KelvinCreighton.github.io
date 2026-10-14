@@ -104,8 +104,20 @@ export const projectNavigationData: Record<
   ],
   engineering: [
     {
+      href: "/projects/engineering/robotic-arm-simulation",
+      title: "Robotic Arm Simulation",
+    },
+    {
       href: "/projects/engineering/rc-car",
       title: "Remote Control Car",
+    },
+    {
+      href: "/projects/engineering/dremel-3d45",
+      title: "Dremel DigiLab 3D45 - Restoration",
+    },
+    {
+      href: "/projects/engineering/dremel-3d45-rebuild",
+      title: "Dremel DigiLab 3D45 - Controller Rebuild",
     },
   ],
 };

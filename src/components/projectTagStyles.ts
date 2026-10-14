@@ -125,4 +125,12 @@ export const projectTagClassNames: Record<string, string> = {
   macos:
     "border-slate-200 bg-slate-100 text-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300",
   zsh: "border-blue-200 bg-blue-100 text-blue-800 dark:border-blue-900 dark:bg-blue-950/70 dark:text-blue-300",
+  robotics:
+    "border-blue-200 bg-blue-100 text-blue-800 dark:border-blue-900 dark:bg-blue-950/70 dark:text-blue-300",
+  matlab:
+    "border-amber-200 bg-amber-100 text-amber-800 dark:border-amber-900 dark:bg-amber-950/70 dark:text-amber-300",
+  optimization:
+    "border-violet-200 bg-violet-100 text-violet-800 dark:border-violet-900 dark:bg-violet-950/70 dark:text-violet-300",
+  kinematics:
+    "border-cyan-200 bg-cyan-100 text-cyan-800 dark:border-cyan-900 dark:bg-cyan-950/70 dark:text-cyan-300",
 };
