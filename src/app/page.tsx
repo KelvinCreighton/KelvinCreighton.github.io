@@ -129,6 +129,17 @@ const timelineRailItems: TimelineItem[] = [
     xOffsetPx: 0,
   },
   {
+    title: "Robotic Arm Simulation",
+    dateKey: "2024-12-01",
+    category: "Engineering",
+    description: "Interactive 2D robotic arm simulation implementing inverse kinematics, Newton's method, and Broyden's quasi-Newton optimization in MATLAB.",
+    href: "/projects/engineering/robotic-arm-simulation",
+    image: "/images/projects/robotic-arm-simulation-title.webp",
+    imageAlt: "Robotic Arm Simulation project",
+    position: "bottom",
+    xOffsetPx: 0,
+  },
+  {
     title: "CHADS Hack the Computer, Open the Box",
     dateKey: "2025-02-01",
     category: "Leadership",
@@ -402,7 +413,7 @@ function buildTimelineYearPositions() {
   const years = Array.from(
     { length: timelineEndYear - timelineStartYear + 1 },
     (_, index) => timelineStartYear + index,
-  ).filter((year) => year !== 2020 && year !== 2021 && year !== 2023 && year !== 2024);
+  ).filter((year) => year !== 2020 && year !== 2021 && year !== 2023);
 
   const widths = years.map((year) => {
     const visibleMonthCount = getVisibleMonthCount(year);

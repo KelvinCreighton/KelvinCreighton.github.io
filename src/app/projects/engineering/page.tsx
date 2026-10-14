@@ -12,17 +12,6 @@ export default function EngineeringProjects() {
   const projects = [
     {
       id: 3,
-      title: "Robotic Arm Simulation",
-      date: "September 2024 - December 2024",
-      tags: ["simulation", "robotics", "optimization", "matlab"],
-      description:
-        "Interactive 2D robotic arm simulation demonstrating inverse kinematics, analytical and finite-difference Jacobians, Newton's method, and Broyden's quasi-Newton optimization.",
-      image: "/images/projects/robotic-arm-simulation-title.webp",
-      link: "/projects/engineering/robotic-arm-simulation",
-      category: "Robotics",
-    },
-    {
-      id: 2,
       title: "Dremel DigiLab 3D45 - Controller Rebuild",
       date: "May 2026 - July 2026",
       tags: [],
@@ -34,7 +23,7 @@ export default function EngineeringProjects() {
       isInProgress: true,
     },
     {
-      id: 1,
+      id: 2,
       title: "Dremel DigiLab 3D45 - Restoration",
       date: "May 2026",
       tags: [],
@@ -45,7 +34,7 @@ export default function EngineeringProjects() {
       category: "3D Printers",
     },
     {
-      id: 0,
+      id: 1,
       title: "Remote Control Car",
       date: "November 2024 - January 2025",
       tags: [],
@@ -53,6 +42,17 @@ export default function EngineeringProjects() {
         "Designing an accessible, sub-$10 educational RC car curriculum for engineering camps, focusing on robotics through low-cost mechanical and electrical prototyping.",
       image: "/images/projects/rc-car-title.webp",
       link: "/projects/engineering/rc-car",
+      category: "Robotics",
+    },
+    {
+      id: 0,
+      title: "Robotic Arm Simulation",
+      date: "September 2024 - December 2024",
+      tags: ["simulation", "robotics", "optimization", "matlab"],
+      description:
+        "Interactive 2D robotic arm simulation demonstrating inverse kinematics, analytical and finite-difference Jacobians, Newton's method, and Broyden's quasi-Newton optimization.",
+      image: "/images/projects/robotic-arm-simulation-title.webp",
+      link: "/projects/engineering/robotic-arm-simulation",
       category: "Robotics",
     },
   ];
