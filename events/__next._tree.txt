@@ -1,7 +1,8 @@
 :HL["/_next/static/chunks/6c7362c49daf2c4e.css","style"]
+:HL["/images/events/BSides-Edmonton-2026.webp","image"]
 :HL["/images/events/Accurate-Networks.webp","image"]
 :HL["/images/events/HTCOTB2026.webp","image"]
 :HL["/images/events/Cybersec-Awareness-Month.webp","image"]
 :HL["/images/events/Secure-Coding-Tournament.webp","image"]
 :HL["/images/events/HTCOTB2025.webp","image"]
-0:{"buildId":"ccXPzWRnq89rx0q3Yue2s","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"events","paramType":null,"paramKey":"events","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"PQHyO0vzGYjA2_P-WXknY","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"events","paramType":null,"paramKey":"events","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
