@@ -123,6 +123,10 @@ export const projectNavigationData: Record<
       title: "DragonShell",
     },
     {
+      href: "/projects/embedded-systems/file-system-simulator",
+      title: "File System Simulator",
+    },
+    {
       href: "/projects/engineering/dremel-3d45-rebuild",
       title: "Dremel DigiLab 3D45 - Controller Rebuild",
     },

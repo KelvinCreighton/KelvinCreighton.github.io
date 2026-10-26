@@ -7,7 +7,7 @@ import Image from "@/components/BlurImage";
 export default function EmbeddedSystemsProjects() {
   const projects = [
     {
-      id: 1,
+      id: 2,
       title: "Dremel DigiLab 3D45 - Controller Rebuild",
       date: "May 2026 - July 2026",
       description:
@@ -19,6 +19,18 @@ export default function EmbeddedSystemsProjects() {
       isInProgress: true,
     },
     {
+      id: 1,
+      title: "File System Simulator",
+      date: "November–December 2024",
+      description:
+        "A C simulator for disk images with 128 blocks of 1 KiB each, using fixed size inodes, nested directories, contiguous file allocation, resizing, and defragmentation.",
+      image: "/images/projects/file-system-simulator.svg",
+      imageAlt: "Diagram of the simulator's superblock, inode table, allocation map, and data blocks",
+      href: "/projects/embedded-systems/file-system-simulator",
+      category: "CMPUT 379: Operating Systems",
+      isInProgress: false,
+    },
+    {
       id: 0,
       title: "DragonShell",
       date: "September 2024",
@@ -27,7 +39,7 @@ export default function EmbeddedSystemsProjects() {
       image: "/images/projects/dragonshell-terminal.svg",
       imageAlt: "DragonShell terminal illustration with the original project banner",
       href: "/projects/embedded-systems/dragonshell",
-      category: "Operating Systems",
+      category: "CMPUT 379: Operating Systems",
       isInProgress: false,
     },
   ];
