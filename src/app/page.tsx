@@ -356,6 +356,7 @@ const timelineCardMinGap = 152;
 const timelineMonthSections = 12;
 const timelineMonthGapMin = 44;
 const timelineCardWidthEstimate = 144;
+const timelineEndPadding = 48;
 const currentTimelineDate = new Date("2026-10-31T23:59:59.999Z");
 
 function getTimelinePercent(dateKey: string) {
@@ -500,14 +501,18 @@ function buildTimelineCardLayout(
     const yearWidth = Math.max(visibleMonthCount * monthGap - compressedGapWidth, laneSpan);
     const slotWidth = visibleMonthCount > 0 ? yearWidth / visibleMonthCount : 0;
 
-    yearWidths.set(year, yearWidth);
-    yearSlotWidths.set(year, slotWidth);
     const yearTransitionAdjustment = year === 2026
       ? ((yearWidths.get(2025) ?? 0) / Math.max(1, getVisibleMonthCount(2025))) * 2.25
       : 0;
     const yearLeft = cursor - yearTransitionAdjustment;
+    const finalVisibleMonthOffset = getTimelineMonthOffset(year, visibleMonthCount - 1, slotWidth);
+    const displayYearWidth = year === 2026
+      ? finalVisibleMonthOffset + slotWidth * 1.5
+      : yearWidth;
+    yearWidths.set(year, displayYearWidth);
+    yearSlotWidths.set(year, slotWidth);
     yearPositions.set(year, yearLeft);
-    cursor += yearWidth - yearTransitionAdjustment;
+    cursor += displayYearWidth - yearTransitionAdjustment;
 
     const itemsForYear = yearItems.get(year) ?? [];
     const monthBuckets = new Map<number, TimelineItem[]>();
@@ -545,7 +550,7 @@ function buildTimelineCardLayout(
   return {
     positions,
     yearPositions,
-    totalWidth: maxCardRight + timelineCardWidthEstimate,
+    totalWidth: maxCardRight + timelineEndPadding,
     yearWidths,
     yearSlotWidths,
   };
