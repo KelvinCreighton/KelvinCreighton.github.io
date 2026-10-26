@@ -379,15 +379,9 @@ function getVisibleMonthCount(year: number, now = currentTimelineDate) {
 }
 
 function getTimelineMonthOffset(year: number, month: number, monthGap: number) {
-  if (year === 2024) {
-    const compressedMonths = Math.min(month, 8);
-    const spacedMonths = Math.max(0, month - 8);
-    return compressedMonths * 2 + spacedMonths * timelineMonthGapMin;
-  }
-
   const compressedGaps = year === 2026
     ? (month >= 9 ? 5 : month >= 8 ? 4 : month >= 7 ? 3 : month >= 4 ? 2 : month >= 3 ? 1 : 0)
-    : year === 2025
+    : year === 2025 || year === 2024
       ? Math.min(month, 4)
       : 0;
   return month * monthGap - compressedGaps * monthGap * 0.5;
@@ -498,22 +492,20 @@ function buildTimelineCardLayout(
   for (let yearIndex = 0; yearIndex < yearLayout.years.length; yearIndex += 1) {
     const year = yearLayout.years[yearIndex];
     const visibleMonthCount = getVisibleMonthCount(year);
-    const yearCardCount = countsByYear.get(year) ?? 0;
+    const scaleYear = year === 2024 ? 2025 : year;
+    const yearCardCount = countsByYear.get(scaleYear) ?? 0;
     const sameLaneCards = Math.ceil(Math.max(1, yearCardCount) / 2);
-    const laneGap = year < 2025 ? 2 : timelineCardMinGap;
+    const laneGap = scaleYear < 2025 ? 2 : timelineCardMinGap;
     const laneSpan = sameLaneCards * (timelineCardWidthEstimate + laneGap);
-    const monthGap = year < 2025 ? 2 : timelineMonthGapMin;
-    const compressedGapCount = year === 2026 ? 5 : year === 2025 ? 4 : 0;
+    const monthGap = scaleYear < 2025 ? 2 : timelineMonthGapMin;
+    const compressedGapCount = scaleYear === 2026 ? 5 : scaleYear === 2025 ? 4 : 0;
     const compressedGapWidth = monthGap * compressedGapCount * 0.5;
-    const yearWidth = year === 2024
-      ? getTimelineMonthOffset(2024, 11, 0) + (Math.max(visibleMonthCount * monthGap, laneSpan) / visibleMonthCount) * 2
-      : Math.max(visibleMonthCount * monthGap - compressedGapWidth, laneSpan);
-    const slotWidth = year === 2024
-      ? Math.max(visibleMonthCount * monthGap, laneSpan) / visibleMonthCount
-      : visibleMonthCount > 0 ? yearWidth / visibleMonthCount : 0;
+    const defaultYearWidth = Math.max(visibleMonthCount * monthGap - compressedGapWidth, laneSpan);
+    const slotWidth = visibleMonthCount > 0 ? defaultYearWidth / visibleMonthCount : 0;
+    const yearWidth = defaultYearWidth;
 
-    const yearTransitionAdjustment = year === 2026
-      ? ((yearWidths.get(2025) ?? 0) / Math.max(1, getVisibleMonthCount(2025))) * 2.25
+    const yearTransitionAdjustment = year === 2025 || year === 2026
+      ? ((yearWidths.get(year - 1) ?? 0) / Math.max(1, getVisibleMonthCount(year - 1))) * 2.25
       : 0;
     const yearLeft = cursor - yearTransitionAdjustment;
     const finalVisibleMonthOffset = getTimelineMonthOffset(year, visibleMonthCount - 1, slotWidth);
