@@ -412,9 +412,13 @@ function getVisibleMonthCount(year: number, now = currentTimelineDate) {
 }
 
 function getTimelineMonthOffset(year: number, month: number, monthGap: number) {
+  if (year === 2024) {
+    return Math.max(0, month - 7) * monthGap;
+  }
+
   const compressedGaps = year === 2026
     ? (month >= 9 ? 5 : month >= 8 ? 4 : month >= 7 ? 3 : month >= 4 ? 2 : month >= 3 ? 1 : 0)
-    : year === 2025 || year === 2024
+    : year === 2025
       ? Math.min(month, 4)
       : 0;
   return month * monthGap - compressedGaps * monthGap * 0.5;
@@ -535,7 +539,13 @@ function buildTimelineCardLayout(
     const compressedGapWidth = monthGap * compressedGapCount * 0.5;
     const defaultYearWidth = Math.max(visibleMonthCount * monthGap - compressedGapWidth, laneSpan);
     const slotWidth = visibleMonthCount > 0 ? defaultYearWidth / visibleMonthCount : 0;
-    const yearWidth = defaultYearWidth;
+    const referenceBoundaryGap = defaultYearWidth
+      - (defaultYearWidth / timelineMonthSections) * 2.25
+      - getTimelineMonthOffset(2025, 11, defaultYearWidth / timelineMonthSections);
+    const yearWidth = year === 2024
+      ? (getTimelineMonthOffset(2024, 11, slotWidth) + referenceBoundaryGap)
+        / (1 - 2.25 / timelineMonthSections)
+      : defaultYearWidth;
 
     const yearTransitionAdjustment = year === 2025 || year === 2026
       ? ((yearWidths.get(year - 1) ?? 0) / Math.max(1, getVisibleMonthCount(year - 1))) * 2.25
