@@ -354,6 +354,7 @@ const timelineStartYear = 2017;
 const timelineEndYear = 2026;
 const timelineCardMinGap = 152;
 const timelineMonthSections = 12;
+const timelineMonthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const timelineMonthGapMin = 44;
 const timelineCardWidthEstimate = 144;
 const timelineEndPadding = 48;
@@ -378,6 +379,12 @@ function getVisibleMonthCount(year: number, now = currentTimelineDate) {
 }
 
 function getTimelineMonthOffset(year: number, month: number, monthGap: number) {
+  if (year === 2024) {
+    const compressedMonths = Math.min(month, 8);
+    const spacedMonths = Math.max(0, month - 8);
+    return compressedMonths * 2 + spacedMonths * timelineMonthGapMin;
+  }
+
   const compressedGaps = year === 2026
     ? (month >= 9 ? 5 : month >= 8 ? 4 : month >= 7 ? 3 : month >= 4 ? 2 : month >= 3 ? 1 : 0)
     : year === 2025
@@ -498,8 +505,12 @@ function buildTimelineCardLayout(
     const monthGap = year < 2025 ? 2 : timelineMonthGapMin;
     const compressedGapCount = year === 2026 ? 5 : year === 2025 ? 4 : 0;
     const compressedGapWidth = monthGap * compressedGapCount * 0.5;
-    const yearWidth = Math.max(visibleMonthCount * monthGap - compressedGapWidth, laneSpan);
-    const slotWidth = visibleMonthCount > 0 ? yearWidth / visibleMonthCount : 0;
+    const yearWidth = year === 2024
+      ? getTimelineMonthOffset(2024, 11, 0) + (Math.max(visibleMonthCount * monthGap, laneSpan) / visibleMonthCount) * 2
+      : Math.max(visibleMonthCount * monthGap - compressedGapWidth, laneSpan);
+    const slotWidth = year === 2024
+      ? Math.max(visibleMonthCount * monthGap, laneSpan) / visibleMonthCount
+      : visibleMonthCount > 0 ? yearWidth / visibleMonthCount : 0;
 
     const yearTransitionAdjustment = year === 2026
       ? ((yearWidths.get(2025) ?? 0) / Math.max(1, getVisibleMonthCount(2025))) * 2.25
@@ -839,9 +850,11 @@ export default function Home() {
                 const visibleMonthCount = getVisibleMonthCount(year);
                 const yearWidth = timelineCardLayout.yearWidths.get(year) ?? 0;
                 const slotWidth = timelineCardLayout.yearSlotWidths.get(year) ?? 0;
-                const monthLabels = year < 2025
-                  ? []
-                  : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].slice(0, visibleMonthCount);
+                const monthLabelIndexes = year === 2024
+                  ? [8, 9, 10, 11]
+                  : year >= 2025
+                    ? Array.from({ length: visibleMonthCount }, (_, index) => index)
+                    : [];
                 return (
                   <div
                     key={year}
@@ -849,16 +862,16 @@ export default function Home() {
                     style={{ left, width: `${yearWidth}px` }}
                   >
                     <div className="absolute left-0 top-1/2 h-0 w-full -translate-y-1/2">
-                      {monthLabels.map((month, monthIndex) => (
+                      {monthLabelIndexes.map((monthIndex) => (
                         <span
-                          key={`${year}-${month}-${monthIndex}`}
+                          key={`${year}-${monthIndex}`}
                           className={`absolute inline-flex w-12 items-center justify-center text-center text-[0.75rem] font-medium uppercase leading-none text-gray-400 dark:text-gray-500 ${monthIndex % 2 === 0 ? "top-3" : "-top-5"}`}
                           style={{
                             left: `${getTimelineMonthOffset(year, monthIndex, slotWidth)}px`,
                             transform: "translateX(-50%)",
                           }}
                         >
-                          {month}
+                          {timelineMonthLabels[monthIndex]}
                         </span>
                       ))}
                     </div>
