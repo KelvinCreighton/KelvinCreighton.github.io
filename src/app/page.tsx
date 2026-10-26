@@ -137,7 +137,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/dragonshell-terminal.svg",
     imageAlt: "DragonShell terminal illustration with the original project banner",
     position: "bottom",
-    xOffsetPx: 0,
+    xOffsetPx: -15,
   },
   {
     title: "MapReduce Library",
@@ -148,7 +148,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/mapreduce-library.svg",
     imageAlt: "Diagram of mapper jobs, pthread workers, hash partitions, and reduce output",
     position: "top",
-    xOffsetPx: 0,
+    xOffsetPx: -15,
   },
   {
     title: "File System Simulator",
@@ -159,7 +159,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/file-system-simulator.svg",
     imageAlt: "Diagram of the simulator's superblock, inode table, allocation map, and data blocks",
     position: "bottom",
-    xOffsetPx: 0,
+    xOffsetPx: 15,
   },
   {
     title: "Robotic Arm Simulation",
@@ -170,7 +170,7 @@ const timelineRailItems: TimelineItem[] = [
     image: "/images/projects/robotic-arm-simulation-title.webp",
     imageAlt: "Robotic Arm Simulation project",
     position: "top",
-    xOffsetPx: 0,
+    xOffsetPx: 15,
   },
   {
     title: "CHADS Hack the Computer, Open the Box",
@@ -413,7 +413,8 @@ function getVisibleMonthCount(year: number, now = currentTimelineDate) {
 
 function getTimelineMonthOffset(year: number, month: number, monthGap: number) {
   if (year === 2024) {
-    return Math.max(0, month - 7) * monthGap;
+    if (month < 8) return 0;
+    return monthGap + (month - 8) * monthGap * 0.5;
   }
 
   const compressedGaps = year === 2026
