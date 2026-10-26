@@ -20,6 +20,7 @@ export default function MechatronicsProjects() {
       image: "/images/projects/dremel-3d45-title.webp",
       link: "/projects/engineering/dremel-3d45",
       category: "3D Printers",
+      isInProgress: false,
     },
     {
       id: 1,
@@ -31,6 +32,7 @@ export default function MechatronicsProjects() {
       image: "/images/projects/rc-car-title.webp",
       link: "/projects/engineering/rc-car",
       category: "Robotics",
+      isInProgress: false,
     },
     {
       id: 0,
@@ -42,6 +44,7 @@ export default function MechatronicsProjects() {
       image: "/images/projects/robotic-arm-simulation-title.webp",
       link: "/projects/engineering/robotic-arm-simulation",
       category: "Robotics",
+      isInProgress: false,
     },
   ];
 

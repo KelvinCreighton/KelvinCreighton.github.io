@@ -87,7 +87,7 @@ export default function DragonShellProject() {
             For CMPUT 379, I wrote a small shell for Unix systems without relying on a shell library. I built the command loop, parsed each input line, separated commands built into the shell from external programs, and managed the processes and file descriptors needed to run them. I had to manage those mechanics myself, from starting a child process to deciding how its input and output reached the program.
           </p>
           <p>
-            I developed it in stages: first the prompt and commands for checking and changing directories, then external program execution, followed by output redirection, input redirection, and pipes. As those features began to interact, I returned to the parser, error handling, and process cleanup to make the pieces work together.
+            I started with the prompt and commands for checking and changing directories. Next came external program execution, then output and input redirection and pipes. As those features began to interact, I returned to the parser, error handling, and process cleanup to make the pieces work together.
           </p>
           <p>
             DragonShell supports <code>cd</code>, <code>pwd</code>, and <code>exit</code> as commands built into the shell. For external commands, the shell creates a child with <code>fork()</code>; the child configures its input and output, then calls <code>execve()</code>. The parent waits with <code>waitpid()</code> for foreground work, while an <code>&amp;</code> command can run in the background.
@@ -123,7 +123,7 @@ export default function DragonShellProject() {
             Scope and result
           </h2>
           <p>
-            I kept the parser focused on the assignment: arguments are separated by spaces, external programs are invoked by executable path, pipelines connect two commands, and the shell tracks one background process at a time. Within that scope, the project brought process creation, execution, waiting, I/O redirection, pipes, signals, and resource reporting together in one working program.
+            I kept the parser focused on the assignment. It separates arguments by spaces, invokes external programs by executable path, connects two commands with a pipe, and tracks one background process at a time. Within those limits, the project brings process creation, execution, waiting, I/O redirection, signals, and resource reporting together in one working program.
           </p>
           <p>
             The assignment received <strong>97/100</strong>. The grading feedback awarded full marks for the commands implemented in the shell, external command execution, CPU time reporting, background execution, redirection, piping, and signal handling. The recorded deductions were for a missing <code>compile</code> Makefile target and the README filename.

@@ -54,7 +54,7 @@ export default function FileSystemSimulatorProject() {
           </a>
 
           <p className="mb-6 text-xl italic leading-relaxed text-gray-700 dark:text-gray-300">
-            I wrote a C program that treats a disk image as a small storage device. Rather than asking the host operating system to manage simulated files, the program reads and updates the image directly: a superblock records allocation and inode data, and the remaining blocks hold file contents.
+            I wrote a C program that treats a disk image as a small storage device. Rather than asking the host operating system to manage simulated files, the program reads and updates the image directly. The superblock records allocation and inode data, while the remaining blocks hold file contents.
           </p>
 
           <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 shadow-sm dark:border-gray-800 dark:bg-gray-800">
@@ -102,7 +102,7 @@ export default function FileSystemSimulatorProject() {
             Creating a file searches the allocation bitmap for a contiguous run of free blocks. Shrinking a file clears and frees its trailing blocks. When a file grows, the simulator first checks whether the blocks beside it are available; if not, it searches for a new run, copies the existing data, and updates the inode and bitmap. The defragmentation command moves file data toward the start of the image and rebuilds the allocation map.
           </p>
           <p>
-            Mounting also checks relationships inside the image: inode state and names, file block ranges, directory sizes, parent references, duplicate names, and whether the allocation bitmap agrees with the blocks claimed by files. I had to reason about the serialized bytes as well as the in memory structures used while commands run.
+            Mounting also checks several relationships inside the image. It verifies inode state and names, file block ranges, directory sizes, parent references, duplicate names, and agreement between the allocation bitmap and the blocks claimed by files. I had to reason about the serialized bytes as well as the in memory structures used while commands run.
           </p>
         </section>
 
@@ -123,7 +123,7 @@ export default function FileSystemSimulatorProject() {
             Scope and next steps
           </h2>
           <p>
-            This is a deliberately small filesystem: the image has a fixed size, files use contiguous blocks, names are limited to five characters, and commands come from a script. Course feedback identified remaining issues in exact error handling, deletion consistency, some resize and defragmentation results, and memory cleanup. Those findings point to the next work I would do: validate every boundary before changing the image, make metadata updates safer, and release all mount time bookkeeping.
+            This is a deliberately small filesystem. The image has a fixed size, files use contiguous blocks, names are limited to five characters, and commands come from a script. Course feedback identified remaining issues in exact error handling, deletion consistency, some resize and defragmentation results, and memory cleanup. My next steps would be to validate every boundary before changing the image, make metadata updates safer, and release all mount time bookkeeping.
           </p>
         </section>
 

@@ -123,6 +123,10 @@ export const projectNavigationData: Record<
       title: "DragonShell",
     },
     {
+      href: "/projects/embedded-systems/mapreduce-library",
+      title: "MapReduce Library",
+    },
+    {
       href: "/projects/embedded-systems/file-system-simulator",
       title: "File System Simulator",
     },

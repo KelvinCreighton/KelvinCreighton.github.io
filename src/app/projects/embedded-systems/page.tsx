@@ -7,7 +7,7 @@ import Image from "@/components/BlurImage";
 export default function EmbeddedSystemsProjects() {
   const projects = [
     {
-      id: 2,
+      id: 3,
       title: "Dremel DigiLab 3D45 - Controller Rebuild",
       date: "May 2026 - July 2026",
       description:
@@ -19,7 +19,7 @@ export default function EmbeddedSystemsProjects() {
       isInProgress: true,
     },
     {
-      id: 1,
+      id: 2,
       title: "File System Simulator",
       date: "November–December 2024",
       description:
@@ -27,6 +27,18 @@ export default function EmbeddedSystemsProjects() {
       image: "/images/projects/file-system-simulator.svg",
       imageAlt: "Diagram of the simulator's superblock, inode table, allocation map, and data blocks",
       href: "/projects/embedded-systems/file-system-simulator",
+      category: "CMPUT 379: Operating Systems",
+      isInProgress: false,
+    },
+    {
+      id: 1,
+      title: "MapReduce Library",
+      date: "October–November 2024",
+      description:
+        "A C MapReduce framework with mapper and reducer callbacks, pthread job scheduling, hash partitioning, and a word count example.",
+      image: "/images/projects/mapreduce-library.svg",
+      imageAlt: "Diagram of mapper jobs, pthread workers, hash partitions, and reduce output",
+      href: "/projects/embedded-systems/mapreduce-library",
       category: "CMPUT 379: Operating Systems",
       isInProgress: false,
     },
@@ -77,7 +89,7 @@ export default function EmbeddedSystemsProjects() {
         </Link>
         <h1 className="text-4xl font-bold">Embedded Systems</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
-          Microcontrollers, hardware interfaces, and the software that brings them to life.
+          A collection of projects in hardware interfaces, low level software, and operating systems.
         </p>
         <div className="mt-8 flex w-full flex-col items-start gap-3">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
