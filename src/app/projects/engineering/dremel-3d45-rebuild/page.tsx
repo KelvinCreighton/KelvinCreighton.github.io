@@ -8,10 +8,10 @@ export default function Dremel3D45RebuildProject() {
     <main className="animate-page-enter flex flex-col items-center px-6 pb-6 pt-0 md:px-12 md:pb-12 md:pt-0 lg:px-24 lg:pb-16 lg:pt-0 w-full">
       <article className="w-full max-w-4xl flex flex-col items-start px-2 md:px-0">
         <Link
-          href="/projects/engineering"
+          href="/projects/embedded-systems"
           className="text-sm text-gray-500 hover:text-blue-600 transition-colors mb-8 flex items-center gap-2"
         >
-          &larr; Back to Engineering Projects
+          &larr; Back to Embedded Systems Projects
         </Link>
 
         <header className="w-full border-b border-gray-200 dark:border-gray-800 pb-8 mb-12">
@@ -458,7 +458,7 @@ export default function Dremel3D45RebuildProject() {
         </div>
 
         <ProjectPager
-          category="engineering"
+          category="embedded-systems"
           currentPath="/projects/engineering/dremel-3d45-rebuild"
         />
       </article>

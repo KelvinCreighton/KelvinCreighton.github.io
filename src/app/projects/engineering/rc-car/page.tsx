@@ -11,7 +11,7 @@ export default function RcCarProject() {
           href="/projects/engineering"
           className="text-sm text-gray-500 hover:text-blue-600 transition-colors mb-8 flex items-center gap-2"
         >
-          &larr; Back to Engineering Projects
+          &larr; Back to Mechatronics Projects
         </Link>
 
         <header className="w-full border-b border-gray-200 dark:border-gray-800 pb-8 mb-12">

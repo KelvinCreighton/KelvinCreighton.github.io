@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Engineering Projects",
-  description: "Showcasing engineering and mechanical design projects.",
+  title: "Mechatronics Projects",
+  description: "Showcasing mechanical design, robotics, and mechatronics projects.",
 };
 
 export default function Layout({

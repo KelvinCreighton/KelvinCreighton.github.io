@@ -7,7 +7,23 @@ export default function Projects() {
       <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">Projects</h1>
 
       <div className="flex flex-wrap justify-center gap-6 md:gap-8 w-full max-w-6xl px-2 md:px-0">
-        {/* Category 1: Cybersecurity */}
+        {/* Category 1: Embedded Systems */}
+        <Link
+          href="/projects/embedded-systems"
+          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
+        >
+          <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
+            <Image
+              src="/icons/embedded-systems.svg"
+              alt="Embedded Systems"
+              width={128}
+              height={128}
+            />
+          </div>
+          <h2 className="text-xl font-semibold text-center">Embedded Systems</h2>
+        </Link>
+
+        {/* Category 2: Cybersecurity */}
         <Link
           href="/projects/cybersecurity"
           className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
@@ -23,7 +39,7 @@ export default function Projects() {
           <h2 className="text-xl font-semibold text-center">Cybersecurity</h2>
         </Link>
 
-        {/* Category 2: Engineering */}
+        {/* Category 3: Mechatronics */}
         <Link
           href="/projects/engineering"
           className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
@@ -31,15 +47,15 @@ export default function Projects() {
           <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
             <Image
               src="/icons/engineering.svg"
-              alt="Engineering"
+              alt="Mechatronics"
               width={128}
               height={128}
             />
           </div>
-          <h2 className="text-xl font-semibold text-center">Engineering</h2>
+          <h2 className="text-xl font-semibold text-center">Mechatronics</h2>
         </Link>
 
-        {/* Category 3: Auto Repair & Maintenance */}
+        {/* Category 4: Automotive */}
         <Link
           href="/projects/auto"
           className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
@@ -55,7 +71,7 @@ export default function Projects() {
           <h2 className="text-xl font-semibold text-center">Automotive</h2>
         </Link>
 
-        {/* Category 4: Game Development */}
+        {/* Category 5: Game Development */}
         <Link
           href="/projects/game-dev"
           className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
@@ -71,7 +87,7 @@ export default function Projects() {
           <h2 className="text-xl font-semibold text-center">Game Development</h2>
         </Link>
 
-        {/* Category 5: Music Production */}
+        {/* Category 6: Music Production */}
         <Link
           href="/projects/music"
           className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"

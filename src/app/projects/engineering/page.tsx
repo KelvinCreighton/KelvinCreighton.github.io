@@ -8,20 +8,8 @@ import {
   projectTagClassNames,
 } from "@/components/projectTagStyles";
 
-export default function EngineeringProjects() {
+export default function MechatronicsProjects() {
   const projects = [
-    {
-      id: 3,
-      title: "Dremel DigiLab 3D45 - Controller Rebuild",
-      date: "May 2026 - July 2026",
-      tags: [],
-      description:
-        "Rebuilding a Dremel DigiLab 3D45 after a fried motherboard using an Arduino Mega 2560, RAMPS 1.4, and salvage parts from another printer.",
-      image: "/images/projects/dremel-3d45-rebuild-title.webp",
-      link: "/projects/engineering/dremel-3d45-rebuild",
-      category: "3D Printers",
-      isInProgress: true,
-    },
     {
       id: 2,
       title: "Dremel DigiLab 3D45 - Restoration",
@@ -84,9 +72,9 @@ export default function EngineeringProjects() {
         >
           &larr; Back to Categories
         </Link>
-        <h1 className="text-4xl font-bold">Engineering</h1>
+        <h1 className="text-4xl font-bold">Mechatronics</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
-          Showcasing mechanical design, robotics, and engineering projects.
+          Showcasing mechanical design, robotics, and mechatronics projects.
         </p>
         <div className="mt-8 flex w-full flex-col items-start gap-3">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">

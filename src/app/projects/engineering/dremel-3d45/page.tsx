@@ -11,7 +11,7 @@ export default function Dremel3D45Project() {
           href="/projects/engineering"
           className="text-sm text-gray-500 hover:text-blue-600 transition-colors mb-8 flex items-center gap-2"
         >
-          &larr; Back to Engineering Projects
+          &larr; Back to Mechatronics Projects
         </Link>
 
         {/* Header Section */}

@@ -3,7 +3,8 @@ export type ProjectNavigationCategory =
   | "game-dev"
   | "music"
   | "auto"
-  | "engineering";
+  | "engineering"
+  | "embedded-systems";
 
 type ProjectNavigationItem = {
   href: string;
@@ -114,6 +115,12 @@ export const projectNavigationData: Record<
     {
       href: "/projects/engineering/dremel-3d45",
       title: "Dremel DigiLab 3D45 - Restoration",
+    },
+  ],
+  "embedded-systems": [
+    {
+      href: "/projects/embedded-systems/dragonshell",
+      title: "DragonShell",
     },
     {
       href: "/projects/engineering/dremel-3d45-rebuild",
