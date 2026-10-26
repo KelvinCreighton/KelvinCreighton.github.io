@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function ResumePage() {
-  const [resumeType, setResumeType] = useState<"cybersecurity" | "embedded">("cybersecurity");
+  const [resumeType, setResumeType] = useState<"cybersecurity" | "embedded">("embedded");
   
   const resumeUrl = resumeType === "cybersecurity" ? "/resume-cybersecurity.pdf" : "/resume-embedded.pdf";
   const downloadName = resumeType === "cybersecurity" ? "Kelvin_Resume_Cybersecurity.pdf" : "Kelvin_Resume_Embedded.pdf";

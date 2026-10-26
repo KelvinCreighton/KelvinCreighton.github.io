@@ -68,7 +68,7 @@ export default function Projects() {
               height={128}
             />
           </div>
-          <h2 className="text-xl font-semibold text-center">Game Dev</h2>
+          <h2 className="text-xl font-semibold text-center">Game Development</h2>
         </Link>
 
         {/* Category 5: Music Production */}

@@ -3,6 +3,20 @@ import type { CSSProperties } from "react";
 
 const events = [
   {
+    title: "BSides Edmonton 2026",
+    subtitle: "Volunteer Event Organizer, CTF Team",
+    date: "September 2026",
+    image: "/images/events/BSides-Edmonton-2026.webp",
+    imageAlt: "BSides Edmonton 2026 CTF medals and event",
+    description:
+      "Co-organized the Capture the Flag competition at BSides Edmonton 2026, working with the team to deliver the event platform and competition experience.",
+    bullets: [
+      "Coordinated with Cyber Skyline to configure and set up the competition platform for the CTF challenges.",
+      "Supervised the CTF room during the event and provided technical support to participating teams.",
+      "Designed the 1st, 2nd, and 3rd place custom medals featuring event and sponsor branding, coordinating their fabrication for the winners.",
+    ],
+  },
+  {
     title: "OWASP Edmonton & Accurate Networks",
     subtitle: "Event operations and A/V support",
     date: "February 2026",
@@ -99,7 +113,9 @@ export default function EventsPage() {
             <article
               key={`${event.title}-${event.date}`}
               id={
-                event.title === "OWASP Edmonton & Accurate Networks"
+                event.title === "BSides Edmonton 2026"
+                  ? "bsides-edmonton-2026"
+                  : event.title === "OWASP Edmonton & Accurate Networks"
                   ? "owasp-edmonton-accurate-networks"
                   : event.title === "CHADS Hack the Computer, Open the Box" && event.date === "February 2026"
                     ? "chads-hack-the-computer-open-the-box-2026"

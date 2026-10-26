@@ -337,6 +337,17 @@ const timelineRailItems: TimelineItem[] = [
     position: "top",
     xOffsetPx: 15,
   },
+  {
+    title: "BSides Edmonton 2026",
+    dateKey: "2026-09-24",
+    category: "Leadership",
+    description: "Co-organized the BSides Edmonton 2026 CTF, coordinated Cyber Skyline platform setup, supervised the room, and designed the winner medals.",
+    href: "/events#bsides-edmonton-2026",
+    image: "/images/events/BSides-Edmonton-2026.webp",
+    imageAlt: "BSides Edmonton 2026 CTF event and medals",
+    position: "bottom",
+    xOffsetPx: 0,
+  },
 ];
 
 const timelineStartYear = 2017;
@@ -345,7 +356,7 @@ const timelineCardMinGap = 152;
 const timelineMonthSections = 12;
 const timelineMonthGapMin = 44;
 const timelineCardWidthEstimate = 144;
-const currentTimelineDate = new Date("2026-08-24T00:00:00.000Z");
+const currentTimelineDate = new Date("2026-10-31T23:59:59.999Z");
 
 function getTimelinePercent(dateKey: string) {
   const date = new Date(dateKey);
@@ -363,6 +374,15 @@ function getVisibleMonthCount(year: number, now = currentTimelineDate) {
   if (year < currentYear) return timelineMonthSections;
   if (year > currentYear) return 0;
   return now.getUTCMonth() + 1;
+}
+
+function getTimelineMonthOffset(year: number, month: number, monthGap: number) {
+  const compressedGaps = year === 2026
+    ? (month >= 9 ? 5 : month >= 8 ? 4 : month >= 7 ? 3 : month >= 4 ? 2 : month >= 3 ? 1 : 0)
+    : year === 2025
+      ? Math.min(month, 4)
+      : 0;
+  return month * monthGap - compressedGaps * monthGap * 0.5;
 }
 
 function ContactIcon({
@@ -475,14 +495,19 @@ function buildTimelineCardLayout(
     const laneGap = year < 2025 ? 2 : timelineCardMinGap;
     const laneSpan = sameLaneCards * (timelineCardWidthEstimate + laneGap);
     const monthGap = year < 2025 ? 2 : timelineMonthGapMin;
-    const yearWidth = Math.max(visibleMonthCount * monthGap, laneSpan);
+    const compressedGapCount = year === 2026 ? 5 : year === 2025 ? 4 : 0;
+    const compressedGapWidth = monthGap * compressedGapCount * 0.5;
+    const yearWidth = Math.max(visibleMonthCount * monthGap - compressedGapWidth, laneSpan);
     const slotWidth = visibleMonthCount > 0 ? yearWidth / visibleMonthCount : 0;
 
     yearWidths.set(year, yearWidth);
     yearSlotWidths.set(year, slotWidth);
-    const yearLeft = cursor;
+    const yearTransitionAdjustment = year === 2026
+      ? ((yearWidths.get(2025) ?? 0) / Math.max(1, getVisibleMonthCount(2025))) * 2.25
+      : 0;
+    const yearLeft = cursor - yearTransitionAdjustment;
     yearPositions.set(year, yearLeft);
-    cursor += yearWidth;
+    cursor += yearWidth - yearTransitionAdjustment;
 
     const itemsForYear = yearItems.get(year) ?? [];
     const monthBuckets = new Map<number, TimelineItem[]>();
@@ -505,9 +530,11 @@ function buildTimelineCardLayout(
         return a.title.localeCompare(b.title);
       });
 
-      const monthCut = yearLeft + month * slotWidth;
+      const monthCut = yearLeft + getTimelineMonthOffset(year, month, slotWidth);
       bucket.forEach((item) => {
-        const left = monthCut;
+        const isBsidesEvent = item.title === "BSides Edmonton 2026";
+        const bsidesGapWidth = year === 2026 && month === 8 ? slotWidth * 0.5 : slotWidth;
+        const left = monthCut + (isBsidesEvent ? bsidesGapWidth * 0.8 : 0);
         positions.set(item.dateKey, left);
         yearRight = Math.max(yearRight, left + cardWidth);
         maxCardRight = Math.max(maxCardRight, left + cardWidth);
@@ -822,7 +849,7 @@ export default function Home() {
                           key={`${year}-${month}-${monthIndex}`}
                           className={`absolute inline-flex w-12 items-center justify-center text-center text-[0.75rem] font-medium uppercase leading-none text-gray-400 dark:text-gray-500 ${monthIndex % 2 === 0 ? "top-3" : "-top-5"}`}
                           style={{
-                            left: `${monthIndex * slotWidth}px`,
+                            left: `${getTimelineMonthOffset(year, monthIndex, slotWidth)}px`,
                             transform: "translateX(-50%)",
                           }}
                         >

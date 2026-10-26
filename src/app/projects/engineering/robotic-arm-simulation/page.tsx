@@ -188,9 +188,9 @@ export default function RoboticArmSimulationPage() {
             In more complex multi-body robotic systems (such as 6-DOF industrial manipulators or tendon-driven continuum arms), deriving and computing symbolic analytical derivatives can be cumbersome or computationally expensive. We implemented a central finite-difference approximation with perturbation step <em>h</em>:
           </p>
           <div className="bg-gray-100 dark:bg-gray-900 p-4 rounded-xl font-mono text-sm my-4 border border-gray-200 dark:border-gray-800 overflow-x-auto">
-            &part;F/&part;&theta;&#8321; &approx; ( F(&theta; + [h; 0]) - F(&theta; - [h; 0]) ) / (2h)
+            &part;F/&part;&theta;&#8321; ≈ ( F(&theta; + [h; 0]) - F(&theta; - [h; 0]) ) / (2h)
             <br />
-            &part;F/&part;&theta;&#8322; &approx; ( F(&theta; + [0; h]) - F(&theta; - [0; h]) ) / (2h)
+            &part;F/&part;&theta;&#8322; ≈ ( F(&theta; + [0; h]) - F(&theta; - [0; h]) ) / (2h)
           </div>
 
           <div className="bg-blue-50 dark:bg-blue-950/40 border-l-4 border-blue-500 p-4 my-6 rounded-r-xl">
@@ -277,7 +277,7 @@ export default function RoboticArmSimulationPage() {
             s&#7522; = ( J&#7510;&middot;J + &lambda;&sup2;&middot;I )&#8315;&sup1; &middot; J&#7510; &middot; d&#7522;
           </div>
           <p>
-            The damping parameter &lambda; &approx; 0.05 smoothly limits step magnitudes near singular configurations, ensuring graceful degradation rather than erratic numerical oscillations.
+            The damping parameter &lambda; ≈ 0.05 smoothly limits step magnitudes near singular configurations, ensuring graceful degradation rather than erratic numerical oscillations.
           </p>
 
           <hr className="my-10 border-gray-200 dark:border-gray-800" />
