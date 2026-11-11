@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="70" y1="20" x2="1120" y2="660" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14243a" />
+      <stop offset="1" stop-color="#080d17" />
+    </linearGradient>
+    <linearGradient id="card" x1="240" y1="100" x2="960" y2="580" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111d2d" />
+      <stop offset="1" stop-color="#0c1420" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <circle cx="1030" cy="108" r="156" fill="#38bdf8" fill-opacity=".08" />
+  <circle cx="168" cy="584" r="184" fill="#818cf8" fill-opacity=".06" />
+  <rect x="74" y="66" width="1052" height="543" rx="24" fill="#050912" stroke="#43536a" stroke-width="3" />
+  <path d="M77 91c0-13.3 10.7-24 24-24h998c13.3 0 24 10.7 24 24v47H77V91Z" fill="#19263a" />
+  <circle cx="116" cy="105" r="8" fill="#fb7185" />
+  <circle cx="145" cy="105" r="8" fill="#fbbf24" />
+  <circle cx="174" cy="105" r="8" fill="#34d399" />
+  <text x="600" y="113" fill="#a8b6ca" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" text-anchor="middle">FILE SYSTEM SIMULATOR · C / DISK IMAGE</text>
+  <rect x="77" y="138" width="1046" height="468" fill="url(#card)" />
+  <text x="124" y="192" fill="#7dd3fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700">128 BLOCKS · 1 KiB EACH</text>
+  <text x="124" y="229" fill="#a8b6ca" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">BLOCK 0 · SUPERBLOCK</text>
+  <rect x="124" y="246" width="88" height="100" rx="8" fill="#164e63" stroke="#67e8f9" stroke-width="2" />
+  <text x="168" y="286" fill="#cffafe" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" text-anchor="middle">FREE</text>
+  <text x="168" y="309" fill="#cffafe" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" text-anchor="middle">MAP</text>
+  <rect x="222" y="246" width="322" height="100" rx="8" fill="#1e3a5f" stroke="#60a5fa" stroke-width="2" />
+  <text x="383" y="286" fill="#dbeafe" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" text-anchor="middle">126 INODE RECORDS</text>
+  <text x="383" y="311" fill="#93c5fd" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" text-anchor="middle">8 bytes each</text>
+  <text x="124" y="390" fill="#a8b6ca" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">DATA BLOCKS 1–127</text>
+  <g stroke="#334155" stroke-width="2">
+    <rect x="124" y="407" width="58" height="52" rx="5" fill="#253246" />
+    <rect x="188" y="407" width="58" height="52" rx="5" fill="#256e73" stroke="#5eead4" />
+    <rect x="252" y="407" width="58" height="52" rx="5" fill="#256e73" stroke="#5eead4" />
+    <rect x="316" y="407" width="58" height="52" rx="5" fill="#253246" />
+    <rect x="380" y="407" width="58" height="52" rx="5" fill="#256e73" stroke="#5eead4" />
+    <rect x="444" y="407" width="58" height="52" rx="5" fill="#256e73" stroke="#5eead4" />
+    <rect x="508" y="407" width="58" height="52" rx="5" fill="#256e73" stroke="#5eead4" />
+    <rect x="572" y="407" width="58" height="52" rx="5" fill="#253246" />
+    <rect x="636" y="407" width="58" height="52" rx="5" fill="#253246" />
+    <rect x="700" y="407" width="58" height="52" rx="5" fill="#256e73" stroke="#5eead4" />
+    <rect x="764" y="407" width="58" height="52" rx="5" fill="#253246" />
+    <rect x="828" y="407" width="58" height="52" rx="5" fill="#253246" />
+  </g>
+  <text x="124" y="493" fill="#67e8a5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">bitmap → contiguous allocation → inode</text>
+  <path d="M539 297h72m-14-14 14 14-14 14" stroke="#60a5fa" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" />
+  <rect x="630" y="184" width="422" height="342" rx="14" fill="#0b1421" stroke="#334155" stroke-width="2" />
+  <text x="668" y="230" fill="#cbd5e1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" font-weight="700">DISK IMAGE MAP</text>
+  <text x="668" y="270" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">block 0  · superblock</text>
+  <text x="668" y="305" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">blocks 1–127 · file data</text>
+  <path d="M668 330h344" stroke="#334155" stroke-width="2" />
+  <text x="668" y="371" fill="#7dd3fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">M disk.img</text>
+  <text x="668" y="406" fill="#7dd3fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">C notes 3</text>
+  <text x="668" y="441" fill="#7dd3fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">B system data</text>
+  <text x="668" y="476" fill="#7dd3fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">W notes 0</text>
+  <rect x="668" y="496" width="11" height="20" rx="2" fill="#67e8a5" />
+  <text x="124" y="552" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">FILES · DIRECTORIES · RESIZE · DEFRAGMENT</text>
+</svg>

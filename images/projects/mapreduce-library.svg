@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="74" y1="30" x2="1110" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#15233a" />
+      <stop offset="1" stop-color="#080d17" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <circle cx="1040" cy="98" r="160" fill="#818cf8" fill-opacity=".09" />
+  <circle cx="135" cy="596" r="176" fill="#38bdf8" fill-opacity=".06" />
+  <rect x="72" y="64" width="1056" height="548" rx="24" fill="#080d16" stroke="#46566d" stroke-width="3" />
+  <path d="M75 89c0-13.3 10.7-24 24-24h1002c13.3 0 24 10.7 24 24v48H75V89Z" fill="#1a273b" />
+  <circle cx="115" cy="103" r="8" fill="#fb7185" />
+  <circle cx="144" cy="103" r="8" fill="#fbbf24" />
+  <circle cx="173" cy="103" r="8" fill="#34d399" />
+  <text x="600" y="111" fill="#a8b6ca" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" text-anchor="middle">MAPREDUCE LIBRARY · PTHREADS</text>
+  <text x="120" y="190" fill="#7dd3fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700">MAP INPUTS</text>
+  <rect x="120" y="215" width="200" height="58" rx="9" fill="#142c44" stroke="#38bdf8" stroke-width="2" />
+  <rect x="120" y="292" width="200" height="58" rx="9" fill="#142c44" stroke="#38bdf8" stroke-width="2" />
+  <rect x="120" y="369" width="200" height="58" rx="9" fill="#142c44" stroke="#38bdf8" stroke-width="2" />
+  <text x="220" y="251" fill="#dbeafe" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" text-anchor="middle">file A</text>
+  <text x="220" y="328" fill="#dbeafe" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" text-anchor="middle">file B</text>
+  <text x="220" y="405" fill="#dbeafe" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" text-anchor="middle">file C</text>
+  <path d="M338 244h55m-13-13 13 13-13 13M338 321h55m-13-13 13 13-13 13M338 398h55m-13-13 13 13-13 13" stroke="#60a5fa" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+  <rect x="405" y="186" width="270" height="260" rx="16" fill="#0d1725" stroke="#3b4c64" stroke-width="2" />
+  <text x="540" y="225" fill="#cbd5e1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" font-weight="700" text-anchor="middle">MAPPER WORKERS</text>
+  <rect x="435" y="246" width="210" height="48" rx="8" fill="#243449" />
+  <rect x="435" y="307" width="210" height="48" rx="8" fill="#243449" />
+  <rect x="435" y="368" width="210" height="48" rx="8" fill="#243449" />
+  <text x="540" y="277" fill="#a5f3fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" text-anchor="middle">map → emit</text>
+  <text x="540" y="338" fill="#a5f3fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" text-anchor="middle">map → emit</text>
+  <text x="540" y="399" fill="#a5f3fc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" text-anchor="middle">map → emit</text>
+  <path d="M695 316h64m-14-14 14 14-14 14" stroke="#818cf8" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" />
+  <rect x="770" y="186" width="262" height="260" rx="16" fill="#0d1725" stroke="#3b4c64" stroke-width="2" />
+  <text x="901" y="225" fill="#cbd5e1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" font-weight="700" text-anchor="middle">HASH PARTITIONS</text>
+  <rect x="802" y="246" width="198" height="48" rx="8" fill="#23304a" stroke="#818cf8" />
+  <rect x="802" y="307" width="198" height="48" rx="8" fill="#23304a" stroke="#818cf8" />
+  <rect x="802" y="368" width="198" height="48" rx="8" fill="#23304a" stroke="#818cf8" />
+  <text x="901" y="277" fill="#c4b5fd" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" text-anchor="middle">key · values</text>
+  <text x="901" y="338" fill="#c4b5fd" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" text-anchor="middle">key · values</text>
+  <text x="901" y="399" fill="#c4b5fd" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" text-anchor="middle">key · values</text>
+  <path d="M900 463v51m-10-12 10 12 10-12" stroke="#60a5fa" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" />
+  <rect x="363" y="526" width="540" height="48" rx="10" fill="#123c3c" stroke="#34d399" stroke-width="2" />
+  <text x="633" y="557" fill="#a7f3d0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" text-anchor="middle">REDUCE EACH KEY → result-partition.txt</text>
+  <text x="120" y="492" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">local MapReduce pipeline · pthread job queue</text>
+</svg>
