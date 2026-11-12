@@ -15,6 +15,7 @@ type TimelineItem = {
   imageAlt: string;
   position: "top" | "bottom";
   xOffsetPx: number;
+  timelineOffsetPx?: number;
 };
 
 const timelineRailItems: TimelineItem[] = [
@@ -382,7 +383,7 @@ const timelineRailItems: TimelineItem[] = [
     xOffsetPx: 0,
   },
   {
-    title: "MachineGuard",
+    title: "NatHacks 2026: MachineGuard",
     dateKey: "2026-11-08",
     category: "Embedded Systems",
     description: "Built the embedded hardware and firmware for a machine-condition monitoring prototype at natHacks 2026.",
@@ -391,6 +392,7 @@ const timelineRailItems: TimelineItem[] = [
     imageAlt: "MachineGuard sensor prototype connected to a power drill",
     position: "top",
     xOffsetPx: 0,
+    timelineOffsetPx: 12,
   },
 ];
 
@@ -429,7 +431,7 @@ function getTimelineMonthOffset(year: number, month: number, monthGap: number) {
   }
 
   const compressedGaps = year === 2026
-    ? (month >= 9 ? 5 : month >= 8 ? 4 : month >= 7 ? 3 : month >= 4 ? 2 : month >= 3 ? 1 : 0)
+    ? (month >= 9 ? month - 4 : month >= 8 ? 4 : month >= 7 ? 3 : month >= 4 ? 2 : month >= 3 ? 1 : 0)
     : year === 2025
       ? Math.min(month, 4)
       : 0;
@@ -547,7 +549,9 @@ function buildTimelineCardLayout(
     const laneGap = scaleYear < 2025 ? 2 : timelineCardMinGap;
     const laneSpan = sameLaneCards * (timelineCardWidthEstimate + laneGap);
     const monthGap = scaleYear < 2025 ? 2 : timelineMonthGapMin;
-    const compressedGapCount = scaleYear === 2026 ? 5 : scaleYear === 2025 ? 4 : 0;
+    const compressedGapCount = scaleYear === 2026
+      ? Math.max(0, visibleMonthCount - 5)
+      : scaleYear === 2025 ? 4 : 0;
     const compressedGapWidth = monthGap * compressedGapCount * 0.5;
     const defaultYearWidth = Math.max(visibleMonthCount * monthGap - compressedGapWidth, laneSpan);
     const slotWidth = visibleMonthCount > 0 ? defaultYearWidth / visibleMonthCount : 0;
@@ -597,7 +601,7 @@ function buildTimelineCardLayout(
       bucket.forEach((item) => {
         const isBsidesEvent = item.title === "BSides Edmonton 2026";
         const bsidesGapWidth = year === 2026 && month === 8 ? slotWidth * 0.5 : slotWidth;
-        const left = monthCut + (isBsidesEvent ? bsidesGapWidth * 0.8 : 0);
+        const left = monthCut + (isBsidesEvent ? bsidesGapWidth * 0.8 : 0) + (item.timelineOffsetPx ?? 0);
         positions.set(item.dateKey, left);
         yearRight = Math.max(yearRight, left + cardWidth);
         maxCardRight = Math.max(maxCardRight, left + cardWidth);
