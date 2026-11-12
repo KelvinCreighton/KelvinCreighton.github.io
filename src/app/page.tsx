@@ -381,6 +381,17 @@ const timelineRailItems: TimelineItem[] = [
     position: "bottom",
     xOffsetPx: 0,
   },
+  {
+    title: "MachineGuard",
+    dateKey: "2026-11-08",
+    category: "Embedded Systems",
+    description: "Built the embedded hardware and firmware for a machine-condition monitoring prototype at natHacks 2026.",
+    href: "/projects/embedded-systems/machineguard",
+    image: "/images/projects/machineguard-prototype.jpg",
+    imageAlt: "MachineGuard sensor prototype connected to a power drill",
+    position: "top",
+    xOffsetPx: 0,
+  },
 ];
 
 const timelineStartYear = 2017;
@@ -390,8 +401,8 @@ const timelineMonthSections = 12;
 const timelineMonthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const timelineMonthGapMin = 44;
 const timelineCardWidthEstimate = 144;
-const timelineEndPadding = 48;
-const currentTimelineDate = new Date("2026-10-31T23:59:59.999Z");
+const timelineEndPadding = 64;
+const currentTimelineDate = new Date("2026-11-30T23:59:59.999Z");
 
 function getTimelinePercent(dateKey: string) {
   const date = new Date(dateKey);
