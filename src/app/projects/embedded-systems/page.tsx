@@ -15,7 +15,7 @@ export default function EmbeddedSystemsProjects() {
       image: "/images/projects/machineguard-prototype.jpg",
       imageAlt: "MachineGuard ESP32 sensor prototype wired to a power drill on a workbench",
       href: "/projects/embedded-systems/machineguard",
-      category: "natHacks 2026 · SmolBugs",
+      category: "NatHacks 2026",
       isInProgress: false,
     },
     {
