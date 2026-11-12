@@ -119,6 +119,10 @@ export const projectNavigationData: Record<
   ],
   "embedded-systems": [
     {
+      href: "/projects/embedded-systems/machineguard",
+      title: "MachineGuard - Embedded Hardware & Firmware",
+    },
+    {
       href: "/projects/embedded-systems/dragonshell",
       title: "DragonShell",
     },

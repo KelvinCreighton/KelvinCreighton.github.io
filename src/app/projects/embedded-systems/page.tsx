@@ -7,6 +7,18 @@ import Image from "@/components/BlurImage";
 export default function EmbeddedSystemsProjects() {
   const projects = [
     {
+      id: 4,
+      title: "MachineGuard - Embedded Hardware & Firmware",
+      date: "natHacks 2026 · November 2026",
+      description:
+        "Built the ESP32-S3 machine-monitoring hardware, integrating an LSM303D accelerometer, thermistor, and OLED, then developed firmware for timed vibration capture and BLE streaming.",
+      image: "/images/projects/machineguard-prototype.jpg",
+      imageAlt: "MachineGuard ESP32 sensor prototype wired to a power drill on a workbench",
+      href: "/projects/embedded-systems/machineguard",
+      category: "natHacks 2026 · SmolBugs",
+      isInProgress: false,
+    },
+    {
       id: 3,
       title: "Dremel DigiLab 3D45 - Controller Rebuild",
       date: "May 2026 - July 2026",
