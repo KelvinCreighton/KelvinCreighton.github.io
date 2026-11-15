@@ -1,47 +1,18 @@
-import { MetadataRoute } from 'next'
-import { projectNavigationData } from '@/components/projectNavigationData'
-
-export const dynamic = 'force-static'
-
+import type { MetadataRoute } from "next";
+import { projects, categories } from "@/data/projects";
+export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Replace with your actual deployed domain
-  const baseUrl = 'https://kelvincreighton.ca'
-
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/resume`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.7,
-    },
-  ]
-
-  const projectRoutes: MetadataRoute.Sitemap = Object.values(projectNavigationData)
-    .flat()
-    .map((project) => ({
-      url: `${baseUrl}${project.href}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }))
-
-  return [...staticRoutes, ...projectRoutes]
+  const routes = [
+    "",
+    "/projects",
+    "/resume",
+    "/events",
+    "/achievements",
+    ...categories.map((c) => `/projects/${c.id}`),
+    ...projects.map((p) => p.href),
+  ];
+  return [...new Set(routes)].map((route) => ({
+    url: `https://kelvincreighton.ca${route}/`,
+    priority: route === "" ? 1 : 0.7,
+  }));
 }

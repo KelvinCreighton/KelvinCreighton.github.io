@@ -1,66 +1,131 @@
-"use client";
-
-import { useState } from "react";
-
-export default function ResumePage() {
-  const [resumeType, setResumeType] = useState<"cybersecurity" | "embedded">("embedded");
-  
-  const resumeUrl = resumeType === "cybersecurity" ? "/resume-cybersecurity.pdf" : "/resume-embedded.pdf";
-  const downloadName = resumeType === "cybersecurity" ? "Kelvin_Resume_Cybersecurity.pdf" : "Kelvin_Resume_Embedded.pdf";
-
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Suspense } from "react";
+import PageIntro from "@/components/PageIntro";
+import ResumeDownloads from "@/components/ResumeDownloads";
+export const metadata: Metadata = {
+  title: "Résumé",
+  description:
+    "Kelvin Creighton’s project experience in embedded firmware, systems software, and cybersecurity. Download embedded systems and cybersecurity résumés.",
+};
+export default function Page() {
   return (
-    <main className="animate-page-enter max-w-4xl mx-auto px-4 md:px-0 p-4 md:p-8">
-      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
-        <div className="flex items-center gap-4">
-          <h1 className="text-3xl font-bold">Resume</h1>
-          <select 
-            value={resumeType} 
-            onChange={(e) => setResumeType(e.target.value as "cybersecurity" | "embedded")}
-            className="bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 rounded-md py-1 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="cybersecurity">Cybersecurity</option>
-            <option value="embedded">Embedded Systems</option>
-          </select>
-        </div>
-        <div className="flex gap-4">
-          <a
-            href={resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gray-85 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 font-medium py-2 px-4 rounded transition-colors"
-          >
-            View Fullscreen
-          </a>
-          <a
-            href={resumeUrl}
-            download={downloadName}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition-colors"
-          >
-            Download PDF
-          </a>
-        </div>
-      </div>
-
-      <div className="w-full h-[80vh] rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-800">
-        <object
-          key={resumeUrl}
-          data={resumeUrl}
-          type="application/pdf"
-          className="w-full h-full"
-        >
-          <div className="flex flex-col items-center justify-center h-full p-4 md:p-8 bg-gray-50 dark:bg-gray-900 text-center">
-            <p className="mb-4">
-              It looks like your browser doesn&apos;t support built-in PDFs.
+    <>
+      <PageIntro number="04" title="Closer to the hardware.">
+        <p>
+          I’m Kelvin Creighton. My interests sit where software meets physical
+          systems: firmware, operating systems, hardware integration, and the
+          work of understanding how things behave.
+        </p>
+      </PageIntro>
+      <div className="resume-layout">
+        <div className="resume-summary">
+          <section>
+            <p className="eyebrow">Technical focus</p>
+            <h2>Build. Investigate. Understand.</h2>
+            <p>
+              I learn by building something concrete, finding the gaps, and
+              working through them. My projects range from a vibration-sensing
+              node to a Unix shell and a printer controller rebuild.
             </p>
-            <a
-              href={resumeUrl}
-              className="text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              Click here to download the PDF instead.
-            </a>
-          </div>
-        </object>
+            <p>
+              Cybersecurity adds another perspective: understanding how systems
+              fail, how interfaces can be misused, and what it takes to
+              investigate a problem.
+            </p>
+          </section>
+          <section>
+            <p className="eyebrow">Selected project experience</p>
+            <h2>Evidence in the work</h2>
+            <dl>
+              <div>
+                <dt>
+                  <Link href="/projects/embedded-systems/machineguard">
+                    Embedded hardware & firmware ↗
+                  </Link>
+                </dt>
+                <dd>
+                  MachineGuard: ESP32-S3 sensor integration, buffered
+                  acquisition, and Bluetooth Low Energy data transfer for a team
+                  prototype.
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <Link href="/projects/embedded-systems/dragonshell">
+                    Systems programming ↗
+                  </Link>
+                </dt>
+                <dd>
+                  DragonShell, a MapReduce library, and a file-system simulator:
+                  C, processes, file descriptors, threads, and storage.
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <Link href="/projects/engineering/dremel-3d45-rebuild">
+                    Hardware integration & repair ↗
+                  </Link>
+                </dt>
+                <dd>
+                  Diagnosing a failed printer controller, adapting Marlin
+                  firmware, and testing replacement control hardware.
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <Link href="/projects/cybersecurity">
+                    Security investigations & challenge design ↗
+                  </Link>
+                </dt>
+                <dd>
+                  CTF writeups, challenge development, and competition work with
+                  CHADS.
+                </dd>
+              </div>
+            </dl>
+          </section>
+          <section>
+            <p className="eyebrow">Academic work</p>
+            <h2>A systems foundation</h2>
+            <p>
+              University of Alberta coursework in operating systems and
+              numerical methods is documented in the project archive.
+            </p>
+            <div className="quiet-links">
+              <Link href="/projects/embedded-systems?collection=CMPUT+379%3A+Operating+Systems">
+                Operating systems →
+              </Link>
+              <Link href="/projects/engineering/robotic-arm-simulation">
+                Numerical methods →
+              </Link>
+            </div>
+          </section>
+          <section>
+            <p className="eyebrow">Beyond the project</p>
+            <h2>Making room for others</h2>
+            <p>
+              I’ve helped organize CTFs and community events, from challenge
+              creation and competition setup to technical support on the day.
+            </p>
+            <Link className="text-link" href="/events">
+              Leadership & community →
+            </Link>
+          </section>
+        </div>
+        <Suspense
+          fallback={
+            <aside className="resume-downloads">
+              <h2>Download a résumé</h2>
+              <a href="/resume-embedded.pdf">Embedded systems PDF ↓</a>
+              <br />
+              <a href="/resume-cybersecurity.pdf">Cybersecurity PDF ↓</a>
+            </aside>
+          }
+        >
+          <ResumeDownloads />
+        </Suspense>
       </div>
-    </main>
+    </>
   );
 }

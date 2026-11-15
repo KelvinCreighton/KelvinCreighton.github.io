@@ -1,17 +1,10 @@
+import DemoFrame from "@/components/DemoFrame";
 import Link from "next/link";
-import ProjectPager from "@/components/ProjectPager";
 
 export default function MyFirstGamePage() {
   return (
-    <main className="animate-page-enter flex flex-col items-center px-6 pb-6 pt-0 md:px-12 md:pb-12 md:pt-0 lg:px-24 lg:pb-16 lg:pt-0 w-full">
+    <div className="project-body">
       <div className="w-full max-w-5xl mb-12 flex flex-col items-center">
-        <Link
-          href="/projects/game-dev"
-          className="text-sm text-gray-500 hover:underline self-start mb-4"
-        >
-          &larr; Back to Game Dev Projects
-        </Link>
-        <h1 className="text-4xl font-bold text-center">My First Game</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-400 text-center">
           The first JavaScript game I ever made. It was a simple platformer
           where the player had to navigate through levels and avoid obstacles.
@@ -20,17 +13,7 @@ export default function MyFirstGamePage() {
         </p>
       </div>
 
-      <div
-        className="w-full max-w-5xl bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden flex justify-center items-center mb-12"
-        style={{ minHeight: "600px" }}
-      >
-        <iframe
-          src="/games/my-first-game/game.html"
-          className="w-full h-full border-0"
-          style={{ minHeight: "600px" }}
-          title="My First Game"
-        />
-      </div>
+      <DemoFrame src="/games/my-first-game/game.html" title="My First Game" />
 
       <div className="w-full max-w-4xl bg-gray-85 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">How to Play</h2>
@@ -273,8 +256,8 @@ export default function MyFirstGamePage() {
                 </div>
                 <div>
                   <strong>Checkpoints:</strong> Touching these will save your
-                  progress so you don&apos;t have to restart the whole level if you
-                  hit a spike.
+                  progress so you don&apos;t have to restart the whole level if
+                  you hit a spike.
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -331,11 +314,6 @@ export default function MyFirstGamePage() {
           </section>
         </div>
       </div>
-
-      <ProjectPager
-        category="game-dev"
-        currentPath="/projects/game-dev/my-first-game"
-      />
-    </main>
+    </div>
   );
 }

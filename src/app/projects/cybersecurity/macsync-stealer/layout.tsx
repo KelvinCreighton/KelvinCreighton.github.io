@@ -1,14 +1,20 @@
-import { Metadata } from "next";
-
+import type { Metadata } from "next";
+import CaseStudyLayout from "@/components/CaseStudyLayout";
 export const metadata: Metadata = {
+  openGraph: {
+    title: "MacSync Stealer: Static Malware Analysis | Kelvin Creighton",
+    description:
+      "Following a suspicious command through a multi-stage macOS stealer. A record of the loader, execution flow, and communication with its server.",
+    url: "/projects/cybersecurity/macsync-stealer",
+    type: "article",
+  },
   title: "MacSync Stealer: Static Malware Analysis",
-  description: "A detailed static analysis of the MacSync Stealer malware, uncovering its multi-stage execution flow and C2 communication methods.",
+  description:
+    "Following a suspicious command through a multi-stage macOS stealer. A record of the loader, execution flow, and communication with its server.",
+  alternates: { canonical: "/projects/cybersecurity/macsync-stealer/" },
 };
-
-export default function MacSyncStealerLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <CaseStudyLayout projectId="macsync-stealer">{children}</CaseStudyLayout>
+  );
 }

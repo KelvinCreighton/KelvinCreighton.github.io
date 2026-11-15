@@ -1,6 +1,5 @@
 import Image from "@/components/BlurImage";
 import Link from "next/link";
-import ProjectPager from "@/components/ProjectPager";
 
 const technicalAreas = [
   "ESP32-S3",
@@ -14,15 +13,8 @@ const technicalAreas = [
 
 export default function MachineGuardProject() {
   return (
-    <main className="animate-page-enter flex w-full flex-col items-center px-4 pb-8 pt-0 md:px-8 md:pb-12 lg:px-24 lg:pb-16">
-      <article className="flex w-full max-w-4xl flex-col items-start px-2 md:px-0">
-        <Link
-          href="/projects/embedded-systems"
-          className="mb-8 flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-blue-600"
-        >
-          &larr; Back to Embedded Systems Projects
-        </Link>
-
+    <div className="project-body">
+      <article className="article-content">
         <header className="mb-12 w-full border-b border-gray-200 pb-8 dark:border-gray-800">
           <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-1">
             <time className="text-sm italic text-gray-500 dark:text-gray-400">
@@ -32,9 +24,7 @@ export default function MachineGuardProject() {
               natHacks 2026 · SmolBugs
             </span>
           </div>
-          <h1 className="mb-4 text-4xl font-extrabold tracking-tight md:text-5xl">
-            MachineGuard
-          </h1>
+
           <p className="mb-4 text-lg font-medium text-blue-600 dark:text-blue-400">
             Embedded Hardware &amp; Firmware · Machine Condition Monitoring
           </p>
@@ -66,7 +56,8 @@ export default function MachineGuardProject() {
               />
             </div>
             <figcaption className="px-4 py-3 text-sm text-gray-600 dark:text-gray-400">
-              The working prototype connected to a drill for vibration monitoring.
+              The working prototype connected to a drill for vibration
+              monitoring.
             </figcaption>
           </figure>
 
@@ -113,7 +104,8 @@ export default function MachineGuardProject() {
               />
             </div>
             <figcaption className="px-2 py-2 text-sm text-gray-600 dark:text-gray-400">
-              Sensor wiring: the thermistor voltage divider connects to an ESP32 ADC input, while the LSM303D accelerometer connects over I²C.
+              Sensor wiring: the thermistor voltage divider connects to an ESP32
+              ADC input, while the LSM303D accelerometer connects over I²C.
             </figcaption>
           </figure>
         </section>
@@ -147,11 +139,26 @@ export default function MachineGuardProject() {
             My engineering contribution
           </h2>
           <ul className="list-disc space-y-2 pl-5 text-base leading-relaxed text-gray-700 dark:text-gray-300">
-            <li>Owned the hardware build and integration for the competition prototype.</li>
-            <li>Integrated the ESP32-S3, LSM303D accelerometer, thermistor circuit, OLED, and their power and signal wiring.</li>
-            <li>Debugged dual I²C buses, sensor setup, ADC readings, and embedded firmware dependencies.</li>
-            <li>Built the acquisition path for FIFO-backed, three-axis vibration windows and BLE transmission.</li>
-            <li>Worked across the board-to-receiver boundary to keep binary BLE packets usable by the team&apos;s processing software.</li>
+            <li>
+              Owned the hardware build and integration for the competition
+              prototype.
+            </li>
+            <li>
+              Integrated the ESP32-S3, LSM303D accelerometer, thermistor
+              circuit, OLED, and their power and signal wiring.
+            </li>
+            <li>
+              Debugged dual I²C buses, sensor setup, ADC readings, and embedded
+              firmware dependencies.
+            </li>
+            <li>
+              Built the acquisition path for FIFO-backed, three-axis vibration
+              windows and BLE transmission.
+            </li>
+            <li>
+              Worked across the board-to-receiver boundary to keep binary BLE
+              packets usable by the team&apos;s processing software.
+            </li>
           </ul>
         </section>
 
@@ -178,25 +185,21 @@ export default function MachineGuardProject() {
               />
             </div>
             <figcaption className="px-2 py-2 text-sm text-gray-600 dark:text-gray-400">
-              System flow for the team prototype, from the machine-mounted sensor to analysis, cloud decisions, dashboard, and phone alerts.
+              System flow for the team prototype, from the machine-mounted
+              sensor to analysis, cloud decisions, dashboard, and phone alerts.
             </figcaption>
           </figure>
           <p>
             The competition prototype demonstrated live sensing and data
-            transfer. The broader predictive-maintenance pipeline and model
-            were team efforts, and the prototype&apos;s temperature measurement
-            still needed calibration before it could be treated as a reliable
+            transfer. The broader predictive-maintenance pipeline and model were
+            team efforts, and the prototype&apos;s temperature measurement still
+            needed calibration before it could be treated as a reliable
             temperature value. This project gave me hands-on experience
             designing, wiring, bringing up, and integrating embedded hardware
             under a real competition deadline.
           </p>
         </section>
-
-        <ProjectPager
-          category="embedded-systems"
-          currentPath="/projects/embedded-systems/machineguard"
-        />
       </article>
-    </main>
+    </div>
   );
 }

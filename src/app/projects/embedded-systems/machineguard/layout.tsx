@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-
+import CaseStudyLayout from "@/components/CaseStudyLayout";
 export const metadata: Metadata = {
-  title: "MachineGuard | Embedded Systems Projects",
+  openGraph: {
+    title: "MachineGuard | Kelvin Creighton",
+    description:
+      "A sensor node that captures machine vibration and sends it over Bluetooth. I built the hardware and firmware for our natHacks team prototype.",
+    url: "/projects/embedded-systems/machineguard",
+    type: "article",
+  },
+  title: "MachineGuard",
   description:
-    "Embedded hardware and ESP32 firmware for MachineGuard, a natHacks 2026 machine-condition monitoring prototype.",
+    "A sensor node that captures machine vibration and sends it over Bluetooth. I built the hardware and firmware for our natHacks team prototype.",
+  alternates: { canonical: "/projects/embedded-systems/machineguard/" },
 };
-
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return <CaseStudyLayout projectId="machineguard">{children}</CaseStudyLayout>;
 }

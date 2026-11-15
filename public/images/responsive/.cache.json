@@ -1,0 +1,3957 @@
+{
+  "/images/Head-Shot.webp": {
+    "hash": "a62ffa8741d71e0357c4a195f0082bd55d02b0545a9b275138a2ac2a9f3cc508",
+    "entry": {
+      "width": 1173,
+      "height": 1173,
+      "variants": [
+        {
+          "src": "/images/responsive/Head-Shot-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/Head-Shot-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/Head-Shot-webp-1173.webp",
+          "width": 1173
+        }
+      ]
+    }
+  },
+  "/images/achievements/Alice.webp": {
+    "hash": "4f568fc4c2c24e3ecd34c839ffe1d6fc6dde8a6410827bf2afcacb48fd311b5c",
+    "entry": {
+      "width": 800,
+      "height": 1066,
+      "variants": [
+        {
+          "src": "/images/responsive/achievements/Alice-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/achievements/Alice-webp-800.webp",
+          "width": 800
+        }
+      ]
+    }
+  },
+  "/images/achievements/CyberSci.webp": {
+    "hash": "1856aede140097219d221921e93537ab276def3ae9ebfb5efa57ffe199861d40",
+    "entry": {
+      "width": 1200,
+      "height": 667,
+      "variants": [
+        {
+          "src": "/images/responsive/achievements/CyberSci-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/achievements/CyberSci-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/achievements/CyberSci-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/achievements/NCC.webp": {
+    "hash": "d35b1aa57a30f9d3185543009faca1bff3944d37490313f20fd4dcb90fc15e98",
+    "entry": {
+      "width": 1200,
+      "height": 814,
+      "variants": [
+        {
+          "src": "/images/responsive/achievements/NCC-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/achievements/NCC-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/achievements/NCC-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/achievements/illuminatictf.webp": {
+    "hash": "9139c0ea4cbe8c23d5ef8458b1ea3562877c1219bd7d70d8dac521fbb26468c4",
+    "entry": {
+      "width": 530,
+      "height": 480,
+      "variants": [
+        {
+          "src": "/images/responsive/achievements/illuminatictf-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/achievements/illuminatictf-webp-530.webp",
+          "width": 530
+        }
+      ]
+    }
+  },
+  "/images/cisco-rapid-incident-response-v7.webp": {
+    "hash": "1024f05066a540d0d80ba85d1af7968c3d0e3b87cea146b71387a6c21721bdba",
+    "entry": {
+      "width": 1200,
+      "height": 849,
+      "variants": [
+        {
+          "src": "/images/responsive/cisco-rapid-incident-response-v7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/cisco-rapid-incident-response-v7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/cisco-rapid-incident-response-v7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/events/Accurate-Networks.webp": {
+    "hash": "159acd58890ecf6d8cc2235255f9a0b786859e34aceced0a8f9870b73258b9b2",
+    "entry": {
+      "width": 1200,
+      "height": 1600,
+      "variants": [
+        {
+          "src": "/images/responsive/events/Accurate-Networks-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/events/Accurate-Networks-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/events/Accurate-Networks-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/events/BSides-Edmonton-2026.webp": {
+    "hash": "a3abd3d60af4bf00924e1e8adf5ff1789d770ae393c01200a0fcdd7911c068c9",
+    "entry": {
+      "width": 1200,
+      "height": 721,
+      "variants": [
+        {
+          "src": "/images/responsive/events/BSides-Edmonton-2026-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/events/BSides-Edmonton-2026-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/events/BSides-Edmonton-2026-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/events/Cybersec-Awareness-Month.webp": {
+    "hash": "7409d7990ea780c3289fa521893e0a2e08bcef49a892c31be2c52dd46a2ec703",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/events/Cybersec-Awareness-Month-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/events/Cybersec-Awareness-Month-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/events/Cybersec-Awareness-Month-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/events/HTCOTB2025.webp": {
+    "hash": "fbc22aa71d75d8f084899ce3ace7bec31cf003070837188773379e9dd4bc73e3",
+    "entry": {
+      "width": 1200,
+      "height": 658,
+      "variants": [
+        {
+          "src": "/images/responsive/events/HTCOTB2025-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/events/HTCOTB2025-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/events/HTCOTB2025-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/events/HTCOTB2026.webp": {
+    "hash": "427db6c56f6666ada91982b1814d6c5b8f6f0e6d6f9fccc1dbb0673bc366ee0f",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/events/HTCOTB2026-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/events/HTCOTB2026-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/events/HTCOTB2026-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/events/Secure-Coding-Tournament.webp": {
+    "hash": "87846338fc10ce7e8fc5e6dc5eeddaceb55f47c64481d7c0f4c6fbe011ebb9ee",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/events/Secure-Coding-Tournament-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/events/Secure-Coding-Tournament-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/events/Secure-Coding-Tournament-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/3d-game.webp": {
+    "hash": "99397b2518499a1818a0f8d4bc395000b9471bbc964edf7b32d70943c64b0080",
+    "entry": {
+      "width": 748,
+      "height": 505,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/3d-game-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/3d-game-webp-748.webp",
+          "width": 748
+        }
+      ]
+    }
+  },
+  "/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON.webp": {
+    "hash": "6b7919fb13c121e514766996c9bf3c9f85cc0a99a724a93ed5ff9e50dde67771",
+    "entry": {
+      "width": 1200,
+      "height": 673,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/Beethoven_Virus.webp": {
+    "hash": "297943146f953ea7a822b3737168f69782ba3ff9ddaeada9b5f2515b8aa91921",
+    "entry": {
+      "width": 1200,
+      "height": 670,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/Beethoven_Virus-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/Beethoven_Virus-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/Beethoven_Virus-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/Blackhole_Simulator-image.webp": {
+    "hash": "0d727b1ec7faf248fb6ade15e021ad0f4ad7db5eddab48c74eb0ab59adf10539",
+    "entry": {
+      "width": 1086,
+      "height": 681,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/Blackhole_Simulator-image-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/Blackhole_Simulator-image-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/Blackhole_Simulator-image-webp-1086.webp",
+          "width": 1086
+        }
+      ]
+    }
+  },
+  "/images/projects/CHADS_logo.webp": {
+    "hash": "0f738f0db77a2c54af9ce5e3438a5b36f1e8cf17f39f6c8a5b0182810734bd62",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/CHADS_logo-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/CHADS_logo-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/CHADS_logo-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/The-Longest-Moment-Before-a-New-Beginning.webp": {
+    "hash": "5dc5353aef7d667b06811347656559fc2ebf898ff186c52ff5d163a3e302eee1",
+    "entry": {
+      "width": 1187,
+      "height": 670,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/The-Longest-Moment-Before-a-New-Beginning-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/The-Longest-Moment-Before-a-New-Beginning-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/The-Longest-Moment-Before-a-New-Beginning-webp-1187.webp",
+          "width": 1187
+        }
+      ]
+    }
+  },
+  "/images/projects/WICYS_logo.webp": {
+    "hash": "2db3c08b8c666930eb3b575dc9c553a30fe79530dfdb7ade57d0a483976776d1",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/WICYS_logo-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/WICYS_logo-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/WICYS_logo-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/cyber-highlights.webp": {
+    "hash": "129f0e8511438e7c7718a2e63d9dd7340f57253db5ee79327c50bf898c75f2b5",
+    "entry": {
+      "width": 1080,
+      "height": 626,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/cyber-highlights-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/cyber-highlights-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/cyber-highlights-webp-1080.webp",
+          "width": 1080
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild-initial-failure.webp": {
+    "hash": "ff94654484a44cac01ceff448a561d9b9c549e4625148412de43861c681bd8ad",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild-initial-failure-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild-initial-failure-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild-initial-failure-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild-title.webp": {
+    "hash": "535f26830d741e47d9898b943cb65d6c6a60537e36fa3baab43d09627898467c",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild-title-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild-title-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild-title-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild/step-1-1-1.webp": {
+    "hash": "5e89dac62d16f50fce6c82cd8e203ec4f0fde62ecb11f26e06e9006e82250e59",
+    "entry": {
+      "width": 1200,
+      "height": 1600,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-1-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-1-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-1-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild/step-1-1-2.webp": {
+    "hash": "05420be2f2ab691af2c7b77b6c48d6b748190d23c8c45fafb95487d039dd75ca",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-1-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-1-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-1-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild/step-1-2-1.webp": {
+    "hash": "43835d4b510647226c82726606a288a70dbb1ab6d98bf64954b042c4babd8d3f",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-2-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-2-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-2-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild/step-1-2-2.webp": {
+    "hash": "e1f058fce6ab736f318cf7da0aed0234421c660e41e5670a3062008e81f017e1",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-2-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-2-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-1-2-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild/step-2-1-1.webp": {
+    "hash": "1166cdadb3a96171c99cefc612ca14d83ce92085d7fc6bf42af01e48bdbf7fd5",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-2-1-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-2-1-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-2-1-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild/step-2-1-2.webp": {
+    "hash": "ab7d93166c1eb5a9a04ac189fdeab8af210d5b7b6de5302cafec2bd8a09a0264",
+    "entry": {
+      "width": 1200,
+      "height": 1600,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-2-1-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-2-1-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-2-1-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild/step-2-1-3.webp": {
+    "hash": "719376be35b60a268cad447ee821908be25401b52d380bbc61bbda3768b38305",
+    "entry": {
+      "width": 1200,
+      "height": 1600,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-2-1-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-2-1-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-2-1-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild/step-3-1.webp": {
+    "hash": "75a995a51b8d66e4dae8f45382f5554efdd7f50e9b76e7b13b32a8bd939f9829",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-3-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-3-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-3-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-rebuild/step-3-2.webp": {
+    "hash": "3475f9dfe7945172a1ad7e9b6c0b9dae05106eded36c46586c1be0e074a9b3e6",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-3-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-3-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-rebuild/step-3-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-1-1.webp": {
+    "hash": "fe2533cfd164440b44d3c75b6c4ae202b99f68a06ac31e29b8ed84380247fee7",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-1-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-1-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-1-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-1-2.webp": {
+    "hash": "5f4d5628dfbd212f4cf9b5c62296379c26ff398fb40c1021c0a7010d55bb94aa",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-1-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-1-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-1-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-10-1.webp": {
+    "hash": "ba73168309611370b8b709c0bd2ff6dec0553205126c4fe3c2953be02890ff1a",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-1-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-1-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-10-2.webp": {
+    "hash": "012dcc894e8513d08c2b02db49a89aa5af1bed8a55262bbd42f608f05c2c5240",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-2-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-2-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-10-3.webp": {
+    "hash": "f92b9371eda6d3738e12c9331c770e3d1a7e950e13eadf5d886c8a00c86024bc",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-3-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-3-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-10-4.webp": {
+    "hash": "64896585789f96ea5641c5ab1b0645d7593f117d4c8789f44428bf33c3df0e9c",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-4-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-4-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-4-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-10-4-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-2-1.webp": {
+    "hash": "23a0036df27d95ea72c1e257c1c3e4d7e67c381a7ea94c36bad574308595519a",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-2-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-2-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-2-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-2-2.webp": {
+    "hash": "a4c02bd8ef5576946080381711f61e7547bd7285ef646fbf93f95009ce1bb04e",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-2-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-2-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-2-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-2-3.webp": {
+    "hash": "4a9e00e60ba08c41654dae4a6518f15941b20a307024c0d8343f8f66a503b888",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-2-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-2-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-2-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-3-1.webp": {
+    "hash": "c15231d974edd40edf44cebc62d96796c0be8f3de207b358a79d48d032a5aa6c",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-3-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-3-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-3-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-3-2.webp": {
+    "hash": "278f60f9afb3864195508abdc135e916d449ba76c47d95ad2320403ddd444bd8",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-3-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-3-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-3-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-3-3.webp": {
+    "hash": "26377a25096d61b35d38079966dfeb733dcc1dc4ef27cd4114db129e5d5388ba",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-3-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-3-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-3-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-4-1.webp": {
+    "hash": "1518f4482120aba78a46e456956faef213e77d14296b72e4ca69b0fecedd12bf",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-4-2-1.webp": {
+    "hash": "bbb00d4cae740fbde51cabe151912a6e6afc951f13e9fadda1fd0ae20ede947f",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-4-2-2.webp": {
+    "hash": "1833dfa6254ed336e4c981207bafa9bd54a1941d2395e64080078f23f8186ad4",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-4-2-3.webp": {
+    "hash": "5a66378e55ace7697b070c91979e2335bc13bdbdb4097cdaa23969cecea0fcbb",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-4-2.webp": {
+    "hash": "e308ced54ef1f0b49ae95d55cdf6b43761bd8004a60d1e4b41524d2dc94fa837",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-4-3-1.webp": {
+    "hash": "c4012c58089d471b2b65401bdb33c97d09eb6452328d8958ebaf889dd4fe31c2",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-4-3-2.webp": {
+    "hash": "a4d83030b50501f88b1d6d4c46f9b7f8371e81a063e6311250f00c83022763c7",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-4-3-3.webp": {
+    "hash": "c6617b3dc93994a0704d99a49bcbc77fb6c28207cb26c523f2071badc3751adf",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-4-3-4.webp": {
+    "hash": "9a0f02aa94ff00616e382f4263c340b3a1643955ff5a03dc01746e4adc8c765b",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-4-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-4-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-4-3-4-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-5-1.webp": {
+    "hash": "72395f0298f873aa0737b17238c58efcfa93c9ebef0980ecbfc6a6d0c7fcad9b",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-5-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-5-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-5-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-5-2.webp": {
+    "hash": "cfc3f4d4cb3a05b4aa580bbdf2e80c76cc4b3a54a5668bcd2ec4cfef84aac74b",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-5-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-5-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-5-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-5-3.webp": {
+    "hash": "b5aa9ea54af956ec1a0fe49bd7d660a54c887e4f4aaa28e9ee4ee0fd87a74120",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-5-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-5-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-5-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-6-1.webp": {
+    "hash": "de383c28f6f23e6d69ca5c1c4e27c905fe143cb061b98ad68dd2d9996428de3f",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-6-3.webp": {
+    "hash": "289e94135526111b8854e2386448b410658121832834382a99fde4c9fe44440c",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-6-4.webp": {
+    "hash": "d21577a76db5533133e6ac6147d4cb3606c10447943389a8ce31a0ed4234b834",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-4-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-4-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-4-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-6-5.webp": {
+    "hash": "537cdc094a3ba3135ce74c24862b897ed8cba41b8c8765ebccac3c9d724b8170",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-5-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-5-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-6-5-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-7-1.webp": {
+    "hash": "c8253693fc1da6b8130ee9f8b0b7a8c161e0963899dfa1f6154b2485d8a21248",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-7-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-7-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-7-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-7-2.webp": {
+    "hash": "7d8d4e88d9c8e69b044df4177c3bfc32ecb52a8fda5b7a33422d9d00894fb3fd",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-7-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-7-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-7-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-7-3.webp": {
+    "hash": "cba12dcd1a9fed58a814372321625db7d0343172bffdc0ec629e622844dff36a",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-7-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-7-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-7-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-8-1.webp": {
+    "hash": "ac79288334a2e8e6c84b467e6ca26e4d9dd4d49c1dcb0b5cba1af126d90f408b",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-1-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-1-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-8-2.webp": {
+    "hash": "f30476fc293bb467583ac255c1b6c4d675cd93b503d71072319328dfbefa962f",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-2-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-2-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-8-3.webp": {
+    "hash": "cc91356689cb424c9f4c64035388edf6577f7c436e04d3c363ecbf4cdafdacd9",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-3-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-3-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-8-4.webp": {
+    "hash": "4b621cc1508443533c8a0a17c96560107a42a742e2349acbb9667fb76c3defdc",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-4-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-4-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-4-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-8-4-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-9-1.webp": {
+    "hash": "18f999214a6e450ddcf2b7f5b83330492d19ab914f1a4d883b4491bc9588e8b4",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-1-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-1-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-9-2.webp": {
+    "hash": "ccb7c17a48980a15b1276c92b5c291adb712e8e97459c07d98b81d0c7f2529f0",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-2-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-2-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-9-3.webp": {
+    "hash": "23a84c2c8c45daea17d71b789772fffd88bbfd6f12bbb3226af25d17648511a1",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-3-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-3-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-step-9-4.webp": {
+    "hash": "3eacc3dd9960e204e9aabf9a6e96bb5fca65b930d4fc78c2409fe4f216734c38",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-4-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-4-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-4-webp-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-step-9-4-webp-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/dremel-3d45-title.webp": {
+    "hash": "aac72699840430193883be1b856277ea5a3fa32888644082890429d4cc6a673e",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/dremel-3d45-title-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-title-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/dremel-3d45-title-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/machineguard-prototype.jpg": {
+    "hash": "984d6fa6fbc7e61310a6f607117e994d0c304fcbbc49244935febd70b4a18339",
+    "entry": {
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/machineguard-prototype-jpg-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/machineguard-prototype-jpg-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/machineguard-prototype-jpg-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/machineguard-prototype-jpg-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/machineguard-system-flow.png": {
+    "hash": "56742232eef58f7bfa2b417c619a0fa516f18d6f1828e3c69e553a11e093e768",
+    "entry": {
+      "width": 2400,
+      "height": 840,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/machineguard-system-flow-png-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/machineguard-system-flow-png-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/machineguard-system-flow-png-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/projects/machineguard-system-flow-png-1600.webp",
+          "width": 1600
+        }
+      ]
+    }
+  },
+  "/images/projects/machineguard-wiring-diagram.png": {
+    "hash": "47b0368eae0d0f9ed197174c91501d885f04659474e6f31e4c55d4d5ef7a6cb9",
+    "entry": {
+      "width": 720,
+      "height": 480,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/machineguard-wiring-diagram-png-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/machineguard-wiring-diagram-png-720.webp",
+          "width": 720
+        }
+      ]
+    }
+  },
+  "/images/projects/my-first-game.webp": {
+    "hash": "d4aff41ce8feb30c1c9adb0c883abf1a1c0ee2a098140783a7820b6d5f397519",
+    "entry": {
+      "width": 1168,
+      "height": 602,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/my-first-game-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/my-first-game-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/my-first-game-webp-1168.webp",
+          "width": 1168
+        }
+      ]
+    }
+  },
+  "/images/projects/picoCTF_logo.webp": {
+    "hash": "4fb46259415f6a92c16cd9542daefa8dfcbfce94b5d5181fdae30d17a8180efd",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/picoCTF_logo-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/picoCTF_logo-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/picoCTF_logo-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/plastic-mind-title.webp": {
+    "hash": "248ac92153fb17f96ab7571254f936b655255f1e5021c73e7d6257fd90767026",
+    "entry": {
+      "width": 1009,
+      "height": 505,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/plastic-mind-title-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/plastic-mind-title-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/plastic-mind-title-webp-1009.webp",
+          "width": 1009
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p10-7.webp": {
+    "hash": "ddbf63a1fa7a3230ca8758ddac1538ed78d068548644042309c6aebd3d1365b3",
+    "entry": {
+      "width": 1200,
+      "height": 988,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p10-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p10-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p10-7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p11-7.webp": {
+    "hash": "13f11bee662a86fb744b12ae79439cf89f3a421b316ab7ea0674f2f324c687b5",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p11-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p11-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p11-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p11-8.webp": {
+    "hash": "59ef0a2c0256350dc099e0418689cfe70d20e90d9164725d0283e4efe0da0b52",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p11-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p11-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p11-8-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p12-7.webp": {
+    "hash": "6ce78e5c0ff5ae91642495859864da2a921d84cb12258d9a2c7a71cd375f5a6a",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p12-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p12-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p12-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p12-8.webp": {
+    "hash": "c9f13b880358a91a5db7dc245867bf12a5c2d1cb3798b6744eed84679d45d757",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p12-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p12-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p12-8-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p13-7.webp": {
+    "hash": "455bb71e54d0816ad4ce0cf456b96afeab177585d125c09baf5fea972eb9b58e",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p13-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p13-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p13-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p13-8.webp": {
+    "hash": "b4348eea2b90fc13cdc1739a99e94ea32597d57b23d5a4c103ca95bfbca93d58",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p13-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p13-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p13-8-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p14-7.webp": {
+    "hash": "30c6e7c9341b768fe9401bfacd48ddbb0789e7019668fa15be07563e1e4733b6",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p14-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p14-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p14-7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p14-8.webp": {
+    "hash": "4505694d06339d23cd50885d979c8ed224c89893b5642fb74c141a5cec8b4cd9",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p14-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p14-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p14-8-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p14-9.webp": {
+    "hash": "68cf34e6544ebcbaf79f22ce6091b964202585797e7473c1c0f18f3b940c65bc",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p14-9-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p14-9-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p14-9-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p15-7.webp": {
+    "hash": "5ceaa56bf8b9349a4b47e6715b1783b264d31e77b1c952e05cd6e3c8f9ce5ba3",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p15-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p15-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p15-7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p15-8.webp": {
+    "hash": "cfdee85405900651ab22b4198f8cac70116c6a505d7e1ac6b58706492d41aa8e",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p15-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p15-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p15-8-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p15-9.webp": {
+    "hash": "98578327f2dbddeac00048d49d06017b8619dda5edbbc8ef553f804df847e466",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p15-9-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p15-9-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p15-9-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p16-7.webp": {
+    "hash": "18b2f4bfd70d87090559dc431ef324cd78d8a6f0756f848465636acb0d6397cf",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p16-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p16-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p16-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p16-8.webp": {
+    "hash": "0081eb27f0c84d76e264b21b5a0b577a204dfa4c24f21d2161d105fa3e991628",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p16-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p16-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p16-8-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p17-7.webp": {
+    "hash": "47530b0ad9f75bf1a98571e354524dc6a6b671f140ba95eea6bcaab89742f08a",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p17-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p17-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p17-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p17-8.webp": {
+    "hash": "31b859baaed1f50ae94d7f488025266089a920b12e64abb7a99f3146094a28cf",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p17-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p17-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p17-8-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p17-9.webp": {
+    "hash": "449f20fc13268298147dd5da8cd2776062a789b8590420927ba832b132d1ce10",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p17-9-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p17-9-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p17-9-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p18-7.webp": {
+    "hash": "7c343776a2941b6ff4c0e5ac46065bd4032051ad48ea2e498ad4c2be77124a63",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p18-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p18-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p18-7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p18-9.webp": {
+    "hash": "8f74c4cce447e256bbb3cb031e8ab4572ca05196b22b58f99a923e93386f6bfc",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p18-9-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p18-9-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p18-9-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p19-7.webp": {
+    "hash": "adac95db0a9385aceff7df5683790164abaf5772b184664a0f484e28656d4ca5",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p19-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p19-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p19-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p19-8.webp": {
+    "hash": "161fafdbec7927f8fe1aa94b645cedc3a3e2be27cea93cb23b81cbc13272e59a",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p19-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p19-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p19-8-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p20-7.webp": {
+    "hash": "0e26cbf4b4b315455533338396e01fbe7d33532c61327fa7af192b3c0f62a13f",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p20-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p20-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p20-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p21-7.webp": {
+    "hash": "48110074fee275c1c6c468a20b3752d7903cb5cd94f74a00dbf8c9df67d77755",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p21-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p21-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p21-7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p21-8.webp": {
+    "hash": "b3067e545801d9de993c3c246a2d1f172a9992a4030f95d41a20a38538f643bf",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p21-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p21-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p21-8-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p22-7.webp": {
+    "hash": "ca0f62c2bfd3908c691c6923d41b957ea1f63c3370976ccbd01a9cf89109fd45",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p22-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p22-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p22-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p23-7.webp": {
+    "hash": "c605b98d9b7620124df811e900421a480ca3f4572c232403483b4653af795fb5",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p23-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p23-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p23-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p23-8.webp": {
+    "hash": "ed207c5dde4307aee762070eaee9198f2d027b82cb4579bd261419a3b98205d4",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p23-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p23-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p23-8-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p24-7.webp": {
+    "hash": "b26c597604b41522bfa3ad4bac9373240675b08eba3f62ddde413f771aa9e9d5",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p24-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p24-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p24-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p25-8.webp": {
+    "hash": "6b698bf5765fbd2920b707187a19a8727e823da7a75ff29335c26fd82ffee35b",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p25-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p25-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p25-8-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p25-9.webp": {
+    "hash": "ec7e3a7911b0edf6b47343cc6586c4c40f7bb2cba9247e30bb9ddf4c42f173c5",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p25-9-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p25-9-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p25-9-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p26-7.webp": {
+    "hash": "04322a915b38b275e1196dc89eb0971224c3aedfeec2eaac6c3ec8d4e14a26b9",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p26-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p26-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p26-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p26-8.webp": {
+    "hash": "4955e8474ef99c6195f3a8d8056c1dcb053097ab24be3de81fc4b59244f88887",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p26-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p26-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p26-8-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p27-7.webp": {
+    "hash": "a65ddb9c54c0d73ed1157d848d951ac6a3934926bafe3563d070da096be7d24b",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p27-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p27-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p27-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p27-8.webp": {
+    "hash": "731c0c48244cefaff4f1baab829c212ce62100be6a64e294188d7d6f6fcfbec4",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p27-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p27-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p27-8-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p28-7.webp": {
+    "hash": "baef7458e4a63ef04c35477ca54c4c36d00520497354e940c092cb0a02622a2b",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p28-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p28-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p28-7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p29-7.webp": {
+    "hash": "317b36f4c487ec98092705ccd68bda092a4fd9b166030c3618c5b8e2d2fe2b1e",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p29-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p29-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p29-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p29-9.webp": {
+    "hash": "dfe7acdaef12d9b4da5a04557e5b6e35aee0a573b0d0580aa06a1b62980fe633",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p29-9-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p29-9-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p29-9-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p32-8.webp": {
+    "hash": "789f1def0fdfb2d85915fccdb5b0442efe3d7bfbe6111003f1112bb8c9c10f8c",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p32-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p32-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p32-8-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p33-10.webp": {
+    "hash": "1caaaec8f42b431c2cfcde91500ed573f8b77bdcd7c0d4dac88e0ce988ec5272",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p33-10-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p33-10-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p33-10-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p33-7.webp": {
+    "hash": "c7cf15a9d6d3e8d20036eb1c8980ad2c3eda477440fb7089de05159125330953",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p33-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p33-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p33-7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p33-8.webp": {
+    "hash": "b606ab31bf28268ca10312f1169d90273e91e1c15f6353b7aa3eee55aa6c3349",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p33-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p33-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p33-8-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p34-7.webp": {
+    "hash": "0cd3fb360e98a1a49c8d05a2afe892a9ae8ee275c3eab4725785393babcb92db",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p34-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p34-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p34-7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p34-8.webp": {
+    "hash": "7107c3deaad7f4e5b971dbca29fa615c20169f5c3ccff41c8da115654e14c521",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p34-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p34-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p34-8-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p35-7.webp": {
+    "hash": "994c5cb81be4aa553ae5cce683953b2413d17aecf6411d05bc3e1f8c3d1eea05",
+    "entry": {
+      "width": 1152,
+      "height": 2048,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p35-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p35-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p35-7-webp-1152.webp",
+          "width": 1152
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p36-8.webp": {
+    "hash": "3ad8628bfd9ff66daa6275ebe2bf83340bf2c003753c4988533b56532112dc51",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p36-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p36-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p36-8-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p37-8.webp": {
+    "hash": "44c1099bbc812201af140f3e81b1c4ce02463c7b9c71e2b44a1ed2b221c06922",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p37-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p37-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p37-8-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p38-8.webp": {
+    "hash": "5beeb30acb52d39f4e499365fdbb58ce21dcf29d850f509e3ce32c6be8d82b67",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p38-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p38-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p38-8-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p38-9.webp": {
+    "hash": "5d59e317cd76ba17da9624242bf20eb1e31730b89938665dc22c2da5916c48a6",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p38-9-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p38-9-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p38-9-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p41-7.webp": {
+    "hash": "cbb29bfba48ceaf0a0aff04cf21e08689a420503dc3c21e530790d86274e2f32",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p41-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p41-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p41-7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-pdf/img-p41-9.webp": {
+    "hash": "1a93299d5d5e8066c886db34fbac265993f0113e1a68dabd8d8256e4988b706e",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p41-9-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p41-9-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-pdf/img-p41-9-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-prototypes-01.webp": {
+    "hash": "db83eb67e94665726aafcf6f827c2afc6fbfd0c2793dacb17706e235d458bdc8",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-prototypes-01-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-prototypes-01-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-prototypes-01-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/rc-car-title.webp": {
+    "hash": "f797f80e2f68799a4349643ad2aa949b8fd52298507404763d57930494bc1cbd",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/rc-car-title-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-title-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/rc-car-title-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/robotic-arm-simulation-title.webp": {
+    "hash": "35d0da035aad5d0e9ef1dd1f5929e85495234c86d3f8d8248909fd1735b8800c",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/robotic-arm-simulation-title-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/robotic-arm-simulation-title-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/robotic-arm-simulation-title-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-1-1.webp": {
+    "hash": "d51ff15e6540d76925031a776a69387ad43610066d6c9a338a664de5c96d0c33",
+    "entry": {
+      "width": 1200,
+      "height": 2133,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-1-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-1-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-1-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-1-2.webp": {
+    "hash": "0ae4f9fb085569040049a9476320b67daaebc27cca005bfc70fec4b5191daf8e",
+    "entry": {
+      "width": 1200,
+      "height": 2133,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-1-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-1-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-1-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-2-1.webp": {
+    "hash": "7957527973b1aabdedb8756fcd2d8785220579030367439438ae5e5208070dbb",
+    "entry": {
+      "width": 1200,
+      "height": 1773,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-2-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-2-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-2-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-2-2.webp": {
+    "hash": "47da6a504fae210f4341cedf22ca107d6e290def98901b4e9c94ab3683705dfc",
+    "entry": {
+      "width": 1200,
+      "height": 1773,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-2-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-2-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-2-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-2-3.webp": {
+    "hash": "070e350a4fa933bb09800b91c98f6aca09699e903d9b06042ed456bb3f4e259a",
+    "entry": {
+      "width": 1200,
+      "height": 1773,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-2-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-2-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-2-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-3-1.webp": {
+    "hash": "e4687e15a38ffb258dc58a837c1a705ad432e4ba468ec1cff82d67951b6f21ba",
+    "entry": {
+      "width": 1200,
+      "height": 1969,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-3-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-3-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-3-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-3-2.webp": {
+    "hash": "85213706e2fcead6ae9fd11d56e34b6a92f5a7550266f04f79dc4f874573a426",
+    "entry": {
+      "width": 1200,
+      "height": 1969,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-3-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-3-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-3-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-4-1.webp": {
+    "hash": "44aacd44e33b2a7a5d45091ece5f4f85ded5f6a7ffcb9b6e3d727a291c6447a3",
+    "entry": {
+      "width": 1200,
+      "height": 2133,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-4-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-4-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-4-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-4-2.webp": {
+    "hash": "435633b2a1cfa12ae3dd6a0cb6b41a673cd625bee34662771f27d8170e5eaf4c",
+    "entry": {
+      "width": 1200,
+      "height": 2133,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-4-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-4-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-4-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-4-3.webp": {
+    "hash": "d47ea771fe7d8c4b0ab06760d7fe3bf1921d3fd321d2482f19dd5e1eb2ef552f",
+    "entry": {
+      "width": 1200,
+      "height": 2133,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-4-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-4-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-4-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tacoma-vc-title.webp": {
+    "hash": "19a7595f8881ec3e487e5484a4727accc8edaa3c9551c352e50d8a2bcf65cb25",
+    "entry": {
+      "width": 1200,
+      "height": 674,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tacoma-vc-title-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-title-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/tacoma-vc-title-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/tank-game.webp": {
+    "hash": "6a834d53192def7caa1f2fd3b1b60962c00d1ab24f45333dbae5d07c156a8568",
+    "entry": {
+      "width": 616,
+      "height": 432,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/tank-game-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/tank-game-webp-616.webp",
+          "width": 616
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-1-1.webp": {
+    "hash": "ead9e156d00671f2a2515bd91cd37fe39d1f3f31f81ece64b0d156010c5dcf3c",
+    "entry": {
+      "width": 1200,
+      "height": 645,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-1-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-1-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-1-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-1-2.webp": {
+    "hash": "77d1982680d15cec6cefe85409928d8a50de3c19b8f0f0c59a8f1c2857ddf9da",
+    "entry": {
+      "width": 1200,
+      "height": 645,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-1-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-1-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-1-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-10-1.webp": {
+    "hash": "e9dca37f4f99faec4b7019162df9949905a2292be86f2a7db788c722c467e5e7",
+    "entry": {
+      "width": 884,
+      "height": 659,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-10-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-10-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-10-1-webp-884.webp",
+          "width": 884
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-10-2.webp": {
+    "hash": "1fcd7488573a2bdda937fc9f1ff33cb2aed6b10be0147a145c755865b9557d1f",
+    "entry": {
+      "width": 884,
+      "height": 659,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-10-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-10-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-10-2-webp-884.webp",
+          "width": 884
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-11-1.webp": {
+    "hash": "ce6e6f113d34935f8910053350ff208920f48b50d6c750801b5060b130399692",
+    "entry": {
+      "width": 1200,
+      "height": 1031,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-11-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-11-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-11-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-11-2.webp": {
+    "hash": "effb1147f07ad6764051aef18a9f09909680301f54599afc1c5c0c879f840520",
+    "entry": {
+      "width": 1200,
+      "height": 1031,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-11-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-11-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-11-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-11-3.webp": {
+    "hash": "143313cf948691107eedf9b7cca499d4eacb33ab358dd689d5f712fc320c4f74",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-11-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-11-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-11-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-11-4.webp": {
+    "hash": "9bebac936853b1105fdba190d96a781b61532f55d7c17f00e975dcb061501e53",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-11-4-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-11-4-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-11-4-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-12-1.webp": {
+    "hash": "fd107783d0be8b9ed49767e3ecc3d6b52f4d567526aeb01b91e470eaf8a19e29",
+    "entry": {
+      "width": 1200,
+      "height": 1138,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-12-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-12-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-12-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-12-2.webp": {
+    "hash": "0eac71664234a74ff4099173c84ed399b0dc8e2b026186ac807edb8eddb9d4df",
+    "entry": {
+      "width": 1200,
+      "height": 1138,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-12-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-12-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-12-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-12-3.webp": {
+    "hash": "f655421efd05ded73767d42c347a7b683f19091ea134c6d051b22430a85a6755",
+    "entry": {
+      "width": 1200,
+      "height": 1138,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-12-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-12-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-12-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-2-1.webp": {
+    "hash": "2d281fff4fcc45823c6311086fb20dd3a98318fd37c1978e38ea58b74cf9688d",
+    "entry": {
+      "width": 860,
+      "height": 1080,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-2-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-2-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-2-1-webp-860.webp",
+          "width": 860
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-2-2.webp": {
+    "hash": "32d80694095254e1880dcf274a99480fba8c71517047a5d79ad46b8aea186255",
+    "entry": {
+      "width": 860,
+      "height": 1080,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-2-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-2-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-2-2-webp-860.webp",
+          "width": 860
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-3.webp": {
+    "hash": "634352edade05212fbf8ed7c63fc6e7efe8ae90d1ef8ab78bed2c74f8877b817",
+    "entry": {
+      "width": 1022,
+      "height": 1920,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-3-webp-1022.webp",
+          "width": 1022
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-4.webp": {
+    "hash": "41fed189faeebd320728d564739cc1ed8caa43bbb0240b86add0167128ac82a9",
+    "entry": {
+      "width": 1022,
+      "height": 1920,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-4-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-4-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-4-webp-1022.webp",
+          "width": 1022
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-5-1.webp": {
+    "hash": "aa724a4aeb5b8f37d50d5eb65ca75535663ff44e3c2577de6a41986de49eddfe",
+    "entry": {
+      "width": 1200,
+      "height": 675,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-5-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-5-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-5-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-5-2.webp": {
+    "hash": "e46be53c96cc095f9905f5f946f142c83b5ea389252210e323754676c6cc160b",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-5-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-5-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-5-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-6-1.webp": {
+    "hash": "c8b8b4fd28d59ae82073638bedbce4565f9636021b5b86244784bff84da04a9b",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-6-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-6-2.webp": {
+    "hash": "133bfb7f4c46d8af03209d07672f74477c2df6a2249ba3cb7b06c94a1bc00478",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-6-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-6-3.webp": {
+    "hash": "0b9cf40d05c508d5eddc6580f30e80e1b68236b0a829e583d9e51a9a2f8bd4e3",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-6-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-6-4.webp": {
+    "hash": "6f818fefd5a95950e529a08cea97bc4018c9f374dd4bc16431108e32bfced76f",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-6-4-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-4-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-4-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-6-5.webp": {
+    "hash": "21c7b2d1f0e0b5d04ee01cab3b1064b57dfaca5995add65a844feb5e09efd697",
+    "entry": {
+      "width": 1080,
+      "height": 1440,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-6-5-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-5-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-5-webp-1080.webp",
+          "width": 1080
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-6-6.webp": {
+    "hash": "87f02dd427cfbcb5955253d52cf067cbfbe8d4423a8c2f413ee296e7e432e40d",
+    "entry": {
+      "width": 1080,
+      "height": 1440,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-6-6-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-6-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-6-6-webp-1080.webp",
+          "width": 1080
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-7-1.webp": {
+    "hash": "0a4781ac1901c9951bb5801b27cba1ae7447bee98259e13653c3e43a8eac7400",
+    "entry": {
+      "width": 1080,
+      "height": 1440,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-7-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-1-webp-1080.webp",
+          "width": 1080
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-7-2.webp": {
+    "hash": "dc54c5b9c9cfc0140e57a1482c6ed171912285807ef0c296eba35de02385bd44",
+    "entry": {
+      "width": 1080,
+      "height": 1440,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-7-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-2-webp-1080.webp",
+          "width": 1080
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-7-3.webp": {
+    "hash": "f18fabfdacfd0f19593dffd9213bb72f6455b5dbf6e68ebfbb99135985377178",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-7-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-7-4.webp": {
+    "hash": "73f676a212c007c8cec3a3bae8c6f84e42b081f140d2f6f0e90bd7f7748357b0",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-7-4-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-4-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-4-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-7-5.webp": {
+    "hash": "29409cf6d3f1972fa19dde81e03a523ea8f2a6ad9f549e0ebdfdb7b8f5cb7a89",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-7-5-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-5-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-5-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-7-6.webp": {
+    "hash": "945aa85f7e5e7476e08151f0f6aa51321a6c28816e4ba375ab64b7b7fa6aac67",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-7-6-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-6-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-6-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-7-7.webp": {
+    "hash": "9f8020d47eeb6cbc6524014feacdf884817ea4087375eb489d2df72e52c11bb7",
+    "entry": {
+      "width": 1200,
+      "height": 939,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-7-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-7-7-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-8-1.webp": {
+    "hash": "2f8c711799f728e1a762b691af5c074f5e8eecb03a6e6b2984162586fcf48476",
+    "entry": {
+      "width": 1080,
+      "height": 1440,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-8-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-8-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-8-1-webp-1080.webp",
+          "width": 1080
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-8-2.webp": {
+    "hash": "5590dd164861918379a243a2d4b5d0aba714b21596794c68f08bac7d48893e86",
+    "entry": {
+      "width": 1080,
+      "height": 1440,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-8-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-8-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-8-2-webp-1080.webp",
+          "width": 1080
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-8-3.webp": {
+    "hash": "55e69b2b1e242dcdeea342b77a7b54a0b6358164eea820cf9fbe6ef341fc1c5a",
+    "entry": {
+      "width": 810,
+      "height": 1080,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-8-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-8-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-8-3-webp-810.webp",
+          "width": 810
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-9-1.webp": {
+    "hash": "83f9739f54db30271b1824d97fb500deafea78b14029e3a8e458349d51ae93d9",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-9-1-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-1-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-1-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-9-2.webp": {
+    "hash": "85d19156b87e920dfe11d33bb8fc93a5e5ab2ae336d4e866dbf671530a352be7",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-9-2-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-2-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-2-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-9-3.webp": {
+    "hash": "436fd598081cecce872693b73073a516a7873d21163e3c38bf143af5e2a66841",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-9-3-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-3-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-3-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-9-4.webp": {
+    "hash": "0e84844ae29ca7a010ca5696d899b913ba49c81bcc7b683983bc4a30dcae8081",
+    "entry": {
+      "width": 1133,
+      "height": 847,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-9-4-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-4-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-4-webp-1133.webp",
+          "width": 1133
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-9-5.webp": {
+    "hash": "e0d3f0ede25249ae6cc1ee1828d86da6008c9dea0db327e71bdbc658a1e6a027",
+    "entry": {
+      "width": 1133,
+      "height": 847,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-9-5-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-5-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-5-webp-1133.webp",
+          "width": 1133
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-9-6.webp": {
+    "hash": "a6765022fcd278cd33e5f70b0ec0659997bfaf395804716612d3a61d6574eb05",
+    "entry": {
+      "width": 1200,
+      "height": 896,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-9-6-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-6-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-6-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-9-7.webp": {
+    "hash": "80452883e1ebe1480f352cf3bcac8b044bef2bddb98861fe4686df891ee5ec45",
+    "entry": {
+      "width": 1133,
+      "height": 847,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-9-7-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-7-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-7-webp-1133.webp",
+          "width": 1133
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-9-8.webp": {
+    "hash": "7e58aeeafe7b2054c41dfcd7175cc6872904ce85c0e35620ef37ffb46c49436a",
+    "entry": {
+      "width": 1133,
+      "height": 847,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-9-8-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-8-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-8-webp-1133.webp",
+          "width": 1133
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-step-9-9.webp": {
+    "hash": "18295cc9ede5e7c4877b1305806a12166d670ba9001429d97fd6a64c1af61d25",
+    "entry": {
+      "width": 620,
+      "height": 464,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-step-9-9-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-step-9-9-webp-620.webp",
+          "width": 620
+        }
+      ]
+    }
+  },
+  "/images/projects/transmission-title.webp": {
+    "hash": "66460d82e4425bb5c49392880eb50e10ac66bdf2ae13c85f8320f9e4009a9cfc",
+    "entry": {
+      "width": 1200,
+      "height": 900,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/transmission-title-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/transmission-title-webp-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/projects/transmission-title-webp-1200.webp",
+          "width": 1200
+        }
+      ]
+    }
+  },
+  "/images/projects/ufo.webp": {
+    "hash": "0e24959d36a995c5377a0d0c0cf55b00698d12db21cbffd912051d18400ca9bf",
+    "entry": {
+      "width": 624,
+      "height": 318,
+      "variants": [
+        {
+          "src": "/images/responsive/projects/ufo-webp-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/projects/ufo-webp-624.webp",
+          "width": 624
+        }
+      ]
+    }
+  }
+}

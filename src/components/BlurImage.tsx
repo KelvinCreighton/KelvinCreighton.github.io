@@ -1,23 +1,64 @@
-"use client";
+import type { CSSProperties, ImgHTMLAttributes } from "react";
+import manifest from "@/data/image-manifest.json";
 
-import Image, { ImageProps } from "next/image";
-import placeholders from "@/data/image-placeholders.json";
-
-interface BlurImageProps extends Omit<ImageProps, "src"> {
+type ImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, "src"> & {
   src: string;
-}
-
-export default function BlurImage(props: BlurImageProps) {
-  const { src, ...rest } = props;
-  const blurDataURL = (placeholders as Record<string, string>)[src];
-  const hasBlurPlaceholder = Boolean(blurDataURL);
-
+  fill?: boolean;
+  priority?: boolean;
+  quality?: number;
+  placeholder?: string;
+  blurDataURL?: string;
+  unoptimized?: boolean;
+};
+const images = manifest as Record<
+  string,
+  { width: number; height: number; variants: { src: string; width: number }[] }
+>;
+export default function BlurImage({
+  src,
+  alt,
+  fill,
+  priority,
+  quality,
+  placeholder,
+  blurDataURL,
+  unoptimized,
+  width,
+  height,
+  style,
+  sizes,
+  ...props
+}: ImageProps) {
+  void quality;
+  void placeholder;
+  void blurDataURL;
+  void unoptimized;
+  const entry = images[src];
+  const fallback =
+    entry?.variants.find((v) => v.width >= 800) || entry?.variants.at(-1);
+  const imageStyle: CSSProperties = fill
+    ? {
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+        ...style,
+      }
+    : style || {};
+  // Generated files are static assets, so GitHub Pages needs no image server.
   return (
-    <Image
-      src={src}
-      placeholder={hasBlurPlaceholder ? "blur" : "empty"}
-      {...(hasBlurPlaceholder ? { blurDataURL } : {})}
-      {...rest}
+    <img
+      {...props}
+      src={fallback?.src || src}
+      alt={alt || ""}
+      width={width || entry?.width}
+      height={height || entry?.height}
+      style={imageStyle}
+      sizes={sizes || (fill ? "(max-width: 760px) 90vw, 900px" : undefined)}
+      srcSet={entry?.variants.map((v) => `${v.src} ${v.width}w`).join(", ")}
+      loading={priority ? "eager" : props.loading || "lazy"}
+      decoding="async"
+      fetchPriority={priority ? "high" : undefined}
     />
   );
 }

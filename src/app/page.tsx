@@ -1,996 +1,268 @@
-"use client";
-
-import { forwardRef, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "@/components/BlurImage";
-import type { ReactNode } from "react";
-
-type TimelineItem = {
-  title: string;
-  dateKey: string;
-  category: string;
-  description: string;
-  href: string;
-  image: string;
-  imageAlt: string;
-  position: "top" | "bottom";
-  xOffsetPx: number;
-  timelineOffsetPx?: number;
-};
-
-const timelineRailItems: TimelineItem[] = [
-  {
-    title: "My First Game",
-    dateKey: "2017-03-01",
-    category: "Game Dev",
-    description: "The first JavaScript game I ever made, which started my interest in interactive development.",
-    href: "/projects/game-dev/my-first-game",
-    image: "/images/projects/my-first-game.webp",
-    imageAlt: "My First Game project",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "UFO",
-    dateKey: "2017-06-01",
-    category: "Game Dev",
-    description: "A simple arcade-style game built around movement, enemies, and levels.",
-    href: "/projects/game-dev/ufo",
-    image: "/images/projects/ufo.webp",
-    imageAlt: "UFO game project",
-    position: "top",
-    xOffsetPx: 0,
-  },
-  {
-    title: "BL1ND JUST1C3: 1NV3ST1G4T1ON",
-    dateKey: "2017-09-01",
-    category: "Music",
-    description: "A piano arrangement of a high-energy Homestuck theme.",
-    href: "/projects/music/blind-justice-investigation",
-    image: "/images/projects/BL1ND_JUST1C3_1NV3ST1G4T1ON.webp",
-    imageAlt: "BL1ND JUST1C3: 1NV3ST1G4T1ON",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "Beethoven Virus",
-    dateKey: "2018-01-01",
-    category: "Music",
-    description: "A piano arrangement that pushed my arrangement and performance skills further.",
-    href: "/projects/music/beethoven-virus",
-    image: "/images/projects/Beethoven_Virus.webp",
-    imageAlt: "Beethoven Virus arrangement",
-    position: "top",
-    xOffsetPx: 0,
-  },
-  {
-    title: "Tank Game",
-    dateKey: "2018-05-01",
-    category: "Game Dev",
-    description: "A top-down tank shooter focused on movement, aiming, and game logic.",
-    href: "/projects/game-dev/tank-game",
-    image: "/images/projects/tank-game.webp",
-    imageAlt: "Tank Game project",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "The Longest Moment Before a New Beginning",
-    dateKey: "2019-01-01",
-    category: "Music",
-    description: "An original piano composition written in high school.",
-    href: "/projects/music/the-longest-moment",
-    image: "/images/projects/The-Longest-Moment-Before-a-New-Beginning.webp",
-    imageAlt: "The Longest Moment Before a New Beginning",
-    position: "top",
-    xOffsetPx: 0,
-  },
-  {
-    title: "Plastic Mind",
-    dateKey: "2019-09-01",
-    category: "Game Dev",
-    description: "A physics platformer ported from Processing to p5.js.",
-    href: "/projects/game-dev/plastic-mind",
-    image: "/images/projects/plastic-mind-title.webp",
-    imageAlt: "Plastic Mind project",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "3D Game Engine",
-    dateKey: "2022-02-01",
-    category: "Game Dev",
-    description: "A first 3D engine project exploring projection, rotation, and matrix math.",
-    href: "/projects/game-dev/3d-game",
-    image: "/images/projects/3d-game.webp",
-    imageAlt: "3D Game Engine project",
-    position: "top",
-    xOffsetPx: 0,
-  },
-  {
-    title: "Valve Cover Replacement & Modification",
-    dateKey: "2022-08-01",
-    category: "Automotive",
-    description: "When a cracked valve cover led to an oil leak, a custom modification was required to make a donor part from a different year fit properly.",
-    href: "/projects/auto/tacoma-valve-cover",
-    image: "/images/projects/tacoma-vc-title.webp",
-    imageAlt: "Valve cover replacement and modification project",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "Blackhole Simulator",
-    dateKey: "2022-11-01",
-    category: "Game Dev",
-    description: "A physics-based orbital mechanics simulator with playful satellites.",
-    href: "/projects/game-dev/blackhole-simulator",
-    image: "/images/projects/Blackhole_Simulator-image.webp",
-    imageAlt: "Blackhole Simulator project",
-    position: "top",
-    xOffsetPx: 0,
-  },
-  {
-    title: "DragonShell",
-    dateKey: "2024-09-13",
-    category: "Embedded Systems",
-    description: "A C shell for CMPUT 379 with process execution, pipes, redirection, background jobs, signal handling, and CPU reporting for child processes.",
-    href: "/projects/embedded-systems/dragonshell",
-    image: "/images/projects/dragonshell-terminal.svg",
-    imageAlt: "DragonShell terminal illustration with the original project banner",
-    position: "bottom",
-    xOffsetPx: -15,
-  },
-  {
-    title: "MapReduce Library",
-    dateKey: "2024-10-17",
-    category: "Embedded Systems",
-    description: "A C MapReduce framework with mapper and reducer callbacks, pthread job scheduling, hash partitioning, and a word count example.",
-    href: "/projects/embedded-systems/mapreduce-library",
-    image: "/images/projects/mapreduce-library.svg",
-    imageAlt: "Diagram of mapper jobs, pthread workers, hash partitions, and reduce output",
-    position: "top",
-    xOffsetPx: -15,
-  },
-  {
-    title: "File System Simulator",
-    dateKey: "2024-11-16",
-    category: "Embedded Systems",
-    description: "A C simulator for disk images with 128 blocks of 1 KiB each, using fixed size inodes, nested directories, contiguous file allocation, resizing, and defragmentation.",
-    href: "/projects/embedded-systems/file-system-simulator",
-    image: "/images/projects/file-system-simulator.svg",
-    imageAlt: "Diagram of the simulator's superblock, inode table, allocation map, and data blocks",
-    position: "bottom",
-    xOffsetPx: 15,
-  },
-  {
-    title: "Robotic Arm Simulation",
-    dateKey: "2024-12-01",
-    category: "Engineering",
-    description: "Interactive 2D robotic arm simulation implementing inverse kinematics, Newton's method, and Broyden's quasi-Newton optimization in MATLAB.",
-    href: "/projects/engineering/robotic-arm-simulation",
-    image: "/images/projects/robotic-arm-simulation-title.webp",
-    imageAlt: "Robotic Arm Simulation project",
-    position: "top",
-    xOffsetPx: 15,
-  },
-  {
-    title: "CHADS Hack the Computer, Open the Box",
-    dateKey: "2025-02-01",
-    category: "Leadership",
-    description: "Co-hosted CHADS' annual beginner-friendly CTF and helped keep the event running smoothly during the day.",
-    href: "/events#chads-hack-the-computer-open-the-box-2025",
-    image: "/images/events/HTCOTB2025.webp",
-    imageAlt: "CHADS Hack the Computer, Open the Box 2025",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "IlluminatiCTF",
-    dateKey: "2025-05-01",
-    category: "Achievement",
-    description: "Placed 3rd nationally and 6th overall in the national bracket.",
-    href: "/achievements#illuminatictf",
-    image: "/images/achievements/illuminatictf.webp",
-    imageAlt: "IlluminatiCTF achievement",
-    position: "top",
-    xOffsetPx: 0,
-  },
-  {
-    title: "Remote Control Car",
-    dateKey: "2025-06-01",
-    category: "Engineering",
-    description: "An educational RC car curriculum built around low-cost robotics and prototyping.",
-    href: "/projects/engineering/rc-car",
-    image: "/images/projects/rc-car-title.webp",
-    imageAlt: "Remote control car project",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "SAIT: Alice in PWNderland",
-    dateKey: "2025-07-01",
-    category: "Achievement",
-    description: "Competed at SAIT and helped the team secure several solves across a mix of challenge types.",
-    href: "/achievements#sait-alice-in-pwndderland",
-    image: "/images/achievements/Alice.webp",
-    imageAlt: "Alice in PWNderland CTF",
-    position: "top",
-    xOffsetPx: 0,
-  },
-  {
-    title: "Manual Transmission Rebuild",
-    dateKey: "2025-08-01",
-    category: "Automotive",
-    description: "A transmission rebuild that grew from a straightforward repair into a full drivetrain project.",
-    href: "/projects/auto/transmission-rebuild",
-    image: "/images/projects/transmission-title.webp",
-    imageAlt: "Manual transmission rebuild project",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "CHADS Cybersecurity Awareness Month",
-    dateKey: "2025-10-01",
-    category: "Leadership",
-    description: "Supported the University of Alberta Cybersecurity Awareness Month tradeshow and represented CHADS at the booth in University Commons.",
-    href: "/events#chads-cybersecurity-awareness-month",
-    image: "/images/events/Cybersec-Awareness-Month.webp",
-    imageAlt: "CHADS Cybersecurity Awareness Month booth",
-    position: "bottom",
-    xOffsetPx: -25,
-  },
-  {
-    title: "CHADS+OWASP Secure Coding Tournament",
-    dateKey: "2025-10-15",
-    category: "Leadership",
-    description: "Co-organized the Secure Coding Tournament with CHADS, OWASP Edmonton, and Security Journey.",
-    href: "/events#chads-owasp-secure-coding-tournament",
-    image: "/images/events/Secure-Coding-Tournament.webp",
-    imageAlt: "CHADS+OWASP Secure Coding Tournament",
-    position: "top",
-    xOffsetPx: -115,
-  },
-  {
-    title: "PicoCTF Writeups",
-    dateKey: "2025-10-15",
-    category: "Cybersecurity",
-    description: "A grouped set of PicoCTF writeups covering SSTI, NoSQL injection, eval() exploitation, and SOAP/XXE.",
-    href: "/projects/cybersecurity?category=PicoCTF%20Writeups",
-    image: "/images/projects/picoCTF_logo.webp",
-    imageAlt: "PicoCTF writeups",
-    position: "top",
-    xOffsetPx: 45,
-  },
-  {
-    title: "CyberSci Regionals 2025",
-    dateKey: "2025-11-01",
-    category: "Achievement",
-    description: "Placed 5th with CHADS B-Team in Calgary.",
-    href: "/achievements#cybersci-regionals-2025",
-    image: "/images/achievements/CyberSci.webp",
-    imageAlt: "CyberSci Regionals 2025",
-    position: "bottom",
-    xOffsetPx: 25,
-  },
-  {
-    title: "MacSync Stealer: Static Malware Analysis",
-    dateKey: "2025-12-01",
-    category: "Cybersecurity",
-    description: "A static malware analysis of MacSync Stealer and its execution flow.",
-    href: "/projects/cybersecurity/macsync-stealer",
-    image: "/images/projects/cyber-highlights.webp",
-    imageAlt: "MacSync Stealer static malware analysis",
-    position: "top",
-    xOffsetPx: 0,
-  },
-  {
-    title: "OWASP Edmonton & Accurate Networks",
-    dateKey: "2026-02-01",
-    category: "Leadership",
-    description: "Managed logistics and A/V support for a community security event with OWASP Edmonton and Accurate Networks.",
-    href: "/events#owasp-edmonton-accurate-networks",
-    image: "/images/events/Accurate-Networks.webp",
-    imageAlt: "OWASP Edmonton and Accurate Networks event",
-    position: "bottom",
-    xOffsetPx: 80,
-  },
-  {
-    title: "CHADS Hack the Computer, Open the Box",
-    dateKey: "2026-02-15",
-    category: "Leadership",
-    description: "Helped organize CHADS' annual beginner-friendly CTF and shared ownership of the event delivery.",
-    href: "/events#chads-hack-the-computer-open-the-box-2026",
-    image: "/images/events/HTCOTB2026.webp",
-    imageAlt: "CHADS Hack the Computer, Open the Box 2026",
-    position: "top",
-    xOffsetPx: -15,
-  },
-  {
-    title: "HTCOTB2026 CTF Challenges",
-    dateKey: "2026-02-01",
-    category: "Cybersecurity",
-    description: "A grouped set of HTCOTB challenge writeups and custom challenges built for the University of Alberta Cybersecurity Club.",
-    href: "/projects/cybersecurity?category=HTCOTB%20CTF",
-    image: "/images/projects/CHADS_logo.webp",
-    imageAlt: "HTCOTB2026 CTF challenges",
-    position: "bottom",
-    xOffsetPx: -80,
-  },
-  {
-    title: "WiCyS CTF Challenges",
-    dateKey: "2026-03-01",
-    category: "Cybersecurity",
-    description: "A grouped set of WiCyS CTF challenges spanning forensics, reversing, pwn, and web exploitation.",
-    href: "/projects/cybersecurity?category=WiCyS%20CTF",
-    image: "/images/projects/WICYS_logo.webp",
-    imageAlt: "WiCyS CTF Challenges",
-    position: "top",
-    xOffsetPx: 15,
-  },
-  {
-    title: "Dremel DigiLab 3D45 - Restoration",
-    dateKey: "2026-05-01",
-    category: "Engineering",
-    description: "Documentation of the teardown, diagnosis, and repair of a Dremel DigiLab 3D45 printer.",
-    href: "/projects/engineering/dremel-3d45",
-    image: "/images/projects/dremel-3d45-title.webp",
-    imageAlt: "Dremel DigiLab 3D45 restoration",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "National Cybersecurity Consortium (NCC) CTF",
-    dateKey: "2026-06-01",
-    category: "Achievement",
-    description: "Placed 2nd nationally with CHADS in the NCC final CTF.",
-    href: "/achievements#ncc-ctf",
-    image: "/images/achievements/NCC.webp",
-    imageAlt: "National Cybersecurity Consortium CTF",
-    position: "top",
-    xOffsetPx: -15,
-  },
-  {
-    title: "Dremel DigiLab 3D45 - Controller Rebuild",
-    dateKey: "2026-07-20",
-    category: "Engineering",
-    description: "Rebuilding a Dremel DigiLab 3D45 after the original motherboard failed and the controller had to be replaced.",
-    href: "/projects/engineering/dremel-3d45-rebuild",
-    image: "/images/projects/dremel-3d45-rebuild-title.webp",
-    imageAlt: "Dremel DigiLab 3D45 controller rebuild",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "Cisco Rapid Incident Response V7",
-    dateKey: "2026-07-01",
-    category: "Achievement",
-    description: "Completed the Cisco XDR incident response workshop and lab.",
-    href: "/achievements#cisco-rapid-incident-response-v7",
-    image: "/images/cisco-rapid-incident-response-v7.webp",
-    imageAlt: "Cisco Rapid Incident Response V7 certificate",
-    position: "top",
-    xOffsetPx: 15,
-  },
-  {
-    title: "BSides Edmonton 2026",
-    dateKey: "2026-09-24",
-    category: "Leadership",
-    description: "Co-organized the BSides Edmonton 2026 CTF, coordinated Cyber Skyline platform setup, supervised the room, and designed the winner medals.",
-    href: "/events#bsides-edmonton-2026",
-    image: "/images/events/BSides-Edmonton-2026.webp",
-    imageAlt: "BSides Edmonton 2026 CTF event and medals",
-    position: "bottom",
-    xOffsetPx: 0,
-  },
-  {
-    title: "NatHacks 2026: MachineGuard",
-    dateKey: "2026-11-08",
-    category: "Embedded Systems",
-    description: "Built the embedded hardware and firmware for a machine-condition monitoring prototype at natHacks 2026.",
-    href: "/projects/embedded-systems/machineguard",
-    image: "/images/projects/machineguard-prototype.jpg",
-    imageAlt: "MachineGuard sensor prototype connected to a power drill",
-    position: "top",
-    xOffsetPx: 0,
-    timelineOffsetPx: 12,
-  },
-];
-
-const timelineStartYear = 2017;
-const timelineEndYear = 2026;
-const timelineCardMinGap = 152;
-const timelineMonthSections = 12;
-const timelineMonthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const timelineMonthGapMin = 44;
-const timelineCardWidthEstimate = 144;
-const timelineEndPadding = 64;
-const currentTimelineDate = new Date("2026-11-30T23:59:59.999Z");
-
-function getTimelinePercent(dateKey: string) {
-  const date = new Date(dateKey);
-  const year = date.getUTCFullYear();
-  const month = date.getUTCMonth();
-  return { year, month };
-}
-
-function getVisibleTimelineItems(now = new Date()) {
-  return timelineRailItems.filter((item) => new Date(item.dateKey).getTime() <= now.getTime());
-}
-
-function getVisibleMonthCount(year: number, now = currentTimelineDate) {
-  const currentYear = now.getUTCFullYear();
-  if (year < currentYear) return timelineMonthSections;
-  if (year > currentYear) return 0;
-  return now.getUTCMonth() + 1;
-}
-
-function getTimelineMonthOffset(year: number, month: number, monthGap: number) {
-  if (year === 2024) {
-    if (month < 8) return 0;
-    return monthGap + (month - 8) * monthGap * 0.5;
-  }
-
-  const compressedGaps = year === 2026
-    ? (month >= 9 ? month - 4 : month >= 8 ? 4 : month >= 7 ? 3 : month >= 4 ? 2 : month >= 3 ? 1 : 0)
-    : year === 2025
-      ? Math.min(month, 4)
-      : 0;
-  return month * monthGap - compressedGaps * monthGap * 0.5;
-}
-
-function ContactIcon({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <span className={`flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-600 shadow-sm transition-all dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 ${className}`}>
-      {children}
-    </span>
-  );
-}
-
-function TimelineCard({
-  item,
-  position = "top",
-}: {
-  item: TimelineItem;
-  position?: "top" | "bottom";
-}) {
-  return (
-    <Link
-      href={item.href}
-      className={`group block w-full rounded-2xl border border-gray-200 bg-white p-2.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900 ${position === "top" ? "-translate-y-1" : "translate-y-1"}`}
-    >
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
-        <Image
-          src={item.image}
-          alt={item.imageAlt}
-          fill
-          sizes="(max-width: 640px) 100vw, 180px"
-          className="object-cover"
-        />
-      </div>
-      <h3 className="mt-2.5 text-sm font-semibold leading-snug text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-300">
-        {item.title}
-      </h3>
-    </Link>
-  );
-}
-
-function buildTimelineYearPositions() {
-  const visibleItems = getVisibleTimelineItems();
-
-  const years = Array.from(
-    { length: timelineEndYear - timelineStartYear + 1 },
-    (_, index) => timelineStartYear + index,
-  ).filter((year) => year !== 2020 && year !== 2021 && year !== 2023);
-
-  const widths = years.map((year) => {
-    const visibleMonthCount = getVisibleMonthCount(year);
-    if (visibleMonthCount === 0) return 0;
-    const condensedMonthGap = year < 2025 ? 2 : timelineMonthGapMin;
-    return visibleMonthCount * condensedMonthGap;
-  });
-
-  const totalWidth = widths.reduce((sum, width) => sum + width, 0);
-
-  let cursor = 0;
-  const positions = new Map<number, number>();
-
-  for (let index = 0; index < years.length; index += 1) {
-    const year = years[index];
-    positions.set(year, cursor);
-    cursor += widths[index];
-  }
-
-  return { years, widths, positions, totalWidth };
-}
-
-function buildTimelineCardLayout(
-  items: TimelineItem[],
-  yearLayout: ReturnType<typeof buildTimelineYearPositions>,
-) {
-  const ordered = [...items].sort(
-    (a, b) => {
-      const aDate = new Date(a.dateKey).getTime();
-      const bDate = new Date(b.dateKey).getTime();
-      if (aDate !== bDate) return aDate - bDate;
-      if (a.category !== b.category) return a.category.localeCompare(b.category);
-      return a.title.localeCompare(b.title);
-    },
-  );
-
-  const positions = new Map<string, number>();
-  const yearPositions = new Map<number, number>();
-  const yearWidths = new Map<number, number>();
-  const yearSlotWidths = new Map<number, number>();
-  const yearItems = new Map<number, TimelineItem[]>();
-  let maxCardRight = 0;
-  const countsByYear = new Map<number, number>();
-  for (const item of ordered) {
-    const year = new Date(item.dateKey).getUTCFullYear();
-    const existing = yearItems.get(year) ?? [];
-    existing.push(item);
-    yearItems.set(year, existing);
-    countsByYear.set(year, (countsByYear.get(year) ?? 0) + 1);
-  }
-  const cardWidth = timelineCardWidthEstimate;
-  let cursor = 0;
-
-  for (let yearIndex = 0; yearIndex < yearLayout.years.length; yearIndex += 1) {
-    const year = yearLayout.years[yearIndex];
-    const visibleMonthCount = getVisibleMonthCount(year);
-    const scaleYear = year === 2024 ? 2025 : year;
-    const yearCardCount = countsByYear.get(scaleYear) ?? 0;
-    const sameLaneCards = Math.ceil(Math.max(1, yearCardCount) / 2);
-    const laneGap = scaleYear < 2025 ? 2 : timelineCardMinGap;
-    const laneSpan = sameLaneCards * (timelineCardWidthEstimate + laneGap);
-    const monthGap = scaleYear < 2025 ? 2 : timelineMonthGapMin;
-    const compressedGapCount = scaleYear === 2026
-      ? Math.max(0, visibleMonthCount - 5)
-      : scaleYear === 2025 ? 4 : 0;
-    const compressedGapWidth = monthGap * compressedGapCount * 0.5;
-    const defaultYearWidth = Math.max(visibleMonthCount * monthGap - compressedGapWidth, laneSpan);
-    const slotWidth = visibleMonthCount > 0 ? defaultYearWidth / visibleMonthCount : 0;
-    const referenceBoundaryGap = defaultYearWidth
-      - (defaultYearWidth / timelineMonthSections) * 2.25
-      - getTimelineMonthOffset(2025, 11, defaultYearWidth / timelineMonthSections);
-    const yearWidth = year === 2024
-      ? (getTimelineMonthOffset(2024, 11, slotWidth) + referenceBoundaryGap)
-        / (1 - 2.25 / timelineMonthSections)
-      : defaultYearWidth;
-
-    const yearTransitionAdjustment = year === 2025 || year === 2026
-      ? ((yearWidths.get(year - 1) ?? 0) / Math.max(1, getVisibleMonthCount(year - 1))) * 2.25
-      : 0;
-    const yearLeft = cursor - yearTransitionAdjustment;
-    const finalVisibleMonthOffset = getTimelineMonthOffset(year, visibleMonthCount - 1, slotWidth);
-    const displayYearWidth = year === 2026
-      ? finalVisibleMonthOffset + slotWidth * 1.5
-      : yearWidth;
-    yearWidths.set(year, displayYearWidth);
-    yearSlotWidths.set(year, slotWidth);
-    yearPositions.set(year, yearLeft);
-    cursor += displayYearWidth - yearTransitionAdjustment;
-
-    const itemsForYear = yearItems.get(year) ?? [];
-    const monthBuckets = new Map<number, TimelineItem[]>();
-    let yearRight = yearLeft;
-
-    for (const item of itemsForYear) {
-      const { month } = getTimelinePercent(item.dateKey);
-      const bucket = monthBuckets.get(month) ?? [];
-      bucket.push(item);
-      monthBuckets.set(month, bucket);
-    }
-
-    for (const [month, bucket] of monthBuckets.entries()) {
-      if (month >= visibleMonthCount) continue;
-      bucket.sort((a, b) => {
-        const aDate = new Date(a.dateKey).getTime();
-        const bDate = new Date(b.dateKey).getTime();
-        if (aDate !== bDate) return aDate - bDate;
-        if (a.category !== b.category) return a.category.localeCompare(b.category);
-        return a.title.localeCompare(b.title);
-      });
-
-      const monthCut = yearLeft + getTimelineMonthOffset(year, month, slotWidth);
-      bucket.forEach((item) => {
-        const isBsidesEvent = item.title === "BSides Edmonton 2026";
-        const bsidesGapWidth = year === 2026 && month === 8 ? slotWidth * 0.5 : slotWidth;
-        const left = monthCut + (isBsidesEvent ? bsidesGapWidth * 0.8 : 0) + (item.timelineOffsetPx ?? 0);
-        positions.set(item.dateKey, left);
-        yearRight = Math.max(yearRight, left + cardWidth);
-        maxCardRight = Math.max(maxCardRight, left + cardWidth);
-      });
-    }
-  }
-
-  return {
-    positions,
-    yearPositions,
-    totalWidth: maxCardRight + timelineEndPadding,
-    yearWidths,
-    yearSlotWidths,
-  };
-}
-
+import {
+  categories,
+  projects,
+  selectedProjects,
+  inCategory,
+} from "@/data/projects";
 export default function Home() {
-  const timelineRef = useRef<HTMLDivElement | null>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const visibleTimelineRailItems = getVisibleTimelineItems();
-  const timelineYearLayout = buildTimelineYearPositions();
-  const timelineCardLayout = buildTimelineCardLayout(visibleTimelineRailItems, timelineYearLayout);
-
-  const scrollTimeline = (direction: "left" | "right") => {
-    const node = timelineRef.current;
-    if (!node) return;
-    const delta = Math.round(node.clientWidth * 0.8);
-    node.scrollBy({ left: direction === "left" ? -delta : delta, behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    const node = timelineRef.current;
-    if (!node) return;
-
-    node.scrollLeft = node.scrollWidth;
-
-    const updateScrollState = () => {
-      const epsilon = 2;
-      setCanScrollLeft(node.scrollLeft > epsilon);
-      setCanScrollRight(node.scrollLeft + node.clientWidth < node.scrollWidth - epsilon);
-    };
-
-    updateScrollState();
-    node.addEventListener("scroll", updateScrollState, { passive: true });
-    window.addEventListener("resize", updateScrollState);
-
-    return () => {
-      node.removeEventListener("scroll", updateScrollState);
-      window.removeEventListener("resize", updateScrollState);
-    };
-  }, []);
-
+  const [lead, second, third] = selectedProjects;
   return (
-    <main className="flex flex-col items-center max-w-5xl mx-auto w-full">
-      {/* Intro Section */}
-      <section className="w-full mb-12 md:mb-20 flex justify-center">
-        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 text-center md:text-left">
-          <div className="flex flex-col items-center w-full md:w-auto max-w-sm">
-            <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full border border-gray-200 bg-gray-85 shadow-sm sm:h-[280px] sm:w-[280px] lg:h-[300px] lg:w-[300px] dark:border-gray-800 dark:bg-gray-900">
-              <Image
-                src="/images/Head-Shot.webp"
-                alt="Kelvin Creighton headshot"
-                fill
-                sizes="(min-width: 1024px) 300px, (min-width: 640px) 280px, 250px"
-                className="object-cover"
-                priority
-              />
-            </div>
-
-            <div className="mt-5 w-full rounded-2xl border border-gray-200 bg-gray-85 p-4 text-left dark:border-gray-800 dark:bg-gray-900/80">
-              <div className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
-                <a
-                  href="mailto:kcreight@ualberta.ca"
-                  className="group flex items-center gap-3 transition-all hover:text-red-600 dark:hover:text-red-400 hover:font-bold"
-                >
-                  <ContactIcon className="group-hover:text-red-600 dark:group-hover:text-red-400 group-hover:border-red-600/30">
-                    <svg
-                      stroke="currentColor"
-                      fill="none"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      height="18"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                  </ContactIcon>
-                  <span>kcreight@ualberta.ca</span>
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/kelvin-creighton-250806263"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 transition-all hover:text-blue-600 dark:hover:text-blue-400 hover:font-bold"
-                >
-                  <ContactIcon className="group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:border-blue-600/30">
-                    <svg
-                      stroke="currentColor"
-                      fill="none"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      height="18"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </ContactIcon>
-                  <span>LinkedIn</span>
-                </a>
-
-                <a
-                  href="https://github.com/KelvinCreighton/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 transition-all hover:text-black dark:hover:text-white hover:font-bold"
-                >
-                  <ContactIcon className="group-hover:text-black dark:group-hover:text-white group-hover:border-black/30 dark:group-hover:border-white/30">
-                    <svg
-                      stroke="currentColor"
-                      fill="none"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      height="18"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                  </ContactIcon>
-                  <span>GitHub</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex-1 max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
-              Hi, I&apos;m Kelvin
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-             I am a Chapter Leader with OWASP Edmonton (Open Worldwide Application Security Project) and a Computer Science graduate from the University of Alberta. My interests lie at the intersection of cybersecurity and embedded systems, with a focus on building secure and reliable software and hardware. 
+    <div className="home-page">
+      <section className="home-intro">
+        <div>
+          <p className="eyebrow">
+            <span className="small-rule" />
+            Software / Hardware / Curiosity
+          </p>
+          <h1>
+            Understanding systems.
+            <br />
+            <em>Building things.</em>
+          </h1>
+          <div className="intro-bottom">
+            <p>
+              I’m Kelvin. I work on embedded software, firmware, and systems
+              programming. This is a record of what I build, the problems I run
+              into, and how I work through them.
             </p>
-            <div className="flex gap-4 justify-center md:justify-start">
-              <Link
-                href="/projects"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
-              >
-                View Projects
+            <div className="intro-actions">
+              <Link className="button primary" href="#selected-work">
+                Explore the work <span aria-hidden="true">↓</span>
               </Link>
-              <Link
-                href="/resume"
-                className="bg-gray-85 hover:bg-gray-85 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium py-3 px-6 rounded-lg transition-colors"
-              >
-                My Resume
+              <Link className="text-link" href="/resume">
+                View my resume ↗
               </Link>
             </div>
           </div>
         </div>
+        <aside className="portrait-note">
+          <Image
+            src="/images/Head-Shot.webp"
+            alt="Kelvin Creighton"
+            width={112}
+            height={136}
+            sizes="112px"
+          />
+          <p>
+            Software meets hardware.
+            <br />
+            Questions become projects.
+          </p>
+        </aside>
       </section>
-
-      {/* Project Highlights Section */}
-      <section className="w-full">
-        <h2 className="text-3xl font-bold mb-8 pb-4">
-          Highlights
-        </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Highlight 1: 3D Printer Controller Rebuild */}
-          <Link
-            href="/projects/engineering/dremel-3d45-rebuild"
-            className="group block h-full mx-2 md:mx-0"
-          >
-            <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
-              <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
-                <Image
-                  src="/images/projects/dremel-3d45-rebuild-title.webp"
-                  alt="Dremel DigiLab 3D45 controller rebuild"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  Dremel DigiLab 3D45 - Controller Rebuild
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Rebuilding a Dremel DigiLab 3D45 after the original motherboard failed and the controller had to be replaced.
-                </p>
-              </div>
-            </div>
-          </Link>
-
-          {/* Highlight 2: Cisco Rapid Incident Response V7 */}
-          <Link
-            href="/achievements"
-            className="group block h-full mx-2 md:mx-0"
-          >
-            <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
-              <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
-                <Image
-                  src="/images/cisco-rapid-incident-response-v7.webp"
-                  alt="Cisco Rapid Incident Response V7 certificate"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  Cisco Rapid Incident Response V7
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Hands-on XDR incident response workshop with investigation, containment, and threat-hunting lab work.
-                </p>
-              </div>
-            </div>
-          </Link>
-          <Link
-            href="/projects/cybersecurity/macsync-stealer"
-            className="group block h-full mx-2 md:mx-0"
-          >
-            <div className="bg-gray-85 dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 h-full transition-transform hover:-translate-y-1 hover:shadow-lg">
-              <div className="relative h-48 sm:h-56 md:h-48 w-full bg-gray-85 dark:bg-gray-800">
-                <Image
-                  src="/images/projects/cyber-highlights.webp"
-                  alt="MacSync Stealer static malware analysis"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  MacSync Stealer: Static Malware Analysis
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  A detailed static analysis of the MacSync Stealer malware,
-                  uncovering its multi-stage execution flow and C2
-                  communication methods.
-                </p>
-              </div>
-            </div>
+      <section id="selected-work" className="selected-section">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">01 / Selected work</span>
+            <h2>A few things I’ve worked on.</h2>
+          </div>
+          <Link className="text-link" href="/projects">
+            All {projects.length} projects <span aria-hidden="true">↗</span>
           </Link>
         </div>
+        <article className="lead-project">
+          <Link href={lead.href} className="lead-image">
+            <Image
+              src={lead.image}
+              alt={lead.imageAlt}
+              fill
+              sizes="(max-width: 760px) 92vw, 65vw"
+              priority
+            />
+            <span className="figure-label">
+              Fig. 01 / The working prototype
+            </span>
+          </Link>
+          <div className="lead-copy">
+            <div className="project-kicker">
+              Embedded hardware & firmware <span>2026</span>
+            </div>
+            <Link href={lead.href}>
+              <h3>
+                MachineGuard<span aria-hidden="true">↗</span>
+              </h3>
+            </Link>
+            <p>{lead.summary}</p>
+            <dl>
+              <div>
+                <dt>My part</dt>
+                <dd>Sensors, acquisition & BLE firmware</dd>
+              </div>
+              <div>
+                <dt>Context</dt>
+                <dd>natHacks · Team prototype</dd>
+              </div>
+            </dl>
+            <Link href={lead.href} className="text-link">
+              Inside the project <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </article>
+        <div className="secondary-projects">
+          {[second, third].map((p, i) => (
+            <article key={p.id} className="secondary-project">
+              <Link
+                href={p.href}
+                className={`secondary-image ${p.image.endsWith(".svg") ? "diagram-image" : ""}`}
+              >
+                <Image
+                  src={p.image}
+                  alt={p.imageAlt}
+                  fill
+                  sizes="(max-width: 760px) 92vw, 44vw"
+                />
+                <span className="figure-label">
+                  0{i + 2} / {p.contribution}
+                </span>
+              </Link>
+              <div className="project-kicker">
+                {p.collection}
+                <span>
+                  {p.state === "in-progress"
+                    ? "Build in progress"
+                    : p.sortDate.slice(0, 4)}
+                </span>
+              </div>
+              <Link href={p.href}>
+                <h3>
+                  {p.title}
+                  <span aria-hidden="true">↗</span>
+                </h3>
+              </Link>
+              <p>{p.summary}</p>
+            </article>
+          ))}
+        </div>
       </section>
-
-      <section className="mt-16 w-full">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-3">Timeline</h2>
-          <p className="max-w-3xl text-gray-600 dark:text-gray-400">
-            A chronological history of projects and achievements, with the newest work first. Scroll down through the line to follow the progression.
+      <section className="approach-section">
+        <div>
+          <span className="eyebrow">02 / How I work</span>
+          <h2>
+            Start with a question.
+            <br />
+            <em>Follow the details.</em>
+          </h2>
+          <p>
+            I like projects with something concrete to figure out: a signal to
+            capture, a process to coordinate, or a machine to bring back to
+            life.
           </p>
         </div>
-
-        <div className="relative w-full">
-          <button
-            type="button"
-            onClick={() => scrollTimeline("left")}
-            disabled={!canScrollLeft}
-            className={`absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border bg-white/95 p-3 shadow-sm transition dark:bg-gray-900/95 ${canScrollLeft ? "border-gray-200 text-gray-700 hover:border-blue-300 hover:text-blue-600 dark:border-gray-800 dark:text-gray-300" : "cursor-not-allowed border-gray-200 text-gray-300 opacity-35 dark:border-gray-800 dark:text-gray-600"}`}
-            aria-label="Scroll timeline left"
-          >
-            <span className="text-xl leading-none">←</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollTimeline("right")}
-            disabled={!canScrollRight}
-            className={`absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border bg-white/95 p-3 shadow-sm transition dark:bg-gray-900/95 ${canScrollRight ? "border-gray-200 text-gray-700 hover:border-blue-300 hover:text-blue-600 dark:border-gray-800 dark:text-gray-300" : "cursor-not-allowed border-gray-200 text-gray-300 opacity-35 dark:border-gray-800 dark:text-gray-600"}`}
-            aria-label="Scroll timeline right"
-          >
-            <span className="text-xl leading-none">→</span>
-          </button>
-
-          <div className="pointer-events-none absolute left-12 right-12 top-1/2 h-2 -translate-y-1/2 rounded-full bg-gray-300 dark:bg-gray-700" />
-          <div
-            ref={timelineRef}
-            className="relative overflow-x-auto scroll-smooth px-12 pb-12 pt-14 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          >
-            <div className="relative mx-auto h-[36rem]" style={{ minWidth: `${timelineCardLayout.totalWidth}px` }}>
-              {timelineYearLayout.years.map((year) => {
-                const left = timelineCardLayout.yearPositions.get(year) ?? timelineYearLayout.positions.get(year) ?? 0;
-                const visibleMonthCount = getVisibleMonthCount(year);
-                const yearWidth = timelineCardLayout.yearWidths.get(year) ?? 0;
-                const slotWidth = timelineCardLayout.yearSlotWidths.get(year) ?? 0;
-                const monthLabelIndexes = year === 2024
-                  ? [8, 9, 10, 11]
-                  : year >= 2025
-                    ? Array.from({ length: visibleMonthCount }, (_, index) => index)
-                    : [];
-                return (
-                  <div
-                    key={year}
-                    className="pointer-events-none absolute top-1/2 -translate-y-1/2"
-                    style={{ left, width: `${yearWidth}px` }}
-                  >
-                    <div className="absolute left-0 top-1/2 h-0 w-full -translate-y-1/2">
-                      {monthLabelIndexes.map((monthIndex) => (
-                        <span
-                          key={`${year}-${monthIndex}`}
-                          className={`absolute inline-flex w-12 items-center justify-center text-center text-[0.75rem] font-medium uppercase leading-none text-gray-400 dark:text-gray-500 ${monthIndex % 2 === 0 ? "top-3" : "-top-5"}`}
-                          style={{
-                            left: `${getTimelineMonthOffset(year, monthIndex, slotWidth)}px`,
-                            transform: "translateX(-50%)",
-                          }}
-                        >
-                          {timelineMonthLabels[monthIndex]}
-                        </span>
-                      ))}
-                    </div>
-                    <div
-                      className="absolute -top-10 left-0 w-12 -translate-x-1/2 text-center font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400"
-                      style={{ fontSize: "1.25rem" }}
-                    >
-                      {year}
-                    </div>
-                  </div>
-                );
-              })}
-
-            {[...visibleTimelineRailItems]
-              .sort((a, b) => new Date(a.dateKey).getTime() - new Date(b.dateKey).getTime())
-              .map((item) => {
-                const left = timelineCardLayout.positions.get(item.dateKey) ?? 0;
-                const connectorRise = 80;
-                const circleX = 0;
-                const circleY = 0;
-                const cardX = item.xOffsetPx;
-                const cardY = item.position === "top" ? -connectorRise : connectorRise;
-                const minX = Math.min(circleX, cardX);
-                const minY = Math.min(circleY, cardY);
-                const width = Math.max(Math.abs(cardX - circleX), 1);
-                const height = Math.max(Math.abs(cardY - circleY), 1);
-                return (
-                  <div
-                    key={`${item.title}-${item.dateKey}`}
-                    className="absolute top-1/2 z-10"
-                    style={{ left: `${left}px` }}
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="pointer-events-none absolute"
-                      style={{
-                        left: `calc(50% + ${minX}px)`,
-                        top: `${minY}px`,
-                        width: `${width}px`,
-                        height: `${height}px`,
-                      }}
-                      viewBox={`0 0 ${width} ${height}`}
-                      preserveAspectRatio="none"
-                    >
-                      <line
-                        x1={circleX - minX}
-                        y1={circleY - minY}
-                        x2={cardX - minX}
-                        y2={cardY - minY}
-                        stroke="rgb(209, 213, 219)"
-                        strokeWidth="1.5"
-                        className="dark:stroke-gray-700"
-                      />
-                    </svg>
-                    <div className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-blue-600 bg-white dark:border-blue-300 dark:bg-gray-950" />
-                    <div
-                      className={`absolute left-1/2 w-[9rem] -translate-x-1/2 ${item.position === "top" ? "bottom-[5rem]" : "top-[5rem]"}`}
-                      style={{ left: `calc(50% + ${item.xOffsetPx}px)` }}
-                    >
-                      <TimelineCard item={item} position={item.position} />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+        <div className="capability-list">
+          {[
+            {
+              n: "01",
+              title: "Hardware & firmware",
+              copy: "Bringing sensors, peripherals, and software together. Following the data from a physical input to a usable result.",
+              href: lead.href,
+            },
+            {
+              n: "02",
+              title: "Systems programming",
+              copy: "Working with processes, memory, and file descriptors to understand what happens beneath an application.",
+              href: second.href,
+            },
+            {
+              n: "03",
+              title: "Investigation & repair",
+              copy: "Finding the failure, testing an explanation, and documenting the decisions that lead to the next working step.",
+              href: third.href,
+            },
+          ].map((c) => (
+            <Link key={c.n} href={c.href}>
+              <span className="index-number">{c.n}</span>
+              <div>
+                <h3>{c.title}</h3>
+                <p>{c.copy}</p>
+              </div>
+              <span aria-hidden="true">↗</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className="discipline-section">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">03 / Beyond the selected work</span>
+            <h2>Different tools. Same curiosity.</h2>
+          </div>
+          <p>
+            There’s more in the fieldbook: repair logs, security investigations,
+            things to play, and music to listen to.
+          </p>
+        </div>
+        <div className="discipline-list">
+          {categories.map((c, i) => (
+            <Link key={c.id} href={`/projects/${c.id}`}>
+              <span className="index-number">0{i + 1}</span>
+              <h3>{c.title}</h3>
+              <p>{c.description}</p>
+              <span className="count">
+                {String(
+                  projects.filter((p) => inCategory(p, c.id)).length,
+                ).padStart(2, "0")}{" "}
+                projects
+              </span>
+              <span aria-hidden="true">↗</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className="community-feature">
+        <div className="community-image">
+          <Image
+            src="/images/events/BSides-Edmonton-2026.webp"
+            alt="BSides Edmonton CTF medals and event"
+            fill
+            sizes="(max-width:760px) 92vw, 40vw"
+          />
+        </div>
+        <div>
+          <p className="eyebrow">04 / Outside the project</p>
+          <h2>
+            Making room
+            <br />
+            <em>for people to learn.</em>
+          </h2>
+          <p>
+            Alongside my technical work, I help organise security events and
+            build CTF challenges. At BSides Edmonton 2026, that included
+            competition setup, supporting participants, and designing the
+            winners’ medals.
+          </p>
+          <Link className="text-link" href="/events#bsides-edmonton-2026">
+            Community & leadership <span aria-hidden="true">↗</span>
+          </Link>
+          <div className="quiet-links">
+            <Link href="/achievements">Competition results ↗</Link>
+            <Link href="/resume">Project experience ↗</Link>
           </div>
         </div>
       </section>
-    </main>
+      <section className="recent-section">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">05 / Recently in the fieldbook</p>
+            <h2>The work continues.</h2>
+          </div>
+          <Link className="text-link" href="/projects/?view=history">
+            View the history ↗
+          </Link>
+        </div>
+        {[...projects]
+          .sort((a, b) => b.sortDate.localeCompare(a.sortDate))
+          .slice(0, 3)
+          .map((p) => (
+            <Link className="recent-row" key={p.id} href={p.href}>
+              <span>{p.dateLabel}</span>
+              <h3>{p.title}</h3>
+              <span>{p.contribution}</span>
+              <span aria-hidden="true">↗</span>
+            </Link>
+          ))}
+      </section>
+    </div>
   );
 }

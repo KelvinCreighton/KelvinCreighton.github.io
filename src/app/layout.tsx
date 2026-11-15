@@ -4,181 +4,117 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { NavBar } from "@/components/NavBar";
 import { Background } from "@/components/Background";
 import "./globals.css";
-
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kelvincreighton.ca'),
+  metadataBase: new URL("https://kelvincreighton.ca"),
   title: {
-    default: "Kelvin Creighton | Cybersecurity & Software Engineering Portfolio",
+    default: "Kelvin Creighton — Embedded Software & Systems",
     template: "%s | Kelvin Creighton",
   },
   description:
-    "Personal portfolio and blog of Kelvin Creighton, a Computer Science student at the University of Alberta focusing on Cybersecurity, Networking, Game Development, and Automotive Repair.",
-  keywords: [
-    "Kelvin Creighton",
-    "Cybersecurity",
-    "Software Engineering",
-    "Computer Science",
-    "University of Alberta",
-    "Portfolio",
-    "CTF",
-    "Web Security",
-    "Game Development",
-    "Automotive Repair"
-  ],
-  authors: [{ name: "Kelvin Creighton", url: "https://kelvincreighton.ca" }],
-  creator: "Kelvin Creighton",
-  publisher: "Kelvin Creighton",
+    "Projects in embedded software, firmware, and systems programming. Build notes, investigations, and creative work by Kelvin Creighton.",
+  authors: [{ name: "Kelvin Creighton" }],
   openGraph: {
-    title: "Kelvin Creighton | Portfolio",
+    title: "Kelvin Creighton — Embedded Software & Systems",
     description:
-      "Personal portfolio and blog of Kelvin Creighton, focusing on Cybersecurity, Software Engineering, and Game Development.",
+      "A fieldbook of software, hardware, and the work of understanding how things run.",
     url: "https://kelvincreighton.ca",
-    siteName: "Kelvin Creighton's Portfolio",
-    locale: "en_US",
+    siteName: "Kelvin Creighton",
+    locale: "en_CA",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Kelvin Creighton | Portfolio",
-    description: "Cybersecurity & Software Engineering Portfolio of Kelvin Creighton.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Kelvin Creighton",
-    url: "https://kelvincreighton.ca",
-    sameAs: [
-      "https://github.com/KelvinCreighton",
-      "https://www.linkedin.com/in/kelvin-creighton-250806263"
-    ],
-    jobTitle: "Computer Science Student",
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: "University of Alberta"
-    }
-  };
-
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+      <body>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >
-          <div className="relative min-h-[100dvh] w-full transition-colors duration-500">
-            <Background />
-            <div className="flex flex-col min-h-[100dvh]">
-              <nav className="fixed top-0 left-0 w-full p-[13.8px] md:p-[13.8px] shrink-0 z-50 bg-[#f5f3ff]/60 dark:bg-[#080413]/48 backdrop-blur-sm border-b border-[#8b5cf6]/12 dark:border-[#4c1d95]/20">
-                <div className="max-w-5xl mx-auto flex items-center justify-between gap-4 relative z-10 px-4 md:px-8">
-                  <Link href="/" className="text-[16.1px] md:text-[18.4px] font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
-                    Kelvin Creighton
-                  </Link>
-                  <div className="flex items-center gap-4 md:gap-6">
-                    <NavBar />
-                  </div>
-                </div>
-              </nav>
-              <main className="flex-grow relative p-4 md:p-8 lg:p-12 pt-16 md:pt-20 lg:pt-24">
-                {children}
-              </main>
-              <footer className="w-full py-6 shrink-0 z-50 bg-transparent">
-                <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 relative z-10">
-                  <div className="flex items-center gap-6">
-                  <a
-                    href="https://github.com/KelvinCreighton/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <svg
-                      stroke="currentColor"
-                      fill="none"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      height="24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/kelvin-creighton-250806263"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <svg
-                      stroke="currentColor"
-                      fill="none"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      height="24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
-                  <a
-                    href="mailto:kcreight@ualberta.ca"
-                    className="text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-400 transition-colors"
-                    aria-label="Email"
-                  >
-                    <svg
-                      stroke="currentColor"
-                      fill="none"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      height="24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                  </a>
-                </div>
+          <Background />
+          <a className="skip-link" href="#main-content">
+            Skip to content
+          </a>
+          <header className="site-header">
+            <div className="header-inner">
+              <Link
+                href="/"
+                className="wordmark"
+                aria-label="Kelvin Creighton, home"
+              >
+                <span className="monogram" aria-hidden="true">
+                  kc<span>.</span>
+                </span>
+                <span>
+                  Kelvin Creighton
+                  <span className="wordmark-note">A personal fieldbook</span>
+                </span>
+              </Link>
+              <NavBar />
+            </div>
+          </header>
+          <main id="main-content" className="site-main" tabIndex={-1}>
+            {children}
+          </main>
+          <footer className="site-footer">
+            <div className="footer-top">
+              <div>
+                <span className="eyebrow">Keep in touch</span>
+                <h2>Have something in mind?</h2>
+                <a className="text-link" href="mailto:kcreight@ualberta.ca">
+                  kcreight@ualberta.ca <span aria-hidden="true">↗</span>
+                </a>
               </div>
-            </footer>
-          </div>
-        </div>
-      </ThemeProvider>
+              <div className="footer-links">
+                <a
+                  href="https://github.com/KelvinCreighton/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub ↗
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/kelvin-creighton-250806263"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn ↗
+                </a>
+                <Link href="/resume">Resume ↗</Link>
+              </div>
+            </div>
+            <div className="footer-bottom">
+              <span>© {new Date().getFullYear()} Kelvin Creighton</span>
+              <span>Built, investigated, and documented.</span>
+              <Link href="/projects/?view=history">
+                The complete fieldbook ↗
+              </Link>
+            </div>
+          </footer>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Person",
+                name: "Kelvin Creighton",
+                url: "https://kelvincreighton.ca",
+                sameAs: [
+                  "https://github.com/KelvinCreighton",
+                  "https://www.linkedin.com/in/kelvin-creighton-250806263",
+                ],
+              }),
+            }}
+          />
+        </ThemeProvider>
       </body>
     </html>
   );

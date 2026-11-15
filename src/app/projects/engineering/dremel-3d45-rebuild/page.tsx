@@ -1,28 +1,18 @@
 import Image from "@/components/BlurImage";
 import Link from "next/link";
 import InProgressNotice from "@/components/InProgressNotice";
-import ProjectPager from "@/components/ProjectPager";
 
 export default function Dremel3D45RebuildProject() {
   return (
-    <main className="animate-page-enter flex flex-col items-center px-6 pb-6 pt-0 md:px-12 md:pb-12 md:pt-0 lg:px-24 lg:pb-16 lg:pt-0 w-full">
-      <article className="w-full max-w-4xl flex flex-col items-start px-2 md:px-0">
-        <Link
-          href="/projects/embedded-systems"
-          className="text-sm text-gray-500 hover:text-blue-600 transition-colors mb-8 flex items-center gap-2"
-        >
-          &larr; Back to Embedded Systems Projects
-        </Link>
-
+    <div className="project-body">
+      <article className="article-content">
         <header className="w-full border-b border-gray-200 dark:border-gray-800 pb-8 mb-12">
           <div className="flex items-center gap-4 mb-4">
             <time className="text-sm italic text-gray-500 dark:text-gray-400">
               May 2026 - July 2026
             </time>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">
-            Dremel DigiLab 3D45 - Controller Rebuild
-          </h1>
+
           <p className="text-xl italic mb-6">
             Rebuilding a Dremel DigiLab 3D45 after the original motherboard was
             damaged during fan voltage testing.
@@ -56,12 +46,12 @@ export default function Dremel3D45RebuildProject() {
         <div className="w-full prose prose-lg dark:prose-invert max-w-none">
           <h2 className="mb-4 text-xl font-bold">Project Focus</h2>
           <p>
-            The goal was to keep the Dremel&apos;s higher-value frame and chassis
-            while replacing the failed control electronics with something I
-            could maintain and iterate on more easily. I stripped usable parts
-            from the donor printer and used them to rebuild the Dremel&apos;s
-            control system instead of trying to source proprietary replacement
-            boards.
+            The goal was to keep the Dremel&apos;s higher-value frame and
+            chassis while replacing the failed control electronics with
+            something I could maintain and iterate on more easily. I stripped
+            usable parts from the donor printer and used them to rebuild the
+            Dremel&apos;s control system instead of trying to source proprietary
+            replacement boards.
           </p>
 
           <div className="bg-gray-100 dark:bg-gray-900 rounded-xl p-6 my-8 border border-gray-200 dark:border-gray-800">
@@ -123,13 +113,13 @@ export default function Dremel3D45RebuildProject() {
             never really tells you what the fan is supposed to run at, so I
             grabbed a multimeter and checked the connector myself. While I was
             probing the fan lines, I accidentally touched the red positive lead
-            to the yellow tachometer signal line. Right after that, the
-            printer started acting dead on the higher-voltage side. The motors
-            stopped, and the heating element was only getting about 5 volts,
-            which was nowhere near enough to heat the block. The screen and
-            lights still worked, so I knew the 5V side was fine, but
-            everything else had clearly been knocked out. That was what pushed
-            me to test the motherboard and PSU, hoping I only tripped a fuse.
+            to the yellow tachometer signal line. Right after that, the printer
+            started acting dead on the higher-voltage side. The motors stopped,
+            and the heating element was only getting about 5 volts, which was
+            nowhere near enough to heat the block. The screen and lights still
+            worked, so I knew the 5V side was fine, but everything else had
+            clearly been knocked out. That was what pushed me to test the
+            motherboard and PSU, hoping I only tripped a fuse.
           </p>
 
           <div className="grid grid-cols-1 gap-4 md:gap-6 my-8 md:my-10">
@@ -148,25 +138,29 @@ export default function Dremel3D45RebuildProject() {
             </figure>
           </div>
 
-          <h2 className="mb-4 text-xl font-bold">Step 1: Diagnosing the Problem</h2>
+          <h2 className="mb-4 text-xl font-bold">
+            Step 1: Diagnosing the Problem
+          </h2>
           <p>
-            The first stage of the rebuild was diagnosis. I started by
-            isolating the power system and checking the printer&apos;s incoming
-            power path before moving any deeper into the electronics.
+            The first stage of the rebuild was diagnosis. I started by isolating
+            the power system and checking the printer&apos;s incoming power path
+            before moving any deeper into the electronics.
           </p>
 
-          <h3 className="mb-4 mt-8 text-lg font-bold">Step 1.1: PSU Inspection and Output Testing</h3>
+          <h3 className="mb-4 mt-8 text-lg font-bold">
+            Step 1.1: PSU Inspection and Output Testing
+          </h3>
           <p>
             I removed the PSU and opened it up to inspect it for any obvious
             shorting, damage, or burnt components, but I did not push much
             further at that point because I knew enough to respect the risks of
-            working inside a power supply without more experience. After
-            putting it back in and confirming it powered up normally, I moved
-            on to testing the output wiring. The goal there was to verify the
-            voltage coming off the PSU leads while the wiring was still
-            connected to the motherboard, so I could compare the supply output
-            against what was actually reaching the board and look for any
-            discrepancies in the path.
+            working inside a power supply without more experience. After putting
+            it back in and confirming it powered up normally, I moved on to
+            testing the output wiring. The goal there was to verify the voltage
+            coming off the PSU leads while the wiring was still connected to the
+            motherboard, so I could compare the supply output against what was
+            actually reaching the board and look for any discrepancies in the
+            path.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
@@ -199,14 +193,16 @@ export default function Dremel3D45RebuildProject() {
             </figure>
           </div>
 
-          <h3 className="mb-4 mt-8 text-lg font-bold">Step 1.2: Motherboard Driver Testing</h3>
+          <h3 className="mb-4 mt-8 text-lg font-bold">
+            Step 1.2: Motherboard Driver Testing
+          </h3>
           <p>
             From there I moved deeper into the control board itself. I started
             by tracing the major driver stages on the motherboard and
             identifying which controller chips were responsible for the
-            printer&apos;s motion and toolhead functions. At this point I was not
-            trying to repair the board yet. I was trying to understand how the
-            board was laid out so I could decide which sections were worth
+            printer&apos;s motion and toolhead functions. At this point I was
+            not trying to repair the board yet. I was trying to understand how
+            the board was laid out so I could decide which sections were worth
             testing and which signals I needed to measure next.
           </p>
           <p>
@@ -214,12 +210,11 @@ export default function Dremel3D45RebuildProject() {
             checked the stepper motor outputs one axis at a time and compared
             the readings against what the printer was being told to do in jog
             mode. The goal was to see whether the board was actually changing
-            state when the motors were commanded to move, or whether the
-            output stage was stuck in a bad state. The readings stayed at
-            roughly 12V across the outputs no matter what command I sent, and
-            they also sat at 12V while idle. That was a strong sign that the
-            driver stage was not behaving normally and was likely shorted or
-            otherwise damaged.
+            state when the motors were commanded to move, or whether the output
+            stage was stuck in a bad state. The readings stayed at roughly 12V
+            across the outputs no matter what command I sent, and they also sat
+            at 12V while idle. That was a strong sign that the driver stage was
+            not behaving normally and was likely shorted or otherwise damaged.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
@@ -252,7 +247,9 @@ export default function Dremel3D45RebuildProject() {
             </figure>
           </div>
 
-          <h2 className="mb-4 text-xl font-bold">Step 2: Verifying the Donor Hardware</h2>
+          <h2 className="mb-4 text-xl font-bold">
+            Step 2: Verifying the Donor Hardware
+          </h2>
           <p>
             Once I had narrowed the failure down to the Dremel&apos;s control
             electronics, the next step was to replace the damaged motherboard
@@ -263,7 +260,9 @@ export default function Dremel3D45RebuildProject() {
             healthy enough to reuse.
           </p>
 
-          <h3 className="mb-4 mt-8 text-lg font-bold">Step 2.1: Donor Board and Motor Verification</h3>
+          <h3 className="mb-4 mt-8 text-lg font-bold">
+            Step 2.1: Donor Board and Motor Verification
+          </h3>
           <p>
             Before I committed the donor hardware to the Dremel rebuild, I
             verified it as a separate system. I powered the Arduino Mega and
@@ -275,12 +274,12 @@ export default function Dremel3D45RebuildProject() {
             hardware was still reliable.
           </p>
           <p>
-            I then tested a stepper motor directly so I could map its four
-            wires into the two coil pairs the driver needs. That step matters
-            because a stepper motor is not wired like a normal DC motor. It
-            depends on the controller energizing the correct coils in the
-            correct order, so I had to identify the paired wires before I
-            could safely connect it to RAMPS.
+            I then tested a stepper motor directly so I could map its four wires
+            into the two coil pairs the driver needs. That step matters because
+            a stepper motor is not wired like a normal DC motor. It depends on
+            the controller energizing the correct coils in the correct order, so
+            I had to identify the paired wires before I could safely connect it
+            to RAMPS.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
@@ -327,33 +326,36 @@ export default function Dremel3D45RebuildProject() {
             </figure>
           </div>
 
-          <h3 className="mb-4 mt-8 text-lg font-bold">Step 2.2: Flashing Marlin and Testing Motion</h3>
+          <h3 className="mb-4 mt-8 text-lg font-bold">
+            Step 2.2: Flashing Marlin and Testing Motion
+          </h3>
           <p>
-            Once the donor board and motor wiring checked out, I flashed the Marlin
-            firmware to the Arduino Mega and wrote a simple python script to connect my
-            left and right arrow keys to a few simple G-code commands to verify
-            all the systems would work before moving to rebuilding the Dremel
-            printer with the donor electronics.
+            Once the donor board and motor wiring checked out, I flashed the
+            Marlin firmware to the Arduino Mega and wrote a simple python script
+            to connect my left and right arrow keys to a few simple G-code
+            commands to verify all the systems would work before moving to
+            rebuilding the Dremel printer with the donor electronics.
           </p>
 
           <div className="w-full rounded-xl overflow-hidden mb-10 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-sm">
-            <video
-              controls
-              playsInline
-              className="w-full h-auto block"
-            >
-              <source src="/images/projects/dremel-3d45-rebuild/step-2-2-1.mp4" type="video/mp4" />
+            <video controls playsInline className="w-full h-auto block">
+              <source
+                src="/images/projects/dremel-3d45-rebuild/step-2-2-1.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
 
-          <h2 className="mb-4 text-xl font-bold">Step 3: Setting the Driver Current and Wiring the Motors</h2>
+          <h2 className="mb-4 text-xl font-bold">
+            Step 3: Setting the Driver Current and Wiring the Motors
+          </h2>
           <p>
             With the firmware and basic motion test working, I moved on to
-            matching the driver current to the motors the Dremel actually
-            uses. I looked up the motor specifications, used that information
-            to calculate an approximate VREF target for the A4988 drivers, and
-            then adjusted the trimpots until the drivers were set close to the
+            matching the driver current to the motors the Dremel actually uses.
+            I looked up the motor specifications, used that information to
+            calculate an approximate VREF target for the A4988 drivers, and then
+            adjusted the trimpots until the drivers were set close to the
             current the printer needed. That step matters because the drivers
             need enough current to move the motors reliably, but not so much
             that they run hot or stress the hardware unnecessarily.
@@ -362,11 +364,11 @@ export default function Dremel3D45RebuildProject() {
             After that, I wired the X, Y, and Z motors to the correct RAMPS
             output pins. The point of the wiring was to make sure each axis was
             assigned to the driver channel that Marlin expected, so the motors
-            would respond to the proper movement commands instead of being
-            mixed up or reversed. Once that was in place, the replacement
-            control system was no longer just powered on and tested in pieces.
-            It was starting to behave like the actual motion controller for the
-            rebuilt printer.
+            would respond to the proper movement commands instead of being mixed
+            up or reversed. Once that was in place, the replacement control
+            system was no longer just powered on and tested in pieces. It was
+            starting to behave like the actual motion controller for the rebuilt
+            printer.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
@@ -400,7 +402,9 @@ export default function Dremel3D45RebuildProject() {
             </figure>
           </div>
 
-          <h2 className="mb-4 text-xl font-bold">Step 4: Writing Jog Mode Control</h2>
+          <h2 className="mb-4 text-xl font-bold">
+            Step 4: Writing Jog Mode Control
+          </h2>
           <p>
             Once the motion system was stable, I wrote a Python script to make
             jog mode easier to use during testing. The goal was to control the
@@ -417,33 +421,32 @@ export default function Dremel3D45RebuildProject() {
           </p>
 
           <div className="w-full rounded-xl overflow-hidden mb-10 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-sm">
-            <video
-              controls
-              playsInline
-              className="w-full h-auto block"
-            >
-              <source src="/images/projects/dremel-3d45-rebuild/step-4-1-1.mp4" type="video/mp4" />
+            <video controls playsInline className="w-full h-auto block">
+              <source
+                src="/images/projects/dremel-3d45-rebuild/step-4-1-1.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
 
           <h2 className="mb-4 text-xl font-bold">Rebuild Approach</h2>
           <p>
-            I treated the donor printer as a parts source and rebuilt the
-            Dremel around the Arduino Mega 2560 and RAMPS 1.4 setup. At first I
-            reused the original A4988 drivers, then later moved to TMC2209
-            drivers. I also replaced the damaged control hardware more than
-            once after another failure, which meant buying fresh Mega, RAMPS,
-            and TMC2209 parts and wiring everything back up again.
+            I treated the donor printer as a parts source and rebuilt the Dremel
+            around the Arduino Mega 2560 and RAMPS 1.4 setup. At first I reused
+            the original A4988 drivers, then later moved to TMC2209 drivers. I
+            also replaced the damaged control hardware more than once after
+            another failure, which meant buying fresh Mega, RAMPS, and TMC2209
+            parts and wiring everything back up again.
           </p>
 
           <h2 className="mb-4 text-xl font-bold">Why This Printer</h2>
           <p>
             The Dremel itself is the better machine to keep because of its frame
-            and chassis quality, which gives it better consistency and
-            precision than the donor printer. The plan was to preserve the
-            stronger mechanical foundation and swap in the usable electronics
-            and motors from the broken machine rather than starting over.
+            and chassis quality, which gives it better consistency and precision
+            than the donor printer. The plan was to preserve the stronger
+            mechanical foundation and swap in the usable electronics and motors
+            from the broken machine rather than starting over.
           </p>
 
           <h2 className="mb-4 text-xl font-bold">Closing Thoughts</h2>
@@ -456,12 +459,7 @@ export default function Dremel3D45RebuildProject() {
 
           <hr className="my-12 border-gray-200 dark:border-gray-800" />
         </div>
-
-        <ProjectPager
-          category="embedded-systems"
-          currentPath="/projects/engineering/dremel-3d45-rebuild"
-        />
       </article>
-    </main>
+    </div>
   );
 }

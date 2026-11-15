@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-
 export const metadata: Metadata = {
-  title: "All Projects",
-  description: "A complete list of projects including cybersecurity, game dev, music, and automotive repair.",
+  title: "Projects",
+  description:
+    "A fieldbook of embedded software, systems programming, security investigations, mechatronics, automotive repair, games, and music.",
+  alternates: { canonical: "/projects/" },
 };
-
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

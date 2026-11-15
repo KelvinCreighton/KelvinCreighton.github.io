@@ -6,10 +6,6 @@ export const metadata: Metadata = {
     "Certificates, qualifications, and CTF accomplishments for Kelvin Creighton.",
 };
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

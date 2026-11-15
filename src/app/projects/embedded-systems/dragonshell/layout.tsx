@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-
+import CaseStudyLayout from "@/components/CaseStudyLayout";
 export const metadata: Metadata = {
-  title: "DragonShell | Embedded Systems Projects",
+  openGraph: {
+    title: "DragonShell | Kelvin Creighton",
+    description:
+      "A Unix shell written in C. Processes, pipes, redirection, and signals, implemented through the operating system’s interfaces.",
+    url: "/projects/embedded-systems/dragonshell",
+    type: "article",
+  },
+  title: "DragonShell",
   description:
-    "A C Unix-like shell project exploring process management, file descriptors, pipes, signals, and operating-system concepts.",
+    "A Unix shell written in C. Processes, pipes, redirection, and signals, implemented through the operating system’s interfaces.",
+  alternates: { canonical: "/projects/embedded-systems/dragonshell/" },
 };
-
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return <CaseStudyLayout projectId="dragonshell">{children}</CaseStudyLayout>;
 }

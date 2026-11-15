@@ -1,108 +1,20 @@
-import Link from "next/link";
-import Image from "@/components/BlurImage";
-
-export default function Projects() {
+import { Suspense } from "react";
+import PageIntro from "@/components/PageIntro";
+import ProjectArchive, {
+  StaticProjectArchive,
+} from "@/components/ProjectArchive";
+export default function Page() {
   return (
-    <main className="animate-page-enter flex flex-col items-center px-6 pb-6 pt-0 md:px-12 md:pb-12 md:pt-0 lg:px-24 lg:pb-16 lg:pt-0 w-full">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">Projects</h1>
-
-      <div className="flex flex-wrap justify-center gap-6 md:gap-8 w-full max-w-6xl px-2 md:px-0">
-        {/* Category 1: Embedded Systems */}
-        <Link
-          href="/projects/embedded-systems"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
-        >
-          <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
-            <Image
-              src="/icons/embedded-systems.svg"
-              alt="Embedded Systems"
-              width={128}
-              height={128}
-            />
-          </div>
-          <h2 className="text-xl font-semibold text-center">Embedded Systems</h2>
-        </Link>
-
-        {/* Category 2: Cybersecurity */}
-        <Link
-          href="/projects/cybersecurity"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
-        >
-          <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
-            <Image
-              src="/icons/cybersecurity.svg"
-              alt="Cybersecurity"
-              width={128}
-              height={128}
-            />
-          </div>
-          <h2 className="text-xl font-semibold text-center">Cybersecurity</h2>
-        </Link>
-
-        {/* Category 3: Mechatronics */}
-        <Link
-          href="/projects/engineering"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
-        >
-          <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
-            <Image
-              src="/icons/engineering.svg"
-              alt="Mechatronics"
-              width={128}
-              height={128}
-            />
-          </div>
-          <h2 className="text-xl font-semibold text-center">Mechatronics</h2>
-        </Link>
-
-        {/* Category 4: Automotive */}
-        <Link
-          href="/projects/auto"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
-        >
-          <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
-            <Image
-              src="/icons/auto.svg"
-              alt="Auto Repair"
-              width={128}
-              height={128}
-            />
-          </div>
-          <h2 className="text-xl font-semibold text-center">Automotive</h2>
-        </Link>
-
-        {/* Category 5: Game Development */}
-        <Link
-          href="/projects/game-dev"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
-        >
-          <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
-            <Image
-              src="/icons/game-dev.svg"
-              alt="Game Development"
-              width={128}
-              height={128}
-            />
-          </div>
-          <h2 className="text-xl font-semibold text-center">Game Development</h2>
-        </Link>
-
-        {/* Category 6: Music Production */}
-        <Link
-          href="/projects/music"
-          className="group relative flex flex-col items-center justify-center overflow-hidden p-8 border rounded-xl bg-transparent transition-transform duration-200 hover:-translate-y-1 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] max-w-sm [content-visibility:auto] [contain-intrinsic-size:260px]"
-        >
-          <div className="mb-4 group-hover:scale-110 transition-transform dark:invert">
-            <Image
-              src="/icons/music.svg"
-              alt="Music Production"
-              width={128}
-              height={128}
-            />
-          </div>
-          <h2 className="text-xl font-semibold text-center">Music</h2>
-        </Link>
-      </div>
-    </main>
+    <>
+      <PageIntro number="01" title="A record of making.">
+        <p>
+          Software, hardware, repair, and the occasional piece of music. Browse
+          the full archive, or follow a discipline.
+        </p>
+      </PageIntro>
+      <Suspense fallback={<StaticProjectArchive />}>
+        <ProjectArchive />
+      </Suspense>
+    </>
   );
 }

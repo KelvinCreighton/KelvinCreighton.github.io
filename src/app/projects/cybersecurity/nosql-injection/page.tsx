@@ -1,5 +1,3 @@
-"use client";
-
 import WriteupTemplate from "@/components/WriteupTemplate";
 
 export default function NoSQLInjectionWriteup() {

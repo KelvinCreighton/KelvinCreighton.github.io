@@ -22,6 +22,8 @@ export default function SheetMusicViewer({ file }: SheetMusicViewerProps) {
   const audioPlayerRef = useRef<AudioPlayer | null>(null);
   const [audioPlayer, setAudioPlayer] = useState<AudioPlayer | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [audioError, setAudioError] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioReady, setAudioReady] = useState(false);
   const [sheetScale, setSheetScale] = useState(1);
@@ -31,7 +33,8 @@ export default function SheetMusicViewer({ file }: SheetMusicViewerProps) {
     if (!viewportRef.current || !containerRef.current) return;
 
     const viewportWidth = viewportRef.current.clientWidth;
-    const renderedWidth = containerRef.current.scrollWidth || SCORE_RENDER_WIDTH;
+    const renderedWidth =
+      containerRef.current.scrollWidth || SCORE_RENDER_WIDTH;
     const renderedHeight = containerRef.current.scrollHeight || 0;
     const nextScale = Math.min(1, viewportWidth / renderedWidth);
 
@@ -102,6 +105,8 @@ export default function SheetMusicViewer({ file }: SheetMusicViewerProps) {
 
     let cancelled = false;
     setLoading(true);
+    setError("");
+    setAudioError("");
 
     // tear down any previous player immediately
     if (audioPlayerRef.current) {
@@ -144,13 +149,21 @@ export default function SheetMusicViewer({ file }: SheetMusicViewerProps) {
 
         try {
           await player.loadScore(osmd as unknown as AudioPlayerScore);
-          if (!cancelled) setAudioReady(true);
+          if (cancelled) {
+            player.stop();
+            return;
+          }
+          setAudioReady(true);
         } catch (audioErr) {
           console.error("Audio Player failed to load score:", audioErr);
+          if (!cancelled)
+            setAudioError(
+              "Playback could not load. You can still read the score or download the MusicXML file.",
+            );
         }
 
         player.on(PlaybackEvent.STATE_CHANGE, (state) => {
-          setIsPlaying(state === "PLAYING");
+          if (!cancelled) setIsPlaying(state === "PLAYING");
         });
 
         if (!cancelled) setLoading(false);
@@ -158,6 +171,9 @@ export default function SheetMusicViewer({ file }: SheetMusicViewerProps) {
       .catch((err) => {
         if (cancelled) return;
         console.error("Error loading sheet music:", err);
+        setError(
+          "The score could not load. Close and reopen the viewer to retry, or download the MusicXML file above.",
+        );
         setLoading(false);
       });
 
@@ -178,7 +194,7 @@ export default function SheetMusicViewer({ file }: SheetMusicViewerProps) {
     const factor = 175;
     const cursorEl = osmd.cursor.cursorElement as HTMLImageElement;
     cursorEl.style.transform = `scale(${sheetScale}, ${factor})`;
-    cursorEl.style.transformOrigin = 'top left';
+    cursorEl.style.transformOrigin = "top left";
     cursorEl.style.zIndex = String(osmd.cursor.wantedZIndex || 10);
     cursorEl.style.opacity = "1";
   };
@@ -206,18 +222,23 @@ export default function SheetMusicViewer({ file }: SheetMusicViewerProps) {
 
   return (
     <div className="w-full flex flex-col gap-4">
-      <div className="flex justify-center gap-4 bg-gray-85 dark:bg-gray-800 p-4 rounded-xl shadow-sm">
+      {(error || audioError) && (
+        <p role="alert" className="score-error">
+          {error || audioError}
+        </p>
+      )}
+      <div className="score-controls">
         <button
           onClick={togglePlay}
           disabled={!audioReady || loading}
-          className="px-6 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold rounded-lg transition-colors flex items-center justify-center min-w-[120px]"
+          className="button"
         >
-          {isPlaying ? 'Pause' : 'Play'}
+          {isPlaying ? "Pause" : "Play"}
         </button>
         <button
           onClick={stopPlay}
-          disabled={!audioReady || loading || !isPlaying}
-          className="px-6 py-2 bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white font-semibold rounded-lg transition-colors"
+          disabled={!audioReady || loading}
+          className="button secondary"
         >
           Stop
         </button>
@@ -226,7 +247,9 @@ export default function SheetMusicViewer({ file }: SheetMusicViewerProps) {
       <div className="w-full bg-white text-black p-4 rounded-xl shadow-inner relative min-h-[400px]">
         {loading && (
           <div className="absolute inset-0 flex items-center justify-center bg-white/80 z-10 rounded-xl">
-            <p className="text-xl font-semibold text-gray-600 animate-pulse">Loading Sheet Music...</p>
+            <p role="status" className="text-xl font-semibold text-gray-600">
+              Loading Sheet Music...
+            </p>
           </div>
         )}
         <div ref={viewportRef} className="w-full overflow-hidden">

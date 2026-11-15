@@ -18,10 +18,7 @@ export type WicysChallenge = {
 
 const WICYS_CTF_DOWNLOADS_ROOT = "/downloads/wicys-ctf/challenges";
 
-function getWicysChallengeDownloadPath(
-  challengeId: string,
-  filename: string,
-) {
+function getWicysChallengeDownloadPath(challengeId: string, filename: string) {
   return `${WICYS_CTF_DOWNLOADS_ROOT}/${challengeId}/${filename}`;
 }
 
@@ -41,23 +38,24 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
     expectedFlag: "WICYS{byt3s_b3hind_th3_bunnies}",
     downloadFiles: [
       {
-        href: getWicysChallengeDownloadPath("01", "glitch.webp"),
-        filename: "glitch.webp",
+        href: getWicysChallengeDownloadPath("01", "glitch.png"),
+        filename: "glitch.png",
         label: "Download Challenge File",
       },
     ],
     solutionSteps: [
-      "Inspect the file with `file glitch.webp`, `ls -lh glitch.webp`, and `hexdump -C glitch.webp` to confirm it is more than a normal tiny PNG.",
-      "Run `binwalk glitch.webp` to detect embedded data appended to the image.",
-      "Extract the embedded content with `binwalk -e glitch.webp`.",
-      "Change into the extracted directory with `cd _glitch.webp.extracted/` and read `distress_signal.txt`.",
+      "Inspect the file with `file glitch.png`, `ls -lh glitch.png`, and `hexdump -C glitch.png` to confirm it is more than a normal tiny PNG.",
+      "Run `binwalk glitch.png` to detect embedded data appended to the image.",
+      "Extract the embedded content with `binwalk -e glitch.png`.",
+      "Change into the extracted directory with `cd _glitch.png.extracted/` and read `distress_signal.txt`.",
       "The recovered flag is `WICYS{byt3s_b3hind_th3_bunnies}`.",
     ],
   },
   "02": {
     slug: "wicys-ctf-02",
     title: "WiCyS CTF: Luck Checker 🍀",
-    subtitle: "A beginner-friendly reversing challenge focused on a suspicious validator binary.",
+    subtitle:
+      "A beginner-friendly reversing challenge focused on a suspicious validator binary.",
     description: [
       "Heap MacCipher claims the luck engine validation code is impossible to guess, but the validator feels far less mysterious than he wants it to appear.",
       "The challenge is to inspect the binary, understand what it is checking for, and recover the true luck validation code.",
@@ -83,7 +81,8 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   "03": {
     slug: "wicys-ctf-03",
     title: "WiCyS CTF: Bunny Network - Portal Override 🐇🌐",
-    subtitle: "A reversing challenge built around an emergency portal override binary.",
+    subtitle:
+      "A reversing challenge built around an emergency portal override binary.",
     description: [
       "The Bunny Network's routing portal has been locked down, and the emergency override binary named portal is the last path back in.",
       "The program refuses to restore the routing tables without the correct override key. The objective is to analyze how it validates input and break through the lockout.",
@@ -112,7 +111,8 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   "04": {
     slug: "wicys-ctf-04",
     title: "WiCyS CTF: Bunny Overflow 🐇",
-    subtitle: "A classic binary exploitation challenge with a vulnerable authorization path.",
+    subtitle:
+      "A classic binary exploitation challenge with a vulnerable authorization path.",
     description: [
       "Heap MacCipher removed the bounds checking on the Bunny Network Security Gateway and left the authorization path dangerously exposed.",
       "The objective is to study the binary, understand how input is handled, and force execution into the success path.",
@@ -134,7 +134,8 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   "05": {
     slug: "wicys-ctf-05",
     title: "WiCyS CTF: Rainbow Vault Overflow 🌈🔒",
-    subtitle: "A heap-focused exploitation challenge hidden inside the Rainbow Vault portal.",
+    subtitle:
+      "A heap-focused exploitation challenge hidden inside the Rainbow Vault portal.",
     description: [
       "The Rainbow Vault portal looks simple on the surface, but its internal memory layout tells a different story.",
       "The challenge is to analyze how the program allocates and uses heap memory, then exploit the flaw to unlock the vault.",
@@ -156,7 +157,8 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   "06": {
     slug: "wicys-ctf-06",
     title: "WiCyS CTF: ROP Around the Rainbow 🌈🐇",
-    subtitle: "An advanced binary exploitation challenge built around precise control-flow hijacking.",
+    subtitle:
+      "An advanced binary exploitation challenge built around precise control-flow hijacking.",
     description: [
       "A vulnerable return path in the Rainbow Bridge control system allows execution to be steered in small, deliberate steps.",
       "The objective is to chain those steps together, bypass the program's constraints, and reach the hidden command channel at the Rainbow Vault.",
@@ -179,7 +181,8 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   "07": {
     slug: "wicys-ctf-07",
     title: "WiCyS CTF: Scavenger Hunt 🔎🥚",
-    subtitle: "A web challenge that rewards careful inspection of the client-side application.",
+    subtitle:
+      "A web challenge that rewards careful inspection of the client-side application.",
     description: [
       "The Spring Incident Response Team recovered Heap MacCipher's control console, but the front-end itself is where the real clues were left behind.",
       "The page appears locked down, but MacCipher's habit of leaving notes in odd places may be enough to bypass his probability shields.",
@@ -200,7 +203,8 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   "08": {
     slug: "wicys-ctf-08",
     title: "WiCyS CTF: Bunny Network API Override 🐇🌐",
-    subtitle: "A web challenge involving a hidden override path in the Bunny Network API.",
+    subtitle:
+      "A web challenge involving a hidden override path in the Bunny Network API.",
     description: [
       "The Bunny Network API has been hijacked, and the rendered page only shows part of what the service is actually sending back to clients.",
       "Somewhere in the request and response flow is an emergency override that Heap MacCipher failed to remove. The task is to find it and recover the confirmation token.",
@@ -220,7 +224,8 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
   "09": {
     slug: "wicys-ctf-09",
     title: "WiCyS CTF: Leprechauns Vault 🍀🔒",
-    subtitle: "A web challenge centered on a suspicious login flow and a careless hidden backdoor.",
+    subtitle:
+      "A web challenge centered on a suspicious login flow and a careless hidden backdoor.",
     description: [
       "A secret portal at the end of the rainbow exposes a login form and a known employee email, but brute force is not the intended path.",
       "The real weakness is buried in the client-side application and the developer notes it exposes. The task is to uncover that weakness and use it to access the vault.",
@@ -235,7 +240,7 @@ export const wicysChallenges: Record<string, WicysChallenge> = {
       "Decode it to recover the backdoor instruction: send the header `X-Leprechaun-Token: lucky-charm`.",
       "Review the page JavaScript to see how `/login` is called and note that the app sends a JSON POST request.",
       "Use the known employee email `shamrock@leprechaun-vault.net` and recreate the request with curl, including the extra header and a JSON body.",
-      "Submitting that request bypasses auth and returns `{\"flag\":\"WICYS{p0t_0f_g0ld_4cquir3d_m8}\",\"success\":true}`.",
+      'Submitting that request bypasses auth and returns `{"flag":"WICYS{p0t_0f_g0ld_4cquir3d_m8}","success":true}`.',
     ],
   },
 };

@@ -1,8 +1,3 @@
 export function Background() {
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 site-bg-gradient"
-    />
-  );
+  return <div className="site-background" aria-hidden="true" />;
 }

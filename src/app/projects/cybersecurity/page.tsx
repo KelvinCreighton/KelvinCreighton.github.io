@@ -1,10 +1,22 @@
 import { Suspense } from "react";
-import CybersecurityProjectsClient from "@/components/CybersecurityProjectsClient";
-
-export default function CybersecurityProjectsPage() {
+import PageIntro from "@/components/PageIntro";
+import ProjectArchive, {
+  StaticProjectArchive,
+} from "@/components/ProjectArchive";
+export default function Page() {
   return (
-    <Suspense fallback={null}>
-      <CybersecurityProjectsClient initialCategory="All" />
-    </Suspense>
+    <>
+      <PageIntro number="01" title="Cybersecurity">
+        <p>
+          Investigations, challenge design, and the details that make a system
+          vulnerable.
+        </p>
+      </PageIntro>
+      <Suspense
+        fallback={<StaticProjectArchive fixedCategory="cybersecurity" />}
+      >
+        <ProjectArchive fixedCategory="cybersecurity" />
+      </Suspense>
+    </>
   );
 }

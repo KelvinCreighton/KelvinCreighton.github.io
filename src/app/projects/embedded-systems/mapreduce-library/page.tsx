@@ -1,6 +1,5 @@
 import Image from "@/components/BlurImage";
 import Link from "next/link";
-import ProjectPager from "@/components/ProjectPager";
 
 const technicalAreas = [
   "C",
@@ -13,24 +12,15 @@ const technicalAreas = [
 
 export default function MapReduceLibraryProject() {
   return (
-    <main className="animate-page-enter flex w-full flex-col items-center px-4 pb-8 pt-0 md:px-8 md:pb-12 lg:px-24 lg:pb-16">
-      <article className="flex w-full max-w-4xl flex-col items-start px-2 md:px-0">
-        <Link
-          href="/projects/embedded-systems"
-          className="mb-8 flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-blue-600"
-        >
-          &larr; Back to Embedded Systems Projects
-        </Link>
-
+    <div className="project-body">
+      <article className="article-content">
         <header className="mb-12 w-full border-b border-gray-200 pb-8 dark:border-gray-800">
           <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-1">
             <time className="text-sm italic text-gray-500 dark:text-gray-400">
               October–November 2024
             </time>
           </div>
-          <h1 className="mb-4 text-4xl font-extrabold tracking-tight md:text-5xl">
-            MapReduce Library
-          </h1>
+
           <p className="mb-4 text-lg font-medium text-blue-600 dark:text-blue-400">
             CMPUT 379: Operating System Concepts &bull; University of Alberta
           </p>
@@ -54,7 +44,10 @@ export default function MapReduceLibraryProject() {
           </a>
 
           <p className="mb-6 text-xl italic leading-relaxed text-gray-700 dark:text-gray-300">
-            I built a reusable MapReduce library in C, then used it to write a word count program. The framework accepts mapper and reducer callbacks, routes emitted key and value pairs into partitions, and lets each reducer consume the values for its keys.
+            I built a reusable MapReduce library in C, then used it to write a
+            word count program. The framework accepts mapper and reducer
+            callbacks, routes emitted key and value pairs into partitions, and
+            lets each reducer consume the values for its keys.
           </p>
 
           <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100 shadow-sm dark:border-gray-800 dark:bg-gray-800">
@@ -84,10 +77,19 @@ export default function MapReduceLibraryProject() {
             A framework built around callbacks
           </h2>
           <p>
-            The public API is built around four functions. <code>MR_Run()</code> coordinates mapping and reducing, <code>MR_Emit()</code> stores each key and value pair, <code>MR_Partitioner()</code> chooses a partition for a key, and <code>MR_GetNext()</code> returns values for a key to the reducer. That separation lets an application define its own map and reduce work without managing the framework&apos;s queues and partitions directly.
+            The public API is built around four functions. <code>MR_Run()</code>{" "}
+            coordinates mapping and reducing, <code>MR_Emit()</code> stores each
+            key and value pair, <code>MR_Partitioner()</code> chooses a
+            partition for a key, and <code>MR_GetNext()</code> returns values
+            for a key to the reducer. That separation lets an application define
+            its own map and reduce work without managing the framework&apos;s
+            queues and partitions directly.
           </p>
           <p>
-            In the word count example, the mapper reads a file and emits each token with the value <code>1</code>. The reducer repeatedly requests values for one key, counts them, and appends the result to a file named for its partition.
+            In the word count example, the mapper reads a file and emits each
+            token with the value <code>1</code>. The reducer repeatedly requests
+            values for one key, counts them, and appends the result to a file
+            named for its partition.
           </p>
         </section>
 
@@ -96,10 +98,19 @@ export default function MapReduceLibraryProject() {
             Scheduling and partitioning work
           </h2>
           <p>
-            I implemented a pthread job queue for mapper and reducer work. Mapper jobs use input file size as their priority; reducer jobs use the number of values in a partition. The queue inserts jobs in ascending priority order. Mutexes protect queue state and the shared partition table, while a condition variable is used to coordinate the end of each phase.
+            I implemented a pthread job queue for mapper and reducer work.
+            Mapper jobs use input file size as their priority; reducer jobs use
+            the number of values in a partition. The queue inserts jobs in
+            ascending priority order. Mutexes protect queue state and the shared
+            partition table, while a condition variable is used to coordinate
+            the end of each phase.
           </p>
           <p>
-            <code>MR_Emit()</code> hashes each key with a DJB2 style hash to select a partition. It copies the key and value into a linked list kept in ASCII key order. During reduction, <code>MR_GetNext()</code> removes and returns one value for the requested key at a time, freeing the stored pair as it goes.
+            <code>MR_Emit()</code> hashes each key with a DJB2 style hash to
+            select a partition. It copies the key and value into a linked list
+            kept in ASCII key order. During reduction, <code>MR_GetNext()</code>{" "}
+            removes and returns one value for the requested key at a time,
+            freeing the stored pair as it goes.
           </p>
         </section>
 
@@ -108,10 +119,22 @@ export default function MapReduceLibraryProject() {
             What I worked through
           </h2>
           <ul className="list-disc space-y-2 pl-5 text-base leading-relaxed text-gray-700 dark:text-gray-300">
-            <li>Separating application callbacks from the framework that schedules their work.</li>
-            <li>Protecting shared key and value data while multiple mapper jobs emit results.</li>
-            <li>Grouping values by key and consuming them safely during reduction.</li>
-            <li>Building and checking the library with compiler warnings treated as errors, pthread support, sample text files, and memory checking.</li>
+            <li>
+              Separating application callbacks from the framework that schedules
+              their work.
+            </li>
+            <li>
+              Protecting shared key and value data while multiple mapper jobs
+              emit results.
+            </li>
+            <li>
+              Grouping values by key and consuming them safely during reduction.
+            </li>
+            <li>
+              Building and checking the library with compiler warnings treated
+              as errors, pthread support, sample text files, and memory
+              checking.
+            </li>
           </ul>
         </section>
 
@@ -120,15 +143,17 @@ export default function MapReduceLibraryProject() {
             Scope and next steps
           </h2>
           <p>
-            This implementation runs on one machine with POSIX threads. The library received 90/100. Course feedback gave full marks for runtime and memory use, but noted incorrect results on tests beyond the sample inputs. The worker routine also exits when it sees an empty queue instead of waiting for more jobs, so I would make the worker lifecycle reliable before claiming dependable parallel execution. I would then expand the tests to cover empty input, repeated separators, and a wider range of keys and partitions.
+            This implementation runs on one machine with POSIX threads. The
+            library received 90/100. Course feedback gave full marks for runtime
+            and memory use, but noted incorrect results on tests beyond the
+            sample inputs. The worker routine also exits when it sees an empty
+            queue instead of waiting for more jobs, so I would make the worker
+            lifecycle reliable before claiming dependable parallel execution. I
+            would then expand the tests to cover empty input, repeated
+            separators, and a wider range of keys and partitions.
           </p>
         </section>
-
-        <ProjectPager
-          category="embedded-systems"
-          currentPath="/projects/embedded-systems/mapreduce-library"
-        />
       </article>
-    </main>
+    </div>
   );
 }

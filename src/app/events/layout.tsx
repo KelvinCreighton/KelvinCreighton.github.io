@@ -6,10 +6,6 @@ export const metadata: Metadata = {
     "Leadership and event organization work for Kelvin Creighton, including OWASP Edmonton and CHADS.",
 };
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
