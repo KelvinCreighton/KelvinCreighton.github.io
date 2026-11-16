@@ -572,18 +572,42 @@ h3[id] {
 }
 .archive-list .archive-entry-link {
   grid-template-columns: 150px 1fr;
-  gap: 26px;
-  padding: 36px 0;
+  align-items: start;
+  gap: 22px;
+  padding: 18px 0;
 }
 .archive-list .archive-image {
   margin: 0;
 }
 .archive-list .entry-copy {
-  max-width: 780px;
+  min-width: 0;
+  max-width: none;
+}
+.archive-list .entry-meta {
+  font-size: 10px;
+  line-height: 1.25;
+}
+.archive-list .archive-entry h2 {
+  margin: 4px 0 5px;
+  font-size: 23px;
+  line-height: 1.08;
 }
 .archive-list .entry-copy > p {
-  font-size: 14px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 12px;
+  line-height: 1.4;
   color: var(--muted);
+}
+.archive-list .entry-actions {
+  gap: 9px;
+  margin-top: 6px;
+  line-height: 1.25;
+}
+.archive-list .entry-actions span {
+  font-size: 11px;
 }
 .history-year {
   display: grid;
