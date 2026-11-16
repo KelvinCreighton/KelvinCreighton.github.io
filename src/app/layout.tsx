@@ -88,7 +88,7 @@ export default function RootLayout({
               </div>
               <nav className="footer-navigation" aria-label="Footer navigation">
                 <p className="footer-kicker">Explore</p>
-                <Link href="/resume">Résumé <span aria-hidden="true">↗</span></Link>
+                <Link href="/resume">Resume</Link>
                 <Link href="/projects">Projects</Link>
                 <Link href="/community">Community</Link>
                 <Link href="/achievements">Achievements</Link>

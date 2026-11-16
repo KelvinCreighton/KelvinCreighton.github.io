@@ -5,9 +5,9 @@ import PageIntro from "@/components/PageIntro";
 import ResumeDownloads from "@/components/ResumeDownloads";
 import { InlineArrow } from "@/components/InlineArrow";
 export const metadata: Metadata = {
-  title: "Résumé",
+  title: "Resume",
   description:
-    "Kelvin Creighton’s project experience in embedded firmware, systems software, and cybersecurity. Download embedded systems and cybersecurity résumés.",
+    "Kelvin Creighton’s project experience in embedded firmware, systems software, and cybersecurity. Download embedded systems and cybersecurity resumes.",
 };
 export default function Page() {
   return (
@@ -129,7 +129,7 @@ export default function Page() {
         <Suspense
           fallback={
             <aside className="resume-downloads">
-              <h2>Download a résumé</h2>
+              <h2>Download a resume</h2>
               <a href="/resume-embedded.pdf">Embedded systems PDF ↓</a>
               <br />
               <a href="/resume-cybersecurity.pdf">Cybersecurity PDF ↓</a>

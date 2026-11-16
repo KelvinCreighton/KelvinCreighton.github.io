@@ -11,9 +11,9 @@ export default function ResumeDownloads() {
   return (
     <aside className="resume-downloads">
       <p className="eyebrow">Take a copy</p>
-      <h2>Résumé</h2>
+      <h2>Resume</h2>
       <label htmlFor="resume-focus" className="control-label">
-        Résumé focus
+        Resume focus
       </label>
       <select
         id="resume-focus"
@@ -49,11 +49,11 @@ export default function ResumeDownloads() {
           <object
             data={url}
             type="application/pdf"
-            aria-label={`${type} résumé PDF`}
+            aria-label={`${type} resume PDF`}
           >
             <p>
               Your browser cannot display the PDF here.{" "}
-              <a href={url}>Open the résumé</a>.
+              <a href={url}>Open the resume</a>.
             </p>
           </object>
         </div>
