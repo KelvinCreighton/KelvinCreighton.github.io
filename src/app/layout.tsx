@@ -55,12 +55,11 @@ export default function RootLayout({
           </main>
           <footer className="site-footer">
             <div className="footer-top">
-              <div
-                className="field-intro-links footer-contact-links"
-                aria-label="Contact links"
-              >
+              <div className="footer-intro">
+                <p className="footer-kicker">Kelvin Creighton</p>
+                <div className="footer-contact-links" aria-label="Contact links">
                 <a href="mailto:kcreight@ualberta.ca">
-                  <span className="field-intro-link-content">
+                  <span>
                     <Mail aria-hidden="true" />
                     Email
                   </span>
@@ -70,7 +69,7 @@ export default function RootLayout({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="field-intro-link-content">
+                  <span>
                     <Linkedin aria-hidden="true" />
                     LinkedIn
                   </span>
@@ -80,25 +79,24 @@ export default function RootLayout({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="field-intro-link-content">
+                  <span>
                     <Github aria-hidden="true" />
                     GitHub
                   </span>
                 </a>
+                </div>
               </div>
-              <div className="footer-links">
+              <nav className="footer-navigation" aria-label="Footer navigation">
+                <p className="footer-kicker">Explore</p>
+                <Link href="/resume">Résumé <span aria-hidden="true">↗</span></Link>
                 <Link href="/projects">Projects</Link>
                 <Link href="/community">Community</Link>
                 <Link href="/achievements">Achievements</Link>
-                <Link href="/resume">Resume ↗</Link>
-              </div>
+              </nav>
             </div>
             <div className="footer-bottom">
               <span>© {new Date().getFullYear()} Kelvin Creighton</span>
-              <span>Embedded systems, firmware, and work in progress.</span>
-              <Link href="/projects/?view=history">
-                Browse all projects ↗
-              </Link>
+              <span>University of Alberta · Computer Science</span>
             </div>
           </footer>
           <script
