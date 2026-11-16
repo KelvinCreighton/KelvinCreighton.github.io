@@ -4,7 +4,7 @@ import { achievements } from "@/data/community";
 export default function Page() {
   return (
     <>
-      <PageIntro title="Learning under pressure.">
+      <PageIntro title="Achievements & Certificates">
         <p>
           Competition results, collaborative problem solving, and practical
           training. A record of what I worked on and what the team achieved.
