@@ -539,6 +539,7 @@
 }
 .archive-entry-link {
   display: grid;
+  min-width: 0;
   color: inherit;
   height: 100%;
 }
@@ -565,6 +566,7 @@
   color: var(--accent);
 }
 .archive-grid .entry-copy {
+  min-width: 0;
   padding: 26px;
   display: flex;
   flex-direction: column;

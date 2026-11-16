@@ -523,6 +523,8 @@ h3[id] {
   object-fit: cover;
 }
 .archive-entry h2 {
+  min-width: 0;
+  overflow-wrap: anywhere;
   line-height: 1.3;
   font-family: var(--serif);
   font-size: 29px;
@@ -548,28 +550,37 @@ h3[id] {
 }
 .entry-topics {
   display: flex;
-  align-items: center;
-  gap: 6px 10px;
-  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 4px 0;
+  flex-wrap: wrap;
   flex: 0 0 auto;
   min-width: 0;
-  overflow: visible;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   margin-top: auto;
   padding-top: 14px;
 }
 .entry-topic {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
+  min-width: 0;
   color: var(--accent);
   font-family: var(--font-sans);
   font-size: 15px;
   line-height: 1.4;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.entry-topic + .entry-topic::before {
+  content: "·";
+  display: inline-block;
+  margin: 0 8px 0 5px;
+  color: var(--muted);
 }
 .archive-list .archive-entry {
   border-top: 1px solid var(--rule);
 }
 .archive-list .archive-entry-link {
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 180px minmax(0, 1fr);
   align-items: start;
   gap: 24px;
   padding: 20px 0;
@@ -603,11 +614,10 @@ h3[id] {
   color: var(--muted);
 }
 .archive-list .entry-topics {
-  gap: 9px;
+  gap: 4px 0;
   margin-top: auto;
   padding-top: 8px;
   line-height: 1.25;
-  overflow: visible;
 }
 .archive-list .entry-topic {
   font-size: 15px;
