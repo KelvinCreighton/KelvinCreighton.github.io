@@ -549,15 +549,20 @@ h3[id] {
 .entry-topics {
   display: flex;
   align-items: center;
-  gap: 7px 12px;
+  gap: 6px 10px;
   flex-wrap: wrap;
+  min-width: 0;
+  overflow: hidden;
+  height: 16.8px;
   margin-top: 20px;
 }
 .entry-topic {
+  flex: 0 0 auto;
   color: var(--accent);
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.4;
+  white-space: nowrap;
 }
 .archive-list .archive-entry {
   border-top: 1px solid var(--rule);
@@ -597,9 +602,10 @@ h3[id] {
   gap: 9px;
   margin-top: 6px;
   line-height: 1.25;
+  overflow: hidden;
 }
 .archive-list .entry-topic {
-  font-size: 16px;
+  font-size: 12px;
 }
 .history-year {
   display: grid;

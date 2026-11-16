@@ -15,20 +15,46 @@ import { events, achievements } from "@/data/community";
 
 type Props = { fixedCategory?: CategoryId };
 
-const topicStopWords = new Set(["and", "or", "the", "of", "to", "with"]);
+const projectTopics: Record<string, string[]> = {
+  machineguard: ["ESP32-S3", "Vibration Sensing", "BLE Firmware"],
+  "dremel-3d45-rebuild": ["Arduino Mega", "RAMPS", "Marlin", "Motion Control"],
+  "file-system-simulator": ["C", "Inodes", "File Allocation", "Defragmentation"],
+  "mapreduce-library": ["C", "POSIX Threads", "Thread Pools", "Hash Partitioning"],
+  dragonshell: ["C", "Process Control", "Pipes", "Signal Handling"],
+  ssti1: ["Jinja2", "Template Injection", "Sandbox Escape", "RCE"],
+  "nosql-injection": ["MongoDB", "NoSQL Injection", "Authentication Bypass"],
+  eval: ["Python", "Code Injection", "Blacklist Bypass", "RCE"],
+  soap: ["XXE", "SOAP", "Local File Inclusion", "XML"],
+  "macsync-stealer": ["Static Analysis", "macOS", "Shell Scripts", "Malware"],
+  "cupid-portal": ["IDOR", "Web Security", "Routing", "Challenge Design"],
+  heartmail: ["SQL Injection", "SSH", "Web Security", "Challenge Design"],
+  "wicys-ctf-01": ["Digital Forensics", "Steganography", "PNG", "Binwalk"],
+  "wicys-ctf-02": ["Reverse Engineering", "Binary Analysis", "Strings"],
+  "wicys-ctf-03": ["Reverse Engineering", "GDB", "Disassembly"],
+  "wicys-ctf-04": ["Buffer Overflow", "Binary Exploitation", "Ret2Win"],
+  "wicys-ctf-05": ["Heap Exploitation", "Function Pointers", "Memory Safety"],
+  "wicys-ctf-06": ["ROP", "Control Flow", "Libc", "Exploit Development"],
+  "wicys-ctf-07": ["Client-Side Security", "Source Inspection", "Web"],
+  "wicys-ctf-08": ["API Security", "HTTP Headers", "Curl", "Web"],
+  "wicys-ctf-09": ["Authentication Bypass", "HTTP Headers", "Web Security"],
+  "dremel-3d45": ["Diagnostics", "Disassembly", "3D Printing"],
+  "rc-car": ["Mechanical Design", "Electronics", "Prototyping", "Teaching"],
+  "robotic-arm-simulation": ["Inverse Kinematics", "Numerical Methods", "MATLAB", "Robotics"],
+  "tacoma-valve-cover": ["Engine Repair", "Part Modification", "Leak Diagnosis"],
+  "transmission-rebuild": ["Transmission Repair", "Diagnostics", "Assembly"],
+  "my-first-game": ["JavaScript", "Level Design", "2D Gameplay"],
+  ufo: ["JavaScript", "Movement", "Level Design"],
+  "tank-game": ["JavaScript", "2D Gameplay", "Game Logic"],
+  "plastic-mind": ["Processing", "p5.js", "Physics", "Game Controls"],
+  "3d-game": ["JavaScript", "3D Projection", "Matrix Math"],
+  "blackhole-simulator": ["JavaScript", "Orbital Mechanics", "Simulation"],
+  "blind-justice-investigation": ["Piano", "Arrangement", "Multi-Voice"],
+  "beethoven-virus": ["Piano", "Arrangement"],
+  "the-longest-moment": ["Piano", "Composition"],
+};
 
-function projectTopics(tags: string[]) {
-  const seen = new Set<string>();
-  return tags
-    .flatMap((tag) => tag.match(/[A-Za-z0-9][A-Za-z0-9+#.-]*/g) || [])
-    .filter((word) => !topicStopWords.has(word.toLowerCase()))
-    .filter((word) => {
-      const key = word.toLowerCase();
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    })
-    .slice(0, 5);
+function topicsForProject(id: string) {
+  return projectTopics[id] || [];
 }
 
 function ArchiveContent({
@@ -227,7 +253,7 @@ function ArchiveContent({
                   <h2>{p.title}</h2>
                   <p>{p.summary}</p>
                   <div className="entry-topics" aria-label="Project topics">
-                    {projectTopics(p.tags).map((topic) => (
+                    {topicsForProject(p.id).map((topic) => (
                       <span className="entry-topic" key={topic}>
                         {topic}
                       </span>
