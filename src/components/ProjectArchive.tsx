@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import BlurImage from "@/components/BlurImage";
 import {
   categories,
@@ -314,12 +315,22 @@ export function StaticProjectArchive(props: Props) {
   );
 }
 export default function ProjectArchive(props: Props) {
+  const initialSearchParams = useSearchParams();
+  const linkedCategory = initialSearchParams.get("category");
   const [params, setParams] = useState(
-    () =>
-      new URLSearchParams(
-        props.fixedCategory ? [["category", props.fixedCategory]] : [],
-      ),
+    () => {
+      const initial = new URLSearchParams(initialSearchParams.toString());
+      if (!initial.has("category") && props.fixedCategory)
+        initial.set("category", props.fixedCategory);
+      return initial;
+    },
   );
+  useEffect(() => {
+    if (!linkedCategory) return;
+    const cleanUrl = new URL(window.location.href);
+    cleanUrl.searchParams.delete("category");
+    window.history.replaceState(null, "", cleanUrl);
+  }, [linkedCategory]);
   function update(key: string, value: string) {
     const next = new URLSearchParams(params.toString());
     if (key === "reset") {

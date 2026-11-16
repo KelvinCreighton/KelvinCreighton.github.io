@@ -319,7 +319,7 @@
   gap: 15px;
   color: inherit;
 }
-.topic-card-link:hover {
+.home-page .topic-card-link:hover {
   text-decoration: none;
 }
 .topic-card-link > *,

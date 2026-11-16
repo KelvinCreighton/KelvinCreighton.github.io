@@ -208,7 +208,7 @@ export default function Home() {
             {categories.map((category) => (
               <li key={category.id}>
                 <Link
-                  href={`/projects/${category.id}`}
+                  href={`/projects?category=${category.id}`}
                   className="topic-card-link"
                 >
                   <FieldMark />
