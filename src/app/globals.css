@@ -546,26 +546,18 @@ h3[id] {
 .entry-meta .vehicle {
   font-style: italic;
 }
-.entry-actions {
+.entry-topics {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 7px 12px;
   flex-wrap: wrap;
-  font-size: 12px;
-  color: var(--accent);
   margin-top: 20px;
 }
-.entry-actions span {
-  color: var(--muted);
-  font-size: 12px;
-}
-.status-label {
-  display: inline-block;
-  line-height: 1.5;
+.entry-topic {
+  color: var(--accent);
   font-family: var(--font-sans);
-  font-size: 12px;
-  color: var(--signal);
-  border-bottom: 0;
+  font-size: 16px;
+  line-height: 1.4;
 }
 .archive-list .archive-entry {
   border-top: 1px solid var(--rule);
@@ -601,13 +593,13 @@ h3[id] {
   line-height: 1.4;
   color: var(--muted);
 }
-.archive-list .entry-actions {
+.archive-list .entry-topics {
   gap: 9px;
   margin-top: 6px;
   line-height: 1.25;
 }
-.archive-list .entry-actions span {
-  font-size: 12px;
+.archive-list .entry-topic {
+  font-size: 16px;
 }
 .history-year {
   display: grid;

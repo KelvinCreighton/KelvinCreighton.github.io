@@ -14,6 +14,23 @@ import {
 import { events, achievements } from "@/data/community";
 
 type Props = { fixedCategory?: CategoryId };
+
+const topicStopWords = new Set(["and", "or", "the", "of", "to", "with"]);
+
+function projectTopics(tags: string[]) {
+  const seen = new Set<string>();
+  return tags
+    .flatMap((tag) => tag.match(/[A-Za-z0-9][A-Za-z0-9+#.-]*/g) || [])
+    .filter((word) => !topicStopWords.has(word.toLowerCase()))
+    .filter((word) => {
+      const key = word.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .slice(0, 5);
+}
+
 function ArchiveContent({
   fixedCategory,
   params,
@@ -207,27 +224,14 @@ function ArchiveContent({
                       )}
                     </span>
                   </div>
-                  <h2>
-                    {p.title}
-                  </h2>
+                  <h2>{p.title}</h2>
                   <p>{p.summary}</p>
-                  <div className="entry-actions">
-                    <span>
-                      {p.capabilities.includes("play")
-                        ? "Play & read"
-                        : p.capabilities.includes("listen")
-                          ? "Score & playback"
-                          : p.capabilities.includes("simulate")
-                            ? "Explore simulation"
-                            : "Read project"}
-                    </span>
-                    {p.availability === "coming-soon" ? (
-                      <span className="status-label">Release pending</span>
-                    ) : p.state !== "complete" ? (
-                      <span className="status-label">
-                        {p.state === "prototype" ? "Prototype" : "In progress"}
+                  <div className="entry-topics" aria-label="Project topics">
+                    {projectTopics(p.tags).map((topic) => (
+                      <span className="entry-topic" key={topic}>
+                        {topic}
                       </span>
-                    ) : null}
+                    ))}
                   </div>
                 </div>
               </Link>

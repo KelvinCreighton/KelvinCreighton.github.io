@@ -570,12 +570,6 @@
 .archive-entry h2 span {
   color: var(--signal);
 }
-.entry-actions > span:first-child {
-  color: var(--accent);
-}
-.entry-actions .status-label {
-  color: var(--signal);
-}
 .case-heading .eyebrow {
   font: 13px var(--font-sans);
   color: var(--signal);
