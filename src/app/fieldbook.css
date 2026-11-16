@@ -266,7 +266,8 @@
   gap: 14px;
   color: inherit;
 }
-.note-card-link > div {
+.note-card-link > div,
+.note-card-link > .field-mark {
   transition: transform 220ms ease;
   transform-origin: center;
 }
@@ -278,6 +279,10 @@
 .note-list li:hover .note-card-link > div,
 .note-list li:focus-within .note-card-link > div {
   transform: scale(1.035);
+}
+.note-list li:hover .note-card-link > .field-mark,
+.note-list li:focus-within .note-card-link > .field-mark {
+  transform: translateX(-5px) scale(1.09);
 }
 .note-list li:first-child {
   padding-top: 6px;
@@ -351,15 +356,21 @@
   text-decoration: none;
 }
 .topic-card-link > div,
+.topic-card-link > .field-mark,
 .shelf-item > :not(.card-hit-area) {
   transition: transform 220ms ease;
 }
-.topic-card-link > div {
+.topic-card-link > div,
+.topic-card-link > .field-mark {
   transform-origin: center;
 }
 .topic-index li:hover .topic-card-link > div,
 .topic-index li:focus-within .topic-card-link > div {
   transform: scale(1.035);
+}
+.topic-index li:hover .topic-card-link > .field-mark,
+.topic-index li:focus-within .topic-card-link > .field-mark {
+  transform: translateX(-5px) scale(1.09);
 }
 .shelf-item:hover > :not(.card-hit-area),
 .shelf-item:focus-within > :not(.card-hit-area) {
