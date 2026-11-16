@@ -150,7 +150,10 @@ export default function Home() {
           <aside className="field-notes" aria-labelledby="notes-title">
             <div className="collection-heading">
               <h3 id="notes-title">
-                <Link href="/projects/cybersecurity">
+                <Link
+                  href="/projects/cybersecurity"
+                  className="security-heading-link"
+                >
                   Security, from the systems side <InlineArrow />
                 </Link>
               </h3>
