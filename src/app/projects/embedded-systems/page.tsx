@@ -6,7 +6,7 @@ import ProjectArchive, {
 export default function Page() {
   return (
     <>
-      <PageIntro number="01" title="Embedded Systems">
+      <PageIntro title="Embedded Systems">
         <p>
           Sensor hardware, firmware, and the software behind processes, files,
           and parallel work.

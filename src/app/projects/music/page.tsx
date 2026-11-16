@@ -6,7 +6,7 @@ import ProjectArchive, {
 export default function Page() {
   return (
     <>
-      <PageIntro number="01" title="Music">
+      <PageIntro title="Music">
         <p>
           Piano arrangements and original compositions. Open a score and listen
           along.

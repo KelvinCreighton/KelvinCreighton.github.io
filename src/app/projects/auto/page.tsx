@@ -6,7 +6,7 @@ import ProjectArchive, {
 export default function Page() {
   return (
     <>
-      <PageIntro number="01" title="Automotive">
+      <PageIntro title="Automotive">
         <p>
           Repair notes from the garage. Diagnosis, decisions, and the work in
           between.

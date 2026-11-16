@@ -6,7 +6,7 @@ import ProjectArchive, {
 export default function Page() {
   return (
     <>
-      <PageIntro number="01" title="Mechatronics">
+      <PageIntro title="Mechatronics">
         <p>
           Restoration, robotics, and making software interact with the physical
           world.

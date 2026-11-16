@@ -150,60 +150,6 @@ function ArchiveContent({
           </button>
         ))}
       </nav>
-      <div className="archive-controls">
-        <label>
-          <span className="control-label">Search this collection</span>
-          <input
-            type="search"
-            placeholder="Title, topic, technology…"
-            value={query}
-            onChange={(e) => update("q", e.target.value)}
-          />
-        </label>
-        {category !== "auto" &&
-          category !== "music" &&
-          collections.length > 1 && (
-            <label>
-              <span className="control-label">Collection</span>
-              <select
-                aria-label="Collection"
-                value={collection}
-                onChange={(e) => update("collection", e.target.value)}
-              >
-                <option value="all">All collections</option>
-                {collections.map((c) => (
-                  <option key={c}>{c}</option>
-                ))}
-              </select>
-            </label>
-          )}
-        {category === "auto" && vehicles.length > 0 && (
-          <label>
-            <span className="control-label">Vehicle</span>
-            <select
-              aria-label="Vehicle"
-              value={vehicle}
-              onChange={(e) => update("vehicle", e.target.value)}
-            >
-              <option value="all">All vehicles</option>
-              {vehicles.map((v) => (
-                <option key={v}>{v}</option>
-              ))}
-            </select>
-          </label>
-        )}
-        <label>
-          <span className="control-label">Date order</span>
-          <select
-            aria-label="Date order"
-            value={order}
-            onChange={(e) => update("order", e.target.value)}
-          >
-            <option value="newest">Newest first</option>
-            <option value="oldest">Oldest first</option>
-          </select>
-        </label>
-      </div>
       <div className="archive-count">
         <p role="status">
           {results.length} {results.length === 1 ? "project" : "projects"}

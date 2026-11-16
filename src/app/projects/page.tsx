@@ -6,7 +6,7 @@ import ProjectArchive, {
 export default function Page() {
   return (
     <>
-      <PageIntro number="01" title="A record of making.">
+      <PageIntro title="Projects">
         <p>
           Software, hardware, repair, and the occasional piece of music. Browse
           the full archive, or follow a discipline.

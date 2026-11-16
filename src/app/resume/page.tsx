@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <PageIntro number="04" title="Closer to the hardware.">
+      <PageIntro title="Closer to the hardware.">
         <p>
           I’m Kelvin Creighton. My interests sit where software meets physical
           systems: firmware, operating systems, hardware integration, and the

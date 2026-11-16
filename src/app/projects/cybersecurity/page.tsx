@@ -6,7 +6,7 @@ import ProjectArchive, {
 export default function Page() {
   return (
     <>
-      <PageIntro number="01" title="Cybersecurity">
+      <PageIntro title="Cybersecurity">
         <p>
           Investigations, challenge design, and the details that make a system
           vulnerable.

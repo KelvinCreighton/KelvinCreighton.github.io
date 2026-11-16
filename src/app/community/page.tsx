@@ -5,7 +5,7 @@ import { events } from "@/data/community";
 export default function Page() {
   return (
     <>
-      <PageIntro number="03" title="Good work takes people.">
+      <PageIntro title="Good work takes people.">
         <p>
           Organizing competitions, keeping events running, and helping people
           find their way into security. The work around the work.

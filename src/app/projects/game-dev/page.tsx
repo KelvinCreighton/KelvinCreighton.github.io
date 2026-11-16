@@ -6,7 +6,7 @@ import ProjectArchive, {
 export default function Page() {
   return (
     <>
-      <PageIntro number="01" title="Games & Simulation">
+      <PageIntro title="Games & Simulation">
         <p>
           Experiments in movement, physics, and play, going back to my first
           JavaScript games.
