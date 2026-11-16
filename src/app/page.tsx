@@ -55,9 +55,9 @@ export default function Home() {
         </h1>
         <div className="field-intro-copy">
           <p className="field-intro-description">
-            My background is in Computer Science at the University of Alberta,
-            with a focus on embedded software and systems programming. I work
-            with C/C++, microcontrollers, and Linux, exploring the relationship
+            With a Computer Science background from the University of Alberta,
+            I focus on embedded software and systems programming. I work with
+            C/C++, microcontrollers, and Linux, exploring the relationship
             between hardware and software.
           </p>
           <div className="field-intro-links" aria-label="Contact links">
