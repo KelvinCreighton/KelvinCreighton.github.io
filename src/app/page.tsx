@@ -57,10 +57,10 @@ export default function Home() {
         </h1>
         <div className="field-intro-copy">
           <p className="field-intro-description">
-            I&apos;m a Computer Science student at the University of Alberta
-            focused on embedded software and firmware. I work with
-            microcontrollers, Linux, and low-level systems to understand how
-            software makes hardware work.
+            I build embedded software and firmware, usually close to the
+            hardware. I work with microcontrollers, Linux, and low-level
+            systems, and I like understanding what the tools and abstractions
+            are doing underneath.
           </p>
           <Link className="field-intro-link" href="/resume">
             More about me <span aria-hidden="true">↗</span>

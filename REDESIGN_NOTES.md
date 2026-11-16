@@ -33,7 +33,7 @@ The transparent MachineGuard wiring diagram contains both white labels and black
 
 ## Homepage
 
-1. A large first-person introduction positions Kelvin as a Computer Science student focused on embedded software, firmware, and computer architecture. The copy describes his build-first learning style and links to the existing résumé. `who_i_am.txt` informed this wording as a guide, not as a verified source of every biography claim.
+1. A large first-person introduction positions Kelvin around embedded software, firmware, microcontrollers, Linux, and low-level systems without foregrounding education or career stage. It links to the existing résumé. `who_i_am.txt` informed this wording as a guide, not as a verified source of every biography claim.
 2. **Project Highlights** introduces the collection and links to all 35 projects.
 3. **Selected builds** pairs four project photographs with short descriptions: MachineGuard, the RC car curriculum, the Dremel controller rebuild, and the manual transmission rebuild.
 4. **Security, from the systems side** presents cybersecurity as a complementary technical perspective and links to the existing writeups.

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Kelvin Creighton",
   },
   description:
-    "Kelvin Creighton is a Computer Science student at the University of Alberta building projects in embedded systems, firmware, and systems programming.",
+    "Kelvin Creighton builds embedded software and firmware, working with microcontrollers, Linux, and low-level systems.",
   authors: [{ name: "Kelvin Creighton" }],
   openGraph: {
     title: "Kelvin Creighton — Embedded Systems & Firmware",

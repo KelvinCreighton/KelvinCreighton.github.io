@@ -9,7 +9,7 @@ export function Hero() {
   const phrases = [
     "VP of Events @ UofA Cybersecurity Club (CHADS)",
     "Chapter Leader @ OWASP Edmonton",
-    "4th Year Computer Science Student",
+    "Embedded Systems & Firmware",
     "Web Exploitation & Network Security Enthusiast",
   ];
 
