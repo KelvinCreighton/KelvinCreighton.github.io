@@ -41,48 +41,60 @@ export default function Page() {
             <dl>
               <div>
                 <dt>
-                  <Link href="/projects/embedded-systems/machineguard">
-                    Embedded hardware & firmware ↗
-                  </Link>
+                  Embedded hardware & firmware ↗
                 </dt>
                 <dd>
                   MachineGuard: ESP32-S3 sensor integration, buffered
                   acquisition, and Bluetooth Low Energy data transfer for a team
                   prototype.
                 </dd>
+                <Link
+                  className="card-hit-area"
+                  href="/projects/embedded-systems/machineguard"
+                  aria-label="View MachineGuard"
+                />
               </div>
               <div>
                 <dt>
-                  <Link href="/projects/embedded-systems/dragonshell">
-                    Systems programming ↗
-                  </Link>
+                  Systems programming ↗
                 </dt>
                 <dd>
                   DragonShell, a MapReduce library, and a file-system simulator:
                   C, processes, file descriptors, threads, and storage.
                 </dd>
+                <Link
+                  className="card-hit-area"
+                  href="/projects/embedded-systems/dragonshell"
+                  aria-label="View DragonShell"
+                />
               </div>
               <div>
                 <dt>
-                  <Link href="/projects/engineering/dremel-3d45-rebuild">
-                    Hardware integration & repair ↗
-                  </Link>
+                  Hardware integration & repair ↗
                 </dt>
                 <dd>
                   Diagnosing a failed printer controller, adapting Marlin
                   firmware, and testing replacement control hardware.
                 </dd>
+                <Link
+                  className="card-hit-area"
+                  href="/projects/engineering/dremel-3d45-rebuild"
+                  aria-label="View the Dremel 3D45 rebuild"
+                />
               </div>
               <div>
                 <dt>
-                  <Link href="/projects/cybersecurity">
-                    Security investigations & challenge design ↗
-                  </Link>
+                  Security investigations & challenge design ↗
                 </dt>
                 <dd>
                   CTF writeups, challenge development, and competition work with
                   CHADS.
                 </dd>
+                <Link
+                  className="card-hit-area"
+                  href="/projects/cybersecurity"
+                  aria-label="View cybersecurity projects"
+                />
               </div>
             </dl>
           </section>

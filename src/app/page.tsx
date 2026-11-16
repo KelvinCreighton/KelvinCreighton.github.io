@@ -167,13 +167,13 @@ export default function Home() {
                 const project = getProject(id)!;
                 return (
                   <li key={id}>
-                    <FieldMark />
-                    <div>
-                      <h4>
-                        <Link href={project.href}>{project.title}</Link>
-                      </h4>
-                      <span>{project.contribution}</span>
-                    </div>
+                    <Link href={project.href} className="note-card-link">
+                      <FieldMark />
+                      <div>
+                        <h4>{project.title}</h4>
+                        <span>{project.contribution}</span>
+                      </div>
+                    </Link>
                   </li>
                 );
               })}
@@ -207,19 +207,20 @@ export default function Home() {
           <ul>
             {categories.map((category) => (
               <li key={category.id}>
-                <FieldMark />
-                <div>
-                  <h3>
-                    <Link href={`/projects/${category.id}`}>
-                      {category.title}
-                    </Link>
-                  </h3>
-                  <p>{category.description}</p>
-                  <span>
-                    {projects.filter((p) => inCategory(p, category.id)).length}{" "}
-                    projects
-                  </span>
-                </div>
+                <Link
+                  href={`/projects/${category.id}`}
+                  className="topic-card-link"
+                >
+                  <FieldMark />
+                  <div>
+                    <h3>{category.title}</h3>
+                    <p>{category.description}</p>
+                    <span>
+                      {projects.filter((p) => inCategory(p, category.id)).length}{" "}
+                      projects
+                    </span>
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>
@@ -234,11 +235,8 @@ export default function Home() {
               const project = getProject(id)!;
               return (
                 <article className="shelf-item" key={id}>
-                  <Link
-                    href={project.href}
+                  <div
                     className={`shelf-cover ${project.category === "music" ? "score-cover" : ""}`}
-                    tabIndex={-1}
-                    aria-hidden="true"
                   >
                     <Image
                       src={project.image}
@@ -246,11 +244,14 @@ export default function Home() {
                       fill
                       sizes="(max-width: 600px) 42vw, 240px"
                     />
-                  </Link>
-                  <h3>
-                    <Link href={project.href}>{project.title}</Link>
-                  </h3>
+                  </div>
+                  <h3>{project.title}</h3>
                   <p>{project.contribution}</p>
+                  <Link
+                    className="card-hit-area"
+                    href={project.href}
+                    aria-label={`View ${project.title}`}
+                  />
                   <Link
                     className="shelf-action"
                     href={`${project.href}#interactive-demo`}

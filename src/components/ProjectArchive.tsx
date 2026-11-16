@@ -246,60 +246,55 @@ function ArchiveContent({
         <div className={view === "list" ? "archive-list" : "archive-grid"}>
           {results.map((p) => (
             <article className="archive-entry" key={p.id}>
-              <Link
-                href={p.href}
-                className="archive-image"
-                tabIndex={-1}
-                aria-hidden="true"
-              >
-                <BlurImage
-                  src={p.image}
-                  alt=""
-                  fill
-                  sizes={
-                    view === "list"
-                      ? "180px"
-                      : "(max-width: 760px) 90vw, (max-width: 1320px) 45vw, 590px"
-                  }
-                  className="object-cover"
-                />
-              </Link>
-              <div className="entry-copy">
-                <div className="entry-meta">
-                  <span>{p.dateLabel}</span>
-                  <span>
-                    {p.vehicle ? (
-                      <em>{p.vehicle}</em>
-                    ) : (
-                      categoryName(p.category)
-                    )}
-                  </span>
+              <Link href={p.href} className="archive-entry-link">
+                <div className="archive-image">
+                  <BlurImage
+                    src={p.image}
+                    alt=""
+                    fill
+                    sizes={
+                      view === "list"
+                        ? "180px"
+                        : "(max-width: 760px) 90vw, (max-width: 1320px) 45vw, 590px"
+                    }
+                    className="object-cover"
+                  />
                 </div>
-                <h2>
-                  <Link href={p.href}>
-                    {p.title} <span aria-hidden="true">↗</span>
-                  </Link>
-                </h2>
-                <p>{p.summary}</p>
-                <div className="entry-actions">
-                  <span>
-                    {p.capabilities.includes("play")
-                      ? "Play & read"
-                      : p.capabilities.includes("listen")
-                        ? "Score & playback"
-                        : p.capabilities.includes("simulate")
-                          ? "Explore simulation"
-                          : "Read project"}
-                  </span>
-                  {p.availability === "coming-soon" ? (
-                    <span className="status-label">Release pending</span>
-                  ) : p.state !== "complete" ? (
-                    <span className="status-label">
-                      {p.state === "prototype" ? "Prototype" : "In progress"}
+                <div className="entry-copy">
+                  <div className="entry-meta">
+                    <span>{p.dateLabel}</span>
+                    <span>
+                      {p.vehicle ? (
+                        <em>{p.vehicle}</em>
+                      ) : (
+                        categoryName(p.category)
+                      )}
                     </span>
-                  ) : null}
+                  </div>
+                  <h2>
+                    {p.title} <span aria-hidden="true">↗</span>
+                  </h2>
+                  <p>{p.summary}</p>
+                  <div className="entry-actions">
+                    <span>
+                      {p.capabilities.includes("play")
+                        ? "Play & read"
+                        : p.capabilities.includes("listen")
+                          ? "Score & playback"
+                          : p.capabilities.includes("simulate")
+                            ? "Explore simulation"
+                            : "Read project"}
+                    </span>
+                    {p.availability === "coming-soon" ? (
+                      <span className="status-label">Release pending</span>
+                    ) : p.state !== "complete" ? (
+                      <span className="status-label">
+                        {p.state === "prototype" ? "Prototype" : "In progress"}
+                      </span>
+                    ) : null}
+                  </div>
                 </div>
-              </div>
+              </Link>
             </article>
           ))}
         </div>
