@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ThemeToggle } from "./theme-toggle";
 
 const links = [
   { name: "Projects", href: "/projects" },
@@ -45,7 +44,6 @@ export function NavBar() {
           </Link>
         ))}
       </nav>
-      <ThemeToggle />
       <button
         ref={button}
         type="button"

@@ -30,7 +30,7 @@ Open `http://localhost:8080`. `next start` does not serve the static export. Pub
 - `src/components/CaseStudyLayout.tsx`: common project header, contribution/outcome summaries, contents navigation, and related work.
 - `src/components/ProjectArchive.tsx`: search, collection and vehicle filters, gallery/index/history views, and URL state.
 - `src/components/DemoFrame.tsx` and `InteractiveProject.tsx`: on-demand games, robotics simulation, and sheet music.
-- `src/app/globals.css`: the Fieldbook palette, typography, responsive layouts, and light/dark themes.
+- `src/app/globals.css`: the fixed dark Fieldbook palette, typography, and shared responsive layouts.
 - `src/app/fieldbook.css`: the illustrated homepage and shared editorial refinements.
 - `src/app/font-faces.css` and `public/fonts`: self-hosted Newsreader/Lato font files and their open licenses.
 - `public/games`, `public/scores`, `public/downloads`: original interactive artifacts and challenge files.

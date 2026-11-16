@@ -16,8 +16,8 @@ async function main() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        background: "#f6f5f1",
-        color: "#363634",
+        background: "#1c1b18",
+        color: "#d4d1cc",
         padding: "64px 72px",
       },
     },
@@ -31,7 +31,7 @@ async function main() {
         },
       },
       h("span", null, "Kelvin Creighton"),
-      h("span", { style: { color: "#087981" } }, "The Fieldbook"),
+      h("span", { style: { color: "#34bac6" } }, "The Fieldbook"),
     ),
     h(
       "div",
@@ -46,7 +46,7 @@ async function main() {
         },
       },
       h("span", null, "Software, hardware,"),
-      h("span", { style: { color: "#762657" } }, "and a curious mind."),
+      h("span", { style: { color: "#f078b8" } }, "and a curious mind."),
     ),
     h(
       "div",
@@ -54,7 +54,7 @@ async function main() {
         style: {
           display: "flex",
           justifyContent: "space-between",
-          borderTop: "1px solid #deddd6",
+          borderTop: "1px solid #44413e",
           paddingTop: 24,
           fontSize: 22,
         },

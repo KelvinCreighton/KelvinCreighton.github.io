@@ -352,7 +352,7 @@
   opacity: 0.91;
 }
 .dark .build-art {
-  background: #303630;
+  background: var(--raised);
 }
 
 @media (min-width: 1400px) {

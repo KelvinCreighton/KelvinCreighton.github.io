@@ -13,22 +13,9 @@
     360
   ],
   "themes": [
-    "light",
     "dark"
   ],
   "checks": [
-    {
-      "name": "light 1440px gallery columns",
-      "pass": true
-    },
-    {
-      "name": "light 768px gallery columns",
-      "pass": true
-    },
-    {
-      "name": "light 360px gallery columns",
-      "pass": true
-    },
     {
       "name": "dark 1440px gallery columns",
       "pass": true

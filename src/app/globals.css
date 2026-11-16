@@ -7,36 +7,23 @@
   --color-gray-85: #eeede6;
 }
 :root {
-  /* Warm paper, plum links, and teal details. */
+  /* Fixed dark palette adapted from the reference's dark appearance. */
   --rust: var(--signal);
   --background: var(--paper);
   --foreground: var(--ink);
-  color-scheme: light;
-  --paper: #f6f5f1;
-  --surface: #eeede6;
-  --raised: #fdfcf9;
-  --ink: #363634;
-  --muted: #696762;
-  --accent: #762657;
-  --signal: #067079;
-  --on-signal: #ffffff;
-  --signal-soft: #e0edeb;
-  --rule: #deddd6;
+  color-scheme: dark;
+  --paper: #1c1b18;
+  --surface: #252420;
+  --raised: #252420;
+  --ink: #d4d1cc;
+  --muted: #aaa7a2;
+  --accent: #f078b8;
+  --signal: #34bac6;
+  --on-signal: #1c1b18;
+  --signal-soft: #253f42;
+  --rule: #44413e;
   --focus: var(--signal);
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
-}
-.dark {
-  color-scheme: dark;
-  --paper: #222522;
-  --surface: #303630;
-  --raised: #292e2a;
-  --ink: #e9e7df;
-  --muted: #b5b8b0;
-  --accent: #e3a5cc;
-  --signal: #72c7cb;
-  --on-signal: #222522;
-  --signal-soft: #344c49;
-  --rule: #484d46;
 }
 * {
   box-sizing: border-box;
@@ -230,19 +217,6 @@ h3[id] {
   bottom: 1px;
   left: 0;
   right: 0;
-}
-.theme-toggle {
-  width: 44px;
-  height: 44px;
-  background: none;
-  border-radius: 50%;
-  display: grid;
-  place-content: center;
-  border: 0;
-  font-size: 22px;
-}
-.theme-toggle:hover {
-  background: var(--surface);
 }
 .menu-toggle {
   display: none;
@@ -1139,10 +1113,6 @@ h3[id] {
     font-size: 12px;
     min-height: 44px;
   }
-  .theme-toggle {
-    border: 0;
-    width: 36px;
-  }
   .mobile-nav {
     position: absolute;
     right: 0;
@@ -1357,8 +1327,8 @@ h3[id] {
   .project-body {
     max-width: none;
   }
-  :root,
-  .dark {
+  :root {
+    color-scheme: light;
     --paper: white;
     --ink: black;
     --muted: #333;

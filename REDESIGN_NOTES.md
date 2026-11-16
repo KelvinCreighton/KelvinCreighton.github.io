@@ -8,7 +8,7 @@ The first redesign is available in commit `dbb8084` (rough draft). The pre-redes
 
 The reference was inspected in a browser at desktop and phone widths, alongside its [Garden](https://maggieappleton.com/garden), article layout, and [colophon](https://maggieappleton.com/colophon).
 
-The adopted ideas are a large serif introduction, a warm paper surface, small plum and teal accents, illustrated cards beside simpler lists, generous gaps between collections, and a quiet footer. These are adapted to engineering projects, security investigations, games, and music.
+The adopted ideas are a large serif introduction, a dark charcoal surface, bright pink and cyan accents, illustrated cards beside simpler lists, generous gaps between collections, and a quiet footer. These are adapted to engineering projects, security investigations, games, and music.
 
 The reference's essays/notes/patterns/library organization becomes selected builds, investigations, discipline links, and an interactive shelf. Project states remain factual: completed, prototype, in progress, or release pending. The site does not relabel engineering work with botanical growth stages or invent a stream of essays to fill the layout.
 
@@ -16,17 +16,16 @@ The reference uses commercial Canela and supporting Lato type. This implementati
 
 ## Visual system
 
-| Purpose | Light theme | Dark theme |
-| --- | --- | --- |
-| Paper | `#F6F5F1` | `#222522` |
-| Subtle surface | `#EEEDE6` | `#303630` |
-| Raised card | `#FDFCF9` | `#292E2A` |
-| Primary text | `#363634` | `#E9E7DF` |
-| Supporting text | `#696762` | `#B5B8B0` |
-| Plum links | `#762657` | `#E3A5CC` |
-| Teal details and focus | `#067079` | `#72C7CB` |
+| Purpose | Fixed palette |
+| --- | --- |
+| Background | `#1C1B18` |
+| Cards | `#252420` |
+| Primary text | `#D4D1CC` |
+| Supporting text | `#AAA7A2` |
+| Pink links | `#F078B8` |
+| Cyan details and focus | `#34BAC6` |
 
-The page has no gradient, glow, animated backdrop, or large promotional colour panels. Colour comes from links, small ornaments, original illustrations, and actual project imagery. Dark mode remains a first-class alternative and its preference is saved locally.
+The site now uses only the reference's dark appearance. The light palette and visitor theme switch were removed. Colour comes from links, small ornaments, original illustrations, and actual project imagery.
 
 Four original SVG covers depict a sensor board, shell windows, a printer rebuild, and gearbox parts. They are conceptual illustrations, not technical diagrams. Actual project photographs and diagrams remain in the archive and detailed pages. The SVGs are rendered directly without an illustration library, image service, or animation dependency.
 
@@ -46,7 +45,7 @@ The former separate approach pitch, oversized project colour panels, and repeate
 
 ## Archive and reading pages
 
-The archive keeps its two-column desktop gallery, single-column phone gallery, Index, and History. Cards now use restrained paper borders, serif titles, and room around their summaries. Original photos remain the main archive imagery.
+The archive keeps its two-column desktop gallery, single-column phone gallery, Index, and History. Cards use restrained charcoal borders, serif titles, and room around their summaries. Original photos remain the main archive imagery.
 
 Existing search, collection filtering, Automotive vehicle filtering, independent date ordering, query parameters, and browser-history behavior are unchanged. History includes 11 community/achievement records when no project filter is active. The old Cybersecurity `?category=WiCyS%20CTF` links still work.
 
@@ -76,7 +75,7 @@ Useful review routes:
 - CTF downloads, local flag checks, and spoiler-controlled solutions. Upcoming challenges remain unavailable.
 - Both résumé PDFs and optional preview.
 - Five achievements, six event/leadership records, existing fragments, and image enlargement.
-- Email, GitHub, LinkedIn, mobile navigation, keyboard focus, reduced-motion support, and persistent light/dark mode.
+- Email, GitHub, LinkedIn, mobile navigation, keyboard focus, and reduced-motion support.
 
 No project registry facts, source links, challenge binaries, game files, scores, or résumé PDFs were rewritten in this visual pass. Existing context and limitations are retained. `who_i_am.txt` remains guidance rather than an independently verified résumé.
 
@@ -94,10 +93,10 @@ No project registry facts, source links, challenge binaries, game files, scores,
 ## Verification of this revision
 
 - Production `npm run build` passed, including TypeScript and all 53 generated routes/assets.
-- Six representative content routes were checked at 1,440, 768, and 360 px in both themes. Checks covered horizontal overflow, visible image loading, font loading, one H1, and one main landmark. No findings or page errors.
-- All 31 existing interaction checks passed, including archive search/reset/empty states, invalid and legacy queries, vehicle filtering, sorting and browser history, image-dialog focus/scroll locking, both CTF flag outcomes, spoilers, demo launch/teardown, music rendering and playback controls, robotics rendering, résumé selection, theme persistence, and the mobile menu.
+- The final dark palette was checked on six representative routes at 1,440, 768, and 360 px. Checks covered horizontal overflow, visible image loading, font loading, one H1, one main landmark, and removal of the theme switch. No findings or page errors.
+- The earlier 31 interaction checks passed, including archive search/reset/empty states, invalid and legacy queries, vehicle filtering, sorting and browser history, image-dialog focus/scroll locking, both CTF flag outcomes, spoilers, demo launch/teardown, music rendering and playback controls, robotics rendering, résumé selection, and the mobile menu.
 - The static export's 2,031 local link/resource references resolved with no missing targets.
-- Final text colours were adjusted for contrast on the paper, card, and callout surfaces. The wiring diagram's contrasting background was visually reviewed.
+- The technical wiring diagram's contrasting background was visually reviewed.
 - `git diff --check` passed.
 
 This was a Chromium review of representative layouts and interactions, not a full Safari/Firefox audit, screen-reader certification, or validation of game and numerical-model correctness. Local test servers are stopped after each check. Nothing was published.
@@ -108,10 +107,9 @@ Current revision:
 
 - [Desktop homepage](docs/redesign/reference/home-desktop.png)
 - [Phone homepage](docs/redesign/reference/home-mobile.png)
-- [Dark homepage](docs/redesign/reference/home-dark.png)
 - [Project archive](docs/redesign/reference/archive.png)
 - [MachineGuard reading page](docs/redesign/reference/case-study.png)
 - [Layout check results](docs/redesign/reference/layout-checks.json)
-- [Interaction check results](docs/redesign/reference/interaction-checks.json)
+- [Earlier interaction check results](docs/redesign/reference/interaction-checks.json)
 
 The original first-pass preview files in `docs/redesign/` remain for comparison.
