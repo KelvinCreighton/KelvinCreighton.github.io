@@ -16,8 +16,8 @@ async function main() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        background: "#f3f0e8",
-        color: "#202925",
+        background: "#f6f5f1",
+        color: "#363634",
         padding: "64px 72px",
       },
     },
@@ -31,7 +31,7 @@ async function main() {
         },
       },
       h("span", null, "Kelvin Creighton"),
-      h("span", { style: { color: "#58645c" } }, "A personal fieldbook"),
+      h("span", { style: { color: "#087981" } }, "The Fieldbook"),
     ),
     h(
       "div",
@@ -39,13 +39,14 @@ async function main() {
         style: {
           display: "flex",
           flexDirection: "column",
-          fontSize: 76,
-          letterSpacing: "-3px",
+          fontSize: 88,
+          fontFamily: "Newsreader",
+          letterSpacing: "-2px",
           lineHeight: 1.05,
         },
       },
-      h("span", null, "Understanding systems."),
-      h("span", { style: { color: "#2d624f" } }, "Building things."),
+      h("span", null, "Software, hardware,"),
+      h("span", { style: { color: "#762657" } }, "and a curious mind."),
     ),
     h(
       "div",
@@ -53,7 +54,7 @@ async function main() {
         style: {
           display: "flex",
           justifyContent: "space-between",
-          borderTop: "1px solid #c9cec3",
+          borderTop: "1px solid #deddd6",
           paddingTop: 24,
           fontSize: 22,
         },
@@ -62,7 +63,28 @@ async function main() {
       h("span", null, "kelvincreighton.ca"),
     ),
   );
-  const response = new ImageResponse(card, { width: 1200, height: 630 });
+  const response = new ImageResponse(card, {
+    width: 1200,
+    height: 630,
+    fonts: [
+      {
+        name: "Newsreader",
+        data: await fs.readFile(
+          path.join(__dirname, "../public/fonts/newsreader-400.ttf"),
+        ),
+        weight: 400,
+        style: "normal",
+      },
+      {
+        name: "Lato",
+        data: await fs.readFile(
+          path.join(__dirname, "../public/fonts/lato-400.ttf"),
+        ),
+        weight: 400,
+        style: "normal",
+      },
+    ],
+  });
   const png = Buffer.from(await response.arrayBuffer());
   for (const name of ["opengraph-image.png", "twitter-image.png"]) {
     await fs.writeFile(path.join(__dirname, "../src/app", name), png);

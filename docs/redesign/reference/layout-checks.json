@@ -1,0 +1,63 @@
+{
+  "routes": [
+    "/",
+    "/projects/",
+    "/projects/embedded-systems/machineguard/",
+    "/projects/cybersecurity/wicys-ctf-01/",
+    "/events/",
+    "/resume/"
+  ],
+  "widths": [
+    1440,
+    768,
+    360
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "checks": [
+    {
+      "name": "light 1440px gallery columns",
+      "pass": true
+    },
+    {
+      "name": "light 768px gallery columns",
+      "pass": true
+    },
+    {
+      "name": "light 360px gallery columns",
+      "pass": true
+    },
+    {
+      "name": "dark 1440px gallery columns",
+      "pass": true
+    },
+    {
+      "name": "dark 768px gallery columns",
+      "pass": true
+    },
+    {
+      "name": "dark 360px gallery columns",
+      "pass": true
+    },
+    {
+      "name": "Search still filters",
+      "pass": true
+    },
+    {
+      "name": "All 35 projects retained",
+      "pass": true
+    },
+    {
+      "name": "Index view",
+      "pass": true
+    },
+    {
+      "name": "History view",
+      "pass": true
+    }
+  ],
+  "findings": [],
+  "errors": []
+}

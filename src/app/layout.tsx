@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { NavBar } from "@/components/NavBar";
 import { Background } from "@/components/Background";
 import "./globals.css";
+import "./fieldbook.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://kelvincreighton.ca"),
   title: {
@@ -51,11 +52,8 @@ export default function RootLayout({
                 aria-label="Kelvin Creighton, home"
               >
                 <span className="monogram" aria-hidden="true">
-                  kc<span>.</span>
-                </span>
-                <span>
-                  Kelvin Creighton
-                  <span className="wordmark-note">A personal fieldbook</span>
+                  <span className="mark-bracket">⌁</span>kc
+                  <span className="mark-bracket">⌁</span>
                 </span>
               </Link>
               <NavBar />
@@ -67,13 +65,15 @@ export default function RootLayout({
           <footer className="site-footer">
             <div className="footer-top">
               <div>
-                <span className="eyebrow">Keep in touch</span>
                 <h2>Have something in mind?</h2>
                 <a className="text-link" href="mailto:kcreight@ualberta.ca">
                   kcreight@ualberta.ca <span aria-hidden="true">↗</span>
                 </a>
               </div>
               <div className="footer-links">
+                <Link href="/projects">The Fieldbook</Link>
+                <Link href="/events">Community</Link>
+                <Link href="/achievements">Achievements</Link>
                 <a
                   href="https://github.com/KelvinCreighton/"
                   target="_blank"
@@ -93,7 +93,7 @@ export default function RootLayout({
             </div>
             <div className="footer-bottom">
               <span>© {new Date().getFullYear()} Kelvin Creighton</span>
-              <span>Built, investigated, and documented.</span>
+              <span>A personal collection, always in progress.</span>
               <Link href="/projects/?view=history">
                 The complete fieldbook ↗
               </Link>

@@ -1,267 +1,274 @@
 import Link from "next/link";
 import Image from "@/components/BlurImage";
-import {
-  categories,
-  projects,
-  selectedProjects,
-  inCategory,
-} from "@/data/projects";
+import { ProjectArtwork, FieldMark } from "@/components/ProjectArtwork";
+import { categories, projects, getProject, inCategory } from "@/data/projects";
+
+const features = [
+  {
+    id: "machineguard",
+    title: "Listening to a machine",
+    description:
+      "A sensor, an ESP32, and a power drill. Building the hardware and firmware for our MachineGuard prototype.",
+    kind: "Hardware & firmware",
+  },
+  {
+    id: "dragonshell",
+    title: "Under the shell",
+    description:
+      "Building DragonShell in C to understand processes, pipes, and what a command line actually does.",
+    kind: "Systems programming",
+  },
+  {
+    id: "dremel-3d45-rebuild",
+    title: "A second life for a 3D printer",
+    description:
+      "Replacing a failed controller with an Arduino Mega, RAMPS, and Marlin. An ongoing rebuild, one test at a time.",
+    kind: "Build in progress",
+  },
+  {
+    id: "transmission-rebuild",
+    title: "Taking the gearbox apart",
+    description:
+      "A manual transmission rebuild: following the diagnosis, working through the repair, and documenting the details.",
+    kind: "From the garage",
+  },
+];
+const notes = [
+  "macsync-stealer",
+  "ssti1",
+  "nosql-injection",
+  "soap",
+  "wicys-ctf-01",
+  "wicys-ctf-02",
+];
+const shelf = [
+  "robotic-arm-simulation",
+  "ufo",
+  "beethoven-virus",
+  "the-longest-moment",
+];
+
 export default function Home() {
-  const [lead, second, third] = selectedProjects;
   return (
     <div className="home-page">
-      <section className="home-intro">
-        <div>
-          <p className="eyebrow">
-            <span className="small-rule" />
-            Software / Hardware / Curiosity
-          </p>
-          <h1>
-            Understanding systems.
-            <br />
-            <em>Building things.</em>
-          </h1>
-          <div className="intro-bottom">
-            <p>
-              I’m Kelvin. I work on embedded software, firmware, and systems
-              programming. This is a record of what I build, the problems I run
-              into, and how I work through them.
-            </p>
-            <div className="intro-actions">
-              <Link className="button primary" href="#selected-work">
-                Explore the work <span aria-hidden="true">↓</span>
-              </Link>
-              <Link className="text-link" href="/resume">
-                View my resume ↗
-              </Link>
-            </div>
-          </div>
-        </div>
-        <aside className="portrait-note">
-          <Image
-            src="/images/Head-Shot.webp"
-            alt="Kelvin Creighton"
-            width={112}
-            height={136}
-            sizes="112px"
-          />
+      <section className="field-intro" aria-labelledby="intro-title">
+        <h1 id="intro-title">
+          <strong>Kelvin</strong> builds software, tinkers with hardware, and
+          follows his curiosity.
+        </h1>
+        <div className="field-intro-copy">
           <p>
-            Software meets hardware.
-            <br />
-            Questions become projects.
+            Embedded software, systems programming, and the occasional detour.
           </p>
-        </aside>
-      </section>
-      <section id="selected-work" className="selected-section">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">01 / Selected work</span>
-            <h2>A few things I’ve worked on.</h2>
-          </div>
-          <Link className="text-link" href="/projects">
-            All {projects.length} projects <span aria-hidden="true">↗</span>
-          </Link>
+          <p>
+            I like figuring out how things work, then making something of my
+            own.{" "}
+            <Link href="/resume">
+              More about me <span aria-hidden="true">↗</span>
+            </Link>
+          </p>
         </div>
-        <article className="lead-project">
-          <Link href={lead.href} className="lead-image">
-            <Image
-              src={lead.image}
-              alt={lead.imageAlt}
-              fill
-              sizes="(max-width: 760px) 92vw, 65vw"
-              priority
-            />
-            <span className="figure-label">
-              Fig. 01 / The working prototype
-            </span>
-          </Link>
-          <div className="lead-copy">
-            <div className="project-kicker">
-              Embedded hardware & firmware <span>2026</span>
-            </div>
-            <Link href={lead.href}>
-              <h3>
-                MachineGuard<span aria-hidden="true">↗</span>
+      </section>
+
+      <section
+        className="fieldbook"
+        id="selected-work"
+        aria-labelledby="fieldbook-title"
+      >
+        <header className="fieldbook-heading">
+          <h2 id="fieldbook-title">The Fieldbook</h2>
+          <p>
+            A growing collection of builds, investigations, and things made
+            along the way.{" "}
+            <Link href="/projects">
+              Explore all {projects.length} projects{" "}
+              <span aria-hidden="true">→</span>
+            </Link>
+          </p>
+        </header>
+        <div className="fieldbook-columns">
+          <section className="featured-builds" aria-labelledby="builds-title">
+            <div className="collection-heading">
+              <h3 id="builds-title">
+                <Link href="/projects">
+                  Selected builds <span aria-hidden="true">→</span>
+                </Link>
               </h3>
+              <p>Software meeting hardware. Ideas becoming working things.</p>
+            </div>
+            <div className="build-grid">
+              {features.map((feature) => {
+                const project = getProject(feature.id)!;
+                return (
+                  <article className="build-card" key={feature.id}>
+                    <Link
+                      href={project.href}
+                      className="build-art"
+                      tabIndex={-1}
+                      aria-hidden="true"
+                    >
+                      <ProjectArtwork id={feature.id} />
+                    </Link>
+                    <div className="build-copy">
+                      <h4>
+                        <Link href={project.href}>{feature.title}</Link>
+                      </h4>
+                      <p>{feature.description}</p>
+                      <div className="build-meta">
+                        <FieldMark />
+                        <span>{feature.kind}</span>
+                        <span>{project.sortDate.slice(0, 4)}</span>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+          <aside className="field-notes" aria-labelledby="notes-title">
+            <div className="collection-heading">
+              <h3 id="notes-title">
+                <Link href="/projects/cybersecurity">
+                  Investigations & writeups <span aria-hidden="true">→</span>
+                </Link>
+              </h3>
+              <p>
+                Following the evidence, finding the flaw, and leaving a trail.
+              </p>
+            </div>
+            <ul className="note-list">
+              {notes.map((id) => {
+                const project = getProject(id)!;
+                return (
+                  <li key={id}>
+                    <FieldMark />
+                    <div>
+                      <h4>
+                        <Link href={project.href}>{project.title}</Link>
+                      </h4>
+                      <span>{project.contribution}</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            <Link href="/projects/cybersecurity" className="collection-more">
+              All security projects <span aria-hidden="true">→</span>
             </Link>
-            <p>{lead.summary}</p>
-            <dl>
-              <div>
-                <dt>My part</dt>
-                <dd>Sensors, acquisition & BLE firmware</dd>
-              </div>
-              <div>
-                <dt>Context</dt>
-                <dd>natHacks · Team prototype</dd>
-              </div>
-            </dl>
-            <Link href={lead.href} className="text-link">
-              Inside the project <span aria-hidden="true">→</span>
-            </Link>
+            <div className="margin-note">
+              <span className="margin-note-label">A work in progress</span>
+              <p>
+                Some projects are finished; others are still on the bench. The
+                notes include the failures and unfinished parts, too.
+              </p>
+              <Link href="/projects/?view=history">Follow the history →</Link>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <div className="fieldbook-extras">
+        <section className="topic-index" aria-labelledby="topics-title">
+          <div className="collection-heading">
+            <h2 id="topics-title">Follow a thread</h2>
+            <p>Different tools. The same curiosity.</p>
           </div>
-        </article>
-        <div className="secondary-projects">
-          {[second, third].map((p, i) => (
-            <article key={p.id} className="secondary-project">
-              <Link
-                href={p.href}
-                className={`secondary-image ${p.image.endsWith(".svg") ? "diagram-image" : ""}`}
-              >
-                <Image
-                  src={p.image}
-                  alt={p.imageAlt}
-                  fill
-                  sizes="(max-width: 760px) 92vw, 44vw"
-                />
-                <span className="figure-label">
-                  0{i + 2} / {p.contribution}
-                </span>
-              </Link>
-              <div className="project-kicker">
-                {p.collection}
-                <span>
-                  {p.state === "in-progress"
-                    ? "Build in progress"
-                    : p.sortDate.slice(0, 4)}
-                </span>
-              </div>
-              <Link href={p.href}>
-                <h3>
-                  {p.title}
-                  <span aria-hidden="true">↗</span>
-                </h3>
-              </Link>
-              <p>{p.summary}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section className="approach-section">
-        <div>
-          <span className="eyebrow">02 / How I work</span>
-          <h2>
-            Start with a question.
-            <br />
-            <em>Follow the details.</em>
-          </h2>
-          <p>
-            I like projects with something concrete to figure out: a signal to
-            capture, a process to coordinate, or a machine to bring back to
-            life.
-          </p>
-        </div>
-        <div className="capability-list">
-          {[
-            {
-              n: "01",
-              title: "Hardware & firmware",
-              copy: "Bringing sensors, peripherals, and software together. Following the data from a physical input to a usable result.",
-              href: lead.href,
-            },
-            {
-              n: "02",
-              title: "Systems programming",
-              copy: "Working with processes, memory, and file descriptors to understand what happens beneath an application.",
-              href: second.href,
-            },
-            {
-              n: "03",
-              title: "Investigation & repair",
-              copy: "Finding the failure, testing an explanation, and documenting the decisions that lead to the next working step.",
-              href: third.href,
-            },
-          ].map((c) => (
-            <Link key={c.n} href={c.href}>
-              <span className="index-number">{c.n}</span>
-              <div>
-                <h3>{c.title}</h3>
-                <p>{c.copy}</p>
-              </div>
-              <span aria-hidden="true">↗</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section className="discipline-section">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">03 / Beyond the selected work</span>
-            <h2>Different tools. Same curiosity.</h2>
+          <ul>
+            {categories.map((category) => (
+              <li key={category.id}>
+                <FieldMark />
+                <div>
+                  <h3>
+                    <Link href={`/projects/${category.id}`}>
+                      {category.title}
+                    </Link>
+                  </h3>
+                  <p>{category.description}</p>
+                  <span>
+                    {projects.filter((p) => inCategory(p, category.id)).length}{" "}
+                    projects
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section className="play-shelf" aria-labelledby="shelf-title">
+          <div className="collection-heading">
+            <h2 id="shelf-title">Things to play with</h2>
+            <p>Games, simulations, and a little music. Open one and try it.</p>
           </div>
-          <p>
-            There’s more in the fieldbook: repair logs, security investigations,
-            things to play, and music to listen to.
-          </p>
-        </div>
-        <div className="discipline-list">
-          {categories.map((c, i) => (
-            <Link key={c.id} href={`/projects/${c.id}`}>
-              <span className="index-number">0{i + 1}</span>
-              <h3>{c.title}</h3>
-              <p>{c.description}</p>
-              <span className="count">
-                {String(
-                  projects.filter((p) => inCategory(p, c.id)).length,
-                ).padStart(2, "0")}{" "}
-                projects
-              </span>
-              <span aria-hidden="true">↗</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section className="community-feature">
-        <div className="community-image">
+          <div className="shelf-grid">
+            {shelf.map((id) => {
+              const project = getProject(id)!;
+              return (
+                <article className="shelf-item" key={id}>
+                  <Link
+                    href={project.href}
+                    className={`shelf-cover ${project.category === "music" ? "score-cover" : ""}`}
+                    tabIndex={-1}
+                    aria-hidden="true"
+                  >
+                    <Image
+                      src={project.image}
+                      alt=""
+                      fill
+                      sizes="(max-width: 600px) 42vw, 240px"
+                    />
+                  </Link>
+                  <h3>
+                    <Link href={project.href}>{project.title}</Link>
+                  </h3>
+                  <p>{project.contribution}</p>
+                  <Link
+                    className="shelf-action"
+                    href={`${project.href}#interactive-demo`}
+                  >
+                    {project.capabilities.includes("listen")
+                      ? "Listen & read"
+                      : project.capabilities.includes("simulate")
+                        ? "Explore the simulation"
+                        : "Play the game"}{" "}
+                    <span aria-hidden="true">↗</span>
+                  </Link>
+                </article>
+              );
+            })}
+          </div>
+          <div className="shelf-links">
+            <Link href="/projects/game-dev">More games →</Link>
+            <Link href="/projects/music">All music →</Link>
+          </div>
+        </section>
+      </div>
+
+      <section className="people-section" aria-labelledby="people-title">
+        <Link
+          className="people-photo"
+          href="/events#bsides-edmonton-2026"
+          tabIndex={-1}
+          aria-hidden="true"
+        >
           <Image
             src="/images/events/BSides-Edmonton-2026.webp"
-            alt="BSides Edmonton CTF medals and event"
+            alt=""
             fill
-            sizes="(max-width:760px) 92vw, 40vw"
+            sizes="(max-width: 760px) 90vw, 500px"
           />
-        </div>
+        </Link>
         <div>
-          <p className="eyebrow">04 / Outside the project</p>
-          <h2>
-            Making room
-            <br />
-            <em>for people to learn.</em>
-          </h2>
+          <p className="people-caption">Away from the workbench</p>
+          <h2 id="people-title">There are people behind the projects.</h2>
           <p>
-            Alongside my technical work, I help organise security events and
-            build CTF challenges. At BSides Edmonton 2026, that included
-            competition setup, supporting participants, and designing the
-            winners’ medals.
+            I also help organise security events and build CTF challenges. At
+            BSides Edmonton 2026, that meant competition setup, helping
+            participants, and designing the winners’ medals.
           </p>
-          <Link className="text-link" href="/events#bsides-edmonton-2026">
-            Community & leadership <span aria-hidden="true">↗</span>
-          </Link>
-          <div className="quiet-links">
-            <Link href="/achievements">Competition results ↗</Link>
-            <Link href="/resume">Project experience ↗</Link>
+          <div className="people-links">
+            <Link href="/events">Community & leadership →</Link>
+            <Link href="/achievements">Competition results →</Link>
           </div>
         </div>
-      </section>
-      <section className="recent-section">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">05 / Recently in the fieldbook</p>
-            <h2>The work continues.</h2>
-          </div>
-          <Link className="text-link" href="/projects/?view=history">
-            View the history ↗
-          </Link>
-        </div>
-        {[...projects]
-          .sort((a, b) => b.sortDate.localeCompare(a.sortDate))
-          .slice(0, 3)
-          .map((p) => (
-            <Link className="recent-row" key={p.id} href={p.href}>
-              <span>{p.dateLabel}</span>
-              <h3>{p.title}</h3>
-              <span>{p.contribution}</span>
-              <span aria-hidden="true">↗</span>
-            </Link>
-          ))}
       </section>
     </div>
   );

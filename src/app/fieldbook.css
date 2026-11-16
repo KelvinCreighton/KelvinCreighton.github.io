@@ -1,0 +1,544 @@
+/* An illustrated, editorial home for the existing project collection. */
+.field-intro {
+  padding: 62px 0 115px;
+}
+.field-intro h1 {
+  max-width: 1250px;
+  font-size: clamp(3.4rem, 6.6vw, 6rem);
+  font-weight: 400;
+  line-height: 1.07;
+  letter-spacing: -0.027em;
+  text-wrap: pretty;
+}
+.field-intro h1 strong {
+  font-weight: 600;
+}
+.field-intro-copy {
+  max-width: 1080px;
+  margin-top: 34px;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.field-intro-copy p + p {
+  margin-top: 4px;
+}
+.field-intro-copy a,
+.fieldbook-heading a,
+.collection-more,
+.margin-note a,
+.shelf-links a,
+.shelf-action,
+.people-links a {
+  color: var(--accent);
+  font-weight: 400;
+}
+.home-page a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.home-page :is(.build-art, .shelf-cover, .people-photo):hover {
+  text-decoration: none;
+}
+.fieldbook-heading {
+  margin-bottom: 62px;
+}
+.fieldbook-heading h2 {
+  font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+  margin-bottom: 18px;
+}
+.fieldbook-heading p {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.fieldbook-heading a {
+  white-space: nowrap;
+}
+.fieldbook-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  gap: 66px;
+}
+.collection-heading {
+  margin-bottom: 32px;
+}
+.collection-heading :is(h2, h3) {
+  font: 700 21px/1.4 var(--font-sans);
+  letter-spacing: 0;
+}
+.collection-heading :is(h2, h3) span {
+  font-weight: 400;
+}
+.collection-heading > p {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.65;
+}
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  align-items: start;
+}
+.build-card {
+  min-width: 0;
+  background: var(--raised);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px #36363403;
+}
+.build-art {
+  display: block;
+  padding: 12px 6px 0;
+}
+.project-artwork {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.build-copy {
+  padding: 8px 23px 23px;
+}
+.build-copy h4 {
+  font: 400 29px/1.16 var(--serif);
+  letter-spacing: -0.015em;
+  margin: 12px 0 15px;
+}
+.build-copy > p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.build-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+.build-meta > span:last-child {
+  margin-left: auto;
+}
+.field-mark {
+  color: var(--signal);
+  height: 22px;
+  width: 22px;
+  flex: 0 0 22px;
+}
+.build-meta .field-mark {
+  width: 17px;
+  height: 17px;
+  flex-basis: 17px;
+}
+.note-list,
+.topic-index ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.note-list li {
+  display: flex;
+  align-items: start;
+  gap: 14px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.note-list li:first-child {
+  padding-top: 6px;
+}
+.note-list .field-mark {
+  margin-top: 3px;
+}
+.note-list h4 {
+  font: 400 26px/1.2 var(--serif);
+  letter-spacing: -0.015em;
+}
+.note-list li span {
+  display: block;
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.collection-more {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 15px;
+}
+.margin-note {
+  margin-top: 46px;
+  border-left: 2px solid var(--signal);
+  padding-left: 21px;
+}
+.margin-note-label {
+  font: 400 22px/1.25 var(--serif);
+}
+.margin-note p {
+  margin: 12px 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.margin-note a {
+  font-size: 14px;
+}
+.fieldbook-extras {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr);
+  gap: 66px;
+  margin-top: 105px;
+}
+.topic-index li {
+  display: flex;
+  align-items: start;
+  gap: 15px;
+  margin: 0 0 29px;
+}
+.topic-index .field-mark {
+  margin-top: 1px;
+}
+.topic-index h3 {
+  font: 400 25px/1.2 var(--serif);
+}
+.topic-index li p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.topic-index li span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px 28px;
+}
+.shelf-cover {
+  display: block;
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  border-radius: 4px;
+}
+.shelf-cover img {
+  object-fit: cover;
+}
+.shelf-cover.score-cover {
+  background: white;
+}
+.shelf-cover.score-cover img {
+  object-fit: cover;
+  object-position: top;
+}
+.shelf-item h3 {
+  font: 400 26px/1.2 var(--serif);
+  margin: 17px 0 9px;
+}
+.shelf-item p {
+  font-size: 13px;
+  color: var(--muted);
+}
+.shelf-action {
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 8px;
+}
+.shelf-links {
+  margin-top: 35px;
+  display: flex;
+  gap: 30px;
+  font-size: 15px;
+}
+.people-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 65px;
+  align-items: center;
+  margin: 100px 0 110px;
+  padding-top: 65px;
+  border-top: 1px solid var(--rule);
+}
+.people-photo {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.people-photo img {
+  object-fit: cover;
+}
+.people-caption {
+  font-size: 14px;
+  color: var(--signal);
+}
+.people-section h2 {
+  font-size: clamp(2.3rem, 3.4vw, 3rem);
+  margin: 17px 0 22px;
+  line-height: 1.1;
+}
+.people-section p:not(.people-caption) {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 54ch;
+}
+.people-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  font-size: 15px;
+}
+
+/* The collection and reading pages share the paper and serif treatment. */
+.archive-grid .archive-entry {
+  background: var(--raised);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.archive-grid .entry-copy {
+  padding: 26px;
+}
+.archive-list .archive-image {
+  border-radius: 4px;
+}
+.archive-entry h2 a span {
+  color: var(--signal);
+}
+.entry-actions > span:first-child {
+  color: var(--accent);
+}
+.entry-actions .status-label {
+  color: var(--signal);
+}
+.case-heading .eyebrow {
+  font: 13px var(--font-sans);
+  color: var(--signal);
+}
+.project-body .interactive-surface p {
+  font-family: var(--font-sans);
+  font-size: 15px;
+}
+.project-body .score-paper p {
+  font-family: var(--font-sans);
+}
+.case-content .project-body :is(h2, h3, h4),
+.case-content .article-content > section > p {
+  color: var(--ink);
+}
+.project-body span[class*="bg-blue-"] {
+  background: var(--signal-soft);
+  border-color: var(--rule);
+  color: var(--accent);
+}
+/* This transparent source diagram contains both white labels and black wires. */
+.technical-diagram-contrast {
+  background: #757575;
+}
+.dark .project-artwork {
+  opacity: 0.91;
+}
+.dark .build-art {
+  background: #303630;
+}
+
+@media (min-width: 1400px) {
+  .site-main {
+    max-width: 1376px;
+  }
+}
+@media (max-width: 1350px) {
+  .site-footer {
+    margin-left: 48px;
+    margin-right: 48px;
+  }
+}
+@media (max-width: 1100px) {
+  .fieldbook-columns,
+  .fieldbook-extras {
+    gap: 38px;
+    grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  }
+  .fieldbook-extras {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr);
+  }
+  .build-grid {
+    gap: 20px;
+  }
+  .build-copy {
+    padding: 5px 18px 20px;
+  }
+  .build-copy h4 {
+    font-size: 26px;
+  }
+  .field-intro-copy {
+    font-size: 21px;
+  }
+  .people-section {
+    gap: 38px;
+  }
+}
+@media (max-width: 900px) {
+  .fieldbook-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 58px;
+  }
+  .field-notes .note-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 30px;
+  }
+  .note-list li:first-child {
+    padding-top: 22px;
+  }
+  .margin-note {
+    max-width: 55ch;
+  }
+  .fieldbook-extras {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 35px;
+  }
+  .shelf-grid {
+    gap: 30px 20px;
+  }
+  .shelf-item h3 {
+    font-size: 23px;
+  }
+}
+@media (max-width: 760px) {
+  .field-intro {
+    padding: 45px 0 74px;
+  }
+  .field-intro h1 {
+    font-size: clamp(3rem, 8.2vw, 4.7rem);
+    line-height: 1.07;
+    letter-spacing: -0.025em;
+  }
+  .field-intro-copy {
+    margin-top: 25px;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+  .field-intro-copy p + p {
+    margin-top: 12px;
+  }
+  .fieldbook-heading {
+    margin-bottom: 40px;
+  }
+  .fieldbook-heading p {
+    font-size: 18px;
+  }
+  .fieldbook-heading a {
+    white-space: normal;
+  }
+  .collection-heading > p {
+    font-size: 17px;
+  }
+  .fieldbook-extras {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 52px;
+    margin-top: 66px;
+  }
+  .topic-index ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 25px;
+  }
+  .people-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin: 65px 0;
+    padding-top: 45px;
+  }
+  .people-photo {
+    aspect-ratio: 16/10;
+  }
+  .people-section h2 {
+    max-width: 18ch;
+  }
+  .site-footer {
+    margin: 40px 22px 0;
+    padding: 35px 0 25px;
+  }
+  .footer-links {
+    gap: 14px 35px;
+  }
+  .archive-grid .entry-copy {
+    padding: 22px;
+  }
+  .archive-entry h2 {
+    font-size: 27px;
+  }
+  .project-body p {
+    font-size: 19px;
+  }
+  .case-heading > p {
+    font-size: 20px;
+  }
+  .case-heading .eyebrow {
+    font-size: 12px;
+  }
+}
+@media (max-width: 540px) {
+  .build-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+  .build-art {
+    padding: 8px 6px 0;
+  }
+  .build-copy {
+    padding: 4px 22px 24px;
+  }
+  .build-copy h4 {
+    font-size: 29px;
+  }
+  .field-notes .note-list {
+    display: block;
+  }
+  .note-list h4 {
+    font-size: 26px;
+  }
+  .topic-index ul {
+    display: block;
+  }
+  .shelf-grid {
+    gap: 35px 18px;
+  }
+  .shelf-item h3 {
+    font-size: 22px;
+  }
+  .shelf-cover {
+    aspect-ratio: 3/4;
+  }
+  .shelf-item p {
+    font-size: 12px;
+  }
+  .shelf-action {
+    font-size: 13px;
+  }
+}
+@media print {
+  .field-intro {
+    padding: 20px 0 35px;
+  }
+  .field-intro h1 {
+    font-size: 48px;
+  }
+  .build-card {
+    break-inside: avoid;
+  }
+}

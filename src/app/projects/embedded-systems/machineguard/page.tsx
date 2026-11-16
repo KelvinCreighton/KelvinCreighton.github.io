@@ -95,7 +95,7 @@ export default function MachineGuardProject() {
             getting stable readings from both peripherals at once.
           </p>
           <figure className="overflow-hidden rounded-xl border border-gray-200 bg-gray-100 p-3 shadow-sm dark:border-gray-800 dark:bg-gray-800">
-            <div className="relative aspect-video w-full">
+            <div className="technical-diagram-contrast relative aspect-video w-full">
               <Image
                 src="/images/projects/machineguard-wiring-diagram.png"
                 alt="Wiring diagram showing the thermistor voltage divider and LSM303D vibration sensor connections to the ESP32-S3 board"

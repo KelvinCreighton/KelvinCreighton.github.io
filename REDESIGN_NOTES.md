@@ -1,80 +1,117 @@
-# Fieldbook redesign — Test one
+# Portfolio redesign — illustrated fieldbook
 
-Implemented locally on `redesign/fieldbook-v1`. Baseline: `639133cc6ae6b9c02628eb4cfd2da4748da3109a`. No push or deployment was performed. The original implementation remains in Git history; the working changes can be reviewed with `git diff`.
+Implemented locally on `redesign/fieldbook-v1`. This revision follows the user's chosen reference, [Maggie Appleton's website](https://maggieappleton.com/), while retaining Kelvin's existing portfolio functionality. No push or deployment was performed.
 
-## Direction
+The first redesign is available in commit `dbb8084` (rough draft). The pre-redesign baseline is `639133cc6ae6b9c02628eb4cfd2da4748da3109a`. Review this revision with `git diff`, including the new untracked artwork, stylesheet, and font files.
 
-This implements the research plan’s **Engineering Fieldbook** recommendation, with the clearer technical hierarchy of **Precision Instrument**. The alternatives in the planning document are choices, not competing themes to combine into one page.
+## What the reference contributed
 
-The professional emphasis is embedded software, firmware, and systems programming. Security is complementary evidence, with automotive work, games, and music retained as part of the person behind the work.
+The reference was inspected in a browser at desktop and phone widths, alongside its [Garden](https://maggieappleton.com/garden), article layout, and [colophon](https://maggieappleton.com/colophon).
 
-- Warm paper `#F3F0E8`, dark green ink `#202925`, muted green `#58645C`, accent `#2D624F`, and restrained rust `#96462E`.
-- Dark alternative: `#171D1A` paper, `#E9ECE5` ink, `#A1CBB0` accent.
-- Georgia headings, system sans-serif reading text, and occasional monospace labels. No remote font requests.
-- Real project photographs and existing technical diagrams. Large editorial headings, ruled rows, asymmetrical featured work, quiet navigation, and small figure labels.
-- The homepage features MachineGuard, DragonShell, and the Dremel controller rebuild. Project role, context, and limitations are stated without inventing outcomes.
+The adopted ideas are a large serif introduction, a warm paper surface, small plum and teal accents, illustrated cards beside simpler lists, generous gaps between collections, and a quiet footer. These are adapted to engineering projects, security investigations, games, and music.
 
-## What changed
+The reference's essays/notes/patterns/library organization becomes selected builds, investigations, discipline links, and an interactive shelf. Project states remain factual: completed, prototype, in progress, or release pending. The site does not relabel engineering work with botanical growth stages or invent a stream of essays to fill the layout.
 
-The homepage, navigation, footer, project archive, category pages, achievements, leadership page, résumé page, project shell, security writeup template, and challenge presentation have been rebuilt. Every project has a common reading layout and a single page title. The résumé includes readable project context and retains both original PDF variants.
+The reference uses commercial Canela and supporting Lato type. This implementation uses locally served, open-license **Newsreader** for the serif voice and **Lato** for supporting text. No reference illustrations, font files, logo, or source code were copied.
 
-The old gradient/glow background, repetitive dashboard-style homepage tiles, forced dark mode, and automatic loading of embedded demos have been removed. Security writeup styles no longer inject broad global selectors into unrelated pages. The social cards and favicon use the new identity.
+## Visual system
 
-A single registry drives project discovery and homepage selection. All 35 project routes and six discipline routes remain. The Dremel controller rebuild is cross-listed under Embedded & Systems and Mechatronics; this creates 36 discipline memberships, not a duplicate project. Plastic Mind is included in navigation and the sitemap. The nonexistent blog route was removed from the sitemap.
+| Purpose | Light theme | Dark theme |
+| --- | --- | --- |
+| Paper | `#F6F5F1` | `#222522` |
+| Subtle surface | `#EEEDE6` | `#303630` |
+| Raised card | `#FDFCF9` | `#292E2A` |
+| Primary text | `#363634` | `#E9E7DF` |
+| Supporting text | `#696762` | `#B5B8B0` |
+| Plum links | `#762657` | `#E3A5CC` |
+| Teal details and focus | `#067079` | `#72C7CB` |
 
-The archive provides Gallery, Index, and History views; local text search; collection filters where useful; vehicle filtering for Automotive; and independent date order. History also includes the 11 existing community/achievement records when no project filter is active. Search replaces the current URL; deliberate filter/view changes create history entries. Invalid values fall back to defaults. The old Cybersecurity `?category=WiCyS%20CTF` links still work.
+The page has no gradient, glow, animated backdrop, or large promotional colour panels. Colour comes from links, small ornaments, original illustrations, and actual project imagery. Dark mode remains a first-class alternative and its preference is saved locally.
 
-Examples:
+Four original SVG covers depict a sensor board, shell windows, a printer rebuild, and gearbox parts. They are conceptual illustrations, not technical diagrams. Actual project photographs and diagrams remain in the archive and detailed pages. The SVGs are rendered directly without an illustration library, image service, or animation dependency.
 
+The transparent MachineGuard wiring diagram contains both white labels and black wires. Its image container now uses a medium neutral grey to keep both visible; the source image bytes are unchanged.
+
+## Homepage
+
+1. A large personal introduction establishes software, hardware, and curiosity. The supporting copy retains the embedded/systems emphasis and links to the existing résumé.
+2. **The Fieldbook** introduces the collection and links to all 35 projects.
+3. **Selected builds** pairs four illustrated stories with short descriptions: MachineGuard, DragonShell, the Dremel controller rebuild, and the manual transmission rebuild.
+4. **Investigations & writeups** offers a quieter list of existing security material. It includes only available projects.
+5. **Follow a thread** exposes all six disciplines and their registry-derived counts.
+6. **Things to play with** presents the robotics simulator, UFO, a piano arrangement, and an original composition. Direct links go to their existing interactive sections.
+7. A real BSides group photograph and brief community introduction retain the people and leadership side of the portfolio.
+
+The former separate approach pitch, oversized project colour panels, and repeated recent-work rows have been removed from the homepage. Their underlying projects and history remain accessible. The mobile page stacks the featured cards and keeps the interactive shelf in two columns.
+
+## Archive and reading pages
+
+The archive keeps its two-column desktop gallery, single-column phone gallery, Index, and History. Cards now use restrained paper borders, serif titles, and room around their summaries. Original photos remain the main archive imagery.
+
+Existing search, collection filtering, Automotive vehicle filtering, independent date ordering, query parameters, and browser-history behavior are unchanged. History includes 11 community/achievement records when no project filter is active. The old Cybersecurity `?category=WiCyS%20CTF` links still work.
+
+Project pages retain their breadcrumb, factual project state, contribution, source links, overview, contents navigation, and related work. Serif prose, clearer headings, softer callouts, and the new palette extend the reading experience throughout the site. Interface controls and technical code keep appropriate sans-serif and monospace fonts.
+
+Useful review routes:
+
+- `/`
+- `/projects/`
 - `/projects/?view=history`
 - `/projects/?q=firmware`
-- `/projects/embedded-systems/?collection=CMPUT+379%3A+Operating+Systems`
 - `/projects/auto/?vehicle=2002+Toyota+Tacoma`
-- `/projects/?view=list&order=oldest`
+- `/projects/embedded-systems/machineguard/`
+- `/projects/cybersecurity/wicys-ctf-01/`
+- `/projects/game-dev/ufo/`
+- `/projects/music/beethoven-virus/`
+- `/projects/engineering/robotic-arm-simulation/`
 - `/resume/?focus=cybersecurity`
 
-## Preserved functionality
+## Preserved content and features
 
-- All detailed project writeups, original photo collections, technical diagrams, and videos.
-- Six playable game/simulation embeds, now behind a launch control, with separate-tab links and close controls.
+- All 35 project routes, six category routes, detailed writeups, original photographs, and technical material.
+- Dremel's cross-listing under Embedded & Systems and Mechatronics: 36 category memberships, 35 unique projects.
+- Six playable game/simulation embeds with launch, close, and separate-tab controls.
 - The robotics simulator and its numerical-method controls, loaded on demand.
-- Three MusicXML scores, rendered on demand with play/pause/stop and download links. Score/audio errors have visible messages; Stop remains available after pausing.
-- CTF challenge downloads, local flag checks, and spoiler-controlled solutions. Upcoming challenges remain labeled unavailable. The Bunny Tracker download now points to the existing `glitch.png`; challenge bytes were not modified.
-- Both résumé PDFs and optional PDF preview.
-- Five achievement records, six leadership/event records, existing deep-link fragments, and certificate/photo enlargement.
-- Email, GitHub, LinkedIn, and light/dark preference persistence.
+- Three MusicXML scores, score rendering, play/pause/stop, and downloads.
+- CTF downloads, local flag checks, and spoiler-controlled solutions. Upcoming challenges remain unavailable.
+- Both résumé PDFs and optional preview.
+- Five achievements, six event/leadership records, existing fragments, and image enlargement.
+- Email, GitHub, LinkedIn, mobile navigation, keyboard focus, reduced-motion support, and persistent light/dark mode.
 
-## Performance and accessibility
+No project registry facts, source links, challenge binaries, game files, scores, or résumé PDFs were rewritten in this visual pass. Existing context and limitations are retained. `who_i_am.txt` remains guidance rather than an independently verified résumé.
 
-Responsive derivatives were generated for 187 referenced presentation images. They are static assets, so the site keeps its GitHub Pages export architecture. The 568 variants together are about 40.8 MiB; that is the complete derivative collection, not a page download. A 1,200 px MachineGuard feature image is about 121 KiB. Originals remain available. Below-fold images are lazy; the lead feature image is prioritized.
+## Implementation and maintenance
 
-The archive registry, shared components, conditional bundle analysis, and deferred score/simulator imports reduce duplication and avoid initializing expensive interactive code on ordinary reading pages.
+- `src/app/page.tsx` selects homepage project IDs and provides the short introductory wording.
+- `src/components/ProjectArtwork.tsx` owns the original SVG covers and small ornament.
+- `src/app/globals.css` contains theme tokens, shared page layouts, and preserved interactive styling. Obsolete homepage rules were removed.
+- `src/app/fieldbook.css` contains the new editorial composition and responsive refinements.
+- `src/app/font-faces.css` loads font files from `public/fonts`; both SIL Open Font Licenses are included.
+- `src/app/layout.tsx` provides the simplified wordmark and footer.
+- `scripts/generate-social-card.js` regenerates the matching static social images.
+- The existing Next.js static-export architecture, image derivatives, lazy loading, and deferred interactive components remain intact. No new package dependencies were added.
 
-The redesign includes a focusable skip destination, one main landmark per page, visible keyboard focus, labeled controls, result and flag feedback announcements, reduced-motion handling, and mobile navigation with Escape/outside-click dismissal. Image enlargement uses a native modal dialog with focus containment, Escape dismissal, restored trigger focus, and background scroll locking. These measures do not constitute a formal accessibility certification.
+## Verification of this revision
 
-## Content judgment
+- Production `npm run build` passed, including TypeScript and all 53 generated routes/assets.
+- Six representative content routes were checked at 1,440, 768, and 360 px in both themes. Checks covered horizontal overflow, visible image loading, font loading, one H1, and one main landmark. No findings or page errors.
+- All 31 existing interaction checks passed, including archive search/reset/empty states, invalid and legacy queries, vehicle filtering, sorting and browser history, image-dialog focus/scroll locking, both CTF flag outcomes, spoilers, demo launch/teardown, music rendering and playback controls, robotics rendering, résumé selection, theme persistence, and the mobile menu.
+- The static export's 2,031 local link/resource references resolved with no missing targets.
+- Final text colours were adjusted for contrast on the paper, card, and callout surfaces. The wiring diagram's contrasting background was visually reviewed.
+- `git diff --check` passed.
 
-`who_i_am.txt` guided positioning and tone. It was not treated as a verified résumé. Conflicting student/graduation claims, uncorroborated job details, STM32 proficiency, and new project-performance metrics were not promoted into public claims. Existing coursework, roles, team boundaries, and known project limitations were retained. Missing projects such as profile-only software work were not fabricated to fill a layout.
+This was a Chromium review of representative layouts and interactions, not a full Safari/Firefox audit, screen-reader certification, or validation of game and numerical-model correctness. Local test servers are stopped after each check. Nothing was published.
 
-Sort keys are implementation metadata, not claims of exact publication dates. Visible dates preserve the established project records; known month mismatches from the old timeline were corrected.
+## Saved previews
 
-## Review this version
+Current revision:
 
-Start with `/`, then `/projects/`, MachineGuard, the Dremel rebuild, one challenge, a game, a score, and `/resume/`. Try the same pages in the dark theme and on a narrow viewport. The most useful feedback is about the overall identity, the density of the archive, the featured work selection, and whether the writing sounds like you.
+- [Desktop homepage](docs/redesign/reference/home-desktop.png)
+- [Phone homepage](docs/redesign/reference/home-mobile.png)
+- [Dark homepage](docs/redesign/reference/home-dark.png)
+- [Project archive](docs/redesign/reference/archive.png)
+- [MachineGuard reading page](docs/redesign/reference/case-study.png)
+- [Layout check results](docs/redesign/reference/layout-checks.json)
+- [Interaction check results](docs/redesign/reference/interaction-checks.json)
 
-Local preview and build commands are in the README. This is a complete first design direction to evaluate, not a publication decision.
-
-## Validation
-
-- Production `npm run build` passed, including Next.js TypeScript checks and static generation.
-- All 46 content routes were visited in Chromium at 1,440 px and 390 px. Each had one main landmark and one H1, with no page errors or broken visible images. One overflow in a security writeup was identified and corrected.
-- The repaired writeup, homepage, archive, and all three score pages were rechecked at 1,440 px and 360 px: no layout findings.
-- All 31 final interaction checks passed: searching, clearing, invalid filter defaults, legacy query mapping, independent sorting, browser history, both flag outcomes, solution disclosure, dialog focus and scroll behavior, theme persistence, mobile navigation, and interactive loading/teardown.
-- Representative interactive checks exercised UFO, Beethoven Virus score rendering and play/pause/stop, and the robotics canvas. The remaining original games/scores were preserved and their local links were checked; this was not a full gameplay or numerical-correctness audit.
-- The static export contained 1,869 local resource/link references with no missing targets. External destinations were not audited.
-- The image pipeline rerun reused all 187 originals and generated no unnecessary replacements. `git diff --check` passed.
-- Original games, scores, downloadable challenge artifacts, and résumé PDFs have no Git changes.
-
-Chromium checks cover this implementation on the tested layouts; Safari/Firefox, screen-reader review, and formal performance scoring were not part of this pass. No development or test server remains running.
-
-Review artifacts: [desktop](docs/redesign/home-desktop.png), [mobile](docs/redesign/home-mobile.png), [dark theme](docs/redesign/home-dark.png), and [check results](docs/redesign/qa-results.json).
+The original first-pass preview files in `docs/redesign/` remain for comparison.

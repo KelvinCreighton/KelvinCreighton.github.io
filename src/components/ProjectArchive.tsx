@@ -259,7 +259,7 @@ function ArchiveContent({
                   sizes={
                     view === "list"
                       ? "180px"
-                      : "(max-width: 450px) 90vw, (max-width: 760px) 45vw, 380px"
+                      : "(max-width: 760px) 90vw, (max-width: 1320px) 45vw, 590px"
                   }
                   className="object-cover"
                 />

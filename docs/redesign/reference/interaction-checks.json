@@ -1,0 +1,132 @@
+{
+  "findings": [],
+  "checks": [
+    {
+      "name": "search",
+      "pass": true
+    },
+    {
+      "name": "empty state",
+      "pass": true
+    },
+    {
+      "name": "clear filters",
+      "pass": true
+    },
+    {
+      "name": "history",
+      "pass": true
+    },
+    {
+      "name": "legacy category query",
+      "pass": true
+    },
+    {
+      "name": "invalid filters default safely",
+      "pass": true
+    },
+    {
+      "name": "vehicle filter",
+      "pass": true
+    },
+    {
+      "name": "sort preserves vehicle",
+      "pass": true
+    },
+    {
+      "name": "browser history restores filters",
+      "pass": true
+    },
+    {
+      "name": "dialog opens",
+      "pass": true
+    },
+    {
+      "name": "dialog background scroll lock",
+      "pass": true
+    },
+    {
+      "name": "dialog escape and focus",
+      "pass": true
+    },
+    {
+      "name": "incorrect flag feedback",
+      "pass": true
+    },
+    {
+      "name": "correct flag feedback",
+      "pass": true
+    },
+    {
+      "name": "solution disclosure",
+      "pass": true
+    },
+    {
+      "name": "demo deferred",
+      "pass": true
+    },
+    {
+      "name": "demo launched",
+      "pass": true
+    },
+    {
+      "name": "keyboard can leave demo",
+      "pass": true
+    },
+    {
+      "name": "demo teardown",
+      "pass": true
+    },
+    {
+      "name": "score deferred",
+      "pass": true
+    },
+    {
+      "name": "score rendered",
+      "pass": true
+    },
+    {
+      "name": "score playback ready",
+      "pass": true
+    },
+    {
+      "name": "stop after pause",
+      "pass": true
+    },
+    {
+      "name": "score teardown",
+      "pass": true
+    },
+    {
+      "name": "robot simulation renders",
+      "pass": true
+    },
+    {
+      "name": "simulation teardown",
+      "pass": true
+    },
+    {
+      "name": "resume URL selection",
+      "pass": true
+    },
+    {
+      "name": "dark theme",
+      "pass": true
+    },
+    {
+      "name": "theme persistence",
+      "pass": true
+    },
+    {
+      "name": "mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "mobile escape and focus",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "mode": "Interaction checks; full route scan was not run in this pass",
+  "discoveredContentRoutes": 46
+}

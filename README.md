@@ -22,13 +22,17 @@ Open `http://localhost:8080`. `next start` does not serve the static export. Pub
 
 ## Content and components
 
-- `src/data/projects.ts`: the 35-project registry, six disciplines, cross-listings, dates, summaries, source/demo/score links, and homepage selection.
+- `src/data/projects.ts`: the 35-project registry, six disciplines, cross-listings, dates, summaries, and source/demo/score links.
+- `src/app/page.tsx`: homepage selections and short editorial introductions, linked to the registry by project ID.
+- `src/components/ProjectArtwork.tsx`: original SVG cover illustrations and the small fieldbook ornament.
 - `src/data/community.ts`: leadership records and achievements.
 - `src/app/projects/**/page.tsx`: detailed project content, with existing URLs preserved.
 - `src/components/CaseStudyLayout.tsx`: common project header, contribution/outcome summaries, contents navigation, and related work.
 - `src/components/ProjectArchive.tsx`: search, collection and vehicle filters, gallery/index/history views, and URL state.
 - `src/components/DemoFrame.tsx` and `InteractiveProject.tsx`: on-demand games, robotics simulation, and sheet music.
 - `src/app/globals.css`: the Fieldbook palette, typography, responsive layouts, and light/dark themes.
+- `src/app/fieldbook.css`: the illustrated homepage and shared editorial refinements.
+- `src/app/font-faces.css` and `public/fonts`: self-hosted Newsreader/Lato font files and their open licenses.
 - `public/games`, `public/scores`, `public/downloads`: original interactive artifacts and challenge files.
 
 ## Updating images
@@ -49,4 +53,4 @@ node scripts/generate-social-card.js
 
 Use `ANALYZE=true npm run build` when a bundle report is wanted. It is disabled during ordinary builds.
 
-See [REDESIGN_NOTES.md](REDESIGN_NOTES.md) for the first redesign’s scope, review routes, and validation notes.
+See [REDESIGN_NOTES.md](REDESIGN_NOTES.md) for the current design, inspiration, preserved features, review previews, and validation notes.
