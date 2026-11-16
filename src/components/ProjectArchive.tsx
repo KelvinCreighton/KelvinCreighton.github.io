@@ -208,7 +208,7 @@ function ArchiveContent({
                     </span>
                   </div>
                   <h2>
-                    {p.title} <span aria-hidden="true">↗</span>
+                    {p.title}
                   </h2>
                   <p>{p.summary}</p>
                   <div className="entry-actions">
