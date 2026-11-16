@@ -453,7 +453,7 @@ h3[id] {
   font-family: inherit;
   border: 1px solid var(--rule);
   min-height: 38px;
-  font-size: 14px;
+  font-size: 15px;
   border-radius: 4px;
   padding: 7px 14px;
 }
@@ -571,10 +571,10 @@ h3[id] {
   border-top: 1px solid var(--rule);
 }
 .archive-list .archive-entry-link {
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 180px 1fr;
   align-items: start;
-  gap: 22px;
-  padding: 18px 0;
+  gap: 24px;
+  padding: 20px 0;
 }
 .archive-list .archive-image {
   margin: 0;
@@ -584,12 +584,12 @@ h3[id] {
   max-width: none;
 }
 .archive-list .entry-meta {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.25;
 }
 .archive-list .archive-entry h2 {
   margin: 4px 0 5px;
-  font-size: 23px;
+  font-size: 26px;
   line-height: 1.08;
 }
 .archive-list .entry-copy > p {
@@ -597,7 +597,7 @@ h3[id] {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.4;
   color: var(--muted);
 }
@@ -607,7 +607,7 @@ h3[id] {
   line-height: 1.25;
 }
 .archive-list .entry-actions span {
-  font-size: 11px;
+  font-size: 12px;
 }
 .history-year {
   display: grid;
