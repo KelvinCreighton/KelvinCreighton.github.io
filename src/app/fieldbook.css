@@ -542,6 +542,9 @@
   color: inherit;
   height: 100%;
 }
+.archive-grid .archive-entry-link {
+  grid-template-rows: auto 1fr;
+}
 .archive-entry-link:hover {
   text-decoration: none;
 }
@@ -563,6 +566,8 @@
 }
 .archive-grid .entry-copy {
   padding: 26px;
+  display: flex;
+  flex-direction: column;
 }
 .archive-list .archive-image {
   border-radius: 4px;

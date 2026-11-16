@@ -273,7 +273,7 @@ h3[id] {
   color: var(--accent);
   line-height: 1.6;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.08em;
 }
 .text-link {
@@ -550,17 +550,18 @@ h3[id] {
   display: flex;
   align-items: center;
   gap: 6px 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  flex: 0 0 auto;
   min-width: 0;
-  overflow: hidden;
-  height: 16.8px;
-  margin-top: 20px;
+  overflow: visible;
+  margin-top: auto;
+  padding-top: 14px;
 }
 .entry-topic {
   flex: 0 0 auto;
   color: var(--accent);
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.4;
   white-space: nowrap;
 }
@@ -579,6 +580,9 @@ h3[id] {
 .archive-list .entry-copy {
   min-width: 0;
   max-width: none;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
 }
 .archive-list .entry-meta {
   font-size: 11px;
@@ -594,18 +598,19 @@ h3[id] {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1.4;
   color: var(--muted);
 }
 .archive-list .entry-topics {
   gap: 9px;
-  margin-top: 6px;
+  margin-top: auto;
+  padding-top: 8px;
   line-height: 1.25;
-  overflow: hidden;
+  overflow: visible;
 }
 .archive-list .entry-topic {
-  font-size: 12px;
+  font-size: 15px;
 }
 .history-year {
   display: grid;
