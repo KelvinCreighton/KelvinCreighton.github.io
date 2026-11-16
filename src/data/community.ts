@@ -105,6 +105,7 @@ export const achievements = [
     title: "Cisco Rapid Incident Response V7",
     subtitle: "Incident response workshop and lab",
     date: "July 2026",
+    sortDate: "2026-07-01",
     meta: "Certificate",
     status: "Active",
     description:
@@ -122,6 +123,7 @@ export const achievements = [
     title: "National Cybersecurity Consortium (NCC) CTF",
     subtitle: "Web Exploitation, LLM Prompt Injection",
     date: "June 2026",
+    sortDate: "2026-06-01",
     meta: "CTF",
     status: "2nd Place",
     description:
@@ -140,6 +142,7 @@ export const achievements = [
     title: "CyberSci Regionals 2025",
     subtitle: "Team CHADS B-Team",
     date: "November 2025",
+    sortDate: "2025-11-01",
     meta: "CTF",
     status: "5th Place",
     description:
@@ -158,6 +161,7 @@ export const achievements = [
     title: "SAIT: Alice in PWNderland",
     subtitle: "Team CHADS",
     date: "July 2025",
+    sortDate: "2025-07-01",
     meta: "CTF",
     status: "4th Place",
     description:
@@ -175,6 +179,7 @@ export const achievements = [
     title: "IlluminatiCTF",
     subtitle: "National bracket",
     date: "May 2025",
+    sortDate: "2025-05-01",
     meta: "CTF",
     status: "3rd Place",
     description:

@@ -92,7 +92,7 @@ function ArchiveContent({
           ...achievements.map((a) => ({
             title: a.title,
             date: a.date,
-            sortDate: new Date(a.date).toISOString().slice(0, 10),
+            sortDate: a.sortDate,
             href: `/achievements#${a.id}`,
             kind: "Achievement",
           })),

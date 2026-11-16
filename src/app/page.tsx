@@ -53,14 +53,14 @@ export default function Home() {
     <div className="home-page">
       <section className="field-intro" aria-labelledby="intro-title">
         <h1 id="intro-title">
-          Hi, I&apos;m Kelvin.
+          Hi, I&apos;m Kelvin
         </h1>
         <div className="field-intro-copy">
           <p className="field-intro-description">
-            I build embedded software and firmware, usually close to the
-            hardware. I work with microcontrollers, Linux, and low-level
-            systems, and I like understanding what the tools and abstractions
-            are doing underneath.
+            My background is in Computer Science at the University of Alberta,
+            with a focus on embedded software and systems programming. I work
+            with C/C++, microcontrollers, and Linux, exploring the relationship
+            between hardware and software.
           </p>
           <Link className="field-intro-link" href="/resume">
             More about me <span aria-hidden="true">↗</span>
@@ -99,30 +99,26 @@ export default function Home() {
                 const project = getProject(feature.id)!;
                 return (
                   <article className="build-card" key={feature.id}>
-                    <Link
-                      href={project.href}
-                      className="build-art"
-                      aria-label={`View ${project.title}`}
-                    >
-                      <Image
-                        src={project.image}
-                        alt={project.imageAlt}
-                        fill
-                        sizes="(max-width: 760px) 90vw, (max-width: 1100px) 42vw, 520px"
-                        priority={feature.id === "machineguard"}
-                      />
-                    </Link>
-                    <div className="build-copy">
-                      <h4>
-                        <Link href={project.href}>{feature.title}</Link>
-                      </h4>
-                      <p>{feature.description}</p>
-                      <div className="build-meta">
-                        <FieldMark />
-                        <span>{feature.kind}</span>
-                        <span>{project.sortDate.slice(0, 4)}</span>
+                    <Link href={project.href} className="build-card-link">
+                      <div className="build-art">
+                        <Image
+                          src={project.image}
+                          alt={project.imageAlt}
+                          fill
+                          sizes="(max-width: 760px) 90vw, (max-width: 1100px) 42vw, 520px"
+                          priority={feature.id === "machineguard"}
+                        />
                       </div>
-                    </div>
+                      <div className="build-copy">
+                        <h4>{feature.title}</h4>
+                        <p>{feature.description}</p>
+                        <div className="build-meta">
+                          <FieldMark />
+                          <span>{feature.kind}</span>
+                          <span>{project.sortDate.slice(0, 4)}</span>
+                        </div>
+                      </div>
+                    </Link>
                   </article>
                 );
               })}
