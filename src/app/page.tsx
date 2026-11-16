@@ -104,18 +104,15 @@ export default function Home() {
           <h2 id="highlights-title">Project Highlights</h2>
           <p>
             A growing collection of builds, investigations, and things made
-            along the way.{" "}
-            <Link href="/projects">
-              Explore all {projects.length} projects <InlineArrow />
-            </Link>
+            along the way.
           </p>
         </header>
         <div className="fieldbook-columns">
           <section className="featured-builds" aria-labelledby="builds-title">
             <div className="collection-heading">
               <h3 id="builds-title">
-                <Link href="/projects">
-                  Selected builds <InlineArrow />
+                <Link href="/projects" className="projects-overview-link">
+                  Explore all {projects.length} projects <InlineArrow />
                 </Link>
               </h3>
               <p>Projects that bring software into contact with real systems.</p>
@@ -234,34 +231,33 @@ export default function Home() {
             {shelf.map((id) => {
               const project = getProject(id)!;
               return (
-                <article className="shelf-item" key={id}>
-                  <div
-                    className={`shelf-cover ${project.category === "music" ? "score-cover" : ""}`}
-                  >
-                    <Image
-                      src={project.image}
-                      alt=""
-                      fill
-                      sizes="(max-width: 600px) 42vw, 240px"
-                    />
-                  </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.contribution}</p>
-                  <Link
-                    className="card-hit-area"
-                    href={project.href}
-                    aria-label={`View ${project.title}`}
-                  />
-                  <Link
-                    className="shelf-action"
-                    href={`${project.href}#interactive-demo`}
-                  >
-                    {project.capabilities.includes("listen")
-                      ? "Listen & read"
-                      : project.capabilities.includes("simulate")
-                        ? "Explore the simulation"
-                        : "Play the game"}{" "}
-                    <span aria-hidden="true">↗</span>
+                <article className="build-card" key={id}>
+                  <Link href={project.href} className="build-card-link">
+                    <div
+                      className={`build-art ${project.category === "music" ? "score-cover" : ""}`}
+                    >
+                      <Image
+                        src={project.image}
+                        alt={project.imageAlt}
+                        fill
+                        sizes="(max-width: 600px) 90vw, (max-width: 1100px) 42vw, 520px"
+                      />
+                    </div>
+                    <div className="build-copy">
+                      <h4>{project.title}</h4>
+                      <p>{project.summary}</p>
+                      <div className="build-meta">
+                        <FieldMark />
+                        <span>
+                          {project.capabilities.includes("listen")
+                            ? "Score & playback"
+                            : project.capabilities.includes("simulate")
+                              ? "Interactive simulation"
+                              : "Playable project"}
+                        </span>
+                        <span>{project.sortDate.slice(0, 4)}</span>
+                      </div>
+                    </div>
                   </Link>
                 </article>
               );

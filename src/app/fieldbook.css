@@ -136,6 +136,13 @@
 .home-page .collection-heading :is(h2, h3) a:hover {
   text-decoration: none;
 }
+.collection-heading :is(h2, h3):hover .projects-overview-link,
+.collection-heading :is(h2, h3):focus-within .projects-overview-link {
+  transform: none;
+}
+.projects-overview-link {
+  color: var(--ink);
+}
 .collection-heading > p {
   margin-top: 9px;
   color: var(--muted);
@@ -269,7 +276,7 @@
   letter-spacing: -0.015em;
   transition: color 220ms ease;
 }
-.note-card-link:hover {
+.home-page .note-card-link:hover {
   text-decoration: none;
 }
 .note-list li:hover h4,
@@ -311,7 +318,9 @@
   margin-top: 105px;
 }
 .topic-index li {
-  margin: 0 0 29px;
+  margin: 0;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
 }
 .topic-card-link {
   display: flex;
@@ -360,6 +369,12 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px 28px;
+}
+.build-art.score-cover {
+  background: white;
+}
+.build-art.score-cover img {
+  object-position: top;
 }
 .shelf-item {
   position: relative;
@@ -411,6 +426,17 @@
   display: flex;
   gap: 30px;
   font-size: 15px;
+}
+.shelf-links a,
+.people-links a {
+  color: var(--ink);
+  transition: color 220ms ease;
+}
+.home-page .shelf-links a:hover,
+.home-page .people-links a:hover {
+  color: var(--accent);
+  text-decoration: none;
+  transform: none;
 }
 .people-section {
   display: grid;
