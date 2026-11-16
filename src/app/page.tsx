@@ -25,25 +25,11 @@ const features = [
     kind: "Build in progress",
   },
   {
-    id: "rc-car",
+    id: "robotic-arm-simulation",
     description:
-      "A $10 car, built to teach: a low-cost remote-control car and a one-day curriculum that makes mechanical and electrical ideas tangible.",
-    kind: "Robotics & education",
+      "A robotic arm, brought to life: an interactive simulation exploring inverse kinematics and numerical optimization.",
+    kind: "Robotics & simulation",
   },
-];
-const notes = [
-  "macsync-stealer",
-  "ssti1",
-  "nosql-injection",
-  "soap",
-  "wicys-ctf-01",
-  "wicys-ctf-02",
-];
-const shelf = [
-  "robotic-arm-simulation",
-  "3d-game",
-  "beethoven-virus",
-  "the-longest-moment",
 ];
 
 export default function Home() {
@@ -143,135 +129,37 @@ export default function Home() {
               })}
             </div>
           </section>
-          <aside className="field-notes" aria-labelledby="notes-title">
+          <section className="topic-index" aria-labelledby="topics-title">
             <div className="collection-heading">
-              <h3 id="notes-title">
-                <Link
-                  href="/projects/cybersecurity"
-                  className="security-heading-link"
-                >
-                  Security, from the systems side <InlineArrow />
-                </Link>
-              </h3>
+              <h2 id="topics-title">Follow a thread</h2>
               <p>
-                A second lens on how software and systems fail, and how they
-                can be made harder to break.
+                Embedded systems are the focus; operating systems, robotics,
+                and security help me understand the whole machine.
               </p>
             </div>
-            <ul className="note-list">
-              {notes.map((id) => {
-                const project = getProject(id)!;
-                return (
-                  <li key={id}>
-                    <Link href={project.href} className="note-card-link">
-                      <FieldMark />
-                      <div>
-                        <h4>{project.title}</h4>
-                        <span>{project.contribution}</span>
-                      </div>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-            <Link href="/projects/cybersecurity" className="collection-more">
-              All security projects <InlineArrow />
-            </Link>
-            <div className="margin-note">
-              <span className="margin-note-label">A work in progress</span>
-              <p>
-                Some projects are finished; others are still on the bench. The
-                notes include the failures and unfinished parts, too.
-              </p>
-              <Link href="/projects/?view=history">
-                Follow the history <InlineArrow />
-              </Link>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <div className="fieldbook-extras">
-        <section className="topic-index" aria-labelledby="topics-title">
-          <div className="collection-heading">
-            <h2 id="topics-title">Follow a thread</h2>
-          <p>
-            Embedded systems are the focus; operating systems, robotics, and
-            security help me understand the whole machine.
-          </p>
-          </div>
-          <ul>
-            {categories.map((category) => (
-              <li key={category.id}>
-                <Link
-                  href={`/projects?category=${category.id}`}
-                  className="topic-card-link"
-                >
-                  <FieldMark />
-                  <div>
-                    <h3>{category.title}</h3>
-                    <p>{category.description}</p>
-                    <span>
-                      {projects.filter((p) => inCategory(p, category.id)).length}{" "}
-                      projects
-                    </span>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-        <section className="play-shelf" aria-labelledby="shelf-title">
-          <div className="collection-heading">
-            <h2 id="shelf-title">Things to play with</h2>
-            <p>Games, simulations, and a little music. Open one and try it.</p>
-          </div>
-          <div className="shelf-grid">
-            {shelf.map((id) => {
-              const project = getProject(id)!;
-              return (
-                <article className="build-card" key={id}>
-                  <Link href={project.href} className="build-card-link">
-                    <div
-                      className={`build-art ${project.category === "music" ? "score-cover" : ""}`}
-                    >
-                      <Image
-                        src={project.image}
-                        alt={project.imageAlt}
-                        fill
-                        sizes="(max-width: 600px) 90vw, (max-width: 1100px) 42vw, 520px"
-                      />
-                    </div>
-                    <div className="build-copy">
-                      <h4>{project.title}</h4>
-                      <p>{project.summary}</p>
-                      <div className="build-meta">
-                        <FieldMark />
-                        <span>
-                          {project.capabilities.includes("listen")
-                            ? "Score & playback"
-                            : project.capabilities.includes("simulate")
-                              ? "Interactive simulation"
-                              : "Playable project"}
-                        </span>
-                        <span>{project.sortDate.slice(0, 4)}</span>
-                      </div>
+            <ul>
+              {categories.map((category) => (
+                <li key={category.id}>
+                  <Link
+                    href={`/projects?category=${category.id}`}
+                    className="topic-card-link"
+                  >
+                    <FieldMark />
+                    <div>
+                      <h3>{category.title}</h3>
+                      <p>{category.description}</p>
+                      <span>
+                        {projects.filter((p) => inCategory(p, category.id)).length}{" "}
+                        projects
+                      </span>
                     </div>
                   </Link>
-                </article>
-              );
-            })}
-          </div>
-          <div className="shelf-links">
-            <Link href="/projects/game-dev">
-              More games <InlineArrow />
-            </Link>
-            <Link href="/projects/music">
-              All music <InlineArrow />
-            </Link>
-          </div>
-        </section>
-      </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      </section>
 
       <section className="people-section" aria-labelledby="people-title">
         <Link
