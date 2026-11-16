@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useTransition } from "react";
+import { useState } from "react";
 import BlurImage from "@/components/BlurImage";
 import {
   categories,
@@ -25,10 +24,11 @@ function ArchiveContent({
   pending?: boolean;
 }) {
   const category =
-    fixedCategory ||
-    (categories.some((c) => c.id === params.get("category"))
-      ? (params.get("category") as CategoryId)
-      : "all");
+    params.get("category") === "all"
+      ? "all"
+      : categories.some((c) => c.id === params.get("category"))
+        ? (params.get("category") as CategoryId)
+        : fixedCategory || "all";
   const view = ["list", "history"].includes(params.get("view") || "")
     ? params.get("view")!
     : "grid";
@@ -130,21 +130,23 @@ function ArchiveContent({
         </div>
       </div>
       <nav className="category-nav" aria-label="Project disciplines">
-        <Link
-          href="/projects"
-          aria-current={category === "all" ? "page" : undefined}
+        <button
+          type="button"
+          aria-pressed={category === "all"}
+          onClick={() => update("category", "all")}
         >
           All work <sup>{projects.length}</sup>
-        </Link>
+        </button>
         {categories.map((c) => (
-          <Link
+          <button
+            type="button"
             key={c.id}
-            href={`/projects/${c.id}`}
-            aria-current={category === c.id ? "page" : undefined}
+            aria-pressed={category === c.id}
+            onClick={() => update("category", c.id)}
           >
             {c.title}{" "}
             <sup>{projects.filter((p) => inCategory(p, c.id)).length}</sup>
-          </Link>
+          </button>
         ))}
       </nav>
       <div className="archive-controls">
@@ -312,14 +314,20 @@ export function StaticProjectArchive(props: Props) {
   );
 }
 export default function ProjectArchive(props: Props) {
-  const params = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
-  const [pending, startTransition] = useTransition();
+  const [params, setParams] = useState(
+    () =>
+      new URLSearchParams(
+        props.fixedCategory ? [["category", props.fixedCategory]] : [],
+      ),
+  );
   function update(key: string, value: string) {
     const next = new URLSearchParams(params.toString());
     if (key === "reset") {
       ["q", "category", "collection", "vehicle"].forEach((k) => next.delete(k));
+    } else if (key === "category") {
+      next.set(key, value);
+      next.delete("collection");
+      next.delete("vehicle");
     } else if (
       !value ||
       value === "all" ||
@@ -328,18 +336,13 @@ export default function ProjectArchive(props: Props) {
     )
       next.delete(key);
     else next.set(key, value);
-    startTransition(() => {
-      const url = `${pathname}${next.size ? `?${next}` : ""}`;
-      if (key === "q") window.history.replaceState(null, "", url);
-      else router.push(url, { scroll: false });
-    });
+    setParams(next);
   }
   return (
     <ArchiveContent
       {...props}
-      params={new URLSearchParams(params.toString())}
+      params={params}
       update={update}
-      pending={pending}
     />
   );
 }

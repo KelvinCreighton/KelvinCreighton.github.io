@@ -14,11 +14,11 @@ const features = [
     kind: "Hardware & firmware",
   },
   {
-    id: "rc-car",
-    title: "A $10 car, built to teach",
+    id: "dragonshell",
+    title: "Building a shell from system calls",
     description:
-      "A low-cost remote-control car and a one-day curriculum that makes mechanical and electrical ideas tangible.",
-    kind: "Robotics & education",
+      "A Unix shell written in C, with processes, pipes, redirection, and signals built directly on operating-system interfaces.",
+    kind: "Systems programming",
   },
   {
     id: "dremel-3d45-rebuild",
@@ -28,11 +28,11 @@ const features = [
     kind: "Build in progress",
   },
   {
-    id: "transmission-rebuild",
-    title: "Taking the gearbox apart",
+    id: "rc-car",
+    title: "A $10 car, built to teach",
     description:
-      "A manual transmission rebuild: following the diagnosis, working through the repair, and documenting the details.",
-    kind: "From the garage",
+      "A low-cost remote-control car and a one-day curriculum that makes mechanical and electrical ideas tangible.",
+    kind: "Robotics & education",
   },
 ];
 const notes = [

@@ -387,14 +387,19 @@ h3[id] {
   flex-wrap: wrap;
   padding: 22px 0;
 }
-.category-nav a {
+.category-nav button {
+  appearance: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
   border: 1px solid var(--rule);
   min-height: 38px;
   font-size: 14px;
   border-radius: 4px;
   padding: 7px 14px;
 }
-.category-nav a[aria-current] {
+.category-nav button[aria-pressed="true"] {
   background: var(--signal-soft);
   color: var(--signal);
   border-color: var(--signal);
