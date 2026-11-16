@@ -265,17 +265,18 @@
   gap: 14px;
   color: inherit;
 }
-.note-card-link > * {
+.note-card-link > div {
   transition: transform 220ms ease;
+  transform-origin: center;
 }
 .note-list li:hover,
 .note-list li:focus-within {
   border-color: var(--accent);
   box-shadow: 0 12px 24px rgb(0 0 0 / 14%);
 }
-.note-list li:hover .note-card-link > *,
-.note-list li:focus-within .note-card-link > * {
-  transform: translateY(-4px);
+.note-list li:hover .note-card-link > div,
+.note-list li:focus-within .note-card-link > div {
+  transform: scale(1.035);
 }
 .note-list li:first-child {
   padding-top: 6px;
@@ -348,12 +349,17 @@
 .home-page .topic-card-link:hover {
   text-decoration: none;
 }
-.topic-card-link > *,
+.topic-card-link > div,
 .shelf-item > :not(.card-hit-area) {
   transition: transform 220ms ease;
 }
-.topic-index li:hover .topic-card-link > *,
-.topic-index li:focus-within .topic-card-link > *,
+.topic-card-link > div {
+  transform-origin: center;
+}
+.topic-index li:hover .topic-card-link > div,
+.topic-index li:focus-within .topic-card-link > div {
+  transform: scale(1.035);
+}
 .shelf-item:hover > :not(.card-hit-area),
 .shelf-item:focus-within > :not(.card-hit-area) {
   transform: translateY(-4px);
