@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "@/components/BlurImage";
 import { FieldMark } from "@/components/FieldMark";
 import { categories, projects, getProject, inCategory } from "@/data/projects";
@@ -62,9 +63,28 @@ export default function Home() {
             with C/C++, microcontrollers, and Linux, exploring the relationship
             between hardware and software.
           </p>
-          <Link className="field-intro-link" href="/resume">
-            More about me <span aria-hidden="true">↗</span>
-          </Link>
+          <div className="field-intro-links" aria-label="Contact links">
+            <a
+              href="https://github.com/KelvinCreighton/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github aria-hidden="true" />
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kelvin-creighton-250806263"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin aria-hidden="true" />
+              LinkedIn
+            </a>
+            <a href="mailto:kcreight@ualberta.ca">
+              <Mail aria-hidden="true" />
+              Email
+            </a>
+          </div>
         </div>
       </section>
 

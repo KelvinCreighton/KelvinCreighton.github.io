@@ -173,6 +173,12 @@ h3[id] {
   font-size: 14px;
   font-weight: 600;
   line-height: 1.35;
+  transform-origin: left center;
+  transition: transform 180ms ease;
+}
+.wordmark:hover,
+.wordmark:focus-visible {
+  transform: scale(1.08);
 }
 .wordmark-name {
   font-family: var(--serif);
@@ -196,18 +202,22 @@ h3[id] {
 .desktop-nav a {
   padding: 10px 0;
   position: relative;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible {
+  transform: translateY(-3px);
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 2px;
 }
 .desktop-nav a[aria-current] {
   color: var(--accent);
-}
-.desktop-nav a[aria-current]:after {
-  content: "";
-  height: 2px;
-  background: var(--accent);
-  position: absolute;
-  bottom: 1px;
-  left: 0;
-  right: 0;
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 2px;
 }
 .menu-toggle {
   display: none;
@@ -1120,6 +1130,15 @@ h3[id] {
     padding: 13px 0;
     border-bottom: 1px solid var(--rule);
     font-size: 16px;
+    transition:
+      color 180ms ease,
+      transform 180ms ease;
+  }
+  .mobile-nav a:hover,
+  .mobile-nav a:focus-visible {
+    transform: translateY(-2px);
+    text-decoration: underline;
+    text-underline-offset: 5px;
   }
   .mobile-nav a[aria-current] {
     color: var(--accent);

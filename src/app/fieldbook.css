@@ -25,11 +25,32 @@
   line-height: 1.25;
   text-wrap: pretty;
 }
-.field-intro-link {
-  display: inline-block;
+.field-intro-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
   margin-top: 24px;
   font-size: 23px;
   line-height: 1.5;
+}
+.field-intro-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+.field-intro-links svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.7;
+}
+.home-page .field-intro-links a:hover,
+.field-intro-links a:focus-visible {
+  transform: translateY(-3px);
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 .field-intro-copy a,
 .fieldbook-heading a,
