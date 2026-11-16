@@ -49,7 +49,9 @@ export function NavBar() {
                   : undefined
             }
           >
-            {l.name}
+            <span className="nav-link-text">
+              <span className="nav-link-label">{l.name}</span>
+            </span>
           </Link>
         ))}
       </nav>
@@ -85,7 +87,9 @@ export function NavBar() {
             }
             onClick={() => setOpen(false)}
           >
-            {l.name}
+            <span className="nav-link-text">
+              <span className="nav-link-label">{l.name}</span>
+            </span>
             <span aria-hidden="true">↗</span>
           </Link>
         ))}

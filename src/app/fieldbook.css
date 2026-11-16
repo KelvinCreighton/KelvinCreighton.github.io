@@ -34,12 +34,27 @@
   line-height: 1.5;
 }
 .field-intro-links a {
+  position: relative;
+  display: inline-block;
+  transition: color 180ms ease;
+}
+.field-intro-links a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+.field-intro-link-content {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition:
-    color 180ms ease,
-    transform 180ms ease;
+  transition: transform 180ms ease;
 }
 .field-intro-links svg {
   width: 20px;
@@ -48,9 +63,15 @@
 }
 .home-page .field-intro-links a:hover,
 .field-intro-links a:focus-visible {
+  text-decoration: none;
+}
+.field-intro-links a:hover::after,
+.field-intro-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+.field-intro-links a:hover .field-intro-link-content,
+.field-intro-links a:focus-visible .field-intro-link-content {
   transform: translateY(-3px);
-  text-decoration: underline;
-  text-underline-offset: 5px;
 }
 .field-intro-copy a,
 .fieldbook-heading a,
@@ -115,6 +136,10 @@
 }
 .build-card {
   min-width: 0;
+}
+.build-card-link {
+  display: block;
+  color: inherit;
   background: var(--raised);
   border: 1px solid var(--rule);
   border-radius: 5px;
@@ -124,14 +149,10 @@
     transform 220ms ease,
     box-shadow 220ms ease;
 }
-.build-card:hover,
-.build-card:focus-within {
+.build-card:hover .build-card-link,
+.build-card:focus-within .build-card-link {
   transform: translateY(-6px);
   box-shadow: 0 14px 34px rgb(0 0 0 / 24%);
-}
-.build-card-link {
-  display: block;
-  color: inherit;
 }
 .home-page .build-card-link:hover {
   color: inherit;
@@ -206,14 +227,18 @@
   gap: 14px;
   padding: 22px 0;
   border-bottom: 1px solid var(--rule);
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease;
+  transition: box-shadow 220ms ease;
+}
+.note-list li > * {
+  transition: transform 220ms ease;
 }
 .note-list li:hover,
 .note-list li:focus-within {
-  transform: translateY(-4px);
   box-shadow: 0 12px 24px rgb(0 0 0 / 14%);
+}
+.note-list li:hover > *,
+.note-list li:focus-within > * {
+  transform: translateY(-4px);
 }
 .note-list li:first-child {
   padding-top: 6px;

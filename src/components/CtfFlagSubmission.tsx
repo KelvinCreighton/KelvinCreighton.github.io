@@ -1,5 +1,6 @@
 "use client";
 import { useId, useState, type FormEvent } from "react";
+import { InlineArrow } from "@/components/InlineArrow";
 export default function CtfFlagSubmission({
   expectedFlag,
   isComingSoon,
@@ -42,7 +43,7 @@ export default function CtfFlagSubmission({
             placeholder={isComingSoon ? "Release pending" : "Enter your flag"}
           />
           <button className="button" disabled={isComingSoon} type="submit">
-            Check flag →
+            Check flag <InlineArrow />
           </button>
         </div>
         <p id={`${id}-feedback`} className="challenge-feedback" role="status">

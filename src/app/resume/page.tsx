@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import PageIntro from "@/components/PageIntro";
 import ResumeDownloads from "@/components/ResumeDownloads";
+import { InlineArrow } from "@/components/InlineArrow";
 export const metadata: Metadata = {
   title: "Résumé",
   description:
@@ -94,10 +95,10 @@ export default function Page() {
             </p>
             <div className="quiet-links">
               <Link href="/projects/embedded-systems?collection=CMPUT+379%3A+Operating+Systems">
-                Operating systems →
+                Operating systems <InlineArrow />
               </Link>
               <Link href="/projects/engineering/robotic-arm-simulation">
-                Numerical methods →
+                Numerical methods <InlineArrow />
               </Link>
             </div>
           </section>
@@ -109,7 +110,7 @@ export default function Page() {
               creation and competition setup to technical support on the day.
             </p>
             <Link className="text-link" href="/events">
-              Leadership & community →
+              Leadership & community <InlineArrow />
             </Link>
           </section>
         </div>

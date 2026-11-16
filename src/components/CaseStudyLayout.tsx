@@ -6,6 +6,7 @@ import {
   inCategory,
 } from "@/data/projects";
 import ArticleContents from "@/components/ArticleContents";
+import { InlineArrow } from "@/components/InlineArrow";
 export default function CaseStudyLayout({
   projectId,
   children,
@@ -74,7 +75,7 @@ export default function CaseStudyLayout({
             </a>
           )}
           <Link className="text-link" href={`/projects/${p.category}`}>
-            Explore {categoryName(p.category).toLowerCase()} →
+            Explore {categoryName(p.category).toLowerCase()} <InlineArrow />
           </Link>
         </div>
         {p.overview && (

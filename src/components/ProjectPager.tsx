@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InlineArrow } from "@/components/InlineArrow";
 import {
   projectNavigationData,
   type ProjectNavigationCategory,
@@ -20,7 +21,9 @@ export default function ProjectPager({
           p ? (
             <Link key={p.href} href={p.href}>
               <span>{i === 0 ? "Previous project" : "Next project"}</span>
-              <h2>{p.title} →</h2>
+              <h2>
+                {p.title} <InlineArrow />
+              </h2>
             </Link>
           ) : null,
         )}

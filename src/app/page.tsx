@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "@/components/BlurImage";
 import { FieldMark } from "@/components/FieldMark";
+import { InlineArrow } from "@/components/InlineArrow";
 import { categories, projects, getProject, inCategory } from "@/data/projects";
 
 const features = [
@@ -69,20 +70,26 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github aria-hidden="true" />
-              GitHub
+              <span className="field-intro-link-content">
+                <Github aria-hidden="true" />
+                GitHub
+              </span>
             </a>
             <a
               href="https://www.linkedin.com/in/kelvin-creighton-250806263"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin aria-hidden="true" />
-              LinkedIn
+              <span className="field-intro-link-content">
+                <Linkedin aria-hidden="true" />
+                LinkedIn
+              </span>
             </a>
             <a href="mailto:kcreight@ualberta.ca">
-              <Mail aria-hidden="true" />
-              Email
+              <span className="field-intro-link-content">
+                <Mail aria-hidden="true" />
+                Email
+              </span>
             </a>
           </div>
         </div>
@@ -99,8 +106,7 @@ export default function Home() {
             A growing collection of builds, investigations, and things made
             along the way.{" "}
             <Link href="/projects">
-              Explore all {projects.length} projects{" "}
-              <span aria-hidden="true">→</span>
+              Explore all {projects.length} projects <InlineArrow />
             </Link>
           </p>
         </header>
@@ -109,7 +115,7 @@ export default function Home() {
             <div className="collection-heading">
               <h3 id="builds-title">
                 <Link href="/projects">
-                  Selected builds <span aria-hidden="true">→</span>
+                  Selected builds <InlineArrow />
                 </Link>
               </h3>
               <p>Projects that bring software into contact with real systems.</p>
@@ -148,7 +154,7 @@ export default function Home() {
             <div className="collection-heading">
               <h3 id="notes-title">
                 <Link href="/projects/cybersecurity">
-                  Security, from the systems side <span aria-hidden="true">→</span>
+                  Security, from the systems side <InlineArrow />
                 </Link>
               </h3>
               <p>
@@ -173,7 +179,7 @@ export default function Home() {
               })}
             </ul>
             <Link href="/projects/cybersecurity" className="collection-more">
-              All security projects <span aria-hidden="true">→</span>
+              All security projects <InlineArrow />
             </Link>
             <div className="margin-note">
               <span className="margin-note-label">A work in progress</span>
@@ -181,7 +187,9 @@ export default function Home() {
                 Some projects are finished; others are still on the bench. The
                 notes include the failures and unfinished parts, too.
               </p>
-              <Link href="/projects/?view=history">Follow the history →</Link>
+              <Link href="/projects/?view=history">
+                Follow the history <InlineArrow />
+              </Link>
             </div>
           </aside>
         </div>
@@ -259,8 +267,12 @@ export default function Home() {
             })}
           </div>
           <div className="shelf-links">
-            <Link href="/projects/game-dev">More games →</Link>
-            <Link href="/projects/music">All music →</Link>
+            <Link href="/projects/game-dev">
+              More games <InlineArrow />
+            </Link>
+            <Link href="/projects/music">
+              All music <InlineArrow />
+            </Link>
           </div>
         </section>
       </div>
@@ -288,8 +300,12 @@ export default function Home() {
             participants, and designing the winners’ medals.
           </p>
           <div className="people-links">
-            <Link href="/events">Community & leadership →</Link>
-            <Link href="/achievements">Competition results →</Link>
+            <Link href="/events">
+              Community & leadership <InlineArrow />
+            </Link>
+            <Link href="/achievements">
+              Competition results <InlineArrow />
+            </Link>
           </div>
         </div>
       </section>
