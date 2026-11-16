@@ -121,6 +121,21 @@
 .collection-heading :is(h2, h3) span {
   font-weight: 400;
 }
+.collection-heading :is(h2, h3) a,
+.fieldbook-heading a {
+  display: inline-block;
+  transition: transform 220ms ease, color 220ms ease;
+}
+.collection-heading :is(h2, h3):hover a,
+.collection-heading :is(h2, h3):focus-within a,
+.fieldbook-heading p:hover a,
+.fieldbook-heading p:focus-within a {
+  transform: translateY(-3px);
+  color: var(--accent);
+}
+.home-page .collection-heading :is(h2, h3) a:hover {
+  text-decoration: none;
+}
 .collection-heading > p {
   margin-top: 9px;
   color: var(--muted);
@@ -301,6 +316,30 @@
   gap: 15px;
   margin: 0 0 29px;
 }
+.topic-index li > *,
+.shelf-item > * {
+  transition: transform 220ms ease;
+}
+.topic-index li:hover > *,
+.topic-index li:focus-within > *,
+.shelf-item:hover > *,
+.shelf-item:focus-within > * {
+  transform: translateY(-4px);
+}
+.topic-index li:hover h3,
+.topic-index li:focus-within h3,
+.shelf-item:hover h3,
+.shelf-item:focus-within h3 {
+  color: var(--accent);
+}
+.topic-index li h3 a,
+.shelf-item h3 a {
+  color: inherit;
+}
+.home-page .topic-index li h3 a:hover,
+.home-page .shelf-item h3 a:hover {
+  text-decoration: none;
+}
 .topic-index .field-mark {
   margin-top: 1px;
 }
@@ -408,6 +447,29 @@
   border: 1px solid var(--rule);
   border-radius: 5px;
   overflow: hidden;
+  transition: box-shadow 220ms ease;
+}
+.archive-grid .archive-entry > *,
+.archive-list .archive-entry > * {
+  transition: transform 220ms ease;
+}
+.archive-entry:hover > *,
+.archive-entry:focus-within > * {
+  transform: translateY(-4px);
+}
+.archive-grid .archive-entry:hover,
+.archive-grid .archive-entry:focus-within {
+  box-shadow: 0 14px 34px rgb(0 0 0 / 24%);
+}
+.archive-entry:hover h2,
+.archive-entry:focus-within h2 {
+  color: var(--accent);
+}
+.archive-entry h2 a {
+  color: inherit;
+}
+.archive-entry h2 a:hover {
+  text-decoration: none;
 }
 .archive-grid .entry-copy {
   padding: 26px;

@@ -444,7 +444,7 @@ h3[id] {
 }
 .archive-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   padding-bottom: 80px;
   gap: 32px;
 }
@@ -539,6 +539,23 @@ h3[id] {
   align-items: baseline;
   padding: 20px 0;
   font-size: 14px;
+}
+.history-item > *,
+.related-work a > *,
+.community-record > * {
+  transition: transform 220ms ease;
+}
+.history-item:hover > *,
+.history-item:focus-visible > *,
+.related-work a:hover > *,
+.related-work a:focus-visible > *,
+.community-record:hover > *,
+.community-record:focus-within > * {
+  transform: translateY(-4px);
+}
+.history-item:hover,
+.history-item:focus-visible {
+  color: var(--accent);
 }
 .history-item span {
   font-size: 11px;
@@ -825,6 +842,16 @@ h3[id] {
 .related-work a {
   padding: 24px;
   border: 1px solid var(--rule);
+  transition: box-shadow 220ms ease;
+}
+.related-work a:hover,
+.related-work a:focus-visible {
+  box-shadow: 0 14px 34px rgb(0 0 0 / 24%);
+  text-decoration: none;
+}
+.related-work a:hover h2,
+.related-work a:focus-visible h2 {
+  color: var(--accent);
 }
 .related-work h3 {
   font-size: 20px;
@@ -1047,6 +1074,18 @@ h3[id] {
   display: block;
   font-weight: 600;
   margin-bottom: 6px;
+}
+.resume-summary dl > div > *,
+.resume-downloads > a {
+  transition: transform 220ms ease;
+}
+.resume-summary dl > div:hover > *,
+.resume-summary dl > div:focus-within > * {
+  transform: translateY(-3px);
+}
+.resume-summary dl > div:hover dt a,
+.resume-summary dl > div:focus-within dt a {
+  color: var(--accent);
 }
 .resume-summary li span {
   color: var(--muted);
