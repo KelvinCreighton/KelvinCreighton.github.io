@@ -8,30 +8,26 @@ import { categories, projects, getProject, inCategory } from "@/data/projects";
 const features = [
   {
     id: "machineguard",
-    title: "Listening to a machine",
     description:
-      "A sensor, an ESP32, and a power drill. Building the hardware and firmware for our MachineGuard prototype.",
+      "Listening to a machine: a sensor, an ESP32, and a power drill. Building the hardware and firmware for our MachineGuard prototype.",
     kind: "Hardware & firmware",
   },
   {
     id: "dragonshell",
-    title: "Building a shell from system calls",
     description:
-      "A Unix shell written in C, with processes, pipes, redirection, and signals built directly on operating-system interfaces.",
+      "Building a shell from system calls: a Unix shell written in C, with processes, pipes, redirection, and signals built directly on operating-system interfaces.",
     kind: "Systems programming",
   },
   {
     id: "dremel-3d45-rebuild",
-    title: "A second life for a 3D printer",
     description:
-      "Replacing a failed controller with an Arduino Mega, RAMPS, and Marlin. An ongoing rebuild, one test at a time.",
+      "A second life for a 3D printer: replacing a failed controller with an Arduino Mega, RAMPS, and Marlin, one test at a time.",
     kind: "Build in progress",
   },
   {
     id: "rc-car",
-    title: "A $10 car, built to teach",
     description:
-      "A low-cost remote-control car and a one-day curriculum that makes mechanical and electrical ideas tangible.",
+      "A $10 car, built to teach: a low-cost remote-control car and a one-day curriculum that makes mechanical and electrical ideas tangible.",
     kind: "Robotics & education",
   },
 ];
@@ -45,7 +41,7 @@ const notes = [
 ];
 const shelf = [
   "robotic-arm-simulation",
-  "ufo",
+  "3d-game",
   "beethoven-virus",
   "the-longest-moment",
 ];
@@ -133,7 +129,7 @@ export default function Home() {
                         />
                       </div>
                       <div className="build-copy">
-                        <h4>{feature.title}</h4>
+                        <h4>{project.title}</h4>
                         <p>{feature.description}</p>
                         <div className="build-meta">
                           <FieldMark />
