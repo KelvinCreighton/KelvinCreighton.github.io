@@ -17,7 +17,7 @@ async function main() {
         flexDirection: "column",
         justifyContent: "space-between",
         background: "#1c1b18",
-        color: "#d4d1cc",
+        color: "#e1dfd5",
         padding: "64px 72px",
       },
     },
@@ -31,7 +31,7 @@ async function main() {
         },
       },
       h("span", null, "Kelvin Creighton"),
-      h("span", { style: { color: "#34bac6" } }, "The Fieldbook"),
+      h("span", { style: { color: "#e0a678" } }, "Project Highlights"),
     ),
     h(
       "div",
@@ -45,8 +45,8 @@ async function main() {
           lineHeight: 1.05,
         },
       },
-      h("span", null, "Software, hardware,"),
-      h("span", { style: { color: "#f078b8" } }, "and a curious mind."),
+      h("span", null, "Embedded systems,"),
+      h("span", { style: { color: "#e0a678" } }, "where software meets hardware."),
     ),
     h(
       "div",
@@ -54,12 +54,12 @@ async function main() {
         style: {
           display: "flex",
           justifyContent: "space-between",
-          borderTop: "1px solid #44413e",
+          borderTop: "1px solid #474c45",
           paddingTop: 24,
           fontSize: 22,
         },
       },
-      h("span", null, "Embedded software / Firmware / Systems"),
+      h("span", null, "Firmware / Computer architecture / Linux"),
       h("span", null, "kelvincreighton.ca"),
     ),
   );

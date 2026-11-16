@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "@/components/BlurImage";
-import { ProjectArtwork, FieldMark } from "@/components/ProjectArtwork";
+import { FieldMark } from "@/components/FieldMark";
 import { categories, projects, getProject, inCategory } from "@/data/projects";
 
 const features = [
@@ -12,11 +12,11 @@ const features = [
     kind: "Hardware & firmware",
   },
   {
-    id: "dragonshell",
-    title: "Under the shell",
+    id: "rc-car",
+    title: "A $10 car, built to teach",
     description:
-      "Building DragonShell in C to understand processes, pipes, and what a command line actually does.",
-    kind: "Systems programming",
+      "A low-cost remote-control car and a one-day curriculum that makes mechanical and electrical ideas tangible.",
+    kind: "Robotics & education",
   },
   {
     id: "dremel-3d45-rebuild",
@@ -53,30 +53,28 @@ export default function Home() {
     <div className="home-page">
       <section className="field-intro" aria-labelledby="intro-title">
         <h1 id="intro-title">
-          <strong>Kelvin</strong> builds software, tinkers with hardware, and
-          follows his curiosity.
+          Hi, I&apos;m Kelvin.
         </h1>
         <div className="field-intro-copy">
-          <p>
-            Embedded software, systems programming, and the occasional detour.
+          <p className="field-intro-description">
+            I&apos;m a Computer Science student at the University of Alberta
+            focused on embedded software and firmware. I work with
+            microcontrollers, Linux, and low-level systems to understand how
+            software makes hardware work.
           </p>
-          <p>
-            I like figuring out how things work, then making something of my
-            own.{" "}
-            <Link href="/resume">
-              More about me <span aria-hidden="true">↗</span>
-            </Link>
-          </p>
+          <Link className="field-intro-link" href="/resume">
+            More about me <span aria-hidden="true">↗</span>
+          </Link>
         </div>
       </section>
 
       <section
         className="fieldbook"
         id="selected-work"
-        aria-labelledby="fieldbook-title"
+        aria-labelledby="highlights-title"
       >
         <header className="fieldbook-heading">
-          <h2 id="fieldbook-title">The Fieldbook</h2>
+          <h2 id="highlights-title">Project Highlights</h2>
           <p>
             A growing collection of builds, investigations, and things made
             along the way.{" "}
@@ -94,7 +92,7 @@ export default function Home() {
                   Selected builds <span aria-hidden="true">→</span>
                 </Link>
               </h3>
-              <p>Software meeting hardware. Ideas becoming working things.</p>
+              <p>Projects that bring software into contact with real systems.</p>
             </div>
             <div className="build-grid">
               {features.map((feature) => {
@@ -104,10 +102,15 @@ export default function Home() {
                     <Link
                       href={project.href}
                       className="build-art"
-                      tabIndex={-1}
-                      aria-hidden="true"
+                      aria-label={`View ${project.title}`}
                     >
-                      <ProjectArtwork id={feature.id} />
+                      <Image
+                        src={project.image}
+                        alt={project.imageAlt}
+                        fill
+                        sizes="(max-width: 760px) 90vw, (max-width: 1100px) 42vw, 520px"
+                        priority={feature.id === "machineguard"}
+                      />
                     </Link>
                     <div className="build-copy">
                       <h4>
@@ -129,11 +132,12 @@ export default function Home() {
             <div className="collection-heading">
               <h3 id="notes-title">
                 <Link href="/projects/cybersecurity">
-                  Investigations & writeups <span aria-hidden="true">→</span>
+                  Security, from the systems side <span aria-hidden="true">→</span>
                 </Link>
               </h3>
               <p>
-                Following the evidence, finding the flaw, and leaving a trail.
+                A second lens on how software and systems fail, and how they
+                can be made harder to break.
               </p>
             </div>
             <ul className="note-list">
@@ -171,7 +175,10 @@ export default function Home() {
         <section className="topic-index" aria-labelledby="topics-title">
           <div className="collection-heading">
             <h2 id="topics-title">Follow a thread</h2>
-            <p>Different tools. The same curiosity.</p>
+          <p>
+            Embedded systems are the focus; operating systems, robotics, and
+            security help me understand the whole machine.
+          </p>
           </div>
           <ul>
             {categories.map((category) => (

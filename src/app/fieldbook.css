@@ -3,7 +3,7 @@
   padding: 62px 0 115px;
 }
 .field-intro h1 {
-  max-width: 1250px;
+  max-width: 900px;
   font-size: clamp(3.4rem, 6.6vw, 6rem);
   font-weight: 400;
   line-height: 1.07;
@@ -14,15 +14,22 @@
   font-weight: 600;
 }
 .field-intro-copy {
-  max-width: 1080px;
+  max-width: 920px;
   margin-top: 34px;
-  font-size: 23px;
   font-weight: 300;
-  line-height: 1.65;
   color: var(--muted);
 }
-.field-intro-copy p + p {
-  margin-top: 4px;
+.field-intro-description {
+  font-size: clamp(1.35rem, 2.7vw, 2.4375rem);
+  font-weight: 400;
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+.field-intro-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 23px;
+  line-height: 1.5;
 }
 .field-intro-copy a,
 .fieldbook-heading a,
@@ -94,13 +101,21 @@
   box-shadow: 0 5px 18px #36363403;
 }
 .build-art {
+  position: relative;
   display: block;
-  padding: 12px 6px 0;
+  aspect-ratio: 1.52;
+  overflow: hidden;
+  background: var(--surface);
 }
-.project-artwork {
+.build-art img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+.build-art:hover img {
+  transform: scale(1.025);
 }
 .build-copy {
   padding: 8px 23px 23px;
@@ -348,12 +363,6 @@
 .technical-diagram-contrast {
   background: #757575;
 }
-.dark .project-artwork {
-  opacity: 0.91;
-}
-.dark .build-art {
-  background: var(--raised);
-}
 
 @media (min-width: 1400px) {
   .site-main {
@@ -383,9 +392,6 @@
   }
   .build-copy h4 {
     font-size: 26px;
-  }
-  .field-intro-copy {
-    font-size: 21px;
   }
   .people-section {
     gap: 38px;
@@ -429,11 +435,6 @@
   }
   .field-intro-copy {
     margin-top: 25px;
-    font-size: 19px;
-    line-height: 1.65;
-  }
-  .field-intro-copy p + p {
-    margin-top: 12px;
   }
   .fieldbook-heading {
     margin-bottom: 40px;
@@ -498,7 +499,7 @@
     gap: 25px;
   }
   .build-art {
-    padding: 8px 6px 0;
+    aspect-ratio: 1.52;
   }
   .build-copy {
     padding: 4px 22px 24px;

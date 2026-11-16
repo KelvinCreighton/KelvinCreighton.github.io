@@ -7,16 +7,16 @@ import "./fieldbook.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://kelvincreighton.ca"),
   title: {
-    default: "Kelvin Creighton — Embedded Software & Systems",
+    default: "Kelvin Creighton — Embedded Systems & Firmware",
     template: "%s | Kelvin Creighton",
   },
   description:
-    "Projects in embedded software, firmware, and systems programming. Build notes, investigations, and creative work by Kelvin Creighton.",
+    "Kelvin Creighton is a Computer Science student at the University of Alberta building projects in embedded systems, firmware, and systems programming.",
   authors: [{ name: "Kelvin Creighton" }],
   openGraph: {
-    title: "Kelvin Creighton — Embedded Software & Systems",
+    title: "Kelvin Creighton — Embedded Systems & Firmware",
     description:
-      "A fieldbook of software, hardware, and the work of understanding how things run.",
+      "Embedded systems, firmware, and computer science projects by Kelvin Creighton.",
     url: "https://kelvincreighton.ca",
     siteName: "Kelvin Creighton",
     locale: "en_CA",
@@ -44,10 +44,7 @@ export default function RootLayout({
                 className="wordmark"
                 aria-label="Kelvin Creighton, home"
               >
-                <span className="monogram" aria-hidden="true">
-                  <span className="mark-bracket">⌁</span>kc
-                  <span className="mark-bracket">⌁</span>
-                </span>
+                <span className="wordmark-name">Kelvin Creighton</span>
               </Link>
               <NavBar />
             </div>
@@ -64,7 +61,7 @@ export default function RootLayout({
                 </a>
               </div>
               <div className="footer-links">
-                <Link href="/projects">The Fieldbook</Link>
+                <Link href="/projects">Projects</Link>
                 <Link href="/events">Community</Link>
                 <Link href="/achievements">Achievements</Link>
                 <a
@@ -86,9 +83,9 @@ export default function RootLayout({
             </div>
             <div className="footer-bottom">
               <span>© {new Date().getFullYear()} Kelvin Creighton</span>
-              <span>A personal collection, always in progress.</span>
+              <span>Embedded systems, firmware, and work in progress.</span>
               <Link href="/projects/?view=history">
-                The complete fieldbook ↗
+                Browse all projects ↗
               </Link>
             </div>
           </footer>

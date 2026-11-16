@@ -1,6 +1,6 @@
 # Kelvin Creighton — Portfolio
 
-A personal fieldbook of embedded software, systems programming, security investigations, repair projects, games, and music.
+A project portfolio focused on embedded systems, firmware, and the software underneath computing systems, alongside systems programming, security investigations, repair projects, games, and music.
 
 This repository uses Next.js 16, React 19, TypeScript, Tailwind CSS, and a static export for GitHub Pages at `kelvincreighton.ca`. It does not require a production Node server.
 
@@ -24,14 +24,14 @@ Open `http://localhost:8080`. `next start` does not serve the static export. Pub
 
 - `src/data/projects.ts`: the 35-project registry, six disciplines, cross-listings, dates, summaries, and source/demo/score links.
 - `src/app/page.tsx`: homepage selections and short editorial introductions, linked to the registry by project ID.
-- `src/components/ProjectArtwork.tsx`: original SVG cover illustrations and the small fieldbook ornament.
+- `src/components/FieldMark.tsx`: the small decorative mark used in collection lists.
 - `src/data/community.ts`: leadership records and achievements.
 - `src/app/projects/**/page.tsx`: detailed project content, with existing URLs preserved.
 - `src/components/CaseStudyLayout.tsx`: common project header, contribution/outcome summaries, contents navigation, and related work.
 - `src/components/ProjectArchive.tsx`: search, collection and vehicle filters, gallery/index/history views, and URL state.
 - `src/components/DemoFrame.tsx` and `InteractiveProject.tsx`: on-demand games, robotics simulation, and sheet music.
 - `src/app/globals.css`: the fixed dark Fieldbook palette, typography, and shared responsive layouts.
-- `src/app/fieldbook.css`: the illustrated homepage and shared editorial refinements.
+- `src/app/fieldbook.css`: the editorial homepage and shared visual refinements.
 - `src/app/font-faces.css` and `public/fonts`: self-hosted Newsreader/Lato font files and their open licenses.
 - `public/games`, `public/scores`, `public/downloads`: original interactive artifacts and challenge files.
 

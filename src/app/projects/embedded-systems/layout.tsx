@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Embedded & Systems",
+  title: "Embedded Systems",
   description:
     "Sensor hardware, firmware, and the software behind processes, files, and parallel work.",
   alternates: { canonical: "/projects/embedded-systems/" },

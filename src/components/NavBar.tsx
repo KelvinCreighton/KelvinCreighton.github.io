@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const links = [
+  { name: "Home", href: "/" },
   { name: "Projects", href: "/projects" },
   { name: "Achievements", href: "/achievements" },
   { name: "Leadership", href: "/events" },
@@ -38,7 +39,15 @@ export function NavBar() {
           <Link
             key={l.href}
             href={l.href}
-            aria-current={path.startsWith(l.href) ? "page" : undefined}
+            aria-current={
+              l.href === "/"
+                ? path === "/"
+                  ? "page"
+                  : undefined
+                : path.startsWith(l.href)
+                  ? "page"
+                  : undefined
+            }
           >
             {l.name}
           </Link>
@@ -65,7 +74,15 @@ export function NavBar() {
           <Link
             key={l.href}
             href={l.href}
-            aria-current={path.startsWith(l.href) ? "page" : undefined}
+            aria-current={
+              l.href === "/"
+                ? path === "/"
+                  ? "page"
+                  : undefined
+                : path.startsWith(l.href)
+                  ? "page"
+                  : undefined
+            }
             onClick={() => setOpen(false)}
           >
             {l.name}

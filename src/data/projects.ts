@@ -38,7 +38,7 @@ export const categories: {
 }[] = [
   {
     id: "embedded-systems",
-    title: "Embedded & Systems",
+    title: "Embedded Systems",
     description:
       "Sensor hardware, firmware, and the software behind processes, files, and parallel work.",
   },

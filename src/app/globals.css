@@ -7,21 +7,21 @@
   --color-gray-85: #eeede6;
 }
 :root {
-  /* Fixed dark palette adapted from the reference's dark appearance. */
+  /* Charcoal and sage, with copper as the warm accent. */
   --rust: var(--signal);
   --background: var(--paper);
   --foreground: var(--ink);
   color-scheme: dark;
   --paper: #1c1b18;
-  --surface: #252420;
-  --raised: #252420;
-  --ink: #d4d1cc;
-  --muted: #aaa7a2;
-  --accent: #f078b8;
-  --signal: #34bac6;
+  --surface: #292e29;
+  --raised: #292e29;
+  --ink: #e1dfd5;
+  --muted: #b0b4a8;
+  --accent: #e0a678;
+  --signal: #aac5af;
   --on-signal: #1c1b18;
-  --signal-soft: #253f42;
-  --rule: #44413e;
+  --signal-soft: #37483b;
+  --rule: #474c45;
   --focus: var(--signal);
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
 }
@@ -174,22 +174,13 @@ h3[id] {
   font-weight: 600;
   line-height: 1.35;
 }
-.monogram {
+.wordmark-name {
   font-family: var(--serif);
-  line-height: 1;
-  font-size: 46px;
+  line-height: 1.1;
+  font-size: 25px;
   font-weight: 600;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.035em;
   color: var(--accent);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.monogram span {
-  color: var(--signal);
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: normal;
 }
 .navigation {
   position: relative;
@@ -1095,8 +1086,8 @@ h3[id] {
     gap: 11px;
     font-size: 12px;
   }
-  .monogram {
-    font-size: 36px;
+  .wordmark-name {
+    font-size: 21px;
   }
   .navigation {
     gap: 10px;

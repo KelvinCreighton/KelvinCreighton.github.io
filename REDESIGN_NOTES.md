@@ -1,4 +1,4 @@
-# Portfolio redesign — illustrated fieldbook
+# Portfolio redesign — editorial project portfolio
 
 Implemented locally on `redesign/fieldbook-v1`. This revision follows the user's chosen reference, [Maggie Appleton's website](https://maggieappleton.com/), while retaining Kelvin's existing portfolio functionality. No push or deployment was performed.
 
@@ -8,7 +8,7 @@ The first redesign is available in commit `dbb8084` (rough draft). The pre-redes
 
 The reference was inspected in a browser at desktop and phone widths, alongside its [Garden](https://maggieappleton.com/garden), article layout, and [colophon](https://maggieappleton.com/colophon).
 
-The adopted ideas are a large serif introduction, a dark charcoal surface, bright pink and cyan accents, illustrated cards beside simpler lists, generous gaps between collections, and a quiet footer. These are adapted to engineering projects, security investigations, games, and music.
+The adopted ideas are a large serif introduction, a dark charcoal surface, illustrated cards beside simpler lists, generous gaps between collections, and a quiet footer. These are adapted to engineering projects, security investigations, games, and music.
 
 The reference's essays/notes/patterns/library organization becomes selected builds, investigations, discipline links, and an interactive shelf. Project states remain factual: completed, prototype, in progress, or release pending. The site does not relabel engineering work with botanical growth stages or invent a stream of essays to fill the layout.
 
@@ -19,24 +19,24 @@ The reference uses commercial Canela and supporting Lato type. This implementati
 | Purpose | Fixed palette |
 | --- | --- |
 | Background | `#1C1B18` |
-| Cards | `#252420` |
-| Primary text | `#D4D1CC` |
-| Supporting text | `#AAA7A2` |
-| Pink links | `#F078B8` |
-| Cyan details and focus | `#34BAC6` |
+| Cards | `#292E29` |
+| Primary text | `#E1DFD5` |
+| Supporting text | `#B0B4A8` |
+| Copper links | `#E0A678` |
+| Sage details and focus | `#AAC5AF` |
 
-The site now uses only the reference's dark appearance. The light palette and visitor theme switch were removed. Colour comes from links, small ornaments, original illustrations, and actual project imagery.
+The site keeps the reference's near-black background. Sage cards and details blend into that base, while copper gives links and highlighted text a distinct accent. The illustrations and social images use the same palette. There is one fixed theme and no visitor theme switch.
 
-Four original SVG covers depict a sensor board, shell windows, a printer rebuild, and gearbox parts. They are conceptual illustrations, not technical diagrams. Actual project photographs and diagrams remain in the archive and detailed pages. The SVGs are rendered directly without an illustration library, image service, or animation dependency.
+The homepage now uses the actual project imagery already attached to each highlighted project. The selected set is MachineGuard, the low-cost RC car curriculum, the Dremel controller rebuild, and the manual transmission rebuild. DragonShell remains available in the full portfolio; its former conceptual SVG cover was not presented as a project photo.
 
 The transparent MachineGuard wiring diagram contains both white labels and black wires. Its image container now uses a medium neutral grey to keep both visible; the source image bytes are unchanged.
 
 ## Homepage
 
-1. A large personal introduction establishes software, hardware, and curiosity. The supporting copy retains the embedded/systems emphasis and links to the existing résumé.
-2. **The Fieldbook** introduces the collection and links to all 35 projects.
-3. **Selected builds** pairs four illustrated stories with short descriptions: MachineGuard, DragonShell, the Dremel controller rebuild, and the manual transmission rebuild.
-4. **Investigations & writeups** offers a quieter list of existing security material. It includes only available projects.
+1. A large first-person introduction positions Kelvin as a Computer Science student focused on embedded software, firmware, and computer architecture. The copy describes his build-first learning style and links to the existing résumé. `who_i_am.txt` informed this wording as a guide, not as a verified source of every biography claim.
+2. **Project Highlights** introduces the collection and links to all 35 projects.
+3. **Selected builds** pairs four project photographs with short descriptions: MachineGuard, the RC car curriculum, the Dremel controller rebuild, and the manual transmission rebuild.
+4. **Security, from the systems side** presents cybersecurity as a complementary technical perspective and links to the existing writeups.
 5. **Follow a thread** exposes all six disciplines and their registry-derived counts.
 6. **Things to play with** presents the robotics simulator, UFO, a piano arrangement, and an original composition. Direct links go to their existing interactive sections.
 7. A real BSides group photograph and brief community introduction retain the people and leadership side of the portfolio.
@@ -68,7 +68,7 @@ Useful review routes:
 ## Preserved content and features
 
 - All 35 project routes, six category routes, detailed writeups, original photographs, and technical material.
-- Dremel's cross-listing under Embedded & Systems and Mechatronics: 36 category memberships, 35 unique projects.
+- Dremel's cross-listing under Embedded Systems and Mechatronics: 36 category memberships, 35 unique projects.
 - Six playable game/simulation embeds with launch, close, and separate-tab controls.
 - The robotics simulator and its numerical-method controls, loaded on demand.
 - Three MusicXML scores, score rendering, play/pause/stop, and downloads.
@@ -82,7 +82,7 @@ No project registry facts, source links, challenge binaries, game files, scores,
 ## Implementation and maintenance
 
 - `src/app/page.tsx` selects homepage project IDs and provides the short introductory wording.
-- `src/components/ProjectArtwork.tsx` owns the original SVG covers and small ornament.
+- `src/components/FieldMark.tsx` provides the small decorative mark used in lists; project cards use the registry's real project imagery.
 - `src/app/globals.css` contains theme tokens, shared page layouts, and preserved interactive styling. Obsolete homepage rules were removed.
 - `src/app/fieldbook.css` contains the new editorial composition and responsive refinements.
 - `src/app/font-faces.css` loads font files from `public/fonts`; both SIL Open Font Licenses are included.
