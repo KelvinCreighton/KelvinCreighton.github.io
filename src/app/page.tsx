@@ -84,21 +84,9 @@ export default function Home() {
       >
         <header className="fieldbook-heading">
           <h2 id="highlights-title">Project Highlights</h2>
-          <p>
-            A growing collection of builds, investigations, and things made
-            along the way.
-          </p>
         </header>
         <div className="fieldbook-columns">
-          <section className="featured-builds" aria-labelledby="builds-title">
-            <div className="collection-heading">
-              <h3 id="builds-title">
-                <Link href="/projects" className="projects-overview-link">
-                  Explore all {projects.length} projects <InlineArrow />
-                </Link>
-              </h3>
-              <p>Projects that bring software into contact with real systems.</p>
-            </div>
+          <section className="featured-builds" aria-label="Highlighted projects">
             <div className="build-grid">
               {features.map((feature) => {
                 const project = getProject(feature.id)!;
@@ -131,10 +119,15 @@ export default function Home() {
           </section>
           <section className="topic-index" aria-labelledby="topics-title">
             <div className="collection-heading">
-              <h2 id="topics-title">Follow a thread</h2>
-              <p>
-                Embedded systems are the focus; operating systems, robotics,
-                and security help me understand the whole machine.
+              <h2 id="topics-title">
+                <Link href="/projects" className="projects-overview-link">
+                  Explore all {projects.length} projects <InlineArrow />
+                </Link>
+              </h2>
+              <p className="topic-index-intro">
+                Embedded systems are my primary focus, with projects across
+                software, robotics, and security driven by a curiosity of
+                how the world works.
               </p>
             </div>
             <ul>

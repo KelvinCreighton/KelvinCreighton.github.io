@@ -144,6 +144,9 @@
 .projects-overview-link {
   color: var(--accent);
 }
+.topic-index .projects-overview-link {
+  font-size: 26px;
+}
 .home-page .collection-heading h3 .projects-overview-link:hover,
 .home-page .collection-heading h3 .security-heading-link:hover {
   text-decoration: underline;
@@ -341,6 +344,10 @@
   padding: 22px 0;
   border-bottom: 1px solid var(--rule);
   transition: border-color 220ms ease;
+}
+.topic-index .topic-index-intro {
+  font-size: 18px;
+  font-weight: 400;
 }
 .topic-index li:hover,
 .topic-index li:focus-within {
