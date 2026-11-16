@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/projects",
     "/resume",
-    "/events",
+    "/community",
     "/achievements",
     ...categories.map((c) => `/projects/${c.id}`),
     ...projects.map((p) => p.href),

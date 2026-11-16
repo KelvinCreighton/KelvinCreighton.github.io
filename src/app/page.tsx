@@ -157,7 +157,7 @@ export default function Home() {
       <section className="people-section" aria-labelledby="people-title">
         <Link
           className="people-photo"
-          href="/events#bsides-edmonton-2026"
+          href="/community#bsides-edmonton-2026"
           tabIndex={-1}
           aria-hidden="true"
         >
@@ -177,7 +177,7 @@ export default function Home() {
             participants, and designing the winners’ medals.
           </p>
           <div className="people-links">
-            <Link href="/events">
+            <Link href="/community">
               Community & leadership <InlineArrow />
             </Link>
             <Link href="/achievements">

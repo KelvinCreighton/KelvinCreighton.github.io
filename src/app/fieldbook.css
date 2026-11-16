@@ -74,6 +74,14 @@
 .field-intro-links a:focus-visible .field-intro-link-content {
   transform: translateY(-3px);
 }
+.footer-contact-links {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 0;
+}
+.footer-contact-links a:hover {
+  text-decoration: none;
+}
 .field-intro-copy a,
 .fieldbook-heading a,
 .collection-more,

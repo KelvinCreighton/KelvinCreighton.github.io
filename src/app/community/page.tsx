@@ -1,6 +1,7 @@
 import PageIntro from "@/components/PageIntro";
 import BlurImage from "@/components/BlurImage";
 import { events } from "@/data/community";
+
 export default function Page() {
   return (
     <>

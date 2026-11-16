@@ -87,7 +87,7 @@ function ArchiveContent({
             title: e.title,
             date: e.date,
             sortDate: e.sortDate,
-            href: `/events#${e.id}`,
+            href: `/community#${e.id}`,
             kind: "Community",
           })),
           ...achievements.map((a) => ({

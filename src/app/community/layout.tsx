@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Leadership",
+  title: "Community",
   description:
-    "Leadership and event organization work for Kelvin Creighton, including OWASP Edmonton and CHADS.",
+    "Community and event organization work for Kelvin Creighton, including OWASP Edmonton and CHADS.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

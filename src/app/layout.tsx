@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { NavBar } from "@/components/NavBar";
 import { Background } from "@/components/Background";
 import "./globals.css";
@@ -54,30 +55,41 @@ export default function RootLayout({
           </main>
           <footer className="site-footer">
             <div className="footer-top">
-              <div>
-                <h2>Have something in mind?</h2>
-                <a className="text-link" href="mailto:kcreight@ualberta.ca">
-                  kcreight@ualberta.ca <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-              <div className="footer-links">
-                <Link href="/projects">Projects</Link>
-                <Link href="/events">Community</Link>
-                <Link href="/achievements">Achievements</Link>
-                <a
-                  href="https://github.com/KelvinCreighton/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub ↗
+              <div
+                className="field-intro-links footer-contact-links"
+                aria-label="Contact links"
+              >
+                <a href="mailto:kcreight@ualberta.ca">
+                  <span className="field-intro-link-content">
+                    <Mail aria-hidden="true" />
+                    Email
+                  </span>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/kelvin-creighton-250806263"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  LinkedIn ↗
+                  <span className="field-intro-link-content">
+                    <Linkedin aria-hidden="true" />
+                    LinkedIn
+                  </span>
                 </a>
+                <a
+                  href="https://github.com/KelvinCreighton/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="field-intro-link-content">
+                    <Github aria-hidden="true" />
+                    GitHub
+                  </span>
+                </a>
+              </div>
+              <div className="footer-links">
+                <Link href="/projects">Projects</Link>
+                <Link href="/community">Community</Link>
+                <Link href="/achievements">Achievements</Link>
                 <Link href="/resume">Resume ↗</Link>
               </div>
             </div>

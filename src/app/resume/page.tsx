@@ -121,7 +121,7 @@ export default function Page() {
               I’ve helped organize CTFs and community events, from challenge
               creation and competition setup to technical support on the day.
             </p>
-            <Link className="text-link" href="/events">
+            <Link className="text-link" href="/community">
               Leadership & community <InlineArrow />
             </Link>
           </section>
