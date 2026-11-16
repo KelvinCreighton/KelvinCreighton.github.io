@@ -1070,6 +1070,11 @@ h3[id] {
   font-size: 11px;
   color: var(--muted);
 }
+.achievement-list .record-date,
+.event-list .record-date {
+  font-size: 13px;
+  white-space: nowrap;
+}
 .record-image {
   position: relative;
   aspect-ratio: 4/3;
