@@ -24,26 +24,24 @@ function ArchiveContent({
   update: (key: string, value: string) => void;
   pending?: boolean;
 }) {
-  const category =
-    params.get("category") === "all"
-      ? "all"
-      : categories.some((c) => c.id === params.get("category"))
-        ? (params.get("category") as CategoryId)
-        : fixedCategory || "all";
+  const requestedCategories = params
+    .getAll("category")
+    .filter((id): id is CategoryId => categories.some((c) => c.id === id));
+  const selectedCategory =
+    requestedCategories.length > 0
+      ? requestedCategories[requestedCategories.length - 1]
+      : !params.has("category") && fixedCategory
+        ? fixedCategory
+        : null;
   const view = ["list", "history"].includes(params.get("view") || "")
     ? params.get("view")!
     : "grid";
   const query = params.get("q") || "";
-  const requestedCollection =
-    params.get("collection") ||
-    (fixedCategory === "cybersecurity" &&
-    !categories.some((c) => c.id === params.get("category"))
-      ? params.get("category") || "all"
-      : "all");
+  const requestedCollection = params.get("collection") || "all";
   const requestedVehicle = params.get("vehicle") || "all";
   const order = params.get("order") === "oldest" ? "oldest" : "newest";
   const scope = projects.filter(
-    (p) => category === "all" || inCategory(p, category),
+    (p) => !selectedCategory || inCategory(p, selectedCategory),
   );
   const collections = [
     ...new Set(scope.map((p) => p.collection).filter(Boolean)),
@@ -71,14 +69,9 @@ function ArchiveContent({
         ? b.sortDate.localeCompare(a.sortDate)
         : a.sortDate.localeCompare(b.sortDate),
     );
-  const hasFilters =
-    query ||
-    collection !== "all" ||
-    vehicle !== "all" ||
-    (!fixedCategory && category !== "all");
   const milestones =
     view === "history" &&
-    category === "all" &&
+    !selectedCategory &&
     !query &&
     collection === "all" &&
     vehicle === "all"
@@ -117,15 +110,14 @@ function ArchiveContent({
   return (
     <div className="archive" aria-busy={pending}>
       <div className="archive-topline">
-        <p className="eyebrow">The work, in detail</p>
         <div className="view-controls" role="group" aria-label="Archive view">
-          {["grid", "list", "history"].map((v) => (
+          {["grid", "list"].map((v) => (
             <button
               key={v}
               aria-pressed={view === v}
               onClick={() => update("view", v)}
             >
-              {v === "grid" ? "Gallery" : v === "list" ? "Index" : "History"}
+              {v === "grid" ? "Gallery" : "Index"}
             </button>
           ))}
         </div>
@@ -133,16 +125,16 @@ function ArchiveContent({
       <nav className="category-nav" aria-label="Project disciplines">
         <button
           type="button"
-          aria-pressed={category === "all"}
+          aria-pressed={!selectedCategory}
           onClick={() => update("category", "all")}
         >
-          All work <sup>{projects.length}</sup>
+          All Work <sup>{projects.length}</sup>
         </button>
         {categories.map((c) => (
           <button
             type="button"
             key={c.id}
-            aria-pressed={category === c.id}
+            aria-pressed={selectedCategory === c.id}
             onClick={() => update("category", c.id)}
           >
             {c.title}{" "}
@@ -160,11 +152,6 @@ function ArchiveContent({
             ? ` · ${milestones.length} community milestones`
             : ""}
         </p>
-        {hasFilters && (
-          <button className="text-link" onClick={() => update("reset", "")}>
-            Clear filters ×
-          </button>
-        )}
       </div>
       {!results.length && (
         <div className="empty-state">
@@ -282,7 +269,12 @@ export default function ProjectArchive(props: Props) {
     if (key === "reset") {
       ["q", "category", "collection", "vehicle"].forEach((k) => next.delete(k));
     } else if (key === "category") {
-      next.set(key, value);
+      next.delete("category");
+      if (value === "all") {
+        if (props.fixedCategory) next.set("category", "all");
+      } else {
+        next.set("category", value);
+      }
       next.delete("collection");
       next.delete("vehicle");
     } else if (

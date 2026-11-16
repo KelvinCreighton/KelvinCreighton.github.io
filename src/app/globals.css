@@ -418,7 +418,7 @@ h3[id] {
 .archive-topline {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 15px;
   border-bottom: 1px solid var(--rule);
   padding-bottom: 20px;
