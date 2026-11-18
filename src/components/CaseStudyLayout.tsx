@@ -6,7 +6,6 @@ import {
   inCategory,
 } from "@/data/projects";
 import { Github, Download, Play } from "lucide-react";
-import { projectTopics } from "@/data/projectTopics";
 import ArticleContents from "@/components/ArticleContents";
 import { InlineArrow } from "@/components/InlineArrow";
 export default function CaseStudyLayout({
@@ -22,14 +21,6 @@ export default function CaseStudyLayout({
     (p.id.startsWith("wicys-ctf-")
       ? "https://github.com/KelvinCreighton/WICYS-Cross-Chapter-CTF-2026"
       : undefined);
-  const status =
-    p.availability === "coming-soon"
-      ? "Release pending"
-      : p.state === "in-progress"
-        ? "In progress"
-        : p.state === "prototype"
-          ? "Working prototype"
-          : "Complete";
   const related = projects
     .filter((r) => r.id !== p.id && inCategory(r, p.category))
     .sort(
@@ -86,22 +77,6 @@ export default function CaseStudyLayout({
             </a>
           )}
         </div>
-        <dl className="case-overview" aria-label="Project at a glance">
-          <div>
-            <dt>My contribution</dt>
-            <dd>{p.overview?.role || p.contribution}</dd>
-          </div>
-          <div>
-            <dt>Tools &amp; topics</dt>
-            <dd>
-              {(p.tags.length ? p.tags : projectTopics[p.id] || []).join(" · ")}
-            </dd>
-          </div>
-          <div>
-            <dt>Status &amp; outcome</dt>
-            <dd>{p.overview?.result || status}</dd>
-          </div>
-        </dl>
       </header>
       <div className="case-reading">
         <aside className="case-aside">
