@@ -267,15 +267,15 @@
 }
 .robotic-arm-simulator .simulator-site-theme {
   --paper: #191815;
-  --surface: #262b26;
-  --raised: #262b26;
+  --surface: #1e221e;
+  --raised: #1e221e;
   --ink: #e1dfd5;
   --muted: #b0b4a8;
   --accent: #e0a678;
   --signal: #aac5af;
   --on-signal: #191815;
-  --signal-soft: #324335;
-  --rule: #424840;
+  --signal-soft: #2e3a30;
+  --rule: #373d36;
 }
 .robotic-arm-simulator > div:first-child {
   overflow: hidden;

@@ -14,33 +14,29 @@
   --foreground: var(--ink);
   color-scheme: dark;
   --paper: #191815;
-  --surface: #262b26;
-  --raised: #262b26;
+  --surface: #1e221e;
+  --raised: #1e221e;
   --ink: #e1dfd5;
   --muted: #b0b4a8;
   --accent: #e0a678;
   --signal: #aac5af;
   --on-signal: #191815;
-  --signal-soft: #324335;
-  --rule: #424840;
+  --signal-soft: #2e3a30;
+  --rule: #373d36;
   --focus: var(--signal);
   --card-grain-texture: url("/images/grain-texture.svg");
   --card-surface-gradient:
-    linear-gradient(145deg, rgb(8 13 9 / 70%), transparent 82%),
-    radial-gradient(ellipse at 8% 0%, rgb(170 197 175 / 6%), transparent 64%),
-    radial-gradient(ellipse at 100% 100%, rgb(143 98 67 / 4%), transparent 68%);
+    linear-gradient(145deg, rgb(8 13 9 / 10%), transparent 94%),
+    radial-gradient(ellipse at 8% 0%, rgb(170 197 175 / 0.5%), transparent 64%);
   --card-surface-gradient-2:
-    linear-gradient(205deg, rgb(8 13 9 / 70%), transparent 82%),
-    radial-gradient(ellipse at 92% 4%, rgb(170 197 175 / 6%), transparent 64%),
-    radial-gradient(ellipse at 0% 96%, rgb(143 98 67 / 4%), transparent 68%);
+    linear-gradient(205deg, rgb(8 13 9 / 10%), transparent 94%),
+    radial-gradient(ellipse at 92% 4%, rgb(170 197 175 / 0.5%), transparent 64%);
   --card-surface-gradient-3:
-    linear-gradient(75deg, rgb(8 13 9 / 70%), transparent 82%),
-    radial-gradient(ellipse at 30% 98%, rgb(170 197 175 / 6%), transparent 64%),
-    radial-gradient(ellipse at 84% 2%, rgb(143 98 67 / 4%), transparent 68%);
+    linear-gradient(75deg, rgb(8 13 9 / 10%), transparent 94%),
+    radial-gradient(ellipse at 30% 98%, rgb(170 197 175 / 0.5%), transparent 64%);
   --card-surface-gradient-4:
-    linear-gradient(325deg, rgb(8 13 9 / 70%), transparent 82%),
-    radial-gradient(ellipse at 98% 74%, rgb(170 197 175 / 6%), transparent 64%),
-    radial-gradient(ellipse at 12% 18%, rgb(143 98 67 / 4%), transparent 68%);
+    linear-gradient(325deg, rgb(8 13 9 / 10%), transparent 94%),
+    radial-gradient(ellipse at 98% 74%, rgb(170 197 175 / 0.5%), transparent 64%);
   --radius-control: 6px;
   --radius-card: 12px;
   --radius-feature: 16px;
