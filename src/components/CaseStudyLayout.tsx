@@ -61,16 +61,17 @@ export default function CaseStudyLayout({
               <Github aria-hidden="true" /> GitHub
             </a>
           )}
-          {(p.demo || p.capabilities.includes("simulate") || p.score) && (
-            <a href="#interactive-demo" className="button project-action">
-              <Play aria-hidden="true" />{" "}
-              {p.score
-                ? "Open score"
-                : p.capabilities.includes("simulate")
-                  ? "Try simulation"
-                  : "Try demo"}
-            </a>
-          )}
+          {p.id !== "robotic-arm-simulation" &&
+            (p.demo || p.capabilities.includes("simulate") || p.score) && (
+              <a href="#interactive-demo" className="button project-action">
+                <Play aria-hidden="true" />{" "}
+                {p.score
+                  ? "Open score"
+                  : p.capabilities.includes("simulate")
+                    ? "Try simulation"
+                    : "Try demo"}
+              </a>
+            )}
           {p.score && (
             <a href={p.score} download className="button project-action">
               <Download aria-hidden="true" /> Download MusicXML
