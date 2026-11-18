@@ -1,32 +1,16 @@
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 export default function ResumeDownloads() {
   const params = useSearchParams();
   const router = useRouter();
   const previewRef = useRef<HTMLElement>(null);
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const type =
     params.get("focus") === "cybersecurity" ? "cybersecurity" : "embedded";
   const url = `/resume-${type}.pdf`;
   const label = type === "embedded" ? "Embedded systems" : "Cybersecurity";
-
-  useEffect(() => {
-    const updateFullscreen = () =>
-      setIsFullscreen(document.fullscreenElement === previewRef.current);
-    document.addEventListener("fullscreenchange", updateFullscreen);
-    return () => document.removeEventListener("fullscreenchange", updateFullscreen);
-  }, []);
-
-  const toggleFullscreen = async () => {
-    if (document.fullscreenElement) {
-      await document.exitFullscreen();
-    } else {
-      await previewRef.current?.requestFullscreen();
-    }
-  };
 
   return (
     <aside className="resume-downloads">
@@ -48,14 +32,9 @@ export default function ResumeDownloads() {
         <a className="button" href={url} download={`Kelvin_Creighton_${type}.pdf`}>
           Download PDF
         </a>
-        <button
-          className="button resume-fullscreen-button"
-          type="button"
-          onClick={toggleFullscreen}
-          aria-label={`${isFullscreen ? "Exit" : "Enter"} fullscreen resume preview`}
-        >
-          {isFullscreen ? "Exit fullscreen" : "Fullscreen"}
-        </button>
+        <a className="button" href={`${url}#zoom=70&pagemode=none`} target="_blank" rel="noreferrer">
+          View in new tab
+        </a>
       </div>
       <section
         ref={previewRef}
