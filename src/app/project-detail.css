@@ -228,6 +228,16 @@
   margin-top: 18px;
 }
 .robotic-arm-simulator {
+  --paper: #0b1220;
+  --surface: #172033;
+  --raised: #1b2639;
+  --ink: #e2e8f0;
+  --muted: #a3afc2;
+  --accent: #fbbf24;
+  --signal: #38bdf8;
+  --on-signal: #082f49;
+  --signal-soft: #1e293b;
+  --rule: #334155;
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: var(--type-ui);
@@ -317,6 +327,21 @@
 .robotic-arm-simulator button[class*="bg-amber-600"]:hover {
   background: var(--accent) !important;
   color: var(--paper) !important;
+}
+.robotic-arm-simulator button[class*="bg-purple-600"] {
+  border-color: #a855f7 !important;
+  background: #a855f7 !important;
+  color: #0b1220 !important;
+}
+.robotic-arm-simulator button[class*="bg-purple-600"]:hover {
+  background: #a855f7 !important;
+  color: #0b1220 !important;
+}
+.robotic-arm-simulator [class*="text-purple-"] {
+  color: #c084fc !important;
+}
+.robotic-arm-simulator [class*="bg-purple-"] {
+  background-color: #3b2850 !important;
 }
 .robotic-arm-simulator input[type="checkbox"],
 .robotic-arm-simulator input[type="range"] {
