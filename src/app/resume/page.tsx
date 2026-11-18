@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import PageIntro from "@/components/PageIntro";
 import ResumeDownloads from "@/components/ResumeDownloads";
 import { InlineArrow } from "@/components/InlineArrow";
+import { categories, projects, inCategory } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Resume",
   description:
@@ -35,24 +36,24 @@ export default function Page() {
           </section>
           <section>
             <h2>Selected Work</h2>
-            <p><strong>Building systems from the ground up.</strong></p>
-            <p>My projects reflect different aspects of my technical interests:</p>
-            <ul>
-              <li><strong>Embedded Systems:</strong> <Link href="/projects/embedded-systems/machineguard">MachineGuard</Link>, a sensor-based monitoring node built around an ESP32-S3, involving hardware integration and firmware development.</li>
-              <li><strong>Systems Programming:</strong> <Link href="/projects/embedded-systems/dragonshell">DragonShell</Link> and other projects exploring processes, file systems, threads, and low-level programming in C.</li>
-              <li><strong>Hardware:</strong> Modifying a 3D printer&apos;s control system through replacement hardware and firmware configuration.</li>
-              <li><strong>Cybersecurity:</strong> Security research, CTF challenges, vulnerability analysis, and competition experience.</li>
-            </ul>
-            <Link className="text-link" href="/projects">Browse projects <InlineArrow /></Link>
+            <div className="resume-work-grid">
+              {categories.map((category) => (
+                <Link href={`/projects?category=${category.id}`} key={category.id}>
+                  <h3>{category.title}</h3>
+                  <p>{category.description}</p>
+                  <span>{projects.filter((project) => inCategory(project, category.id)).length} projects</span>
+                </Link>
+              ))}
+            </div>
           </section>
           <section>
             <h2>Beyond Engineering</h2>
             <p><strong>Learning, building, and contributing.</strong></p>
             <p>
               Outside my projects, I&apos;ve been involved in cybersecurity
-              communities through OWASP Edmonton and university organizations.
-              I&apos;ve helped organize events, develop challenges, and create
-              opportunities for others to learn and participate.
+              communities through OWASP Edmonton and university organizations
+              such as CHADS (Cybersecurity, Hacking, And Digital Security) club,
+              and WiCyS Edmonton Chapter.
             </p>
             <p>
               I also enjoy exploring interests outside computing, including
