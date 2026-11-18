@@ -199,44 +199,12 @@
 }
 .build-card {
   min-width: 0;
-  --project-accent: var(--signal);
-}
-.build-card:nth-child(4n + 2) {
-  --project-accent: var(--accent);
-}
-.build-card:nth-child(4n + 3) {
-  --project-accent: var(--muted);
-}
-.build-card:nth-child(4n + 4) {
-  --project-accent: var(--signal);
-}
-.build-card:nth-child(4n + 1) .build-card-link {
-  background:
-    radial-gradient(ellipse at 10% 100%, rgb(170 197 175 / 9%), transparent 58%),
-    var(--raised);
-}
-.build-card:nth-child(4n + 2) .build-card-link {
-  background:
-    radial-gradient(ellipse at 100% 0%, rgb(224 166 120 / 8%), transparent 56%),
-    var(--raised);
-}
-.build-card:nth-child(4n + 3) .build-card-link {
-  background:
-    linear-gradient(145deg, rgb(225 223 213 / 4%), transparent 54%),
-    var(--raised);
-}
-.build-card:nth-child(4n + 4) .build-card-link {
-  background:
-    radial-gradient(ellipse at 100% 100%, rgb(170 197 175 / 7%), transparent 56%),
-    linear-gradient(35deg, rgb(224 166 120 / 3%), transparent 52%),
-    var(--raised);
 }
 .build-card-link {
   display: block;
   color: inherit;
   background: var(--raised);
   border: 1px solid var(--rule);
-  border-top: 2px solid var(--project-accent);
   border-radius: var(--radius-feature);
   overflow: hidden;
   box-shadow: 0 5px 18px #36363403;
@@ -248,7 +216,7 @@
 .build-card:hover .build-card-link,
 .build-card:focus-within .build-card-link {
   transform: translateY(-3px);
-  border-color: var(--project-accent);
+  border-color: var(--signal);
   box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
 }
 .home-page .build-card-link:hover {
@@ -266,16 +234,6 @@
   overflow: hidden;
   background: var(--surface);
 }
-.build-art::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  pointer-events: none;
-  background: linear-gradient(90deg, var(--project-accent), transparent 72%);
-}
 .build-art img {
   display: block;
   width: 100%;
@@ -289,6 +247,25 @@
 }
 .build-copy {
   padding: 8px 24px 24px;
+  background:
+    radial-gradient(ellipse at 4% 0%, rgb(170 197 175 / 17%), transparent 64%),
+    linear-gradient(135deg, rgb(55 72 59 / 48%), var(--raised) 76%);
+}
+.build-card:nth-child(4n + 2) .build-copy {
+  background:
+    radial-gradient(ellipse at 100% 100%, rgb(224 166 120 / 17%), transparent 62%),
+    linear-gradient(145deg, rgb(224 166 120 / 9%), var(--raised) 78%);
+}
+.build-card:nth-child(4n + 3) .build-copy {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgb(170 197 175 / 15%), transparent 58%),
+    linear-gradient(155deg, rgb(225 223 213 / 7%), var(--raised) 75%);
+}
+.build-card:nth-child(4n + 4) .build-copy {
+  background:
+    radial-gradient(ellipse at 0% 100%, rgb(224 166 120 / 14%), transparent 58%),
+    radial-gradient(ellipse at 100% 0%, rgb(170 197 175 / 14%), transparent 62%),
+    linear-gradient(145deg, rgb(55 72 59 / 38%), var(--raised) 78%);
 }
 .build-copy h4 {
   font: 400 var(--type-card-heading)/1.16 var(--serif);
@@ -298,7 +275,7 @@
 }
 .build-card:hover .build-copy h4,
 .build-card:focus-within .build-copy h4 {
-  color: var(--project-accent);
+  color: var(--accent);
 }
 .build-copy > p {
   color: var(--muted);
