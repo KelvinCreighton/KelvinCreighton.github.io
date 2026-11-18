@@ -157,7 +157,7 @@ export default function RcCarProject() {
                     <line x1="12" y1="22.08" x2="12" y2="12" />
                   </svg>
                 </div>
-                <div>
+                <div className="print-files-copy">
                   <h3 className="text-xl font-bold">3D Print Files</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     Download the STL files for the custom drive gears.

@@ -286,8 +286,9 @@
 .line-rl { animation: movement-right-left 1s linear infinite !important; }
 .case-content .project-body .goal-symbol { display: grid; place-items: center; }
 .case-content .project-body .print-files-row { align-items: center; }
-.case-content .project-body .print-files-heading { display: flex; flex-direction: row; align-items: flex-start; gap: 10px; }
-.case-content .project-body .print-files-icon { padding: 0; margin-top: 4px; flex: 0 0 auto; line-height: 0; }
-.case-content .project-body .print-files-heading h3 { margin: 0 0 4px; }
-.case-content .project-body .print-files-heading p { margin: 0; }
+.case-content .project-body .print-files-heading { display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 10px; row-gap: 4px; align-items: start; }
+.case-content .project-body .print-files-icon { grid-column: 1; grid-row: 1; padding: 0; margin: 4px 0 0; line-height: 0; }
+.case-content .project-body .print-files-copy { display: contents; }
+.case-content .project-body .print-files-heading h3 { grid-column: 2; grid-row: 1; margin: 0; }
+.case-content .project-body .print-files-heading p { grid-column: 1 / -1; grid-row: 2; margin: 0; }
 .case-content .project-body .print-files-download { align-self: center; min-height: 0; height: fit-content; padding: 6px 14px; }
