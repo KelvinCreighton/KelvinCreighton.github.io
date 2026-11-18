@@ -24,7 +24,7 @@
   --signal-soft: #37483b;
   --rule: #474c45;
   --focus: var(--signal);
-  --card-grain-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+  --card-grain-texture: url("/images/grain-texture.svg");
   --card-surface-gradient:
     linear-gradient(145deg, rgb(8 13 9 / 72%), transparent 82%),
     radial-gradient(ellipse at 8% 0%, rgb(170 197 175 / 6%), transparent 64%),
@@ -196,22 +196,22 @@ h3[id] {
   position: fixed;
   inset: 0;
   z-index: -1;
+  pointer-events: none;
   /* Broad, overlapping ambient light gives the charcoal canvas depth across
      the viewport rather than concentrating it in one corner. */
-  background:
-    radial-gradient(ellipse 92rem 70rem at 8% 0%, rgb(55 72 59 / 38%), transparent 72%),
-    radial-gradient(ellipse 86rem 68rem at 100% 56%, rgb(55 72 59 / 24%), transparent 74%),
-    radial-gradient(ellipse 78rem 62rem at 38% 112%, rgb(224 166 120 / 7%), transparent 72%),
-    linear-gradient(155deg, #1c1b18 0%, #1c1b18 56%, #201f1b 100%);
+  background-color: var(--paper);
+  background-image: url("/images/ambient-background.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .site-background::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.14;
-  mix-blend-mode: soft-light;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+  opacity: 0.42;
+  background-image: url("/images/grain-texture.svg");
   background-size: 180px 180px;
 }
 .skip-link {

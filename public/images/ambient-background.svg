@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="charcoal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c1b18" />
+      <stop offset="56%" stop-color="#1c1b18" />
+      <stop offset="100%" stop-color="#201f1b" />
+    </linearGradient>
+    <radialGradient id="sage" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#37483b" stop-opacity=".38" />
+      <stop offset="72%" stop-color="#37483b" stop-opacity="0" />
+      <stop offset="100%" stop-color="#37483b" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="sage-secondary" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#37483b" stop-opacity=".24" />
+      <stop offset="74%" stop-color="#37483b" stop-opacity="0" />
+      <stop offset="100%" stop-color="#37483b" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="copper" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#e0a678" stop-opacity=".07" />
+      <stop offset="72%" stop-color="#e0a678" stop-opacity="0" />
+      <stop offset="100%" stop-color="#e0a678" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#charcoal)" />
+  <ellipse cx="128" cy="0" rx="1472" ry="1120" fill="url(#sage)" />
+  <ellipse cx="1600" cy="616" rx="1376" ry="1088" fill="url(#sage-secondary)" />
+  <ellipse cx="608" cy="1232" rx="1248" ry="992" fill="url(#copper)" />
+</svg>
