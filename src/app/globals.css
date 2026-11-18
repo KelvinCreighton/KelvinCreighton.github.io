@@ -1684,6 +1684,13 @@ h3[id] {
   flex: 1 1 140px;
   justify-content: center;
 }
+.resume-viewer-actions .text-link {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  border-radius: 4px;
+}
 .resume-preview {
   width: 100%;
   height: min(74vh, 900px);

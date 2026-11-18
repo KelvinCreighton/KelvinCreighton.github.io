@@ -33,7 +33,12 @@ export default function ResumeDownloads() {
         <a className="button" href={url} download={`Kelvin_Creighton_${type}.pdf`}>
           Download PDF
         </a>
-        <a className="text-link" href={`${url}#zoom=70&pagemode=none`} target="_blank" rel="noreferrer">
+        <a
+          className="text-link"
+          href={`${url}#zoom=80&pagemode=none`}
+          target="_blank"
+          rel="noreferrer"
+        >
           Open separately <ExternalLink size={16} aria-hidden="true" />
         </a>
       </div>
@@ -44,7 +49,7 @@ export default function ResumeDownloads() {
       >
         <iframe
           key={url}
-          src={`${url}#zoom=70&pagemode=none`}
+          src={`${url}#zoom=80&pagemode=none`}
           title={`${label} resume PDF`}
         />
       </section>
