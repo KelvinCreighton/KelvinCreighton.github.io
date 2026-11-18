@@ -418,6 +418,31 @@ h3[id] {
   font-size: 21px;
   font-weight: 300;
 }
+.resume-page-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 350px);
+  align-items: center;
+  gap: clamp(28px, 6vw, 80px);
+  max-width: none;
+}
+.resume-intro-copy .page-intro-copy {
+  max-width: 720px;
+}
+.resume-intro-portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--raised);
+}
+.resume-intro-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 36%;
+}
 .archive-topline {
   display: flex;
   align-items: center;
@@ -1811,6 +1836,13 @@ h3[id] {
   font: 10px var(--font-mono);
 }
 @media (max-width: 760px) {
+  .resume-page-intro {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .resume-intro-portrait {
+    width: min(100%, 340px);
+  }
   .resume-layout {
     grid-template-columns: 1fr;
   }

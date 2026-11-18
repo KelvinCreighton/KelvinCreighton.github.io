@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import PageIntro from "@/components/PageIntro";
+import Image from "next/image";
 import ResumeDownloads from "@/components/ResumeDownloads";
 import { InlineArrow } from "@/components/InlineArrow";
 import { categories, projects, inCategory } from "@/data/projects";
@@ -13,14 +13,28 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <PageIntro title="About Me">
-        <p>
-          I&apos;m Kelvin Creighton. I studied Computer Science at the University
-          of Alberta, where I developed an interest in embedded systems,
-          firmware, and low-level software. I enjoy working close to the
-          hardware and understanding what happens beneath the abstractions.
-        </p>
-      </PageIntro>
+      <header className="page-intro resume-page-intro">
+        <div className="resume-intro-copy">
+          <h1>About Me</h1>
+          <div className="page-intro-copy">
+            <p>
+              I&apos;m Kelvin Creighton. I studied Computer Science at the University
+              of Alberta, where I developed an interest in embedded systems,
+              firmware, and low-level software. I enjoy working close to the
+              hardware and understanding what happens beneath the abstractions.
+            </p>
+          </div>
+        </div>
+        <figure className="resume-intro-portrait">
+          <Image
+            src="/images/responsive/Head-Shot-webp-800.webp"
+            alt="Kelvin Creighton"
+            width={800}
+            height={800}
+            priority
+          />
+        </figure>
+      </header>
       <div className="resume-layout">
         <div className="resume-summary">
           <section>
