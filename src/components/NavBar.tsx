@@ -32,38 +32,6 @@ export function NavBar() {
       document.removeEventListener("keydown", key);
     };
   }, [open]);
-  useEffect(() => {
-    let directionAnchorY = window.scrollY;
-    let frame: number | null = null;
-
-    function updateWordmarkVisibility() {
-      if (frame !== null) return;
-      frame = window.requestAnimationFrame(() => {
-        const currentY = window.scrollY;
-        const header = document.querySelector<HTMLElement>(".site-header");
-
-        if (currentY < 80) {
-          header?.classList.remove("is-scrolling-down");
-          directionAnchorY = currentY;
-        } else if (currentY < directionAnchorY - 8) {
-          header?.classList.remove("is-scrolling-down");
-          directionAnchorY = currentY;
-        } else if (currentY > directionAnchorY + 8) {
-          header?.classList.add("is-scrolling-down");
-          directionAnchorY = currentY;
-        }
-
-        frame = null;
-      });
-    }
-
-    window.addEventListener("scroll", updateWordmarkVisibility, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", updateWordmarkVisibility);
-      if (frame !== null) window.cancelAnimationFrame(frame);
-      document.querySelector(".site-header")?.classList.remove("is-scrolling-down");
-    };
-  }, []);
   return (
     <div ref={ref} className="navigation">
       <nav aria-label="Main navigation" className="desktop-nav">

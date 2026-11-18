@@ -225,15 +225,7 @@ h3[id] {
   font-weight: 600;
   line-height: 1.35;
   transform-origin: center;
-  transition: transform 180ms ease, opacity 220ms ease;
-}
-.site-header.is-scrolling-down .wordmark {
-  opacity: 0;
-  pointer-events: none;
-}
-.site-header.is-scrolling-down .wordmark:focus-visible {
-  opacity: 1;
-  pointer-events: auto;
+  transition: transform 180ms ease;
 }
 .wordmark:hover,
 .wordmark:focus-visible {

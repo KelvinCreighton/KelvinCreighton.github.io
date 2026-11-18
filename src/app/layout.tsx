@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { NavBar } from "@/components/NavBar";
+import { Wordmark } from "@/components/Wordmark";
 import { Background } from "@/components/Background";
 import ProjectScrollReset from "@/components/ProjectScrollReset";
 import "./globals.css";
@@ -59,13 +60,7 @@ export default function RootLayout({
           </a>
           <header className="site-header">
             <div className="header-inner">
-              <Link
-                href="/"
-                className="wordmark"
-                aria-label="Kelvin Creighton, home"
-              >
-                <span className="wordmark-name">Kelvin Creighton</span>
-              </Link>
+              <Wordmark />
               <NavBar />
             </div>
           </header>
