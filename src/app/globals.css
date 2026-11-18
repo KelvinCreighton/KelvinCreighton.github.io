@@ -1088,7 +1088,9 @@ h3[id] {
 }
 .notice {
   border-left: 2px solid var(--rust);
-  background: var(--card-surface-gradient), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--surface);
+  background-blend-mode: soft-light, normal;
   padding: 18px 22px;
   margin: 20px 0;
   border-radius: 0 var(--radius-card) var(--radius-card) 0;
@@ -1100,7 +1102,9 @@ h3[id] {
 }
 /* Interactive projects */
 .demo-frame {
-  background: var(--card-surface-gradient), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--surface);
+  background-blend-mode: soft-light, normal;
   border: 1px solid var(--rule);
   margin: 24px 0;
   width: 100%;
@@ -1116,7 +1120,9 @@ h3[id] {
   align-items: start;
   justify-content: center;
   gap: 15px;
-  background: var(--card-surface-gradient), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--surface);
+  background-blend-mode: soft-light, normal;
 }
 .demo-preview p {
   max-width: 540px;
@@ -1170,7 +1176,9 @@ h3[id] {
   min-height: 36px;
 }
 .solution-toggle {
-  background: var(--card-surface-gradient), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--surface);
+  background-blend-mode: soft-light, normal;
   border: 1px solid var(--rule);
   padding: 15px 20px;
   border-radius: var(--radius-card);
@@ -1346,7 +1354,9 @@ h3[id] {
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
   align-self: start;
-  background: var(--card-surface-gradient), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--surface);
+  background-blend-mode: soft-light, normal;
 }
 .resume-downloads h2 {
   font-size: var(--type-section-heading);
@@ -1715,7 +1725,9 @@ h3[id] {
   grid-template-columns: 1fr 1fr;
   gap: 18px;
   padding: 20px;
-  background: var(--card-surface-gradient), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--surface);
+  background-blend-mode: soft-light, normal;
   margin: 20px 0;
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);

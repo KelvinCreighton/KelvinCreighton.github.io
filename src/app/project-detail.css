@@ -23,7 +23,9 @@
   margin-top: 28px;
   border-left-color: var(--signal);
   border-radius: var(--radius-feature);
-  background: var(--card-surface-gradient), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--surface);
+  background-blend-mode: soft-light, normal;
 }
 .case-header .case-overview dt {
   color: var(--accent);
@@ -190,7 +192,9 @@
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
   padding: 18px 22px;
-  background: var(--card-surface-gradient), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--surface);
+  background-blend-mode: soft-light, normal;
 }
 .case-content .solution-toggle summary {
   font: 500 var(--type-label)/1.5 var(--font-sans);
