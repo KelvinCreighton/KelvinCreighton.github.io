@@ -21,7 +21,10 @@ export default function InteractiveProject({
   const [active, setActive] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   return (
-    <section className="demo-frame interactive-surface" id="interactive-demo">
+    <section
+      className={`demo-frame interactive-surface${file ? "" : " simulation-demo"}`}
+      id="interactive-demo"
+    >
       <div className="demo-preview">
         <p className="eyebrow">
           {file

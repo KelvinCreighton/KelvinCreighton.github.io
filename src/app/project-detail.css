@@ -201,7 +201,36 @@
 .case-content .intro-actions .text-link { min-height: 44px; padding: 10px 16px; border: 1px solid var(--rule); background: var(--surface); border-radius: 4px; }
 .case-content .game-preview { position: relative; display: block; width: 100%; align-self: stretch; aspect-ratio: 16 / 9; margin: 28px 0 0; overflow: hidden; border: 1px solid var(--rule); background: var(--surface); }
 .case-content .game-preview img { display: block; object-fit: cover; }
+.simulation-demo .demo-preview {
+  min-height: 0;
+  padding: 24px 28px 0;
+  justify-content: flex-start;
+  gap: 0;
+}
+.simulation-demo .demo-preview > .eyebrow {
+  margin: 0 0 5px;
+  line-height: 1.4;
+}
+.simulation-demo .demo-preview h2 {
+  margin: 0 0 7px;
+  font-size: var(--type-card-heading);
+  line-height: 1.2;
+}
+.case-content .simulation-demo .demo-preview > p:not(.eyebrow) {
+  max-width: 62ch;
+  margin: 0;
+  font: var(--type-ui)/1.5 var(--font-sans);
+}
+.simulation-demo .intro-actions {
+  margin-top: 12px;
+}
+.case-content .simulation-demo .game-preview {
+  margin-top: 18px;
+}
 @media (max-width: 760px) {
+  .simulation-demo .demo-preview {
+    padding: 20px 18px 0;
+  }
   .case-header .case-overview {
     grid-template-columns: 1fr;
     gap: 20px;
