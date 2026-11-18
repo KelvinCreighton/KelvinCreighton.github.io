@@ -23,9 +23,7 @@
   margin-top: 28px;
   border-left-color: var(--signal);
   border-radius: var(--radius-feature);
-  background:
-    linear-gradient(135deg, rgb(170 197 175 / 4%), transparent 52%),
-    var(--surface);
+  background: var(--card-surface-gradient), var(--surface);
 }
 .case-header .case-overview dt {
   color: var(--accent);
@@ -192,7 +190,7 @@
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
   padding: 18px 22px;
-  background: linear-gradient(135deg, rgb(170 197 175 / 3%), transparent 56%), var(--surface);
+  background: var(--card-surface-gradient), var(--surface);
 }
 .case-content .solution-toggle summary {
   font: 500 var(--type-label)/1.5 var(--font-sans);

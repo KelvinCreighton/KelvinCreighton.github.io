@@ -247,25 +247,7 @@
 }
 .build-copy {
   padding: 8px 24px 24px;
-  background:
-    radial-gradient(ellipse at 4% 0%, rgb(170 197 175 / 17%), transparent 64%),
-    linear-gradient(135deg, rgb(55 72 59 / 48%), var(--raised) 76%);
-}
-.build-card:nth-child(4n + 2) .build-copy {
-  background:
-    radial-gradient(ellipse at 100% 100%, rgb(224 166 120 / 17%), transparent 62%),
-    linear-gradient(145deg, rgb(224 166 120 / 9%), var(--raised) 78%);
-}
-.build-card:nth-child(4n + 3) .build-copy {
-  background:
-    radial-gradient(ellipse at 100% 0%, rgb(170 197 175 / 15%), transparent 58%),
-    linear-gradient(155deg, rgb(225 223 213 / 7%), var(--raised) 75%);
-}
-.build-card:nth-child(4n + 4) .build-copy {
-  background:
-    radial-gradient(ellipse at 0% 100%, rgb(224 166 120 / 14%), transparent 58%),
-    radial-gradient(ellipse at 100% 0%, rgb(170 197 175 / 14%), transparent 62%),
-    linear-gradient(145deg, rgb(55 72 59 / 38%), var(--raised) 78%);
+  background: var(--card-surface-gradient), var(--surface);
 }
 .build-copy h4 {
   font: 400 var(--type-card-heading)/1.16 var(--serif);
@@ -479,6 +461,10 @@
 }
 .shelf-item {
   position: relative;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--card-surface-gradient), var(--surface);
 }
 .card-hit-area {
   position: absolute;
@@ -493,9 +479,10 @@
   position: relative;
   aspect-ratio: 4/3;
   overflow: hidden;
-  border: 1px solid var(--rule);
+  border: 0;
+  border-bottom: 1px solid var(--rule);
   background: var(--surface);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
 }
 .shelf-cover img {
   object-fit: cover;
@@ -514,9 +501,11 @@
 }
 .shelf-item h3 {
   font: 400 var(--type-card-heading)/1.2 var(--serif);
-  margin: 17px 0 9px;
+  margin: 17px 16px 9px;
 }
 .shelf-item p {
+  margin-right: 16px;
+  margin-left: 16px;
   font-size: var(--type-ui);
   color: var(--muted);
 }
@@ -525,7 +514,7 @@
   z-index: 2;
   font-size: var(--type-label);
   display: inline-block;
-  margin-top: 8px;
+  margin: 8px 16px 16px;
 }
 .shelf-links {
   margin-top: 35px;
@@ -593,10 +582,7 @@
 
 /* The collection and reading pages share the paper and serif treatment. */
 .archive-grid .archive-entry {
-  background:
-    linear-gradient(142deg, rgb(170 197 175 / 4%), transparent 48%),
-    linear-gradient(320deg, rgb(224 166 120 / 2.5%), transparent 48%),
-    var(--raised);
+  background: var(--card-surface-gradient), var(--raised);
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
   overflow: hidden;
