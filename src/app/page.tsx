@@ -1,9 +1,28 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import {
+  CarFront,
+  Cpu,
+  Gamepad2,
+  Github,
+  Linkedin,
+  Mail,
+  Music2,
+  ShieldCheck,
+  Cog,
+} from "lucide-react";
 import Image from "@/components/BlurImage";
 import { FieldMark } from "@/components/FieldMark";
 import { InlineArrow } from "@/components/InlineArrow";
 import { categories, projects, getProject, inCategory } from "@/data/projects";
+
+const topicIcons = {
+  "embedded-systems": Cpu,
+  cybersecurity: ShieldCheck,
+  engineering: Cog,
+  auto: CarFront,
+  "game-dev": Gamepad2,
+  music: Music2,
+};
 
 const features = [
   {
@@ -131,24 +150,27 @@ export default function Home() {
               </p>
             </div>
             <ul>
-              {categories.map((category) => (
-                <li key={category.id}>
-                  <Link
-                    href={`/projects?category=${category.id}`}
-                    className="topic-card-link"
-                  >
-                    <FieldMark />
-                    <div>
-                      <h3>{category.title}</h3>
-                      <p>{category.description}</p>
-                      <span>
-                        {projects.filter((p) => inCategory(p, category.id)).length}{" "}
-                        projects
-                      </span>
-                    </div>
-                  </Link>
-                </li>
-              ))}
+              {categories.map((category) => {
+                const TopicIcon = topicIcons[category.id];
+                return (
+                  <li key={category.id}>
+                    <Link
+                      href={`/projects?category=${category.id}`}
+                      className="topic-card-link"
+                    >
+                      <TopicIcon className="field-mark" aria-hidden="true" />
+                      <div>
+                        <h3>{category.title}</h3>
+                        <p>{category.description}</p>
+                        <span>
+                          {projects.filter((p) => inCategory(p, category.id)).length}{" "}
+                          projects
+                        </span>
+                      </div>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </section>
         </div>
