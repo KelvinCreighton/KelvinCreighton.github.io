@@ -1072,7 +1072,7 @@ export default function RoboticArmSimulator() {
       </div>
 
       {/* Numerical Diagnostics & Telemetry Dashboard */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="simulator-site-theme grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Card 1: Error & Convergence */}
         <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-4 shadow-sm flex flex-col justify-between">
           <div className="flex items-center justify-between text-gray-500 dark:text-gray-400 mb-2">
@@ -1173,7 +1173,7 @@ export default function RoboticArmSimulator() {
 
       {/* Comparison Table (Active in Compare Mode) */}
       {solverMode === "compare" && (
-        <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-sm">
+        <div className="simulator-preview-theme bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-sm">
           <h4 className="text-base font-bold mb-4 flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-purple-500" />
             Direct Comparison: Newton&apos;s Method vs. Broyden&apos;s Quasi-Newton Method
@@ -1241,7 +1241,7 @@ export default function RoboticArmSimulator() {
       )}
 
       {/* Advanced Hyperparameter Tuning Panel */}
-      <div className="bg-gray-100 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 rounded-xl p-6">
+      <div className="simulator-site-theme bg-gray-100 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 rounded-xl p-6">
         <h4 className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-4 flex items-center gap-2">
           <Sliders className="w-4 h-4 text-blue-500" />
           Kinematic &amp; Numerical Tuning
