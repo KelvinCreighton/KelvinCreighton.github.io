@@ -1,72 +1,69 @@
 "use client";
+
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
 export default function ResumeDownloads() {
   const params = useSearchParams();
   const router = useRouter();
-  const [preview, setPreview] = useState(false);
+  const previewRef = useRef<HTMLElement>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const type =
     params.get("focus") === "cybersecurity" ? "cybersecurity" : "embedded";
   const url = `/resume-${type}.pdf`;
+  const label = type === "embedded" ? "Embedded systems" : "Cybersecurity";
+
+  useEffect(() => {
+    const updateFullscreen = () =>
+      setIsFullscreen(document.fullscreenElement === previewRef.current);
+    document.addEventListener("fullscreenchange", updateFullscreen);
+    return () => document.removeEventListener("fullscreenchange", updateFullscreen);
+  }, []);
+
+  const toggleFullscreen = async () => {
+    if (document.fullscreenElement) {
+      await document.exitFullscreen();
+    } else {
+      await previewRef.current?.requestFullscreen();
+    }
+  };
+
   return (
     <aside className="resume-downloads">
-      <p className="eyebrow">Take a copy</p>
       <h2>Resume</h2>
       <label htmlFor="resume-focus" className="control-label">
-        Resume focus
+        Resume type
       </label>
       <select
         id="resume-focus"
         value={type}
-        onChange={(e) =>
-          router.push(`/resume?focus=${e.target.value}`, { scroll: false })
+        onChange={(event) =>
+          router.push(`/resume?focus=${event.target.value}`, { scroll: false })
         }
       >
         <option value="embedded">Embedded systems</option>
         <option value="cybersecurity">Cybersecurity</option>
       </select>
-      <p>Two versions, tailored to the role.</p>
-      <a
-        className="button"
-        href={url}
-        download={`Kelvin_Creighton_${type}.pdf`}
-      >
-        Download PDF ↓
-      </a>
-      <a className="text-link" href={url} target="_blank" rel="noreferrer">
-        Open PDF in a new tab ↗
-      </a>
-      <button
-        className="text-link"
-        aria-expanded={preview}
-        aria-controls="resume-preview"
-        onClick={() => setPreview(!preview)}
-      >
-        {preview ? "Hide" : "Show"} embedded preview {preview ? "−" : "+"}
-      </button>
-      {preview && (
-        <div id="resume-preview" className="resume-preview">
-          <object
-            data={url}
-            type="application/pdf"
-            aria-label={`${type} resume PDF`}
-          >
-            <p>
-              Your browser cannot display the PDF here.{" "}
-              <a href={url}>Open the resume</a>.
-            </p>
-          </object>
-        </div>
-      )}
-      <div className="resume-alternates">
-        <p>Direct downloads</p>
-        <a href="/resume-embedded.pdf" download>
-          Embedded systems PDF ↓
+      <div className="resume-viewer-actions">
+        <a className="button" href={url} download={`Kelvin_Creighton_${type}.pdf`}>
+          Download PDF
         </a>
-        <a href="/resume-cybersecurity.pdf" download>
-          Cybersecurity PDF ↓
-        </a>
+        <button
+          className="button resume-fullscreen-button"
+          type="button"
+          onClick={toggleFullscreen}
+          aria-label={`${isFullscreen ? "Exit" : "Enter"} fullscreen resume preview`}
+        >
+          {isFullscreen ? "Exit fullscreen" : "Fullscreen"}
+        </button>
       </div>
+      <section
+        ref={previewRef}
+        className="resume-preview"
+        aria-label={`${label} resume preview`}
+      >
+        <iframe key={url} src={url} title={`${label} resume PDF`} />
+      </section>
     </aside>
   );
 }

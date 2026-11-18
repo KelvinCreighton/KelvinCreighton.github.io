@@ -65,7 +65,7 @@ export default function Page() {
         <Suspense
           fallback={
             <aside className="resume-downloads">
-              <h2>Download a resume</h2>
+              <h2>Resume</h2>
               <a href="/resume-embedded.pdf">Embedded systems PDF ↓</a>
               <br />
               <a href="/resume-cybersecurity.pdf">Cybersecurity PDF ↓</a>
