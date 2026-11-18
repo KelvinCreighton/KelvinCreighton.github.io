@@ -2,8 +2,9 @@
 @import "./font-faces.css";
 @variant dark (&:where(.dark, .dark *));
 @theme {
-  --font-sans: "Lato", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-sans: "Lato", "Lato Fallback", system-ui, sans-serif;
+  --font-serif: "Newsreader", "Newsreader Fallback", Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
   --color-gray-85: #eeede6;
 }
 :root {
@@ -23,7 +24,8 @@
   --signal-soft: #37483b;
   --rule: #474c45;
   --focus: var(--signal);
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  /* Newsreader is reserved for headings, the wordmark, project titles, and long-form project prose. */
+  --serif: "Newsreader", "Newsreader Fallback", Georgia, serif;
 }
 * {
   box-sizing: border-box;
@@ -40,6 +42,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   font-size: 18px;
+  font-optical-sizing: auto;
 }
 ::selection {
   background: var(--accent);
@@ -416,7 +419,6 @@ h3[id] {
   color: var(--muted);
   max-width: 760px;
   font-size: 21px;
-  font-weight: 300;
 }
 .resume-page-intro {
   display: grid;
@@ -736,7 +738,6 @@ h3[id] {
   color: var(--muted);
   font-size: 22px;
   line-height: 1.55;
-  font-weight: 300;
   max-width: 850px;
 }
 .case-meta {
@@ -775,9 +776,9 @@ h3[id] {
 }
 .case-overview dd {
   margin: 0;
-  line-height: 1.75;
+  line-height: 1.65;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 16px;
 }
 .case-reading {
   display: grid;
@@ -858,12 +859,12 @@ h3[id] {
 }
 .project-body p,
 .project-body li {
-  line-height: 1.8;
+  line-height: 1.7;
 }
 .project-body p {
   font-family: var(--serif);
   font-size: 21px;
-  line-height: 1.75;
+  line-height: 1.7;
   max-width: 68ch;
 }
 .project-body ul,
@@ -1873,7 +1874,7 @@ body:has(dialog[open]) {
 .project-body p {
   font-family: var(--serif);
   font-size: 21px;
-  line-height: 1.75;
+  line-height: 1.7;
   max-width: 68ch;
 }
 .project-body .interactive-surface p {

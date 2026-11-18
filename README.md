@@ -32,7 +32,7 @@ Open `http://localhost:8080`. `next start` does not serve the static export. Pub
 - `src/components/DemoFrame.tsx` and `InteractiveProject.tsx`: on-demand games, robotics simulation, and sheet music.
 - `src/app/globals.css`: the fixed dark Fieldbook palette, typography, and shared responsive layouts.
 - `src/app/fieldbook.css`: the editorial homepage and shared visual refinements.
-- `src/app/font-faces.css` and `public/fonts`: self-hosted Newsreader/Lato font files and their open licenses.
+- `src/app/font-faces.css` and `public/fonts`: locally hosted Newsreader variable and Lato WOFF2 fonts, metric-matched fallback faces, and their open licenses. Static TTF copies used only by the social-card generator live under `scripts/fonts`.
 - `public/games`, `public/scores`, `public/downloads`: original interactive artifacts and challenge files.
 
 ## Updating images

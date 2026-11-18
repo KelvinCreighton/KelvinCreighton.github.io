@@ -70,7 +70,7 @@ async function main() {
       {
         name: "Newsreader",
         data: await fs.readFile(
-          path.join(__dirname, "../public/fonts/newsreader-400.ttf"),
+          path.join(__dirname, "fonts/newsreader-400.ttf"),
         ),
         weight: 400,
         style: "normal",
@@ -78,7 +78,7 @@ async function main() {
       {
         name: "Lato",
         data: await fs.readFile(
-          path.join(__dirname, "../public/fonts/lato-400.ttf"),
+          path.join(__dirname, "fonts/lato-400.ttf"),
         ),
         weight: 400,
         style: "normal",
