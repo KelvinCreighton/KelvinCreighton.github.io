@@ -1894,14 +1894,14 @@ body:has(dialog[open]) {
 .case-heading h1 {
   overflow-wrap: anywhere;
 }
-.score-preview {
+.demo-preview-image {
   position: relative;
   height: 280px;
   overflow: hidden;
   background: white;
   border-top: 1px solid var(--rule);
 }
-.score-preview img {
+.demo-preview-image img {
   object-fit: cover;
   object-position: top;
 }

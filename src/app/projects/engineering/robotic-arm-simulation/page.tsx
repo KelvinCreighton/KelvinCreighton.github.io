@@ -1,6 +1,3 @@
-import React from "react";
-import Image from "@/components/BlurImage";
-
 import InteractiveProject from "@/components/InteractiveProject";
 
 export default function RoboticArmSimulationPage() {
@@ -8,6 +5,17 @@ export default function RoboticArmSimulationPage() {
     <div className="project-body">
       <article className="article-content">
         {/* Navigation */}
+
+        <section className="w-full mb-12" aria-label="Try the simulation">
+          <InteractiveProject
+            preview="/images/projects/robotic-arm-simulation-title.webp"
+          />
+          <p className="text-gray-600 dark:text-gray-400 mt-2 text-base">
+            Click or drag in the workspace to position the target. Switch
+            between Newton&apos;s method and Broyden&apos;s solver, or compare
+            both convergence paths side by side.
+          </p>
+        </section>
 
         {/* Header Section */}
         <header className="project-introduction">
@@ -23,16 +31,6 @@ export default function RoboticArmSimulationPage() {
             Newton&apos;s method, and Broyden&apos;s quasi-Newton numerical
             optimization.
           </p>
-
-          <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-8 bg-gray-85 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 shadow-sm">
-            <Image
-              src="/images/projects/robotic-arm-simulation-title.webp"
-              alt="2D Robotic Arm Simulation Title"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
 
           <div className="space-y-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             <p>
@@ -129,21 +127,6 @@ export default function RoboticArmSimulationPage() {
             </div>
           </div>
         </div>
-
-        {/* Interactive Demo Section */}
-        <section className="w-full mb-16">
-          <div className="mb-6">
-            <p className="text-gray-600 dark:text-gray-400 mt-2 text-base">
-              Click or drag anywhere in the workspace below to position the
-              target point. Toggle between Newton&apos;s method (exact or
-              finite-difference) and Broyden&apos;s quasi-Newton solver, or
-              compare both solvers side-by-side to observe convergence paths in
-              real time.
-            </p>
-          </div>
-
-          <InteractiveProject />
-        </section>
 
         {/* Written Technical Documentation */}
         <div className="w-full prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">

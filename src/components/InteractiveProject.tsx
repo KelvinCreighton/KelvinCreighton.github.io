@@ -56,10 +56,14 @@ export default function InteractiveProject({
         </div>
       </div>
       {!active && preview && (
-        <div className="score-preview">
+        <div className="demo-preview-image">
           <BlurImage
             src={preview}
-            alt="Preview of the score notation"
+            alt={
+              file
+                ? "Preview of the score notation"
+                : "Preview of the 2D robotic arm simulation, with a target point and inverse-kinematics arm"
+            }
             fill
             sizes="(max-width: 760px) 90vw, 900px"
           />
