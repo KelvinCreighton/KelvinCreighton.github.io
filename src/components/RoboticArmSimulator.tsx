@@ -470,7 +470,7 @@ export default function RoboticArmSimulator() {
 
     // Draw Subtle Background Grid
     ctx.save();
-    ctx.strokeStyle = "rgba(170, 197, 175, 0.10)";
+    ctx.strokeStyle = "rgba(148, 163, 184, 0.12)";
     ctx.lineWidth = 1;
     const stepSize = 0.2 * scale;
     for (let x = originX % stepSize; x < width; x += stepSize) {
@@ -487,7 +487,7 @@ export default function RoboticArmSimulator() {
     }
 
     // Axes lines through origin
-    ctx.strokeStyle = "rgba(170, 197, 175, 0.24)";
+    ctx.strokeStyle = "rgba(148, 163, 184, 0.25)";
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.moveTo(0, originY);
@@ -498,14 +498,14 @@ export default function RoboticArmSimulator() {
 
     // Draw Reachable Workspace Boundaries
     ctx.setLineDash([5, 5]);
-    ctx.strokeStyle = "rgba(170, 197, 175, 0.38)";
+    ctx.strokeStyle = "rgba(59, 130, 246, 0.4)";
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.arc(originX, originY, maxReach * scale, 0, 2 * Math.PI);
     ctx.stroke();
 
     if (minReach > 0.05) {
-      ctx.strokeStyle = "rgba(224, 166, 120, 0.32)";
+      ctx.strokeStyle = "rgba(6, 182, 212, 0.28)";
       ctx.beginPath();
       ctx.arc(originX, originY, minReach * scale, 0, 2 * Math.PI);
       ctx.stroke();
@@ -564,7 +564,7 @@ export default function RoboticArmSimulator() {
       // Joints
       ctx.setLineDash([]);
       ctx.fillStyle = style.jointColor;
-      ctx.strokeStyle = "#292e29";
+      ctx.strokeStyle = "#111827";
       ctx.lineWidth = 2;
 
       // Base joint
@@ -584,20 +584,20 @@ export default function RoboticArmSimulator() {
         const totalAngle = th[0] + th[1];
         const axisLen = 32;
 
-        // Tangent / X-axis uses the site's copper accent.
+        // Keep the orientation axes consistent with the simulation preview.
         const rx = c2[0] + Math.cos(totalAngle) * axisLen;
         const ry = c2[1] - Math.sin(totalAngle) * axisLen; // Canvas Y flipped
-        ctx.strokeStyle = "#e0a678";
+        ctx.strokeStyle = "#ef4444";
         ctx.lineWidth = 3;
         ctx.beginPath();
         ctx.moveTo(c2[0], c2[1]);
         ctx.lineTo(rx, ry);
         ctx.stroke();
 
-        // Normal / Y-axis uses the site's sage signal color.
+        // Normal / Y-axis.
         const gx = c2[0] - Math.sin(totalAngle) * axisLen;
         const gy = c2[1] - Math.cos(totalAngle) * axisLen;
-        ctx.strokeStyle = "#aac5af";
+        ctx.strokeStyle = "#22c55e";
         ctx.lineWidth = 3;
         ctx.beginPath();
         ctx.moveTo(c2[0], c2[1]);
@@ -605,7 +605,7 @@ export default function RoboticArmSimulator() {
         ctx.stroke();
 
         // End-effector tip bead
-        ctx.fillStyle = "#e1dfd5";
+        ctx.fillStyle = "#38bdf8";
         ctx.beginPath();
         ctx.arc(c2[0], c2[1], 5, 0, 2 * Math.PI);
         ctx.fill();
@@ -617,9 +617,9 @@ export default function RoboticArmSimulator() {
     // 1. Draw Starting Guess Ghost Arm (Dotted, matching MATLAB plotRobot2D(ls, t, ':'))
     if (showGhost) {
       drawArm(startTheta, {
-        link1Color: "#8e998c",
-        link2Color: "#8e998c",
-        jointColor: "#596356",
+        link1Color: "#64748b",
+        link2Color: "#94a3b8",
+        jointColor: "#475569",
         lineWidth: 6,
         opacity: 0.45,
         dash: [4, 4],
@@ -630,9 +630,9 @@ export default function RoboticArmSimulator() {
     // 2. In compare mode, draw Broyden secondary arm
     if (solverMode === "compare") {
       drawArm(secondaryResult.finalTheta, {
-        link1Color: "#e0a678",
-        link2Color: "#f0c49f",
-        jointColor: "#9f6944",
+        link1Color: "#a855f7",
+        link2Color: "#c084fc",
+        jointColor: "#7e22ce",
         lineWidth: 8,
         opacity: 0.7,
         showAxes: true,
@@ -647,9 +647,9 @@ export default function RoboticArmSimulator() {
     ) {
       primaryResult.history.slice(0, activeStep).forEach((rec, idx) => {
         drawArm(rec.theta, {
-          link1Color: "#aac5af",
-          link2Color: "#d1dfd2",
-          jointColor: "#748d79",
+          link1Color: "#60a5fa",
+          link2Color: "#93c5fd",
+          jointColor: "#3b82f6",
           lineWidth: 4,
           opacity: 0.15 + (idx / primaryResult.history.length) * 0.25,
           dash: [2, 3],
@@ -660,9 +660,9 @@ export default function RoboticArmSimulator() {
 
     // 4. Draw Primary Active Arm
     drawArm(displayTheta, {
-      link1Color: solverMode === "broyden" ? "#e0a678" : "#aac5af",
-      link2Color: solverMode === "broyden" ? "#f0c49f" : "#d1dfd2",
-      jointColor: solverMode === "broyden" ? "#9f6944" : "#748d79",
+      link1Color: solverMode === "broyden" ? "#f59e0b" : "#2563eb",
+      link2Color: solverMode === "broyden" ? "#fbbf24" : "#06b6d4",
+      jointColor: solverMode === "broyden" ? "#b45309" : "#1d4ed8",
       lineWidth: 10,
       opacity: 1.0,
       showAxes: true,
@@ -671,7 +671,7 @@ export default function RoboticArmSimulator() {
     // 5. Draw Base Stand
     ctx.save();
     const baseC = toCanvas([0, 0]);
-    ctx.fillStyle = "#596356";
+    ctx.fillStyle = "#475569";
     ctx.beginPath();
     ctx.moveTo(baseC[0] - 28, baseC[1] + 16);
     ctx.lineTo(baseC[0] + 28, baseC[1] + 16);
@@ -686,21 +686,21 @@ export default function RoboticArmSimulator() {
     ctx.save();
 
     // Target glow ring
-    ctx.strokeStyle = isTargetReachable ? "#e0a678" : "#ba7964";
+    ctx.strokeStyle = isTargetReachable ? "#f59e0b" : "#ef4444";
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.arc(targetC[0], targetC[1], 18, 0, 2 * Math.PI);
     ctx.stroke();
 
     ctx.fillStyle = isTargetReachable
-      ? "rgba(224, 166, 120, 0.14)"
-      : "rgba(186, 121, 100, 0.14)";
+      ? "rgba(245, 158, 11, 0.15)"
+      : "rgba(239, 68, 68, 0.15)";
     ctx.beginPath();
     ctx.arc(targetC[0], targetC[1], 18, 0, 2 * Math.PI);
     ctx.fill();
 
     // Crosshairs
-    ctx.strokeStyle = isTargetReachable ? "#e0a678" : "#ba7964";
+    ctx.strokeStyle = isTargetReachable ? "#fbbf24" : "#f87171";
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(targetC[0] - 12, targetC[1]);
@@ -710,14 +710,14 @@ export default function RoboticArmSimulator() {
     ctx.stroke();
 
     // Target center dot
-    ctx.fillStyle = isTargetReachable ? "#e0a678" : "#ba7964";
+    ctx.fillStyle = isTargetReachable ? "#d97706" : "#b91c1c";
     ctx.beginPath();
     ctx.arc(targetC[0], targetC[1], 4, 0, 2 * Math.PI);
     ctx.fill();
 
     // Label
     ctx.font = "600 12px Lato, system-ui, sans-serif";
-    ctx.fillStyle = isTargetReachable ? "#e0a678" : "#ba7964";
+    ctx.fillStyle = isTargetReachable ? "#f59e0b" : "#ef4444";
     ctx.fillText(
       `Target (${target[0].toFixed(2)}, ${target[1].toFixed(2)})`,
       targetC[0] + 16,
@@ -891,7 +891,7 @@ export default function RoboticArmSimulator() {
         </div>
 
         {/* Canvas & Live Overlay */}
-        <div className="relative w-full h-[480px] bg-white dark:bg-gray-950 flex items-center justify-center select-none cursor-crosshair">
+        <div className="sim-visualization relative w-full h-[480px] bg-white dark:bg-gray-950 flex items-center justify-center select-none cursor-crosshair">
           <canvas
             ref={canvasRef}
             width={800}
@@ -903,13 +903,13 @@ export default function RoboticArmSimulator() {
           />
 
           {/* Interactive Hint */}
-          <div className="absolute top-3 left-3 bg-white/85 dark:bg-gray-900/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 flex items-center gap-2 pointer-events-none shadow-sm">
+          <div className="sim-display-overlay sim-display-hint absolute top-3 left-3 bg-white/85 dark:bg-gray-900/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 flex items-center gap-2 pointer-events-none shadow-sm">
             <Crosshair className="w-3.5 h-3.5 text-blue-500 animate-pulse" />
             <span>Click or drag anywhere to place target</span>
           </div>
 
           {/* Status Badge */}
-          <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5 pointer-events-none">
+          <div className="sim-display-status absolute top-3 right-3 flex flex-col items-end gap-1.5 pointer-events-none">
             {!isTargetReachable ? (
               <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-red-800 dark:bg-red-950/80 dark:text-red-300 border border-red-300 dark:border-red-900 text-xs font-semibold">
                 <AlertTriangle className="w-3.5 h-3.5" />
@@ -935,7 +935,7 @@ export default function RoboticArmSimulator() {
           </div>
 
           {/* Legend Overlay at Bottom-Left */}
-          <div className="absolute bottom-3 left-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-2.5 rounded-lg border border-gray-200 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 space-y-1 shadow-sm pointer-events-none">
+          <div className="sim-display-overlay sim-display-legend absolute bottom-3 left-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-2.5 rounded-lg border border-gray-200 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 space-y-1 shadow-sm pointer-events-none">
             <div className="flex items-center gap-2">
               <span className="w-3 h-1 bg-blue-600 dark:bg-blue-500 rounded" />
               <span>
