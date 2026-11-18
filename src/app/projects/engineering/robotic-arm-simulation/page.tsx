@@ -10,11 +10,6 @@ export default function RoboticArmSimulationPage() {
           <InteractiveProject
             preview="/images/projects/robotic-arm-simulation-title.webp"
           />
-          <p className="text-gray-600 dark:text-gray-400 mt-2 text-base">
-            Click or drag in the workspace to position the target. Switch
-            between Newton&apos;s method and Broyden&apos;s solver, or compare
-            both convergence paths side by side.
-          </p>
         </section>
 
         {/* Header Section */}

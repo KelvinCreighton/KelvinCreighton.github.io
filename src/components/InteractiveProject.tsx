@@ -41,7 +41,7 @@ export default function InteractiveProject({
             aria-expanded={active}
             onClick={() => setActive(!active)}
           >
-            {active ? "Close" : "Open"} {file ? "score" : "simulation"}{" "}
+            {active ? "Close" : file ? "Open score" : "Launch simulation"}{" "}
             {active ? (
               <X size={18} aria-hidden="true" />
             ) : (
@@ -56,7 +56,7 @@ export default function InteractiveProject({
         </div>
       </div>
       {!active && preview && (
-        <div className="demo-preview-image">
+        <figure className={file ? "demo-preview-image" : "game-preview"}>
           <BlurImage
             src={preview}
             alt={
@@ -67,7 +67,7 @@ export default function InteractiveProject({
             fill
             sizes="(max-width: 760px) 90vw, 900px"
           />
-        </div>
+        </figure>
       )}
       {active && (
         <div className="interactive-content">
