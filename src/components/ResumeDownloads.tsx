@@ -8,12 +8,14 @@ export default function ResumeDownloads() {
   const router = useRouter();
   const previewRef = useRef<HTMLElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isFirefox, setIsFirefox] = useState(false);
   const type =
     params.get("focus") === "cybersecurity" ? "cybersecurity" : "embedded";
   const url = `/resume-${type}.pdf`;
   const label = type === "embedded" ? "Embedded systems" : "Cybersecurity";
 
   useEffect(() => {
+    setIsFirefox(/firefox/i.test(window.navigator.userAgent));
     const updateFullscreen = () =>
       setIsFullscreen(document.fullscreenElement === previewRef.current);
     document.addEventListener("fullscreenchange", updateFullscreen);
@@ -62,7 +64,11 @@ export default function ResumeDownloads() {
         className="resume-preview"
         aria-label={`${label} resume preview`}
       >
-        <iframe key={url} src={url} title={`${label} resume PDF`} />
+        <iframe
+          key={url}
+          src={`${url}${isFirefox ? "#zoom=125&pagemode=none" : ""}`}
+          title={`${label} resume PDF`}
+        />
       </section>
     </aside>
   );
