@@ -249,16 +249,18 @@
 }
 .build-copy {
   padding: 8px 24px 24px;
-  background: var(--card-surface-gradient), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--surface);
+  background-blend-mode: soft-light, normal;
 }
 .build-card:nth-child(4n + 2) .build-copy {
-  background: var(--card-surface-gradient-2), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient-2);
 }
 .build-card:nth-child(4n + 3) .build-copy {
-  background: var(--card-surface-gradient-3), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient-3);
 }
 .build-card:nth-child(4n + 4) .build-copy {
-  background: var(--card-surface-gradient-4), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient-4);
 }
 .build-copy h4 {
   font: 400 var(--type-card-heading)/1.16 var(--serif);
@@ -479,16 +481,18 @@
   overflow: hidden;
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
-  background: var(--card-surface-gradient), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--surface);
+  background-blend-mode: soft-light, normal;
 }
 .shelf-item:nth-child(4n + 2) {
-  background: var(--card-surface-gradient-2), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient-2);
 }
 .shelf-item:nth-child(4n + 3) {
-  background: var(--card-surface-gradient-3), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient-3);
 }
 .shelf-item:nth-child(4n + 4) {
-  background: var(--card-surface-gradient-4), var(--surface);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient-4);
 }
 .card-hit-area {
   position: absolute;
@@ -606,7 +610,9 @@
 
 /* The collection and reading pages share the paper and serif treatment. */
 .archive-grid .archive-entry {
-  background: var(--card-surface-gradient), var(--raised);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient);
+  background-color: var(--raised);
+  background-blend-mode: soft-light, normal;
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
   overflow: hidden;
@@ -614,13 +620,13 @@
   transition: transform var(--motion-ui) ease, box-shadow var(--motion-ui) ease, border-color var(--motion-ui) ease;
 }
 .archive-grid .archive-entry:nth-child(4n + 2) {
-  background: var(--card-surface-gradient-2), var(--raised);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient-2);
 }
 .archive-grid .archive-entry:nth-child(4n + 3) {
-  background: var(--card-surface-gradient-3), var(--raised);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient-3);
 }
 .archive-grid .archive-entry:nth-child(4n + 4) {
-  background: var(--card-surface-gradient-4), var(--raised);
+  background-image: var(--card-grain-texture), var(--card-surface-gradient-4);
 }
 .archive-entry-link {
   display: grid;
