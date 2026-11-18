@@ -64,7 +64,7 @@ export default function ResumeDownloads() {
       >
         <iframe
           key={url}
-          src={`${url}#zoom=62.5&pagemode=none`}
+          src={`${url}#zoom=70&pagemode=none`}
           title={`${label} resume PDF`}
         />
       </section>
