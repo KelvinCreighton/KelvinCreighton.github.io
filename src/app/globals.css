@@ -340,6 +340,9 @@ h3[id] {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.site-footer .footer-kicker {
+  font-size: 14px;
+}
 .footer-intro h2 {
   max-width: 24ch;
   margin: 12px 0;
@@ -375,7 +378,7 @@ h3[id] {
 .footer-navigation {
   display: grid;
   justify-items: start;
-  gap: 13px;
+  gap: 5px;
   font-size: 14px;
   color: var(--muted);
 }
