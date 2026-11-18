@@ -5,6 +5,7 @@ import { NavBar } from "@/components/NavBar";
 import { Background } from "@/components/Background";
 import "./globals.css";
 import "./fieldbook.css";
+import "./project-detail.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://kelvincreighton.ca"),
   title: {

@@ -1,4 +1,5 @@
 "use client";
+import { Download, Play, X, ArrowUp } from "lucide-react";
 import dynamic from "next/dynamic";
 import BlurImage from "@/components/BlurImage";
 import { useRef, useState } from "react";
@@ -27,11 +28,7 @@ export default function InteractiveProject({
             ? "Music / Score & playback"
             : "Numerical methods / Interactive model"}
         </p>
-        <h2>
-          {file
-            ? "Read it. Play it. Listen closely."
-            : "Move the arm. Inspect the method."}
-        </h2>
+        <h2>{file ? "Score & playback" : "Interactive simulation"}</h2>
         <p>
           {file
             ? "Open the score to see the notation and use the playback controls. Audio starts only when you press Play."
@@ -45,11 +42,15 @@ export default function InteractiveProject({
             onClick={() => setActive(!active)}
           >
             {active ? "Close" : "Open"} {file ? "score" : "simulation"}{" "}
-            <span>{active ? "×" : "↗"}</span>
+            {active ? (
+              <X size={18} aria-hidden="true" />
+            ) : (
+              <Play size={18} aria-hidden="true" />
+            )}
           </button>
           {file && (
-            <a className="text-link" href={file} download>
-              Download MusicXML ↓
+            <a className="button" href={file} download>
+              <Download aria-hidden="true" /> Download MusicXML
             </a>
           )}
         </div>
@@ -74,7 +75,8 @@ export default function InteractiveProject({
                 buttonRef.current?.focus();
               }}
             >
-              Close and return to the article ↑
+              Close and return to the article{" "}
+              <ArrowUp size={16} aria-hidden="true" />
             </button>
           </div>
         </div>

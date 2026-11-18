@@ -1,41 +1,14 @@
 import Image from "@/components/BlurImage";
-import Link from "next/link";
-
-const technicalAreas = [
-  "ESP32-S3",
-  "Arduino C++",
-  "Sensor integration",
-  "I²C / Wire1",
-  "FIFO sampling",
-  "Bluetooth LE",
-  "Embedded hardware",
-];
 
 export default function MachineGuardProject() {
   return (
     <div className="project-body">
       <article className="article-content">
-        <header className="mb-12 w-full border-b border-gray-200 pb-8 dark:border-gray-800">
-          <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-1">
-            <time className="text-sm italic text-gray-500 dark:text-gray-400">
-              November 6–9, 2026
-            </time>
-            <span className="text-sm text-gray-500 dark:text-gray-400">
-              natHacks 2026 · SmolBugs
-            </span>
-          </div>
+        <header className="project-introduction">
 
           <p className="mb-4 text-lg font-medium text-blue-600 dark:text-blue-400">
             Embedded Hardware &amp; Firmware · Machine Condition Monitoring
           </p>
-          <a
-            href="https://github.com/Divy-21/SmolBugs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mb-6 inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-sm transition-colors hover:border-gray-900 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-gray-300 dark:hover:bg-gray-800"
-          >
-            View Team Repository on GitHub
-          </a>
 
           <p className="mb-6 text-xl italic leading-relaxed text-gray-700 dark:text-gray-300">
             I was responsible for creating the project&apos;s hardware: bringing
@@ -61,16 +34,6 @@ export default function MachineGuardProject() {
             </figcaption>
           </figure>
 
-          <div className="flex flex-wrap gap-2">
-            {technicalAreas.map((area) => (
-              <span
-                key={area}
-                className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-800 dark:border-blue-900 dark:bg-blue-950/50 dark:text-blue-200"
-              >
-                {area}
-              </span>
-            ))}
-          </div>
         </header>
 
         <section className="mb-10 w-full space-y-5 text-lg leading-relaxed text-gray-700 dark:text-gray-300">

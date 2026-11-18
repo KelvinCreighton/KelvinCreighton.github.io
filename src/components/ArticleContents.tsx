@@ -1,41 +1,116 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+type Heading = { id: string; text: string };
+
 export default function ArticleContents({ projectId }: { projectId: string }) {
-  const [headings, setHeadings] = useState<{ id: string; text: string }[]>([]);
+  const [headings, setHeadings] = useState<Heading[]>([]);
+  const [activeId, setActiveId] = useState("");
+  const navRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
-    const seen = new Set<string>();
-    const list = [
-      ...document.querySelectorAll<HTMLElement>(".case-content h2"),
-    ].map((el, i) => {
-      const base =
-        el.id ||
-        el.textContent
-          ?.trim()
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/^-|-$/g, "") ||
-        `section-${i}`;
-      let id = base;
-      let n = 2;
-      while (seen.has(id)) id = `${base}-${n++}`;
-      seen.add(id);
-      el.id = id;
-      return { id, text: el.textContent?.trim() || "Section" };
-    });
-    setHeadings(list);
+    const content = document.querySelector<HTMLElement>(".case-content");
+    if (!content) return;
+    let elements: HTMLElement[] = [];
+    let frame = 0;
+
+    const updateActive = () => {
+      frame = 0;
+      const offset = Math.max(
+        120,
+        (document.querySelector(".site-header")?.getBoundingClientRect()
+          .bottom || 0) + 24,
+      );
+      const visible = elements.filter((el) => el.getClientRects().length > 0);
+      let active: HTMLElement | undefined = visible[0];
+      for (const el of visible) {
+        if (el.getBoundingClientRect().top <= offset + 1) active = el;
+      }
+      if (
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight - 2
+      ) {
+        active = visible.at(-1);
+      }
+      setActiveId(active?.id || "");
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(updateActive);
+    };
+    const collect = () => {
+      const seen = new Set<string>();
+      elements = [...content.querySelectorAll<HTMLElement>("h2")];
+      const list = elements.map((el, index) => {
+        const base =
+          el.id ||
+          el.textContent
+            ?.trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-|-$/g, "") ||
+          `section-${index}`;
+        let id = base;
+        let suffix = 2;
+        while (seen.has(id)) id = `${base}-${suffix++}`;
+        seen.add(id);
+        el.id = id;
+        return { id, text: el.textContent?.trim() || "Section" };
+      });
+      setHeadings((previous) =>
+        JSON.stringify(previous) === JSON.stringify(list) ? previous : list,
+      );
+      schedule();
+    };
+    collect();
+    const observer = new MutationObserver(collect);
+    observer.observe(content, { childList: true, subtree: true });
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    content.addEventListener("toggle", schedule, true);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      content.removeEventListener("toggle", schedule, true);
+    };
   }, [projectId]);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    const link = nav?.querySelector<HTMLElement>('[aria-current="location"]');
+    const aside = nav?.closest<HTMLElement>(".case-aside");
+    if (!link || !aside || getComputedStyle(aside).position !== "sticky")
+      return;
+    const bounds = aside.getBoundingClientRect();
+    const item = link.getBoundingClientRect();
+    if (item.top < bounds.top + 45 || item.bottom > bounds.bottom) {
+      aside.scrollTop += item.top - bounds.top - 60;
+    }
+  }, [activeId]);
+
   return headings.length > 0 ? (
     <details open>
       <summary>On this page</summary>
-      <nav aria-label="Contents">
-        {headings.map((h) => (
-          <a key={h.id} href={`#${h.id}`}>
-            {h.text}
+      <nav aria-label="On this page" ref={navRef}>
+        {headings.map((heading) => (
+          <a
+            key={heading.id}
+            href={`#${heading.id}`}
+            aria-current={activeId === heading.id ? "location" : undefined}
+            onClick={() => {
+              let parent = document.getElementById(heading.id)?.parentElement;
+              while (parent) {
+                if (parent instanceof HTMLDetailsElement) parent.open = true;
+                parent = parent.parentElement;
+              }
+              setActiveId(heading.id);
+            }}
+          >
+            {heading.text}
           </a>
         ))}
       </nav>
     </details>
-  ) : (
-    <p>Project notes</p>
-  );
+  ) : null;
 }

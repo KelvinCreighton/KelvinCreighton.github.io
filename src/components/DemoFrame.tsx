@@ -1,4 +1,5 @@
 "use client";
+import { Play, ExternalLink, X, ArrowUp } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 export default function DemoFrame({
   src,
@@ -25,9 +26,9 @@ export default function DemoFrame({
       {active ? (
         <>
           <div className="demo-toolbar">
-            <span>{title}</span>
+            <h2 className="demo-toolbar-title">Try {title}</h2>
             <a href={src} target="_blank" rel="noreferrer">
-              Open in a new tab ↗
+              Open in a new tab <ExternalLink size={16} aria-hidden="true" />
             </a>
             <button
               onClick={() => {
@@ -37,7 +38,7 @@ export default function DemoFrame({
                 setTimeout(() => launchRef.current?.focus(), 0);
               }}
             >
-              Close demo ×
+              Close demo <X size={16} aria-hidden="true" />
             </button>
           </div>
           <p className="demo-message" role="status">
@@ -67,7 +68,8 @@ export default function DemoFrame({
                 setTimeout(() => launchRef.current?.focus(), 0);
               }}
             >
-              Stop and return to the article ↑
+              Stop and return to the article{" "}
+              <ArrowUp size={16} aria-hidden="true" />
             </button>
           </div>
         </>
@@ -85,7 +87,7 @@ export default function DemoFrame({
               ref={launchRef}
               onClick={() => setActive(true)}
             >
-              Launch demo <span>↗</span>
+              <Play aria-hidden="true" /> Launch demo
             </button>
             <a
               className="text-link"
@@ -93,7 +95,7 @@ export default function DemoFrame({
               target="_blank"
               rel="noreferrer"
             >
-              Open separately ↗
+              Open separately <ExternalLink size={16} aria-hidden="true" />
             </a>
           </div>
         </div>

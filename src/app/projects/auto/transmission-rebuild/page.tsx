@@ -1,5 +1,4 @@
 import Image from "@/components/BlurImage";
-import Link from "next/link";
 
 export default function AutomotiveProjectTemplate() {
   return (
@@ -8,12 +7,7 @@ export default function AutomotiveProjectTemplate() {
         {/* Navigation */}
 
         {/* Header Section */}
-        <header className="w-full border-b border-gray-200 dark:border-gray-800 pb-8 mb-12">
-          <div className="flex items-center gap-4 mb-4">
-            <time className="text-sm italic text-gray-500 dark:text-gray-400">
-              August 2025
-            </time>
-          </div>
+        <header className="project-introduction">
 
           <p className="text-xl italic mb-6">1989 Honda Accord LX</p>
 

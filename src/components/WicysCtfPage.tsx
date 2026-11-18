@@ -1,4 +1,5 @@
 import { wicysChallenges } from "@/app/projects/cybersecurity/wicys-ctf-data";
+import { Download } from "lucide-react";
 import CtfFlagSubmission from "@/components/CtfFlagSubmission";
 import InProgressNotice from "@/components/InProgressNotice";
 function inline(text: string) {
@@ -61,19 +62,11 @@ export default function WicysCtfPage({
                 download={d.filename}
                 key={d.href}
               >
-                {d.label} ↓
+                <Download aria-hidden="true" /> {d.label}
               </a>
             ))}
           </div>
         )}
-        <a
-          className="text-link"
-          href="https://github.com/KelvinCreighton/WICYS-Cross-Chapter-CTF-2026"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Challenge source on GitHub ↗
-        </a>
       </section>
       <CtfFlagSubmission
         expectedFlag={challenge.expectedFlag}

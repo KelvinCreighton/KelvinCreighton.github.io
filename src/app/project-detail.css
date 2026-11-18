@@ -1,0 +1,228 @@
+/* Shared presentation for every project; interactive controls retain their own layout. */
+.case-header .case-heading {
+  max-width: 960px;
+}
+.case-header .case-heading > p:not(.eyebrow) {
+  font-size: clamp(19px, 2vw, 23px);
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 65ch;
+}
+.case-header .case-meta {
+  margin-top: 18px;
+  font-size: 14px;
+}
+.case-header .case-actions {
+  gap: 12px;
+  align-items: center;
+}
+.case-header .case-overview {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  padding: 24px;
+  margin-top: 28px;
+  border-left-color: var(--accent);
+}
+.case-header .case-overview dt {
+  color: var(--accent);
+  font: 600 14px var(--font-sans);
+}
+.case-header .case-overview dd {
+  font: 15px/1.65 var(--font-sans);
+  overflow-wrap: anywhere;
+}
+.case-content {
+  min-width: 0;
+}
+.case-content .project-body {
+  max-width: 820px;
+  margin: 0;
+}
+.case-content .project-body :is(h2, h3, h4) {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--ink);
+}
+.case-content .project-body h2 {
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.25;
+  margin: 40px 0 18px;
+  /* The document already reserves 110px of scroll padding. */
+  scroll-margin-top: 10px;
+}
+.case-content .project-body h3 {
+  font-size: 25px;
+  line-height: 1.35;
+  margin: 28px 0 12px;
+}
+.case-content .project-body h4 {
+  font-size: 21px;
+  line-height: 1.4;
+}
+.case-content .project-body :is(p, li) {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.case-content .project-body p {
+  margin-bottom: 18px;
+}
+.case-content .project-body .eyebrow {
+  font: 13px/1.5 var(--font-sans);
+  color: var(--accent);
+}
+.case-content .project-introduction p {
+  font-style: normal;
+  font-weight: 400;
+}
+.case-content
+  .project-body
+  :is(.writeup-meta, .notice, .challenge-details, .interactive-surface)
+  :is(p, li, dd) {
+  font: 15px/1.65 var(--font-sans);
+}
+.case-content .project-body .interactive-surface :is(h2, h3) {
+  margin-top: 0;
+}
+.case-content .project-body pre {
+  white-space: pre;
+  overflow-x: auto;
+  overflow-wrap: normal;
+}
+.case-content .project-body pre code {
+  overflow-wrap: normal;
+}
+.case-content .project-body a:not(.button):not(:has(img)) {
+  color: var(--accent);
+  text-decoration-color: transparent;
+  transition:
+    color 180ms ease,
+    text-decoration-color 180ms ease;
+}
+.case-content .project-body a:not(.button):hover {
+  text-decoration-color: currentColor;
+}
+:is(.case-header, .case-content) .button,
+.case-content .project-body a[download] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 16px;
+  font: 500 15px/1.4 var(--font-sans);
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: none;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+:is(.case-header, .case-content)
+  .button:not(:disabled):is(:hover, :focus-visible),
+.case-content .project-body a[download]:is(:hover, :focus-visible) {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--raised);
+  text-decoration: none;
+}
+:is(.case-header, .case-content) .button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+:is(.case-header, .case-content) .button svg,
+.case-content a[download] svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+:is(.case-header, .case-content, .case-aside)
+  :is(a, button, summary):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.case-aside {
+  scrollbar-width: thin;
+}
+.case-aside summary {
+  font: 600 14px/1.5 var(--font-sans);
+  color: var(--ink);
+}
+.case-aside nav a {
+  font: 14px/1.45 var(--font-sans);
+  padding: 9px 12px;
+  border-left: 2px solid var(--rule);
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+.case-aside nav a:is(:hover, :focus-visible, [aria-current="location"]) {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--surface);
+  text-decoration: none;
+  transform: none;
+}
+.case-content .solution-toggle {
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 18px 22px;
+}
+.case-content .solution-toggle summary {
+  font: 500 15px/1.5 var(--font-sans);
+  color: var(--accent);
+  cursor: pointer;
+}
+.case-content .solution-toggle summary:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.case-content .demo-toolbar :is(a, button) {
+  font: 14px/1.5 var(--font-sans);
+  color: var(--accent);
+}
+.case-content .demo-toolbar :is(a, button):hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 760px) {
+  .case-header .case-overview {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  .case-reading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding-top: 28px;
+  }
+  .case-aside {
+    position: static;
+    max-height: none;
+  }
+  .case-aside nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .case-content .project-body :is(p, li) {
+    font-size: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.case-header, .case-content, .case-aside) :is(a, button) {
+    transition: none;
+  }
+}
+
+.case-content .project-body .demo-toolbar-title {
+  font: 500 15px/1.5 var(--font-sans);
+  margin: 0;
+}

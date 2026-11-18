@@ -5,6 +5,8 @@ import {
   categoryName,
   inCategory,
 } from "@/data/projects";
+import { Github, Download, Play } from "lucide-react";
+import { projectTopics } from "@/data/projectTopics";
 import ArticleContents from "@/components/ArticleContents";
 import { InlineArrow } from "@/components/InlineArrow";
 export default function CaseStudyLayout({
@@ -15,6 +17,19 @@ export default function CaseStudyLayout({
   children: React.ReactNode;
 }) {
   const p = getProject(projectId)!;
+  const source =
+    p.source ||
+    (p.id.startsWith("wicys-ctf-")
+      ? "https://github.com/KelvinCreighton/WICYS-Cross-Chapter-CTF-2026"
+      : undefined);
+  const status =
+    p.availability === "coming-soon"
+      ? "Release pending"
+      : p.state === "in-progress"
+        ? "In progress"
+        : p.state === "prototype"
+          ? "Working prototype"
+          : "Complete";
   const related = projects
     .filter((r) => r.id !== p.id && inCategory(r, p.category))
     .sort(
@@ -29,7 +44,7 @@ export default function CaseStudyLayout({
         <nav className="breadcrumb" aria-label="Breadcrumb">
           <Link href="/projects">Projects</Link>
           <span>/</span>
-          <Link href={`/projects/${p.category}`}>
+          <Link href={`/projects?category=${p.category}`}>
             {categoryName(p.category)}
           </Link>
           <span>/</span>
@@ -42,58 +57,51 @@ export default function CaseStudyLayout({
         </div>
         <div className="case-meta">
           <span>{p.dateLabel}</span>
-          <span>{p.contribution}</span>
-          <span>
-            {p.availability === "coming-soon"
-              ? "Release pending"
-              : p.state === "in-progress"
-                ? "In progress"
-                : p.state === "prototype"
-                  ? "Working prototype"
-                  : "Project archive"}
-          </span>
+          {p.vehicle && <span>{p.vehicle}</span>}
         </div>
         <div className="case-actions">
-          {p.source && (
+          {source && (
             <a
-              href={p.source}
+              href={source}
               target="_blank"
               rel="noreferrer"
-              className="text-link"
+              className="button project-action"
             >
-              Source on GitHub ↗
+              <Github aria-hidden="true" /> GitHub
             </a>
           )}
           {(p.demo || p.capabilities.includes("simulate") || p.score) && (
-            <a href="#interactive-demo" className="text-link">
-              Try it here ↓
+            <a href="#interactive-demo" className="button project-action">
+              <Play aria-hidden="true" />{" "}
+              {p.score
+                ? "Open score"
+                : p.capabilities.includes("simulate")
+                  ? "Try simulation"
+                  : "Try demo"}
             </a>
           )}
           {p.score && (
-            <a href={p.score} download className="text-link">
-              Download MusicXML ↓
+            <a href={p.score} download className="button project-action">
+              <Download aria-hidden="true" /> Download MusicXML
             </a>
           )}
-          <Link className="text-link" href={`/projects/${p.category}`}>
-            Explore {categoryName(p.category).toLowerCase()} <InlineArrow />
-          </Link>
         </div>
-        {p.overview && (
-          <dl className="case-overview">
-            <div>
-              <dt>The problem</dt>
-              <dd>{p.overview.problem}</dd>
-            </div>
-            <div>
-              <dt>My contribution</dt>
-              <dd>{p.overview.role}</dd>
-            </div>
-            <div>
-              <dt>Outcome & limits</dt>
-              <dd>{p.overview.result}</dd>
-            </div>
-          </dl>
-        )}
+        <dl className="case-overview" aria-label="Project at a glance">
+          <div>
+            <dt>My contribution</dt>
+            <dd>{p.overview?.role || p.contribution}</dd>
+          </div>
+          <div>
+            <dt>Tools &amp; topics</dt>
+            <dd>
+              {(p.tags.length ? p.tags : projectTopics[p.id] || []).join(" · ")}
+            </dd>
+          </div>
+          <div>
+            <dt>Status &amp; outcome</dt>
+            <dd>{p.overview?.result || status}</dd>
+          </div>
+        </dl>
       </header>
       <div className="case-reading">
         <aside className="case-aside">
@@ -108,7 +116,9 @@ export default function CaseStudyLayout({
             {related.map((r) => (
               <Link key={r.id} href={r.href}>
                 <span>{r.collection}</span>
-                <h2>{r.title} ↗</h2>
+                <h2>
+                  {r.title} <InlineArrow />
+                </h2>
                 <p>{r.summary}</p>
               </Link>
             ))}
