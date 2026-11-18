@@ -169,8 +169,7 @@ export default function Home() {
           />
         </Link>
         <div>
-          <p className="people-caption">Away from the workbench</p>
-          <h2 id="people-title">There are people behind the projects.</h2>
+          <h2 id="people-title">There are people behind the projects</h2>
           <p>
             I also help organise security events and build CTF challenges. At
             BSides Edmonton 2026, that meant competition setup, helping
