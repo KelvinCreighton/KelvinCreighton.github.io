@@ -630,9 +630,9 @@ export default function RoboticArmSimulator() {
     // 2. In compare mode, draw Broyden secondary arm
     if (solverMode === "compare") {
       drawArm(secondaryResult.finalTheta, {
-        link1Color: "#50315f",
-        link2Color: "#6b4a7e",
-        jointColor: "#36213f",
+        link1Color: "#a855f7",
+        link2Color: "#c084fc",
+        jointColor: "#7e22ce",
         lineWidth: 8,
         opacity: 0.7,
         showAxes: true,
