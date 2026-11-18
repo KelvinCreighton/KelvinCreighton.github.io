@@ -655,16 +655,13 @@ h3[id] {
   font-size: 14px;
 }
 .history-item > *,
-.related-work a > *,
-.community-record > * {
+.related-work a > * {
   transition: transform 220ms ease;
 }
 .history-item:hover > *,
 .history-item:focus-visible > *,
 .related-work a:hover > *,
-.related-work a:focus-visible > *,
-.community-record:hover > *,
-.community-record:focus-within > * {
+.related-work a:focus-visible > * {
   transform: translateY(-4px);
 }
 .history-item:hover,

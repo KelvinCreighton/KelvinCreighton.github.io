@@ -1,5 +1,5 @@
 import PageIntro from "@/components/PageIntro";
-import BlurImage from "@/components/BlurImage";
+import ImageDialog from "@/components/ImageDialog";
 import { events } from "@/data/community";
 
 const shortMonths = [
@@ -37,15 +37,7 @@ export default function Page() {
           .map((e) => (
             <article className="community-record" id={e.id} key={e.id}>
               <p className="record-date">{shortDate(e.sortDate)}</p>
-              <div className="record-image">
-                <BlurImage
-                  src={e.image}
-                  alt={e.imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 760px) 90vw, 320px"
-                />
-              </div>
+              <ImageDialog src={e.image} alt={e.imageAlt} />
               <div className="record-content">
                 <p className="eyebrow">Community / Event organization</p>
                 <h2>{e.title}</h2>
