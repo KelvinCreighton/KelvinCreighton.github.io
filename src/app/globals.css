@@ -431,6 +431,7 @@ h3[id] {
 .resume-intro-portrait {
   position: relative;
   width: 100%;
+  justify-self: center;
   aspect-ratio: 1;
   margin: 0;
   overflow: hidden;
