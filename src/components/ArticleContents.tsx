@@ -9,6 +9,19 @@ export default function ArticleContents({ projectId }: { projectId: string }) {
   const [activeSectionId, setActiveSectionId] = useState("");
   const navRef = useRef<HTMLElement>(null);
 
+  const navigateToHeading = (id: string) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+    let parent = target.parentElement;
+    while (parent) {
+      if (parent instanceof HTMLDetailsElement) parent.open = true;
+      parent = parent.parentElement;
+    }
+    history.pushState(null, "", `#${id}`);
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActiveId(id);
+  };
+
   useEffect(() => {
     const content = document.querySelector<HTMLElement>(".case-content");
     if (!content) return;
@@ -104,8 +117,8 @@ export default function ArticleContents({ projectId }: { projectId: string }) {
       <nav aria-label="On this page" ref={navRef}>
         {headings.map((heading) => (
           <div className={`toc-section${heading.id === activeSectionId ? " is-active" : ""}`} key={heading.id}>
-            <a href={`#${heading.id}`} aria-current={activeId === heading.id ? "location" : undefined} onClick={() => setActiveId(heading.id)}>{heading.text}</a>
-            {heading.id === activeSectionId && heading.children.length > 0 && <div className="toc-substeps">{heading.children.map(child => <a key={child.id} href={`#${child.id}`} aria-current={activeId === child.id ? "location" : undefined} onClick={() => setActiveId(child.id)}>{child.text}</a>)}</div>}
+            <a href={`#${heading.id}`} aria-current={activeId === heading.id ? "location" : undefined} onClick={(event) => { event.preventDefault(); navigateToHeading(heading.id); }}>{heading.text}</a>
+            {heading.id === activeSectionId && heading.children.length > 0 && <div className="toc-substeps">{heading.children.map(child => <a key={child.id} href={`#${child.id}`} aria-current={activeId === child.id ? "location" : undefined} onClick={(event) => { event.preventDefault(); navigateToHeading(child.id); }}>{child.text}</a>)}</div>}
           </div>
         ))}
       </nav>
