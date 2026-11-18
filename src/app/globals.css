@@ -5,25 +5,36 @@
   --font-sans: "Lato", "Lato Fallback", system-ui, sans-serif;
   --font-serif: "Newsreader", "Newsreader Fallback", Georgia, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  --color-gray-85: #eeede6;
+  --color-gray-85: #252b33;
 }
 :root {
-  /* Charcoal and sage, with copper as the warm accent. */
+  /* Slate surfaces with lime highlights and cyan interaction signals. */
   --rust: var(--signal);
   --background: var(--paper);
   --foreground: var(--ink);
   color-scheme: dark;
-  --paper: #1c1b18;
-  --surface: #292e29;
-  --raised: #292e29;
-  --ink: #e1dfd5;
-  --muted: #b0b4a8;
-  --accent: #e0a678;
-  --signal: #aac5af;
-  --on-signal: #1c1b18;
-  --signal-soft: #37483b;
-  --rule: #474c45;
-  --focus: var(--signal);
+  --paper: #171a20;
+  --surface: #252b33;
+  --raised: #252b33;
+  --ink: #f4f5f6;
+  --muted: #a1a7b0;
+  --red: #e85d5d;
+  --green: #a3e635;
+  --yellow: #f0b94b;
+  --blue: #39bde8;
+  --purple: #39bde8;
+  --cyan: #39bde8;
+  --orange: #f0b94b;
+  --warning: #f0b94b;
+  --error: #e85d5d;
+  --highlight: #303842;
+  --secondary-accent: #39bde8;
+  --accent: #a3e635;
+  --signal: var(--secondary-accent);
+  --on-signal: #171a20;
+  --signal-soft: var(--highlight);
+  --rule: #3c4654;
+  --focus: var(--accent);
   /* Shared scale: 12px meta, 14px controls, 16px descriptions, 18px body, 20px lead, 24px cards. */
   --type-meta: 0.75rem;
   --type-label: 0.875rem;

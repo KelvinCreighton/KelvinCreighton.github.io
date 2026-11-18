@@ -249,16 +249,28 @@
   gap: 22px;
 }
 .robotic-arm-simulator .simulator-site-theme {
-  --paper: #1c1b18;
-  --surface: #292e29;
-  --raised: #292e29;
-  --ink: #e1dfd5;
-  --muted: #b0b4a8;
-  --accent: #e0a678;
-  --signal: #aac5af;
-  --on-signal: #1c1b18;
-  --signal-soft: #37483b;
-  --rule: #474c45;
+  --paper: #171a20;
+  --surface: #252b33;
+  --raised: #252b33;
+  --ink: #f4f5f6;
+  --muted: #a1a7b0;
+  --red: #e85d5d;
+  --green: #a3e635;
+  --yellow: #f0b94b;
+  --blue: #39bde8;
+  --purple: #39bde8;
+  --cyan: #39bde8;
+  --orange: #f0b94b;
+  --warning: #f0b94b;
+  --error: #e85d5d;
+  --highlight: #303842;
+  --secondary-accent: #39bde8;
+  --accent: #a3e635;
+  --signal: var(--secondary-accent);
+  --on-signal: #171a20;
+  --signal-soft: var(--highlight);
+  --rule: #3c4654;
+  --focus: var(--accent);
 }
 .robotic-arm-simulator > div:first-child {
   overflow: hidden;
@@ -297,16 +309,30 @@
 .robotic-arm-simulator [class*="text-gray-800"] {
   color: var(--ink) !important;
 }
-.robotic-arm-simulator [class*="text-blue-"],
 .robotic-arm-simulator [class*="text-emerald-"],
 .robotic-arm-simulator [class*="text-green-"] {
-  color: var(--signal) !important;
+  color: var(--green) !important;
 }
-.robotic-arm-simulator [class*="text-purple-"],
-.robotic-arm-simulator [class*="text-amber-"],
-.robotic-arm-simulator [class*="text-orange-"],
+.robotic-arm-simulator [class*="text-blue-"] {
+  color: var(--blue) !important;
+}
+.robotic-arm-simulator [class*="text-cyan-"] {
+  color: var(--cyan) !important;
+}
+.robotic-arm-simulator [class*="text-green-"] {
+  color: var(--green) !important;
+}
+.robotic-arm-simulator [class*="text-purple-"] {
+  color: var(--purple) !important;
+}
+.robotic-arm-simulator [class*="text-amber-"] {
+  color: var(--yellow) !important;
+}
+.robotic-arm-simulator [class*="text-orange-"] {
+  color: var(--orange) !important;
+}
 .robotic-arm-simulator [class*="text-red-"] {
-  color: var(--accent) !important;
+  color: var(--red) !important;
 }
 .robotic-arm-simulator button {
   min-height: 36px;
@@ -345,13 +371,13 @@
   color: var(--paper) !important;
 }
 .robotic-arm-simulator button[class*="bg-purple-600"] {
-  border-color: #a855f7 !important;
-  background: #a855f7 !important;
-  color: #0b1220 !important;
+  border-color: var(--signal) !important;
+  background: var(--signal) !important;
+  color: var(--on-signal) !important;
 }
 .robotic-arm-simulator button[class*="bg-purple-600"]:hover {
-  background: #a855f7 !important;
-  color: #0b1220 !important;
+  background: var(--signal) !important;
+  color: var(--on-signal) !important;
 }
 .robotic-arm-simulator .simulator-preview-theme [class*="text-purple-"] {
   color: #c084fc !important;
@@ -397,7 +423,7 @@
   background-color: #3b82f6 !important;
 }
 .robotic-arm-simulator .sim-display-legend [class*="bg-purple-"] {
-  background-color: #a855f7 !important;
+  background-color: #36213f !important;
 }
 .robotic-arm-simulator .sim-display-legend [class*="bg-amber-"] {
   background-color: #fbbf24 !important;
