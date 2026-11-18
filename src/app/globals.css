@@ -28,6 +28,18 @@
     linear-gradient(145deg, rgb(55 72 59 / 16%), transparent 72%),
     radial-gradient(ellipse at 8% 0%, rgb(170 197 175 / 9%), transparent 64%),
     radial-gradient(ellipse at 100% 100%, rgb(224 166 120 / 5%), transparent 68%);
+  --card-surface-gradient-2:
+    linear-gradient(205deg, rgb(55 72 59 / 16%), transparent 72%),
+    radial-gradient(ellipse at 92% 4%, rgb(170 197 175 / 9%), transparent 64%),
+    radial-gradient(ellipse at 0% 96%, rgb(224 166 120 / 5%), transparent 68%);
+  --card-surface-gradient-3:
+    linear-gradient(75deg, rgb(55 72 59 / 16%), transparent 72%),
+    radial-gradient(ellipse at 30% 98%, rgb(170 197 175 / 9%), transparent 64%),
+    radial-gradient(ellipse at 84% 2%, rgb(224 166 120 / 5%), transparent 68%);
+  --card-surface-gradient-4:
+    linear-gradient(325deg, rgb(55 72 59 / 16%), transparent 72%),
+    radial-gradient(ellipse at 98% 74%, rgb(170 197 175 / 9%), transparent 64%),
+    radial-gradient(ellipse at 12% 18%, rgb(224 166 120 / 5%), transparent 68%);
   --radius-control: 6px;
   --radius-card: 12px;
   --radius-feature: 16px;
@@ -1034,6 +1046,15 @@ h3[id] {
   background: var(--card-surface-gradient), var(--surface);
   transition: transform var(--motion-ui) ease, box-shadow var(--motion-ui) ease, border-color var(--motion-ui) ease;
 }
+.related-work a:nth-child(4n + 2) {
+  background: var(--card-surface-gradient-2), var(--surface);
+}
+.related-work a:nth-child(4n + 3) {
+  background: var(--card-surface-gradient-3), var(--surface);
+}
+.related-work a:nth-child(4n + 4) {
+  background: var(--card-surface-gradient-4), var(--surface);
+}
 .related-work a:hover,
 .related-work a:focus-visible {
   transform: translateY(-3px);
@@ -1286,6 +1307,9 @@ h3[id] {
 .resume-summary li a:hover { text-decoration-color: currentColor; }
 .resume-work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; margin-top: 18px; }
 .resume-work-grid a { display: block; padding: 16px; border: 1px solid var(--rule); border-radius: var(--radius-card); background: var(--card-surface-gradient), var(--surface); color: inherit; transition: color 180ms ease; }
+.resume-work-grid a:nth-child(4n + 2) { background: var(--card-surface-gradient-2), var(--surface); }
+.resume-work-grid a:nth-child(4n + 3) { background: var(--card-surface-gradient-3), var(--surface); }
+.resume-work-grid a:nth-child(4n + 4) { background: var(--card-surface-gradient-4), var(--surface); }
 .resume-work-grid a:hover { color: var(--accent); text-decoration: none; }
 .resume-work-grid h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 8px; font: 400 var(--type-card-heading)/1.25 var(--serif); }
 .resume-work-grid h3 svg { width: 19px; height: 19px; flex: 0 0 19px; color: var(--signal); stroke-width: 1.7; }

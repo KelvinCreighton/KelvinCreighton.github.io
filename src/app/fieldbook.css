@@ -249,6 +249,15 @@
   padding: 8px 24px 24px;
   background: var(--card-surface-gradient), var(--surface);
 }
+.build-card:nth-child(4n + 2) .build-copy {
+  background: var(--card-surface-gradient-2), var(--surface);
+}
+.build-card:nth-child(4n + 3) .build-copy {
+  background: var(--card-surface-gradient-3), var(--surface);
+}
+.build-card:nth-child(4n + 4) .build-copy {
+  background: var(--card-surface-gradient-4), var(--surface);
+}
 .build-copy h4 {
   font: 400 var(--type-card-heading)/1.16 var(--serif);
   letter-spacing: -0.015em;
@@ -466,6 +475,15 @@
   border-radius: var(--radius-card);
   background: var(--card-surface-gradient), var(--surface);
 }
+.shelf-item:nth-child(4n + 2) {
+  background: var(--card-surface-gradient-2), var(--surface);
+}
+.shelf-item:nth-child(4n + 3) {
+  background: var(--card-surface-gradient-3), var(--surface);
+}
+.shelf-item:nth-child(4n + 4) {
+  background: var(--card-surface-gradient-4), var(--surface);
+}
 .card-hit-area {
   position: absolute;
   inset: 0;
@@ -587,6 +605,15 @@
   border-radius: var(--radius-card);
   overflow: hidden;
   transition: box-shadow var(--motion-ui) ease, border-color var(--motion-ui) ease;
+}
+.archive-grid .archive-entry:nth-child(4n + 2) {
+  background: var(--card-surface-gradient-2), var(--raised);
+}
+.archive-grid .archive-entry:nth-child(4n + 3) {
+  background: var(--card-surface-gradient-3), var(--raised);
+}
+.archive-grid .archive-entry:nth-child(4n + 4) {
+  background: var(--card-surface-gradient-4), var(--raised);
 }
 .archive-entry-link {
   display: grid;
