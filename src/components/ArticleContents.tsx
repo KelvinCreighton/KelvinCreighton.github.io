@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-type Heading = { id: string; text: string };
+type Heading = { id: string; text: string; children: { id: string; text: string }[] };
 
 export default function ArticleContents({ projectId }: { projectId: string }) {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState("");
+  const [activeSectionId, setActiveSectionId] = useState("");
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -33,14 +34,16 @@ export default function ArticleContents({ projectId }: { projectId: string }) {
         active = visible.at(-1);
       }
       setActiveId(active?.id || "");
+      const section = [...visible].reverse().find((el) => el.tagName === "H2" && el.getBoundingClientRect().top <= offset + 1);
+      setActiveSectionId(section?.id || visible.find((el) => el.tagName === "H2")?.id || "");
     };
     const schedule = () => {
       if (!frame) frame = requestAnimationFrame(updateActive);
     };
     const collect = () => {
       const seen = new Set<string>();
-      elements = [...content.querySelectorAll<HTMLElement>("h2")];
-      const list = elements.map((el, index) => {
+      elements = [...content.querySelectorAll<HTMLElement>("h2, h3")];
+      const entries = elements.map((el, index) => {
         const base =
           el.id ||
           el.textContent
@@ -54,8 +57,14 @@ export default function ArticleContents({ projectId }: { projectId: string }) {
         while (seen.has(id)) id = `${base}-${suffix++}`;
         seen.add(id);
         el.id = id;
-        return { id, text: el.textContent?.trim() || "Section" };
+        return { id, text: el.textContent?.trim() || "Section", level: el.tagName };
       });
+      const list: Heading[] = [];
+      for (const entry of entries) {
+        if (entry.level === "H2") list.push({ id: entry.id, text: entry.text, children: [] });
+        else list.at(-1)?.children.push({ id: entry.id, text: entry.text });
+      }
+      for (const heading of list) if (heading.children.length < 2) heading.children = [];
       setHeadings((previous) =>
         JSON.stringify(previous) === JSON.stringify(list) ? previous : list,
       );
@@ -94,21 +103,10 @@ export default function ArticleContents({ projectId }: { projectId: string }) {
       <summary>On this page</summary>
       <nav aria-label="On this page" ref={navRef}>
         {headings.map((heading) => (
-          <a
-            key={heading.id}
-            href={`#${heading.id}`}
-            aria-current={activeId === heading.id ? "location" : undefined}
-            onClick={() => {
-              let parent = document.getElementById(heading.id)?.parentElement;
-              while (parent) {
-                if (parent instanceof HTMLDetailsElement) parent.open = true;
-                parent = parent.parentElement;
-              }
-              setActiveId(heading.id);
-            }}
-          >
-            {heading.text}
-          </a>
+          <div key={heading.id}>
+            <a href={`#${heading.id}`} aria-current={activeId === heading.id ? "location" : undefined} onClick={() => setActiveId(heading.id)}>{heading.text}</a>
+            {heading.id === activeSectionId && heading.children.length > 0 && <div className="toc-substeps">{heading.children.map(child => <a key={child.id} href={`#${child.id}`} aria-current={activeId === child.id ? "location" : undefined} onClick={() => setActiveId(child.id)}>{child.text}</a>)}</div>}
+          </div>
         ))}
       </nav>
     </details>
