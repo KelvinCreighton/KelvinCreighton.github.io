@@ -24,7 +24,7 @@
   --signal-soft: #37483b;
   --rule: #474c45;
   --focus: var(--signal);
-  /* Shared scale: 12px meta, 14px labels, 16px UI, 18px body, 20px reading, 24px cards. */
+  /* Shared scale: 12px meta, 14px controls, 16px descriptions, 18px body, 20px lead, 24px cards. */
   --type-meta: 0.75rem;
   --type-label: 0.875rem;
   --type-ui: 1rem;
@@ -33,10 +33,6 @@
   --type-card-heading: 1.5rem;
   --type-section-heading: clamp(1.75rem, 3.2vw, 2.25rem);
   --type-page-heading: clamp(2.75rem, 5.3vw, 4.75rem);
-  --type-display-heading: clamp(3.4rem, 6.6vw, 6rem);
-  --type-display-mobile: clamp(3rem, 8.2vw, 4.7rem);
-  --type-display-copy: clamp(1.35rem, 2.7vw, 2.4375rem);
-  --type-home-section: clamp(2.5rem, 4.5vw, 3.8rem);
   /* Newsreader is reserved for headings, the wordmark, project titles, and long-form project prose. */
   --serif: "Newsreader", "Newsreader Fallback", Georgia, serif;
 }
@@ -577,7 +573,7 @@ h3[id] {
   margin: 14px 0;
 }
 .archive-entry > p {
-  font-size: var(--type-label);
+  font-size: var(--type-ui);
   color: var(--muted);
   line-height: 1.65;
 }
@@ -663,7 +659,7 @@ h3[id] {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  font-size: var(--type-body);
+  font-size: var(--type-ui);
   line-height: 1.4;
   color: var(--muted);
 }
@@ -876,7 +872,7 @@ h3[id] {
 }
 .project-body p {
   font-family: var(--serif);
-  font-size: var(--type-reading);
+  font-size: var(--type-body);
   line-height: 1.7;
   max-width: 68ch;
 }
@@ -1004,7 +1000,7 @@ h3[id] {
   color: var(--accent);
 }
 .related-work h3 {
-  font-size: var(--type-reading);
+  font-size: var(--type-card-heading);
   margin-top: 10px;
 }
 .related-work p {
@@ -1153,7 +1149,7 @@ h3[id] {
   object-fit: contain;
 }
 .record-content h2 {
-  font-size: var(--type-section-heading);
+  font-size: var(--type-card-heading);
   line-height: 1.2;
   margin: 10px 0 13px;
 }
@@ -1236,9 +1232,9 @@ h3[id] {
 .resume-work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; margin-top: 18px; }
 .resume-work-grid a { display: block; padding: 17px 0; border-top: 1px solid var(--rule); color: inherit; transition: color 180ms ease; }
 .resume-work-grid a:hover { color: var(--accent); text-decoration: none; }
-.resume-work-grid h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 8px; font: 400 var(--type-reading)/1.25 var(--serif); }
+.resume-work-grid h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 8px; font: 400 var(--type-card-heading)/1.25 var(--serif); }
 .resume-work-grid h3 svg { width: 19px; height: 19px; flex: 0 0 19px; color: var(--signal); stroke-width: 1.7; }
-.resume-work-grid p { margin: 0; font-size: var(--type-label); line-height: 1.6; color: var(--muted); }
+.resume-work-grid p { margin: 0; font-size: var(--type-ui); line-height: 1.6; color: var(--muted); }
 .resume-work-grid strong { color: var(--ink); }
 .resume-summary dl > div > :not(.card-hit-area),
 .resume-downloads > a {
@@ -1299,7 +1295,7 @@ h3[id] {
     font-size: var(--type-meta);
   }
   .wordmark-name {
-    font-size: var(--type-reading);
+    font-size: var(--type-card-heading);
   }
   .navigation {
     gap: 10px;
@@ -1467,7 +1463,7 @@ h3[id] {
     gap: 0 18px;
   }
   .project-body p {
-    font-size: var(--type-ui);
+    font-size: var(--type-body);
   }
   .project-body .p-8 {
     padding: 18px;
@@ -1488,7 +1484,7 @@ h3[id] {
     aspect-ratio: 16/10;
   }
   .record-content h2 {
-    font-size: var(--type-section-heading);
+    font-size: var(--type-card-heading);
   }
   .resume-layout {
     grid-template-columns: 1fr;
@@ -1886,7 +1882,7 @@ body:has(dialog[open]) {
 }
 .project-body p {
   font-family: var(--serif);
-  font-size: var(--type-reading);
+  font-size: var(--type-body);
   line-height: 1.7;
   max-width: 68ch;
 }

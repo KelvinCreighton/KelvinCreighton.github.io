@@ -4,7 +4,7 @@
 }
 .field-intro h1 {
   max-width: 900px;
-  font-size: var(--type-display-heading);
+  font-size: var(--type-page-heading);
   font-weight: 400;
   line-height: 1.07;
   letter-spacing: -0.027em;
@@ -20,7 +20,7 @@
 }
 .field-intro-description {
   max-width: 1100px;
-  font-size: var(--type-display-copy);
+  font-size: var(--type-reading);
   font-weight: 400;
   line-height: 1.25;
   text-wrap: pretty;
@@ -30,7 +30,7 @@
   flex-wrap: wrap;
   gap: 12px 28px;
   margin-top: 24px;
-  font-size: var(--type-reading);
+  font-size: var(--type-body);
   line-height: 1.5;
 }
 .field-intro-links a {
@@ -102,11 +102,11 @@
   margin-bottom: 62px;
 }
 .fieldbook-heading h2 {
-  font-size: var(--type-home-section);
+  font-size: var(--type-section-heading);
   margin-bottom: 18px;
 }
 .fieldbook-heading p {
-  font-size: var(--type-reading);
+  font-size: var(--type-body);
   color: var(--muted);
   line-height: 1.7;
 }
@@ -122,7 +122,7 @@
   margin-bottom: 32px;
 }
 .collection-heading :is(h2, h3) {
-  font: 700 var(--type-reading)/1.4 var(--font-sans);
+  font: 700 var(--type-card-heading)/1.4 var(--font-sans);
   letter-spacing: 0;
 }
 .collection-heading :is(h2, h3) span {
@@ -231,7 +231,7 @@
 }
 .build-copy > p {
   color: var(--muted);
-  font-size: var(--type-label);
+  font-size: var(--type-ui);
   line-height: 1.7;
 }
 .build-meta {
@@ -402,7 +402,7 @@
 }
 .topic-index li p {
   margin-top: 8px;
-  font-size: var(--type-label);
+  font-size: var(--type-ui);
   color: var(--muted);
   line-height: 1.65;
 }
@@ -458,7 +458,7 @@
   margin: 17px 0 9px;
 }
 .shelf-item p {
-  font-size: var(--type-label);
+  font-size: var(--type-ui);
   color: var(--muted);
 }
 .shelf-action {
@@ -656,7 +656,7 @@
     gap: 30px 20px;
   }
   .shelf-item h3 {
-    font-size: var(--type-reading);
+    font-size: var(--type-card-heading);
   }
 }
 @media (max-width: 760px) {
@@ -664,7 +664,7 @@
     padding: 45px 0 74px;
   }
   .field-intro h1 {
-    font-size: var(--type-display-mobile);
+    font-size: var(--type-page-heading);
     line-height: 1.07;
     letter-spacing: -0.025em;
   }
@@ -679,9 +679,6 @@
   }
   .fieldbook-heading a {
     white-space: normal;
-  }
-  .collection-heading > p {
-    font-size: var(--type-ui);
   }
   .fieldbook-extras {
     grid-template-columns: minmax(0, 1fr);
@@ -755,13 +752,13 @@
     gap: 35px 18px;
   }
   .shelf-item h3 {
-    font-size: var(--type-reading);
+    font-size: var(--type-card-heading);
   }
   .shelf-cover {
     aspect-ratio: 3/4;
   }
   .shelf-item p {
-    font-size: var(--type-label);
+    font-size: var(--type-ui);
   }
   .shelf-action {
     font-size: var(--type-meta);
@@ -772,7 +769,7 @@
     padding: 20px 0 35px;
   }
   .field-intro h1 {
-    font-size: var(--type-home-section);
+    font-size: var(--type-section-heading);
   }
   .build-card {
     break-inside: avoid;
