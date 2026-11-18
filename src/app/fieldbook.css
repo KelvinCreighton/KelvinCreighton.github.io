@@ -216,7 +216,6 @@
 .build-card:hover .build-card-link,
 .build-card:focus-within .build-card-link {
   transform: translateY(-3px);
-  border-color: var(--signal);
   box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
 }
 .home-page .build-card-link:hover {
@@ -637,7 +636,6 @@
 }
 .archive-grid .archive-entry:hover,
 .archive-grid .archive-entry:focus-within {
-  border-color: var(--signal);
   box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
 }
 .archive-image img {

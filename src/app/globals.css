@@ -1058,7 +1058,6 @@ h3[id] {
 .related-work a:hover,
 .related-work a:focus-visible {
   transform: translateY(-3px);
-  border-color: var(--signal);
   box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
   text-decoration: none;
 }
