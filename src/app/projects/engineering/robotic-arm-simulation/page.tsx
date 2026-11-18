@@ -211,11 +211,11 @@ export default function RoboticArmSimulationPage() {
             [0; h]) ) / (2h)
           </div>
 
-          <div className="bg-blue-50 dark:bg-blue-950/40 border-l-4 border-blue-500 p-4 my-6 rounded-r-xl">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-blue-900 dark:text-blue-300 m-0">
+          <aside className="notice numerical-callout">
+            <h4>
               Perturbation Trade-Off: Truncation vs. Round-Off Error
             </h4>
-            <p className="text-sm text-blue-800 dark:text-blue-200 mt-2 mb-0">
+            <p>
               The truncation error of central differences scales as <em>O</em>(
               <em>h</em>&sup2;), meaning smaller <em>h</em> yields higher
               mathematical fidelity. However, as <em>h</em> &rarr; 0,
@@ -226,7 +226,7 @@ export default function RoboticArmSimulationPage() {
               cancellation, whereas large values (e.g., <em>h</em> = 0.5)
               introduce noticeable directional drift into the solver iterations.
             </p>
-          </div>
+          </aside>
 
           <hr className="my-10 border-gray-200 dark:border-gray-800" />
 

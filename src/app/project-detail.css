@@ -188,6 +188,10 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+.case-content .project-body .numerical-callout h4 {
+  margin: 0 0 10px;
+  color: var(--ink);
+}
 .case-content .demo-toolbar :is(a, button) {
   font: var(--type-label)/1.5 var(--font-sans);
   color: var(--accent);
