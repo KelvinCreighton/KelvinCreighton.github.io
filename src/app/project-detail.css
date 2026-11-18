@@ -196,7 +196,8 @@
 .case-content .intro-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; }
 .case-content .intro-actions > :is(a, button) { margin: 0; vertical-align: middle; }
 .case-content .intro-actions .text-link { min-height: 44px; padding: 10px 16px; border: 1px solid var(--rule); background: var(--surface); border-radius: 4px; }
-.case-content .game-preview { position: relative; aspect-ratio: 16 / 9; margin: 28px 0 0; overflow: hidden; border: 1px solid var(--rule); background: var(--surface); }
+.case-content .game-preview { position: relative; display: block; width: 100%; align-self: stretch; aspect-ratio: 16 / 9; margin: 28px 0 0; overflow: hidden; border: 1px solid var(--rule); background: var(--surface); }
+.case-content .game-preview img { display: block; object-fit: cover; }
 @media (max-width: 760px) {
   .case-header .case-overview {
     grid-template-columns: 1fr;
