@@ -284,3 +284,4 @@
 }
 .line-lr { animation: movement-left-right 1s linear infinite !important; }
 .line-rl { animation: movement-right-left 1s linear infinite !important; }
+.case-content .project-body .goal-symbol { display: grid; place-items: center; }
