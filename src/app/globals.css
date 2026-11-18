@@ -25,8 +25,9 @@
   --rule: #474c45;
   --focus: var(--signal);
   --card-surface-gradient:
-    linear-gradient(140deg, rgb(170 197 175 / 4%), transparent 62%),
-    radial-gradient(ellipse at 100% 100%, rgb(224 166 120 / 2.5%), transparent 68%);
+    linear-gradient(145deg, rgb(55 72 59 / 16%), transparent 72%),
+    radial-gradient(ellipse at 8% 0%, rgb(170 197 175 / 9%), transparent 64%),
+    radial-gradient(ellipse at 100% 100%, rgb(224 166 120 / 5%), transparent 68%);
   --radius-control: 6px;
   --radius-card: 12px;
   --radius-feature: 16px;
