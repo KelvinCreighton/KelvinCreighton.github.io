@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { NavBar } from "@/components/NavBar";
 import { Background } from "@/components/Background";
+import ProjectScrollReset from "@/components/ProjectScrollReset";
 import "./globals.css";
 import "./fieldbook.css";
 import "./project-detail.css";
@@ -51,6 +52,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+          <ProjectScrollReset />
           <Background />
           <a className="skip-link" href="#main-content">
             Skip to content
