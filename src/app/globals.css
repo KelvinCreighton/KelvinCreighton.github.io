@@ -195,11 +195,12 @@ h3[id] {
   position: fixed;
   inset: 0;
   z-index: -1;
-  /* Low-contrast ambient light gives the charcoal canvas some depth without
-     competing with project imagery or changing the established palette. */
+  /* Broad, overlapping ambient light gives the charcoal canvas depth across
+     the viewport rather than concentrating it in one corner. */
   background:
-    radial-gradient(ellipse 68rem 48rem at 8% 0%, rgb(55 72 59 / 24%), transparent 72%),
-    radial-gradient(ellipse 54rem 42rem at 96% 48%, rgb(224 166 120 / 2%), transparent 74%),
+    radial-gradient(ellipse 92rem 70rem at 8% 0%, rgb(55 72 59 / 38%), transparent 72%),
+    radial-gradient(ellipse 86rem 68rem at 100% 56%, rgb(55 72 59 / 24%), transparent 74%),
+    radial-gradient(ellipse 78rem 62rem at 38% 112%, rgb(224 166 120 / 7%), transparent 72%),
     linear-gradient(155deg, #1c1b18 0%, #1c1b18 56%, #201f1b 100%);
 }
 .site-background::after {
