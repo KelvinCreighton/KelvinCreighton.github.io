@@ -14,116 +14,51 @@ export default function Page() {
     <>
       <PageIntro title="About Me">
         <p>
-          I’m Kelvin Creighton. My interests sit where software meets physical
-          systems: firmware, operating systems, hardware integration, and the
-          work of understanding how things behave.
+          I&apos;m Kelvin Creighton. I studied Computer Science at the University
+          of Alberta, where I developed an interest in embedded systems,
+          firmware, and low-level software. I enjoy working close to the
+          hardware and understanding what happens beneath the abstractions.
         </p>
       </PageIntro>
       <div className="resume-layout">
         <div className="resume-summary">
           <section>
-            <p className="eyebrow">Technical focus</p>
-            <h2>Build. Investigate. Understand.</h2>
+            <h2>How I Work</h2>
+            <p><strong>Curiosity drives the process.</strong></p>
             <p>
-              I learn by building something concrete, finding the gaps, and
-              working through them. My projects range from a vibration-sensing
-              node to a Unix shell and a printer controller rebuild.
-            </p>
-            <p>
-              Cybersecurity adds another perspective: understanding how systems
-              fail, how interfaces can be misused, and what it takes to
-              investigate a problem.
+              I learn by building, experimenting, and figuring things out along
+              the way. I prefer understanding why something works over simply
+              knowing how to use it. That curiosity has taken me from
+              programming microcontrollers to exploring operating systems,
+              robotics, and security.
             </p>
           </section>
           <section>
-            <p className="eyebrow">Selected project experience</p>
-            <h2>Evidence in the work</h2>
-            <dl>
-              <div>
-                <dt>
-                  Embedded hardware & firmware ↗
-                </dt>
-                <dd>
-                  MachineGuard: ESP32-S3 sensor integration, buffered
-                  acquisition, and Bluetooth Low Energy data transfer for a team
-                  prototype.
-                </dd>
-                <Link
-                  className="card-hit-area"
-                  href="/projects/embedded-systems/machineguard"
-                  aria-label="View MachineGuard"
-                />
-              </div>
-              <div>
-                <dt>
-                  Systems programming ↗
-                </dt>
-                <dd>
-                  DragonShell, a MapReduce library, and a file-system simulator:
-                  C, processes, file descriptors, threads, and storage.
-                </dd>
-                <Link
-                  className="card-hit-area"
-                  href="/projects/embedded-systems/dragonshell"
-                  aria-label="View DragonShell"
-                />
-              </div>
-              <div>
-                <dt>
-                  Hardware integration & repair ↗
-                </dt>
-                <dd>
-                  Diagnosing a failed printer controller, adapting Marlin
-                  firmware, and testing replacement control hardware.
-                </dd>
-                <Link
-                  className="card-hit-area"
-                  href="/projects/engineering/dremel-3d45-rebuild"
-                  aria-label="View the Dremel 3D45 rebuild"
-                />
-              </div>
-              <div>
-                <dt>
-                  Security investigations & challenge design ↗
-                </dt>
-                <dd>
-                  CTF writeups, challenge development, and competition work with
-                  CHADS.
-                </dd>
-                <Link
-                  className="card-hit-area"
-                  href="/projects/cybersecurity"
-                  aria-label="View cybersecurity projects"
-                />
-              </div>
-            </dl>
+            <h2>Selected Work</h2>
+            <p><strong>Building systems from the ground up.</strong></p>
+            <p>My projects reflect different aspects of my technical interests:</p>
+            <ul>
+              <li><strong>Embedded Systems:</strong> <Link href="/projects/embedded-systems/machineguard">MachineGuard</Link>, a sensor-based monitoring node built around an ESP32-S3, involving hardware integration and firmware development.</li>
+              <li><strong>Systems Programming:</strong> <Link href="/projects/embedded-systems/dragonshell">DragonShell</Link> and other projects exploring processes, file systems, threads, and low-level programming in C.</li>
+              <li><strong>Hardware:</strong> Modifying a 3D printer&apos;s control system through replacement hardware and firmware configuration.</li>
+              <li><strong>Cybersecurity:</strong> Security research, CTF challenges, vulnerability analysis, and competition experience.</li>
+            </ul>
+            <Link className="text-link" href="/projects">Browse projects <InlineArrow /></Link>
           </section>
           <section>
-            <p className="eyebrow">Academic work</p>
-            <h2>A systems foundation</h2>
+            <h2>Beyond Engineering</h2>
+            <p><strong>Learning, building, and contributing.</strong></p>
             <p>
-              University of Alberta coursework in operating systems and
-              numerical methods is documented in the project archive.
+              Outside my projects, I&apos;ve been involved in cybersecurity
+              communities through OWASP Edmonton and university organizations.
+              I&apos;ve helped organize events, develop challenges, and create
+              opportunities for others to learn and participate.
             </p>
-            <div className="quiet-links">
-              <Link href="/projects/embedded-systems?collection=CMPUT+379%3A+Operating+Systems">
-                Operating systems <InlineArrow />
-              </Link>
-              <Link href="/projects/engineering/robotic-arm-simulation">
-                Numerical methods <InlineArrow />
-              </Link>
-            </div>
-          </section>
-          <section>
-            <p className="eyebrow">Beyond the project</p>
-            <h2>Making room for others</h2>
             <p>
-              I’ve helped organize CTFs and community events, from challenge
-              creation and competition setup to technical support on the day.
+              I also enjoy exploring interests outside computing, including
+              robotics, automotive projects, and music.
             </p>
-            <Link className="text-link" href="/community">
-              Leadership & community <InlineArrow />
-            </Link>
+            <Link className="text-link" href="/community">Community &amp; leadership <InlineArrow /></Link>
           </section>
         </div>
         <Suspense
