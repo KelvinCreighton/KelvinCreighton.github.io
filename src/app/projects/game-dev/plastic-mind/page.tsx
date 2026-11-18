@@ -62,14 +62,9 @@ export default function PlasticMindPage() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div
-                  className="goal-symbol w-4 h-4 rounded-full border border-yellow-600"
-                  style={{ backgroundColor: "#ffff00" }}
-                >
-                  <div
-                    className="w-2 h-2 rounded-full"
-                    style={{ backgroundColor: "#000000" }}
-                  ></div>
-                </div>
+                  className="goal-symbol w-4 h-4 rounded-full border-4"
+                  style={{ borderColor: "#ffff00" }}
+                />
                 <span className="text-sm text-gray-600 dark:text-gray-400">
                   Goal
                 </span>
