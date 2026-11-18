@@ -74,6 +74,14 @@ body {
   font-size: var(--type-body);
   font-optical-sizing: auto;
 }
+#page-top-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
 ::selection {
   background: var(--accent);
   color: var(--paper);

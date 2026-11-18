@@ -4,33 +4,34 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function readScrollPosition() {
+  const marker = document.getElementById("page-top-marker");
+  if (marker) return Math.max(0, -marker.getBoundingClientRect().top);
   return Math.max(window.scrollY, document.documentElement.scrollTop);
+}
+
+// Keep the wordmark available only at the very top of the page. It should not
+// reappear during ordinary upward scrolling farther down the page.
+const WORDMARK_FADE_DISTANCE = 80;
+
+function opacityAtScrollPosition(scrollY: number) {
+  return Math.max(0, Math.min(1, 1 - scrollY / WORDMARK_FADE_DISTANCE));
 }
 
 export function Wordmark() {
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-    let previousY = readScrollPosition();
-    let currentOpacity = 1;
     let frame: number | null = null;
 
     function handleScroll() {
       if (frame !== null) return;
       frame = window.requestAnimationFrame(() => {
-        const currentY = readScrollPosition();
-        const delta = currentY - previousY;
-
-        if (delta !== 0) {
-          currentOpacity = Math.max(0, Math.min(1, currentOpacity - delta / 320));
-        }
-
-        setOpacity(currentOpacity);
-        previousY = currentY;
+        setOpacity(opacityAtScrollPosition(readScrollPosition()));
         frame = null;
       });
     }
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     document.addEventListener("scroll", handleScroll, { passive: true, capture: true });
 
@@ -47,7 +48,6 @@ export function Wordmark() {
       className="wordmark"
       aria-label="Kelvin Creighton, home"
       style={{ opacity, pointerEvents: opacity < 0.02 ? "none" : "auto" }}
-      onFocus={() => setOpacity(1)}
     >
       <span className="wordmark-name">Kelvin Creighton</span>
     </Link>

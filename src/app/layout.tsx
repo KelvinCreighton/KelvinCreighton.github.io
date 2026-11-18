@@ -53,6 +53,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+          <span id="page-top-marker" aria-hidden="true" />
           <ProjectScrollReset />
           <Background />
           <a className="skip-link" href="#main-content">
