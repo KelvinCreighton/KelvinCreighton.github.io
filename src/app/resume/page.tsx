@@ -52,7 +52,7 @@ export default function Page() {
             <p>
               Outside my projects, I&apos;ve been involved in cybersecurity
               communities through OWASP Edmonton and university organizations
-              such as CHADS (Cybersecurity, Hacking, And Digital Security) club,
+              such as CHADS (Cybersecurity, Hacking, And Digital Security),
               and WiCyS Edmonton Chapter.
             </p>
             <p>
