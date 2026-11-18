@@ -58,7 +58,7 @@ export default function CaseStudyLayout({
               rel="noreferrer"
               className="button project-action"
             >
-              <Github aria-hidden="true" /> GitHub
+              <Github aria-hidden="true" /> View Source on GitHub
             </a>
           )}
           {p.id !== "robotic-arm-simulation" &&
