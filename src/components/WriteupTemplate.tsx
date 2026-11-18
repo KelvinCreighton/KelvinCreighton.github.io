@@ -72,14 +72,14 @@ export default function WriteupTemplate({ data }: WriteupTemplateProps) {
       {data.sections.map((section, i) => (
         <section key={i}>
           <p className="eyebrow">{String(i + 1).padStart(2, "0")}</p>
-          <h2>{section.title}</h2>
+          <h2>{content(section.title)}</h2>
           {section.prose && <p>{content(section.prose)}</p>}
           {section.notice && (
             <div className="notice">{content(section.notice)}</div>
           )}
           {section.cards?.map((card, j) => (
             <div className="writeup-card" key={j}>
-              <h3>{card.title}</h3>
+              <h3>{content(card.title)}</h3>
               <ul>
                 {card.items.map((item, k) => (
                   <li key={k}>{content(item)}</li>
@@ -91,7 +91,7 @@ export default function WriteupTemplate({ data }: WriteupTemplateProps) {
             <div className="writeup-step" key={j}>
               <h3>
                 <span className="eyebrow">Step {step.number} / </span>
-                {step.label}
+                {content(step.label)}
               </h3>
               {step.prose?.split("\n\n").map((p, k) => (
                 <p key={k}>{content(p)}</p>
