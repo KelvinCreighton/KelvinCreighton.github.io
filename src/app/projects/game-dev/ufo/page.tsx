@@ -11,7 +11,7 @@ export default function UFOGamePage() {
         </p>
       </div>
 
-      <DemoFrame src="/games/UFO/play.html" title="UFO Game" />
+      <DemoFrame src="/games/UFO/play.html" title="UFO Game" preview="/images/responsive/projects/ufo-webp-624.webp" />
     </div>
   );
 }

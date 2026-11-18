@@ -13,7 +13,7 @@ export default function MyFirstGamePage() {
         </p>
       </div>
 
-      <DemoFrame src="/games/my-first-game/game.html" title="My First Game" />
+      <DemoFrame src="/games/my-first-game/game.html" title="My First Game" preview="/images/responsive/projects/my-first-game-webp-1168.webp" />
 
       <div className="w-full max-w-4xl bg-gray-85 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">How to Play</h2>

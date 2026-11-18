@@ -17,7 +17,7 @@ export default function BlackholeSimulatorPage() {
 
       <DemoFrame
         src="/games/blackhole-simulator/Black_hole_simulator.html"
-        title="Blackhole Simulator"
+        title="Blackhole Simulator" preview="/images/responsive/projects/Blackhole_Simulator-image-webp-1086.webp"
       />
 
       <div className="w-full max-w-4xl bg-gray-85 dark:bg-gray-900 rounded-xl p-8 shadow-sm">

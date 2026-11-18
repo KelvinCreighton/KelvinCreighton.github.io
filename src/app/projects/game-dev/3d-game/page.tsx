@@ -13,7 +13,7 @@ export default function ThreeDGamePage() {
         </p>
       </div>
 
-      <DemoFrame src="/games/3D-Game/Game.html" title="3D Game" />
+      <DemoFrame src="/games/3D-Game/Game.html" title="3D Game" preview="/images/responsive/projects/3d-game-webp-748.webp" />
 
       <div className="w-full max-w-4xl bg-gray-85 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">Controls</h2>

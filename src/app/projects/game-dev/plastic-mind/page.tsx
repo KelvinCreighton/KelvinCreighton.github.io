@@ -13,7 +13,7 @@ export default function PlasticMindPage() {
         </p>
       </div>
 
-      <DemoFrame src="/games/plastic-mind/index.html" title="Plastic Mind" />
+      <DemoFrame src="/games/plastic-mind/index.html" title="Plastic Mind" preview="/images/responsive/projects/plastic-mind-title-webp-1009.webp" />
 
       <div className="w-full max-w-4xl bg-gray-85 dark:bg-gray-900 rounded-xl p-8 shadow-sm border border-gray-200 dark:border-gray-800">
         <h2 className="text-2xl font-bold mb-6">How to Play</h2>

@@ -10,7 +10,7 @@ export default function TankGamePage() {
         </p>
       </div>
 
-      <DemoFrame src="/games/tank-game/Game.html" title="Tank Game" />
+      <DemoFrame src="/games/tank-game/Game.html" title="Tank Game" preview="/images/responsive/projects/tank-game-webp-616.webp" />
 
       <div className="w-full max-w-4xl bg-gray-85 dark:bg-gray-900 rounded-xl p-8 shadow-sm">
         <h2 className="text-2xl font-bold mb-4">How to Play</h2>

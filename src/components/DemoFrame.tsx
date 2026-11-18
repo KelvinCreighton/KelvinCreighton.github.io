@@ -1,12 +1,15 @@
 "use client";
 import { Play, ExternalLink, X, ArrowUp } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import Image from "@/components/BlurImage";
 export default function DemoFrame({
   src,
   title,
+  preview,
 }: {
   src: string;
   title: string;
+  preview: string;
 }) {
   const [active, setActive] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -98,6 +101,9 @@ export default function DemoFrame({
               Open separately <ExternalLink size={16} aria-hidden="true" />
             </a>
           </div>
+          <figure className="game-preview">
+            <Image src={preview} alt={`${title} gameplay preview`} fill sizes="(max-width: 760px) 90vw, 820px" />
+          </figure>
         </div>
       )}
     </section>
