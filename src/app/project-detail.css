@@ -50,6 +50,9 @@
   /* The document already reserves 110px of scroll padding. */
   scroll-margin-top: 10px;
 }
+.case-content .project-body h3[id] {
+  scroll-margin-top: 10px;
+}
 .case-content .project-body h3 {
   font-size: 25px;
   line-height: 1.35;
