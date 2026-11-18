@@ -227,7 +227,132 @@
 .case-content .simulation-demo .game-preview {
   margin-top: 18px;
 }
+.robotic-arm-simulator {
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--type-ui);
+  line-height: 1.5;
+  gap: 22px;
+}
+.robotic-arm-simulator > div:first-child {
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--surface);
+  box-shadow: none;
+}
+.robotic-arm-simulator [class*="bg-white"],
+.robotic-arm-simulator [class*="bg-gray-"] {
+  background-color: var(--surface) !important;
+}
+.robotic-arm-simulator [class*="bg-blue-50"],
+.robotic-arm-simulator [class*="bg-blue-600"],
+.robotic-arm-simulator [class*="bg-purple-600"],
+.robotic-arm-simulator [class*="bg-red-"],
+.robotic-arm-simulator [class*="bg-emerald-"],
+.robotic-arm-simulator [class*="bg-amber-"],
+.robotic-arm-simulator [class*="bg-orange-"] {
+  background-color: var(--signal-soft) !important;
+}
+.robotic-arm-simulator [class*="border-gray-"] {
+  border-color: var(--rule) !important;
+}
+.robotic-arm-simulator [class*="rounded-2xl"],
+.robotic-arm-simulator [class*="rounded-xl"],
+.robotic-arm-simulator [class*="rounded-lg"],
+.robotic-arm-simulator [class*="rounded-md"] {
+  border-radius: 4px !important;
+}
+.robotic-arm-simulator [class*="text-gray-"] {
+  color: var(--muted) !important;
+}
+.robotic-arm-simulator [class*="text-gray-900"],
+.robotic-arm-simulator [class*="text-gray-100"],
+.robotic-arm-simulator [class*="text-gray-800"] {
+  color: var(--ink) !important;
+}
+.robotic-arm-simulator [class*="text-blue-"],
+.robotic-arm-simulator [class*="text-emerald-"],
+.robotic-arm-simulator [class*="text-green-"] {
+  color: var(--signal) !important;
+}
+.robotic-arm-simulator [class*="text-purple-"],
+.robotic-arm-simulator [class*="text-amber-"],
+.robotic-arm-simulator [class*="text-orange-"],
+.robotic-arm-simulator [class*="text-red-"] {
+  color: var(--accent) !important;
+}
+.robotic-arm-simulator button {
+  min-height: 36px;
+  padding: 7px 11px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 500 var(--type-label)/1.35 var(--font-sans);
+  box-shadow: none;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+.robotic-arm-simulator button:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--signal-soft);
+  color: var(--ink);
+}
+.robotic-arm-simulator button[class*="bg-blue-600"],
+.robotic-arm-simulator button[class*="bg-purple-600"] {
+  border-color: var(--signal) !important;
+  background: var(--signal) !important;
+  color: var(--on-signal) !important;
+}
+.robotic-arm-simulator button[class*="bg-amber-600"] {
+  border-color: var(--accent) !important;
+  background: var(--accent) !important;
+  color: var(--paper) !important;
+}
+.robotic-arm-simulator button[class*="bg-blue-600"]:hover,
+.robotic-arm-simulator button[class*="bg-purple-600"]:hover {
+  background: var(--signal) !important;
+  color: var(--on-signal) !important;
+}
+.robotic-arm-simulator button[class*="bg-amber-600"]:hover {
+  background: var(--accent) !important;
+  color: var(--paper) !important;
+}
+.robotic-arm-simulator input[type="checkbox"],
+.robotic-arm-simulator input[type="range"] {
+  accent-color: var(--signal);
+}
+.robotic-arm-simulator select {
+  min-height: 38px;
+  border-color: var(--rule) !important;
+  border-radius: 4px !important;
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+  font: var(--type-label)/1.4 var(--font-sans) !important;
+}
+.robotic-arm-simulator [class*="shadow-"] {
+  box-shadow: none !important;
+}
+.robotic-arm-simulator [class~="h-[480px]"] {
+  height: min(60vw, 480px);
+  min-height: 360px;
+  background: var(--paper) !important;
+}
+.robotic-arm-simulator table {
+  color: var(--muted);
+}
+.robotic-arm-simulator th {
+  font-family: var(--font-sans);
+}
+.robotic-arm-simulator th,
+.robotic-arm-simulator td {
+  border-color: var(--rule);
+}
 @media (max-width: 760px) {
+  .robotic-arm-simulator [class~="h-[480px]"] {
+    height: 68vw;
+    min-height: 300px;
+  }
   .simulation-demo .demo-preview {
     padding: 20px 18px 0;
   }
