@@ -103,7 +103,7 @@ export default function ArticleContents({ projectId }: { projectId: string }) {
       <summary>On this page</summary>
       <nav aria-label="On this page" ref={navRef}>
         {headings.map((heading) => (
-          <div key={heading.id}>
+          <div className={`toc-section${heading.id === activeSectionId ? " is-active" : ""}`} key={heading.id}>
             <a href={`#${heading.id}`} aria-current={activeId === heading.id ? "location" : undefined} onClick={() => setActiveId(heading.id)}>{heading.text}</a>
             {heading.id === activeSectionId && heading.children.length > 0 && <div className="toc-substeps">{heading.children.map(child => <a key={child.id} href={`#${child.id}`} aria-current={activeId === child.id ? "location" : undefined} onClick={() => setActiveId(child.id)}>{child.text}</a>)}</div>}
           </div>
