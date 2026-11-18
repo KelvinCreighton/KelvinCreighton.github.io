@@ -266,16 +266,16 @@
   gap: 22px;
 }
 .robotic-arm-simulator .simulator-site-theme {
-  --paper: #1c1b18;
-  --surface: #292e29;
-  --raised: #292e29;
+  --paper: #191815;
+  --surface: #262b26;
+  --raised: #262b26;
   --ink: #e1dfd5;
   --muted: #b0b4a8;
   --accent: #e0a678;
   --signal: #aac5af;
-  --on-signal: #1c1b18;
-  --signal-soft: #37483b;
-  --rule: #474c45;
+  --on-signal: #191815;
+  --signal-soft: #324335;
+  --rule: #424840;
 }
 .robotic-arm-simulator > div:first-child {
   overflow: hidden;

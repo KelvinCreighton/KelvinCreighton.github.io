@@ -13,32 +13,32 @@
   --background: var(--paper);
   --foreground: var(--ink);
   color-scheme: dark;
-  --paper: #1c1b18;
-  --surface: #292e29;
-  --raised: #292e29;
+  --paper: #191815;
+  --surface: #262b26;
+  --raised: #262b26;
   --ink: #e1dfd5;
   --muted: #b0b4a8;
   --accent: #e0a678;
   --signal: #aac5af;
-  --on-signal: #1c1b18;
-  --signal-soft: #37483b;
-  --rule: #474c45;
+  --on-signal: #191815;
+  --signal-soft: #324335;
+  --rule: #424840;
   --focus: var(--signal);
   --card-grain-texture: url("/images/grain-texture.svg");
   --card-surface-gradient:
-    linear-gradient(145deg, rgb(8 13 9 / 72%), transparent 82%),
+    linear-gradient(145deg, rgb(8 13 9 / 70%), transparent 82%),
     radial-gradient(ellipse at 8% 0%, rgb(170 197 175 / 6%), transparent 64%),
     radial-gradient(ellipse at 100% 100%, rgb(143 98 67 / 4%), transparent 68%);
   --card-surface-gradient-2:
-    linear-gradient(205deg, rgb(8 13 9 / 72%), transparent 82%),
+    linear-gradient(205deg, rgb(8 13 9 / 70%), transparent 82%),
     radial-gradient(ellipse at 92% 4%, rgb(170 197 175 / 6%), transparent 64%),
     radial-gradient(ellipse at 0% 96%, rgb(143 98 67 / 4%), transparent 68%);
   --card-surface-gradient-3:
-    linear-gradient(75deg, rgb(8 13 9 / 72%), transparent 82%),
+    linear-gradient(75deg, rgb(8 13 9 / 70%), transparent 82%),
     radial-gradient(ellipse at 30% 98%, rgb(170 197 175 / 6%), transparent 64%),
     radial-gradient(ellipse at 84% 2%, rgb(143 98 67 / 4%), transparent 68%);
   --card-surface-gradient-4:
-    linear-gradient(325deg, rgb(8 13 9 / 72%), transparent 82%),
+    linear-gradient(325deg, rgb(8 13 9 / 70%), transparent 82%),
     radial-gradient(ellipse at 98% 74%, rgb(170 197 175 / 6%), transparent 64%),
     radial-gradient(ellipse at 12% 18%, rgb(143 98 67 / 4%), transparent 68%);
   --radius-control: 6px;
@@ -210,7 +210,7 @@ h3[id] {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.42;
+  opacity: 0.32;
   background-image: url("/images/grain-texture.svg");
   background-size: 180px 180px;
 }
