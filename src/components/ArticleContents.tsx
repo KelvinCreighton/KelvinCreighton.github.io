@@ -36,7 +36,7 @@ export default function ArticleContents({ projectId }: { projectId: string }) {
           .bottom || 0) + 24,
       );
       const visible = elements.filter((el) => el.getClientRects().length > 0);
-      let active: HTMLElement | undefined = visible[0];
+      let active: HTMLElement | undefined = visible[0] || elements[0];
       for (const el of visible) {
         if (el.getBoundingClientRect().top <= offset + 1) active = el;
       }
@@ -44,11 +44,16 @@ export default function ArticleContents({ projectId }: { projectId: string }) {
         window.scrollY + window.innerHeight >=
         document.documentElement.scrollHeight - 2
       ) {
-        active = visible.at(-1);
+        active = visible.at(-1) || active;
       }
       setActiveId(active?.id || "");
       const section = [...visible].reverse().find((el) => el.tagName === "H2" && el.getBoundingClientRect().top <= offset + 1);
-      setActiveSectionId(section?.id || visible.find((el) => el.tagName === "H2")?.id || "");
+      setActiveSectionId(
+        section?.id ||
+          visible.find((el) => el.tagName === "H2")?.id ||
+          elements.find((el) => el.tagName === "H2")?.id ||
+          "",
+      );
     };
     const schedule = () => {
       if (!frame) frame = requestAnimationFrame(updateActive);
@@ -117,7 +122,21 @@ export default function ArticleContents({ projectId }: { projectId: string }) {
       <nav aria-label="On this page" ref={navRef}>
         {headings.map((heading) => (
           <div className={`toc-section${heading.id === activeSectionId ? " is-active" : ""}`} key={heading.id}>
-            <a href={`#${heading.id}`} aria-current={activeId === heading.id ? "location" : undefined} onClick={(event) => { event.preventDefault(); navigateToHeading(heading.id); }}>{heading.text}</a>
+            <a
+              href={`#${heading.id}`}
+              aria-current={
+                activeId === heading.id ||
+                (heading.id === activeSectionId && heading.children.length === 0)
+                  ? "location"
+                  : undefined
+              }
+              onClick={(event) => {
+                event.preventDefault();
+                navigateToHeading(heading.id);
+              }}
+            >
+              {heading.text}
+            </a>
             {heading.id === activeSectionId && heading.children.length > 0 && <div className="toc-substeps">{heading.children.map(child => <a key={child.id} href={`#${child.id}`} aria-current={activeId === child.id ? "location" : undefined} onClick={(event) => { event.preventDefault(); navigateToHeading(child.id); }}>{child.text}</a>)}</div>}
           </div>
         ))}
