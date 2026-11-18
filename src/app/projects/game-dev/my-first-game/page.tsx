@@ -151,7 +151,7 @@ export default function MyFirstGamePage() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-8 flex flex-col items-center space-y-1 mt-0.5">
+                <div className="w-8 shrink-0 flex flex-col items-center space-y-1 mt-0.5">
                   {/* shrinking/growing animated boxes (stacked) */}
                   <svg
                     width="24"

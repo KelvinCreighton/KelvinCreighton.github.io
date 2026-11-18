@@ -234,20 +234,35 @@
 
 /* Restore the animated movement symbols in the My First Game guide. */
 @keyframes movement-goal-inner {
-  0%, 100% { transform: scale(.1); }
+  0% { transform: scale(.1); }
+  10% { transform: scale(.28); }
+  20% { transform: scale(.46); }
+  30% { transform: scale(.64); }
+  40% { transform: scale(.82); }
   50% { transform: scale(1); }
+  60% { transform: scale(.82); }
+  70% { transform: scale(.64); }
+  80% { transform: scale(.46); }
+  90% { transform: scale(.28); }
+  100% { transform: scale(.1); }
 }
 @keyframes movement-goal-outer {
-  0%, 100% { transform: scale(1); }
+  0% { transform: scale(1); }
+  10% { transform: scale(.82); }
+  20% { transform: scale(.64); }
+  30% { transform: scale(.46); }
+  40% { transform: scale(.28); }
   50% { transform: scale(.1); }
+  60% { transform: scale(.28); }
+  70% { transform: scale(.46); }
+  80% { transform: scale(.64); }
+  90% { transform: scale(.82); }
+  100% { transform: scale(1); }
 }
-@keyframes movement-shrink {
-  0%, 50% { transform: scale(1); }
-  50.01%, 100% { transform: scale(0); }
-}
-@keyframes movement-grow {
-  0%, 50% { transform: scale(0); }
-  50.01%, 100% { transform: scale(1); }
+/* Animate the SVG geometry so the outline keeps its width at every radius. */
+@keyframes movement-radius {
+  from { r: 0px; }
+  to { r: 10px; }
 }
 @keyframes movement-left-right {
   to { transform: translateX(21px); }
@@ -258,7 +273,14 @@
 .goal-circle { transform-box: fill-box; transform-origin: center; }
 .goal-inner { animation: movement-goal-inner 3s linear infinite !important; }
 .goal-outer { animation: movement-goal-outer 3s linear infinite !important; }
-.icon-shrink circle { transform-box: fill-box; transform-origin: center; animation: movement-shrink 3s linear infinite !important; }
-.icon-grow circle { transform-box: fill-box; transform-origin: center; animation: movement-grow 3s linear infinite !important; }
+.icon-grow circle,
+.icon-shrink circle {
+  shape-rendering: geometricPrecision;
+  animation: movement-radius 1.5s linear infinite !important;
+}
+
+.icon-shrink circle {
+  animation-direction: reverse !important;
+}
 .line-lr { animation: movement-left-right 1s linear infinite !important; }
 .line-rl { animation: movement-right-left 1s linear infinite !important; }
