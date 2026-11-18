@@ -2,9 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import Image from "next/image";
+import { CarFront, Cog, Cpu, Gamepad2, Music2, ShieldCheck } from "lucide-react";
 import ResumeDownloads from "@/components/ResumeDownloads";
 import { InlineArrow } from "@/components/InlineArrow";
 import { categories, projects, inCategory } from "@/data/projects";
+
+const topicIcons = {
+  "embedded-systems": Cpu,
+  cybersecurity: ShieldCheck,
+  engineering: Cog,
+  auto: CarFront,
+  "game-dev": Gamepad2,
+  music: Music2,
+};
 export const metadata: Metadata = {
   title: "Resume",
   description:
@@ -51,13 +61,19 @@ export default function Page() {
           <section>
             <h2>Selected Work</h2>
             <div className="resume-work-grid">
-              {categories.map((category) => (
-                <Link href={`/projects?category=${category.id}`} key={category.id}>
-                  <h3>{category.title}</h3>
-                  <p>{category.description}</p>
-                  <span>{projects.filter((project) => inCategory(project, category.id)).length} projects</span>
-                </Link>
-              ))}
+              {categories.map((category) => {
+                const TopicIcon = topicIcons[category.id];
+                return (
+                  <Link href={`/projects?category=${category.id}`} key={category.id}>
+                    <h3>
+                      <TopicIcon aria-hidden="true" />
+                      {category.title}
+                    </h3>
+                    <p>{category.description}</p>
+                    <span>{projects.filter((project) => inCategory(project, category.id)).length} projects</span>
+                  </Link>
+                );
+              })}
             </div>
           </section>
           <section>
