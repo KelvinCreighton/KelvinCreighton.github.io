@@ -1,15 +1,11 @@
 "use client";
 
-import { useSearchParams, useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { ExternalLink } from "lucide-react";
 
 export default function ResumeDownloads() {
-  const params = useSearchParams();
-  const router = useRouter();
   const previewRef = useRef<HTMLElement>(null);
-  const type =
-    params.get("focus") === "cybersecurity" ? "cybersecurity" : "embedded";
+  const [type, setType] = useState<"embedded" | "cybersecurity">("embedded");
   const url = `/resume-${type}.pdf`;
   const label = type === "embedded" ? "Embedded systems" : "Cybersecurity";
 
@@ -22,9 +18,7 @@ export default function ResumeDownloads() {
       <select
         id="resume-focus"
         value={type}
-        onChange={(event) =>
-          router.push(`/resume?focus=${event.target.value}`, { scroll: false })
-        }
+        onChange={(event) => setType(event.target.value as typeof type)}
       >
         <option value="embedded">Embedded systems</option>
         <option value="cybersecurity">Cybersecurity</option>
