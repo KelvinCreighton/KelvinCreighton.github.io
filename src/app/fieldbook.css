@@ -199,6 +199,7 @@
 }
 .build-card {
   min-width: 0;
+  position: relative;
 }
 .build-card-link {
   display: block;
@@ -215,7 +216,9 @@
 }
 .build-card:hover .build-card-link,
 .build-card:focus-within .build-card-link {
-  transform: translateY(-3px);
+  position: relative;
+  z-index: 2;
+  transform: scale(1.025);
   box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
 }
 .home-page .build-card-link:hover {
@@ -242,7 +245,7 @@
 }
 .build-card:hover .build-art img,
 .build-card:focus-within .build-art img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 .build-copy {
   padding: 8px 24px 24px;
@@ -430,7 +433,11 @@
 }
 .shelf-item:hover > :not(.card-hit-area),
 .shelf-item:focus-within > :not(.card-hit-area) {
-  transform: translateY(-3px);
+  transform: none;
+}
+.shelf-item:is(:hover, :focus-within) {
+  transform: scale(1.02);
+  z-index: 2;
 }
 .topic-index li:hover h3,
 .topic-index li:focus-within h3,
@@ -507,7 +514,7 @@
 }
 .shelf-item:hover .shelf-cover img,
 .shelf-item:focus-within .shelf-cover img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 .shelf-cover.score-cover {
   background: white;
@@ -603,7 +610,8 @@
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
   overflow: hidden;
-  transition: box-shadow var(--motion-ui) ease, border-color var(--motion-ui) ease;
+  transform-origin: center;
+  transition: transform var(--motion-ui) ease, box-shadow var(--motion-ui) ease, border-color var(--motion-ui) ease;
 }
 .archive-grid .archive-entry:nth-child(4n + 2) {
   background: var(--card-surface-gradient-2), var(--raised);
@@ -626,13 +634,13 @@
 .archive-entry-link:hover {
   text-decoration: none;
 }
-.archive-grid .archive-entry-link > *,
 .archive-list .archive-entry-link > * {
   transition: transform var(--motion-ui) ease;
 }
-.archive-entry:hover .archive-entry-link > *,
-.archive-entry:focus-within .archive-entry-link > * {
-  transform: translateY(-3px);
+.archive-grid .archive-entry:is(:hover, :focus-within) {
+  position: relative;
+  z-index: 2;
+  transform: scale(1.02);
 }
 .archive-grid .archive-entry:hover,
 .archive-grid .archive-entry:focus-within {
@@ -643,7 +651,7 @@
 }
 .archive-entry:hover .archive-image img,
 .archive-entry:focus-within .archive-image img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 .archive-entry:hover h2,
 .archive-entry:focus-within h2 {
