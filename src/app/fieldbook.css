@@ -4,7 +4,7 @@
 }
 .field-intro h1 {
   max-width: 900px;
-  font-size: clamp(3.4rem, 6.6vw, 6rem);
+  font-size: var(--type-display-heading);
   font-weight: 400;
   line-height: 1.07;
   letter-spacing: -0.027em;
@@ -20,7 +20,7 @@
 }
 .field-intro-description {
   max-width: 1100px;
-  font-size: clamp(1.35rem, 2.7vw, 2.4375rem);
+  font-size: var(--type-display-copy);
   font-weight: 400;
   line-height: 1.25;
   text-wrap: pretty;
@@ -30,7 +30,7 @@
   flex-wrap: wrap;
   gap: 12px 28px;
   margin-top: 24px;
-  font-size: 23px;
+  font-size: var(--type-reading);
   line-height: 1.5;
 }
 .field-intro-links a {
@@ -102,11 +102,11 @@
   margin-bottom: 62px;
 }
 .fieldbook-heading h2 {
-  font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+  font-size: var(--type-home-section);
   margin-bottom: 18px;
 }
 .fieldbook-heading p {
-  font-size: 20px;
+  font-size: var(--type-reading);
   color: var(--muted);
   line-height: 1.7;
 }
@@ -122,7 +122,7 @@
   margin-bottom: 32px;
 }
 .collection-heading :is(h2, h3) {
-  font: 700 21px/1.4 var(--font-sans);
+  font: 700 var(--type-reading)/1.4 var(--font-sans);
   letter-spacing: 0;
 }
 .collection-heading :is(h2, h3) span {
@@ -151,7 +151,7 @@
   color: var(--accent);
 }
 .topic-index .projects-overview-link {
-  font-size: 26px;
+  font-size: var(--type-card-heading);
 }
 .home-page .collection-heading h3 .projects-overview-link:hover,
 .home-page .collection-heading h3 .security-heading-link:hover {
@@ -167,7 +167,7 @@
 .collection-heading > p {
   margin-top: 9px;
   color: var(--muted);
-  font-size: 18px;
+  font-size: var(--type-body);
   line-height: 1.65;
 }
 .build-grid {
@@ -220,7 +220,7 @@
   padding: 8px 23px 23px;
 }
 .build-copy h4 {
-  font: 400 29px/1.16 var(--serif);
+  font: 400 var(--type-card-heading)/1.16 var(--serif);
   letter-spacing: -0.015em;
   margin: 12px 0 15px;
   transition: color 220ms ease;
@@ -231,7 +231,7 @@
 }
 .build-copy > p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: var(--type-label);
   line-height: 1.7;
 }
 .build-meta {
@@ -239,7 +239,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  font-size: 12px;
+  font-size: var(--type-meta);
   color: var(--muted);
   margin-top: 20px;
 }
@@ -299,7 +299,7 @@
   margin-top: 3px;
 }
 .note-list h4 {
-  font: 400 26px/1.2 var(--serif);
+  font: 400 var(--type-card-heading)/1.2 var(--serif);
   letter-spacing: -0.015em;
   transition: color 220ms ease;
 }
@@ -314,12 +314,12 @@
   display: block;
   margin-top: 9px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--type-meta);
 }
 .collection-more {
   display: inline-block;
   margin-top: 24px;
-  font-size: 15px;
+  font-size: var(--type-label);
 }
 .margin-note {
   margin-top: 46px;
@@ -327,16 +327,16 @@
   padding-left: 21px;
 }
 .margin-note-label {
-  font: 400 22px/1.25 var(--serif);
+  font: 400 var(--type-reading)/1.25 var(--serif);
 }
 .margin-note p {
   margin: 12px 0;
-  font-size: 15px;
+  font-size: var(--type-label);
   line-height: 1.7;
   color: var(--muted);
 }
 .margin-note a {
-  font-size: 14px;
+  font-size: var(--type-label);
 }
 .fieldbook-extras {
   display: grid;
@@ -351,7 +351,7 @@
   transition: border-color 220ms ease;
 }
 .topic-index .topic-index-intro {
-  font-size: 18px;
+  font-size: var(--type-body);
   font-weight: 400;
 }
 .topic-index li:hover,
@@ -398,11 +398,11 @@
   margin-top: 1px;
 }
 .topic-index h3 {
-  font: 400 25px/1.2 var(--serif);
+  font: 400 var(--type-card-heading)/1.2 var(--serif);
 }
 .topic-index li p {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: var(--type-label);
   color: var(--muted);
   line-height: 1.65;
 }
@@ -410,7 +410,7 @@
   display: block;
   margin-top: 7px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--type-meta);
 }
 .shelf-grid {
   display: grid;
@@ -454,17 +454,17 @@
   object-position: top;
 }
 .shelf-item h3 {
-  font: 400 26px/1.2 var(--serif);
+  font: 400 var(--type-card-heading)/1.2 var(--serif);
   margin: 17px 0 9px;
 }
 .shelf-item p {
-  font-size: 13px;
+  font-size: var(--type-label);
   color: var(--muted);
 }
 .shelf-action {
   position: relative;
   z-index: 2;
-  font-size: 14px;
+  font-size: var(--type-label);
   display: inline-block;
   margin-top: 8px;
 }
@@ -472,7 +472,7 @@
   margin-top: 35px;
   display: flex;
   gap: 30px;
-  font-size: 15px;
+  font-size: var(--type-label);
 }
 .shelf-links a,
 .people-links a {
@@ -505,16 +505,16 @@
   object-fit: cover;
 }
 .people-caption {
-  font-size: 14px;
+  font-size: var(--type-label);
   color: var(--signal);
 }
 .people-section h2 {
-  font-size: clamp(2.3rem, 3.4vw, 3rem);
+  font-size: var(--type-section-heading);
   margin: 17px 0 22px;
   line-height: 1.1;
 }
 .people-section p:not(.people-caption) {
-  font-size: 17px;
+  font-size: var(--type-ui);
   color: var(--muted);
   max-width: 54ch;
 }
@@ -523,7 +523,7 @@
   gap: 22px;
   flex-wrap: wrap;
   margin-top: 22px;
-  font-size: 15px;
+  font-size: var(--type-label);
 }
 
 /* The collection and reading pages share the paper and serif treatment. */
@@ -575,12 +575,12 @@
   color: var(--signal);
 }
 .case-heading .eyebrow {
-  font: 13px var(--font-sans);
+  font: var(--type-meta) var(--font-sans);
   color: var(--signal);
 }
 .project-body .interactive-surface p {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--type-label);
 }
 .project-body .score-paper p {
   font-family: var(--font-sans);
@@ -626,7 +626,7 @@
     padding: 5px 18px 20px;
   }
   .build-copy h4 {
-    font-size: 26px;
+    font-size: var(--type-card-heading);
   }
   .people-section {
     gap: 38px;
@@ -656,7 +656,7 @@
     gap: 30px 20px;
   }
   .shelf-item h3 {
-    font-size: 23px;
+    font-size: var(--type-reading);
   }
 }
 @media (max-width: 760px) {
@@ -664,7 +664,7 @@
     padding: 45px 0 74px;
   }
   .field-intro h1 {
-    font-size: clamp(3rem, 8.2vw, 4.7rem);
+    font-size: var(--type-display-mobile);
     line-height: 1.07;
     letter-spacing: -0.025em;
   }
@@ -675,13 +675,13 @@
     margin-bottom: 40px;
   }
   .fieldbook-heading p {
-    font-size: 18px;
+    font-size: var(--type-body);
   }
   .fieldbook-heading a {
     white-space: normal;
   }
   .collection-heading > p {
-    font-size: 17px;
+    font-size: var(--type-ui);
   }
   .fieldbook-extras {
     grid-template-columns: minmax(0, 1fr);
@@ -716,16 +716,16 @@
     padding: 22px;
   }
   .archive-entry h2 {
-    font-size: 27px;
+    font-size: var(--type-card-heading);
   }
   .project-body p {
-    font-size: 19px;
+    font-size: var(--type-body);
   }
   .case-heading > p {
-    font-size: 20px;
+    font-size: var(--type-reading);
   }
   .case-heading .eyebrow {
-    font-size: 12px;
+    font-size: var(--type-meta);
   }
 }
 @media (max-width: 540px) {
@@ -740,13 +740,13 @@
     padding: 4px 22px 24px;
   }
   .build-copy h4 {
-    font-size: 29px;
+    font-size: var(--type-card-heading);
   }
   .field-notes .note-list {
     display: block;
   }
   .note-list h4 {
-    font-size: 26px;
+    font-size: var(--type-card-heading);
   }
   .topic-index ul {
     display: block;
@@ -755,16 +755,16 @@
     gap: 35px 18px;
   }
   .shelf-item h3 {
-    font-size: 22px;
+    font-size: var(--type-reading);
   }
   .shelf-cover {
     aspect-ratio: 3/4;
   }
   .shelf-item p {
-    font-size: 12px;
+    font-size: var(--type-label);
   }
   .shelf-action {
-    font-size: 13px;
+    font-size: var(--type-meta);
   }
 }
 @media print {
@@ -772,7 +772,7 @@
     padding: 20px 0 35px;
   }
   .field-intro h1 {
-    font-size: 48px;
+    font-size: var(--type-home-section);
   }
   .build-card {
     break-inside: avoid;

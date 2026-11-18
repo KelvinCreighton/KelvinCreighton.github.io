@@ -3,14 +3,14 @@
   max-width: 960px;
 }
 .case-header .case-heading > p:not(.eyebrow) {
-  font-size: clamp(19px, 2vw, 23px);
+  font-size: var(--type-reading);
   line-height: 1.6;
   font-weight: 400;
   max-width: 65ch;
 }
 .case-header .case-meta {
   margin-top: 18px;
-  font-size: 14px;
+  font-size: var(--type-label);
 }
 .case-header .case-actions {
   gap: 12px;
@@ -25,10 +25,10 @@
 }
 .case-header .case-overview dt {
   color: var(--accent);
-  font: 600 14px var(--font-sans);
+  font: 600 var(--type-label) var(--font-sans);
 }
 .case-header .case-overview dd {
-  font: 15px/1.65 var(--font-sans);
+  font: var(--type-label)/1.65 var(--font-sans);
   overflow-wrap: anywhere;
 }
 .case-content {
@@ -44,7 +44,7 @@
   color: var(--ink);
 }
 .case-content .project-body h2 {
-  font-size: clamp(26px, 3vw, 34px);
+  font-size: var(--type-section-heading);
   line-height: 1.25;
   margin: 40px 0 18px;
   /* The document already reserves 110px of scroll padding. */
@@ -54,17 +54,17 @@
   scroll-margin-top: 10px;
 }
 .case-content .project-body h3 {
-  font-size: 25px;
+  font-size: var(--type-card-heading);
   line-height: 1.35;
   margin: 28px 0 12px;
 }
 .case-content .project-body h4 {
-  font-size: 21px;
+  font-size: var(--type-reading);
   line-height: 1.4;
 }
 .case-content .project-body :is(p, li) {
   font-family: var(--serif);
-  font-size: 19px;
+  font-size: var(--type-reading);
   line-height: 1.7;
   color: var(--muted);
   overflow-wrap: anywhere;
@@ -73,7 +73,7 @@
   margin-bottom: 18px;
 }
 .case-content .project-body .eyebrow {
-  font: 13px/1.5 var(--font-sans);
+  font: var(--type-meta)/1.5 var(--font-sans);
   color: var(--accent);
 }
 .case-content .project-introduction p {
@@ -84,7 +84,7 @@
   .project-body
   :is(.writeup-meta, .notice, .challenge-details, .interactive-surface)
   :is(p, li, dd) {
-  font: 15px/1.65 var(--font-sans);
+  font: var(--type-label)/1.65 var(--font-sans);
 }
 .case-content .project-body .interactive-surface :is(h2, h3) {
   margin-top: 0;
@@ -115,7 +115,7 @@
   gap: 10px;
   min-height: 44px;
   padding: 10px 16px;
-  font: 500 15px/1.4 var(--font-sans);
+  font: 500 var(--type-label)/1.4 var(--font-sans);
   background: var(--surface);
   color: var(--ink);
   border: 1px solid var(--rule);
@@ -154,11 +154,11 @@
   scrollbar-width: thin;
 }
 .case-aside summary {
-  font: 600 14px/1.5 var(--font-sans);
+  font: 600 var(--type-label)/1.5 var(--font-sans);
   color: var(--ink);
 }
 .case-aside nav a {
-  font: 14px/1.45 var(--font-sans);
+  font: var(--type-label)/1.45 var(--font-sans);
   padding: 9px 12px;
   border-left: 2px solid var(--rule);
   text-decoration: none;
@@ -180,7 +180,7 @@
   padding: 18px 22px;
 }
 .case-content .solution-toggle summary {
-  font: 500 15px/1.5 var(--font-sans);
+  font: 500 var(--type-label)/1.5 var(--font-sans);
   color: var(--accent);
   cursor: pointer;
 }
@@ -189,7 +189,7 @@
   text-underline-offset: 4px;
 }
 .case-content .demo-toolbar :is(a, button) {
-  font: 14px/1.5 var(--font-sans);
+  font: var(--type-label)/1.5 var(--font-sans);
   color: var(--accent);
 }
 .case-content .demo-toolbar :is(a, button):hover {
@@ -221,7 +221,7 @@
     flex-direction: column;
   }
   .case-content .project-body :is(p, li) {
-    font-size: 18px;
+    font-size: var(--type-body);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -231,7 +231,7 @@
 }
 
 .case-content .project-body .demo-toolbar-title {
-  font: 500 15px/1.5 var(--font-sans);
+  font: 500 var(--type-label)/1.5 var(--font-sans);
   margin: 0;
 }
 
@@ -296,7 +296,7 @@
 .case-content .project-body .print-files-heading p { grid-column: 1 / -1; grid-row: 2; margin: 0; }
 .case-content .project-body .print-files-download { align-self: center; min-height: 0; height: fit-content; padding: 6px 14px; }
 .case-aside .toc-substeps { margin: 2px 0 8px 6px; padding-left: 8px; }
-.case-aside .toc-substeps a { font-size: 12px; padding: 5px 8px; }
+.case-aside .toc-substeps a { font-size: var(--type-meta); padding: 5px 8px; }
 .case-aside .toc-substeps a { border-left: 1px solid var(--rule); }
 .case-aside .toc-substeps a[aria-current="location"] { border-left-color: var(--accent); }
 .case-aside .toc-section { border-left: 2px solid var(--rule); }

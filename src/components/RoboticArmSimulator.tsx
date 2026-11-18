@@ -928,14 +928,14 @@ export default function RoboticArmSimulator() {
             )}
 
             {Math.abs(currentStepRecord.detJ) < 0.015 && (
-              <div className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-800 dark:bg-orange-950/80 dark:text-orange-300 border border-orange-300 dark:border-orange-900 text-[11px] font-medium">
+              <div className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-800 dark:bg-orange-950/80 dark:text-orange-300 border border-orange-300 dark:border-orange-900 text-xs font-medium">
                 <span>Near Kinematic Singularity (det ≈ 0)</span>
               </div>
             )}
           </div>
 
           {/* Legend Overlay at Bottom-Left */}
-          <div className="absolute bottom-3 left-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-2.5 rounded-lg border border-gray-200 dark:border-gray-800 text-[11px] text-gray-600 dark:text-gray-300 space-y-1 shadow-sm pointer-events-none">
+          <div className="absolute bottom-3 left-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-2.5 rounded-lg border border-gray-200 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 space-y-1 shadow-sm pointer-events-none">
             <div className="flex items-center gap-2">
               <span className="w-3 h-1 bg-blue-600 dark:bg-blue-500 rounded" />
               <span>
