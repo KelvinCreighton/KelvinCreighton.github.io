@@ -105,6 +105,9 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
+	if(e.code === "Space" || e.which == 32) {
+		e.preventDefault();
+	}
 	if(e.which == 65) {
 		button.a = true;
 	}
@@ -159,6 +162,9 @@ function keyDownHandler(e) {
 }
 
 function keyUpHandler(e) {
+	if(e.code === "Space" || e.which == 32) {
+		e.preventDefault();
+	}
 	if(e.which == 65) {
 		button.a = false;
 	}
