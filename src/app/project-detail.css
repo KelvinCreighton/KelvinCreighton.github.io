@@ -231,3 +231,34 @@
   font: 500 15px/1.5 var(--font-sans);
   margin: 0;
 }
+
+/* Restore the animated movement symbols in the My First Game guide. */
+@keyframes movement-goal-inner {
+  0%, 100% { transform: scale(.1); }
+  50% { transform: scale(1); }
+}
+@keyframes movement-goal-outer {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(.1); }
+}
+@keyframes movement-shrink {
+  0%, 50% { transform: scale(1); }
+  50.01%, 100% { transform: scale(0); }
+}
+@keyframes movement-grow {
+  0%, 50% { transform: scale(0); }
+  50.01%, 100% { transform: scale(1); }
+}
+@keyframes movement-left-right {
+  to { transform: translateX(21px); }
+}
+@keyframes movement-right-left {
+  to { transform: translateX(-21px); }
+}
+.goal-circle { transform-box: fill-box; transform-origin: center; }
+.goal-inner { animation: movement-goal-inner 3s linear infinite !important; }
+.goal-outer { animation: movement-goal-outer 3s linear infinite !important; }
+.icon-shrink circle { transform-box: fill-box; transform-origin: center; animation: movement-shrink 3s linear infinite !important; }
+.icon-grow circle { transform-box: fill-box; transform-origin: center; animation: movement-grow 3s linear infinite !important; }
+.line-lr { animation: movement-left-right 1s linear infinite !important; }
+.line-rl { animation: movement-right-left 1s linear infinite !important; }

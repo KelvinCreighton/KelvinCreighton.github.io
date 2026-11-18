@@ -52,61 +52,6 @@ export default function MyFirstGamePage() {
             <h3 className="text-xl font-semibold mb-2">
               Game Mechanics & Elements
             </h3>
-            <style>{`
-              @keyframes pulse-inner {
-                0%, 100% { transform: scale(0.1); }
-                50% { transform: scale(1); }
-              }
-              @keyframes pulse-outer {
-                0%, 100% { transform: scale(1); }
-                50% { transform: scale(0.1); }
-              }
-              .goal-circle {
-                transform-origin: center;
-              }
-              .goal-inner {
-                animation: pulse-inner 3.0s infinite linear;
-              }
-              .goal-outer {
-                animation: pulse-outer 3.0s infinite linear;
-              }
-              /* shrinking/growing icons */
-              @keyframes shrink {
-                0% { transform: scale(1); }
-                50% { transform: scale(0); }
-                51% { transform: scale(1); }
-                100% { transform: scale(0); }
-              }
-              @keyframes grow {
-                0% { transform: scale(0); }
-                50% { transform: scale(1); }
-                51% { transform: scale(0); }
-                100% { transform: scale(1); }
-              }
-              .icon-shrink circle, .icon-grow circle {
-                transform-origin: center;
-              }
-              .icon-shrink circle {
-                animation: shrink 3s infinite linear;
-              }
-              .icon-grow circle {
-                animation: grow 3s infinite linear;
-              }
-              /* screen switching animations */
-              @keyframes move-left-right {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(21px); }
-              }
-              @keyframes move-right-left {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-21px); }
-              }
-              .line-lr {
-                animation: move-left-right 1.0s infinite linear;
-              }
-              .line-rl {
-                animation: move-right-left 1.0s infinite linear;
-              }            `}</style>
             <ul className="list-none space-y-3 ml-4 text-gray-700 dark:text-gray-300">
               <li className="flex items-center gap-3">
                 <div className="w-6 flex justify-center">
