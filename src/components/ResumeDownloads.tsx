@@ -2,6 +2,7 @@
 
 import { useSearchParams, useRouter } from "next/navigation";
 import { useRef } from "react";
+import { ExternalLink } from "lucide-react";
 
 export default function ResumeDownloads() {
   const params = useSearchParams();
@@ -32,8 +33,8 @@ export default function ResumeDownloads() {
         <a className="button" href={url} download={`Kelvin_Creighton_${type}.pdf`}>
           Download PDF
         </a>
-        <a className="button" href={`${url}#zoom=70&pagemode=none`} target="_blank" rel="noreferrer">
-          View in new tab
+        <a className="text-link" href={`${url}#zoom=70&pagemode=none`} target="_blank" rel="noreferrer">
+          Open separately <ExternalLink size={16} aria-hidden="true" />
         </a>
       </div>
       <section
