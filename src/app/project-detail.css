@@ -3,7 +3,7 @@
   max-width: 960px;
 }
 .case-header .case-heading > p:not(.eyebrow) {
-  font-size: var(--type-reading);
+  font-size: var(--type-intro);
   line-height: 1.6;
   font-weight: 400;
   max-width: 65ch;

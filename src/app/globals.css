@@ -30,6 +30,7 @@
   --type-ui: 1rem;
   --type-body: 1.125rem;
   --type-reading: 1.25rem;
+  --type-intro: 1.5625rem;
   --type-card-heading: 1.5rem;
   --type-section-heading: clamp(1.75rem, 3.2vw, 2.25rem);
   --type-page-heading: clamp(2.75rem, 5.3vw, 4.75rem);
@@ -427,7 +428,8 @@ h3[id] {
 .page-intro-copy {
   color: var(--muted);
   max-width: 760px;
-  font-size: var(--type-reading);
+  font-size: var(--type-intro);
+  line-height: 1.5;
 }
 .resume-page-intro {
   display: grid;
@@ -745,7 +747,7 @@ h3[id] {
 }
 .case-heading > p {
   color: var(--muted);
-  font-size: var(--type-reading);
+  font-size: var(--type-intro);
   line-height: 1.55;
   max-width: 850px;
 }
@@ -1390,7 +1392,7 @@ h3[id] {
     font-size: var(--type-page-heading);
   }
   .page-intro-copy {
-    font-size: var(--type-ui);
+    font-size: var(--type-intro);
   }
   .archive-topline {
     align-items: start;
@@ -1441,7 +1443,7 @@ h3[id] {
     font-size: var(--type-page-heading);
   }
   .case-heading > p {
-    font-size: var(--type-ui);
+    font-size: var(--type-intro);
   }
   .case-overview {
     grid-template-columns: 1fr;
