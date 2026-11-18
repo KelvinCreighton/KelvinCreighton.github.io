@@ -21,7 +21,11 @@
   gap: 28px;
   padding: 24px;
   margin-top: 28px;
-  border-left-color: var(--accent);
+  border-left-color: var(--signal);
+  border-radius: var(--radius-feature);
+  background:
+    linear-gradient(135deg, rgb(170 197 175 / 4%), transparent 52%),
+    var(--surface);
 }
 .case-header .case-overview dt {
   color: var(--accent);
@@ -73,7 +77,7 @@
   margin-bottom: 18px;
 }
 .case-content .project-body .eyebrow {
-  font: var(--type-meta)/1.5 var(--font-sans);
+  font: var(--type-meta)/1.5 var(--font-mono);
   color: var(--accent);
 }
 .case-content .project-introduction p {
@@ -116,10 +120,10 @@
   min-height: 44px;
   padding: 10px 16px;
   font: 500 var(--type-label)/1.4 var(--font-sans);
-  background: var(--surface);
+  background: transparent;
   color: var(--ink);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
+  border: 1px solid var(--signal);
+  border-radius: var(--radius-control);
   text-decoration: none;
   box-shadow: none;
   transition:
@@ -127,13 +131,23 @@
     border-color 180ms ease,
     background-color 180ms ease;
 }
+:is(.case-header, .case-content) .button.primary {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
 :is(.case-header, .case-content)
   .button:not(:disabled):is(:hover, :focus-visible),
 .case-content .project-body a[download]:is(:hover, :focus-visible) {
   color: var(--accent);
   border-color: var(--accent);
-  background: var(--raised);
+  background: var(--signal-soft);
   text-decoration: none;
+}
+:is(.case-header, .case-content) .button.primary:is(:hover, :focus-visible) {
+  color: var(--paper);
+  border-color: #e9b890;
+  background: #e9b890;
 }
 :is(.case-header, .case-content) .button:disabled {
   opacity: 0.5;
@@ -147,14 +161,14 @@
 }
 :is(.case-header, .case-content, .case-aside)
   :is(a, button, summary):focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--signal);
   outline-offset: 4px;
 }
 .case-aside {
   scrollbar-width: thin;
 }
 .case-aside summary {
-  font: 600 var(--type-label)/1.5 var(--font-sans);
+  font: 600 var(--type-label)/1.5 var(--font-mono);
   color: var(--ink);
 }
 .case-aside nav a {
@@ -176,8 +190,9 @@
 }
 .case-content .solution-toggle {
   border: 1px solid var(--rule);
-  border-radius: 4px;
+  border-radius: var(--radius-card);
   padding: 18px 22px;
+  background: linear-gradient(135deg, rgb(170 197 175 / 3%), transparent 56%), var(--surface);
 }
 .case-content .solution-toggle summary {
   font: 500 var(--type-label)/1.5 var(--font-sans);
@@ -202,8 +217,8 @@
 }
 .case-content .intro-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; }
 .case-content .intro-actions > :is(a, button) { margin: 0; vertical-align: middle; }
-.case-content .intro-actions .text-link { min-height: 44px; padding: 10px 16px; border: 1px solid var(--rule); background: var(--surface); border-radius: 4px; }
-.case-content .game-preview { position: relative; display: block; width: 100%; align-self: stretch; aspect-ratio: 16 / 9; margin: 28px 0 0; overflow: hidden; border: 1px solid var(--rule); background: var(--surface); }
+.case-content .intro-actions .text-link { min-height: 44px; padding: 10px 16px; border: 1px solid var(--signal); background: transparent; border-radius: var(--radius-control); }
+.case-content .game-preview { position: relative; display: block; width: 100%; align-self: stretch; aspect-ratio: 16 / 9; margin: 28px 0 0; overflow: hidden; border: 1px solid var(--rule); background: var(--surface); border-radius: var(--radius-card); }
 .case-content .game-preview img { display: block; object-fit: cover; }
 .simulation-demo .demo-preview {
   min-height: 0;

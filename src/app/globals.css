@@ -24,6 +24,10 @@
   --signal-soft: #37483b;
   --rule: #474c45;
   --focus: var(--signal);
+  --radius-control: 6px;
+  --radius-card: 12px;
+  --radius-feature: 16px;
+  --motion-ui: 200ms;
   /* Shared scale: 12px meta, 14px controls, 16px descriptions, 18px body, 20px lead, 24px cards. */
   --type-meta: 0.75rem;
   --type-label: 0.875rem;
@@ -167,7 +171,22 @@ h3[id] {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: var(--paper);
+  /* Low-contrast ambient light gives the charcoal canvas some depth without
+     competing with project imagery or changing the established palette. */
+  background:
+    radial-gradient(ellipse 68rem 48rem at 8% 0%, rgb(55 72 59 / 24%), transparent 72%),
+    radial-gradient(ellipse 54rem 42rem at 96% 48%, rgb(224 166 120 / 2%), transparent 74%),
+    linear-gradient(155deg, #1c1b18 0%, #1c1b18 56%, #201f1b 100%);
+}
+.site-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 .skip-link {
   position: fixed;
@@ -185,8 +204,8 @@ h3[id] {
 .site-header {
   top: 0;
   z-index: 60;
-  background: var(--paper);
-  position: relative;
+  background: transparent;
+  position: sticky;
   border-bottom: 0;
 }
 .header-inner {
@@ -206,7 +225,15 @@ h3[id] {
   font-weight: 600;
   line-height: 1.35;
   transform-origin: center;
-  transition: transform 180ms ease;
+  transition: transform 180ms ease, opacity 220ms ease;
+}
+.site-header.is-scrolling-down .wordmark {
+  opacity: 0;
+  pointer-events: none;
+}
+.site-header.is-scrolling-down .wordmark:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 .wordmark:hover,
 .wordmark:focus-visible {
@@ -250,7 +277,7 @@ h3[id] {
   right: 0;
   bottom: -7px;
   left: 0;
-  height: 2px;
+  height: 1px;
   background: currentColor;
   transform: scaleX(0);
   transform-origin: center;
@@ -285,7 +312,7 @@ h3[id] {
   text-transform: uppercase;
   color: var(--accent);
   line-height: 1.6;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: var(--type-meta);
   letter-spacing: 0.08em;
 }
@@ -306,24 +333,31 @@ h3[id] {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
-  min-height: 46px;
-  padding: 10px 21px;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 16px;
   border: 1px solid var(--rule);
   font-weight: 500;
   font-size: var(--type-label);
-  border-radius: 4px;
+  border-radius: var(--radius-control);
+  transition: color var(--motion-ui) ease, background-color var(--motion-ui) ease, border-color var(--motion-ui) ease;
 }
 .button.primary {
-  background: var(--signal);
-  color: var(--on-signal);
-  border-color: var(--signal);
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
 }
 .button.primary:hover {
-  background: var(--ink);
+  background: #e9b890;
+  border-color: #e9b890;
   color: var(--paper);
 }
-.button:hover {
+.button:not(.primary) {
+  background: transparent;
+  border-color: var(--signal);
+}
+.button:not(.primary):hover {
+  background: var(--signal-soft);
   border-color: var(--accent);
 }
 .quiet-links {
@@ -418,7 +452,7 @@ h3[id] {
 }
 /* Page introductions and the archive */
 .page-intro {
-  padding: 60px 0 55px;
+  padding: 64px 0 56px;
   max-width: 1000px;
 }
 .page-intro h1 {
@@ -450,6 +484,7 @@ h3[id] {
   overflow: hidden;
   border: 1px solid var(--rule);
   background: var(--raised);
+  border-radius: var(--radius-feature);
 }
 .resume-intro-portrait img {
   width: 100%;
@@ -474,7 +509,8 @@ h3[id] {
   background: none;
   border: 1px solid transparent;
   font-size: var(--type-label);
-  border-radius: 4px;
+  border-radius: var(--radius-control);
+  transition: color var(--motion-ui) ease, border-color var(--motion-ui) ease, background-color var(--motion-ui) ease;
 }
 .view-controls button[aria-pressed="true"] {
   color: var(--accent);
@@ -496,8 +532,13 @@ h3[id] {
   border: 1px solid var(--rule);
   min-height: 38px;
   font-size: var(--type-label);
-  border-radius: 4px;
+  border-radius: 999px;
   padding: 7px 14px;
+  transition: color var(--motion-ui) ease, border-color var(--motion-ui) ease, background-color var(--motion-ui) ease;
+}
+.category-nav button:hover {
+  color: var(--signal);
+  border-color: var(--signal);
 }
 .category-nav button[aria-pressed="true"] {
   background: var(--signal-soft);
@@ -539,7 +580,7 @@ h3[id] {
   justify-content: space-between;
   gap: 15px;
   color: var(--muted);
-  font-size: var(--type-label);
+  font: var(--type-label)/1.5 var(--font-mono);
   padding: 18px 0 24px;
 }
 .archive-count button {
@@ -559,6 +600,7 @@ h3[id] {
   overflow: hidden;
   margin-bottom: 0;
   background: var(--surface);
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
   aspect-ratio: 16/10;
 }
 .archive-image img {
@@ -584,7 +626,7 @@ h3[id] {
   justify-content: space-between;
   gap: 10px;
   color: var(--muted);
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: var(--type-meta);
 }
 .entry-meta .vehicle {
@@ -636,6 +678,7 @@ h3[id] {
   align-items: start;
   gap: 24px;
   padding: 20px 0;
+  border-radius: var(--radius-card);
 }
 .archive-list .archive-image {
   margin: 0;
@@ -734,7 +777,7 @@ h3[id] {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  font-size: var(--type-meta);
+  font: var(--type-meta)/1.5 var(--font-mono);
   color: var(--muted);
   margin-bottom: 35px;
 }
@@ -757,7 +800,7 @@ h3[id] {
   flex-wrap: wrap;
   color: var(--muted);
   margin-top: 25px;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: var(--type-label);
 }
 .case-actions {
@@ -990,11 +1033,15 @@ h3[id] {
 .related-work a {
   padding: 24px;
   border: 1px solid var(--rule);
-  transition: box-shadow 220ms ease;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, rgb(170 197 175 / 4%), transparent 52%), var(--surface);
+  transition: transform var(--motion-ui) ease, box-shadow var(--motion-ui) ease, border-color var(--motion-ui) ease;
 }
 .related-work a:hover,
 .related-work a:focus-visible {
-  box-shadow: 0 14px 34px rgb(0 0 0 / 24%);
+  transform: translateY(-3px);
+  border-color: var(--signal);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
   text-decoration: none;
 }
 .related-work a:hover h2,
@@ -1015,6 +1062,7 @@ h3[id] {
   background: var(--surface);
   padding: 18px 22px;
   margin: 20px 0;
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
   color: var(--muted);
   font-size: var(--type-label);
 }
@@ -1028,6 +1076,8 @@ h3[id] {
   margin: 24px 0;
   width: 100%;
   position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
 }
 .demo-preview {
   padding: 32px;
@@ -1037,6 +1087,7 @@ h3[id] {
   align-items: start;
   justify-content: center;
   gap: 15px;
+  background: linear-gradient(135deg, rgb(170 197 175 / 4%), transparent 58%), var(--surface);
 }
 .demo-preview p {
   max-width: 540px;
@@ -1093,6 +1144,7 @@ h3[id] {
   background: var(--surface);
   border: 1px solid var(--rule);
   padding: 15px 20px;
+  border-radius: var(--radius-card);
 }
 .score-controls {
   display: flex;
@@ -1140,7 +1192,9 @@ h3[id] {
   aspect-ratio: 4/3;
   background: var(--surface);
   width: 100%;
-  border: 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  overflow: hidden;
   padding: 0;
   align-self: start;
 }
@@ -1175,6 +1229,7 @@ h3[id] {
   background: var(--paper);
   color: var(--ink);
   border: 1px solid var(--rule);
+  border-radius: var(--radius-feature);
   padding: 18px;
 }
 .image-dialog::backdrop {
@@ -1593,6 +1648,7 @@ h3[id] {
   margin: 16px 0;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+  border-radius: var(--radius-control);
 }
 .project-body code {
   font-family: var(--font-mono);
@@ -1627,6 +1683,8 @@ h3[id] {
   padding: 20px;
   background: var(--surface);
   margin: 20px 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
 }
 .challenge-details dt {
   font-size: var(--type-meta);
@@ -1736,6 +1794,8 @@ h3[id] {
   min-height: 480px;
   border: 1px solid var(--rule);
   background: var(--raised);
+  border-radius: var(--radius-card);
+  overflow: hidden;
 }
 .resume-preview iframe {
   display: block;
@@ -1761,7 +1821,7 @@ h3[id] {
   background: var(--raised);
   color: var(--ink);
   border: 1px solid var(--rule);
-  border-radius: 2px;
+  border-radius: var(--radius-control);
   min-height: 45px;
   padding: 10px 12px;
   font: var(--type-label) var(--font-sans);
@@ -1784,7 +1844,7 @@ h3[id] {
 }
 .case-meta {
   flex-wrap: wrap;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   font-size: var(--type-label);
 }
 .case-overview dt {

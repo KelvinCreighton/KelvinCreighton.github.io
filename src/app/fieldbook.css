@@ -1,6 +1,27 @@
 /* An illustrated, editorial home for the existing project collection. */
 .field-intro {
+  position: relative;
+  isolation: isolate;
   padding: 62px 0 115px;
+}
+.field-intro::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 8px;
+  right: 3%;
+  width: min(28vw, 340px);
+  aspect-ratio: 1;
+  pointer-events: none;
+  opacity: 0.13;
+  background-image: radial-gradient(circle, rgb(170 197 175 / 75%) 1px, transparent 1.2px);
+  background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(ellipse, #000 8%, transparent 72%);
+  mask-image: radial-gradient(ellipse, #000 8%, transparent 72%);
+}
+.field-intro > :is(h1, .field-intro-copy) {
+  position: relative;
+  z-index: 1;
 }
 .field-intro h1 {
   max-width: 900px;
@@ -99,7 +120,7 @@
   text-decoration: none;
 }
 .fieldbook-heading {
-  margin-bottom: 62px;
+  margin-bottom: 64px;
 }
 .fieldbook-heading h2 {
   font-size: var(--type-section-heading);
@@ -116,7 +137,7 @@
 .fieldbook-columns {
   display: grid;
   grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
-  gap: 66px;
+  gap: 64px;
 }
 .collection-heading {
   margin-bottom: 32px;
@@ -173,28 +194,62 @@
 .build-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
+  gap: 24px;
   align-items: start;
 }
 .build-card {
   min-width: 0;
+  --project-accent: var(--signal);
+}
+.build-card:nth-child(4n + 2) {
+  --project-accent: var(--accent);
+}
+.build-card:nth-child(4n + 3) {
+  --project-accent: var(--muted);
+}
+.build-card:nth-child(4n + 4) {
+  --project-accent: var(--signal);
+}
+.build-card:nth-child(4n + 1) .build-card-link {
+  background:
+    radial-gradient(ellipse at 10% 100%, rgb(170 197 175 / 9%), transparent 58%),
+    var(--raised);
+}
+.build-card:nth-child(4n + 2) .build-card-link {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgb(224 166 120 / 8%), transparent 56%),
+    var(--raised);
+}
+.build-card:nth-child(4n + 3) .build-card-link {
+  background:
+    linear-gradient(145deg, rgb(225 223 213 / 4%), transparent 54%),
+    var(--raised);
+}
+.build-card:nth-child(4n + 4) .build-card-link {
+  background:
+    radial-gradient(ellipse at 100% 100%, rgb(170 197 175 / 7%), transparent 56%),
+    linear-gradient(35deg, rgb(224 166 120 / 3%), transparent 52%),
+    var(--raised);
 }
 .build-card-link {
   display: block;
   color: inherit;
   background: var(--raised);
   border: 1px solid var(--rule);
-  border-radius: 5px;
+  border-top: 2px solid var(--project-accent);
+  border-radius: var(--radius-feature);
   overflow: hidden;
   box-shadow: 0 5px 18px #36363403;
   transition:
-    transform 220ms ease,
-    box-shadow 220ms ease;
+    transform var(--motion-ui) ease,
+    box-shadow var(--motion-ui) ease,
+    border-color var(--motion-ui) ease;
 }
 .build-card:hover .build-card-link,
 .build-card:focus-within .build-card-link {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 34px rgb(0 0 0 / 24%);
+  transform: translateY(-3px);
+  border-color: var(--project-accent);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
 }
 .home-page .build-card-link:hover {
   color: inherit;
@@ -202,6 +257,7 @@
 }
 .build-card-link:focus-visible {
   outline-offset: -3px;
+  outline-color: var(--signal);
 }
 .build-art {
   position: relative;
@@ -210,14 +266,29 @@
   overflow: hidden;
   background: var(--surface);
 }
+.build-art::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--project-accent), transparent 72%);
+}
 .build-art img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 350ms ease;
+}
+.build-card:hover .build-art img,
+.build-card:focus-within .build-art img {
+  transform: scale(1.03);
 }
 .build-copy {
-  padding: 8px 23px 23px;
+  padding: 8px 24px 24px;
 }
 .build-copy h4 {
   font: 400 var(--type-card-heading)/1.16 var(--serif);
@@ -227,7 +298,7 @@
 }
 .build-card:hover .build-copy h4,
 .build-card:focus-within .build-copy h4 {
-  color: var(--accent);
+  color: var(--project-accent);
 }
 .build-copy > p {
   color: var(--muted);
@@ -239,9 +310,15 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  font-size: var(--type-meta);
+  font: var(--type-meta)/1.5 var(--font-mono);
   color: var(--muted);
   margin-top: 20px;
+}
+.build-meta > span:first-of-type {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--signal-soft);
+  color: var(--signal);
 }
 .build-meta > span:last-child {
   margin-left: auto;
@@ -341,14 +418,14 @@
 .fieldbook-extras {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr);
-  gap: 66px;
+  gap: 64px;
   margin-top: 105px;
 }
 .topic-index li {
   margin: 0;
-  padding: 22px 0;
+  padding: 24px 0;
   border-bottom: 1px solid var(--rule);
-  transition: border-color 220ms ease;
+  transition: border-color var(--motion-ui) ease;
 }
 .topic-index .topic-index-intro {
   font-size: var(--type-body);
@@ -356,7 +433,7 @@
 }
 .topic-index li:hover,
 .topic-index li:focus-within {
-  border-color: var(--accent);
+  border-color: var(--signal);
 }
 .topic-card-link {
   display: flex;
@@ -386,7 +463,7 @@
 }
 .shelf-item:hover > :not(.card-hit-area),
 .shelf-item:focus-within > :not(.card-hit-area) {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 .topic-index li:hover h3,
 .topic-index li:focus-within h3,
@@ -415,7 +492,7 @@
 .shelf-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 40px 28px;
+  gap: 40px 32px;
 }
 .build-art.score-cover {
   background: white;
@@ -441,10 +518,15 @@
   overflow: hidden;
   border: 1px solid var(--rule);
   background: var(--surface);
-  border-radius: 4px;
+  border-radius: var(--radius-card);
 }
 .shelf-cover img {
   object-fit: cover;
+  transition: transform 350ms ease;
+}
+.shelf-item:hover .shelf-cover img,
+.shelf-item:focus-within .shelf-cover img {
+  transform: scale(1.03);
 }
 .shelf-cover.score-cover {
   background: white;
@@ -498,11 +580,17 @@
 .people-photo {
   position: relative;
   aspect-ratio: 4/3;
-  border-radius: 4px;
   overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-feature);
 }
 .people-photo img {
   object-fit: cover;
+  transition: transform 350ms ease;
+}
+.people-photo:hover img,
+.people-photo:focus-visible img {
+  transform: scale(1.03);
 }
 .people-caption {
   font-size: var(--type-label);
@@ -528,11 +616,14 @@
 
 /* The collection and reading pages share the paper and serif treatment. */
 .archive-grid .archive-entry {
-  background: var(--raised);
+  background:
+    linear-gradient(142deg, rgb(170 197 175 / 4%), transparent 48%),
+    linear-gradient(320deg, rgb(224 166 120 / 2.5%), transparent 48%),
+    var(--raised);
   border: 1px solid var(--rule);
-  border-radius: 5px;
+  border-radius: var(--radius-card);
   overflow: hidden;
-  transition: box-shadow 220ms ease;
+  transition: box-shadow var(--motion-ui) ease, border-color var(--motion-ui) ease;
 }
 .archive-entry-link {
   display: grid;
@@ -548,15 +639,23 @@
 }
 .archive-grid .archive-entry-link > *,
 .archive-list .archive-entry-link > * {
-  transition: transform 220ms ease;
+  transition: transform var(--motion-ui) ease;
 }
 .archive-entry:hover .archive-entry-link > *,
 .archive-entry:focus-within .archive-entry-link > * {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 .archive-grid .archive-entry:hover,
 .archive-grid .archive-entry:focus-within {
-  box-shadow: 0 14px 34px rgb(0 0 0 / 24%);
+  border-color: var(--signal);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
+}
+.archive-image img {
+  transition: transform 350ms ease;
+}
+.archive-entry:hover .archive-image img,
+.archive-entry:focus-within .archive-image img {
+  transform: scale(1.03);
 }
 .archive-entry:hover h2,
 .archive-entry:focus-within h2 {
@@ -564,7 +663,7 @@
 }
 .archive-grid .entry-copy {
   min-width: 0;
-  padding: 26px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
 }
@@ -732,6 +831,15 @@
   }
   .build-art {
     aspect-ratio: 1.52;
+  }
+  .build-card:first-child .build-art,
+  .build-card:last-child .build-art {
+    aspect-ratio: 1.52;
+  }
+  .field-intro::after {
+    width: 190px;
+    right: -2%;
+    opacity: 0.07;
   }
   .build-copy {
     padding: 4px 22px 24px;
