@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <PageIntro title="Closer to the hardware.">
+      <PageIntro title="About Me">
         <p>
           I’m Kelvin Creighton. My interests sit where software meets physical
           systems: firmware, operating systems, hardware integration, and the

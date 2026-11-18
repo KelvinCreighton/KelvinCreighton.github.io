@@ -1082,7 +1082,7 @@ h3[id] {
 }
 .community-record {
   display: grid;
-  grid-template-columns: 80px 310px minmax(0, 1fr);
+  grid-template-columns: 80px 350px minmax(0, 1fr);
   gap: 30px;
   border-top: 1px solid var(--rule);
   padding: 45px 0;
@@ -1094,7 +1094,7 @@ h3[id] {
 }
 .achievement-list .record-date,
 .event-list .record-date {
-  font-size: 13px;
+  font-size: 15px;
   white-space: nowrap;
 }
 .record-image {
@@ -1113,18 +1113,18 @@ h3[id] {
   object-fit: contain;
 }
 .record-content h2 {
-  font-size: 30px;
+  font-size: 34px;
   line-height: 1.2;
   margin: 10px 0 13px;
 }
 .record-content p {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--muted);
 }
 .record-content ul {
   padding-left: 20px;
   margin-top: 18px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--muted);
   list-style: disc;
 }
@@ -1256,7 +1256,7 @@ h3[id] {
     margin-right: 32px;
   }
   .community-record {
-    grid-template-columns: 70px 240px 1fr;
+    grid-template-columns: 70px 270px 1fr;
   }
   .case-reading {
     grid-template-columns: 160px minmax(0, 1fr);
@@ -1461,11 +1461,11 @@ h3[id] {
     padding: 28px 0;
   }
   .record-image {
-    max-width: 500px;
+    max-width: 560px;
     aspect-ratio: 16/10;
   }
   .record-content h2 {
-    font-size: 28px;
+    font-size: 32px;
   }
   .resume-layout {
     grid-template-columns: 1fr;
