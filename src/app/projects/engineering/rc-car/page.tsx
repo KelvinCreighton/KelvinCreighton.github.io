@@ -138,9 +138,9 @@ export default function RcCarProject() {
           </div>
 
           <div className="bg-gray-85 dark:bg-gray-900 rounded-xl p-8 my-12 border border-gray-200 dark:border-gray-800 shadow-sm">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="flex items-center gap-4">
-                <div className="bg-blue-600 dark:bg-blue-500 rounded-lg p-3 text-white shadow-md">
+            <div className="print-files-row flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="print-files-heading">
+                <div className="print-files-icon" style={{ color: "var(--accent)" }}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -167,7 +167,7 @@ export default function RcCarProject() {
               <a
                 href="/images/projects/rc-car-drive-gears.stl"
                 download="RC_Car_Drive_Gears.stl"
-                className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors shadow-sm"
+                className="print-files-download flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors shadow-sm"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
