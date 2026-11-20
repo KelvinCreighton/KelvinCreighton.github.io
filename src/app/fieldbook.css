@@ -252,7 +252,7 @@
   padding: 8px 24px 24px;
   background-image: var(--card-grain-texture), var(--card-surface-gradient);
   background-color: var(--surface);
-  background-blend-mode: soft-light, normal;
+  background-blend-mode: multiply, normal;
 }
 .build-card:nth-child(4n + 2) .build-copy {
   background-image: var(--card-grain-texture), var(--card-surface-gradient-2);
@@ -484,7 +484,7 @@
   border-radius: var(--radius-card);
   background-image: var(--card-grain-texture), var(--card-surface-gradient);
   background-color: var(--surface);
-  background-blend-mode: soft-light, normal;
+  background-blend-mode: multiply, normal;
 }
 .shelf-item:nth-child(4n + 2) {
   background-image: var(--card-grain-texture), var(--card-surface-gradient-2);
@@ -613,7 +613,7 @@
 .archive-grid .archive-entry {
   background-image: var(--card-grain-texture), var(--card-surface-gradient);
   background-color: var(--raised);
-  background-blend-mode: soft-light, normal;
+  background-blend-mode: multiply, normal;
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
   overflow: hidden;

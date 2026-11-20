@@ -13,9 +13,9 @@
   --background: var(--paper);
   --foreground: var(--ink);
   color-scheme: dark;
-  --paper: #191815;
-  --surface: #1e221e;
-  --raised: #1e221e;
+  --paper: #171714;
+  --surface: #1b1f1b;
+  --raised: #1b1f1b;
   --ink: #e1dfd5;
   --muted: #b0b4a8;
   --accent: #e0a678;
@@ -62,12 +62,14 @@
   box-sizing: border-box;
 }
 html {
+  background: var(--paper);
   scroll-behavior: smooth;
   scroll-padding-top: 110px;
 }
 body {
   margin: 0;
-  background: var(--paper);
+  background: transparent;
+  isolation: isolate;
   color: var(--ink);
   font-family: var(--font-sans);
   line-height: 1.65;
@@ -195,7 +197,7 @@ h3[id] {
 .site-background {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   /* Broad, overlapping ambient light gives the charcoal canvas depth across
      the viewport rather than concentrating it in one corner. */
@@ -210,9 +212,14 @@ h3[id] {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.32;
+  opacity: 0.48;
   background-image: url("/images/grain-texture.svg");
-  background-size: 180px 180px;
+  background-size: 120px 120px;
+  mix-blend-mode: multiply;
+}
+body > :is(.site-header, .site-main, .site-footer, #page-top-marker) {
+  position: relative;
+  z-index: 1;
 }
 .skip-link {
   position: fixed;
@@ -1054,7 +1061,7 @@ h3[id] {
   border-radius: var(--radius-card);
   background-image: var(--card-grain-texture), var(--card-surface-gradient);
   background-color: var(--surface);
-  background-blend-mode: soft-light, normal;
+  background-blend-mode: multiply, normal;
   transition: transform var(--motion-ui) ease, box-shadow var(--motion-ui) ease, border-color var(--motion-ui) ease;
 }
 .related-work a:nth-child(4n + 2) {
@@ -1091,7 +1098,7 @@ h3[id] {
   border-left: 2px solid var(--rust);
   background-image: var(--card-grain-texture), var(--card-surface-gradient);
   background-color: var(--surface);
-  background-blend-mode: soft-light, normal;
+  background-blend-mode: multiply, normal;
   padding: 18px 22px;
   margin: 20px 0;
   border-radius: 0 var(--radius-card) var(--radius-card) 0;
@@ -1105,7 +1112,7 @@ h3[id] {
 .demo-frame {
   background-image: var(--card-grain-texture), var(--card-surface-gradient);
   background-color: var(--surface);
-  background-blend-mode: soft-light, normal;
+  background-blend-mode: multiply, normal;
   border: 1px solid var(--rule);
   margin: 24px 0;
   width: 100%;
@@ -1123,7 +1130,7 @@ h3[id] {
   gap: 15px;
   background-image: var(--card-grain-texture), var(--card-surface-gradient);
   background-color: var(--surface);
-  background-blend-mode: soft-light, normal;
+  background-blend-mode: multiply, normal;
 }
 .demo-preview p {
   max-width: 540px;
@@ -1179,7 +1186,7 @@ h3[id] {
 .solution-toggle {
   background-image: var(--card-grain-texture), var(--card-surface-gradient);
   background-color: var(--surface);
-  background-blend-mode: soft-light, normal;
+  background-blend-mode: multiply, normal;
   border: 1px solid var(--rule);
   padding: 15px 20px;
   border-radius: var(--radius-card);
@@ -1326,7 +1333,7 @@ h3[id] {
 }
 .resume-summary li a:hover { text-decoration-color: currentColor; }
 .resume-work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; margin-top: 18px; }
-.resume-work-grid a { display: block; position: relative; transform-origin: center; padding: 16px; border: 1px solid var(--rule); border-radius: var(--radius-card); background-image: var(--card-grain-texture), var(--card-surface-gradient); background-color: var(--surface); background-blend-mode: soft-light, normal; color: inherit; transition: color 180ms ease, transform var(--motion-ui) ease; }
+.resume-work-grid a { display: block; position: relative; transform-origin: center; padding: 16px; border: 1px solid var(--rule); border-radius: var(--radius-card); background-image: var(--card-grain-texture), var(--card-surface-gradient); background-color: var(--surface); background-blend-mode: multiply, normal; color: inherit; transition: color 180ms ease, transform var(--motion-ui) ease; }
 .resume-work-grid a:nth-child(4n + 2) { background-image: var(--card-grain-texture), var(--card-surface-gradient-2); }
 .resume-work-grid a:nth-child(4n + 3) { background-image: var(--card-grain-texture), var(--card-surface-gradient-3); }
 .resume-work-grid a:nth-child(4n + 4) { background-image: var(--card-grain-texture), var(--card-surface-gradient-4); }
@@ -1357,7 +1364,7 @@ h3[id] {
   align-self: start;
   background-image: var(--card-grain-texture), var(--card-surface-gradient);
   background-color: var(--surface);
-  background-blend-mode: soft-light, normal;
+  background-blend-mode: multiply, normal;
 }
 .resume-downloads h2 {
   font-size: var(--type-section-heading);
@@ -1728,7 +1735,7 @@ h3[id] {
   padding: 20px;
   background-image: var(--card-grain-texture), var(--card-surface-gradient);
   background-color: var(--surface);
-  background-blend-mode: soft-light, normal;
+  background-blend-mode: multiply, normal;
   margin: 20px 0;
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
