@@ -208,7 +208,7 @@
   border: 1px solid var(--rule);
   border-radius: var(--radius-feature);
   overflow: hidden;
-  box-shadow: 0 5px 18px #36363403;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 14%), inset 0 1px 0 rgb(255 255 255 / 4%);
   transition:
     transform var(--motion-ui) ease,
     box-shadow var(--motion-ui) ease,
@@ -218,8 +218,9 @@
 .build-card:focus-within .build-card-link {
   position: relative;
   z-index: 2;
-  transform: scale(1.025);
-  box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
+  transform: translateY(-4px) scale(1.025);
+  border-color: color-mix(in srgb, var(--signal) 60%, var(--rule));
+  box-shadow: 0 16px 32px rgb(0 0 0 / 29%), 0 0 0 1px rgb(170 197 175 / 9%), inset 0 1px 0 rgb(255 255 255 / 6%);
 }
 .home-page .build-card-link:hover {
   color: inherit;
@@ -245,7 +246,7 @@
 }
 .build-card:hover .build-art img,
 .build-card:focus-within .build-art img {
-  transform: scale(1.025);
+  transform: scale(1.045);
 }
 .build-copy {
   padding: 8px 24px 24px;
@@ -646,18 +647,19 @@
 .archive-grid .archive-entry:is(:hover, :focus-within) {
   position: relative;
   z-index: 2;
-  transform: scale(1.02);
+  transform: translateY(-4px) scale(1.02);
+  border-color: color-mix(in srgb, var(--signal) 60%, var(--rule));
 }
 .archive-grid .archive-entry:hover,
 .archive-grid .archive-entry:focus-within {
-  box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
+  box-shadow: 0 15px 30px rgb(0 0 0 / 28%), 0 0 0 1px rgb(170 197 175 / 9%);
 }
 .archive-image img {
   transition: transform 350ms ease;
 }
 .archive-entry:hover .archive-image img,
 .archive-entry:focus-within .archive-image img {
-  transform: scale(1.025);
+  transform: scale(1.045);
 }
 .archive-entry:hover h2,
 .archive-entry:focus-within h2 {

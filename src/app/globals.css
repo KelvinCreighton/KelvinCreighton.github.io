@@ -26,17 +26,21 @@
   --focus: var(--signal);
   --card-grain-texture: url("/images/grain-texture.svg");
   --card-surface-gradient:
-    linear-gradient(145deg, rgb(8 13 9 / 10%), transparent 94%),
-    radial-gradient(ellipse at 8% 0%, rgb(170 197 175 / 0.5%), transparent 64%);
+    linear-gradient(145deg, rgb(8 13 9 / 28%), transparent 82%),
+    radial-gradient(ellipse at 8% 0%, rgb(170 197 175 / 0.46), transparent 56%),
+    radial-gradient(ellipse at 94% 100%, rgb(224 166 120 / 0.14), transparent 62%);
   --card-surface-gradient-2:
-    linear-gradient(205deg, rgb(8 13 9 / 10%), transparent 94%),
-    radial-gradient(ellipse at 92% 4%, rgb(170 197 175 / 0.5%), transparent 64%);
+    linear-gradient(205deg, rgb(8 13 9 / 28%), transparent 82%),
+    radial-gradient(ellipse at 92% 4%, rgb(170 197 175 / 0.46), transparent 56%),
+    radial-gradient(ellipse at 4% 96%, rgb(224 166 120 / 0.14), transparent 62%);
   --card-surface-gradient-3:
-    linear-gradient(75deg, rgb(8 13 9 / 10%), transparent 94%),
-    radial-gradient(ellipse at 30% 98%, rgb(170 197 175 / 0.5%), transparent 64%);
+    linear-gradient(75deg, rgb(8 13 9 / 28%), transparent 82%),
+    radial-gradient(ellipse at 30% 98%, rgb(170 197 175 / 0.46), transparent 56%),
+    radial-gradient(ellipse at 92% 4%, rgb(224 166 120 / 0.14), transparent 62%);
   --card-surface-gradient-4:
-    linear-gradient(325deg, rgb(8 13 9 / 10%), transparent 94%),
-    radial-gradient(ellipse at 98% 74%, rgb(170 197 175 / 0.5%), transparent 64%);
+    linear-gradient(325deg, rgb(8 13 9 / 28%), transparent 82%),
+    radial-gradient(ellipse at 98% 74%, rgb(170 197 175 / 0.46), transparent 56%),
+    radial-gradient(ellipse at 4% 4%, rgb(224 166 120 / 0.14), transparent 62%);
   --radius-control: 6px;
   --radius-card: 12px;
   --radius-feature: 16px;
@@ -199,7 +203,7 @@ h3[id] {
   background-image: url("/images/ambient-background.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 .site-background::after {
   content: "";
@@ -1065,8 +1069,9 @@ h3[id] {
 .related-work a:hover,
 .related-work a:focus-visible {
   z-index: 1;
-  transform: scale(1.02);
-  box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
+  transform: translateY(-4px) scale(1.02);
+  border-color: color-mix(in srgb, var(--signal) 60%, var(--rule));
+  box-shadow: 0 15px 30px rgb(0 0 0 / 28%), 0 0 0 1px rgb(170 197 175 / 9%);
   text-decoration: none;
 }
 .related-work a:hover h2,
