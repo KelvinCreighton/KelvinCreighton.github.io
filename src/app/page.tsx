@@ -143,11 +143,6 @@ export default function Home() {
                   Explore all {projects.length} projects <InlineArrow />
                 </Link>
               </h2>
-              <p className="topic-index-intro">
-                Embedded systems are my primary focus, with projects across
-                software, robotics, and security driven by a curiosity of
-                how the world works.
-              </p>
             </div>
             <ul>
               {categories.map((category) => {

@@ -40,37 +40,37 @@ export const categories: {
     id: "embedded-systems",
     title: "Embedded Systems",
     description:
-      "Sensor hardware, firmware, and the software behind processes, files, and parallel work.",
+      "C/C++, Embedded Linux, Microcontrollers, Firmware Development, Sensor Integration, RTOS, Multithreading, Systems Programming",
   },
   {
     id: "cybersecurity",
     title: "Cybersecurity",
     description:
-      "Investigations, challenge design, and the details that make a system vulnerable.",
+      "Reverse Engineering, Binary Exploitation, Web Security, Digital Forensics, Malware Analysis, CTF Development",
   },
   {
     id: "engineering",
     title: "Mechatronics",
     description:
-      "Restoration, robotics, and making software interact with the physical world.",
+      "Robotics, Inverse Kinematics, Numerical Optimization, Mechanical Design, Electrical Prototyping, 3D Printing, Motion Control",
   },
   {
     id: "auto",
     title: "Automotive",
     description:
-      "Repair notes from the garage. Diagnosis, decisions, and the work in between.",
+      "Mechanical Diagnostics, Engine Repair, Transmission Rebuilding, Component Modification, Preventive Maintenance",
   },
   {
     id: "game-dev",
     title: "Games & Simulation",
     description:
-      "Experiments in movement, physics, and play, going back to my first JavaScript games.",
+      "JavaScript, 2D/3D Game Development, Physics Simulation, Linear Algebra, Matrix Transformations, Orbital Mechanics",
   },
   {
     id: "music",
     title: "Music",
     description:
-      "Piano arrangements and original compositions. Open a score and listen along.",
+      "Piano Composition, Musical Arrangement",
   },
 ];
 
