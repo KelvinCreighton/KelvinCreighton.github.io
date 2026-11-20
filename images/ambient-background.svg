@@ -6,18 +6,21 @@
       <stop offset="100%" stop-color="#1b1a17" />
     </linearGradient>
     <radialGradient id="sage" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#324335" stop-opacity=".14" />
-      <stop offset="72%" stop-color="#324335" stop-opacity="0" />
+      <stop offset="0" stop-color="#63806a" stop-opacity=".16" />
+      <stop offset="60%" stop-color="#405b47" stop-opacity=".06" />
+      <stop offset="78%" stop-color="#324335" stop-opacity="0" />
       <stop offset="100%" stop-color="#324335" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="sage-secondary" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#324335" stop-opacity=".08" />
-      <stop offset="74%" stop-color="#324335" stop-opacity="0" />
+      <stop offset="0" stop-color="#52715a" stop-opacity=".1" />
+      <stop offset="62%" stop-color="#324335" stop-opacity=".035" />
+      <stop offset="80%" stop-color="#324335" stop-opacity="0" />
       <stop offset="100%" stop-color="#324335" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="copper" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#dc9c68" stop-opacity=".02" />
-      <stop offset="72%" stop-color="#dc9c68" stop-opacity="0" />
+      <stop offset="0" stop-color="#dc9c68" stop-opacity=".05" />
+      <stop offset="58%" stop-color="#b96f42" stop-opacity=".018" />
+      <stop offset="78%" stop-color="#dc9c68" stop-opacity="0" />
       <stop offset="100%" stop-color="#dc9c68" stop-opacity="0" />
     </radialGradient>
   </defs>
