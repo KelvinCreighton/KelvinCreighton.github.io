@@ -217,7 +217,7 @@ h3[id] {
   background-size: 120px 120px;
   mix-blend-mode: multiply;
 }
-body > :is(.site-header, .site-main, .site-footer, #page-top-marker) {
+body > :is(.site-main, .site-footer, #page-top-marker) {
   position: relative;
   z-index: 1;
 }
@@ -234,11 +234,10 @@ body > :is(.site-header, .site-main, .site-footer, #page-top-marker) {
 .skip-link:focus {
   transform: none;
 }
-.site-header {
-  top: 0;
+body > .site-header {
+  position: relative;
   z-index: 60;
   background: transparent;
-  position: sticky;
   border-bottom: 0;
 }
 .header-inner {
@@ -1425,7 +1424,7 @@ body > :is(.site-header, .site-main, .site-footer, #page-top-marker) {
     position: absolute;
     right: 0;
     top: 59px;
-    background: var(--paper);
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
     border: 1px solid var(--rule);
     width: min(320px, 88vw);
     padding: 15px 20px;

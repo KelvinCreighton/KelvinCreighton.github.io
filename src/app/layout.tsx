@@ -11,14 +11,14 @@ import "./project-detail.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://kelvincreighton.ca"),
   title: {
-    default: "Kelvin Creighton — Embedded Systems & Firmware",
+    default: "Kelvin Creighton",
     template: "%s | Kelvin Creighton",
   },
   description:
     "Kelvin Creighton builds embedded software and firmware, working with microcontrollers, Linux, and low-level systems.",
   authors: [{ name: "Kelvin Creighton" }],
   openGraph: {
-    title: "Kelvin Creighton — Embedded Systems & Firmware",
+    title: "Kelvin Creighton",
     description:
       "Embedded systems, firmware, and computer science projects by Kelvin Creighton.",
     url: "https://kelvincreighton.ca",
