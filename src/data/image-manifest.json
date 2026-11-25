@@ -1,22 +1,4 @@
 {
-  "/images/Head-Shot.webp": {
-    "width": 1173,
-    "height": 1173,
-    "variants": [
-      {
-        "src": "/images/responsive/Head-Shot-webp-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/responsive/Head-Shot-webp-800.webp",
-        "width": 800
-      },
-      {
-        "src": "/images/responsive/Head-Shot-webp-1173.webp",
-        "width": 1173
-      }
-    ]
-  },
   "/images/achievements/Alice.webp": {
     "width": 800,
     "height": 1066,
@@ -28,6 +10,28 @@
       {
         "src": "/images/responsive/achievements/Alice-webp-800.webp",
         "width": 800
+      }
+    ]
+  },
+  "/images/achievements/CyberSci-2026.jpg": {
+    "width": 3395,
+    "height": 2546,
+    "variants": [
+      {
+        "src": "/images/responsive/achievements/CyberSci-2026-jpg-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/responsive/achievements/CyberSci-2026-jpg-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/images/responsive/achievements/CyberSci-2026-jpg-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/images/responsive/achievements/CyberSci-2026-jpg-1600.webp",
+        "width": 1600
       }
     ]
   },

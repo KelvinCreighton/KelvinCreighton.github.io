@@ -101,6 +101,25 @@ export const events = [
 
 export const achievements = [
   {
+    id: "cybersci-regionals-2026",
+    title: "CyberSci Regionals 2026",
+    subtitle: "Team UCSC+WiCyS",
+    date: "November 2026",
+    sortDate: "2026-11-01",
+    meta: "CTF",
+    status: "2nd Place",
+    description:
+      "Placed 2nd at CyberSci Regionals 2026 with UCSC+WiCyS. Applied web security analysis, reverse engineering, and teamwork across a varied challenge set.",
+    image: "/images/achievements/CyberSci-2026.jpg",
+    imageAlt: "UCSC+WiCyS team at CyberSci Regionals 2026",
+    bullets: [
+      "Traced untrusted input to an EJS rendering sink and identified a server-side template injection risk.",
+      "Reviewed a ship-control app for JWT validation gaps, unauthenticated control routes, and stale commands.",
+      "Tackled web, reverse engineering, packet analysis, and binary exploitation challenges as a team.",
+      "Improved from 5th place in 2025 to 2nd in 2026 through practice and shared learning.",
+    ],
+  },
+  {
     id: "cisco-rapid-incident-response-v7",
     title: "Cisco Rapid Incident Response V7",
     subtitle: "Incident response workshop and lab",
