@@ -1,0 +1,248 @@
+/*
+ * Atmosphere: colour, light, and texture layered over the Fieldbook palette.
+ * Loaded after depth.css. Everything here is either behind the content or
+ * appears in response to the visitor, so reading is never interrupted.
+ *
+ * Palette logic: sage (#aac5af) and copper (#e0a678) are near-complements;
+ * a deep teal (#2f5a52) and a burnt umber (#7a4a2c) extend each side
+ * analogously so gradients blend without muddy midpoints.
+ */
+:root {
+  --sage-glow: rgb(170 197 175 / 22%);
+  --copper-glow: rgb(224 166 120 / 26%);
+  --teal-deep: 47 90 82;
+  --umber-deep: 122 74 44;
+  /* Film grain from an SVG noise filter, tiled. */
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --card-grain-texture: var(--noise);
+}
+
+/* ---------- Aurora: a slow mesh of light behind every page ---------- */
+.site-background {
+  overflow: hidden;
+}
+.site-background::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 32% at 18% 14%, rgb(var(--teal-deep) / 34%), transparent 70%),
+    radial-gradient(30% 28% at 82% 8%, rgb(224 166 120 / 10%), transparent 72%),
+    radial-gradient(42% 36% at 70% 62%, rgb(var(--teal-deep) / 20%), transparent 70%),
+    radial-gradient(34% 30% at 12% 82%, rgb(var(--umber-deep) / 16%), transparent 72%);
+  animation: aurora-drift 48s ease-in-out infinite alternate;
+  will-change: transform;
+}
+/* Film grain over the whole canvas, replacing the dotted grain tile. */
+.site-background::after {
+  opacity: 0.07;
+  background-image: var(--noise);
+  background-size: 220px 220px;
+  mix-blend-mode: overlay;
+}
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(3%, -2%, 0) rotate(4deg) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-3%, 2%, 0) rotate(-3deg) scale(1.02);
+  }
+}
+
+/* ---------- Hero: layered light and a dot field ---------- */
+.field-intro::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -60px;
+  left: -8%;
+  width: min(70vw, 820px);
+  height: 460px;
+  pointer-events: none;
+  background:
+    radial-gradient(50% 55% at 30% 45%, rgb(224 166 120 / 13%), transparent 72%),
+    radial-gradient(45% 50% at 62% 60%, rgb(170 197 175 / 10%), transparent 74%);
+  filter: blur(8px);
+}
+/* The dot grid now spans the hero and fades toward the edges. */
+.field-intro::after {
+  top: -24px;
+  right: 0;
+  width: min(58vw, 760px);
+  aspect-ratio: 1.5;
+  opacity: 0.22;
+  background-image: radial-gradient(circle, rgb(170 197 175 / 80%) 1px, transparent 1.3px);
+  background-size: 18px 18px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 65% 40%, #000 10%, transparent 75%);
+  mask-image: radial-gradient(ellipse 60% 60% at 65% 40%, #000 10%, transparent 75%);
+}
+.field-intro h1 {
+  text-shadow: 0 0 48px rgb(224 166 120 / 14%);
+}
+
+/* ---------- Frosted glass for floating chrome ---------- */
+.site-header[data-scrolled="true"] {
+  background: linear-gradient(180deg, rgb(28 27 24 / 78%), rgb(25 24 21 / 68%));
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  backdrop-filter: blur(18px) saturate(1.5);
+  box-shadow:
+    inset 0 -1px 0 rgb(255 255 255 / 5%),
+    0 12px 28px -18px rgb(0 0 0 / 75%);
+}
+.category-nav button,
+.view-controls button {
+  background: rgb(255 255 255 / 2.5%);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 5%);
+}
+.category-nav button[aria-pressed="true"] {
+  background: linear-gradient(180deg, rgb(170 197 175 / 22%), rgb(170 197 175 / 10%));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 10%),
+    0 0 18px -4px var(--sage-glow);
+}
+.view-controls button[aria-pressed="true"] {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 8%),
+    0 0 16px -4px var(--copper-glow);
+}
+@media (max-width: 760px) {
+  .mobile-nav {
+    background: rgb(30 34 30 / 78%);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    backdrop-filter: blur(20px) saturate(1.4);
+    border-radius: 14px;
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 7%),
+      0 24px 48px -16px rgb(0 0 0 / 70%);
+  }
+}
+
+/* ---------- Cards: light that follows the cursor ---------- */
+.build-card-link,
+.archive-grid .archive-entry,
+.related-work a {
+  position: relative;
+  isolation: isolate;
+}
+/* Gradient edge, sage into copper, revealed on hover. */
+.build-card-link::before,
+.archive-grid .archive-entry::before,
+.related-work a::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(
+    from 210deg at var(--mx, 50%) var(--my, 0%),
+    rgb(224 166 120 / 70%),
+    rgb(170 197 175 / 45%) 25%,
+    rgb(170 197 175 / 8%) 50%,
+    rgb(170 197 175 / 45%) 75%,
+    rgb(224 166 120 / 70%)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+/* Soft spotlight under the pointer. */
+.build-card-link::after,
+.archive-grid .archive-entry::after,
+.related-work a::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 0%),
+    rgb(224 166 120 / 9%),
+    rgb(170 197 175 / 4%) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+.build-card:is(:hover, :focus-within) .build-card-link::before,
+.build-card:is(:hover, :focus-within) .build-card-link::after,
+.archive-grid .archive-entry:is(:hover, :focus-within)::before,
+.archive-grid .archive-entry:is(:hover, :focus-within)::after,
+.related-work a:is(:hover, :focus-visible)::before,
+.related-work a:is(:hover, :focus-visible)::after {
+  opacity: 1;
+}
+.build-card:is(:hover, :focus-within) .build-card-link,
+.archive-grid .archive-entry:is(:hover, :focus-within) {
+  box-shadow:
+    var(--elev-2),
+    0 18px 48px -24px rgb(224 166 120 / 28%);
+}
+
+/* ---------- Glow accents ---------- */
+.topic-index .field-mark,
+.build-meta .field-mark {
+  transition:
+    transform 220ms ease,
+    filter 220ms ease,
+    color 220ms ease;
+}
+.topic-index li:is(:hover, :focus-within) .field-mark,
+.build-card:is(:hover, :focus-within) .build-meta .field-mark {
+  color: var(--accent);
+  filter: drop-shadow(0 0 6px rgb(224 166 120 / 55%));
+}
+.button.primary:hover {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 30%),
+    0 1px 2px rgb(0 0 0 / 30%),
+    0 0 0 4px rgb(224 166 120 / 12%),
+    0 10px 28px -8px rgb(224 166 120 / 60%);
+}
+.desktop-nav a[aria-current] .nav-link-text::after {
+  box-shadow: 0 0 10px 1px rgb(224 166 120 / 55%);
+}
+.build-meta > span:first-of-type {
+  box-shadow: inset 0 0 0 1px rgb(170 197 175 / 14%);
+}
+
+/* ---------- Gradient hairlines instead of flat rules ---------- */
+.people-section,
+.site-footer,
+.related-work,
+.footer-bottom {
+  border-top-color: transparent;
+  border-image: linear-gradient(
+      90deg,
+      transparent,
+      rgb(170 197 175 / 28%) 20%,
+      rgb(224 166 120 / 28%) 80%,
+      transparent
+    )
+    1;
+}
+
+/* ---------- Motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .site-background::before {
+    animation: none;
+  }
+}
+@media print {
+  .site-background::before,
+  .field-intro::before {
+    display: none;
+  }
+}

@@ -5,10 +5,12 @@ import { NavBar } from "@/components/NavBar";
 import { Wordmark } from "@/components/Wordmark";
 import { Background } from "@/components/Background";
 import ProjectScrollReset from "@/components/ProjectScrollReset";
+import Spotlight from "@/components/Spotlight";
 import "./globals.css";
 import "./fieldbook.css";
 import "./project-detail.css";
 import "./depth.css";
+import "./atmosphere.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://kelvincreighton.ca"),
   title: {
@@ -56,6 +58,7 @@ export default function RootLayout({
       <body>
           <span id="page-top-marker" aria-hidden="true" />
           <ProjectScrollReset />
+          <Spotlight />
           <Background />
           <a className="skip-link" href="#main-content">
             Skip to content
