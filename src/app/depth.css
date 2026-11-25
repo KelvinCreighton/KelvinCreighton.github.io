@@ -108,8 +108,7 @@ body::before {
 }
 
 /* Cards gain real elevation instead of a flat outline. */
-.build-card-link,
-.archive-grid .archive-entry,
+.project-card,
 .related-work a,
 .resume-downloads,
 .demo-frame,
@@ -117,14 +116,12 @@ body::before {
 .solution-toggle {
   box-shadow: var(--elev-1);
 }
-.build-card:is(:hover, :focus-within) .build-card-link,
-.archive-grid .archive-entry:is(:hover, :focus-within),
+.project-card:is(:hover, :focus-within),
 .related-work a:is(:hover, :focus-visible) {
   box-shadow: var(--elev-2), 0 0 0 1px rgb(170 197 175 / 10%);
 }
 /* Photos sit in the card with a fine inner edge, like a mounted print. */
-.build-art::after,
-.archive-image::after,
+.project-card-media::after,
 .people-photo::after,
 .record-image::after {
   content: "";

@@ -11,6 +11,7 @@ import "./fieldbook.css";
 import "./project-detail.css";
 import "./depth.css";
 import "./atmosphere.css";
+import "./cards.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://kelvincreighton.ca"),
   title: {

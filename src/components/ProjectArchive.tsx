@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import BlurImage from "@/components/BlurImage";
+import { useEffect, useState } from "react";
+import ProjectCard from "@/components/ProjectCard";
 import {
   categories,
   projects,
@@ -11,75 +11,9 @@ import {
   categoryName,
   type CategoryId,
 } from "@/data/projects";
-import { projectTopics } from "@/data/projectTopics";
 import { events, achievements } from "@/data/community";
 
 type Props = { fixedCategory?: CategoryId };
-
-function topicsForProject(id: string) {
-  return projectTopics[id] || [];
-}
-
-function ProjectTopicList({ topics }: { topics: string[] }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const measureRefs = useRef<(HTMLSpanElement | null)[]>([]);
-  const [visibleCount, setVisibleCount] = useState(topics.length);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const fitTopics = () => {
-      const availableWidth = container.clientWidth;
-      let usedWidth = 0;
-      let fitCount = 0;
-
-      for (let index = 0; index < topics.length; index += 1) {
-        const topic = measureRefs.current[index];
-        if (!topic) continue;
-        const nextWidth = topic.getBoundingClientRect().width;
-        if (usedWidth + nextWidth > availableWidth) break;
-        usedWidth += nextWidth;
-        fitCount += 1;
-      }
-
-      setVisibleCount((current) => (current === fitCount ? current : fitCount));
-    };
-
-    fitTopics();
-    const observer = new ResizeObserver(fitTopics);
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, [topics]);
-
-  return (
-    <div
-      className="entry-topics"
-      aria-label={`Project topics: ${topics.join(", ")}`}
-      title={topics.join(" · ")}
-      ref={containerRef}
-    >
-      {topics.slice(0, visibleCount).map((topic) => (
-        <span className="entry-topic" key={topic}>
-          {topic}
-        </span>
-      ))}
-      <span className="entry-topics-measure" aria-hidden="true">
-        {topics.map((topic, index) => (
-          <span
-            className="entry-topic"
-            key={topic}
-            ref={(element) => {
-              measureRefs.current[index] = element;
-            }}
-          >
-            {topic}
-          </span>
-        ))}
-      </span>
-    </div>
-  );
-}
 
 function ArchiveContent({
   fixedCategory,
@@ -248,38 +182,15 @@ function ArchiveContent({
       ) : (
         <div className={view === "list" ? "archive-list" : "archive-grid"}>
           {results.map((p) => (
-            <article className="archive-entry" key={p.id}>
-              <Link href={p.href} className="archive-entry-link">
-                <div className="archive-image">
-                  <BlurImage
-                    src={p.image}
-                    alt=""
-                    fill
-                    sizes={
-                      view === "list"
-                        ? "180px"
-                        : "(max-width: 760px) 90vw, (max-width: 1320px) 45vw, 590px"
-                    }
-                    className="object-cover"
-                  />
-                </div>
-                <div className="entry-copy">
-                  <div className="entry-meta">
-                    <span>{p.dateLabel}</span>
-                    <span>
-                      {p.vehicle ? (
-                        <em>{p.vehicle}</em>
-                      ) : (
-                        categoryName(p.category)
-                      )}
-                    </span>
-                  </div>
-                  <h2>{p.title}</h2>
-                  <p>{p.summary}</p>
-                  <ProjectTopicList topics={topicsForProject(p.id)} />
-                </div>
-              </Link>
-            </article>
+            <ProjectCard
+              key={p.id}
+              project={p}
+              sizes={
+                view === "list"
+                  ? "200px"
+                  : "(max-width: 760px) 90vw, (max-width: 1100px) 45vw, 420px"
+              }
+            />
           ))}
         </div>
       )}

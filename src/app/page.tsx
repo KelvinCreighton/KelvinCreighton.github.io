@@ -1,54 +1,16 @@
 import Link from "next/link";
-import {
-  CarFront,
-  Cpu,
-  Gamepad2,
-  Github,
-  Linkedin,
-  Mail,
-  Music2,
-  ShieldCheck,
-  Cog,
-} from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "@/components/BlurImage";
-import { FieldMark } from "@/components/FieldMark";
+import ProjectCard from "@/components/ProjectCard";
+import { categoryIcons } from "@/components/categoryIcons";
 import { InlineArrow } from "@/components/InlineArrow";
 import { categories, projects, getProject, inCategory } from "@/data/projects";
 
-const topicIcons = {
-  "embedded-systems": Cpu,
-  cybersecurity: ShieldCheck,
-  engineering: Cog,
-  auto: CarFront,
-  "game-dev": Gamepad2,
-  music: Music2,
-};
-
-const features = [
-  {
-    id: "machineguard",
-    description:
-      "Listening to a machine: a sensor, an ESP32, and a power drill. Building the hardware and firmware for our MachineGuard prototype.",
-    kind: "Hardware & firmware",
-  },
-  {
-    id: "dragonshell",
-    description:
-      "Building a shell from system calls: a Unix shell written in C, with processes, pipes, redirection, and signals built directly on operating-system interfaces.",
-    kind: "Systems programming",
-  },
-  {
-    id: "dremel-3d45-rebuild",
-    description:
-      "A second life for a 3D printer: replacing a failed controller with an Arduino Mega, RAMPS, and Marlin, one test at a time.",
-    kind: "Build in progress",
-  },
-  {
-    id: "robotic-arm-simulation",
-    description:
-      "A robotic arm, brought to life: an interactive simulation exploring inverse kinematics and numerical optimization.",
-    kind: "Robotics & simulation",
-  },
+const highlights = [
+  "machineguard",
+  "dragonshell",
+  "dremel-3d45-rebuild",
+  "robotic-arm-simulation",
 ];
 
 export default function Home() {
@@ -107,33 +69,15 @@ export default function Home() {
         <div className="fieldbook-columns">
           <section className="featured-builds" aria-label="Highlighted projects">
             <div className="build-grid">
-              {features.map((feature) => {
-                const project = getProject(feature.id)!;
-                return (
-                  <article className="build-card" key={feature.id}>
-                    <Link href={project.href} className="build-card-link">
-                      <div className="build-art">
-                        <Image
-                          src={project.image}
-                          alt={project.imageAlt}
-                          fill
-                          sizes="(max-width: 760px) 90vw, (max-width: 1100px) 42vw, 520px"
-                          priority={feature.id === "machineguard"}
-                        />
-                      </div>
-                      <div className="build-copy">
-                        <h4>{project.title}</h4>
-                        <p>{feature.description}</p>
-                        <div className="build-meta">
-                          <FieldMark />
-                          <span>{feature.kind}</span>
-                          <span>{project.sortDate.slice(0, 4)}</span>
-                        </div>
-                      </div>
-                    </Link>
-                  </article>
-                );
-              })}
+              {highlights.map((id, index) => (
+                <ProjectCard
+                  key={id}
+                  project={getProject(id)!}
+                  heading="h3"
+                  sizes="(max-width: 540px) 92vw, (max-width: 900px) 46vw, 420px"
+                  priority={index === 0}
+                />
+              ))}
             </div>
           </section>
           <section className="topic-index" aria-labelledby="topics-title">
@@ -151,7 +95,7 @@ export default function Home() {
             </div>
             <ul>
               {categories.map((category) => {
-                const TopicIcon = topicIcons[category.id];
+                const TopicIcon = categoryIcons[category.id];
                 return (
                   <li key={category.id}>
                     <Link

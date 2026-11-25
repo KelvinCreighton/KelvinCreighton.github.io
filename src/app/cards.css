@@ -1,0 +1,235 @@
+/*
+ * The project card. One design for the homepage highlights and the archive;
+ * the Index view lays the same parts out as rows. The pointer spotlight and
+ * gradient edge come from atmosphere.css.
+ */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: linear-gradient(180deg, #22261f 0%, #1c1d19 100%);
+  box-shadow: var(--elev-1);
+  transition:
+    transform 240ms var(--ease-out),
+    box-shadow 240ms ease,
+    border-color 240ms ease;
+}
+/* Lift without scaling, which would soften the text. */
+.project-card:is(:hover, :focus-within) {
+  z-index: 2;
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--signal) 38%, var(--rule));
+}
+.project-card-link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  color: inherit;
+  border-radius: inherit;
+}
+.project-card-link:hover,
+.home-page .project-card-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.project-card-link:focus-visible {
+  outline-offset: -4px;
+}
+
+/* Image */
+.project-card-media {
+  position: relative;
+  flex: none;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid rgb(255 255 255 / 6%);
+  background: var(--surface);
+}
+.project-card-media img {
+  object-fit: cover;
+  filter: brightness(0.94) saturate(0.96);
+  transition:
+    transform 450ms var(--ease-out),
+    filter 240ms ease;
+}
+.project-card-media.is-white-logo img {
+  filter: brightness(0.84) saturate(0.95);
+}
+.project-card:is(:hover, :focus-within) .project-card-media img {
+  transform: scale(1.035);
+  filter: none;
+}
+.project-card:is(:hover, :focus-within) .project-card-media.is-white-logo img {
+  filter: brightness(0.93);
+}
+
+/* Text */
+.project-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 18px 22px 22px;
+}
+.project-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  color: #9ba093;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+.project-card-discipline {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--signal);
+}
+.project-card-discipline svg {
+  width: 15px;
+  height: 15px;
+}
+.project-card-title {
+  margin: 12px 0 8px;
+  font: 400 var(--type-card-heading) / 1.22 var(--serif);
+  letter-spacing: -0.012em;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  transition: color 200ms ease;
+}
+.project-card:is(:hover, :focus-within) .project-card-title {
+  color: var(--accent);
+}
+.project-card-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  color: var(--muted);
+  font-size: var(--type-ui);
+  line-height: 1.6;
+}
+
+/* Topics: quiet chips, so they don't read as links. Pinned to the bottom so
+   they line up across a row. */
+.project-card-topics {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  min-width: 0;
+  margin-top: auto;
+  padding-top: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.project-card-topic {
+  flex: none;
+  padding: 3px 9px;
+  border: 1px solid rgb(170 197 175 / 16%);
+  border-radius: var(--radius-control);
+  background: rgb(170 197 175 / 7%);
+  color: #bfc6b9;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.project-card-topics-measure {
+  position: absolute;
+  display: flex;
+  width: max-content;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Homepage highlights: equal heights across each row. */
+.home-page .build-grid {
+  align-items: stretch;
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .archive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Index view: the same card parts as compact rows. */
+.archive-list {
+  padding-bottom: 80px;
+}
+.archive-list .project-card {
+  overflow: visible;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+.archive-list .project-card::before {
+  display: none;
+}
+.archive-list .project-card::after {
+  border-radius: var(--radius-card);
+}
+.archive-list .project-card-link {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  padding: 20px 0;
+  border-radius: var(--radius-card);
+}
+.archive-list .project-card-media {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+.archive-list .project-card-body {
+  align-self: stretch;
+  padding: 0;
+}
+.archive-list .project-card-meta {
+  justify-content: flex-start;
+  gap: 4px 18px;
+}
+.archive-list .project-card-title {
+  margin: 6px 0 4px;
+}
+.archive-list .project-card-summary {
+  -webkit-line-clamp: 2;
+}
+.archive-list .project-card-topics {
+  padding-top: 10px;
+}
+
+@media (max-width: 760px) {
+  .project-card-body {
+    padding: 16px 18px 20px;
+  }
+  .archive-list .project-card-link {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .archive-list .project-card-body {
+    padding: 0;
+  }
+  .archive-list .project-card-summary,
+  .archive-list .project-card-topics {
+    display: none;
+  }
+  .archive-list .project-card-title {
+    font-size: 1.1875rem;
+  }
+}
+@media print {
+  .project-card {
+    break-inside: avoid;
+  }
+}

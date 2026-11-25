@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const CARDS = ".build-card-link, .archive-grid .archive-entry, .related-work a";
+const CARDS = ".project-card, .related-work a";
 
 /**
  * Tells the card under the pointer where the pointer is, as --mx and --my,

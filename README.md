@@ -24,7 +24,7 @@ Open `http://localhost:8080`. `next start` does not serve the static export. Pub
 
 - `src/data/projects.ts`: the 35-project registry, six disciplines, cross-listings, dates, summaries, and source/demo/score links.
 - `src/app/page.tsx`: homepage selections and short editorial introductions, linked to the registry by project ID.
-- `src/components/FieldMark.tsx`: the small decorative mark used in collection lists.
+- `src/components/ProjectCard.tsx` and `src/app/cards.css`: the one project card used by the homepage highlights and the archive.
 - `src/data/community.ts`: leadership records and achievements.
 - `src/app/projects/**/page.tsx`: detailed project content, with existing URLs preserved.
 - `src/components/CaseStudyLayout.tsx`: common project header, contribution/outcome summaries, contents navigation, and related work.

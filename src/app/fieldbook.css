@@ -116,7 +116,7 @@
   text-decoration: underline;
   text-underline-offset: 5px;
 }
-.home-page :is(.build-art, .shelf-cover, .people-photo):hover {
+.home-page :is(.shelf-cover, .people-photo):hover {
   text-decoration: none;
 }
 .fieldbook-heading {
@@ -197,114 +197,11 @@
   gap: 24px;
   align-items: start;
 }
-.build-card {
-  min-width: 0;
-  position: relative;
-}
-.build-card-link {
-  display: block;
-  color: inherit;
-  background: var(--raised);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-feature);
-  overflow: hidden;
-  box-shadow: 0 5px 18px #36363403;
-  transition:
-    transform var(--motion-ui) ease,
-    box-shadow var(--motion-ui) ease,
-    border-color var(--motion-ui) ease;
-}
-.build-card:hover .build-card-link,
-.build-card:focus-within .build-card-link {
-  position: relative;
-  z-index: 2;
-  transform: scale(1.025);
-  box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
-}
-.home-page .build-card-link:hover {
-  color: inherit;
-  text-decoration: none;
-}
-.build-card-link:focus-visible {
-  outline-offset: -3px;
-  outline-color: var(--signal);
-}
-.build-art {
-  position: relative;
-  display: block;
-  aspect-ratio: 1.52;
-  overflow: hidden;
-  background: var(--surface);
-}
-.build-art img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 350ms ease;
-}
-.build-card:hover .build-art img,
-.build-card:focus-within .build-art img {
-  transform: scale(1.025);
-}
-.build-copy {
-  padding: 8px 24px 24px;
-  background-image: var(--card-grain-texture), var(--card-surface-gradient);
-  background-color: var(--surface);
-  background-blend-mode: soft-light, normal;
-}
-.build-card:nth-child(4n + 2) .build-copy {
-  background-image: var(--card-grain-texture), var(--card-surface-gradient-2);
-}
-.build-card:nth-child(4n + 3) .build-copy {
-  background-image: var(--card-grain-texture), var(--card-surface-gradient-3);
-}
-.build-card:nth-child(4n + 4) .build-copy {
-  background-image: var(--card-grain-texture), var(--card-surface-gradient-4);
-}
-.build-copy h4 {
-  font: 400 var(--type-card-heading)/1.16 var(--serif);
-  letter-spacing: -0.015em;
-  margin: 12px 0 15px;
-  transition: color 220ms ease;
-}
-.build-card:hover .build-copy h4,
-.build-card:focus-within .build-copy h4 {
-  color: var(--accent);
-}
-.build-copy > p {
-  color: var(--muted);
-  font-size: var(--type-ui);
-  line-height: 1.7;
-}
-.build-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  font: var(--type-meta)/1.5 var(--font-mono);
-  color: var(--muted);
-  margin-top: 20px;
-}
-.build-meta > span:first-of-type {
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: var(--signal-soft);
-  color: var(--signal);
-}
-.build-meta > span:last-child {
-  margin-left: auto;
-}
 .field-mark {
   color: var(--signal);
   height: 22px;
   width: 22px;
   flex: 0 0 22px;
-}
-.build-meta .field-mark {
-  width: 17px;
-  height: 17px;
-  flex-basis: 17px;
 }
 .note-list,
 .topic-index ul {
@@ -470,12 +367,6 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px 32px;
 }
-.build-art.score-cover {
-  background: white;
-}
-.build-art.score-cover img {
-  object-position: top;
-}
 .shelf-item {
   position: relative;
   overflow: hidden;
@@ -609,72 +500,6 @@
 }
 
 /* The collection and reading pages share the paper and serif treatment. */
-.archive-grid .archive-entry {
-  background-image: var(--card-grain-texture), var(--card-surface-gradient);
-  background-color: var(--raised);
-  background-blend-mode: soft-light, normal;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  transform-origin: center;
-  transition: transform var(--motion-ui) ease, box-shadow var(--motion-ui) ease, border-color var(--motion-ui) ease;
-}
-.archive-grid .archive-entry:nth-child(4n + 2) {
-  background-image: var(--card-grain-texture), var(--card-surface-gradient-2);
-}
-.archive-grid .archive-entry:nth-child(4n + 3) {
-  background-image: var(--card-grain-texture), var(--card-surface-gradient-3);
-}
-.archive-grid .archive-entry:nth-child(4n + 4) {
-  background-image: var(--card-grain-texture), var(--card-surface-gradient-4);
-}
-.archive-entry-link {
-  display: grid;
-  min-width: 0;
-  color: inherit;
-  height: 100%;
-}
-.archive-grid .archive-entry-link {
-  grid-template-rows: auto 1fr;
-}
-.archive-entry-link:hover {
-  text-decoration: none;
-}
-.archive-list .archive-entry-link > * {
-  transition: transform var(--motion-ui) ease;
-}
-.archive-grid .archive-entry:is(:hover, :focus-within) {
-  position: relative;
-  z-index: 2;
-  transform: scale(1.02);
-}
-.archive-grid .archive-entry:hover,
-.archive-grid .archive-entry:focus-within {
-  box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
-}
-.archive-image img {
-  transition: transform 350ms ease;
-}
-.archive-entry:hover .archive-image img,
-.archive-entry:focus-within .archive-image img {
-  transform: scale(1.025);
-}
-.archive-entry:hover h2,
-.archive-entry:focus-within h2 {
-  color: var(--accent);
-}
-.archive-grid .entry-copy {
-  min-width: 0;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-}
-.archive-list .archive-image {
-  border-radius: 4px;
-}
-.archive-entry h2 span {
-  color: var(--signal);
-}
 .case-heading .eyebrow {
   font: var(--type-meta) var(--font-sans);
   color: var(--signal);
@@ -722,12 +547,6 @@
   }
   .build-grid {
     gap: 20px;
-  }
-  .build-copy {
-    padding: 5px 18px 20px;
-  }
-  .build-copy h4 {
-    font-size: var(--type-card-heading);
   }
   .people-section {
     gap: 38px;
@@ -810,12 +629,6 @@
   .footer-navigation {
     gap: 14px 35px;
   }
-  .archive-grid .entry-copy {
-    padding: 22px;
-  }
-  .archive-entry h2 {
-    font-size: var(--type-card-heading);
-  }
   .project-body p {
     font-size: var(--type-body);
   }
@@ -831,23 +644,10 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 25px;
   }
-  .build-art {
-    aspect-ratio: 1.52;
-  }
-  .build-card:first-child .build-art,
-  .build-card:last-child .build-art {
-    aspect-ratio: 1.52;
-  }
   .field-intro::after {
     width: 190px;
     right: -2%;
     opacity: 0.07;
-  }
-  .build-copy {
-    padding: 4px 22px 24px;
-  }
-  .build-copy h4 {
-    font-size: var(--type-card-heading);
   }
   .field-notes .note-list {
     display: block;
@@ -880,8 +680,5 @@
   }
   .field-intro h1 {
     font-size: var(--type-section-heading);
-  }
-  .build-card {
-    break-inside: avoid;
   }
 }
