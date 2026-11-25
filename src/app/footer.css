@@ -1,15 +1,13 @@
 /*
- * The footer is its own zone: a full-width band darker than the page, with
- * smaller, quieter type, so it reads as the end of the site rather than
- * another section of content.
+ * The footer has no fill, so the page background carries through. A rule and
+ * smaller, quieter type mark it as the end of the site rather than another
+ * section of content.
  */
 .site-footer {
   position: relative;
   margin-top: 112px;
-  border-top: 1px solid #2f342d;
-  background: linear-gradient(180deg, #11120f, #0e0f0c);
-  box-shadow: inset 0 20px 32px -24px rgb(0 0 0 / 80%);
-  color: #969b8e;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
   font-size: var(--type-label);
   line-height: 1.5;
 }
@@ -53,7 +51,7 @@
   align-items: center;
   gap: 8px;
   padding: 4px 0;
-  color: #b9beb1;
+  color: var(--muted);
   text-underline-offset: 4px;
 }
 .footer-column a:is(:hover, :focus-visible),
@@ -73,7 +71,7 @@
   justify-content: space-between;
   gap: 8px 32px;
   padding: 16px 0 20px;
-  border-top: 1px solid #252923;
+  border-top: 1px solid var(--rule);
   font-size: var(--type-meta);
 }
 /* The footer supplies its own space above, so the last section adds none. */
