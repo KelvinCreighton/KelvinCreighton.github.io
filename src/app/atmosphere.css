@@ -84,14 +84,6 @@
 }
 
 /* ---------- Frosted glass for floating chrome ---------- */
-.site-header[data-scrolled="true"] {
-  background: linear-gradient(180deg, rgb(28 27 24 / 78%), rgb(25 24 21 / 68%));
-  -webkit-backdrop-filter: blur(18px) saturate(1.5);
-  backdrop-filter: blur(18px) saturate(1.5);
-  box-shadow:
-    inset 0 -1px 0 rgb(255 255 255 / 5%),
-    0 12px 28px -18px rgb(0 0 0 / 75%);
-}
 .category-nav button,
 .view-controls button {
   background: rgb(255 255 255 / 2.5%);
@@ -177,9 +169,7 @@
 
 /* ---------- Gradient hairlines instead of flat rules ---------- */
 .people-section,
-.site-footer,
-.related-work,
-.footer-bottom {
+.related-work {
   border-top-color: transparent;
   border-image: linear-gradient(
       90deg,

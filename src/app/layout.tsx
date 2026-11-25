@@ -12,6 +12,7 @@ import "./project-detail.css";
 import "./depth.css";
 import "./atmosphere.css";
 import "./cards.css";
+import "./footer.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://kelvincreighton.ca"),
   title: {
@@ -75,48 +76,43 @@ export default function RootLayout({
           </main>
           <footer className="site-footer">
             <div className="footer-top">
-              <div className="footer-intro">
-                <p className="footer-kicker">Kelvin Creighton</p>
-                <div className="footer-contact-links" aria-label="Contact links">
+              <div>
+                <p className="footer-name">Kelvin Creighton</p>
+                <p className="footer-school">
+                  University of Alberta · Computer Science
+                </p>
+              </div>
+              <nav className="footer-navigation" aria-label="Footer navigation">
+                <Link href="/projects">Projects</Link>
+                <Link href="/achievements">Achievements</Link>
+                <Link href="/community">Community</Link>
+                <Link href="/resume">Resume</Link>
+              </nav>
+            </div>
+            <div className="footer-bottom">
+              <span>© {new Date().getFullYear()} Kelvin Creighton</span>
+              <div className="footer-contact-links">
                 <a href="mailto:kcreight@ualberta.ca">
-                  <span>
-                    <Mail aria-hidden="true" />
-                    Email
-                  </span>
+                  <Mail aria-hidden="true" />
+                  Email
                 </a>
                 <a
                   href="https://www.linkedin.com/in/kelvin-creighton-250806263"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span>
-                    <Linkedin aria-hidden="true" />
-                    LinkedIn
-                  </span>
+                  <Linkedin aria-hidden="true" />
+                  LinkedIn
                 </a>
                 <a
                   href="https://github.com/KelvinCreighton/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span>
-                    <Github aria-hidden="true" />
-                    GitHub
-                  </span>
+                  <Github aria-hidden="true" />
+                  GitHub
                 </a>
-                </div>
               </div>
-              <nav className="footer-navigation" aria-label="Footer navigation">
-                <p className="footer-kicker">Explore</p>
-                <Link href="/resume">Resume</Link>
-                <Link href="/projects">Projects</Link>
-                <Link href="/community">Community</Link>
-                <Link href="/achievements">Achievements</Link>
-              </nav>
-            </div>
-            <div className="footer-bottom">
-              <span>© {new Date().getFullYear()} Kelvin Creighton</span>
-              <span>University of Alberta · Computer Science</span>
             </div>
           </footer>
           <script
