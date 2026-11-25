@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
 import { NavBar } from "@/components/NavBar";
 import { Wordmark } from "@/components/Wordmark";
 import { Background } from "@/components/Background";
@@ -75,42 +75,70 @@ export default function RootLayout({
             {children}
           </main>
           <footer className="site-footer">
-            <div className="footer-top">
-              <div>
-                <p className="footer-name">Kelvin Creighton</p>
-                <p className="footer-school">
-                  University of Alberta · Computer Science
-                </p>
+            <div className="footer-inner">
+              <div className="footer-columns">
+                <div className="footer-brand">
+                  <p className="footer-name">Kelvin Creighton</p>
+                  <p>University of Alberta</p>
+                  <p>Computer Science</p>
+                </div>
+                <nav className="footer-column" aria-labelledby="footer-pages">
+                  <h2 id="footer-pages">Pages</h2>
+                  <ul>
+                    <li>
+                      <Link href="/">Home</Link>
+                    </li>
+                    <li>
+                      <Link href="/projects">Projects</Link>
+                    </li>
+                    <li>
+                      <Link href="/achievements">Achievements</Link>
+                    </li>
+                    <li>
+                      <Link href="/community">Community</Link>
+                    </li>
+                    <li>
+                      <Link href="/resume">Resume</Link>
+                    </li>
+                  </ul>
+                </nav>
+                <div className="footer-column">
+                  <h2>Contact</h2>
+                  <ul>
+                    <li>
+                      <a href="mailto:kcreight@ualberta.ca">
+                        <Mail aria-hidden="true" />
+                        <span translate="no">kcreight@ualberta.ca</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/kelvin-creighton-250806263"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Linkedin aria-hidden="true" />
+                        LinkedIn
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://github.com/KelvinCreighton/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github aria-hidden="true" />
+                        GitHub
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <nav className="footer-navigation" aria-label="Footer navigation">
-                <Link href="/projects">Projects</Link>
-                <Link href="/achievements">Achievements</Link>
-                <Link href="/community">Community</Link>
-                <Link href="/resume">Resume</Link>
-              </nav>
-            </div>
-            <div className="footer-bottom">
-              <span>© {new Date().getFullYear()} Kelvin Creighton</span>
-              <div className="footer-contact-links">
-                <a href="mailto:kcreight@ualberta.ca">
-                  <Mail aria-hidden="true" />
-                  Email
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/kelvin-creighton-250806263"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Linkedin aria-hidden="true" />
-                  LinkedIn
-                </a>
-                <a
-                  href="https://github.com/KelvinCreighton/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github aria-hidden="true" />
-                  GitHub
+              <div className="footer-bottom">
+                <span>© {new Date().getFullYear()} Kelvin Creighton</span>
+                <a href="#top">
+                  Back to top
+                  <ArrowUp aria-hidden="true" />
                 </a>
               </div>
             </div>
