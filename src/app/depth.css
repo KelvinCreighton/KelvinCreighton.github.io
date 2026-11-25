@@ -118,7 +118,7 @@ body::before {
 }
 .project-card:is(:hover, :focus-within),
 .related-work a:is(:hover, :focus-visible) {
-  box-shadow: var(--elev-2), 0 0 0 1px rgb(170 197 175 / 10%);
+  box-shadow: var(--elev-2);
 }
 /* Photos sit in the card with a fine inner edge, like a mounted print. */
 .project-card-media::after,

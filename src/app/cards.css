@@ -1,7 +1,7 @@
 /*
  * The project card. One design for the homepage highlights and the archive;
- * the Index view lays the same parts out as rows. The pointer spotlight and
- * gradient edge come from atmosphere.css.
+ * the Index view lays the same parts out as rows. The pointer spotlight comes
+ * from atmosphere.css.
  */
 .project-card {
   display: flex;
@@ -14,14 +14,12 @@
   box-shadow: var(--elev-1);
   transition:
     transform 240ms var(--ease-out),
-    box-shadow 240ms ease,
-    border-color 240ms ease;
+    box-shadow 240ms ease;
 }
 /* Lift without scaling, which would soften the text. */
 .project-card:is(:hover, :focus-within) {
   z-index: 2;
   transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--signal) 38%, var(--rule));
 }
 .project-card-link {
   display: flex;
@@ -172,9 +170,6 @@
   background: transparent;
   box-shadow: none;
   transform: none;
-}
-.archive-list .project-card::before {
-  display: none;
 }
 .archive-list .project-card::after {
   border-radius: var(--radius-card);

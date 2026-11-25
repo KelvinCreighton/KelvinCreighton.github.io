@@ -6,7 +6,7 @@ const CARDS = ".project-card, .related-work a";
 
 /**
  * Tells the card under the pointer where the pointer is, as --mx and --my,
- * so its glow and gradient edge can follow it. One passive listener for the
+ * so its glow can follow it. One passive listener for the
  * whole site; touch and keyboard visitors keep the static hover styles.
  */
 export default function Spotlight() {
