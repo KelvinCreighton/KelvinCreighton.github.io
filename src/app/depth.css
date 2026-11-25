@@ -42,8 +42,8 @@ body::before {
   height: 900px;
   pointer-events: none;
   background:
-    radial-gradient(60% 70% at 22% 0%, rgb(224 166 120 / 7%), transparent 70%),
-    radial-gradient(50% 60% at 85% 10%, rgb(170 197 175 / 6%), transparent 72%);
+    radial-gradient(60% 70% at 22% 0%, rgb(224 166 120 / 5%), transparent 70%),
+    radial-gradient(50% 60% at 85% 10%, rgb(170 197 175 / 4%), transparent 72%);
 }
 
 /* Header: sticky and always readable. */
