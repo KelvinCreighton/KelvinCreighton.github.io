@@ -4,6 +4,25 @@ Implemented locally on `redesign/fieldbook-v1`. This revision follows the user's
 
 The first redesign is available in commit `dbb8084` (rough draft). The pre-redesign baseline is `639133cc6ae6b9c02628eb4cfd2da4748da3109a`. Review this revision with `git diff`, including the new untracked artwork, stylesheet, and font files.
 
+## Employer-facing pass (branch `redesign/employer-polish`)
+
+Built on the deployed Fieldbook design. The palette, type, and existing sections are unchanged; this pass adds depth and puts evidence in front of interviewers.
+
+- **Depth** (`src/app/depth.css`, loaded last): an elevation scale with a lit top edge and cast shadow, a light source over the top of each page, a recessed "lab" band, mounted-print photo edges, and buttons that press. The header stays sticky and gains a solid, blurred backing once the page scrolls; the wordmark no longer fades away.
+- **Homepage** (`src/app/page.tsx`, `src/app/home.css`):
+  1. Hero with an employer-focused statement and two overlapping project photos (MachineGuard, Dremel rebuild).
+  2. A proof strip computed from the data: best competition placing, WiCyS challenges authored, events organised, project count.
+  3. Project Highlights and the discipline list, as before.
+  4. "Run it in your browser": the robotic arm simulator launches inline (`HomeLab.tsx`), next to links that open four other demos at their `#interactive-demo` anchor.
+  5. "Where the work has been heading" (`TrajectoryChart.tsx`): one row per discipline, one pulse per project on a shared time axis, with hover details. Its one-line summary is derived from the data.
+  6. Competition results and events, listed from `src/data/community.ts`.
+- **Footer**: a sitewide call to action for hiring managers (email and resume).
+- **Archive**: a search field (`/` focuses it, Escape clears it), a Timeline view button, filters kept in the URL with working back and forward, and collections whose entries share one cover image (WiCyS CTF, PicoCTF) shown as one block.
+- **Project pages**: the registry's problem / what I did / outcome summary appears under the header where a project has one.
+- **Fix**: the Resume page overflowed by 5px at 360px wide (this predates the pass).
+
+Verified locally with Playwright: 14 routes at 360, 390, 768, 1024, and 1440px with no horizontal overflow or page errors, plus 29 interaction checks (search, filters, history, deep links, the series blocks, the `/` shortcut, the inline simulator with its focus handling, the mobile menu, the skip link, and the sticky header).
+
 ## What the reference contributed
 
 The reference was inspected in a browser at desktop and phone widths, alongside its [Garden](https://maggieappleton.com/garden), article layout, and [colophon](https://maggieappleton.com/colophon).

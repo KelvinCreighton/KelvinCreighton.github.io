@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function readScrollPosition() {
   const marker = document.getElementById("page-top-marker");
@@ -9,32 +9,28 @@ function readScrollPosition() {
   return Math.max(window.scrollY, document.documentElement.scrollTop);
 }
 
-// Keep the wordmark available only at the very top of the page. It should not
-// reappear during ordinary upward scrolling farther down the page.
-const WORDMARK_FADE_DISTANCE = 80;
-
-function opacityAtScrollPosition(scrollY: number) {
-  return Math.max(0, Math.min(1, 1 - scrollY / WORDMARK_FADE_DISTANCE));
-}
-
+/**
+ * The wordmark stays visible as the way home. It also owns the header's one
+ * piece of scroll state: once the page moves, the sticky header gains a solid
+ * backing so the navigation stays readable over content.
+ */
 export function Wordmark() {
-  const [opacity, setOpacity] = useState(1);
-
   useEffect(() => {
+    const header = document.querySelector<HTMLElement>(".site-header");
+    if (!header) return;
     let frame: number | null = null;
 
+    function update() {
+      frame = null;
+      header!.dataset.scrolled = readScrollPosition() > 8 ? "true" : "false";
+    }
     function handleScroll() {
-      if (frame !== null) return;
-      frame = window.requestAnimationFrame(() => {
-        setOpacity(opacityAtScrollPosition(readScrollPosition()));
-        frame = null;
-      });
+      if (frame === null) frame = window.requestAnimationFrame(update);
     }
 
-    handleScroll();
+    update();
     window.addEventListener("scroll", handleScroll, { passive: true });
     document.addEventListener("scroll", handleScroll, { passive: true, capture: true });
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("scroll", handleScroll, true);
@@ -43,12 +39,7 @@ export function Wordmark() {
   }, []);
 
   return (
-    <Link
-      href="/"
-      className="wordmark"
-      aria-label="Kelvin Creighton, home"
-      style={{ opacity, pointerEvents: opacity < 0.02 ? "none" : "auto" }}
-    >
+    <Link href="/" className="wordmark" aria-label="Kelvin Creighton, home">
       <span className="wordmark-name">Kelvin Creighton</span>
     </Link>
   );

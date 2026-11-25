@@ -262,14 +262,14 @@
 .build-card:nth-child(4n + 4) .build-copy {
   background-image: var(--card-grain-texture), var(--card-surface-gradient-4);
 }
-.build-copy h4 {
+.build-copy h3 {
   font: 400 var(--type-card-heading)/1.16 var(--serif);
   letter-spacing: -0.015em;
   margin: 12px 0 15px;
   transition: color 220ms ease;
 }
-.build-card:hover .build-copy h4,
-.build-card:focus-within .build-copy h4 {
+.build-card:hover .build-copy h3,
+.build-card:focus-within .build-copy h3 {
   color: var(--accent);
 }
 .build-copy > p {
@@ -726,7 +726,7 @@
   .build-copy {
     padding: 5px 18px 20px;
   }
-  .build-copy h4 {
+  .build-copy h3 {
     font-size: var(--type-card-heading);
   }
   .people-section {
@@ -846,7 +846,7 @@
   .build-copy {
     padding: 4px 22px 24px;
   }
-  .build-copy h4 {
+  .build-copy h3 {
     font-size: var(--type-card-heading);
   }
   .field-notes .note-list {

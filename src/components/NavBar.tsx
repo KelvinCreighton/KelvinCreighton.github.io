@@ -90,7 +90,6 @@ export function NavBar() {
             <span className="nav-link-text">
               <span className="nav-link-label">{l.name}</span>
             </span>
-            <span aria-hidden="true">↗</span>
           </Link>
         ))}
       </nav>

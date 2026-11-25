@@ -1,0 +1,401 @@
+/*
+ * Depth: the layer that turns a flat charcoal page into a lit bench.
+ * Loaded last. It adds an elevation scale, a light source, tactile controls,
+ * and a header that stays useful while scrolling. Palette and type are
+ * unchanged; this only adds material.
+ */
+:root {
+  --paper-deep: #131310;
+  --surface-2: #252a25;
+  --highlight: rgb(255 255 255 / 5%);
+  --highlight-strong: rgb(255 255 255 / 8%);
+  /* Elevation: a top highlight (light from above) plus a soft cast shadow. */
+  --elev-1:
+    inset 0 1px 0 var(--highlight),
+    0 1px 2px rgb(0 0 0 / 28%),
+    0 10px 24px -14px rgb(0 0 0 / 55%);
+  --elev-2:
+    inset 0 1px 0 var(--highlight-strong),
+    0 2px 6px rgb(0 0 0 / 26%),
+    0 26px 44px -20px rgb(0 0 0 / 70%);
+  --elev-inset:
+    inset 0 2px 6px rgb(0 0 0 / 45%),
+    inset 0 0 0 1px rgb(0 0 0 / 30%);
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+body {
+  overflow-x: clip;
+}
+
+/* A single light source over the top of every page, as if the page sat
+   under a bench lamp. It scrolls away with the content. */
+.site-background {
+  z-index: -2;
+}
+body::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 900px;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 70% at 22% 0%, rgb(224 166 120 / 7%), transparent 70%),
+    radial-gradient(50% 60% at 85% 10%, rgb(170 197 175 / 6%), transparent 72%);
+}
+
+/* Header: sticky and always readable. */
+.site-header {
+  transition:
+    background-color 240ms ease,
+    box-shadow 240ms ease,
+    -webkit-backdrop-filter 240ms ease,
+    backdrop-filter 240ms ease;
+}
+.site-header .header-inner {
+  transition: padding 240ms var(--ease-out);
+}
+.site-header[data-scrolled="true"] {
+  background: rgb(25 24 21 / 82%);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  backdrop-filter: blur(14px) saturate(1.3);
+  box-shadow:
+    0 1px 0 var(--rule),
+    0 12px 24px -18px rgb(0 0 0 / 70%);
+}
+.site-header[data-scrolled="true"] .header-inner {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.wordmark:hover,
+.wordmark:focus-visible {
+  transform: none;
+}
+.wordmark-name {
+  transition: color 180ms ease;
+}
+.wordmark:hover .wordmark-name {
+  color: #ecbd96;
+}
+
+/* Controls feel physical: a lit top edge, and a press that gives. */
+.button {
+  transition:
+    color var(--motion-ui) ease,
+    background-color var(--motion-ui) ease,
+    border-color var(--motion-ui) ease,
+    box-shadow var(--motion-ui) ease,
+    transform 120ms var(--ease-out);
+}
+.button.primary {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 28%),
+    0 1px 2px rgb(0 0 0 / 30%),
+    0 8px 18px -10px rgb(224 166 120 / 55%);
+}
+.button:not(.primary) {
+  border-color: color-mix(in srgb, var(--signal) 55%, var(--rule));
+  box-shadow: inset 0 1px 0 var(--highlight);
+}
+.button:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
+}
+.button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Cards gain real elevation instead of a flat outline. */
+.build-card-link,
+.archive-grid .archive-entry,
+.related-work a,
+.resume-downloads,
+.demo-frame,
+.challenge-details,
+.solution-toggle {
+  box-shadow: var(--elev-1);
+}
+.build-card:is(:hover, :focus-within) .build-card-link,
+.archive-grid .archive-entry:is(:hover, :focus-within),
+.related-work a:is(:hover, :focus-visible) {
+  box-shadow: var(--elev-2), 0 0 0 1px rgb(170 197 175 / 10%);
+}
+/* Photos sit in the card with a fine inner edge, like a mounted print. */
+.build-art::after,
+.archive-image::after,
+.people-photo::after,
+.record-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 6%), inset 0 -40px 40px -40px rgb(0 0 0 / 50%);
+}
+
+/* Small caps-and-mono labels read as template chrome; keep them quiet and
+   in sentence case. */
+.footer-kicker {
+  font: 600 var(--type-label) / 1.4 var(--font-sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.site-footer .footer-kicker {
+  font-size: var(--type-label);
+}
+
+/* Footer call to action, on every page. */
+.footer-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) auto;
+  gap: 24px 48px;
+  align-items: center;
+  margin-bottom: 56px;
+  padding: clamp(28px, 4vw, 44px);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-feature);
+  background:
+    radial-gradient(80% 140% at 0% 0%, rgb(224 166 120 / 9%), transparent 60%),
+    var(--surface);
+  box-shadow: var(--elev-1);
+}
+.footer-cta h2 {
+  max-width: 22ch;
+  font-size: var(--type-section-heading);
+}
+.footer-cta p {
+  max-width: 52ch;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: var(--type-ui);
+}
+.footer-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+@media (max-width: 860px) {
+  .footer-cta {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Every in-page jump lands below the sticky header. */
+html {
+  scroll-padding-top: 96px;
+}
+
+/* ---------- Project archive ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.archive-topline {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.archive-search {
+  position: relative;
+  flex: 1 1 320px;
+  max-width: 480px;
+}
+.archive-search > svg {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.archive-search input {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 44px 10px 42px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper-deep);
+  box-shadow: var(--elev-inset);
+  color: var(--ink);
+  font: var(--type-ui) var(--font-sans);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+.archive-search input::placeholder {
+  color: #8f9488;
+}
+.archive-search input:focus-visible {
+  outline: none;
+  border-color: var(--signal);
+  box-shadow: var(--elev-inset), 0 0 0 3px rgb(170 197 175 / 18%);
+}
+.archive-search input::-webkit-search-cancel-button {
+  filter: invert(0.75);
+}
+.archive-search kbd {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  min-width: 22px;
+  padding: 1px 6px;
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  color: var(--muted);
+  font: var(--type-meta) / 1.4 var(--font-mono);
+  text-align: center;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.archive-search input:focus ~ kbd,
+.archive-search input:not(:placeholder-shown) ~ kbd {
+  display: none;
+}
+.archive-count {
+  align-items: center;
+}
+.archive-count button {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+.empty-state {
+  border-radius: var(--radius-feature);
+  border-style: dashed;
+}
+.empty-state .button {
+  margin-top: 4px;
+}
+.entry-status {
+  margin: -6px 0 10px;
+  color: var(--accent);
+  font-size: var(--type-meta);
+}
+.archive-image.is-mark img {
+  object-fit: contain;
+  padding: 12% 18%;
+}
+.archive-grid {
+  grid-auto-flow: row dense;
+}
+.archive-series {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr);
+  gap: 24px 40px;
+  padding: 28px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--elev-1);
+}
+.series-intro {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+.series-intro h2 {
+  margin: 8px 0 6px;
+  font: 400 var(--type-card-heading) / 1.2 var(--serif);
+}
+.series-intro p:not(.entry-meta) {
+  color: var(--muted);
+  font-size: var(--type-label);
+}
+.series-mark {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--paper-deep);
+  box-shadow: var(--elev-inset);
+}
+.series-mark img {
+  object-fit: contain;
+  padding: 14px;
+}
+.series-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+.series-list li + li {
+  border-top: 1px solid var(--rule);
+}
+.series-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 16px;
+  padding: 13px 10px;
+  margin: 0 -10px;
+  border-radius: 8px;
+  transition: background-color 160ms ease;
+}
+.series-item:hover {
+  background: rgb(255 255 255 / 3%);
+}
+.series-title {
+  color: var(--ink);
+  font: 400 1.125rem / 1.3 var(--serif);
+  transition: color 160ms ease;
+}
+.series-item:hover .series-title {
+  color: var(--accent);
+}
+.series-status {
+  align-self: center;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--signal-soft);
+  color: var(--signal);
+  font-size: var(--type-meta);
+  white-space: nowrap;
+}
+.series-summary {
+  grid-column: 1 / -1;
+  max-width: 72ch;
+  color: var(--muted);
+  font-size: var(--type-label);
+  line-height: 1.5;
+}
+@media (max-width: 860px) {
+  .archive-series {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 20px;
+  }
+  .series-intro {
+    grid-template-columns: 64px minmax(0, 1fr);
+    align-items: center;
+  }
+  .series-mark {
+    width: 64px;
+    height: 64px;
+  }
+}
+@media (max-width: 760px) {
+  .archive-search {
+    flex: none;
+    width: 100%;
+    max-width: none;
+  }
+  .archive-search kbd {
+    display: none;
+  }
+}
+
+/* Resume: the discipline grid is one column on phones, so long titles
+   with their icons never push past the screen edge. */
+@media (max-width: 560px) {
+  .resume-work-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
