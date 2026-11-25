@@ -1,25 +1,4 @@
 {
-  "/images/Head-Shot.webp": {
-    "hash": "a62ffa8741d71e0357c4a195f0082bd55d02b0545a9b275138a2ac2a9f3cc508",
-    "entry": {
-      "width": 1173,
-      "height": 1173,
-      "variants": [
-        {
-          "src": "/images/responsive/Head-Shot-webp-480.webp",
-          "width": 480
-        },
-        {
-          "src": "/images/responsive/Head-Shot-webp-800.webp",
-          "width": 800
-        },
-        {
-          "src": "/images/responsive/Head-Shot-webp-1173.webp",
-          "width": 1173
-        }
-      ]
-    }
-  },
   "/images/achievements/Alice.webp": {
     "hash": "4f568fc4c2c24e3ecd34c839ffe1d6fc6dde8a6410827bf2afcacb48fd311b5c",
     "entry": {
@@ -33,6 +12,31 @@
         {
           "src": "/images/responsive/achievements/Alice-webp-800.webp",
           "width": 800
+        }
+      ]
+    }
+  },
+  "/images/achievements/CyberSci-2026.jpg": {
+    "hash": "1378ab765c2e17cdbfabcdb2329fe461d37feea6467f242452ada5f8bdf8ccaa",
+    "entry": {
+      "width": 3395,
+      "height": 2546,
+      "variants": [
+        {
+          "src": "/images/responsive/achievements/CyberSci-2026-jpg-480.webp",
+          "width": 480
+        },
+        {
+          "src": "/images/responsive/achievements/CyberSci-2026-jpg-800.webp",
+          "width": 800
+        },
+        {
+          "src": "/images/responsive/achievements/CyberSci-2026-jpg-1200.webp",
+          "width": 1200
+        },
+        {
+          "src": "/images/responsive/achievements/CyberSci-2026-jpg-1600.webp",
+          "width": 1600
         }
       ]
     }
