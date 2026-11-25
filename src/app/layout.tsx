@@ -8,7 +8,6 @@ import ProjectScrollReset from "@/components/ProjectScrollReset";
 import "./globals.css";
 import "./fieldbook.css";
 import "./project-detail.css";
-import "./home.css";
 import "./depth.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://kelvincreighton.ca"),
@@ -71,26 +70,6 @@ export default function RootLayout({
             {children}
           </main>
           <footer className="site-footer">
-            <section className="footer-cta" aria-labelledby="footer-cta-title">
-              <div>
-                <h2 id="footer-cta-title">
-                  Hiring for embedded, firmware, or security work?
-                </h2>
-                <p>
-                  I&apos;d be glad to walk you through any of these projects,
-                  including the parts that didn&apos;t work the first time.
-                </p>
-              </div>
-              <div className="footer-cta-actions">
-                <a className="button primary" href="mailto:kcreight@ualberta.ca">
-                  <Mail aria-hidden="true" />
-                  Email kcreight@ualberta.ca
-                </a>
-                <Link className="button" href="/resume">
-                  View resume
-                </Link>
-              </div>
-            </section>
             <div className="footer-top">
               <div className="footer-intro">
                 <p className="footer-kicker">Kelvin Creighton</p>

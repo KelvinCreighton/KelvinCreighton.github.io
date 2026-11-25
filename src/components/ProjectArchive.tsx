@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Search } from "lucide-react";
 import BlurImage from "@/components/BlurImage";
 import {
   categories,
@@ -11,7 +10,6 @@ import {
   inCategory,
   categoryName,
   type CategoryId,
-  type Project,
 } from "@/data/projects";
 import { projectTopics } from "@/data/projectTopics";
 import { events, achievements } from "@/data/community";
@@ -20,18 +18,6 @@ type Props = { fixedCategory?: CategoryId };
 
 function topicsForProject(id: string) {
   return projectTopics[id] || [];
-}
-
-/**
- * A collection this large whose entries all share one cover image (a CTF
- * logo, say) reads better as one block than as a run of identical cards.
- */
-const SERIES_MIN = 3;
-
-function statusLabel(p: Project) {
-  if (p.availability === "coming-soon") return "Release pending";
-  if (p.state === "in-progress") return "In progress";
-  return "";
 }
 
 function ProjectTopicList({ topics }: { topics: string[] }) {
@@ -95,79 +81,6 @@ function ProjectTopicList({ topics }: { topics: string[] }) {
   );
 }
 
-function ArchiveEntry({ p, view }: { p: Project; view: string }) {
-  const status = statusLabel(p);
-  return (
-    <article className="archive-entry">
-      <Link href={p.href} className="archive-entry-link">
-        <div className={`archive-image${/logo/i.test(p.image) ? " is-mark" : ""}`}>
-          <BlurImage
-            src={p.image}
-            alt=""
-            fill
-            sizes={
-              view === "list"
-                ? "180px"
-                : "(max-width: 760px) 90vw, (max-width: 1320px) 45vw, 590px"
-            }
-            className="object-cover"
-          />
-        </div>
-        <div className="entry-copy">
-          <div className="entry-meta">
-            <span>{p.dateLabel}</span>
-            <span>{p.vehicle ? <em>{p.vehicle}</em> : categoryName(p.category)}</span>
-          </div>
-          <h2>{p.title}</h2>
-          {status && <p className="entry-status">{status}</p>}
-          <p>{p.summary}</p>
-          <ProjectTopicList topics={topicsForProject(p.id)} />
-        </div>
-      </Link>
-    </article>
-  );
-}
-
-function ArchiveSeries({ name, items }: { name: string; items: Project[] }) {
-  const first = items[0];
-  const years = [...new Set(items.map((p) => p.sortDate.slice(0, 4)))].sort();
-  const pending = items.filter((p) => statusLabel(p)).length;
-  return (
-    <section className="archive-series" aria-labelledby={`series-${first.id}`}>
-      <div className="series-intro">
-        <div className="series-mark">
-          <BlurImage src={first.image} alt="" fill sizes="88px" />
-        </div>
-        <div>
-          <p className="entry-meta">
-            <span>{years.length > 1 ? `${years[0]}–${years.at(-1)}` : years[0]}</span>
-            <span>{categoryName(first.category)}</span>
-          </p>
-          <h2 id={`series-${first.id}`}>{name}</h2>
-          <p>
-            {items.length} entries
-            {pending > 0 && `, ${items.length - pending} published and ${pending} on the way`}
-          </p>
-        </div>
-      </div>
-      <ol className="series-list">
-        {items.map((p) => {
-          const status = statusLabel(p);
-          return (
-            <li key={p.id}>
-              <Link href={p.href} className="series-item">
-                <span className="series-title">{p.title.replace(`${name}: `, "")}</span>
-                {status && <span className="series-status">{status}</span>}
-                <span className="series-summary">{p.summary}</span>
-              </Link>
-            </li>
-          );
-        })}
-      </ol>
-    </section>
-  );
-}
-
 function ArchiveContent({
   fixedCategory,
   params,
@@ -175,7 +88,7 @@ function ArchiveContent({
   pending = false,
 }: Props & {
   params: URLSearchParams;
-  update: (key: string, value: string, replace?: boolean) => void;
+  update: (key: string, value: string) => void;
   pending?: boolean;
 }) {
   const requestedCategories = params
@@ -214,7 +127,7 @@ function ArchiveContent({
       (p) =>
         (collection === "all" || p.collection === collection) &&
         (vehicle === "all" || p.vehicle === vehicle) &&
-        `${p.title} ${p.summary} ${p.tags.join(" ")} ${topicsForProject(p.id).join(" ")} ${p.collection} ${categoryName(p.category)} ${p.contribution} ${p.vehicle || ""}`
+        `${p.title} ${p.summary} ${p.tags.join(" ")} ${p.collection} ${categoryName(p.category)} ${p.contribution} ${p.vehicle || ""}`
           .toLowerCase()
           .includes(query.toLowerCase().trim()),
     )
@@ -261,77 +174,17 @@ function ArchiveContent({
       : a.sortDate.localeCompare(b.sortDate),
   );
   const years = [...new Set(history.map((p) => p.sortDate.slice(0, 4)))];
-  const filtered =
-    Boolean(query.trim()) || collection !== "all" || vehicle !== "all";
-
-  // Gallery: fold repetitive collections into one block, placed where their
-  // newest entry would have appeared.
-  const seriesNames = new Set(
-    [...new Set(results.map((p) => p.collection))].filter((name) => {
-      const members = results.filter((p) => p.collection === name);
-      return (
-        name &&
-        collection === "all" &&
-        members.length >= SERIES_MIN &&
-        members.every((p) => p.image === members[0].image)
-      );
-    }),
-  );
-  const blocks: (
-    | { kind: "entry"; p: Project }
-    | { kind: "series"; name: string; items: Project[] }
-  )[] = [];
-  const placed = new Set<string>();
-  for (const p of results) {
-    if (!seriesNames.has(p.collection)) blocks.push({ kind: "entry", p });
-    else if (!placed.has(p.collection)) {
-      placed.add(p.collection);
-      blocks.push({
-        kind: "series",
-        name: p.collection,
-        items: results.filter((r) => r.collection === p.collection),
-      });
-    }
-  }
   return (
     <div className="archive" aria-busy={pending}>
       <div className="archive-topline">
-        <div className="archive-search">
-          <label className="visually-hidden" htmlFor="archive-search">
-            Search projects
-          </label>
-          <Search aria-hidden="true" />
-          <input
-            id="archive-search"
-            type="search"
-            name="q"
-            autoComplete="off"
-            spellCheck={false}
-            placeholder="Search projects, tools, or topics…"
-            value={query}
-            onChange={(e) => update("q", e.target.value, true)}
-            onKeyDown={(e) => {
-              if (e.key === "Escape" && query) {
-                e.preventDefault();
-                update("q", "", true);
-              }
-            }}
-          />
-          <kbd aria-hidden="true">/</kbd>
-        </div>
         <div className="view-controls" role="group" aria-label="Archive view">
-          {[
-            ["grid", "Gallery"],
-            ["list", "Index"],
-            ["history", "Timeline"],
-          ].map(([v, label]) => (
+          {["grid", "list"].map((v) => (
             <button
-              type="button"
               key={v}
               aria-pressed={view === v}
               onClick={() => update("view", v)}
             >
-              {label}
+              {v === "grid" ? "Gallery" : "Index"}
             </button>
           ))}
         </div>
@@ -357,30 +210,20 @@ function ArchiveContent({
         ))}
       </nav>
       <div className="archive-count">
-        <p role="status" aria-live="polite">
+        <p role="status">
           {results.length} {results.length === 1 ? "project" : "projects"}
           {query && ` matching “${query}”`}
           {collection !== "all" && ` / ${collection}`}
           {vehicle !== "all" && ` / ${vehicle}`}
           {milestones.length > 0
-            ? `, plus ${milestones.length} community milestones`
+            ? ` · ${milestones.length} community milestones`
             : ""}
         </p>
-        {filtered && (
-          <button type="button" onClick={() => update("reset", "")}>
-            Clear search
-          </button>
-        )}
       </div>
       {!results.length && (
         <div className="empty-state">
-          <h2>
-            No projects match {query.trim() ? `“${query.trim()}”` : "these filters"}
-          </h2>
-          <p>Check the spelling, try a broader word, or search every discipline.</p>
-          <button type="button" className="button" onClick={() => update("reset", "")}>
-            Clear search
-          </button>
+          <h2>No projects match these filters.</h2>
+          <p>Try a broader search or clear your filters.</p>
         </div>
       )}
       {view === "history" ? (
@@ -404,19 +247,40 @@ function ArchiveContent({
         </div>
       ) : (
         <div className={view === "list" ? "archive-list" : "archive-grid"}>
-          {view === "list"
-            ? results.map((p) => <ArchiveEntry key={p.id} p={p} view={view} />)
-            : blocks.map((block) =>
-                block.kind === "series" ? (
-                  <ArchiveSeries
-                    key={`series-${block.name}`}
-                    name={block.name}
-                    items={block.items}
+          {results.map((p) => (
+            <article className="archive-entry" key={p.id}>
+              <Link href={p.href} className="archive-entry-link">
+                <div className="archive-image">
+                  <BlurImage
+                    src={p.image}
+                    alt=""
+                    fill
+                    sizes={
+                      view === "list"
+                        ? "180px"
+                        : "(max-width: 760px) 90vw, (max-width: 1320px) 45vw, 590px"
+                    }
+                    className="object-cover"
                   />
-                ) : (
-                  <ArchiveEntry key={block.p.id} p={block.p} view={view} />
-                ),
-              )}
+                </div>
+                <div className="entry-copy">
+                  <div className="entry-meta">
+                    <span>{p.dateLabel}</span>
+                    <span>
+                      {p.vehicle ? (
+                        <em>{p.vehicle}</em>
+                      ) : (
+                        categoryName(p.category)
+                      )}
+                    </span>
+                  </div>
+                  <h2>{p.title}</h2>
+                  <p>{p.summary}</p>
+                  <ProjectTopicList topics={topicsForProject(p.id)} />
+                </div>
+              </Link>
+            </article>
+          ))}
         </div>
       )}
     </div>
@@ -441,29 +305,13 @@ export default function ProjectArchive(props: Props) {
     // Back and forward restore the filters the URL describes.
     const restore = () =>
       setParams(new URLSearchParams(window.location.search));
-    // "/" jumps to search, as on most sites with a search field.
-    const focusSearch = (e: KeyboardEvent) => {
-      const target = e.target as HTMLElement;
-      if (
-        e.key !== "/" ||
-        e.metaKey ||
-        e.ctrlKey ||
-        e.altKey ||
-        target.closest("input, textarea, select, [contenteditable]")
-      )
-        return;
-      e.preventDefault();
-      document.getElementById("archive-search")?.focus();
-    };
     window.addEventListener("popstate", restore);
-    document.addEventListener("keydown", focusSearch);
     return () => {
       window.removeEventListener("popstate", restore);
-      document.removeEventListener("keydown", focusSearch);
     };
   }, []);
 
-  function update(key: string, value: string, replace = false) {
+  function update(key: string, value: string) {
     const next = new URLSearchParams(params.toString());
     if (key === "reset") {
       ["q", "collection", "vehicle"].forEach((k) => next.delete(k));
@@ -490,8 +338,7 @@ export default function ProjectArchive(props: Props) {
     // Keep the address shareable: what you see is what the link opens.
     const search = next.toString();
     const url = `${window.location.pathname}${search ? `?${search}` : ""}`;
-    if (replace) window.history.replaceState(window.history.state, "", url);
-    else window.history.pushState(window.history.state, "", url);
+    window.history.pushState(window.history.state, "", url);
   }
 
   return <ArchiveContent {...props} params={params} update={update} />;

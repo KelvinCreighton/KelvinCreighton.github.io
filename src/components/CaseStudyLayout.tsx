@@ -78,22 +78,6 @@ export default function CaseStudyLayout({
             </a>
           )}
         </div>
-        {p.overview && (
-          <dl className="case-overview">
-            <div>
-              <dt>The problem</dt>
-              <dd>{p.overview.problem}</dd>
-            </div>
-            <div>
-              <dt>What I did</dt>
-              <dd>{p.overview.role}</dd>
-            </div>
-            <div>
-              <dt>Where it ended up</dt>
-              <dd>{p.overview.result}</dd>
-            </div>
-          </dl>
-        )}
       </header>
       <div className="case-reading">
         <aside className="case-aside">
